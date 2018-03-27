@@ -6,18 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>深入理解JavaScript--闭包系列(1) | wangsiyuan</title>
+  <title>深入理解JavaScript--闭包系列(2) | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在代码块开始执行之前，JS先着手一些“准备工作”我们把这种数据的准备情况叫做 ———— 【执行上下文】">
+  <meta name="description" content="先说作用域
+光知道“JavaScript没有块级作用域”是完全不够的，你需要知道的是——JavaScript除了全局作用域之外，只有函数可以创建的作用域。所以，我们在声明变量时，全局代码要在代码前端声明，函数中要在函数体一开始就声明好。除了这两个地方，其他地方都不要出现变量声明。而且建议用“单var”形式。123456789101112var a = 10;    b = 20;function">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入理解JavaScript--闭包系列(1)">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/03/27/闭包系列-1/index.html">
+<meta property="og:title" content="深入理解JavaScript--闭包系列(2)">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/03/27/闭包系列-2/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="在代码块开始执行之前，JS先着手一些“准备工作”我们把这种数据的准备情况叫做 ———— 【执行上下文】">
-<meta property="og:updated_time" content="2018-03-27T08:31:33.334Z">
+<meta property="og:description" content="先说作用域
+光知道“JavaScript没有块级作用域”是完全不够的，你需要知道的是——JavaScript除了全局作用域之外，只有函数可以创建的作用域。所以，我们在声明变量时，全局代码要在代码前端声明，函数中要在函数体一开始就声明好。除了这两个地方，其他地方都不要出现变量声明。而且建议用“单var”形式。123456789101112var a = 10;    b = 20;function">
+<meta property="og:updated_time" content="2018-03-27T09:40:05.581Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入理解JavaScript--闭包系列(1)">
-<meta name="twitter:description" content="在代码块开始执行之前，JS先着手一些“准备工作”我们把这种数据的准备情况叫做 ———— 【执行上下文】">
+<meta name="twitter:title" content="深入理解JavaScript--闭包系列(2)">
+<meta name="twitter:description" content="先说作用域
+光知道“JavaScript没有块级作用域”是完全不够的，你需要知道的是——JavaScript除了全局作用域之外，只有函数可以创建的作用域。所以，我们在声明变量时，全局代码要在代码前端声明，函数中要在函数体一开始就声明好。除了这两个地方，其他地方都不要出现变量声明。而且建议用“单var”形式。123456789101112var a = 10;    b = 20;function">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -60,34 +63,12 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/photos">相册</a></li>
-	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
     			
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">点我看目录</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, '友情链接2')" href="javascript:void(0)">http://localhost:4000/</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, '友情链接3')" href="javascript:void(0)">http://localhost:4000/</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, '友情链接4')" href="javascript:void(0)">http://localhost:4000/</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, '友情链接5')" href="javascript:void(0)">http://localhost:4000/</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, '友情链接6')" href="javascript:void(0)">http://localhost:4000/</a>
     			
             
 		</nav>
@@ -130,8 +111,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -152,9 +131,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
-		        
-					<li style="width: 50%"><a href="/photos">相册</a></li>
+					<li style="width: 100%"><a href="/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -169,30 +146,31 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-闭包系列-1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-闭包系列-2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      深入理解JavaScript--闭包系列(1)
+      深入理解JavaScript--闭包系列(2)
     </h1>
   
 
         
-        <a href="/2018/03/27/闭包系列-1/" class="archive-article-date">
-  	<time datetime="2018-03-27T08:31:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-27</time>
+        <a href="/2018/03/27/闭包系列-2/" class="archive-article-date">
+  	<time datetime="2018-03-27T09:15:54.746Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在代码块开始执行之前，JS先着手一些“准备工作”<br>我们把这种数据的准备情况叫做 ———— 【执行上下文】<br><a id="more"></a><br>他们包括：<br>1、函数表达式（变量）赋值为undefined;<br>2、函数声明 赋值；<br>3、this赋值。<br>执行的代码块也分为3种情况：<br>1、全局代码；（手写文本到<script>标签里面）<br>2、函数体；（new一个函数，里面必须有文本）<br>3、eval代码（不常用，不推荐）</p>
-<p>在执行js代码时，会有数不清的函数调用次数，会产生许多个上下文环境。这么多上下文环境该如何管理，以及如何销毁而释放内存呢？</p>
-<hr>
-</script></p>
+        <p>先说<strong>作用域</strong></p>
+<p>光知道“JavaScript没有块级作用域”是完全不够的，你需要知道的是——JavaScript除了全局作用域之外，只有函数可以创建的作用域。<br>所以，我们在声明变量时，全局代码要在代码前端声明，函数中要在函数体一开始就声明好。除了这两个地方，其他地方都不要出现变量声明。而且建议用“单var”形式。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</div><div class="line">    b = <span class="number">20</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">100</span>;</div><div class="line">		c = <span class="number">300</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> a = <span class="number">1000</span>;</div><div class="line">		    d = <span class="number">4000</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
       
 
       
@@ -282,7 +260,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/03/27/闭包系列-1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/03/27/闭包系列-2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -297,8 +275,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2018/03/25/聊聊系列-2-this/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">聊聊系列(2)--this函数</div>
+    <a href="/2018/03/26/闭包系列-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">深入理解JavaScript--闭包系列(1)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -381,53 +359,13 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
-      
-      
-      
-    
-      
-      
-      
-    
-      
-      
-      
-    
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 16.666666666666668%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">点我看目录</a></li>
-      
-        
-      
-      <li style="width: 16.666666666666668%" q-on="click: openSlider(e, '友情链接2')"><a href="javascript:void(0)" q-class="active:友情链接2">http://localhost:4000/</a></li>
-      
-        
-      
-      <li style="width: 16.666666666666668%" q-on="click: openSlider(e, '友情链接3')"><a href="javascript:void(0)" q-class="active:友情链接3">http://localhost:4000/</a></li>
-      
-        
-      
-      <li style="width: 16.666666666666668%" q-on="click: openSlider(e, '友情链接4')"><a href="javascript:void(0)" q-class="active:友情链接4">http://localhost:4000/</a></li>
-      
-        
-      
-      <li style="width: 16.666666666666668%" q-on="click: openSlider(e, '友情链接5')"><a href="javascript:void(0)" q-class="active:友情链接5">http://localhost:4000/</a></li>
-      
-        
-      
-      <li style="width: 16.666666666666668%" q-on="click: openSlider(e, '友情链接6')"><a href="javascript:void(0)" q-class="active:友情链接6">http://localhost:4000/</a></li>
+      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">点我看目录</a></li>
       
         
     </ul>
@@ -448,15 +386,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">

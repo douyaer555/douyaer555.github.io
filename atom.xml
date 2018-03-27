@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wangsiyuan233.github.io/"/>
-  <updated>2018-03-27T08:31:33.334Z</updated>
+  <updated>2018-03-27T09:40:05.581Z</updated>
   <id>wangsiyuan233.github.io/</id>
   
   <author>
@@ -17,13 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>深入理解JavaScript--闭包系列(1)</title>
-    <link href="wangsiyuan233.github.io/2018/03/27/%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97-1/"/>
-    <id>wangsiyuan233.github.io/2018/03/27/闭包系列-1/</id>
-    <published>2018-03-27T08:31:31.000Z</published>
-    <updated>2018-03-27T08:31:33.334Z</updated>
+    <title>深入理解JavaScript--闭包系列(2)</title>
+    <link href="wangsiyuan233.github.io/2018/03/27/%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97-2/"/>
+    <id>wangsiyuan233.github.io/2018/03/27/闭包系列-2/</id>
+    <published>2018-03-27T09:15:54.746Z</published>
+    <updated>2018-03-27T09:40:05.581Z</updated>
     
-    <content type="html"><![CDATA[<p>在代码块开始执行之前，JS先着手一些“准备工作”<br>我们把这种数据的准备情况叫做 ———— 【执行上下文】<br><a id="more"></a><br>他们包括：<br>1、函数表达式（变量）赋值为undefined;<br>2、函数声明 赋值；<br>3、this赋值。<br>执行的代码块也分为3种情况：<br>1、全局代码；（手写文本到<script>标签里面）<br>2、函数体；（new一个函数，里面必须有文本）<br>3、eval代码（不常用，不推荐）</p><p>在执行js代码时，会有数不清的函数调用次数，会产生许多个上下文环境。这么多上下文环境该如何管理，以及如何销毁而释放内存呢？</p><hr></script></p>]]></content>
+    <content type="html"><![CDATA[<p>先说<strong>作用域</strong></p><p>光知道“JavaScript没有块级作用域”是完全不够的，你需要知道的是——JavaScript除了全局作用域之外，只有函数可以创建的作用域。<br>所以，我们在声明变量时，全局代码要在代码前端声明，函数中要在函数体一开始就声明好。除了这两个地方，其他地方都不要出现变量声明。而且建议用“单var”形式。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</div><div class="line">    b = <span class="number">20</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="keyword">var</span> a = <span class="number">100</span>;</div><div class="line">c = <span class="number">300</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="keyword">var</span> a = <span class="number">1000</span>;</div><div class="line">    d = <span class="number">4000</span>;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;先说&lt;strong&gt;作用域&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;光知道“JavaScript没有块级作用域”是完全不够的，你需要知道的是——JavaScript除了全局作用域之外，只有函数可以创建的作用域。&lt;br&gt;所以，我们在声明变量时，全局代码要在代码前端声明，函数中要在函数
+      
+    
+    </summary>
+    
+    
+      <category term="闭包" scheme="wangsiyuan233.github.io/tags/%E9%97%AD%E5%8C%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深入理解JavaScript--闭包系列(1)</title>
+    <link href="wangsiyuan233.github.io/2018/03/26/%E9%97%AD%E5%8C%85%E7%B3%BB%E5%88%97-1/"/>
+    <id>wangsiyuan233.github.io/2018/03/26/闭包系列-1/</id>
+    <published>2018-03-26T08:31:31.000Z</published>
+    <updated>2018-03-27T09:14:59.880Z</updated>
+    
+    <content type="html"><![CDATA[<p>在代码块开始执行之前，JS先着手一些“准备工作”<br>我们把这种数据的准备情况叫做 ———— 【执行上下文】<br><a id="more"></a><br>他们包括：<br>1、函数表达式（变量）赋值为undefined;<br>2、函数声明 赋值；<br>3、this赋值。<br>执行的代码块也分为3种情况：<br>1、全局代码；（手写文本到<script>标签里面）<br>2、函数体；（new一个函数，里面必须有文本）<br>3、eval代码（不常用，不推荐）</p><p><strong>给执行上下文环境下一个通俗的定义——在执行代码之前，把将要用到的所有的变量都事先拿出来，有的直接赋值了，有的先用undefined占个空。</strong></p><p>在执行js代码时，会有数不清的函数调用次数，会产生许多个上下文环境。这么多上下文环境该如何管理，以及如何销毁而释放内存呢？</p><p>执行全局代码时，会产生一个执行上下文环境，每次调用函数都又会产生执行上下文环境。当函数调用完成时，这个上下文环境以及其中的数据都会被<strong>消除</strong>，再重新回到全局上下文环境。处于活动状态的执行上下文环境只有一个。<br><img src="https://i.imgur.com/H5dRIKU.png" alt=""><br>上面这种情况其实是一种非常理想的状况，在实际的工作应用中，我们无法做到及时销毁<br>因为我们有伟大的————闭包！</p></script></p>]]></content>
     
     <summary type="html">
     
@@ -412,35 +436,6 @@
     
       &lt;h2 id=&quot;lt-div-gt-的高度由什么决定呢？-（不支持IE）&quot;&gt;&lt;a href=&quot;#lt-div-gt-的高度由什么决定呢？-（不支持IE）&quot; class=&quot;headerlink&quot; title=&quot;&amp;lt;div&amp;gt;的高度由什么决定呢？ ##（不支持IE）&quot;&gt;&lt;/a&gt;&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;的高度由什么决定呢？ ##（不支持IE）&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;只有内联元素&lt;br&gt;只有内联时，高度是由行高（line-height）决定的。（与字体的大小无关）
-    
-    </summary>
-    
-    
-      <category term="CSS" scheme="wangsiyuan233.github.io/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS小结</title>
-    <link href="wangsiyuan233.github.io/2018/02/01/CSS%E5%B0%8F%E7%BB%93/"/>
-    <id>wangsiyuan233.github.io/2018/02/01/CSS小结/</id>
-    <published>2018-02-01T11:25:53.463Z</published>
-    <updated>2018-03-27T07:24:39.586Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="CSS黑魔法"><a href="#CSS黑魔法" class="headerlink" title="CSS黑魔法"></a>CSS黑魔法</h2><p><strong>各属性之间相互影响</strong></p><ul><li>margin 和 border：</li></ul><ol><li>上下两个div之间的margin会选择大的呈现</li><li>用一个0.1px的border隔开，上下还是原来的margin数；</li><li>用display：table，上下还是原来的margin数；</li><li>用display：flex，上下还是原来的margin数；</li><li>用overflow：hidden，上下还是原来的margin数；<a id="more"></a></li></ol><ul><li><p>li的小圆点 和 display:<br>当 display:inline 或者 display:block的时候，li的小圆点会消失；</p></li><li><p>position 和 display：<br>当position为 absolute时，设置好的display:inline会变成display:block;</p></li></ul><p><strong>各元素之间相互影响</strong></p><ul><li><p>position 和 transform：<br>position 为 fixed 时，transform scale（0.9），共同缩小页面，元素并没有停留在原来的位置，相对页面固定，而是一起缩小了！</p></li><li><p>float 和 inline:<br>浮动并不仅仅是“在上面”，更深刻的含义是 —— “图文混排” “文字环绕”；</p></li></ul><hr><h2 id="CSS套路"><a href="#CSS套路" class="headerlink" title="CSS套路"></a>CSS套路</h2><ul><li><strong>布局</strong></li></ul><ol><li>web端：IE8用float；chrome用flex；</li><li>手机端：flex；</li></ol><ul><li><strong>水平居中</strong></li></ul><ol><li>inline元素：.parent{text-align：center;} .child{inline / inline-block}</li><li>block元素：child宽度不确定时用margin-left，margin-right；child宽度确定时用margin：auto</li></ol><ul><li><strong>垂直居中</strong>(要点是不要写死height)</li></ul><ol><li>parent高度确定：不管child高度确不确定，都是.parent{padding-top，padding-button;} </li><li>parent高度不确定且child高度不确定，IE8用table；chrome 和 mobile 用flex；（parent能不写死就不要手欠！）</li></ol><hr>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;CSS黑魔法&quot;&gt;&lt;a href=&quot;#CSS黑魔法&quot; class=&quot;headerlink&quot; title=&quot;CSS黑魔法&quot;&gt;&lt;/a&gt;CSS黑魔法&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;各属性之间相互影响&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;margin 和 border：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;上下两个div之间的margin会选择大的呈现&lt;/li&gt;
-&lt;li&gt;用一个0.1px的border隔开，上下还是原来的margin数；&lt;/li&gt;
-&lt;li&gt;用display：table，上下还是原来的margin数；&lt;/li&gt;
-&lt;li&gt;用display：flex，上下还是原来的margin数；&lt;/li&gt;
-&lt;li&gt;用overflow：hidden，上下还是原来的margin数；
     
     </summary>
     

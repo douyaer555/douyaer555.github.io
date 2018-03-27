@@ -56,34 +56,12 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/photos">相册</a></li>
-	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
     			
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">点我看目录</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, '友情链接2')" href="javascript:void(0)">http://localhost:4000/</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, '友情链接3')" href="javascript:void(0)">http://localhost:4000/</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, '友情链接4')" href="javascript:void(0)">http://localhost:4000/</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, '友情链接5')" href="javascript:void(0)">http://localhost:4000/</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, '友情链接6')" href="javascript:void(0)">http://localhost:4000/</a>
     			
             
 		</nav>
@@ -126,8 +104,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -148,9 +124,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
-		        
-					<li style="width: 50%"><a href="/photos">相册</a></li>
+					<li style="width: 100%"><a href="/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -167,6 +141,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-闭包系列-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/27/闭包系列-2/">深入理解JavaScript--闭包系列(2)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/27/闭包系列-2/" class="archive-article-date">
+  	<time datetime="2018-03-27T09:15:54.746Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>先说<strong>作用域</strong></p>
+<p>光知道“JavaScript没有块级作用域”是完全不够的，你需要知道的是——JavaScript除了全局作用域之外，只有函数可以创建的作用域。<br>所以，我们在声明变量时，全局代码要在代码前端声明，函数中要在函数体一开始就声明好。除了这两个地方，其他地方都不要出现变量声明。而且建议用“单var”形式。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</div><div class="line">    b = <span class="number">20</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">100</span>;</div><div class="line">		c = <span class="number">300</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> a = <span class="number">1000</span>;</div><div class="line">		    d = <span class="number">4000</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">闭包</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/27/闭包系列-2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-闭包系列-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -174,13 +225,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/27/闭包系列-1/">深入理解JavaScript--闭包系列(1)</a>
+      <a class="article-title" href="/2018/03/26/闭包系列-1/">深入理解JavaScript--闭包系列(1)</a>
     </h1>
   
 
         
-        <a href="/2018/03/27/闭包系列-1/" class="archive-article-date">
-  	<time datetime="2018-03-27T08:31:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-27</time>
+        <a href="/2018/03/26/闭包系列-1/" class="archive-article-date">
+  	<time datetime="2018-03-26T08:31:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-26</time>
 </a>
         
       </header>
@@ -189,7 +240,7 @@
       
         <p>在代码块开始执行之前，JS先着手一些“准备工作”<br>我们把这种数据的准备情况叫做 ———— 【执行上下文】<br>
         
-          <a class="article-more-a" href="/2018/03/27/闭包系列-1/#more">more >></a>
+          <a class="article-more-a" href="/2018/03/26/闭包系列-1/#more">more >></a>
         
       
 
@@ -213,7 +264,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/27/闭包系列-1/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/03/26/闭包系列-1/">展开全文 >></a>
         </p>
       
 
@@ -474,82 +525,6 @@
 
 
   
-    <article id="post-原型系列-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/25/原型系列-3/">深入理解JavaScript--原型系列(3)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/25/原型系列-3/" class="archive-article-date">
-  	<time datetime="2018-03-25T05:46:54.685Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://i.imgur.com/7BYXesw.png" alt=""><br>由上面这张图可以一层层得出以下的结论1：<br>
-        
-          <a class="article-more-a" href="/2018/03/25/原型系列-3/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">原型链</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/25/原型系列-3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -604,53 +579,13 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
-      
-      
-      
-    
-      
-      
-      
-    
-      
-      
-      
-    
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 16.666666666666668%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">点我看目录</a></li>
-      
-        
-      
-      <li style="width: 16.666666666666668%" q-on="click: openSlider(e, '友情链接2')"><a href="javascript:void(0)" q-class="active:友情链接2">http://localhost:4000/</a></li>
-      
-        
-      
-      <li style="width: 16.666666666666668%" q-on="click: openSlider(e, '友情链接3')"><a href="javascript:void(0)" q-class="active:友情链接3">http://localhost:4000/</a></li>
-      
-        
-      
-      <li style="width: 16.666666666666668%" q-on="click: openSlider(e, '友情链接4')"><a href="javascript:void(0)" q-class="active:友情链接4">http://localhost:4000/</a></li>
-      
-        
-      
-      <li style="width: 16.666666666666668%" q-on="click: openSlider(e, '友情链接5')"><a href="javascript:void(0)" q-class="active:友情链接5">http://localhost:4000/</a></li>
-      
-        
-      
-      <li style="width: 16.666666666666668%" q-on="click: openSlider(e, '友情链接6')"><a href="javascript:void(0)" q-class="active:友情链接6">http://localhost:4000/</a></li>
+      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">点我看目录</a></li>
       
         
     </ul>
@@ -671,15 +606,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
