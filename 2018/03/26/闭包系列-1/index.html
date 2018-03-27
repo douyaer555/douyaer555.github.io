@@ -8,16 +8,19 @@
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
   <title>深入理解JavaScript--闭包系列(1) | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在代码块开始执行之前，JS先着手一些“准备工作”我们把这种数据的准备情况叫做 ———— 【执行上下文】">
+  <meta name="description" content="其实闭包的核心内容特别的少，但是铺垫非常的长谈到闭包，无论如何都不能绕过去的，就是 作用域 啦！
+在代码块开始执行之前，JS先着手一些“准备工作”我们把这种数据的准备情况叫做 ———— 【执行上下文】">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解JavaScript--闭包系列(1)">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/03/26/闭包系列-1/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="在代码块开始执行之前，JS先着手一些“准备工作”我们把这种数据的准备情况叫做 ———— 【执行上下文】">
-<meta property="og:updated_time" content="2018-03-27T09:14:59.880Z">
+<meta property="og:description" content="其实闭包的核心内容特别的少，但是铺垫非常的长谈到闭包，无论如何都不能绕过去的，就是 作用域 啦！
+在代码块开始执行之前，JS先着手一些“准备工作”我们把这种数据的准备情况叫做 ———— 【执行上下文】">
+<meta property="og:updated_time" content="2018-03-27T12:24:50.607Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解JavaScript--闭包系列(1)">
-<meta name="twitter:description" content="在代码块开始执行之前，JS先着手一些“准备工作”我们把这种数据的准备情况叫做 ———— 【执行上下文】">
+<meta name="twitter:description" content="其实闭包的核心内容特别的少，但是铺垫非常的长谈到闭包，无论如何都不能绕过去的，就是 作用域 啦！
+在代码块开始执行之前，JS先着手一些“准备工作”我们把这种数据的准备情况叫做 ———— 【执行上下文】">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -163,7 +166,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在代码块开始执行之前，JS先着手一些“准备工作”<br>我们把这种数据的准备情况叫做 ———— 【执行上下文】<br><a id="more"></a><br>他们包括：<br>1、函数表达式（变量）赋值为undefined;<br>2、函数声明 赋值；<br>3、this赋值。<br>执行的代码块也分为3种情况：<br>1、全局代码；（手写文本到<script>标签里面）<br>2、函数体；（new一个函数，里面必须有文本）<br>3、eval代码（不常用，不推荐）</p>
+        <p>其实闭包的核心内容特别的少，但是铺垫非常的长<br>谈到闭包，无论如何都不能绕过去的，就是 作用域 啦！</p>
+<p>在代码块开始执行之前，JS先着手一些“准备工作”<br>我们把这种数据的准备情况叫做 ———— 【执行上下文】<br><a id="more"></a><br>他们包括：<br>1、函数表达式（变量）赋值为undefined;<br>2、函数声明 赋值；<br>3、this赋值。<br>执行的代码块也分为3种情况：<br>1、全局代码；（手写文本到<script>标签里面）<br>2、函数体；（new一个函数，里面必须有文本）<br>3、eval代码（不常用，不推荐）</p>
 <p><strong>给执行上下文环境下一个通俗的定义——在执行代码之前，把将要用到的所有的变量都事先拿出来，有的直接赋值了，有的先用undefined占个空。</strong></p>
 <p>在执行js代码时，会有数不清的函数调用次数，会产生许多个上下文环境。这么多上下文环境该如何管理，以及如何销毁而释放内存呢？</p>
 <p>执行全局代码时，会产生一个执行上下文环境，每次调用函数都又会产生执行上下文环境。当函数调用完成时，这个上下文环境以及其中的数据都会被<strong>消除</strong>，再重新回到全局上下文环境。处于活动状态的执行上下文环境只有一个。<br><img src="https://i.imgur.com/H5dRIKU.png" alt=""><br>上面这种情况其实是一种非常理想的状况，在实际的工作应用中，我们无法做到及时销毁<br>因为我们有伟大的————闭包！</p>
