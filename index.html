@@ -141,32 +141,30 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-闭包系列-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-闭包系列-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/27/闭包系列-2/">深入理解JavaScript--闭包系列(2)</a>
+      <a class="article-title" href="/2018/03/27/闭包系列-3/">深入理解JavaScript--闭包系列(3)</a>
     </h1>
   
 
         
-        <a href="/2018/03/27/闭包系列-2/" class="archive-article-date">
-  	<time datetime="2018-03-27T10:35:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-27</time>
+        <a href="/2018/03/27/闭包系列-3/" class="archive-article-date">
+  	<time datetime="2018-03-27T10:55:40.076Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>先说<strong>作用域</strong></p>
-<p>光知道“JavaScript没有块级作用域”是完全不够的，你需要知道的是——JavaScript除了全局作用域之外，只有函数可以创建的作用域。<br>所以，我们在声明变量时，全局代码要在代码前端声明，函数中要在函数体一开始就声明好。除了这两个地方，其他地方都不要出现变量声明。而且建议用“单var”形式。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</div><div class="line">    b = <span class="number">20</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">100</span>;</div><div class="line">		c = <span class="number">300</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> a = <span class="number">1000</span>;</div><div class="line">		    d = <span class="number">4000</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><img src="https://i.imgur.com/SbjCI3s.png" alt=""><br>如图，f1就是f2的上级作用域</p>
-<p>除了全局作用域之外，每个函数都会创建自己的作用域，作用域在函数定义时就已经确定了。而不是在函数调用时确定。<br>作用域最大的用处就是隔离变量，不同作用域下同名变量不会有冲突。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</div><div class="line">    b = <span class="number">20</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">100</span>;</div><div class="line">		c = <span class="number">300</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> a = <span class="number">1000</span>;</div><div class="line">		    d = <span class="number">4000</span>;</div><div class="line">	&#125;</div><div class="line">f2(<span class="number">111</span>);</div><div class="line">f2(<span class="number">222</span>);</div><div class="line">&#125;</div><div class="line">f1(<span class="number">33</span>);</div></pre></td></tr></table></figure></p>
-<p><img src="https://i.imgur.com/PcGbarw.png" alt=""><br>作用域中变量的值是在执行过程中产生的确定的，而作用域却是在函数创建时就确定了。所以，如果要查找一个作用域下某个变量的值，就需要找到这个作用域对应的执行上下文环境，再在其中寻找变量的值。<br>所以，如果要查找一个作用域下某个变量的值，就需要找到这个作用域对应的执行上下文环境，再在其中寻找变量的值。</p>
-
+        <p>定义一下<strong>自由变量</strong>：如下图这个函数，x就不是f1里定义的变量，它就是个自由变量。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">23</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> b = <span class="number">34</span>;</div><div class="line">	<span class="built_in">console</span>.log(x + b)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2018/03/27/闭包系列-3/#more">more >></a>
+        
       
 
       
@@ -189,7 +187,84 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/27/闭包系列-2/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/03/27/闭包系列-3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-闭包系列-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/26/闭包系列-2/">深入理解JavaScript--闭包系列(2)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/26/闭包系列-2/" class="archive-article-date">
+  	<time datetime="2018-03-26T10:35:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>先说<strong>作用域</strong></p>
+<p>光知道“JavaScript没有块级作用域”是完全不够的，你需要知道的是——JavaScript除了全局作用域之外，只有<strong>函数</strong>可以创建的作用域。<br>所以，我们在声明变量时，全局代码要在代码前端声明，函数中要在函数体一开始就声明好。除了这两个地方，其他地方都不要出现变量声明。而且建议用“单var”形式。<br>
+        
+          <a class="article-more-a" href="/2018/03/26/闭包系列-2/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">闭包</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/26/闭包系列-2/">展开全文 >></a>
         </p>
       
 
@@ -266,84 +341,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/03/26/闭包系列-1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-聊聊系列-1-new函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/25/聊聊系列-1-new函数/">聊聊系列(1)--new函数</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/25/聊聊系列-1-new函数/" class="archive-article-date">
-  	<time datetime="2018-03-25T10:14:52.978Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原型链+继承告一段落，我们接下来开始闭包的部分。<br>当然不会直接开始闭包呀<br>今天想跟大家聊聊 new函数</p>
-<p><a href="http://wangsiyuan233.cn/JS函数.html">声明函数的五种方式</a><br>废话不多说 <strong>当我们在new一个函数的时候我们在干嘛？</strong></p>
-<p>以【为程序员哥哥们批量制造女友】为例<br>
-        
-          <a class="article-more-a" href="/2018/03/25/聊聊系列-1-new函数/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">聊聊系列</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/25/聊聊系列-1-new函数/">展开全文 >></a>
         </p>
       
 
@@ -450,29 +447,31 @@
 
 
   
-    <article id="post-原型系列-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-聊聊系列-1-new函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/25/原型系列-4/">深入理解JavaScript--原型系列(4)</a>
+      <a class="article-title" href="/2018/03/25/聊聊系列-1-new函数/">聊聊系列(1)--new函数</a>
     </h1>
   
 
         
-        <a href="/2018/03/25/原型系列-4/" class="archive-article-date">
-  	<time datetime="2018-03-25T06:37:02.292Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-25</time>
+        <a href="/2018/03/25/聊聊系列-1-new函数/" class="archive-article-date">
+  	<time datetime="2018-03-25T10:14:52.978Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>哈哈被骗啦(…)还没轮到原型链<br>这一小节我们将引出一个中介概念 <code>instanceof</code><br>
+        <p>原型链+继承告一段落，我们接下来开始闭包的部分。<br>当然不会直接开始闭包呀<br>今天想跟大家聊聊 new函数</p>
+<p><a href="http://wangsiyuan233.cn/JS函数.html">声明函数的五种方式</a><br>废话不多说 <strong>当我们在new一个函数的时候我们在干嘛？</strong></p>
+<p>以【为程序员哥哥们批量制造女友】为例<br>
         
-          <a class="article-more-a" href="/2018/03/25/原型系列-4/#more">more >></a>
+          <a class="article-more-a" href="/2018/03/25/聊聊系列-1-new函数/#more">more >></a>
         
       
 
@@ -486,7 +485,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">原型链</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">聊聊系列</a>
         		</li>
       		
 		</ul>
@@ -496,7 +495,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/25/原型系列-4/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/03/25/聊聊系列-1-new函数/">展开全文 >></a>
         </p>
       
 
@@ -607,15 +606,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">

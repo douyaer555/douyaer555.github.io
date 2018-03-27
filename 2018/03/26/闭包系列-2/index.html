@@ -6,14 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>wangsiyuan</title>
+  <title>深入理解JavaScript--闭包系列(2) | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="wangsiyuan">
-<meta property="og:url" content="wangsiyuan233.github.io/page/5/index.html">
+  <meta name="description" content="先说作用域
+光知道“JavaScript没有块级作用域”是完全不够的，你需要知道的是——JavaScript除了全局作用域之外，只有函数可以创建的作用域。所以，我们在声明变量时，全局代码要在代码前端声明，函数中要在函数体一开始就声明好。除了这两个地方，其他地方都不要出现变量声明。而且建议用“单var”形式。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入理解JavaScript--闭包系列(2)">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/03/26/闭包系列-2/index.html">
 <meta property="og:site_name" content="wangsiyuan">
+<meta property="og:description" content="先说作用域
+光知道“JavaScript没有块级作用域”是完全不够的，你需要知道的是——JavaScript除了全局作用域之外，只有函数可以创建的作用域。所以，我们在声明变量时，全局代码要在代码前端声明，函数中要在函数体一开始就声明好。除了这两个地方，其他地方都不要出现变量声明。而且建议用“单var”形式。">
+<meta property="og:image" content="https://i.imgur.com/SbjCI3s.png">
+<meta property="og:image" content="https://i.imgur.com/PcGbarw.png">
+<meta property="og:updated_time" content="2018-03-27T11:47:22.628Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wangsiyuan">
+<meta name="twitter:title" content="深入理解JavaScript--闭包系列(2)">
+<meta name="twitter:description" content="先说作用域
+光知道“JavaScript没有块级作用域”是完全不够的，你需要知道的是——JavaScript除了全局作用域之外，只有函数可以创建的作用域。所以，我们在声明变量时，全局代码要在代码前端声明，函数中要在函数体一开始就声明好。除了这两个地方，其他地方都不要出现变量声明。而且建议用“单var”形式。">
+<meta name="twitter:image" content="https://i.imgur.com/SbjCI3s.png">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -139,35 +149,55 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-CSS-四" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-闭包系列-2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/04/CSS-四/">CSS(四)</a>
+    <h1 class="article-title" itemprop="name">
+      深入理解JavaScript--闭包系列(2)
     </h1>
   
 
         
-        <a href="/2018/02/04/CSS-四/" class="archive-article-date">
-  	<time datetime="2018-02-04T12:29:06.420Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-04</time>
+        <a href="/2018/03/26/闭包系列-2/" class="archive-article-date">
+  	<time datetime="2018-03-26T10:35:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="lt-div-gt-的高度由什么决定呢？-（不支持IE）"><a href="#lt-div-gt-的高度由什么决定呢？-（不支持IE）" class="headerlink" title="&lt;div&gt;的高度由什么决定呢？ ##（不支持IE）"></a><code>&lt;div&gt;</code>的高度由什么决定呢？ ##（不支持IE）</h2><ol>
-<li>只有内联元素<br>只有内联时，高度是由行高（line-height）决定的。（与字体的大小无关）
-        
-          <a class="article-more-a" href="/2018/02/04/CSS-四/#more">more >></a>
-        
+        <p>先说<strong>作用域</strong></p>
+<p>光知道“JavaScript没有块级作用域”是完全不够的，你需要知道的是——JavaScript除了全局作用域之外，只有<strong>函数</strong>可以创建的作用域。<br>所以，我们在声明变量时，全局代码要在代码前端声明，函数中要在函数体一开始就声明好。除了这两个地方，其他地方都不要出现变量声明。而且建议用“单var”形式。<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</div><div class="line">    b = <span class="number">20</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">100</span>;</div><div class="line">		c = <span class="number">300</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> a = <span class="number">1000</span>;</div><div class="line">		    d = <span class="number">4000</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="https://i.imgur.com/SbjCI3s.png" alt=""><br>如图，f1就是f2的上级作用域</p>
+<p>除了全局作用域之外，每个函数都会创建自己的作用域，作用域在函数<strong>定义</strong>时就已经确定了。而不是在函数调用时确定。<br>作用域最大的用处就是隔离变量，不同作用域下同名变量不会有冲突。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</div><div class="line">    b = <span class="number">20</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">100</span>;</div><div class="line">		c = <span class="number">300</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> a = <span class="number">1000</span>;</div><div class="line">		    d = <span class="number">4000</span>;</div><div class="line">	&#125;</div><div class="line">f2(<span class="number">111</span>);</div><div class="line">f2(<span class="number">222</span>);</div><div class="line">&#125;</div><div class="line">f1(<span class="number">33</span>);</div></pre></td></tr></table></figure></p>
+<p><img src="https://i.imgur.com/PcGbarw.png" alt=""><br>作用域中变量的值是在执行过程中产生的确定的，而作用域却是在函数创建时就确定了。所以，如果要查找一个作用域下某个变量的值，就需要找到这个作用域对应的执行上下文环境，再在其中寻找变量的值。<br>所以，如果要查找一个作用域下某个<strong>变量</strong>的值，就需要找到这个作用域对应的执行上下文环境，再在其中寻找变量的值。</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -178,7 +208,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">闭包</a>
         		</li>
       		
 		</ul>
@@ -187,16 +217,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/04/CSS-四/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/03/26/闭包系列-2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/03/27/闭包系列-3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          深入理解JavaScript--闭包系列(3)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/26/闭包系列-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">深入理解JavaScript--闭包系列(1)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -216,334 +314,14 @@
 
 
 
-
-  
-    <article id="post-CSS小结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/01/CSS小结/">CSS小结</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/01/CSS小结/" class="archive-article-date">
-  	<time datetime="2018-02-01T11:25:53.463Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="CSS黑魔法"><a href="#CSS黑魔法" class="headerlink" title="CSS黑魔法"></a>CSS黑魔法</h2><p><strong>各属性之间相互影响</strong></p>
-<ul>
-<li>margin 和 border：</li>
-</ul>
-<ol>
-<li>上下两个div之间的margin会选择大的呈现</li>
-<li>用一个0.1px的border隔开，上下还是原来的margin数；</li>
-<li>用display：table，上下还是原来的margin数；</li>
-<li>用display：flex，上下还是原来的margin数；</li>
-<li>用overflow：hidden，上下还是原来的margin数；
-        
-          <a class="article-more-a" href="/2018/02/01/CSS小结/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/01/CSS小结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CSS-三" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/01/CSS-三/">CSS(三)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/01/CSS-三/" class="archive-article-date">
-  	<time datetime="2018-02-01T02:37:38.483Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>遮罩</strong><br><img src="https://i.imgur.com/BLg9f51.png" alt=""><br><img src="https://i.imgur.com/StiPZuO.png" alt=""></p>
-<ol>
-<li>高能：遮罩的插入图片是在CSS中完成的</li>
-<li>background-image/background-position/background-size 保证背景图均匀平铺
-        
-          <a class="article-more-a" href="/2018/02/01/CSS-三/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/01/CSS-三/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CSS-二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/31/CSS-二/">CSS(二)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/31/CSS-二/" class="archive-article-date">
-  	<time datetime="2018-01-31T01:17:53.282Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>这次主要更新userCard部分</strong></p>
-<ol>
-<li>CSS的两大bug：width 和 height;尽量不要写死。规避手段：max-width</li>
-<li>.xxx {text-align: center;} ：让子代的内联元素居中排列，<strong>【内联元素居中要把t-a加在父级元素上】</strong></li>
-<li>width 的默认值是 auto</li>
-<li>display: inline: 设置 宽高 / margin-top/ margin-buttom 都是无效的
-        
-          <a class="article-more-a" href="/2018/01/31/CSS-二/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/31/CSS-二/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CSS-一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/30/CSS-一/">CSS(一)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/30/CSS-一/" class="archive-article-date">
-  	<time datetime="2018-01-30T05:49:14.964Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li><code>http://htmlpreview.github.io/?</code> 拼接 <code>https://github.com/wangsiyuan233/MyResume/blob/master/cv.html</code>可以直接预览我的简历进度。重点是前面的：<code>http://htmlpreview.github.io/?</code>
-        
-          <a class="article-more-a" href="/2018/01/30/CSS-一/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/30/CSS-一/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -566,8 +344,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

@@ -6,24 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>深入理解JavaScript--闭包系列(2) | wangsiyuan</title>
+  <title>深入理解JavaScript--闭包系列(3) | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="先说作用域
-光知道“JavaScript没有块级作用域”是完全不够的，你需要知道的是——JavaScript除了全局作用域之外，只有函数可以创建的作用域。所以，我们在声明变量时，全局代码要在代码前端声明，函数中要在函数体一开始就声明好。除了这两个地方，其他地方都不要出现变量声明。而且建议用“单var”形式。123456789101112var a = 10;    b = 20;function">
+  <meta name="description" content="定义一下自由变量：如下图这个函数，x就不是f1里定义的变量，它就是个自由变量。12345var x = 23;function f1()&amp;#123;	var b = 34;	console.log(x + b)&amp;#125;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入理解JavaScript--闭包系列(2)">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/03/27/闭包系列-2/index.html">
+<meta property="og:title" content="深入理解JavaScript--闭包系列(3)">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/03/27/闭包系列-3/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="先说作用域
-光知道“JavaScript没有块级作用域”是完全不够的，你需要知道的是——JavaScript除了全局作用域之外，只有函数可以创建的作用域。所以，我们在声明变量时，全局代码要在代码前端声明，函数中要在函数体一开始就声明好。除了这两个地方，其他地方都不要出现变量声明。而且建议用“单var”形式。123456789101112var a = 10;    b = 20;function">
-<meta property="og:image" content="https://i.imgur.com/SbjCI3s.png">
-<meta property="og:image" content="https://i.imgur.com/PcGbarw.png">
-<meta property="og:updated_time" content="2018-03-27T10:35:05.655Z">
+<meta property="og:description" content="定义一下自由变量：如下图这个函数，x就不是f1里定义的变量，它就是个自由变量。12345var x = 23;function f1()&amp;#123;	var b = 34;	console.log(x + b)&amp;#125;">
+<meta property="og:updated_time" content="2018-03-27T11:49:00.910Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入理解JavaScript--闭包系列(2)">
-<meta name="twitter:description" content="先说作用域
-光知道“JavaScript没有块级作用域”是完全不够的，你需要知道的是——JavaScript除了全局作用域之外，只有函数可以创建的作用域。所以，我们在声明变量时，全局代码要在代码前端声明，函数中要在函数体一开始就声明好。除了这两个地方，其他地方都不要出现变量声明。而且建议用“单var”形式。123456789101112var a = 10;    b = 20;function">
-<meta name="twitter:image" content="https://i.imgur.com/SbjCI3s.png">
+<meta name="twitter:title" content="深入理解JavaScript--闭包系列(3)">
+<meta name="twitter:description" content="定义一下自由变量：如下图这个函数，x就不是f1里定义的变量，它就是个自由变量。12345var x = 23;function f1()&amp;#123;	var b = 34;	console.log(x + b)&amp;#125;">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -149,31 +143,31 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-闭包系列-2" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-闭包系列-3" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      深入理解JavaScript--闭包系列(2)
+      深入理解JavaScript--闭包系列(3)
     </h1>
   
 
         
-        <a href="/2018/03/27/闭包系列-2/" class="archive-article-date">
-  	<time datetime="2018-03-27T10:35:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-27</time>
+        <a href="/2018/03/27/闭包系列-3/" class="archive-article-date">
+  	<time datetime="2018-03-27T10:55:40.076Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>先说<strong>作用域</strong></p>
-<p>光知道“JavaScript没有块级作用域”是完全不够的，你需要知道的是——JavaScript除了全局作用域之外，只有函数可以创建的作用域。<br>所以，我们在声明变量时，全局代码要在代码前端声明，函数中要在函数体一开始就声明好。除了这两个地方，其他地方都不要出现变量声明。而且建议用“单var”形式。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</div><div class="line">    b = <span class="number">20</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">100</span>;</div><div class="line">		c = <span class="number">300</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> a = <span class="number">1000</span>;</div><div class="line">		    d = <span class="number">4000</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><img src="https://i.imgur.com/SbjCI3s.png" alt=""><br>如图，f1就是f2的上级作用域</p>
-<p>除了全局作用域之外，每个函数都会创建自己的作用域，作用域在函数定义时就已经确定了。而不是在函数调用时确定。<br>作用域最大的用处就是隔离变量，不同作用域下同名变量不会有冲突。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</div><div class="line">    b = <span class="number">20</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">100</span>;</div><div class="line">		c = <span class="number">300</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> a = <span class="number">1000</span>;</div><div class="line">		    d = <span class="number">4000</span>;</div><div class="line">	&#125;</div><div class="line">f2(<span class="number">111</span>);</div><div class="line">f2(<span class="number">222</span>);</div><div class="line">&#125;</div><div class="line">f1(<span class="number">33</span>);</div></pre></td></tr></table></figure></p>
-<p><img src="https://i.imgur.com/PcGbarw.png" alt=""><br>作用域中变量的值是在执行过程中产生的确定的，而作用域却是在函数创建时就确定了。所以，如果要查找一个作用域下某个变量的值，就需要找到这个作用域对应的执行上下文环境，再在其中寻找变量的值。<br>所以，如果要查找一个作用域下某个变量的值，就需要找到这个作用域对应的执行上下文环境，再在其中寻找变量的值。</p>
+        <p>定义一下<strong>自由变量</strong>：如下图这个函数，x就不是f1里定义的变量，它就是个自由变量。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">23</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> b = <span class="number">34</span>;</div><div class="line">	<span class="built_in">console</span>.log(x + b)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>所以自由变量就是在当前函数的父级作用域里面找吗？<br>当然不是的。<br>1、可能它的作用域链上根本就没有这个函数，最后就是undefined<br>2、最重要的是从【创造】这个函数的作用域里寻找，而不是【调用】。<br>如下图：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x= <span class="number">76</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(x);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">f2</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> x = <span class="number">32</span>;</div><div class="line">	(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;f2();&#125;)(); </div><div class="line">&#125;</div><div class="line">show(f1)</div></pre></td></tr></table></figure></p>
+<p>引出<strong>作用域链</strong>的概念，一层一层的往外找：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">34</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> b = <span class="number">21</span>;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(a + b)</div><div class="line">&#125;</div><div class="line">	<span class="keyword">return</span> f2;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> x = f1();</div><div class="line">	b = <span class="number">248</span>；</div><div class="line">x();</div></pre></td></tr></table></figure></p>
+<p>第7行时，f1()返回的是f2，将f2赋值给x,第9行x()相当于console.log（a + b）</p>
 
       
 
@@ -264,7 +258,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/03/27/闭包系列-2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/03/27/闭包系列-3/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -279,8 +273,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2018/03/26/闭包系列-1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">深入理解JavaScript--闭包系列(1)</div>
+    <a href="/2018/03/26/闭包系列-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">深入理解JavaScript--闭包系列(2)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -390,15 +384,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
