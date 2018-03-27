@@ -6,20 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>深入理解JavaScript--原型闭包系列(4) | wangsiyuan</title>
+  <title>Tag: 聊聊系列 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="哈哈被骗啦(…)还没轮到原型链这一小节我们将引出一个中介概念 instanceof">
-<meta property="og:type" content="article">
-<meta property="og:title" content="深入理解JavaScript--原型闭包系列(4)">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/03/25/原型闭包系列-4/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="wangsiyuan">
+<meta property="og:url" content="wangsiyuan233.github.io/tags/聊聊系列/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="哈哈被骗啦(…)还没轮到原型链这一小节我们将引出一个中介概念 instanceof">
-<meta property="og:image" content="https://i.imgur.com/r7M68Fc.png">
-<meta property="og:updated_time" content="2018-03-27T06:55:47.776Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入理解JavaScript--原型闭包系列(4)">
-<meta name="twitter:description" content="哈哈被骗啦(…)还没轮到原型链这一小节我们将引出一个中介概念 instanceof">
-<meta name="twitter:image" content="https://i.imgur.com/r7M68Fc.png">
+<meta name="twitter:title" content="wangsiyuan">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -54,7 +48,7 @@
 		  <h1 class="header-author"><a href="/">wangsiyuan</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">不试试怎么知道</p>
+		<p class="header-subtitle">小马过河</p>
 		
 
 		<nav class="header-menu">
@@ -110,7 +104,7 @@
 			  <h1 class="header-author js-header-author">wangsiyuan</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>不试试怎么知道<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>小马过河<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -155,187 +149,98 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-原型闭包系列-4" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      深入理解JavaScript--原型闭包系列(4)
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/03/25/聊聊系列-2-this/" class="archive-article-date">
+  	<time datetime="2018-03-25T10:14:52.978Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-25</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/03/25/聊聊系列-2-this/">聊聊系列(2)--this函数</a>
     </h1>
   
 
-        
-        <a href="/2018/03/25/原型闭包系列-4/" class="archive-article-date">
-  	<time datetime="2018-03-25T06:37:02.292Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>哈哈被骗啦(…)还没轮到原型链<br>这一小节我们将引出一个中介概念 <code>instanceof</code><br><a id="more"></a></p>
-<p>对于值类型，我们可以通过typeof判断，string/number/boolean都很清楚，但是typeof在判断到引用类型的时候，返回值只有object/function，我们不知道它到底是一个object对象，还是数组，还是new Number等等。这个时候就需要用到instanceof。</p>
-<p>instanceof有一个判断准则是：沿着对象的<code>__proto__</code> 和 函数的<code>prototype</code>的两端同时寻找，如果两条线能找到同一个引用，即同一个对象，那么就返回true。如果找到终点还未重合，则返回false。<br><img src="https://i.imgur.com/r7M68Fc.png" alt=""><br>由上面这张图可以得出以下不着调的结论：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Function</span> Foo()&#123;&#125;</div><div class="line"><span class="keyword">var</span> f1 = <span class="keyword">new</span> Foo();</div><div class="line"><span class="built_in">console</span>.log(f1 <span class="keyword">instanceof</span> Foo); <span class="comment">//true</span></div><div class="line"><span class="built_in">console</span>.log(f1 <span class="keyword">instanceof</span> <span class="built_in">Object</span>); <span class="comment">//true</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span> <span class="keyword">instanceof</span> <span class="built_in">Function</span>); <span class="comment">//true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Function</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span>); <span class="comment">//true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Function</span> <span class="keyword">instanceof</span> <span class="built_in">Function</span>); <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
-<p>所以这些乱七八糟的关系图是为什么呢？？？<br>原来，instanceof表示的就是一种继承关系，或者原型链的结构。</p>
-<hr>
-<p>访问一个对象的属性时，先在基本属性中查找，如果没有，再沿着<code>__proto__</code>这条链向上找，这就是原型链。</p>
-<p>那么我们在实际应用中如何区分一个属性到底是基本的还是从原型中找到的呢？大家可能都知道答案了——hasOwnProperty，特别是在for…in…循环中，一定要注意。</p>
-<p>由于所有的对象的原型链都会找到Object.prototype，因此所有的对象都会有Object.prototype的方法（hasOwnProperty）。这就是所谓的“继承”。</p>
-<hr>
-<p>沿着<code>__proto__</code>向上找就是<strong>原型链</strong>；<br>最后把Object.prototype里的hasOwnProperty（或者Function.prototype里的call）拿来直接用，就是<strong>继承</strong>。</p>
-<p>这意味着，创建的对象可以增加属性，继承的方法不合适也可以修改。</p>
-<p>可以看看我以前总结的 <a href="wangsiyuan233.cn/2018/03/08/原型链实例/">原型链实例</a></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">原型链</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">聊聊系列</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/03/25/原型闭包系列-4/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
-  
-    <a href="/2018/03/25/聊聊系列-1-new函数/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          聊聊系列(1)--new函数
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2018/03/25/原型闭包系列-3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">深入理解JavaScript--原型闭包系列(3)</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/03/25/聊聊系列-1-new函数/" class="archive-article-date">
+  	<time datetime="2018-03-25T10:14:52.978Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-25</time>
+</a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
+    	 
   
-  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/03/25/聊聊系列-1-new函数/">聊聊系列(1)--new函数</a>
+    </h1>
   
 
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">聊聊系列</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
   
 
-  
-
-  
+    
 
 
           </div>
@@ -358,9 +263,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
@@ -441,6 +346,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
             
             <div class="clearfix"></div>

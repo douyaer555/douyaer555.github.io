@@ -9,18 +9,18 @@
   <title>聊聊系列(2)--this函数 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="先从 this 说起吧！（这一天终于来了）
-工作中我们总会面临：这个this指的是代码里的那一块呢？14:24">
+工作中我们总会面临：这个this指的是代码里的那一块呢?">
 <meta property="og:type" content="article">
 <meta property="og:title" content="聊聊系列(2)--this函数">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/03/25/聊聊系列-2-this/index.html">
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="先从 this 说起吧！（这一天终于来了）
-工作中我们总会面临：这个this指的是代码里的那一块呢？14:24">
-<meta property="og:updated_time" content="2018-03-27T06:34:38.645Z">
+工作中我们总会面临：这个this指的是代码里的那一块呢?">
+<meta property="og:updated_time" content="2018-03-27T07:29:49.058Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="聊聊系列(2)--this函数">
 <meta name="twitter:description" content="先从 this 说起吧！（这一天终于来了）
-工作中我们总会面临：这个this指的是代码里的那一块呢？14:24">
+工作中我们总会面临：这个this指的是代码里的那一块呢?">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -55,7 +55,7 @@
 		  <h1 class="header-author"><a href="/">wangsiyuan</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">不试试怎么知道</p>
+		<p class="header-subtitle">小马过河</p>
 		
 
 		<nav class="header-menu">
@@ -111,7 +111,7 @@
 			  <h1 class="header-author js-header-author">wangsiyuan</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>不试试怎么知道<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>小马过河<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -177,7 +177,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>先从 this 说起吧！<br>（这一天终于来了）</p>
-<p>工作中我们总会面临：这个this指的是代码里的那一块呢？14:24<br><a id="more"></a><br>结论：<strong>「this 就是 call 的第一个参数」</strong><br>1、ES5调用函数的三种方式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//第一种</span></div><div class="line">func(p1, p2) 等价于</div><div class="line">func.call(<span class="literal">undefined</span>, p1, p2) <span class="comment">//this为window</span></div><div class="line"><span class="comment">//fn() 是 strict mode，this 就是 undefined (记牢！)</span></div><div class="line"></div><div class="line"><span class="comment">//第二种</span></div><div class="line">obj.child.method(p1, p2) 等价于</div><div class="line">obj.child.method.call(obj.child, p1, p2) <span class="comment">//this为obj</span></div><div class="line"></div><div class="line"><span class="comment">//第三种</span></div><div class="line">func.call(context, p1, p2)  <span class="comment">//this就为context</span></div></pre></td></tr></table></figure></p>
+<p>工作中我们总会面临：这个this指的是代码里的那一块呢?<br><a id="more"></a><br>结论：<strong>「this 就是 call 的第一个参数」</strong><br>1、ES5调用函数的三种方式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//第一种</span></div><div class="line">func(p1, p2) 等价于</div><div class="line">func.call(<span class="literal">undefined</span>, p1, p2) <span class="comment">//this为window</span></div><div class="line"><span class="comment">//fn() 是 strict mode，this 就是 undefined (记牢！)</span></div><div class="line"></div><div class="line"><span class="comment">//第二种</span></div><div class="line">obj.child.method(p1, p2) 等价于</div><div class="line">obj.child.method.call(obj.child, p1, p2) <span class="comment">//this为obj</span></div><div class="line"></div><div class="line"><span class="comment">//第三种</span></div><div class="line">func.call(context, p1, p2)  <span class="comment">//this就为context</span></div></pre></td></tr></table></figure></p>
 <p>2、ES6的箭头函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//箭头函数没有自己的this，它的this都指向外层</span></div><div class="line"><span class="comment">//箭头函数里面 this 跟外面的 this 的值一模一样</span></div><div class="line"></div><div class="line"><span class="comment">//箭头函数里面没有this，this外面的环境是window,全局又没有定义name属性，则为undefined</span></div><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">  <span class="attr">name</span>: <span class="string">"test"</span>,</div><div class="line">  <span class="attr">shout</span>: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="keyword">this</span>.name) <span class="comment">//undefined</span></div><div class="line">&#125;</div><div class="line">person.shout();</div><div class="line"></div><div class="line"><span class="comment">//箭头函数里面没有this，this外面的属性是person，person.name为test</span></div><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">  <span class="attr">name</span>: <span class="string">"test"</span>,</div><div class="line">  shout()&#123;</div><div class="line">    <span class="keyword">const</span> shout = <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="keyword">this</span>.name); <span class="comment">//test</span></div><div class="line">    <span class="keyword">return</span> shout;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">person.shout()();</div></pre></td></tr></table></figure></p>
 <p>3、构造函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//普通函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = <span class="string">'wangsiyuan'</span>;</div><div class="line">	<span class="keyword">this</span>.position = <span class="string">'全栈工程师'</span>;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">//undefined会转换成window，最终是window</span></div><div class="line">&#125;</div><div class="line">Foo();  <span class="comment">//相当于Foo.call(undefined)</span></div><div class="line"></div><div class="line"><span class="comment">//new函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = <span class="string">'wangsiyuan'</span>;</div><div class="line">	<span class="keyword">this</span>.position = <span class="string">'全栈工程师'</span>;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">//Foo&#123;name:'wangsiyuan',position:'全栈工程师'&#125;</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> f1 = <span class="keyword">new</span> Foo();</div><div class="line"><span class="built_in">console</span>.log(f1.name) <span class="comment">// wangsiyuan</span></div><div class="line"><span class="built_in">console</span>.log(f1.name) <span class="comment">// 全栈工程师</span></div></pre></td></tr></table></figure></p>
 <p>4、构造函数的prototype中this代表什么<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//不仅仅是构造函数的prototype，即便是在整个原型链中，this代表的也都是当前对象的值。</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = <span class="string">'wangsiyuan'</span>;</div><div class="line">	<span class="keyword">this</span>.position = <span class="string">'全栈工程师'</span>;</div><div class="line">&#125;</div><div class="line">Foo.prototype.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">//Foo&#123;name:'wangsiyuan',position:'全栈工程师'&#125;</span></div><div class="line">&#125;</div><div class="line">	</div><div class="line"><span class="keyword">var</span> f1 = <span class="keyword">new</span> Foo();</div><div class="line">f1.getName(); <span class="comment">//wangsiyuan</span></div><div class="line"><span class="comment">//在Fn.prototype.getName函数中，this指向的是f1对象。因此可以通过this.name获取f1.name的值</span></div></pre></td></tr></table></figure></p>
@@ -217,6 +217,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">聊聊系列</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -280,6 +291,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/03/25/闭包系列-1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          深入理解JavaScript--闭包系列(1)
+        
+      </div>
+    </a>
   
   
     <a href="/2018/03/25/聊聊系列-1-new函数/" id="article-nav-older" class="article-nav-link-wrap">
@@ -422,6 +442,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
             
             <div class="clearfix"></div>

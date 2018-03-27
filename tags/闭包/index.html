@@ -6,18 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>深入理解JavaScript--原型闭包系列(2) | wangsiyuan</title>
+  <title>Tag: 闭包 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="接上节数组、函数和对象这三者的关系非常有趣数组可以看做是对象的一个子集；但是函数和对象却类似于鸡和蛋的关系。一起来看看吧~">
-<meta property="og:type" content="article">
-<meta property="og:title" content="深入理解JavaScript--原型闭包系列(2)">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/03/25/原型闭包系列-2/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="wangsiyuan">
+<meta property="og:url" content="wangsiyuan233.github.io/tags/闭包/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="接上节数组、函数和对象这三者的关系非常有趣数组可以看做是对象的一个子集；但是函数和对象却类似于鸡和蛋的关系。一起来看看吧~">
-<meta property="og:updated_time" content="2018-03-27T07:02:38.696Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入理解JavaScript--原型闭包系列(2)">
-<meta name="twitter:description" content="接上节数组、函数和对象这三者的关系非常有趣数组可以看做是对象的一个子集；但是函数和对象却类似于鸡和蛋的关系。一起来看看吧~">
+<meta name="twitter:title" content="wangsiyuan">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -52,7 +48,7 @@
 		  <h1 class="header-author"><a href="/">wangsiyuan</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">不试试怎么知道</p>
+		<p class="header-subtitle">小马过河</p>
 		
 
 		<nav class="header-menu">
@@ -108,7 +104,7 @@
 			  <h1 class="header-author js-header-author">wangsiyuan</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>不试试怎么知道<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>小马过河<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -153,181 +149,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-原型闭包系列-2" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      深入理解JavaScript--原型闭包系列(2)
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/03/25/闭包系列-1/" class="archive-article-date">
+  	<time datetime="2018-03-25T10:14:52.978Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-25</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/03/25/闭包系列-1/">深入理解JavaScript--闭包系列(1)</a>
     </h1>
   
 
-        
-        <a href="/2018/03/25/原型闭包系列-2/" class="archive-article-date">
-  	<time datetime="2018-03-25T03:10:47.707Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://wangsiyuan233.cn/深入理解JavaScript-1.html" target="_blank" rel="external">接上节</a><br>数组、函数和对象这三者的关系非常有趣<br>数组可以看做是对象的一个子集；<br>但是函数和对象却类似于鸡和蛋的关系。<br>一起来看看吧~<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//粗一看对象好像不需要函数来创建呀</span></div><div class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">a</span>: <span class="number">10</span>, <span class="attr">b</span>: <span class="number">20</span> &#125;;</div><div class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>, <span class="string">'x'</span>, <span class="literal">true</span>];</div><div class="line"></div><div class="line"><span class="comment">//其实这才是上面两个的对象的真面目</span></div><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">obj.a = <span class="number">10</span>;</div><div class="line">obj.b = <span class="number">20</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">arr[<span class="number">0</span>] = <span class="number">5</span>;</div><div class="line">arr[<span class="number">1</span>] = <span class="string">'x'</span>;</div><div class="line">arr[<span class="number">2</span>] = <span class="literal">true</span>;</div><div class="line"></div><div class="line"><span class="comment">//Object和Array也都是function</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> (<span class="built_in">Object</span>));  <span class="comment">// function</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> (<span class="built_in">Array</span>));  <span class="comment">// function</span></div></pre></td></tr></table></figure></p>
-<h2 id="结论：对象都是通过函数创建的"><a href="#结论：对象都是通过函数创建的" class="headerlink" title="结论：对象都是通过函数创建的"></a>结论：<strong>对象都是通过函数创建的</strong></h2><p>在上一节我们说了：一切（引用类型）都是对象；<br>现在的结论是：对象都是通过函数创建的；<br>有没有被绕晕呢？</p>
-<hr>
-<p>以前我们说过，函数创建了对象，（函数是属性的集合），我们可以给函数定制属于自己的属性，那么函数有哪些属性呢？说到这儿，不得不提我们大名鼎鼎的 prototype 啦！<br>每个函数都有一个属性叫做prototype；<br>prototype的属性值是一个对象（属性的集合）；<br>prototype默认的仅有的属性叫constructor，指向这个函数本身。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//自定义Fn的属性</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>) </span>&#123; &#125;</div><div class="line">Fn.prototype.name = <span class="string">'wangsiyuan'</span>;</div><div class="line">Fn.prototype.getPosition = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">return</span> 全栈工程师;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>) </span>&#123; &#125;</div><div class="line">Fn.prototype.name = <span class="string">'wangsiyuan'</span>;</div><div class="line">Fn.prototype.getPosition = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">return</span> 全栈工程师;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> fn = <span class="keyword">new</span> Fn();</div><div class="line"><span class="built_in">console</span>.log(fn.name);</div><div class="line"><span class="built_in">console</span>.log(fn.getPosition());</div></pre></td></tr></table></figure>
-<p>fn对象是通过Fn函数new出来的;<br>即 ———&gt;&gt;&gt; 对象都是通过函数创建出来的;<br>即 ———&gt;&gt;&gt; fn对象可以调用Fn.prototype中的属性；<br>因为 ———&gt;&gt;&gt; 每个对象都有一个“隐式原型”<code>__proto__</code>，它指向创建该对象的函数的prototype；<br>即 ———&gt;&gt;&gt; <code>fn.__proto__ === Fn.prototype.</code><br>其实prototype的推导过程并没有那么可怕嘛！</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">原型链</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">闭包</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/03/25/原型闭包系列-2/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/03/25/原型闭包系列-3/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          深入理解JavaScript--原型闭包系列(3)
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/03/25/原型闭包系列-1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">深入理解JavaScript--原型闭包系列(1)</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -350,9 +225,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
@@ -433,6 +308,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
             
             <div class="clearfix"></div>
