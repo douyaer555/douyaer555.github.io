@@ -171,19 +171,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>一、JS数据</strong><br>1、七种数据类型：number string boolean symbol undefined null object<br>2、function不是一种类型<br>3、二进制：0b11；八进制：011；十六进制：0x11<br>4、object：<br>–object 就是上面前6种基本类型（无序地）组合在一起<br>–object 里面可以有 object<br>–object 的 key 一律是字符串，不存在其他类型的 key<br>–object[‘’] 是合法的<br>–object[‘key’] 可以写作 object.key<br>–注意 object.key 与 object[key] 不同<br>–delete object[‘key’]<br>–’key’ in object</p>
-<p><strong>二、JS类型</strong><br>1、任意类型变数字：<br>–Number(x)<br>–parseInt(x, 10)<br>–parseFloat(x)<br>–x - 0<br>–+x<br>2、任意类型变布尔：<br>–Boolean(x)<br>–!!x<br>3、赋值判断:简单类型的数据没有深浅；复杂的对象才有深浅<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">1</span></div><div class="line"><span class="keyword">var</span> b = a</div><div class="line">b = <span class="number">2</span></div><div class="line"><span class="comment">//请问 a 显示是几？  //1</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;</div><div class="line"><span class="keyword">var</span> b = a</div><div class="line">b = &#123;<span class="attr">name</span>: <span class="string">'b'</span>&#125;</div><div class="line"><span class="comment">//请问现在 a.name 是多少？ //'a'</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;</div><div class="line"><span class="keyword">var</span> b = a</div><div class="line">b.name = <span class="string">'b'</span></div><div class="line"><span class="comment">//请问现在 a.name 是多少？//'b'</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;</div><div class="line"><span class="keyword">var</span> b = a</div><div class="line">b = <span class="literal">null</span></div><div class="line">请问现在 a 是什么？ <span class="comment">//object</span></div></pre></td></tr></table></figure>
-<p><strong>三、JS对象</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//重要公式:</span></div><div class="line"><span class="keyword">var</span> 对象 = <span class="keyword">new</span> 函数()</div><div class="line"><span class="comment">//对象.__proto__ === 函数.prototype</span></div></pre></td></tr></table></figure></p>
-<p>1、window的属性就是全局变量； window就是一个哈希表，有很多属性。<br>2、全局函数<br>–Number<br>var n = new Number(1) 创建一个 Number 对象<br>1 与 new Number(1) 的区别是什么？看内存图<br>–String<br>var s = new String(‘hello’) 创建一个 String 对象<br>‘hello’ 与 new String(‘hello’) 的区别是什么？看内存图<br>–Boolean<br>var b = new Boolean(true) 创建一个 Boolean 对象<br>true 与 new Boolean(true) 的区别是什么？看内存图<br>–Object<br>var o1 = {}<br>var o2 = new Object()<br>o1 和 o2 没区别<br>3、function是关键字；Function是全局变量<br>4、公用的属性在哪儿呢？所有对象都有 toString 和 valueOf 属性，那么我们是否有必要给每个对象一个 toString 和 valueOf 呢？明显不需要。<br>JS 的做法是把 toString 和 valueOf 放在一个对象里（暂且叫做公用属性组成的对象）<br>然后让每一个对象的 <strong>proto</strong> 存储这个「公用属性组成的对象」的地址。</p>
-<p><strong>四、JS数组</strong><br>1、new一个Number、String和布尔时，这些基本类型会变成对象；new一个object/functionu时，没有影响<br>2、四种函数声明方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//具名函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x,y</span>)</span>&#123;</div><div class="line">     <span class="keyword">return</span> x + y</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//匿名函数 + var</span></div><div class="line"> <span class="keyword">var</span> f</div><div class="line"> f = <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123; <span class="keyword">return</span> x+y &#125;</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//具名函数 + var</span></div><div class="line"> <span class="keyword">var</span> f1 </div><div class="line"> f1= <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params">x,y</span>)</span>&#123;</div><div class="line">     <span class="keyword">return</span> x+y</div><div class="line"> &#125;</div><div class="line"> <span class="built_in">console</span>.log(f2) <span class="comment">// undefined</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//window.Function + var </span></div><div class="line"><span class="keyword">var</span> f</div><div class="line"> f = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">'x'</span>,<span class="string">'y'</span>,<span class="string">'return x+y'</span>)</div></pre></td></tr></table></figure>
-<p>3、数组的本质：<br>–人类理解：数组就是数据的有序集合<br>–JS理解：数据就是原型链中有 Array.prototype 的对象<br>4、window.Array 全局对象（也是函数）；加不加 new 结果一样。<br>window.Function 全局对象（也是函数）；加不加 new 结果一样。<br>5、伪数组特征：<br>–有 0,1,2,3,4,5…n,length 这些 key 的对象<br>–原型链中没有 Array.prototype<br>伪数组例子：<code>arguments 对象</code>和<code>document.querySelectAll(&#39;div&#39;) 返回的对象</code><br>6、array.prototype.forEach()是一个函数<br>–a.forEach()可以接收一个函数：a.forEach(function(){})<br>–for循环可以continue,break，array.prototype.forEach()不可以<br>7、forEach()没有返回值，map()有<br>8、a.reduce(function(sum,n){return sum+n},0)</p>
-
+        <p><strong>一、JS数据</strong><br>1、七种数据类型：number string boolean symbol undefined null object<br>2、function不是一种类型<br>3、二进制：0b11；八进制：011；十六进制：0x11<br>4、object：<br>–object 就是上面前6种基本类型（无序地）组合在一起<br>–object 里面可以有 object<br>–object 的 key 一律是字符串，不存在其他类型的 key<br>–object[‘’] 是合法的<br>–object[‘key’] 可以写作 object.key<br>–注意 object.key 与 object[key] 不同<br>–delete object[‘key’]<br>–’key’ in object<br>
+        
+          <a class="article-more-a" href="/2018/02/09/周结-JS初印象/#more">more >></a>
+        
       
 
       
@@ -191,6 +182,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -246,15 +252,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="lt-div-gt-的高度由什么决定呢？-（不支持IE）"><a href="#lt-div-gt-的高度由什么决定呢？-（不支持IE）" class="headerlink" title="&lt;div&gt;的高度由什么决定呢？ ##（不支持IE）"></a><code>&lt;div&gt;</code>的高度由什么决定呢？ ##（不支持IE）</h2><ol>
-<li>只有内联元素<br>只有内联时，高度是由行高（line-height）决定的。（与字体的大小无关）<br><a href="http://js.jirengu.com/befaqebuva/1/edit?html,output" target="_blank" rel="external"><strong>套路1：中文上下对齐</strong></a>//<a href="https://github.com/wangsiyuan233/jirengu--fangfang/blob/master/CSS-div高度-对齐.html" target="_blank" rel="external">[备用链接]</a><br><a href="http://js.jirengu.com/domacivuzu/1/edit?html,output" target="_blank" rel="external"><strong>套路2：一行文字超出部分变省略号</strong></a>//<a href="https://github.com/wangsiyuan233/jirengu--fangfang/blob/master/CSS-div高度-一行省略.html" target="_blank" rel="external">[备用链接]</a><br><a href="http://js.jirengu.com/hesekirunu/1/edit?html,output" target="_blank" rel="external"><strong>套路3：多行文字超出部分变省略号</strong></a>//<a href="https://github.com/wangsiyuan233/jirengu--fangfang/blob/master/CSS-div高度-多行省略.html" target="_blank" rel="external">[备用链接]</a><br><strong>套路4：div里文字垂直居中</strong>:用padding和text-align:center</li>
-</ol>
-<ol>
-<li>只有块级元素（div里div居中）<br><a href="http://js.jirengu.com/nibirivabi/1/edit?html,output" target="_blank" rel="external"><strong>套路1：父定子中</strong></a>//<a href="https://github.com/wangsiyuan233/jirengu--fangfang/blob/master/CSS-div高度-父定子中.html" target="_blank" rel="external">[备用链接]</a><br><strong>套路2：margin合并</strong>:如果父级元素没有【padding、border和overflow：hidden】挡住子级，子级撑开时就会越过它，margin就会合并在一起。<br><a href="http://js.jirengu.com/dobiposone/1/edit?html,output" target="_blank" rel="external"><strong>套路3：1:1 响应式div</strong></a>//<a href="https://github.com/wangsiyuan233/jirengu--fangfang/blob/master/CSS-div高度-一比一.html" target="_blank" rel="external">[备用链接]</a></li>
-</ol>
-<ol>
-<li>内联+块级<br>文档流的高度是由内联＋块级的高度决定的，脱离文档流就不算高度里面了<br>包括不限于：float：left；position：absolute / fixed;<br>绝对定位absolute/fixed脱离了文档流，相对定位relative不脱离文档流；</li>
-</ol>
-
+<li>只有内联元素<br>只有内联时，高度是由行高（line-height）决定的。（与字体的大小无关）
+        
+          <a class="article-more-a" href="/2018/02/04/CSS-四/#more">more >></a>
+        
       
 
       
@@ -262,6 +263,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -325,45 +337,10 @@
 <li>用一个0.1px的border隔开，上下还是原来的margin数；</li>
 <li>用display：table，上下还是原来的margin数；</li>
 <li>用display：flex，上下还是原来的margin数；</li>
-<li>用overflow：hidden，上下还是原来的margin数；</li>
-</ol>
-<ul>
-<li><p>li的小圆点 和 display:<br>当 display:inline 或者 display:block的时候，li的小圆点会消失；</p>
-</li>
-<li><p>position 和 display：<br>当position为 absolute时，设置好的display:inline会变成display:block;</p>
-</li>
-</ul>
-<p><strong>各元素之间相互影响</strong></p>
-<ul>
-<li><p>position 和 transform：<br>position 为 fixed 时，transform scale（0.9），共同缩小页面，元素并没有停留在原来的位置，相对页面固定，而是一起缩小了！</p>
-</li>
-<li><p>float 和 inline:<br>浮动并不仅仅是“在上面”，更深刻的含义是 —— “图文混排” “文字环绕”；</p>
-</li>
-</ul>
-<hr>
-<h2 id="CSS套路"><a href="#CSS套路" class="headerlink" title="CSS套路"></a>CSS套路</h2><ul>
-<li><strong>布局</strong></li>
-</ul>
-<ol>
-<li>web端：IE8用float；chrome用flex；</li>
-<li>手机端：flex；</li>
-</ol>
-<ul>
-<li><strong>水平居中</strong></li>
-</ul>
-<ol>
-<li>inline元素：.parent{text-align：center;} .child{inline / inline-block}</li>
-<li>block元素：child宽度不确定时用margin-left，margin-right；child宽度确定时用margin：auto</li>
-</ol>
-<ul>
-<li><strong>垂直居中</strong>(要点是不要写死height)</li>
-</ul>
-<ol>
-<li>parent高度确定：不管child高度确不确定，都是.parent{padding-top，padding-button;} </li>
-<li>parent高度不确定且child高度不确定，IE8用table；chrome 和 mobile 用flex；（parent能不写死就不要手欠！）</li>
-</ol>
-<hr>
-
+<li>用overflow：hidden，上下还是原来的margin数；
+        
+          <a class="article-more-a" href="/2018/02/01/CSS小结/#more">more >></a>
+        
       
 
       
@@ -371,6 +348,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -428,38 +416,10 @@
         <p><strong>遮罩</strong><br><img src="https://i.imgur.com/BLg9f51.png" alt=""><br><img src="https://i.imgur.com/StiPZuO.png" alt=""></p>
 <ol>
 <li>高能：遮罩的插入图片是在CSS中完成的</li>
-<li>background-image/background-position/background-size 保证背景图均匀平铺</li>
-</ol>
-<hr>
-<p><strong>进度条</strong><br><img src="https://i.imgur.com/VvyvN34.png" alt=""><br><img src="https://i.imgur.com/qQ3bNlU.png" alt=""></p>
-<ol>
-<li>progress的height为100%时把progressbar撑起来，width为80%表示进度。</li>
-<li>CSS里统一设置的进度可以靠在HTML里的sytle标签来调节</li>
-</ol>
-<hr>
-<p><strong>任意朝向三角形</strong><br><img src="https://i.imgur.com/mvYDsxp.png" alt=""></p>
-<p>先构造矩形，再transition<br><a href="http://https://css-tricks.com/examples/ShapesOfCSS" target="_blank" rel="external">CSS Tricks</a></p>
-<hr>
-<p><strong><code>&lt;li&gt;</code>元素横向排列有间距</strong></p>
-<ol>
-<li><code>&lt;nav&gt;&lt;ol&gt;&lt;li&gt;A&lt;/li&gt;&lt;li&gt;B&lt;/li&gt;&lt;li&gt;C&lt;/li&gt;&lt;/ol&gt;&lt;/nav&gt;</code></li>
-<li>li元素左浮动，ol元素清除浮动；</li>
-<li>去除li元素的默认样式（list-style:none）,给li元素添加marginig撑开；</li>
-<li>实现li元素有高度排列(就要去爸爸那儿找)：<code>.ol{display: inline-block;vertical-align: top;}</code></li>
-<li>实现ol元素居中（也要去ol的爸爸找）：<code>.nav{text-align: center;}</code></li>
-</ol>
-<hr>
-<p><strong>多个<code>&lt;li&gt;</code>元素处理</strong><br>统一用margin撑开后，第一个li的左边和最后一个li的右边都有我们不需要的margin,这个时候就需要我们用耍赖皮大法了！！<br><code>.portfolia nav ol li:nth-child(3) {margin-right: 0;}</code><br>牛不牛逼！震不震撼！li:nth-child() 括号里面可以填 even(偶数)、odd（奇数）、数字等</p>
-<hr>
-<p><strong>Tips</strong></p>
-<ul>
-<li>圆角：border-shadow:3px;</li>
-<li>温柔变：transition: box-shadow 0.4s;</li>
-<li>box shadow generator</li>
-<li>box-sizing: border-box;//区别于 content-box</li>
-<li>cursor:pointer 手型</li>
-</ul>
-
+<li>background-image/background-position/background-size 保证背景图均匀平铺
+        
+          <a class="article-more-a" href="/2018/02/01/CSS-三/#more">more >></a>
+        
       
 
       
@@ -467,6 +427,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -526,20 +497,10 @@
 <li>CSS的两大bug：width 和 height;尽量不要写死。规避手段：max-width</li>
 <li>.xxx {text-align: center;} ：让子代的内联元素居中排列，<strong>【内联元素居中要把t-a加在父级元素上】</strong></li>
 <li>width 的默认值是 auto</li>
-<li>display: inline: 设置 宽高 / margin-top/ margin-buttom 都是无效的</li>
-<li>文档流是文档内元素流动的方向，内联元素是从左往右，块级元素是从上到下</li>
-<li>line-height可以确定内联元素的高度，line-height = span =font-size</li>
-<li>一个元素的高度是由内容的总和决定的（不是相等哦），浮动出来的元素不算在总高度里</li>
-<li>英文默认是不会自动换行的，所有用英文填充测试的时候，用lorem吧！ 或者设置 word-break：break-all</li>
-<li>非线性流动的时候可以考虑多一层div</li>
-<li>给背景图遮罩：<code>&lt;div class=&quot;banner&quot;&gt;&lt;div class=&quot;mask&quot;&gt;&lt;/div&gt;&lt;/div&gt;</code></li>
-<li>给背景图遮罩：<code>.banner{height: 515px;background-image: url(./picture/rs-cover.jpg);background-position: center center;background-size: cover;}</code> 和 <code>.banner .mask{height: 515px;background-color: rgba(0,0,0,0.8)}</code></li>
-<li>回复出厂设置：*{margin:0; padding:0;}</li>
-<li>看不清div：border：1px solid red;</li>
-<li><strong>绝对定位：动的absolute,不动的relative</strong></li>
-<li>奇形怪状：<code>https://css-tricks.com/examples/ShapesOfCSS/#yin-yang</code></li>
-</ol>
-
+<li>display: inline: 设置 宽高 / margin-top/ margin-buttom 都是无效的
+        
+          <a class="article-more-a" href="/2018/01/31/CSS-二/#more">more >></a>
+        
       
 
       
@@ -547,6 +508,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -602,20 +574,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ol>
-<li><code>http://htmlpreview.github.io/?</code> 拼接 <code>https://github.com/wangsiyuan233/MyResume/blob/master/cv.html</code>可以直接预览我的简历进度。重点是前面的：<code>http://htmlpreview.github.io/?</code></li>
-<li>前端知识滚雪球，每18个月要学的东西就会翻倍（此处省略两行泪）</li>
-<li>CSS的框架：SASS、LESS 和 PostCSS</li>
-<li>所有的标签都默认的样式（<code>&lt;div&gt;</code> 和 <code>&lt;span&gt;</code> 没有）</li>
-<li>CSS准备工作：body、a、float、clear等等。</li>
-<li>字母的拼接，用两个<code>&lt;span&gt;</code>写在同一行，再用margin-left确定间距，否则中间的间距是默认的一个空格的距离。</li>
-<li>浏览器兼容：IE8是底线，淘宝已经放弃低版本浏览器了</li>
-<li>横条并列导航栏：<strong>子元素float,父元素clearfix。</strong></li>
-<li><code>&lt;a&gt;</code> 和 <code>&lt;li&gt;</code>默认的样式不一样，li没有把a包裹起来，即它们的宽度和高度不一样，解决方法：a{display:block};</li>
-<li>hover一个下划线： <code>a:hover{border-bottom: 3px solid #E8676B;}</code></li>
-<li>但是此时鼠标悬挂时，附近的li就会抖动，因为新生成的下划线挤占了原本的位置，解决方法：<code>a{border-bottom: 3px solid transparent;}</code>（抢先生成一个透明的下划线）</li>
-<li>hover和字体直接的距离靠padding实现</li>
-</ol>
-
+<li><code>http://htmlpreview.github.io/?</code> 拼接 <code>https://github.com/wangsiyuan233/MyResume/blob/master/cv.html</code>可以直接预览我的简历进度。重点是前面的：<code>http://htmlpreview.github.io/?</code>
+        
+          <a class="article-more-a" href="/2018/01/30/CSS-一/#more">more >></a>
+        
       
 
       
@@ -623,6 +585,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -657,7 +630,7 @@
 
 
   
-    <article id="page-HTML-三" class="article article-type-page  article-index" itemscope itemprop="blogPost">
+    <article id="post-HTML-三" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -681,73 +654,9 @@
 <blockquote>
 <p><code>&lt;iframe src=&quot;#&quot; name=&quot;xxx&quot;&gt;&lt;/iframe&gt;</code><br><code>&lt;a href=&quot;#&quot; target=&quot;xxx&quot;&gt;QQ&lt;/a&gt;</code><br><code>&lt;a href=&quot;#&quot; target=&quot;xxx&quot;&gt;百度&lt;/a&gt;</code></p>
 </blockquote>
-<ul>
-<li>iframe的name属性（重点）：令第二个第三个的target等于xxx，就会在iframe里面打开QQ或百度。</li>
-<li>iframe的src属性：写相对路径，跳转至制定页面</li>
-</ul>
-<h2 id="lt-a-gt-标签"><a href="#lt-a-gt-标签" class="headerlink" title="&lt;a&gt; 标签"></a><code>&lt;a&gt;</code> 标签</h2><ul>
-<li><p>target有四个默认属性：<code>_blank</code>是大窗口新标签、<code>_top</code>是顶级、<code>_self</code>是在自己（iframe的小窗）、<code>_parent</code>是在自己（iframe的全窗）。</p>
-<blockquote>
-<p><code>&lt;a href=&quot;https://qq.com&quot; target=&quot;_blank&quot;&gt;blankQQ&lt;/a&gt;</code><br><code>&lt;a href=&quot;https://qq.com&quot; target=&quot;_top&quot;&gt;topQQ&lt;/a&gt;</code><br><code>&lt;a href=&quot;https://qq.com&quot; target=&quot;_self&quot;&gt;selfQQ&lt;/a&gt;</code><br><code>&lt;a href=&quot;https://qq.com&quot; target=&quot;_parent&quot;&gt;parentQQ&lt;/a&gt;</code></p>
-</blockquote>
-</li>
-<li><p>download属性：<br><code>&lt;a href=&quot;https://qq.com&quot; download&gt;下载&lt;/a&gt;</code><br>此时不管是安装包还是网页，都会被下载。</p>
-</li>
-</ul>
-<p>另一个办法是修改http响应层面：令content-type为application/octet-stream时，就会下载。（a标签跳转页面的时候是GET请求）</p>
-<ul>
-<li>href属性:</li>
-</ul>
-<ol>
-<li>href=”qq.com” 时,会分析为一个文件然后报错，应该为<code>https://qq.com</code>.</li>
-<li>href=”” 时，当前页面刷新</li>
-<li>href=”#” 时，页面锚点变成#(只有锚点是不发请求的，锚点是页面内的跳转)</li>
-<li>href=”/xx” 时，浏览器发起GET/HTTP/1.1请求,变成xx.html</li>
-<li>href=”?name.wangsiyuan” 时，浏览器发起GET/HTTP/1.1请求，变成index.html?name.wangsiyuan</li>
-<li>href=”javascript: alert(1);”,JS伪协议，点击链接的时候执行一段代码；在地址栏输入javascript: alert(1)可以执行这段代码；伪协议可以实现[点击之后没有任何动作的超链接标签]，满足特殊要求（可以简写为”javascript:;”）</li>
-<li>href=”//qq.com”无协议链接时，浏览器会根据当前协议，补全无协议的协议；如果用file://浏览页面，就会访问到file://qq.com（这是一个不存在的路径）；尽量不这样使用，避免出错.</li>
-</ol>
-<h2 id="lt-form-gt-标签"><a href="#lt-form-gt-标签" class="headerlink" title="&lt;form&gt; 标签"></a><code>&lt;form&gt;</code> 标签</h2><ul>
-<li>form标签跳转页面发起GET（会把参数直接放到查询框里面所以一般不用）（获取）和POST(主要)（上传）请求</li>
-<li>form表单里一定要有提交按钮搭配使用</li>
-<li>action属性指定请求路径</li>
-<li>method属性指定请求动词（GET或POST）</li>
-<li>请求的第四部分的实现可以靠form标签实现</li>
-<li>target属性和a标签一模一样</li>
-<li>form只有button时，type为button时，不能提交；button的type为空时，button自动升级为submit，就可以提交了；</li>
-<li>form里面的input的type为button时，不能提交；input的type为submit时，可以提交</li>
-<li>submit是唯一一个能确定form表单能不能提交的按钮</li>
-</ul>
-<h2 id="lt-input-gt-和-lt-button-gt-标签"><a href="#lt-input-gt-和-lt-button-gt-标签" class="headerlink" title="&lt;input&gt;和 &lt;button&gt;标签"></a><code>&lt;input&gt;</code>和 <code>&lt;button&gt;</code>标签</h2><ul>
-<li><code>&lt;input type=&quot;submit&quot;&gt;</code>和<code>&lt;button type=&quot;&quot; name=&quot;button&quot; value=&quot;按钮上的字&quot;&gt;&lt;/button&gt;</code> 时， form标签可以被用户提交</li>
-<li>如果input不加name,那么在表单提交时，input的值就不会出现在请求里</li>
-<li>input没有子元素，button有子元素</li>
-<li>input的type属性：</li>
-</ul>
-<ol>
-<li>checkbox:小勾勾，一般会在<code>&lt;input type=&quot;checkbox&quot;&gt;</code>右边加个文字；怎样实现点击文字就能直接勾选框框呢？初级兄弟版（for和id必须成对出现）：<code>&lt;input type=&quot;checkbox&quot; id=&quot;xxx&quot;&gt;&lt;label for=&quot;xxx&quot;&gt;点我&lt;/label&gt;</code>；高级父子版（不需要for和id,name是必须的）：<code>&lt;label&gt;点我&lt;input type=&quot;text&quot; name=&quot;xxx&quot;&gt;&lt;/label&gt;</code>；name相同的时候仍然可以是多选框</li>
-<li>radio：小圆点，<code>&lt;label for=&quot;&quot;&gt;&lt;input name=&quot;pickme&quot; type=&quot;radio&quot; value=&quot;我是对的&quot;&gt;对的&lt;/label&gt;</code> 和 <code>&lt;label for=&quot;&quot;&gt;&lt;input name=&quot;pickme&quot; type=&quot;radio&quot; value=&quot;我是错的&quot;&gt;错的&lt;/label&gt;</code>相同一个name时就成为了单选框</li>
-<li>select: multiple时按着ctrl可以多选，-是空，3号不可选，4号是默认选项<blockquote>
-<p><code>&lt;select name=&quot;group&quot; multiple&gt;
- &lt;option value=&quot;&quot;&gt;-&lt;/option&gt;
- &lt;option value=&quot;1&quot;&gt;一&lt;/option&gt;
- &lt;option value=&quot;2&quot;&gt;二&lt;/option&gt;
- &lt;option value=&quot;3&quot; disable&gt;三&lt;/option&gt;
- &lt;option value=&quot;4&quot; selected&gt;四&lt;/option&gt;
-&lt;/select&gt;</code></p>
-</blockquote>
-</li>
-</ol>
-<h2 id="lt-table-gt-标签"><a href="#lt-table-gt-标签" class="headerlink" title="&lt;table&gt; 标签"></a><code>&lt;table&gt;</code> 标签</h2><ul>
-<li>用户选择多行文本就用textarea,默认的是可以改变大小的，我们需要固定防止bug，可以用CSS或者rows/cols来控制行列。<code>&lt;textarea name=&quot;name&quot; rows=&quot;8&quot; cols=&quot;80&quot;&gt;&lt;/textarea&gt;</code>一定要有name哦！</li>
-<li>table里面的结构：（thead/tbody/tfoot三者的顺序变化会被浏览器自动纠正）</li>
-</ul>
-<p><img src="https://i.imgur.com/3B5SHXq.png" alt=""></p>
-<ul>
-<li>colgroup里的结构：</li>
-</ul>
-<p><img src="https://i.imgur.com/SGaUJ8c.png" alt=""></p>
-
+        
+          <a class="article-more-a" href="/2018/01/29/HTML-三/#more">more >></a>
+        
       
 
       
@@ -755,6 +664,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -789,7 +709,7 @@
 
 
   
-    <article id="page-HTML-二" class="article article-type-page  article-index" itemscope itemprop="blogPost">
+    <article id="post-HTML-二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -818,21 +738,10 @@
 <li><code>&lt;hr&gt;</code>是隔断；<code>&lt;br&gt;</code>是换行</li>
 <li>横向布局、纵向布局、grid布局：使用div的时候，要把一列的div用大的div括起来，和下面的div一起形成纵向布局</li>
 <li><code>a[href=&quot;#&quot;]*7&gt;img[src=&quot;#&quot;][alt=&quot;#&quot;]</code>代表啥能一眼看出来不嘻嘻</li>
-<li>同样是【按下去】这个动作，按钮标签是[确定]，a标签是[跳转]</li>
-</ol>
-<hr>
-<p>需要增加的HEXO插件</p>
-<ul>
-<li>自定义BLOG结构</li>
-<li>标签云用来显示自己那个标签积累得多</li>
-<li>有一个插件专门用来插入代码，这样就不用截大小不一的图啦</li>
-<li>快速插入图片可以用图床，如七牛云</li>
-<li>字数统计、二维码、评论（duoshuo,来必力，畅言）</li>
-<li>中文搜索 （swiftype）(site:wangsiyuan233.cn 咦？)</li>
-<li>统计来源，关键字，热门话题 （CNZZ、百度统计）</li>
-<li>hexo的中文手册</li>
-</ul>
-
+<li>同样是【按下去】这个动作，按钮标签是[确定]，a标签是[跳转]
+        
+          <a class="article-more-a" href="/2018/01/28/HTML-二/#more">more >></a>
+        
       
 
       
@@ -840,6 +749,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -961,6 +881,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>

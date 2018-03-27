@@ -8,28 +8,19 @@
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
   <title>DOM(一) | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="DOM事件冒泡与捕获是DOM事件的一种事件机制，也是一种事件流。1.操作系统最先知道鼠标点击，浏览器次之，因为操作系统是权限最高的软件。2.在一个页面里面，子元素被点击，意味着父元素也被点击了。[pic1]无论鼠标放在哪个区域，都会显示黄色区域也被点击了。但是，到底是爸爸先被点击还是儿子呢？？？讨论一下吧！
-一、捕获从大到小——其他浏览器[pic2])
-二、冒泡从小到大——IE[pic3]
-三、W">
+  <meta name="description" content="DOM事件冒泡与捕获是DOM事件的一种事件机制，也是一种事件流。1.操作系统最先知道鼠标点击，浏览器次之，因为操作系统是权限最高的软件。2.在一个页面里面，子元素被点击，意味着父元素也被点击了。[pic1]无论鼠标放在哪个区域，都会显示黄色区域也被点击了。但是，到底是爸爸先被点击还是儿子呢？？？讨论一下吧！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DOM(一)">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/02/27/DOM-一/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="DOM事件冒泡与捕获是DOM事件的一种事件机制，也是一种事件流。1.操作系统最先知道鼠标点击，浏览器次之，因为操作系统是权限最高的软件。2.在一个页面里面，子元素被点击，意味着父元素也被点击了。[pic1]无论鼠标放在哪个区域，都会显示黄色区域也被点击了。但是，到底是爸爸先被点击还是儿子呢？？？讨论一下吧！
-一、捕获从大到小——其他浏览器[pic2])
-二、冒泡从小到大——IE[pic3]
-三、W">
+<meta property="og:description" content="DOM事件冒泡与捕获是DOM事件的一种事件机制，也是一种事件流。1.操作系统最先知道鼠标点击，浏览器次之，因为操作系统是权限最高的软件。2.在一个页面里面，子元素被点击，意味着父元素也被点击了。[pic1]无论鼠标放在哪个区域，都会显示黄色区域也被点击了。但是，到底是爸爸先被点击还是儿子呢？？？讨论一下吧！">
 <meta property="og:image" content="https://i.imgur.com/esvlq0x.jpg">
 <meta property="og:image" content="https://i.imgur.com/7d4MxYj.jpg">
 <meta property="og:image" content="https://i.imgur.com/QVZQt2r.jpg">
-<meta property="og:updated_time" content="2018-02-28T00:36:25.687Z">
+<meta property="og:updated_time" content="2018-03-27T07:04:01.641Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DOM(一)">
-<meta name="twitter:description" content="DOM事件冒泡与捕获是DOM事件的一种事件机制，也是一种事件流。1.操作系统最先知道鼠标点击，浏览器次之，因为操作系统是权限最高的软件。2.在一个页面里面，子元素被点击，意味着父元素也被点击了。[pic1]无论鼠标放在哪个区域，都会显示黄色区域也被点击了。但是，到底是爸爸先被点击还是儿子呢？？？讨论一下吧！
-一、捕获从大到小——其他浏览器[pic2])
-二、冒泡从小到大——IE[pic3]
-三、W">
+<meta name="twitter:description" content="DOM事件冒泡与捕获是DOM事件的一种事件机制，也是一种事件流。1.操作系统最先知道鼠标点击，浏览器次之，因为操作系统是权限最高的软件。2.在一个页面里面，子元素被点击，意味着父元素也被点击了。[pic1]无论鼠标放在哪个区域，都会显示黄色区域也被点击了。但是，到底是爸爸先被点击还是儿子呢？？？讨论一下吧！">
 <meta name="twitter:image" content="https://i.imgur.com/esvlq0x.jpg">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
@@ -186,7 +177,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="DOM事件"><a href="#DOM事件" class="headerlink" title="DOM事件"></a>DOM事件</h1><p>冒泡与捕获是DOM事件的一种事件机制，也是一种事件流。<br>1.操作系统最先知道鼠标点击，浏览器次之，因为操作系统是权限最高的软件。<br>2.在一个页面里面，子元素被点击，意味着父元素也被点击了。<br><img src="https://i.imgur.com/esvlq0x.jpg" alt=""><br><a href="https://github.com/wangsiyuan233/Picture/blob/master/捕获冒泡.—基础.jpg" target="_blank" rel="external">[pic1]</a><br>无论鼠标放在哪个区域，都会显示黄色区域也被点击了。但是，到底是爸爸先被点击还是儿子呢？？？讨论一下吧！</p>
+        <h1 id="DOM事件"><a href="#DOM事件" class="headerlink" title="DOM事件"></a>DOM事件</h1><p>冒泡与捕获是DOM事件的一种事件机制，也是一种事件流。<br>1.操作系统最先知道鼠标点击，浏览器次之，因为操作系统是权限最高的软件。<br>2.在一个页面里面，子元素被点击，意味着父元素也被点击了。<br><img src="https://i.imgur.com/esvlq0x.jpg" alt=""><br><a href="https://github.com/wangsiyuan233/Picture/blob/master/捕获冒泡.—基础.jpg" target="_blank" rel="external">[pic1]</a><br>无论鼠标放在哪个区域，都会显示黄色区域也被点击了。但是，到底是爸爸先被点击还是儿子呢？？？讨论一下吧！<br><a id="more"></a></p>
 <p><strong>一、捕获</strong><br>从大到小——其他浏览器<br><img src="https://i.imgur.com/7d4MxYj.jpg" alt=""><br><a href="[[pic1]](https://github.com/wangsiyuan233/Picture/blob/master/捕获冒泡.—捕获.jpg">[pic2]</a>)</p>
 <p><strong>二、冒泡</strong><br>从小到大——IE<br><img src="https://i.imgur.com/QVZQt2r.jpg" alt=""><br><a href="https://github.com/wangsiyuan233/Picture/blob/master/捕获冒泡.—冒泡.jpg" target="_blank" rel="external">[pic3]</a></p>
 <p><strong>三、W3C</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//W3C：我都支持哦~</span></div><div class="line">button.addEventListener(<span class="string">'click'</span>, fn, <span class="literal">true</span>) <span class="comment">// 捕获 Capture Phase</span></div><div class="line">button.addEventListener(<span class="string">'click'</span>, fn, <span class="literal">false</span>) <span class="comment">// 冒泡 Bubbling Phase</span></div><div class="line"><span class="comment">//吃瓜群众：如果子元素既有捕获又有冒泡呢？</span></div><div class="line"><span class="comment">//W3C：按照书写的顺序来哦~</span></div><div class="line"><span class="comment">///</span></div><div class="line">button.addEventListener(<span class="string">'click'</span>, fn1()&#123;<span class="built_in">console</span>.log(儿子捕获)&#125;, <span class="literal">true</span>) </div><div class="line">button.addEventListener(<span class="string">'click'</span>, fn1()&#123;<span class="built_in">console</span>.log(儿子冒泡), <span class="literal">false</span>)  </div><div class="line"><span class="comment">//以上打印结果是：儿子捕获 儿子冒泡</span></div><div class="line"><span class="comment">///</span></div><div class="line">button.addEventListener(<span class="string">'click'</span>, fn1()&#123;<span class="built_in">console</span>.log(儿子冒泡), <span class="literal">false</span>)  </div><div class="line">button.addEventListener(<span class="string">'click'</span>, fn1()&#123;<span class="built_in">console</span>.log(儿子捕获)&#125;, <span class="literal">true</span>) </div><div class="line"><span class="comment">//以上打印结果是：儿子冒泡 儿子捕获</span></div><div class="line"><span class="comment">//吃瓜群众：默认值true可以省略，w3c你偏心其他浏览器的捕获事件！打它！</span></div></pre></td></tr></table></figure></p>
@@ -223,6 +214,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -414,6 +416,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>

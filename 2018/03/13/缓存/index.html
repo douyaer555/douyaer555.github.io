@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="一、Cookie 和 Session 的区别【Cookie】Cookie 有几个特点,1、服务端通过Set-Cookie来设置Cookie,Cookie的本质就是一串字符串。2、客户端得到这个字符串后，每次登陆这个网页，都会携带上这串字符串。3、服务端再通过这串字符串去找到对应的隐私信息。4、Cookie大小一般为4kb。5、Cookie默认有失效时间，但是后台可以设置过期时间。
 因为Cookie">
-<meta property="og:updated_time" content="2018-03-13T11:41:13.067Z">
+<meta property="og:updated_time" content="2018-03-27T07:17:13.797Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="缓存">
 <meta name="twitter:description" content="一、Cookie 和 Session 的区别【Cookie】Cookie 有几个特点,1、服务端通过Set-Cookie来设置Cookie,Cookie的本质就是一串字符串。2、客户端得到这个字符串后，每次登陆这个网页，都会携带上这串字符串。3、服务端再通过这串字符串去找到对应的隐私信息。4、Cookie大小一般为4kb。5、Cookie默认有失效时间，但是后台可以设置过期时间。
@@ -177,8 +177,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="一、Cookie-和-Session-的区别"><a href="#一、Cookie-和-Session-的区别" class="headerlink" title="一、Cookie 和 Session 的区别"></a>一、Cookie 和 Session 的区别</h2><p>【Cookie】<br>Cookie 有几个特点,<br>1、服务端通过Set-Cookie来设置Cookie,Cookie的本质就是一串字符串。<br>2、客户端得到这个字符串后，每次登陆这个网页，都会携带上这串字符串。<br>3、服务端再通过这串字符串去找到对应的隐私信息。<br>4、Cookie大小一般为4kb。<br>5、Cookie默认有失效时间，但是后台可以设置过期时间。</p>
-<p>因为Cookie可以篡改，而且是明文传输的，所以存在漏洞，Session就解决了这个问题。</p>
-<p>【Session】<br>Session的特点：<br>1、一般来说，Session是基于Cookie来设置的一个哈希表。<br>2、将SessionId(随机数)通过Cookie发给服务端。<br>3、客户端访问服务器时，服务器读取SessionID。<br>4、服务器有一块内存(哈希表),存储了所有的Session。<br>5、通过SessionID，我们可以得到用户的隐私信息。<br>6、这块内存(哈希表)就是服务器上所有的Session。 </p>
+<p>因为Cookie可以篡改，而且是明文传输的，所以存在漏洞，Session就解决了这个问题。<br><a id="more"></a><br>【Session】<br>Session的特点：<br>1、一般来说，Session是基于Cookie来设置的一个哈希表。<br>2、将SessionId(随机数)通过Cookie发给服务端。<br>3、客户端访问服务器时，服务器读取SessionID。<br>4、服务器有一块内存(哈希表),存储了所有的Session。<br>5、通过SessionID，我们可以得到用户的隐私信息。<br>6、这块内存(哈希表)就是服务器上所有的Session。 </p>
 <h2 id="二、Cookie-和-LocalStorage-的区别"><a href="#二、Cookie-和-LocalStorage-的区别" class="headerlink" title="二、Cookie 和 LocalStorage 的区别"></a>二、Cookie 和 LocalStorage 的区别</h2><p>【Cookie】<br>Cookie 有几个特点：<br>1、服务端通过Set-Cookie来设置Cookie,Cookie的本质就是一串字符串。<br>2、客户端得到这个字符串后，每次登陆这个网页，都会携带上这串字符串。<br>3、服务端再通过这串字符串去找到对应的隐私信息。<br>4、Cookie大小一般为4kb。<br>5、Cookie默认有失效时间，但是后台可以设置过期时间。</p>
 <p>【LocalStorage】<br>LocalStorage的实质也是一个hash，它是html5标准提供的一个API，用来持久化存储一些不是那么重要的信息。<br>它的特点：<br>1、LocalStorage与HTTP无关。<br>2、HTTP不会带上LocalStorage。<br>3、只有相同的页面才能互相读取LocalStorage。<br>4、浏览器对每个域名分配的LocalStorage最大的存储量为5Mb左右。<br>5、记录一些无关紧要的信息，不记录用户敏感信息。<br>6、LocalStorage永久有效，除非用户清理缓存。 </p>
 <p>它与Cookie的区别就是，一个通过Set-Cookie设置，一个是HTML5提供的APi，<br>一个是通过HTTP设置，一个与HTTP无关。</p>
@@ -217,6 +216,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -408,6 +418,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>

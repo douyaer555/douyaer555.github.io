@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
   <title>深入理解JavaScript--原型闭包系列(2) | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="接上节数组、函数和对象这三者的关系非常有趣数组可以看做是对象的一个子集；但是函数和对象却类似于鸡和蛋的关系。一起来看看吧~1234567891011121314151617//粗一看对象好像不需要函数来创建呀var obj = &amp;#123; a: 10, b: 20 &amp;#125;;var arr = [5, &apos;x&apos;, true];//其实这才是上面两个的对象的真面目var obj = new Ob">
+  <meta name="description" content="接上节数组、函数和对象这三者的关系非常有趣数组可以看做是对象的一个子集；但是函数和对象却类似于鸡和蛋的关系。一起来看看吧~">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解JavaScript--原型闭包系列(2)">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/03/25/原型闭包系列-2/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="接上节数组、函数和对象这三者的关系非常有趣数组可以看做是对象的一个子集；但是函数和对象却类似于鸡和蛋的关系。一起来看看吧~1234567891011121314151617//粗一看对象好像不需要函数来创建呀var obj = &amp;#123; a: 10, b: 20 &amp;#125;;var arr = [5, &apos;x&apos;, true];//其实这才是上面两个的对象的真面目var obj = new Ob">
-<meta property="og:updated_time" content="2018-03-27T06:56:30.459Z">
+<meta property="og:description" content="接上节数组、函数和对象这三者的关系非常有趣数组可以看做是对象的一个子集；但是函数和对象却类似于鸡和蛋的关系。一起来看看吧~">
+<meta property="og:updated_time" content="2018-03-27T07:02:38.696Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解JavaScript--原型闭包系列(2)">
-<meta name="twitter:description" content="接上节数组、函数和对象这三者的关系非常有趣数组可以看做是对象的一个子集；但是函数和对象却类似于鸡和蛋的关系。一起来看看吧~1234567891011121314151617//粗一看对象好像不需要函数来创建呀var obj = &amp;#123; a: 10, b: 20 &amp;#125;;var arr = [5, &apos;x&apos;, true];//其实这才是上面两个的对象的真面目var obj = new Ob">
+<meta name="twitter:description" content="接上节数组、函数和对象这三者的关系非常有趣数组可以看做是对象的一个子集；但是函数和对象却类似于鸡和蛋的关系。一起来看看吧~">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -173,7 +173,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://wangsiyuan233.cn/深入理解JavaScript-1.html" target="_blank" rel="external">接上节</a><br>数组、函数和对象这三者的关系非常有趣<br>数组可以看做是对象的一个子集；<br>但是函数和对象却类似于鸡和蛋的关系。<br>一起来看看吧~<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//粗一看对象好像不需要函数来创建呀</span></div><div class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">a</span>: <span class="number">10</span>, <span class="attr">b</span>: <span class="number">20</span> &#125;;</div><div class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>, <span class="string">'x'</span>, <span class="literal">true</span>];</div><div class="line"></div><div class="line"><span class="comment">//其实这才是上面两个的对象的真面目</span></div><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">obj.a = <span class="number">10</span>;</div><div class="line">obj.b = <span class="number">20</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">arr[<span class="number">0</span>] = <span class="number">5</span>;</div><div class="line">arr[<span class="number">1</span>] = <span class="string">'x'</span>;</div><div class="line">arr[<span class="number">2</span>] = <span class="literal">true</span>;</div><div class="line"></div><div class="line"><span class="comment">//Object和Array也都是function</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> (<span class="built_in">Object</span>));  <span class="comment">// function</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> (<span class="built_in">Array</span>));  <span class="comment">// function</span></div></pre></td></tr></table></figure></p>
+        <p><a href="http://wangsiyuan233.cn/深入理解JavaScript-1.html" target="_blank" rel="external">接上节</a><br>数组、函数和对象这三者的关系非常有趣<br>数组可以看做是对象的一个子集；<br>但是函数和对象却类似于鸡和蛋的关系。<br>一起来看看吧~<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//粗一看对象好像不需要函数来创建呀</span></div><div class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">a</span>: <span class="number">10</span>, <span class="attr">b</span>: <span class="number">20</span> &#125;;</div><div class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>, <span class="string">'x'</span>, <span class="literal">true</span>];</div><div class="line"></div><div class="line"><span class="comment">//其实这才是上面两个的对象的真面目</span></div><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">obj.a = <span class="number">10</span>;</div><div class="line">obj.b = <span class="number">20</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">arr[<span class="number">0</span>] = <span class="number">5</span>;</div><div class="line">arr[<span class="number">1</span>] = <span class="string">'x'</span>;</div><div class="line">arr[<span class="number">2</span>] = <span class="literal">true</span>;</div><div class="line"></div><div class="line"><span class="comment">//Object和Array也都是function</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> (<span class="built_in">Object</span>));  <span class="comment">// function</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> (<span class="built_in">Array</span>));  <span class="comment">// function</span></div></pre></td></tr></table></figure></p>
 <h2 id="结论：对象都是通过函数创建的"><a href="#结论：对象都是通过函数创建的" class="headerlink" title="结论：对象都是通过函数创建的"></a>结论：<strong>对象都是通过函数创建的</strong></h2><p>在上一节我们说了：一切（引用类型）都是对象；<br>现在的结论是：对象都是通过函数创建的；<br>有没有被绕晕呢？</p>
 <hr>
 <p>以前我们说过，函数创建了对象，（函数是属性的集合），我们可以给函数定制属于自己的属性，那么函数有哪些属性呢？说到这儿，不得不提我们大名鼎鼎的 prototype 啦！<br>每个函数都有一个属性叫做prototype；<br>prototype的属性值是一个对象（属性的集合）；<br>prototype默认的仅有的属性叫constructor，指向这个函数本身。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//自定义Fn的属性</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>) </span>&#123; &#125;</div><div class="line">Fn.prototype.name = <span class="string">'wangsiyuan'</span>;</div><div class="line">Fn.prototype.getPosition = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">return</span> 全栈工程师;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
@@ -410,6 +410,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>

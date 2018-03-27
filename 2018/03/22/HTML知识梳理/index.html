@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
   <title>HTML知识梳理 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、☆☆☆如何理解 HTML 语义化。语义化，指对文本内容的结构化（内容语义化），选择合乎语义的标签（代码语义化），便于开发者阅读，维护和写出更优雅的代码的同时，让浏览器的爬虫和辅助技术更好的解析。123456789//错误示范1、blockquote：一些人通过使用&amp;lt;blockquote&amp;gt;标签使文本达到缩进的目的，因为引用默认会进行文本缩进。如果你仅仅是想使文本达到缩进目的，而文本自">
+  <meta name="description" content="一、☆☆☆如何理解 HTML 语义化。语义化，指对文本内容的结构化（内容语义化），选择合乎语义的标签（代码语义化），便于开发者阅读，维护和写出更优雅的代码的同时，让浏览器的爬虫和辅助技术更好的解析。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML知识梳理">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/03/22/HTML知识梳理/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="一、☆☆☆如何理解 HTML 语义化。语义化，指对文本内容的结构化（内容语义化），选择合乎语义的标签（代码语义化），便于开发者阅读，维护和写出更优雅的代码的同时，让浏览器的爬虫和辅助技术更好的解析。123456789//错误示范1、blockquote：一些人通过使用&amp;lt;blockquote&amp;gt;标签使文本达到缩进的目的，因为引用默认会进行文本缩进。如果你仅仅是想使文本达到缩进目的，而文本自">
-<meta property="og:updated_time" content="2018-03-22T12:26:12.137Z">
+<meta property="og:description" content="一、☆☆☆如何理解 HTML 语义化。语义化，指对文本内容的结构化（内容语义化），选择合乎语义的标签（代码语义化），便于开发者阅读，维护和写出更优雅的代码的同时，让浏览器的爬虫和辅助技术更好的解析。">
+<meta property="og:updated_time" content="2018-03-27T07:14:49.146Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML知识梳理">
-<meta name="twitter:description" content="一、☆☆☆如何理解 HTML 语义化。语义化，指对文本内容的结构化（内容语义化），选择合乎语义的标签（代码语义化），便于开发者阅读，维护和写出更优雅的代码的同时，让浏览器的爬虫和辅助技术更好的解析。123456789//错误示范1、blockquote：一些人通过使用&amp;lt;blockquote&amp;gt;标签使文本达到缩进的目的，因为引用默认会进行文本缩进。如果你仅仅是想使文本达到缩进目的，而文本自">
+<meta name="twitter:description" content="一、☆☆☆如何理解 HTML 语义化。语义化，指对文本内容的结构化（内容语义化），选择合乎语义的标签（代码语义化），便于开发者阅读，维护和写出更优雅的代码的同时，让浏览器的爬虫和辅助技术更好的解析。">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -173,7 +173,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一、☆☆☆如何理解 HTML 语义化。<br>语义化，指对文本内容的结构化（内容语义化），选择合乎语义的标签（代码语义化），便于开发者阅读，维护和写出更优雅的代码的同时，让浏览器的爬虫和辅助技术更好的解析。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">//错误示范</div><div class="line">1、blockquote：一些人通过使用<span class="tag">&lt;<span class="name">blockquote</span>&gt;</span>标签使文本达到缩进的目的，因为引用默认会进行文本缩进。如果你仅仅是想使文本达到缩进目的，而文本自身并非引用，那么就用CSS margin来代替；</div><div class="line">2、p：一些开发者用<span class="tag">&lt;<span class="name">p</span>&gt;</span>&amp;nbsp;<span class="tag">&lt;/<span class="name">p</span>&gt;</span>来为标签自检增加额外的空白段落，这里应该使用CSS margin/padding来实现；</div><div class="line">3、ul：一些开发者往<span class="tag">&lt;<span class="name">ul</span>&gt;</span>中添加文本来达到文本缩进的目的，这种做法即不符合语义化要求，同样也是非法的HTML实践。<span class="tag">&lt;<span class="name">ul</span>&gt;</span>标签中只能有<span class="tag">&lt;<span class="name">li</span>&gt;</span>标签；</div><div class="line">4、<span class="tag">&lt;<span class="name">h1</span>&gt;</span>~<span class="tag">&lt;<span class="name">h6</span>&gt;</span>：该标签可以使文本字体变大，变粗，但如果文本并非是标题，应该使用CSS font-weight font-size。</div><div class="line"></div><div class="line">//注意下面这些标签，不要变成<span class="tag">&lt;<span class="name">div</span>&gt;</span>狂魔了哦</div><div class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span>、<span class="tag">&lt;<span class="name">nav</span>&gt;</span>、<span class="tag">&lt;<span class="name">main</span>&gt;</span>、<span class="tag">&lt;<span class="name">aside</span>&gt;</span>、<span class="tag">&lt;<span class="name">article</span>&gt;</span>、<span class="tag">&lt;<span class="name">section</span>&gt;</span></div></pre></td></tr></table></figure></p>
+        <p>一、☆☆☆如何理解 HTML 语义化。<br>语义化，指对文本内容的结构化（内容语义化），选择合乎语义的标签（代码语义化），便于开发者阅读，维护和写出更优雅的代码的同时，让浏览器的爬虫和辅助技术更好的解析。<br><a id="more"></a><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">//错误示范</div><div class="line">1、blockquote：一些人通过使用<span class="tag">&lt;<span class="name">blockquote</span>&gt;</span>标签使文本达到缩进的目的，因为引用默认会进行文本缩进。如果你仅仅是想使文本达到缩进目的，而文本自身并非引用，那么就用CSS margin来代替；</div><div class="line">2、p：一些开发者用<span class="tag">&lt;<span class="name">p</span>&gt;</span>&amp;nbsp;<span class="tag">&lt;/<span class="name">p</span>&gt;</span>来为标签自检增加额外的空白段落，这里应该使用CSS margin/padding来实现；</div><div class="line">3、ul：一些开发者往<span class="tag">&lt;<span class="name">ul</span>&gt;</span>中添加文本来达到文本缩进的目的，这种做法即不符合语义化要求，同样也是非法的HTML实践。<span class="tag">&lt;<span class="name">ul</span>&gt;</span>标签中只能有<span class="tag">&lt;<span class="name">li</span>&gt;</span>标签；</div><div class="line">4、<span class="tag">&lt;<span class="name">h1</span>&gt;</span>~<span class="tag">&lt;<span class="name">h6</span>&gt;</span>：该标签可以使文本字体变大，变粗，但如果文本并非是标题，应该使用CSS font-weight font-size。</div><div class="line"></div><div class="line">//注意下面这些标签，不要变成<span class="tag">&lt;<span class="name">div</span>&gt;</span>狂魔了哦</div><div class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span>、<span class="tag">&lt;<span class="name">nav</span>&gt;</span>、<span class="tag">&lt;<span class="name">main</span>&gt;</span>、<span class="tag">&lt;<span class="name">aside</span>&gt;</span>、<span class="tag">&lt;<span class="name">article</span>&gt;</span>、<span class="tag">&lt;<span class="name">section</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">//最开始是 PHP 后端写 HTML，不会 CSS，于是就用 table 来布局。table 使用展示表格的。严重违反了 HTML 语义化。</div><div class="line"> 后来有了专门的写 CSS 的前端，他们会使用 DIV + CSS 布局，主要是用 float 和绝对定位布局。稍微符合了 HTML 语义化。</div><div class="line"> 再后来，前端专业化，知道 HTML 的各个标签的用法，于是会使用恰当的标签来展示内容，而不是傻傻的全用 div，会尽量使用 h1、ul、p、main、header 等标签</div><div class="line"> 语义化的好处是已读、有利于SEO等。</div></pre></td></tr></table></figure>
 <p>二、meta viewport 是什么，有什么用？<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>&gt;</span></div><div class="line">//控制页面在移动端不要缩小显示。</div><div class="line">//一开始，所有页面都是给PC准备的，乔布斯推出 iPhone 3GS，页面是不适应手机屏幕的，所以乔布斯的工程师想了一个办法，默认把手机模拟成 980px，页面缩小。</div><div class="line">后来，智能手机普及，这个功能在部分网站不需要了，所以我们就用 meta:vp 让手机不要缩小我的网页。</div></pre></td></tr></table></figure></p>
 <p>三、canvas 元素是什么<br><code>&lt;canvas&gt;</code> 是 HTML5 新增的元素，可用于通过使用JavaScript中的脚本来绘制图形。例如，它可以用于绘制图形，制作照片，创建动画，甚至可以进行实时视频处理或渲染。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></div></pre></td></tr></table></figure></p>
@@ -207,6 +207,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -398,6 +409,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>

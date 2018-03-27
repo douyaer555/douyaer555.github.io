@@ -14,7 +14,7 @@
 <meta property="og:url" content="wangsiyuan233.github.io/2018/02/25/封装一个jQuery/index.html">
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="封装第一个函数node.getSiblings()1234567891011121314function getSiblings(node)&amp;#123;let allChildren = node.parentNode.children  let array = &amp;#123;    length: 0  &amp;#125;  for (let i = 0; i &amp;lt; allChildren.leng">
-<meta property="og:updated_time" content="2018-02-25T12:20:01.582Z">
+<meta property="og:updated_time" content="2018-03-27T07:19:10.692Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="封装一个jQuery吧！">
 <meta name="twitter:description" content="封装第一个函数node.getSiblings()1234567891011121314function getSiblings(node)&amp;#123;let allChildren = node.parentNode.children  let array = &amp;#123;    length: 0  &amp;#125;  for (let i = 0; i &amp;lt; allChildren.leng">
@@ -174,6 +174,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>封装第一个函数</strong>node.getSiblings()<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getSiblings</span>(<span class="params">node</span>)</span>&#123;</div><div class="line"><span class="keyword">let</span> allChildren = node.parentNode.children</div><div class="line">  <span class="keyword">let</span> array = &#123;</div><div class="line">    <span class="attr">length</span>: <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; allChildren.length; i++) &#123;</div><div class="line">    <span class="keyword">if</span> (allChildren[i] !== node) &#123;</div><div class="line">      array[array.length] = allChildren[i] <span class="comment">// 让输出的伪数组不包含本元素</span></div><div class="line">      array.length += <span class="number">1</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> array</div><div class="line">  &#125;</div><div class="line">  <span class="comment">//例如 li.getSiblings.call(li)</span></div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p><strong>封装第二个函数</strong>node.addClass()<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addClass</span>(<span class="params">node, classes</span>) </span>&#123;</div><div class="line">  classes.forEach( <span class="function">(<span class="params">value</span>) =&gt;</span> node.classList.add(value) ) </div><div class="line">  <span class="comment">//遍历节点 给所有节点添加或者单个节点添加类名</span></div><div class="line">&#125;</div><div class="line">  <span class="comment">//例如 li.addClass.call(li,['a','b','c'])</span></div></pre></td></tr></table></figure></p>
 <p><strong>命名库</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> WangDom = &#123;&#125;  <span class="comment">// 声明一个新对象</span></div><div class="line">WangDom.getSiblings(node) </div><div class="line">WangDom.addClass(node, [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>])</div><div class="line"><span class="comment">// 把函数挂到对象下 引用方式直接WangDom.XXX()即可调用</span></div><div class="line"></div><div class="line"><span class="comment">// 然而我又觉得写WangDom很麻烦,要6个字符,所以我可以设置一个alisa</span></div><div class="line"><span class="built_in">window</span>.$ = WangDom</div></pre></td></tr></table></figure></p>
 <p>把node放前面：<br>方法一：扩展 Node 接口,直接在 Node.prototype 上加函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Node.prototype.addClass = <span class="function"><span class="keyword">function</span>(<span class="params">classes</span>)</span>&#123;</div><div class="line">  classes.forEach(<span class="function">(<span class="params">value</span>)=&gt;</span>&#123;node.classList.add(value)&#125;)</div><div class="line">&#125;</div><div class="line"><span class="comment">// 这样就可以通过 li.addClass('hi') 这样的方式来操作了</span></div><div class="line"><span class="comment">// 不过这样直接在原型链上修改不推荐,谁知道你会不会把别人写的函数给覆盖了,</span></div><div class="line"><span class="comment">// 或者把原本的函数给覆盖了</span></div></pre></td></tr></table></figure></p>
@@ -209,6 +210,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -400,6 +416,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>

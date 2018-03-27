@@ -9,31 +9,19 @@
   <title>Cookie | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="源码展示前后端分离+cookie
-实现的功能有：1、邮箱+姓名+密码+再次确认密码：邮箱验证、密码长度等等（应该有个我不知道的模板）2、展示所得到的cookie：早上好！XXX之类的。
-前后端的交互流程
-Cookie 是浏览器访问服务器后，服务器传给浏览器的一段数据。
-浏览器需要保存这段数据，不得轻易删除。
-此后每次浏览器访问该服务器，都必须带上这段数据">
+实现的功能有：1、邮箱+姓名+密码+再次确认密码：邮箱验证、密码长度等等（应该有个我不知道的模板）2、展示所得到的cookie：早上好！XXX之类的。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cookie">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/03/13/Cookie/index.html">
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="源码展示前后端分离+cookie
-实现的功能有：1、邮箱+姓名+密码+再次确认密码：邮箱验证、密码长度等等（应该有个我不知道的模板）2、展示所得到的cookie：早上好！XXX之类的。
-前后端的交互流程
-Cookie 是浏览器访问服务器后，服务器传给浏览器的一段数据。
-浏览器需要保存这段数据，不得轻易删除。
-此后每次浏览器访问该服务器，都必须带上这段数据">
+实现的功能有：1、邮箱+姓名+密码+再次确认密码：邮箱验证、密码长度等等（应该有个我不知道的模板）2、展示所得到的cookie：早上好！XXX之类的。">
 <meta property="og:image" content="https://i.imgur.com/sFtGx1F.png">
-<meta property="og:updated_time" content="2018-03-13T08:26:24.937Z">
+<meta property="og:updated_time" content="2018-03-27T07:22:45.935Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cookie">
 <meta name="twitter:description" content="源码展示前后端分离+cookie
-实现的功能有：1、邮箱+姓名+密码+再次确认密码：邮箱验证、密码长度等等（应该有个我不知道的模板）2、展示所得到的cookie：早上好！XXX之类的。
-前后端的交互流程
-Cookie 是浏览器访问服务器后，服务器传给浏览器的一段数据。
-浏览器需要保存这段数据，不得轻易删除。
-此后每次浏览器访问该服务器，都必须带上这段数据">
+实现的功能有：1、邮箱+姓名+密码+再次确认密码：邮箱验证、密码长度等等（应该有个我不知道的模板）2、展示所得到的cookie：早上好！XXX之类的。">
 <meta name="twitter:image" content="https://i.imgur.com/sFtGx1F.png">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
@@ -191,7 +179,7 @@ Cookie 是浏览器访问服务器后，服务器传给浏览器的一段数据�
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="https://github.com/wangsiyuan233/cookie" target="_blank" rel="external">源码展示前后端分离+cookie</a></p>
-<h2 id="实现的功能有："><a href="#实现的功能有：" class="headerlink" title="实现的功能有："></a>实现的功能有：</h2><p>1、邮箱+姓名+密码+再次确认密码：邮箱验证、密码长度等等（应该有个我不知道的模板）<br>2、展示所得到的cookie：早上好！XXX之类的。</p>
+<h2 id="实现的功能有："><a href="#实现的功能有：" class="headerlink" title="实现的功能有："></a>实现的功能有：</h2><p>1、邮箱+姓名+密码+再次确认密码：邮箱验证、密码长度等等（应该有个我不知道的模板）<br>2、展示所得到的cookie：早上好！XXX之类的。<br><a id="more"></a></p>
 <h2 id="前后端的交互流程"><a href="#前后端的交互流程" class="headerlink" title="前后端的交互流程"></a>前后端的交互流程</h2><ol>
 <li>Cookie 是浏览器访问服务器后，服务器传给浏览器的一段数据。</li>
 <li>浏览器需要保存这段数据，不得轻易删除。</li>
@@ -226,6 +214,17 @@ Cookie 是浏览器访问服务器后，服务器传给浏览器的一段数据�
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -417,6 +416,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>

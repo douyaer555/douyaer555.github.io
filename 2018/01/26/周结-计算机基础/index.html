@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="这周有了一些感悟，在技术部分之前想记录下来：
 1.知识的诅咒：一个掌握了某项知识A的人，是无法想象不懂A的人是怎样想的。刚好完成了7个课时，神奇之处在于进度条到了此时此刻，我还没有真正入门HTML，也就是说，方方连尖角号是什么都没开始教。那么我学了些什么呢？疯狂装各种软件 –&amp;gt;搭建博客 –&amp;gt;HTTP协议 –&amp;gt;命令行基础 –&amp;gt;写脚本 –&amp;gt;写服务器。好在我自学了一点点，要">
-<meta property="og:updated_time" content="2018-01-27T02:29:39.780Z">
+<meta property="og:updated_time" content="2018-03-27T07:15:36.635Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="周结-计算机基础">
 <meta name="twitter:description" content="这周有了一些感悟，在技术部分之前想记录下来：
@@ -156,7 +156,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-周结-计算机基础" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-周结-计算机基础" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -177,14 +177,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>这周有了一些感悟，在技术部分之前想记录下来：</p>
-<p>1.<strong>知识的诅咒：一个掌握了某项知识A的人，是无法想象不懂A的人是怎样想的。</strong>刚好完成了7个课时，神奇之处在于进度条到了此时此刻，我还没有真正入门HTML，也就是说，方方连尖角号是什么都没开始教。那么我学了些什么呢？疯狂装各种软件 –&gt;搭建博客 –&gt;HTTP协议 –&gt;命令行基础 –&gt;写脚本 –&gt;写服务器。好在我自学了一点点，要不然半条命都要进去吧。</p>
+<p>1.<strong>知识的诅咒：一个掌握了某项知识A的人，是无法想象不懂A的人是怎样想的。</strong>刚好完成了7个课时，神奇之处在于进度条到了此时此刻，我还没有真正入门HTML，也就是说，方方连尖角号是什么都没开始教。那么我学了些什么呢？疯狂装各种软件 –&gt;搭建博客 –&gt;HTTP协议 –&gt;命令行基础 –&gt;写脚本 –&gt;写服务器。好在我自学了一点点，要不然半条命都要进去吧。<br><a id="more"></a></p>
 <p>2.<strong>入门的正确姿势。</strong>自己走了很多的弯路，不仅仅是编程，还有健身/日语，浪费的时间不一而足，自学的人总会扯各种不着边际的理由，其实是穷，我用自己摔的坑告诉大家：看视频学钢琴是不可能的。0基础是一定要找师傅带的，最后：找个好师傅和花钱买课一样的重要。</p>
 <hr>
 <p>废话不多说，下面开始技术梳理</p>
 <p><strong>一切都是以server.js为目的展开的。</strong><br>（我打乱了方方的顺序）</p>
 <ol>
 <li>各种软件的安装，关注酷客+阮一峰，git+colourpix+atom+hexo+科学上网etc。(谷歌大法是真好</li>
-<li>拦路虎：git+github+hexo,可以参考我上一篇博客<a href="http://wangsiyuan233.cn/GitHub-for-babies.html" target="_blank" rel="external">《github for babies》</a>。</li>
+<li>拦路虎：git+github+hexo,可以参考我上一篇博客<a href="http://wangsiyuan233.cn/GitHub-for-babies/" target="_blank" rel="external">《github for babies》</a>。</li>
 <li>进制的转换 + 存储方式 = 小脚本（自动生成目录并填充内容）</li>
 <li>HTTP基础 + 请求响应 = 极简服务器（发出请求返回内容）</li>
 </ol>
@@ -221,6 +221,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -412,6 +423,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>

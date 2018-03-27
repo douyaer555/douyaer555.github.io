@@ -14,7 +14,7 @@
 <meta property="og:url" content="wangsiyuan233.github.io/2018/02/27/移动端配适/index.html">
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="一、meta viewport1234567//html head&amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&amp;gt; // width=device-width: 让当前viewport">
-<meta property="og:updated_time" content="2018-02-27T11:21:39.375Z">
+<meta property="og:updated_time" content="2018-03-27T07:16:43.451Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端配适">
 <meta name="twitter:description" content="一、meta viewport1234567//html head&amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&amp;gt; // width=device-width: 让当前viewport">
@@ -174,6 +174,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>一、meta viewport</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//html head</div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>&gt;</span></div><div class="line"> // width=device-width: 让当前viewport宽度等于设备的宽度</div><div class="line"> // user-scalable=no: 禁止用户缩放</div><div class="line"> // initial-scale=1.0: 设置页面的初始缩放值为不缩放</div><div class="line"> // maximum-scale=1.0: 允许用户的最大缩放值为1.0</div><div class="line"> // minimum-scale=1.0: 允许用户的最小缩放值为1.0</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p><strong>二、媒体查询</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//html head</div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"> @media(max-width:375px)&#123; body&#123;background: blue;&#125; &#125; </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>这里的max-width:375px指手机分辨率，如果媒体满足max-width:375px，就生效这个css样式。</p>
 <p><strong>三、动态 rem 方案</strong></p>
@@ -209,6 +210,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -400,6 +412,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>
