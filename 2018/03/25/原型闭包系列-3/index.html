@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
   <title>深入理解JavaScript--原型闭包系列(3) | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="由上面这张图可以一层层得出以下的结论1：1.f1.__proto__ === Foo.prototype2.Foo.prototype.__proto__ === Object.prototype3.Object.prototype.__proto__ === null（牢记）有了以上的知识储备，我有一个大胆的想法：函数也是对象，那函数有__proto__吗？它的值有等于什么呢？答案是肯定的，函数">
+  <meta name="description" content="由上面这张图可以一层层得出以下的结论1：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解JavaScript--原型闭包系列(3)">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/03/25/原型闭包系列-3/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="由上面这张图可以一层层得出以下的结论1：1.f1.__proto__ === Foo.prototype2.Foo.prototype.__proto__ === Object.prototype3.Object.prototype.__proto__ === null（牢记）有了以上的知识储备，我有一个大胆的想法：函数也是对象，那函数有__proto__吗？它的值有等于什么呢？答案是肯定的，函数">
+<meta property="og:description" content="由上面这张图可以一层层得出以下的结论1：">
 <meta property="og:image" content="https://i.imgur.com/7BYXesw.png">
 <meta property="og:image" content="https://i.imgur.com/vAwUmea.png">
 <meta property="og:image" content="https://i.imgur.com/E0G47Yo.png">
-<meta property="og:updated_time" content="2018-03-25T08:30:13.654Z">
+<meta property="og:updated_time" content="2018-03-27T06:49:04.255Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解JavaScript--原型闭包系列(3)">
-<meta name="twitter:description" content="由上面这张图可以一层层得出以下的结论1：1.f1.__proto__ === Foo.prototype2.Foo.prototype.__proto__ === Object.prototype3.Object.prototype.__proto__ === null（牢记）有了以上的知识储备，我有一个大胆的想法：函数也是对象，那函数有__proto__吗？它的值有等于什么呢？答案是肯定的，函数">
+<meta name="twitter:description" content="由上面这张图可以一层层得出以下的结论1：">
 <meta name="twitter:image" content="https://i.imgur.com/7BYXesw.png">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
@@ -177,7 +177,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://i.imgur.com/7BYXesw.png" alt=""><br>由上面这张图可以一层层得出以下的结论1：<br>1.<code>f1.__proto__ === Foo.prototype</code><br>2.<code>Foo.prototype.__proto__ === Object.prototype</code><br>3.<code>Object.prototype.__proto__ === null</code>（牢记）<br>有了以上的知识储备，我有一个大胆的想法：函数也是对象，那函数有<code>__proto__</code>吗？它的值有等于什么呢？<br>答案是肯定的，函数这个对象(…)是被FFFFFFunction函数创建的。<br>即 ———&gt;&gt;&gt; <code>Object.__proto__ === Function.prototype</code><br><img src="https://i.imgur.com/vAwUmea.png" alt=""><br>由上面这张图可以一层层得出以下的结论2：<br>1.自定义函数<code>Foo.__proto__ === Function.prototype</code><br>2.<code>Object.__proto__ === Function.prototype</code><br>3.<code>Function.__proto__ === Function.prototype</code>(…)<br>竟然形成了一个环！！<br><img src="https://i.imgur.com/E0G47Yo.png" alt=""><br>由上面这张图可以得出以下的结论3：<br><code>Function.prototype.__proto__ === Object.prototype</code><br>（这个式子在结论1里出现过了哦，一样的形式呢）</p>
+        <p><img src="https://i.imgur.com/7BYXesw.png" alt=""><br>由上面这张图可以一层层得出以下的结论1：<br><a id="more"></a><br>1.<code>f1.__proto__ === Foo.prototype</code><br>2.<code>Foo.prototype.__proto__ === Object.prototype</code><br>3.<code>Object.prototype.__proto__ === null</code>（牢记）<br>有了以上的知识储备，我有一个大胆的想法：函数也是对象，那函数有<code>__proto__</code>吗？它的值有等于什么呢？<br>答案是肯定的，函数这个对象(…)是被FFFFFFunction函数创建的。<br>即 ———&gt;&gt;&gt; <code>Object.__proto__ === Function.prototype</code><br><img src="https://i.imgur.com/vAwUmea.png" alt=""><br>由上面这张图可以一层层得出以下的结论2：<br>1.自定义函数<code>Foo.__proto__ === Function.prototype</code><br>2.<code>Object.__proto__ === Function.prototype</code><br>3.<code>Function.__proto__ === Function.prototype</code>(…)<br>竟然形成了一个环！！<br><img src="https://i.imgur.com/E0G47Yo.png" alt=""><br>由上面这张图可以得出以下的结论3：<br><code>Function.prototype.__proto__ === Object.prototype</code><br>（这个式子在结论1里出现过了哦，一样的形式呢）</p>
 <hr>
 <p>是不是有点乱呢？<br>梳理一遍吧~<br>-&gt;&gt;首先我们利用值类型和引用类型，得出了一个结论：一切引用类型都是对象；<br>-&gt;&gt;第二步知道了对象都是由创建他的函数构建的；<br>此时我们有点发晕了，函数和对象傻傻捋不清楚；<br>-&gt;&gt;第三步引入了prototype这个属性，我们知道了一个[对象]的隐性属性指向(创建这个对象的)函数的显性属性；<br>接着我们发现：一个[函数]的隐性属性指向(创建这个函数的)FFFFFFunction函数的显性属性（<code>Foo.__proto__ === Function.prototype</code>）<br>-&gt;&gt;最后，由于Function.prototype指向的对象也是一个普通的被Object创建的对象，我们得到<code>Function.prototype.__proto__ === Object.prototype</code></p>
 <hr>

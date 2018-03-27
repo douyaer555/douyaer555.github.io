@@ -239,7 +239,7 @@
       
         <p>原型链+继承告一段落，我们接下来开始闭包的部分。<br>当然不会直接开始闭包呀<br>今天想跟大家聊聊 new函数</p>
 <p><a href="http://wangsiyuan233.cn/JS函数.html">声明函数的五种方式</a><br>废话不多说 <strong>当我们在new一个函数的时候我们在干嘛？</strong></p>
-<p>以【为程序员哥哥们批量制造女友】为例TT<br>
+<p>以【为程序员哥哥们批量制造女友】为例14:50<br>
         
           <a class="article-more-a" href="/2018/03/25/聊聊系列-1-new函数/#more">more >></a>
         
@@ -304,7 +304,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>哈哈被骗啦(…)还没轮到原型链<br>这一小节我们将引出一个中介概念 <code>instanceof</code> 14:34<br>
+        <p>哈哈被骗啦(…)还没轮到原型链<br>这一小节我们将引出一个中介概念 <code>instanceof</code> 14:47<br>
         
           <a class="article-more-a" href="/2018/03/25/原型闭包系列-4/#more">more >></a>
         
@@ -369,12 +369,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://i.imgur.com/7BYXesw.png" alt=""><br>由上面这张图可以一层层得出以下的结论1：<br>1.<code>f1.__proto__ === Foo.prototype</code><br>2.<code>Foo.prototype.__proto__ === Object.prototype</code><br>3.<code>Object.prototype.__proto__ === null</code>（牢记）<br>有了以上的知识储备，我有一个大胆的想法：函数也是对象，那函数有<code>__proto__</code>吗？它的值有等于什么呢？<br>答案是肯定的，函数这个对象(…)是被FFFFFFunction函数创建的。<br>即 ———&gt;&gt;&gt; <code>Object.__proto__ === Function.prototype</code><br><img src="https://i.imgur.com/vAwUmea.png" alt=""><br>由上面这张图可以一层层得出以下的结论2：<br>1.自定义函数<code>Foo.__proto__ === Function.prototype</code><br>2.<code>Object.__proto__ === Function.prototype</code><br>3.<code>Function.__proto__ === Function.prototype</code>(…)<br>竟然形成了一个环！！<br><img src="https://i.imgur.com/E0G47Yo.png" alt=""><br>由上面这张图可以得出以下的结论3：<br><code>Function.prototype.__proto__ === Object.prototype</code><br>（这个式子在结论1里出现过了哦，一样的形式呢）</p>
-<hr>
-<p>是不是有点乱呢？<br>梳理一遍吧~<br>-&gt;&gt;首先我们利用值类型和引用类型，得出了一个结论：一切引用类型都是对象；<br>-&gt;&gt;第二步知道了对象都是由创建他的函数构建的；<br>此时我们有点发晕了，函数和对象傻傻捋不清楚；<br>-&gt;&gt;第三步引入了prototype这个属性，我们知道了一个[对象]的隐性属性指向(创建这个对象的)函数的显性属性；<br>接着我们发现：一个[函数]的隐性属性指向(创建这个函数的)FFFFFFunction函数的显性属性（<code>Foo.__proto__ === Function.prototype</code>）<br>-&gt;&gt;最后，由于Function.prototype指向的对象也是一个普通的被Object创建的对象，我们得到<code>Function.prototype.__proto__ === Object.prototype</code></p>
-<hr>
-<p>对的哦，最后形成了一个环！嘿嘿嘿，老司机肯定知道我接下来要介绍的重要概念————原型链 啦！</p>
-
+        <p><img src="https://i.imgur.com/7BYXesw.png" alt=""><br>由上面这张图可以一层层得出以下的结论1：<br>
+        
+          <a class="article-more-a" href="/2018/03/25/原型闭包系列-3/#more">more >></a>
+        
       
 
       
