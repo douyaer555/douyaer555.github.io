@@ -8,13 +8,19 @@
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
   <title>深入理解JavaScript--闭包系列(4) | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="终于讲到了正题，也是我们的最后一部分了！大家打起精神耶耶耶！~（图书馆关门之前我一定要整理完）
+如果你看到这里还对闭包的知识有任何的疑问请跟我默念这两种应用场景：函数作为返回值，函数作为参数传递">
+<meta property="og:type" content="article">
 <meta property="og:title" content="深入理解JavaScript--闭包系列(4)">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/03/27/闭包系列-4/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:updated_time" content="2018-03-27T11:59:32.028Z">
+<meta property="og:description" content="终于讲到了正题，也是我们的最后一部分了！大家打起精神耶耶耶！~（图书馆关门之前我一定要整理完）
+如果你看到这里还对闭包的知识有任何的疑问请跟我默念这两种应用场景：函数作为返回值，函数作为参数传递">
+<meta property="og:updated_time" content="2018-03-27T13:31:31.688Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解JavaScript--闭包系列(4)">
+<meta name="twitter:description" content="终于讲到了正题，也是我们的最后一部分了！大家打起精神耶耶耶！~（图书馆关门之前我一定要整理完）
+如果你看到这里还对闭包的知识有任何的疑问请跟我默念这两种应用场景：函数作为返回值，函数作为参数传递">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -160,7 +166,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>终于讲到了正题，也是我们的最后一部分了！<br>大家打起精神耶耶耶！~<br>（图书馆关门之前我一定要整理完）</p>
+<p>如果你看到这里还对闭包的知识有任何的疑问<br>请跟我默念这两种应用场景：<strong>函数作为返回值，函数作为参数传递</strong><br><a id="more"></a><br>1、<strong>【函数作为返回值】</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> max = <span class="number">10</span>;</div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span> ( x &gt; max) &#123;<span class="built_in">console</span>.log(x);&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> f1 = fn;</div><div class="line">f1(<span class="number">15</span>); <span class="comment">// 15</span></div></pre></td></tr></table></figure></p>
+<p>2、<strong>【函数作为参数传递】</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> max = <span class="number">10</span>;</div><div class="line">fn = <span class="function"><span class="keyword">function</span> (<span class="params">x</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span> ( x &gt; max) &#123;<span class="built_in">console</span>.log(x);&#125;</div><div class="line">&#125;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">f1</span>)</span>&#123;<span class="keyword">var</span> max = <span class="number">100</span>; f1(<span class="number">15</span>)&#125; )(fn); <span class="comment">// 15</span></div></pre></td></tr></table></figure></p>
+<hr>
+<p>在<a href="http://wangsiyuan233.cn/2018/03/26/闭包系列-1/" target="_blank" rel="external">闭包系列1</a>中我们提到当一个函数被调用完成之后，其执行上下文环境将被销毁，其中的变量也会被同时销毁。<br>但是在当时那篇文章中留了一个问号——有些情况下，函数调用完成之后，其执行上下文环境不会接着被销毁。这就是<strong>【闭包】</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> max = <span class="number">10</span>;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span> ( x &gt; max) &#123;<span class="built_in">console</span>.log(x);&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> f2 = fn;</div><div class="line">	max = <span class="number">100</span>;</div><div class="line">f2(<span class="number">15</span>);</div></pre></td></tr></table></figure></p>
+
       
 
       
@@ -376,15 +387,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
