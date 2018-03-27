@@ -315,9 +315,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>1、所有构造器/函数（包括自定义的）的 <code>__proto__</code> 都指向<code>Function.prototype</code>(它是一个空函数)<br>2、<code>Function.prototype.__proto__ === Object.prototype</code><br>3、<code>Object.prototype.__proto__ === null</code></p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> object = &#123;&#125;</div><div class="line">object.__proto__  === <span class="built_in">Object</span>.prototype</div><div class="line"></div><div class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">fn.__proto__ === <span class="built_in">Function</span>.prototype </div><div class="line">fn.__proto__.__proto__ ==== <span class="built_in">Object</span>.prototype</div><div class="line"></div><div class="line"><span class="keyword">var</span> array = []</div><div class="line">array.__proto__ === <span class="built_in">Array</span>.prototype</div><div class="line">array.__proto__.__proto__ === <span class="built_in">Object</span>.prototype</div><div class="line"></div><div class="line"><span class="built_in">Function</span>.__proto__ === <span class="built_in">Function</span>.prototype</div><div class="line"><span class="built_in">Array</span>.__proto__ === <span class="built_in">Function</span>.prototype</div><div class="line"><span class="built_in">Object</span>.__proto__ === <span class="built_in">Function</span>.prototype</div><div class="line"></div><div class="line"><span class="literal">true</span>.__proto__ === <span class="built_in">Function</span>.prototype</div><div class="line"></div><div class="line"><span class="built_in">Function</span>.prototype.__proto__ ===  <span class="built_in">Object</span>.prototype</div><div class="line"><span class="built_in">Object</span>.prototype.__proto__ === <span class="literal">null</span></div></pre></td></tr></table></figure>
+<p>1、所有构造器/函数（包括自定义的）的 <code>__proto__</code> 都指向<code>Function.prototype</code>(它是一个空函数)<br>2、<code>Function.prototype.__proto__ === Object.prototype</code><br>3、<code>Object.prototype.__proto__ === null</code><br>
+        
+          <a class="article-more-a" href="/2018/03/08/原型链实例/#more">more >></a>
+        
       
 
       
@@ -325,6 +326,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">原型链</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -803,6 +815,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

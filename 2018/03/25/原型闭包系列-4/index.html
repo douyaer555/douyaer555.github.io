@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
   <title>深入理解JavaScript--原型闭包系列(4) | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="哈哈被骗啦(…)还没轮到原型链这一小节我们将引出一个中介概念 instanceof 14:47">
+  <meta name="description" content="哈哈被骗啦(…)还没轮到原型链这一小节我们将引出一个中介概念 instanceof">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解JavaScript--原型闭包系列(4)">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/03/25/原型闭包系列-4/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="哈哈被骗啦(…)还没轮到原型链这一小节我们将引出一个中介概念 instanceof 14:47">
+<meta property="og:description" content="哈哈被骗啦(…)还没轮到原型链这一小节我们将引出一个中介概念 instanceof">
 <meta property="og:image" content="https://i.imgur.com/r7M68Fc.png">
-<meta property="og:updated_time" content="2018-03-27T06:47:52.246Z">
+<meta property="og:updated_time" content="2018-03-27T06:51:28.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解JavaScript--原型闭包系列(4)">
-<meta name="twitter:description" content="哈哈被骗啦(…)还没轮到原型链这一小节我们将引出一个中介概念 instanceof 14:47">
+<meta name="twitter:description" content="哈哈被骗啦(…)还没轮到原型链这一小节我们将引出一个中介概念 instanceof">
 <meta name="twitter:image" content="https://i.imgur.com/r7M68Fc.png">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
@@ -175,7 +175,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>哈哈被骗啦(…)还没轮到原型链<br>这一小节我们将引出一个中介概念 <code>instanceof</code> 14:47<br><a id="more"></a></p>
+        <p>哈哈被骗啦(…)还没轮到原型链<br>这一小节我们将引出一个中介概念 <code>instanceof</code><br><a id="more"></a></p>
 <p>对于值类型，我们可以通过typeof判断，string/number/boolean都很清楚，但是typeof在判断到引用类型的时候，返回值只有object/function，我们不知道它到底是一个object对象，还是数组，还是new Number等等。这个时候就需要用到instanceof。</p>
 <p>instanceof有一个判断准则是：沿着对象的<code>__proto__</code> 和 函数的<code>prototype</code>的两端同时寻找，如果两条线能找到同一个引用，即同一个对象，那么就返回true。如果找到终点还未重合，则返回false。<br><img src="https://i.imgur.com/r7M68Fc.png" alt=""><br>由上面这张图可以得出以下不着调的结论：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Function</span> Foo()&#123;&#125;</div><div class="line"><span class="keyword">var</span> f1 = <span class="keyword">new</span> Foo();</div><div class="line"><span class="built_in">console</span>.log(f1 <span class="keyword">instanceof</span> Foo); <span class="comment">//true</span></div><div class="line"><span class="built_in">console</span>.log(f1 <span class="keyword">instanceof</span> <span class="built_in">Object</span>); <span class="comment">//true</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span> <span class="keyword">instanceof</span> <span class="built_in">Function</span>); <span class="comment">//true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Function</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span>); <span class="comment">//true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Function</span> <span class="keyword">instanceof</span> <span class="built_in">Function</span>); <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
 <p>所以这些乱七八糟的关系图是为什么呢？？？<br>原来，instanceof表示的就是一种继承关系，或者原型链的结构。</p>
@@ -407,6 +407,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
