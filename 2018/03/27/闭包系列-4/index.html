@@ -16,13 +16,13 @@
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="终于讲到了正题，也是我们的最后一部分了！大家打起精神耶耶耶！~（图书馆关门之前我一定要整理完）
 如果你看到这里还对闭包的知识有任何的疑问请跟我默念这两种应用场景：函数作为返回值，函数作为参数传递">
-<meta property="og:image" content="https://i.imgur.com/tavPqWF.png">
-<meta property="og:updated_time" content="2018-03-27T13:45:49.170Z">
+<meta property="og:image" content="https://i.imgur.com/ApNdBSw.png">
+<meta property="og:updated_time" content="2018-03-28T01:04:06.070Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解JavaScript--闭包系列(4)">
 <meta name="twitter:description" content="终于讲到了正题，也是我们的最后一部分了！大家打起精神耶耶耶！~（图书馆关门之前我一定要整理完）
 如果你看到这里还对闭包的知识有任何的疑问请跟我默念这两种应用场景：函数作为返回值，函数作为参数传递">
-<meta name="twitter:image" content="https://i.imgur.com/tavPqWF.png">
+<meta name="twitter:image" content="https://i.imgur.com/ApNdBSw.png">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -172,8 +172,8 @@
 <p>如果你看到这里还对闭包的知识有任何的疑问<br>请跟我默念这两种应用场景：<strong>函数作为返回值，函数作为参数传递</strong><br><a id="more"></a><br>1、<strong>【函数作为返回值】</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> max = <span class="number">10</span>;</div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span> ( x &gt; max) &#123;<span class="built_in">console</span>.log(x);&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> f1 = fn;</div><div class="line">f1(<span class="number">15</span>); <span class="comment">// 15</span></div></pre></td></tr></table></figure></p>
 <p>2、<strong>【函数作为参数传递】</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> max = <span class="number">10</span>;</div><div class="line">fn = <span class="function"><span class="keyword">function</span> (<span class="params">x</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span> ( x &gt; max) &#123;<span class="built_in">console</span>.log(x);&#125;</div><div class="line">&#125;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">f1</span>)</span>&#123;<span class="keyword">var</span> max = <span class="number">100</span>; f1(<span class="number">15</span>)&#125; )(fn); <span class="comment">// 15</span></div></pre></td></tr></table></figure></p>
 <hr>
-<p>在<a href="http://wangsiyuan233.cn/2018/03/26/闭包系列-1/" target="_blank" rel="external">闭包系列1</a>中我们提到当一个函数被调用完成之后，其执行上下文环境将被销毁，其中的变量也会被同时销毁。<br>但是在当时那篇文章中留了一个问号——有些情况下，函数调用完成之后，其执行上下文环境不会接着被销毁。这就是<strong>【闭包】</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> max = <span class="number">10</span>;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span> ( x &gt; max) &#123;<span class="built_in">console</span>.log(x);&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> f2 = fn();</div><div class="line">	max = <span class="number">100</span>;</div><div class="line">f2(<span class="number">15</span>);</div></pre></td></tr></table></figure></p>
-<p><img src="https://i.imgur.com/tavPqWF.png" alt=""><br>第一步：全局上下文环境时，max为undefined;<br>第二步：第9行 <code>var f2 = fn()</code>(少了括号不好意思懒得重新画图了)，产生fn()v执行上下文环境；<br>第三步：按理说第9行执行完了，fn()的执行上下文环境应该被销毁，【但是】，重点来了：因为执行fn()时，返回的是一个函数。函数的特别之处在于可以创建一个独立的作用域。而正巧合的是，返回的这个函数体中，还有一个自由变量max要引用fn作用域下的fn()上下文环境中的max。因此，这个max不能被销毁，销毁了之后f1函数中的max就找不到值了。<br>因此，这里的fn()上下文环境不能被销毁，还依然存在与执行上下文栈中。<br>因此，执行到第10行时，全局上下文环境将变为活动状态，但是fn()上下文环境依然会在执行上下文栈中。另外，执行完第10行，全局上下文环境中的max被赋值为100。<br>第四步：</p>
+<p>在<a href="http://wangsiyuan233.cn/2018/03/26/闭包系列-1/" target="_blank" rel="external">闭包系列1</a>中我们提到当一个函数被调用完成之后，其执行上下文环境将被销毁，其中的变量也会被同时销毁。<br>但是在当时那篇文章中留了一个问号——有些情况下，函数调用完成之后，其执行上下文环境不会接着被销毁。这就是<strong>【闭包】</strong><br>（还是被赶出来了…）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> max = <span class="number">10</span>;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span> ( x &gt; max) &#123;<span class="built_in">console</span>.log(x);&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> f2 = fn();</div><div class="line">	max = <span class="number">100</span>;</div><div class="line">f2(<span class="number">15</span>);</div></pre></td></tr></table></figure></p>
+<p><img src="https://i.imgur.com/ApNdBSw.png" alt=""><br>第一步：全局上下文环境时，max为undefined;<br>第二步：执行到第9行 <code>var f2 = fn()</code>，产生fn()执行上下文环境；<br>第三步：按理说第9行执行完了，fn()的执行上下文环境应该被销毁，【但是】，重点来了：因为执行fn()时，返回的是一个函数。函数的特别之处在于可以创建一个独立的作用域。而正巧合的是，返回的这个函数体中，还有一个自由变量max要引用fn作用域下的fn()上下文环境中的max;<br>因此，这个max不能被销毁，销毁了之后f1函数中的max就找不到值了;<br>因此，这里的fn()上下文环境不能被销毁，还依然存在与执行上下文栈中;<br>因此，执行到第10行时，全局上下文环境将变为活动状态，但是fn()上下文环境依然会在执行上下文栈中。另外，执行完第10行，全局上下文环境中的max被赋值为100。<br>第四步：第11行，执行f2(15)，即执行f1(15)，创建f1(15)上下文环境;<br>执行f1(15)时，max是自由变量，需要向创建f1函数的作用域中查找，找到了max的值为10;<br>这里的重点就在于，创建f1函数是在执行fn()时创建的。fn()早就执行结束了，但是fn()执行上下文环境还存在与栈中，因此f1(15)时，max可以查找到。如果fn()上下文环境销毁了，那么max就找不到了。<br>使用闭包会消耗更多的内存哦！</p>
 
       
 
@@ -390,10 +390,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -402,15 +398,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
