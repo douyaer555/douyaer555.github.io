@@ -14,7 +14,7 @@
 <meta property="og:url" content="wangsiyuan233.github.io/2018/03/28/函数知多少/index.html">
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="一、定义1234//1、匿名函数function ()&amp;#123;return 3&amp;#125; //浏览器会直接报错var f1 = function ()&amp;#123;&amp;#125; //将匿名函数存在f1这个地址f1.name //f1   虽然是匿名函数，但是它有name">
-<meta property="og:updated_time" content="2018-03-28T11:35:08.879Z">
+<meta property="og:updated_time" content="2018-03-29T02:41:19.671Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="函数知多少">
 <meta name="twitter:description" content="一、定义1234//1、匿名函数function ()&amp;#123;return 3&amp;#125; //浏览器会直接报错var f1 = function ()&amp;#123;&amp;#125; //将匿名函数存在f1这个地址f1.name //f1   虽然是匿名函数，但是它有name">
@@ -163,11 +163,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一、定义<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1、匿名函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;<span class="keyword">return</span> <span class="number">3</span>&#125; <span class="comment">//浏览器会直接报错</span></div><div class="line"><span class="keyword">var</span> f1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;&#125; <span class="comment">//将匿名函数存在f1这个地址</span></div><div class="line">f1.name <span class="comment">//f1   虽然是匿名函数，但是它有name</span></div></pre></td></tr></table></figure></p>
+        <p><strong>一、定义</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1、匿名函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;<span class="keyword">return</span> <span class="number">3</span>&#125; <span class="comment">//浏览器会直接报错</span></div><div class="line"><span class="keyword">var</span> f1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;&#125; <span class="comment">//将匿名函数存在f1这个地址</span></div><div class="line">f1.name <span class="comment">//f1   虽然是匿名函数，但是它有name</span></div></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//2、具名函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> <span class="number">1</span>&#125; <span class="comment">//作用域是全局作用域，f1是变量</span></div><div class="line"><span class="keyword">var</span> f2 = <span class="function"><span class="keyword">function</span> <span class="title">f3</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> <span class="number">2</span>&#125; <span class="comment">// 作用域在f3函数体内</span></div></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//3、箭头函数</span></div><div class="line"><span class="keyword">var</span> f4 = <span class="function">(<span class="params">i,j</span>) =&gt;</span> &#123;<span class="built_in">console</span>.log(<span class="number">1</span>); <span class="keyword">return</span> i * j&#125;</div><div class="line"><span class="comment">//本质上和上两种没有区别，this的值却是内外相同</span></div></pre></td></tr></table></figure>
-<p>二、<a href="wangsiyuan233.cn/2018/03/26/闭包系列-2/">执行上下文环境</a><br>三、call stack<br>一种先进后出的模式<br>JS是单线程，遇到函数就会暗暗的做下标记再进去，a_&gt;b-&gt;c,从c退出了在进入b,最后才退出a<br>1、<a href="http://latentflip.com/loupe/?code=ZnVuY3Rpb24gYSgpewogICAgY29uc29sZS5sb2coJ2EnKQogIHJldHVybiAnYScgIAp9CgpmdW5jdGlvbiBiKCl7CiAgICBjb25zb2xlLmxvZygnYicpCiAgICByZXR1cm4gJ2InCn0KCmZ1bmN0aW9uIGMoKXsKICAgIGNvbnNvbGUubG9nKCdjJykKICAgIHJldHVybiAnYycKfQoKYSgpCmIoKQpjKCk%3D!!!" target="_blank" rel="external">普通调用</a><br>2、<a href="http://latentflip.com/loupe/?code=ZnVuY3Rpb24gYSgpewogICAgY29uc29sZS5sb2coJ2ExJykKICAgIGIoKQogICAgY29uc29sZS5sb2coJ2EyJykKICByZXR1cm4gJ2EnICAKfQpmdW5jdGlvbiBiKCl7CiAgICBjb25zb2xlLmxvZygnYjEnKQogICAgYygpCiAgICBjb25zb2xlLmxvZygnYjInKQogICAgcmV0dXJuICdiJwp9CmZ1bmN0aW9uIGMoKXsKICAgIGNvbnNvbGUubG9nKCdjJykKICAgIHJldHVybiAnYycKfQphKCkKY29uc29sZS5sb2coJ2VuZCcp!!!" target="_blank" rel="external">嵌套调用</a><br>3、<a href="http://latentflip.com/loupe/?code=ZnVuY3Rpb24gZmFiKG4pewogICAgY29uc29sZS5sb2coJ3N0YXJ0IGNhbGMgZmFiICcrIG4pCiAgICBpZihuPj0zKXsKICAgICAgICByZXR1cm4gZmFiKG4tMSkgKyBmYWIobi0yKQogICAgfWVsc2V7CiAgICAgICAgcmV0dXJuIDEKICAgIH0KfQoKZmFiKDUp!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D" target="_blank" rel="external">递归</a><br>四、this,arguments,apply,bind<br>进入一个函数的时候，不仅记录地址，还记录这个函数的传参<br>this必须是对象，this是函数和对象的羁绊<br>fn.call(undefined,arguments)可以确定arguments的个数<br>this会被填充为小window，arguments默认是空数组<br>fn.apply(undefined,arguments)不能确定arguments的个数<br>call 和 apply 是直接调用函数，而 bind 则是返回一个新函数（并没有调用原来的函数），这个新函数会 call 原来的函数，call 的参数由你指定。</p>
+<p><strong>二、<a href="wangsiyuan233.cn/2018/03/26/闭包系列-2/">执行上下文环境</a></strong><br><strong>三、call stack</strong><br>一种先进后出的模式<br>JS是单线程，遇到函数就会暗暗的做下标记再进去，a_&gt;b-&gt;c,从c退出了在进入b,最后才退出a<br>1、<a href="http://latentflip.com/loupe/?code=ZnVuY3Rpb24gYSgpewogICAgY29uc29sZS5sb2coJ2EnKQogIHJldHVybiAnYScgIAp9CgpmdW5jdGlvbiBiKCl7CiAgICBjb25zb2xlLmxvZygnYicpCiAgICByZXR1cm4gJ2InCn0KCmZ1bmN0aW9uIGMoKXsKICAgIGNvbnNvbGUubG9nKCdjJykKICAgIHJldHVybiAnYycKfQoKYSgpCmIoKQpjKCk%3D!!!" target="_blank" rel="external">普通调用</a><br>2、<a href="http://latentflip.com/loupe/?code=ZnVuY3Rpb24gYSgpewogICAgY29uc29sZS5sb2coJ2ExJykKICAgIGIoKQogICAgY29uc29sZS5sb2coJ2EyJykKICByZXR1cm4gJ2EnICAKfQpmdW5jdGlvbiBiKCl7CiAgICBjb25zb2xlLmxvZygnYjEnKQogICAgYygpCiAgICBjb25zb2xlLmxvZygnYjInKQogICAgcmV0dXJuICdiJwp9CmZ1bmN0aW9uIGMoKXsKICAgIGNvbnNvbGUubG9nKCdjJykKICAgIHJldHVybiAnYycKfQphKCkKY29uc29sZS5sb2coJ2VuZCcp!!!" target="_blank" rel="external">嵌套调用</a><br>3、<a href="http://latentflip.com/loupe/?code=ZnVuY3Rpb24gZmFiKG4pewogICAgY29uc29sZS5sb2coJ3N0YXJ0IGNhbGMgZmFiICcrIG4pCiAgICBpZihuPj0zKXsKICAgICAgICByZXR1cm4gZmFiKG4tMSkgKyBmYWIobi0yKQogICAgfWVsc2V7CiAgICAgICAgcmV0dXJuIDEKICAgIH0KfQoKZmFiKDUp!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D" target="_blank" rel="external">递归</a><br><strong>四、this,arguments,apply,bind</strong><br>进入一个函数的时候，不仅记录地址，还记录这个函数的传参<br>this必须是对象，this是函数和对象的羁绊<br>fn.call(undefined,arguments)可以确定arguments的个数<br>this会被填充为小window，arguments默认是空数组<br>fn.apply(undefined,arguments)不能确定arguments的个数<br>call 和 apply 是直接调用函数，而 bind 则是返回一个新函数（并没有调用原来的函数），这个新函数会 call 原来的函数，call 的参数由你指定。</p>
 
       
 
@@ -397,15 +397,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
