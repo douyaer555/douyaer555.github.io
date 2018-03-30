@@ -6,33 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>CSS(二) | wangsiyuan</title>
+  <title>深入理解JavaScript--异步系列(1) | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这次主要更新userCard部分
-
-CSS的两大bug：width 和 height;尽量不要写死。规避手段：max-width
-.xxx {text-align: center;} ：让子代的内联元素居中排列，【内联元素居中要把t-a加在父级元素上】
-width 的默认值是 auto
-display: inline: 设置 宽高 / margin-top/ margin-buttom 都是无效的">
+  <meta name="description" content="异步的实现原理123456var ajax = $.ajax(&amp;#123;    url: &apos;/data/data1.json&apos;,    success: function () &amp;#123;        console.log(&apos;success&apos;)    &amp;#125;&amp;#125;)
+对于ajax这种传递过去不执行，等出来结果之后再执行的函数，叫做callback，即回调函数.实现异步的最核心原">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS(二)">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/01/31/CSS-二/index.html">
+<meta property="og:title" content="深入理解JavaScript--异步系列(1)">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/03/30/异步系列-1/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="这次主要更新userCard部分
-
-CSS的两大bug：width 和 height;尽量不要写死。规避手段：max-width
-.xxx {text-align: center;} ：让子代的内联元素居中排列，【内联元素居中要把t-a加在父级元素上】
-width 的默认值是 auto
-display: inline: 设置 宽高 / margin-top/ margin-buttom 都是无效的">
-<meta property="og:updated_time" content="2018-03-27T07:25:07.760Z">
+<meta property="og:description" content="异步的实现原理123456var ajax = $.ajax(&amp;#123;    url: &apos;/data/data1.json&apos;,    success: function () &amp;#123;        console.log(&apos;success&apos;)    &amp;#125;&amp;#125;)
+对于ajax这种传递过去不执行，等出来结果之后再执行的函数，叫做callback，即回调函数.实现异步的最核心原">
+<meta property="og:updated_time" content="2018-03-30T08:18:59.676Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS(二)">
-<meta name="twitter:description" content="这次主要更新userCard部分
-
-CSS的两大bug：width 和 height;尽量不要写死。规避手段：max-width
-.xxx {text-align: center;} ：让子代的内联元素居中排列，【内联元素居中要把t-a加在父级元素上】
-width 的默认值是 auto
-display: inline: 设置 宽高 / margin-top/ margin-buttom 都是无效的">
+<meta name="twitter:title" content="深入理解JavaScript--异步系列(1)">
+<meta name="twitter:description" content="异步的实现原理123456var ajax = $.ajax(&amp;#123;    url: &apos;/data/data1.json&apos;,    success: function () &amp;#123;        console.log(&apos;success&apos;)    &amp;#125;&amp;#125;)
+对于ajax这种传递过去不执行，等出来结果之后再执行的函数，叫做callback，即回调函数.实现异步的最核心原">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -158,44 +146,34 @@ display: inline: 设置 宽高 / margin-top/ margin-buttom 都是无效的">
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CSS-二" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-异步系列-1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      CSS(二)
+      深入理解JavaScript--异步系列(1)
     </h1>
   
 
         
-        <a href="/2018/01/31/CSS-二/" class="archive-article-date">
-  	<time datetime="2018-01-31T01:17:53.282Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-31</time>
+        <a href="/2018/03/30/异步系列-1/" class="archive-article-date">
+  	<time datetime="2018-03-30T07:47:20.296Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>这次主要更新userCard部分</strong></p>
-<ol>
-<li>CSS的两大bug：width 和 height;尽量不要写死。规避手段：max-width</li>
-<li>.xxx {text-align: center;} ：让子代的内联元素居中排列，<strong>【内联元素居中要把t-a加在父级元素上】</strong></li>
-<li>width 的默认值是 auto</li>
-<li>display: inline: 设置 宽高 / margin-top/ margin-buttom 都是无效的<a id="more"></a></li>
-<li>文档流是文档内元素流动的方向，内联元素是从左往右，块级元素是从上到下</li>
-<li>line-height可以确定内联元素的高度，line-height = span =font-size</li>
-<li>一个元素的高度是由内容的总和决定的（不是相等哦），浮动出来的元素不算在总高度里</li>
-<li>英文默认是不会自动换行的，所有用英文填充测试的时候，用lorem吧！ 或者设置 word-break：break-all</li>
-<li>非线性流动的时候可以考虑多一层div</li>
-<li>给背景图遮罩：<code>&lt;div class=&quot;banner&quot;&gt;&lt;div class=&quot;mask&quot;&gt;&lt;/div&gt;&lt;/div&gt;</code></li>
-<li>给背景图遮罩：<code>.banner{height: 515px;background-image: url(./picture/rs-cover.jpg);background-position: center center;background-size: cover;}</code> 和 <code>.banner .mask{height: 515px;background-color: rgba(0,0,0,0.8)}</code></li>
-<li>回复出厂设置：*{margin:0; padding:0;}</li>
-<li>看不清div：border：1px solid red;</li>
-<li><strong>绝对定位：动的absolute,不动的relative</strong></li>
-<li>奇形怪状：<code>https://css-tricks.com/examples/ShapesOfCSS/#yin-yang</code></li>
-</ol>
+        <h2 id="异步的实现原理"><a href="#异步的实现原理" class="headerlink" title="异步的实现原理"></a>异步的实现原理</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ajax = $.ajax(&#123;</div><div class="line">    <span class="attr">url</span>: <span class="string">'/data/data1.json'</span>,</div><div class="line">    <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'success'</span>)</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>对于ajax这种传递过去不执行，等出来结果之后再执行的函数，叫做callback，即回调函数.<br>实现<strong>异步的最核心原理</strong>，就是将callback作为参数传递给异步执行函数，当有结果返回之后再触发 callback执行.<br><a id="more"></a><br>JavaScript语言的一大特点就是单线程，也就是说，同一个时间只能做一件事。</p>
+<p>单线程就意味着，所有任务需要排队，前一个任务结束，才会执行后一个任务。如果前一个任务耗时很长，后一个任务就不得不一直等着。</p>
+<p>JavaScript语言的设计者意识到，这时主线程完全可以不管IO设备，挂起处于等待中的任务，先运行排在后面的任务。等到IO设备返回了结果，再回过头，把挂起的任务继续执行下去。</p>
+<p>于是，所有任务可以分成两种，一种是同步任务（synchronous），另一种是异步任务（asynchronous）。</p>
+<p>一旦”执行栈”中的所有同步任务执行完毕，系统就会读取”任务队列”，看看里面有哪些事件。那些对应的异步任务，于是结束等待状态，进入执行栈，开始执行。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">setTimeout(<span class="built_in">console</span>.log, <span class="number">0</span>, <span class="string">'a'</span>)</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'b'</span>)</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'c'</span>)</div><div class="line"><span class="comment">// b c a</span></div></pre></td></tr></table></figure></p>
+<p>第一步，执行第一行，此时会将这个操作暂时存储到其他地方，因为setTimeout是一个异步执行操作。<br>第二步，执行第二行，打印 b<br>第三步，执行第三行，打印 c<br>第四步，等待最后一行程序（一共三行）都全部执行完了，然后立马实时查看刚才暂存的异步操作有没有。如果有可执行的，就立即拿到出来继续执行。<br>第五步，执行完毕之后，再实时查看暂存位置中是否还有未执行的异步回调。</p>
+<p>通过这一小节，我们浅浅的了解了异步原理。<br>那么，<br><strong>事件绑定算不算异步？</strong></p>
 
       
 
@@ -230,7 +208,7 @@ display: inline: 设置 宽高 / margin-top/ margin-buttom 都是无效的">
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">异步</a>
         		</li>
       		
 		</ul>
@@ -286,7 +264,7 @@ display: inline: 设置 宽高 / margin-top/ margin-buttom 都是无效的">
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/01/31/CSS-二/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/03/30/异步系列-1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -300,18 +278,9 @@ display: inline: 设置 宽高 / margin-top/ margin-buttom 都是无效的">
   
 <nav id="article-nav">
   
-    <a href="/2018/02/01/CSS-三/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          CSS(三)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/01/30/CSS-一/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CSS(一)</div>
+    <a href="/2018/03/29/CSS布局方案一站式解决/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS布局方案一站式解决</div>
       <i class="icon-circle-right"></i>
     </a>
   
