@@ -6,45 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>CSS小结 | wangsiyuan</title>
+  <title>深入理解JavaScript--异步系列(2) | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="CSS黑魔法各属性之间相互影响
-
-margin 和 border：
-
-
-上下两个div之间的margin会选择大的呈现
-用一个0.1px的border隔开，上下还是原来的margin数；
-用display：table，上下还是原来的margin数；
-用display：flex，上下还是原来的margin数；
-用overflow：hidden，上下还是原来的margin数；">
+  <meta name="description" content="这一小节主讲ajax，可以看我之前的封装一个ajax">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS小结">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/02/01/CSS小结/index.html">
+<meta property="og:title" content="深入理解JavaScript--异步系列(2)">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/03/30/异步系列-2/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="CSS黑魔法各属性之间相互影响
-
-margin 和 border：
-
-
-上下两个div之间的margin会选择大的呈现
-用一个0.1px的border隔开，上下还是原来的margin数；
-用display：table，上下还是原来的margin数；
-用display：flex，上下还是原来的margin数；
-用overflow：hidden，上下还是原来的margin数；">
-<meta property="og:updated_time" content="2018-03-27T07:24:39.586Z">
+<meta property="og:description" content="这一小节主讲ajax，可以看我之前的封装一个ajax">
+<meta property="og:updated_time" content="2018-03-30T08:55:38.060Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS小结">
-<meta name="twitter:description" content="CSS黑魔法各属性之间相互影响
-
-margin 和 border：
-
-
-上下两个div之间的margin会选择大的呈现
-用一个0.1px的border隔开，上下还是原来的margin数；
-用display：table，上下还是原来的margin数；
-用display：flex，上下还是原来的margin数；
-用overflow：hidden，上下还是原来的margin数；">
+<meta name="twitter:title" content="深入理解JavaScript--异步系列(2)">
+<meta name="twitter:description" content="这一小节主讲ajax，可以看我之前的封装一个ajax">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -170,73 +143,27 @@ margin 和 border：
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CSS小结" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-异步系列-2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      CSS小结
+      深入理解JavaScript--异步系列(2)
     </h1>
   
 
         
-        <a href="/2018/02/01/CSS小结/" class="archive-article-date">
-  	<time datetime="2018-02-01T11:25:53.463Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-01</time>
+        <a href="/2018/03/30/异步系列-2/" class="archive-article-date">
+  	<time datetime="2018-03-30T08:21:36.830Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="CSS黑魔法"><a href="#CSS黑魔法" class="headerlink" title="CSS黑魔法"></a>CSS黑魔法</h2><p><strong>各属性之间相互影响</strong></p>
-<ul>
-<li>margin 和 border：</li>
-</ul>
-<ol>
-<li>上下两个div之间的margin会选择大的呈现</li>
-<li>用一个0.1px的border隔开，上下还是原来的margin数；</li>
-<li>用display：table，上下还是原来的margin数；</li>
-<li>用display：flex，上下还是原来的margin数；</li>
-<li>用overflow：hidden，上下还是原来的margin数；<a id="more"></a></li>
-</ol>
-<ul>
-<li><p>li的小圆点 和 display:<br>当 display:inline 或者 display:block的时候，li的小圆点会消失；</p>
-</li>
-<li><p>position 和 display：<br>当position为 absolute时，设置好的display:inline会变成display:block;</p>
-</li>
-</ul>
-<p><strong>各元素之间相互影响</strong></p>
-<ul>
-<li><p>position 和 transform：<br>position 为 fixed 时，transform scale（0.9），共同缩小页面，元素并没有停留在原来的位置，相对页面固定，而是一起缩小了！</p>
-</li>
-<li><p>float 和 inline:<br>浮动并不仅仅是“在上面”，更深刻的含义是 —— “图文混排” “文字环绕”；</p>
-</li>
-</ul>
-<hr>
-<h2 id="CSS套路"><a href="#CSS套路" class="headerlink" title="CSS套路"></a>CSS套路</h2><ul>
-<li><strong>布局</strong></li>
-</ul>
-<ol>
-<li>web端：IE8用float；chrome用flex；</li>
-<li>手机端：flex；</li>
-</ol>
-<ul>
-<li><strong>水平居中</strong></li>
-</ul>
-<ol>
-<li>inline元素：.parent{text-align：center;} .child{inline / inline-block}</li>
-<li>block元素：child宽度不确定时用margin-left，margin-right；child宽度确定时用margin：auto</li>
-</ol>
-<ul>
-<li><strong>垂直居中</strong>(要点是不要写死height)</li>
-</ul>
-<ol>
-<li>parent高度确定：不管child高度确不确定，都是.parent{padding-top，padding-button;} </li>
-<li>parent高度不确定且child高度不确定，IE8用table；chrome 和 mobile 用flex；（parent能不写死就不要手欠！）</li>
-</ol>
-<hr>
+        <p>这一小节主讲ajax，可以看我之前的<a href="http://wangsiyuan233.cn/2018/02/28/AJAX%EF%BC%88一%EF%BC%89/" target="_blank" rel="external">封装一个ajax</a><br><a id="more"></a></p>
 
       
 
@@ -271,7 +198,7 @@ margin 和 border：
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">异步</a>
         		</li>
       		
 		</ul>
@@ -327,7 +254,7 @@ margin 和 border：
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/02/01/CSS小结/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/03/30/异步系列-2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -341,18 +268,9 @@ margin 和 border：
   
 <nav id="article-nav">
   
-    <a href="/2018/02/04/CSS-四/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          CSS(四)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/02/01/CSS-三/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CSS(三)</div>
+    <a href="/2018/03/30/异步系列-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">深入理解JavaScript--异步系列(1)</div>
       <i class="icon-circle-right"></i>
     </a>
   
