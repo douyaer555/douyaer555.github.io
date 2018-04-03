@@ -8,16 +8,19 @@
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
   <title>初探ES6(2)--变量的解构赋值 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、数组的解构赋值二、对象的解构赋值三、字符串的解构赋值四、数值和布尔值的解构赋值五、函数参数的解构赋值六、圆括号">
+  <meta name="description" content="从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）
+一、数组的解构赋值">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初探ES6(2)--变量的解构赋值">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/04/03/39初探ES6-1/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="一、数组的解构赋值二、对象的解构赋值三、字符串的解构赋值四、数值和布尔值的解构赋值五、函数参数的解构赋值六、圆括号">
-<meta property="og:updated_time" content="2018-04-03T06:45:48.997Z">
+<meta property="og:description" content="从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）
+一、数组的解构赋值">
+<meta property="og:updated_time" content="2018-04-03T07:00:34.001Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初探ES6(2)--变量的解构赋值">
-<meta name="twitter:description" content="一、数组的解构赋值二、对象的解构赋值三、字符串的解构赋值四、数值和布尔值的解构赋值五、函数参数的解构赋值六、圆括号">
+<meta name="twitter:description" content="从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）
+一、数组的解构赋值">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -163,7 +166,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、数组的解构赋值"><a href="#一、数组的解构赋值" class="headerlink" title="一、数组的解构赋值"></a>一、数组的解构赋值</h2><h2 id="二、对象的解构赋值"><a href="#二、对象的解构赋值" class="headerlink" title="二、对象的解构赋值"></a>二、对象的解构赋值</h2><h2 id="三、字符串的解构赋值"><a href="#三、字符串的解构赋值" class="headerlink" title="三、字符串的解构赋值"></a>三、字符串的解构赋值</h2><h2 id="四、数值和布尔值的解构赋值"><a href="#四、数值和布尔值的解构赋值" class="headerlink" title="四、数值和布尔值的解构赋值"></a>四、数值和布尔值的解构赋值</h2><h2 id="五、函数参数的解构赋值"><a href="#五、函数参数的解构赋值" class="headerlink" title="五、函数参数的解构赋值"></a>五、函数参数的解构赋值</h2><h2 id="六、圆括号"><a href="#六、圆括号" class="headerlink" title="六、圆括号"></a>六、圆括号</h2>
+        <p>从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）</p>
+<h2 id="一、数组的解构赋值"><a href="#一、数组的解构赋值" class="headerlink" title="一、数组的解构赋值"></a>一、数组的解构赋值</h2><a id="more"></a>
+<h2 id="二、对象的解构赋值"><a href="#二、对象的解构赋值" class="headerlink" title="二、对象的解构赋值"></a>二、对象的解构赋值</h2><h2 id="三、字符串的解构赋值"><a href="#三、字符串的解构赋值" class="headerlink" title="三、字符串的解构赋值"></a>三、字符串的解构赋值</h2><h2 id="四、数值和布尔值的解构赋值"><a href="#四、数值和布尔值的解构赋值" class="headerlink" title="四、数值和布尔值的解构赋值"></a>四、数值和布尔值的解构赋值</h2><h2 id="五、函数参数的解构赋值"><a href="#五、函数参数的解构赋值" class="headerlink" title="五、函数参数的解构赋值"></a>五、函数参数的解构赋值</h2><h1 id="六、圆括号"><a href="#六、圆括号" class="headerlink" title="六、圆括号"></a>六、圆括号</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
       
 
       
@@ -379,7 +388,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -395,11 +408,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
