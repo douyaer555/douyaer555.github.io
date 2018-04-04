@@ -6,18 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>深入理解JavaScript--闭包系列(3) | wangsiyuan</title>
+  <title>wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="首先定义一下自由变量：如下图这个函数，x就不是f1里定义的变量，它就是个自由变量。12345var x = 23;function f1()&amp;#123;	var b = 34;	console.log(x + b)&amp;#125;">
-<meta property="og:type" content="article">
-<meta property="og:title" content="深入理解JavaScript--闭包系列(3)">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/03/27/闭包系列-3/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="wangsiyuan">
+<meta property="og:url" content="wangsiyuan233.github.io/page/9/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="首先定义一下自由变量：如下图这个函数，x就不是f1里定义的变量，它就是个自由变量。12345var x = 23;function f1()&amp;#123;	var b = 34;	console.log(x + b)&amp;#125;">
-<meta property="og:updated_time" content="2018-03-27T12:23:40.529Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入理解JavaScript--闭包系列(3)">
-<meta name="twitter:description" content="首先定义一下自由变量：如下图这个函数，x就不是f1里定义的变量，它就是个自由变量。12345var x = 23;function f1()&amp;#123;	var b = 34;	console.log(x + b)&amp;#125;">
+<meta name="twitter:title" content="wangsiyuan">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -143,55 +139,39 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-闭包系列-3" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-GitHub-for-babies" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      深入理解JavaScript--闭包系列(3)
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/23/GitHub-for-babies/">GitHub for babies</a>
     </h1>
   
 
         
-        <a href="/2018/03/27/闭包系列-3/" class="archive-article-date">
-  	<time datetime="2018-03-27T11:58:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-27</time>
+        <a href="/2018/01/23/GitHub-for-babies/" class="archive-article-date">
+  	<time datetime="2018-01-23T08:41:34.330Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>首先定义一下<strong>自由变量</strong>：如下图这个函数，x就不是f1里定义的变量，它就是个自由变量。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">23</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> b = <span class="number">34</span>;</div><div class="line">	<span class="built_in">console</span>.log(x + b)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>所以自由变量就是在当前函数的父级作用域里面找吗？<br>当然不是的。<br>1、可能它的作用域链上根本就没有这个函数，最后就是undefined<br>2、最重要的是从【创造】这个函数的作用域里寻找，而不是【调用】。<br>如下图：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x= <span class="number">76</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(x);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">f2</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> x = <span class="number">32</span>;</div><div class="line">	(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;f2();&#125;)(); </div><div class="line">&#125;</div><div class="line">show(f1) <span class="comment">//76</span></div></pre></td></tr></table></figure></p>
-<p>引出<strong>作用域链</strong>的概念，一层一层的往外找：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">34</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> b = <span class="number">21</span>;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(a + b)</div><div class="line">&#125;</div><div class="line">	<span class="keyword">return</span> f2;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> x = f1();</div><div class="line">	b = <span class="number">248</span>；</div><div class="line">x();</div></pre></td></tr></table></figure></p>
-<p>第7行时，f1()返回的是f2，将f2赋值给x,第9行x()相当于console.log（a + b）</p>
-
+        <p>《GitHub for babies》   又名：如何让我的天才男友入门GitHub</p>
+<p>搭建博客走了很多弯路，记录一下我摔的坑。<strong>（基础名词自己谷歌一下）</strong></p>
+<hr>
+<h3 id="第一步：注册github"><a href="#第一步：注册github" class="headerlink" title="第一步：注册github"></a>第一步：注册github</h3><p>这个是最简单的了，邮箱＋密码就能实现。<br>别的网站总能告诉你</p>
+<blockquote>
+<p>想学github,就要先知道git是什么~<br>
+        
+          <a class="article-more-a" href="/2018/01/23/GitHub-for-babies/#more">more >></a>
+        
       
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -202,7 +182,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">闭包</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
         		</li>
       		
 		</ul>
@@ -211,84 +191,16 @@
       
 
       
-
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/23/GitHub-for-babies/">展开全文 >></a>
+        </p>
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/03/27/闭包系列-3/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/03/27/闭包系列-4/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          深入理解JavaScript--闭包系列(4)
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2018/03/26/闭包系列-2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">深入理解JavaScript--闭包系列(2)</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -308,14 +220,12 @@
 
 
 
-  
-  
-  
 
   
-
   
-
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span>
+    </nav>
   
 
 
@@ -338,8 +248,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

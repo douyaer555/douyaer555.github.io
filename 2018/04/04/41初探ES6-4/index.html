@@ -6,18 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>深入理解JavaScript--闭包系列(3) | wangsiyuan</title>
+  <title>初探ES6(4)--Class的基本语法 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="首先定义一下自由变量：如下图这个函数，x就不是f1里定义的变量，它就是个自由变量。12345var x = 23;function f1()&amp;#123;	var b = 34;	console.log(x + b)&amp;#125;">
+  <meta name="description" content="类和模块的内部，默认就是严格模式，所以不需要使用use strict指定运行模式。只要你的代码写在类或模块之中，就只有严格模式可用。考虑到未来所有的代码，其实都是运行在模块之中，所以 ES6 实际上把整个语言升级到了严格模式。
+一、简介JavaScript 语言中：生成一个对象的传统方法就是new一个函数
+ES6 的类，完全可以看作构造函数的另一种写法。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入理解JavaScript--闭包系列(3)">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/03/27/闭包系列-3/index.html">
+<meta property="og:title" content="初探ES6(4)--Class的基本语法">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/04/04/41初探ES6-4/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="首先定义一下自由变量：如下图这个函数，x就不是f1里定义的变量，它就是个自由变量。12345var x = 23;function f1()&amp;#123;	var b = 34;	console.log(x + b)&amp;#125;">
-<meta property="og:updated_time" content="2018-03-27T12:23:40.529Z">
+<meta property="og:description" content="类和模块的内部，默认就是严格模式，所以不需要使用use strict指定运行模式。只要你的代码写在类或模块之中，就只有严格模式可用。考虑到未来所有的代码，其实都是运行在模块之中，所以 ES6 实际上把整个语言升级到了严格模式。
+一、简介JavaScript 语言中：生成一个对象的传统方法就是new一个函数
+ES6 的类，完全可以看作构造函数的另一种写法。">
+<meta property="og:updated_time" content="2018-04-04T07:56:14.975Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入理解JavaScript--闭包系列(3)">
-<meta name="twitter:description" content="首先定义一下自由变量：如下图这个函数，x就不是f1里定义的变量，它就是个自由变量。12345var x = 23;function f1()&amp;#123;	var b = 34;	console.log(x + b)&amp;#125;">
+<meta name="twitter:title" content="初探ES6(4)--Class的基本语法">
+<meta name="twitter:description" content="类和模块的内部，默认就是严格模式，所以不需要使用use strict指定运行模式。只要你的代码写在类或模块之中，就只有严格模式可用。考虑到未来所有的代码，其实都是运行在模块之中，所以 ES6 实际上把整个语言升级到了严格模式。
+一、简介JavaScript 语言中：生成一个对象的传统方法就是new一个函数
+ES6 的类，完全可以看作构造函数的另一种写法。">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -143,32 +149,47 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-闭包系列-3" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-41初探ES6-4" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      深入理解JavaScript--闭包系列(3)
+      初探ES6(4)--Class的基本语法
     </h1>
   
 
         
-        <a href="/2018/03/27/闭包系列-3/" class="archive-article-date">
-  	<time datetime="2018-03-27T11:58:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-27</time>
+        <a href="/2018/04/04/41初探ES6-4/" class="archive-article-date">
+  	<time datetime="2018-04-04T07:56:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>首先定义一下<strong>自由变量</strong>：如下图这个函数，x就不是f1里定义的变量，它就是个自由变量。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">23</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> b = <span class="number">34</span>;</div><div class="line">	<span class="built_in">console</span>.log(x + b)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>所以自由变量就是在当前函数的父级作用域里面找吗？<br>当然不是的。<br>1、可能它的作用域链上根本就没有这个函数，最后就是undefined<br>2、最重要的是从【创造】这个函数的作用域里寻找，而不是【调用】。<br>如下图：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x= <span class="number">76</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(x);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">f2</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> x = <span class="number">32</span>;</div><div class="line">	(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;f2();&#125;)(); </div><div class="line">&#125;</div><div class="line">show(f1) <span class="comment">//76</span></div></pre></td></tr></table></figure></p>
-<p>引出<strong>作用域链</strong>的概念，一层一层的往外找：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">34</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> b = <span class="number">21</span>;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(a + b)</div><div class="line">&#125;</div><div class="line">	<span class="keyword">return</span> f2;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> x = f1();</div><div class="line">	b = <span class="number">248</span>；</div><div class="line">x();</div></pre></td></tr></table></figure></p>
-<p>第7行时，f1()返回的是f2，将f2赋值给x,第9行x()相当于console.log（a + b）</p>
-
+        <p>类和模块的内部，默认就是严格模式，所以不需要使用use strict指定运行模式。只要你的代码写在类或模块之中，就只有严格模式可用。<br>考虑到未来所有的代码，其实都是运行在模块之中，所以 ES6 实际上把整个语言升级到了严格模式。</p>
+<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><p>JavaScript 语言中：<strong>生成一个对象的传统方法就是new一个函数</strong></p>
+<p>ES6 的类，完全可以看作构造函数的另一种写法。<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">typeof</span> Point <span class="comment">// "function"</span></div><div class="line">Point === Point.prototype.constructor <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<p>注意，定义“类”的方法的时候，前面不需要加上<code>function</code>这个关键字，直接把函数定义放进去了就可以了。另外，方法之间不需要逗号分隔，加了会报错。<br>类的数据类型就是函数，类本身就指向构造函数。</p>
+<p>事实上，类的所有方法都定义在类的<code>prototype</code>属性上面。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  toString() &#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  toValue() &#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 等同于 等同于 等同于</span></div><div class="line"></div><div class="line">Point.prototype = &#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;&#125;,</div><div class="line">  toString() &#123;&#125;,</div><div class="line">  toValue() &#123;&#125;,</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h2 id="二、constructor方法"><a href="#二、constructor方法" class="headerlink" title="二、constructor方法"></a>二、constructor方法</h2><p>1、constructor方法是类的默认方法，通过new命令生成对象实例时，自动调用该方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 等同于 等同于 等同于</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>2、constructor方法默认返回实例对象（即<code>this</code>），完全可以指定返回另外一个对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.create(<span class="literal">null</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">new</span> Foo() <span class="keyword">instanceof</span> Foo<span class="comment">// false</span></div></pre></td></tr></table></figure></p>
+<p>3、类必须使用<code>new</code>调用，否则会报错。这是它跟普通构造函数的一个主要区别，后者不用<code>new</code>也可以执行。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.create(<span class="literal">null</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Foo()</div><div class="line"><span class="comment">// TypeError: Class constructor Foo cannot be invoked without 'new'</span></div></pre></td></tr></table></figure></p>
+<h2 id="三、类的实例对象"><a href="#三、类的实例对象" class="headerlink" title="三、类的实例对象"></a>三、类的实例对象</h2><p>1、与 ES5 一样，实例的属性除非显式定义在其本身（即定义在<code>this</code>对象上），否则都是定义在原型上（即定义在<code>class</code>上）。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义类</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>(x, y) &#123;</div><div class="line">    <span class="keyword">this</span>.x = x;</div><div class="line">    <span class="keyword">this</span>.y = y;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  toString() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">'('</span> + <span class="keyword">this</span>.x + <span class="string">', '</span> + <span class="keyword">this</span>.y + <span class="string">')'</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> point = <span class="keyword">new</span> Point(<span class="number">2</span>, <span class="number">3</span>);</div><div class="line"></div><div class="line">point.toString() <span class="comment">// (2, 3)</span></div><div class="line"></div><div class="line">point.hasOwnProperty(<span class="string">'x'</span>) <span class="comment">// true</span></div><div class="line">point.hasOwnProperty(<span class="string">'y'</span>) <span class="comment">// true</span></div><div class="line">point.hasOwnProperty(<span class="string">'toString'</span>) <span class="comment">// false</span></div><div class="line">point.__proto__.hasOwnProperty(<span class="string">'toString'</span>) <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<p>2、类的所有实例共享一个原型对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Point(<span class="number">2</span>,<span class="number">3</span>);</div><div class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Point(<span class="number">3</span>,<span class="number">2</span>);</div><div class="line"></div><div class="line">p1.__proto__ === p2.__proto__ <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
+<p>（p1和p2都是<code>Point</code>的实例，它们的原型都是<code>Point.prototype</code>，所以<code>__proto__</code>属性是相等的。）</p>
+<p>这也意味着，可以通过实例的<code>__proto__</code>属性为“类”添加方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Point(<span class="number">2</span>,<span class="number">3</span>);</div><div class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Point(<span class="number">3</span>,<span class="number">2</span>);</div><div class="line"></div><div class="line">p1.__proto__.printName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="string">'Oops'</span> &#125;;</div><div class="line"></div><div class="line">p1.printName() <span class="comment">// "Oops"</span></div><div class="line">p2.printName() <span class="comment">// "Oops"</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> p3 = <span class="keyword">new</span> Point(<span class="number">4</span>,<span class="number">2</span>);</div><div class="line">p3.printName() <span class="comment">// "Oops"</span></div></pre></td></tr></table></figure></p>
+<h2 id="四、this-的指向"><a href="#四、this-的指向" class="headerlink" title="四、this 的指向"></a>四、this 的指向</h2><p>类的方法内部如果含有<code>this</code>，它默认指向类的实例。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Logger</span> </span>&#123;</div><div class="line">  printName(name = <span class="string">'there'</span>) &#123;</div><div class="line">    <span class="keyword">this</span>.print(<span class="string">`Hello <span class="subst">$&#123;name&#125;</span>`</span>);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  print(text) &#123;</div><div class="line">    <span class="built_in">console</span>.log(text);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> logger = <span class="keyword">new</span> Logger();</div><div class="line"><span class="keyword">const</span> &#123; printName &#125; = logger;</div><div class="line">printName(); <span class="comment">// TypeError: Cannot read property 'print' of undefined</span></div></pre></td></tr></table></figure>
+<p>（为啥会报错呢？ printName方法中的this，默认指向<code>Logger</code>类的实例。但是，如果将这个方法提取出来单独使用，<code>this</code>会指向该方法运行时所在的环境，因为找不到<code>print</code>方法而导致报错。）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 解决方法一：用bind绑定</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Logger</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="keyword">this</span>.printName = <span class="keyword">this</span>.printName.bind(<span class="keyword">this</span>);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 解决方法二：用箭头函数</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Logger</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="keyword">this</span>.printName = <span class="function">(<span class="params">name = <span class="string">'there'</span></span>) =&gt;</span> &#123;</div><div class="line">      <span class="keyword">this</span>.print(<span class="string">`Hello <span class="subst">$&#123;name&#125;</span>`</span>);</div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>ES5 的继承，实质是先创造子类的实例对象this，然后再将父类的方法添加到this上面（Parent.apply(this)）。ES6 的继承机制完全不同，实质是先创造父类的实例对象this（所以必须先调用super方法），然后再用子类的构造函数修改this。</p>
+<p>类的数据类型就是函数，类本身就指向构造函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
       
 
       
@@ -202,7 +223,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">闭包</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
         		</li>
       		
 		</ul>
@@ -258,7 +279,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/03/27/闭包系列-3/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/04/04/41初探ES6-4/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -272,18 +293,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/03/27/闭包系列-4/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          深入理解JavaScript--闭包系列(4)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/03/26/闭包系列-2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">深入理解JavaScript--闭包系列(2)</div>
+    <a href="/2018/04/04/40初探ES6-3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初探ES6(3)--箭头函数</div>
       <i class="icon-circle-right"></i>
     </a>
   
