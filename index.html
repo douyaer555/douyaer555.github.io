@@ -141,6 +141,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-42初探ES6-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/04/42初探ES6-5/">初探ES6(5)--Class的继承</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/04/42初探ES6-5/" class="archive-article-date">
+  	<time datetime="2018-04-04T08:44:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><p><strong>1、</strong>Class 可以通过<code>extends</code>关键字实现继承，这比 ES5 的通过修改原型链实现继承，要清晰和方便很多。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColorPoint</span> <span class="keyword">extends</span> <span class="title">Point</span> </span>&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>（上面代码定义了一个<code>ColorPoint</code>类，该类通过<code>extends</code>关键字，继承了<code>Point</code>类的所有属性和方法。但是由于没有部署任何代码，所以这两个类完全一样，等于复制了一个<code>Point</code>类。下面，我们在<code>ColorPoint</code>内部加上代码。）<br>
+        
+          <a class="article-more-a" href="/2018/04/04/42初探ES6-5/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/04/42初探ES6-5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-41初探ES6-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -154,16 +231,16 @@
 
         
         <a href="/2018/04/04/41初探ES6-4/" class="archive-article-date">
-  	<time datetime="2018-04-04T07:56:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-04</time>
+  	<time datetime="2018-04-04T08:44:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>类和模块的内部，默认就是严格模式，所以不需要使用use strict指定运行模式。只要你的代码写在类或模块之中，就只有严格模式可用。<br>考虑到未来所有的代码，其实都是运行在模块之中，所以 ES6 实际上把整个语言升级到了严格模式。</p>
-<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><p>JavaScript 语言中：<strong>生成一个对象的传统方法就是new一个函数</strong></p>
-<p>ES6 的类，完全可以看作构造函数的另一种写法。<br>
+        <p>类和模块的内部，默认就是<strong>严格模式</strong>，所以不需要使用<code>use strict</code>指定运行模式。只要你的代码写在类或模块之中，就只有严格模式可用。<br>考虑到未来所有的代码，其实都是运行在模块之中，所以 ES6 实际上把整个语言升级到了严格模式。</p>
+<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><p>JavaScript 中：<strong>生成一个对象的传统方法就是new一个函数</strong></p>
+<p><strong>1、</strong>ES6 的类，完全可以看作<strong>构造函数</strong>的另一种写法。<br>
         
           <a class="article-more-a" href="/2018/04/04/41初探ES6-4/#more">more >></a>
         
@@ -453,86 +530,6 @@
 
 
   
-    <article id="post-37Algorithms1-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/01/37Algorithms1-1/">&lt;Algorithms&gt;-1.1基础编程模型</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/01/37Algorithms1-1/" class="archive-article-date">
-  	<time datetime="2018-04-01T10:46:25.538Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.1编程基础模型<br>本书是基于Java编程语言来实现的算法，我们这么做的原因是：</p>
-<ul>
-<li>我们的程序时精确的、优雅的、且完整的描述了算法；</li>
-<li>你运行程序时可以学习到准确的算法（知识）；</li>
-<li>你可以让你的算法马上投入到应用中。<br>这些优点对于用英语来描述算法的工作来说，非常重要。
-        
-          <a class="article-more-a" href="/2018/04/01/37Algorithms1-1/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/01/37Algorithms1-1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -614,10 +611,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
@@ -626,7 +619,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -635,10 +636,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
