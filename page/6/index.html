@@ -141,108 +141,29 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-17原型链实例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-13封装一个jQuery" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/08/17原型链实例/">原型链实例</a>
+      <a class="article-title" href="/2018/04/13/13封装一个jQuery/">封装一个jQuery吧！</a>
     </h1>
   
 
         
-        <a href="/2018/03/08/17原型链实例/" class="archive-article-date">
-  	<time datetime="2018-03-08T12:37:43.073Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-08</time>
+        <a href="/2018/04/13/13封装一个jQuery/" class="archive-article-date">
+  	<time datetime="2018-04-13T10:12:13.971Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>1、所有构造器/函数（包括自定义的）的 <code>__proto__</code> 都指向<code>Function.prototype</code>(它是一个空函数)<br>2、<code>Function.prototype.__proto__ === Object.prototype</code><br>3、<code>Object.prototype.__proto__ === null</code><br>
+        <p><strong>封装第一个函数</strong>node.getSiblings()<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getSiblings</span>(<span class="params">node</span>)</span>&#123;</div><div class="line"><span class="keyword">let</span> allChildren = node.parentNode.children</div><div class="line">  <span class="keyword">let</span> array = &#123;</div><div class="line">    <span class="attr">length</span>: <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; allChildren.length; i++) &#123;</div><div class="line">    <span class="keyword">if</span> (allChildren[i] !== node) &#123;</div><div class="line">      array[array.length] = allChildren[i] <span class="comment">// 让输出的伪数组不包含本元素</span></div><div class="line">      array.length += <span class="number">1</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> array</div><div class="line">  &#125;</div><div class="line">  <span class="comment">//例如 li.getSiblings.call(li)</span></div></pre></td></tr></table></figure></p>
         
-          <a class="article-more-a" href="/2018/03/08/17原型链实例/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">原型链</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/08/17原型链实例/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-16AJAX（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/28/16AJAX（一）/">封装一个ajax</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/28/16AJAX（一）/" class="archive-article-date">
-  	<time datetime="2018-02-28T11:48:07.720Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>   AJAX是一种实现在不刷新网页的情况下通过XmlHttpRequest()来访问服务器并根据数据的处理结果按照预期的方式对页面进行修改的技术。<br>   AJAX即Async JavaScript And Xml 是异步的JS和Xml的技术。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2018/02/28/16AJAX（一）/#more">more >></a>
+          <a class="article-more-a" href="/2018/04/13/13封装一个jQuery/#more">more >></a>
         
       
 
@@ -260,7 +181,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">异步</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
         		</li>
       		
 		</ul>
@@ -268,86 +189,6 @@
 
       
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/28/16AJAX（一）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-15移动端配适" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/27/15移动端配适/">移动端配适</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/27/15移动端配适/" class="archive-article-date">
-  	<time datetime="2018-02-27T10:45:13.272Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>一、meta viewport</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//html head</div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>&gt;</span></div><div class="line"> // width=device-width: 让当前viewport宽度等于设备的宽度</div><div class="line"> // user-scalable=no: 禁止用户缩放</div><div class="line"> // initial-scale=1.0: 设置页面的初始缩放值为不缩放</div><div class="line"> // maximum-scale=1.0: 允许用户的最大缩放值为1.0</div><div class="line"> // minimum-scale=1.0: 允许用户的最小缩放值为1.0</div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2018/02/27/15移动端配适/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/27/15移动端配适/">展开全文 >></a>
-        </p>
       
 
       
@@ -383,13 +224,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/27/14DOM-一/">DOM(一)</a>
+      <a class="article-title" href="/2018/04/13/14DOM-一/">DOM(一)</a>
     </h1>
   
 
         
-        <a href="/2018/02/27/14DOM-一/" class="archive-article-date">
-  	<time datetime="2018-02-27T08:17:49.417Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-27</time>
+        <a href="/2018/04/13/14DOM-一/" class="archive-article-date">
+  	<time datetime="2018-04-13T10:12:13.971Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-13</time>
 </a>
         
       </header>
@@ -398,7 +239,7 @@
       
         <h1 id="DOM事件"><a href="#DOM事件" class="headerlink" title="DOM事件"></a>DOM事件</h1><p>冒泡与捕获是DOM事件的一种事件机制，也是一种事件流。<br>1.操作系统最先知道鼠标点击，浏览器次之，因为操作系统是权限最高的软件。<br>2.在一个页面里面，子元素被点击，意味着父元素也被点击了。<br><img src="https://i.imgur.com/esvlq0x.jpg" alt=""><br><a href="https://github.com/wangsiyuan233/Picture/blob/master/捕获冒泡.—基础.jpg">[pic1]</a><br>无论鼠标放在哪个区域，都会显示黄色区域也被点击了。但是，到底是爸爸先被点击还是儿子呢？？？讨论一下吧！<br>
         
-          <a class="article-more-a" href="/2018/02/27/14DOM-一/#more">more >></a>
+          <a class="article-more-a" href="/2018/04/13/14DOM-一/#more">more >></a>
         
       
 
@@ -420,10 +261,6 @@
 
       
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/27/14DOM-一/">展开全文 >></a>
-        </p>
       
 
       
@@ -452,29 +289,30 @@
 
 
   
-    <article id="post-13封装一个jQuery" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-12JS函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/25/13封装一个jQuery/">封装一个jQuery吧！</a>
+      <a class="article-title" href="/2018/04/13/12JS函数/">JS函数</a>
     </h1>
   
 
         
-        <a href="/2018/02/25/13封装一个jQuery/" class="archive-article-date">
-  	<time datetime="2018-02-25T11:46:27.915Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-25</time>
+        <a href="/2018/04/13/12JS函数/" class="archive-article-date">
+  	<time datetime="2018-04-13T10:12:13.940Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>封装第一个函数</strong>node.getSiblings()<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getSiblings</span>(<span class="params">node</span>)</span>&#123;</div><div class="line"><span class="keyword">let</span> allChildren = node.parentNode.children</div><div class="line">  <span class="keyword">let</span> array = &#123;</div><div class="line">    <span class="attr">length</span>: <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; allChildren.length; i++) &#123;</div><div class="line">    <span class="keyword">if</span> (allChildren[i] !== node) &#123;</div><div class="line">      array[array.length] = allChildren[i] <span class="comment">// 让输出的伪数组不包含本元素</span></div><div class="line">      array.length += <span class="number">1</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> array</div><div class="line">  &#125;</div><div class="line">  <span class="comment">//例如 li.getSiblings.call(li)</span></div></pre></td></tr></table></figure></p>
+        <p><strong>一、函数的五种声明</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//具名函数</span></div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x,y</span>)</span>&#123;</div><div class="line">     <span class="keyword">return</span> x+y</div><div class="line"> &#125;</div><div class="line"> f.name <span class="comment">// 'f'</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 匿名函数</span></div><div class="line"> <span class="keyword">var</span> f</div><div class="line"> f = <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</div><div class="line">     <span class="keyword">return</span> x+y</div><div class="line"> &#125;</div><div class="line"> f.name <span class="comment">// 'f'</span></div></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2018/02/25/13封装一个jQuery/#more">more >></a>
+          <a class="article-more-a" href="/2018/04/13/12JS函数/#more">more >></a>
         
       
 
@@ -501,9 +339,154 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/25/13封装一个jQuery/">展开全文 >></a>
-        </p>
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-11周结-JS初印象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/13/11周结-JS初印象/">周结-JS初印象</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/13/11周结-JS初印象/" class="archive-article-date">
+  	<time datetime="2018-04-13T10:12:13.924Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>一、JS数据</strong><br>1、七种数据类型：number string boolean symbol undefined null object<br>2、function不是一种类型<br>3、二进制：0b11；八进制：011；十六进制：0x11<br>4、object：<br>–object 就是上面前6种基本类型（无序地）组合在一起<br>–object 里面可以有 object<br>–object 的 key 一律是字符串，不存在其他类型的 key<br>–object[‘’] 是合法的<br>–object[‘key’] 可以写作 object.key<br>–注意 object.key 与 object[key] 不同<br>–delete object[‘key’]<br>–’key’ in object<br>
+        
+          <a class="article-more-a" href="/2018/04/13/11周结-JS初印象/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-10CSS-四" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/13/10CSS-四/">CSS(四)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/13/10CSS-四/" class="archive-article-date">
+  	<time datetime="2018-04-13T10:12:13.908Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="lt-div-gt-的高度由什么决定呢？-（不支持IE）"><a href="#lt-div-gt-的高度由什么决定呢？-（不支持IE）" class="headerlink" title="&lt;div&gt;的高度由什么决定呢？ ##（不支持IE）"></a><code>&lt;div&gt;</code>的高度由什么决定呢？ ##（不支持IE）</h2><ol>
+<li>只有内联元素<br>只有内联时，高度是由行高（line-height）决定的。（与字体的大小无关）
+        
+          <a class="article-more-a" href="/2018/04/13/10CSS-四/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
       
 
       
@@ -629,15 +612,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -645,15 +624,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">进阶</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
