@@ -6,24 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>&lt;Algorithms&gt;-1.1基础编程模型 | wangsiyuan</title>
+  <title>HTML(一) | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="《算法 （第四版）》梳理框架
-
-不建议阅读，反正你也读不下去">
+  <meta name="description" content="一、W3C 简介万维网联盟（World Wide Web Consortium，W3C），又称W3C理事会，是万维网的主要国际标准组织。
+W3C由蒂姆·伯纳斯-李于1994年10月离开欧洲核子研究中心（CERN）后成立，在欧盟执委会和国防高等研究计划署（DARPA）的支持下成立于麻省理工学院MIT计算机科学与人工智能实验室（MIT／LCS）[2]，DARPA曾率先推出了互联网及其前身ARPANET">
 <meta property="og:type" content="article">
-<meta property="og:title" content="<Algorithms>-1.1基础编程模型">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/04/13/37Algorithms1-1/index.html">
+<meta property="og:title" content="HTML(一)">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/01/24/3HTML-一/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="《算法 （第四版）》梳理框架
-
-不建议阅读，反正你也读不下去">
-<meta property="og:updated_time" content="2018-04-13T10:40:58.981Z">
+<meta property="og:description" content="一、W3C 简介万维网联盟（World Wide Web Consortium，W3C），又称W3C理事会，是万维网的主要国际标准组织。
+W3C由蒂姆·伯纳斯-李于1994年10月离开欧洲核子研究中心（CERN）后成立，在欧盟执委会和国防高等研究计划署（DARPA）的支持下成立于麻省理工学院MIT计算机科学与人工智能实验室（MIT／LCS）[2]，DARPA曾率先推出了互联网及其前身ARPANET">
+<meta property="og:updated_time" content="2018-04-14T00:34:48.951Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="<Algorithms>-1.1基础编程模型">
-<meta name="twitter:description" content="《算法 （第四版）》梳理框架
-
-不建议阅读，反正你也读不下去">
+<meta name="twitter:title" content="HTML(一)">
+<meta name="twitter:description" content="一、W3C 简介万维网联盟（World Wide Web Consortium，W3C），又称W3C理事会，是万维网的主要国际标准组织。
+W3C由蒂姆·伯纳斯-李于1994年10月离开欧洲核子研究中心（CERN）后成立，在欧盟执委会和国防高等研究计划署（DARPA）的支持下成立于麻省理工学院MIT计算机科学与人工智能实验室（MIT／LCS）[2]，DARPA曾率先推出了互联网及其前身ARPANET">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -149,69 +146,37 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-37Algorithms1-1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-3HTML-一" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      &lt;Algorithms&gt;-1.1基础编程模型
+      HTML(一)
     </h1>
   
 
         
-        <a href="/2018/04/13/37Algorithms1-1/" class="archive-article-date">
-  	<time datetime="2018-04-13T10:12:14.205Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-13</time>
+        <a href="/2018/01/24/3HTML-一/" class="archive-article-date">
+  	<time datetime="2018-01-24T00:33:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p><a href="https://book.douban.com/subject/10432347/" target="_blank" rel="external">《算法 （第四版）》</a>梳理框架</p>
-</blockquote>
-<p>不建议阅读，反正你也读不下去<br><a id="more"></a></p>
-<blockquote>
-<p>1.1编程基础模型</p>
-</blockquote>
-<p>本书是基于Java编程语言来实现的算法，我们这么做的原因是：</p>
-<ul>
-<li>我们的程序时精确的、优雅的、且完整的描述了算法；</li>
-<li>你运行程序时可以学习到准确的算法（知识）；</li>
-<li>你可以让你的算法马上投入到应用中。<br>这些优点对于用英语来描述算法的工作来说，非常重要。<br>我们现在有一种趋势：那就是不得不使用特殊的编程语言，使得将算法从执行细节中剥离出来变得困难。我们利用现代语言和对算法的丰富的解释使得执行的难度降低。<br>我们只用了Java的一小部分子集，同时我们停止使用我们自定义的子集，你将几乎看不到Java的结构。我们提供的代码是完整的，我们希望你可以下载并运行它，用我们的或者你自己的测试数据都可以。<br>我们涉及到的编程的构建、软件库和操作系统常常是在我们的编程模型上执行的，在这一小节和1.2小节，我们将完整的介绍这个系统模型，我们配套齐全就是为了让你明白这个书里的任一代码。我们的模型提供了一种慢步调去介绍这些材料。<br>在参考书目中，我们完整的通过阐明程序模型的基本特征，来详尽的描绘了Java程序。当讨论语言特征时，我们通过这些代码进行举例。当涉及到P46那样的细节时，我们假设你是有现代变成的经验的，所以你是可以认出这些代码的许多特性的，页码注释将会帮助你解决一些问题。自从我们的代码有点程式化，我们致力于使用符合Java语句和结构的代码，这同样适用于经验丰富的Java码农阅读这些代码。（这不是废话吗）<br>【【【【图1.1.1】】】】<br><strong>1.1.1Java的基础结构</strong><br>Java的类既是静态的方法库，也是数据类型定义，为了创造这两者，我们用了一下5个部分，它们是以Java和其他编程语言为基础的：</li>
-<li><em>原始数据类型</em> 精确的定义了整数、浮点数和布尔值这些计算机编程概念。它们的定义包括取值范围和能够对相应的值进行的操作，它们能被组合为类似数学公式的表达式。</li>
-<li><em>语句</em> 通过创建变量和控制执行流来赋值，或者引发副作用来进行计算。我们会使用6种语句：声明、赋值、条件、循环、调用和返回。</li>
-<li><em>数组</em> 同种类型的数值。</li>
-<li><em>静态方法</em> 概括代码，使程序成为独立的模块</li>
-<li><em>字符串</em> 是一系列characters，Java中的一些操作是基于它们的。</li>
-<li><em>标准输入/输出</em> 是程序和外界的桥梁。</li>
-<li><em>数据抽象</em> 让我们定义了非原始数据类型，支持面向对象编程。<br>在这一小节，我们依次介绍前五个，数据抽象是下一节的内容。<br>跑一个Java程序意味着和操作系统或编程环境的交互，为了清晰和简介，我们把这样的活动叫做 虚拟终端，虚拟终端就是我们键入命令行编程的地方，快试试那些好的程序吧！<br>例如，BinarySearch有两种静态方法<code>rank()</code>和<code>main()</code>,<code>rank()</code>有四种语句，两个声明，一个循环和一个返回；<code>main()</code>有三个语句，一个声明，一个调用和一个循环。<br>为了调用Java程序，我们首先要编译Java命令行，接着运行这些Java命令行。例如运行BinarySearch，我们首先要输入命令行 Javac BinarySearch.java，接着我们输入 java BinarySearch把控制权移交给这段字节码程序。为了理解这段程序，我们接下来考虑的是详细介绍Java的原始数据类型、数组、静态方法、字符串和标准IO。</li>
-</ul>
-<p><strong>1.1.2原始数据类型与表达式</strong><br>数据类型就是一组数据+对其的操作的集合。我们首先考虑下面4种基础的Java语言：</p>
-<ul>
-<li><em>整型</em> 及其运算符</li>
-<li><em>浮点型</em> 及其运算符</li>
-<li><em>布尔值</em> 的{true 和 false}及其逻辑运算</li>
-<li><em>字符型</em> 它的值是你能输入的英文字母数字字符和符合<br>接下来我们看看怎么指定这些类型的值或者怎样对这些类型进行操作。<br>表达式：优先级很重要，运算里面乘除大于加减，逻辑里面 ! &gt; &amp;&amp; &gt; ||,圆括号可以改变优先级；<br>类型转换：int3.7就是3；double3是3.0；<br>比较：在条件和循环语句中非常重要；<br>其他原始类型：64字节long、16字节short、16字节char、8字节byte、32字节单精float；</li>
-</ul>
-<p><strong>1.1.3语句</strong><br>Java 的程序是由 声明、赋值来控制操作的执行流<br>声明：给变量命名标识符；<br>赋值：给变量一种数据类型，当然Java也有隐式赋值法<br>条件：根据条件不同，执行不同的语句<br>循环：在块里可以反复执行下去，除非你有一个“暂停键”；<br>返回：是一种改变执行方向的静态方法<br>一个程序是由一系列的语句组成的，当然程序也有嵌套结构，一个条件语句中也可以包含条件语句<br>1.1.3.1<br>声明语句：变量名+类型，声明要在变量使用之前出现，变量的作用域就是定义它的地方<br>1.1.3.2<br>赋值语句：变量+数据类型，等号左边单一变量，右边相应的表达式<br>1.1.3.3<br>条件语句：用不同的操作处理不同的输入，如果是true语句就会执行<br>1.1.3.4<br>循环语句：与if语句不同的是，while语句会不断的check布尔值是否为true，然后不停的执行<br>1.1.3.5<br>break 和 continue: while循环时使用；<br>break：是跳出当前的循环块或者程序块。<br>continues：停止运行剩余的循环主体，回到循环的开始处继续运行。</p>
-<p><strong>1.1.4 简便记法 程序有很多写法</strong><br>1.1.4.1<br>声明并初始化<br>1.1.4.2<br>隐式赋值：i++<br>1.1.4.3<br>单语句代码段<br>1.1.4.4<br>for语句</p>
-<p><strong>1.1.5 数组</strong><br>数组储存着一系列相同type的值，我们同样希望能取到这些值<br>1.1.5.1<br>创造并初始化一个数组<br>三个步骤：声明name和type;创建arry;初始化<br>name + datatype + length<br>1.1.5.2<br>简化写法<br>如果是从0开始，for loop 可以省略<br>1.1.5.3<br>使用数组<br>数组在创建时的大小时确定的<br>1.1.5.4<br>起外号<br>数组名表示的是整个数组，如果我们要把数组a赋予数组b，此时，a和b都会指向同一个数组<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//正确赋值数组</span></div><div class="line"><span class="keyword">double</span>[]b = <span class="keyword">new</span> <span class="keyword">double</span>[N]</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, i &lt; N, i++)</div><div class="line">b[i] = a[i]</div></pre></td></tr></table></figure></p>
-<p>1.1.5.5<br>二维数组<br>二维数组就是一维数组的数组。<br>我们规定：M为行，N为列<br>数组型初始化为0，布尔型初始化为false<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//正确赋值数组</span></div><div class="line"><span class="keyword">double</span>[]a = <span class="keyword">new</span> <span class="keyword">double</span>[M][N];</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, i &lt; N, i++)</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>, j &lt; N, j++)</div><div class="line">		a[i][j] = <span class="number">0.0</span>;</div></pre></td></tr></table></figure></p>
-<p><strong>1.1.6 静态方法</strong><br>在别的语言中，总是把静态方法叫做函数，它们都是按照语句的顺序执行的<br>1.1.6.1<br>一个方法中需要参数，返回的数值也有参数决定<br>Java中每一个静态方法都是由 signature 和 body 组成的<br>1.1.6.2<br>调用静态方法<br>调用静态方法的方法，是写出方法名，并在后面的括号中列出参数值，用逗号分隔。<br>当调用是表达式的一部分时，方法的返回值将会，替代表达式中的方法调用。<br>1.1.6.3<br>方法的性质<br>-参数按值来传递 ：参数的值是由调用方提供的；改变参数的值对函数没有啥影响；值传递意味着数组参数是原数组的别名<br>-方法名可以被重载：一个函数需要参数，另一个函数可以提供参数<br>-方法只能有一个返回值，但可以包含多个语句<br>-方法可能产生副作用：void方法没有返回值，void函数有 side effct</p>
-<p>1.1.6.4 递归<br>一个方法可以调用它自己，就是递归。<br>-递归有一个基本的方法就是第一行就是返回语句<br>-递归总是试图address更小的问题<br>-递归要解决的父类问题和它的子类之间不能有交集<br>遵循了以上三条法则，代码就会变得简洁高效</p>
-<p>1.1.6.5 基础编程模型<br>一个静态方法库是由 public clss + name + 括号 组成的。<br>Java通过创造静态方法库去解决一些特殊的项目需求<br>Java + class name + 字符串 就能调用 mian()<br>字符串组成的数组作为参数执行到最后一句时，程序结束</p>
-<p>1.1.6.6 模块化编程<br>最重要的是，静态方法库能使编程模块化<br>一个库中的静态方法可以调用另一个库中的静态方法<br>这样做的好处有：<br>-代码体积合理<br>-方便再次使用<br>-升级执行了也方便被取代<br>-缩小调试范围</p>
-<p>1.1.6.7 单元测试<br>适当的单元测试对程序时重要的<br>简单来说，每个模块的main()方法都要保证代码运行正常<br>随着模块的成熟，我们精化main（）方法成为 开发用例 以告诉我们更多细节<br>或成为测试用例 以便更广阔的测试<br>用例太复杂时，我们就需要一个独立的模块</p>
-<p>1.1.6.8 外部库<br>以下四种静态方法，来自不同的库，一些是由数据类型决定的。<br>-标准系统库 java.lang：Math常用于数学计算<br>-导入的系统库 java.util.Array: java中有很多类似的库<br>-其他库比如 rank()<br>-标准库 Std<br>如果要在一个方法中声明一个库，我们需要在方法前知道库的名字</p>
-<p><strong>1.1.7 API</strong><br>模块化编程的一个重要组成部分就是记录方法的用法并提供文档给其他人参考<br>1.1.7.1 举例<br>这些方法将它们的参数 运用数学方法 转换为一个特殊的类型<br>这种拓展的性质恰巧是现代编程的特点之一<br>API的每一行都描述了一种方法，并且提供了使用该方法所需要使用的所有信息</p>
-<p>1.1.7.2 Java库<br>网上有许多Java版本的库，我们节选了一小部分，足够说明问题了</p>
-<p>1.1.7.3 标准库<br>我们开发了一些库用来实现一些实用的功能<br>这些库大多用与处理输入和输出<br>有些方法非常简单，为啥我们还要把它们写进一个库呢？<br>-让我们把重心放在测试和算法上，而不是随机数的计算上<br>-方法库需要大量的测试，其中就包含了极端和罕见的情况，如果我们自己手写就很麻烦<br>这些都是模块化编程的基石，当然有些夸大其词了<br>哈哈其实这些方法执行起来并不困难，它们中有些还代表了有趣的算法~</p>
-<p>1.1.7.4 自己的库<br>有没有想过自己写一个库呢？以后想要调用的时候就随时调用哦<br>-编写用例，将计算分解为可控的部分<br>-明确方法库和与其对应的API<br>-实现API和一个能够对方法进行独立测试的mian()函数<br>。。。。结果很诱人。。。。这三条我看都看不懂<br>自己的库不仅方便调用，而且能让你更好的着手复杂的工作</p>
-<p><strong>1.1.8 字符串</strong><br>字符串竟然不是Java的原始数据类型！<br>1.1.8.1 字符串拼接<br>字符串的拼接结果是：两个字符串变成一个 ———— “hi,” + “Bob” —&gt; “hi,Bob”<br>1.1.8.2 类型转换<br>字符串的两个主要用途：<br>1、用户输入的值转换为相应的数据类型<br>2、将数据类型转换为屏幕能显示的值<br>？？？？？？？？？？？？  这是啥 ？？？？？？<br>1.1.8.3 自动转换<br>我们几乎不使用 toString()方法，是因为Java提供了拼接的方法<br>使用 + 就可以把其他数据类型转换为 String 类型<br>或者 +’’ 拼接一个空字符串，也可以转换<br>1.1.8.4 命令行参数<br>Java中字符串的一个用处是接受命令行传递信息<br>当你输入 java + 库名 + 字符串<br>java会调用 main()方法，将【由字符串变成的数组】<br>作为参数，传递给main()函数</p>
-<p><strong>1.1.9 输入和输出</strong><br>Java的输入、输出和绘图库是为了与外界交流<br>1、Java的输入值来源于命令行参数 或 标准输入流，输出值 在 标准输出流中<br>2、我们必然要思考Java和操作系统之间的连接<br>3、我们把应用程序提供的输入和显示的窗口叫 终端</p>
+        <h2 id="一、W3C-简介"><a href="#一、W3C-简介" class="headerlink" title="一、W3C 简介"></a>一、W3C 简介</h2><p>万维网联盟（World Wide Web Consortium，W3C），又称W3C理事会，是万维网的主要国际标准组织。</p>
+<p>W3C由蒂姆·伯纳斯-李于1994年10月离开欧洲核子研究中心（CERN）后成立，在欧盟执委会和国防高等研究计划署（DARPA）的支持下成立于麻省理工学院MIT计算机科学与人工智能实验室（MIT／LCS）[2]，DARPA曾率先推出了互联网及其前身ARPANET。</p>
+<p>该组织试图通过W3C制定的新标准来促进业界成员间的兼容性和协议。不兼容的HTML版本由不同的供应商提供，导致网页显示方式不一致。联盟试图让所有的供应商实施一套由联盟选择的核心原则和组件。</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h2 id="二、MDN简介"><a href="#二、MDN简介" class="headerlink" title="二、MDN简介"></a>二、MDN简介</h2><p>MDN Web Docs（旧称Mozilla Developer Network、Mozilla Developer Center，简称MDN）是一个汇集众多Mozilla基金会产品和网络技术开发文档的免费网站。</p>
+<hr>
+<h2 id="三、H5的所有标签列表"><a href="#三、H5的所有标签列表" class="headerlink" title="三、H5的所有标签列表"></a>三、H5的所有标签列表</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5/HTML5_element_list" target="_blank" rel="external">MDN上的H5标签列表</a></p>
+<hr>
+<h2 id="四、空元素"><a href="#四、空元素" class="headerlink" title="四、空元素"></a>四、空元素</h2><p>一个不可能存在子节点的element</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Glossary/空元素" target="_blank" rel="external">MDN上的空元素</a></p>
+<hr>
+<h2 id="五、可替换元素"><a href="#五、可替换元素" class="headerlink" title="五、可替换元素"></a>五、可替换元素</h2><p>替换元素就是浏览器根据元素的标签和属性，来决定元素的具体显示内容。<br>例如浏览器会根据<code>&lt;img&gt;</code>标签的<code>src</code>属性的值来读取图片信息并显示出来，而如果查看(X)HTML代码，则看不到图片的实际内容；又例如根据<code>&lt;input&gt;</code>标签的type属性来决定是显示输入框，还是单选按钮等。</p>
 
       
 
@@ -246,7 +211,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
         		</li>
       		
 		</ul>
@@ -302,7 +267,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/04/13/37Algorithms1-1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/01/24/3HTML-一/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -316,18 +281,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/04/13/3HTML-一/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/01/26/4HTML-二/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          HTML(一)
+          HTML(二)
         
       </div>
     </a>
   
   
-    <a href="/2018/04/13/36异步系列-2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">深入理解JavaScript--异步系列(2)</div>
+    <a href="/2018/01/22/2周结-计算机基础/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">周结-计算机基础</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -441,10 +406,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -453,11 +414,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
