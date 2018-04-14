@@ -69,6 +69,27 @@
   </entry>
   
   <entry>
+    <title>CSS(一)</title>
+    <link href="wangsiyuan233.github.io/2018/04/13/6CSS-%E4%B8%80/"/>
+    <id>wangsiyuan233.github.io/2018/04/13/6CSS-一/</id>
+    <published>2018-04-13T10:12:14.283Z</published>
+    <updated>2018-03-27T07:24:41.995Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><code>http://htmlpreview.github.io/?</code> 拼接 <code>https://github.com/wangsiyuan233/MyResume/blob/master/cv.html</code>可以直接预览我的简历进度。重点是前面的：<code>http://htmlpreview.github.io/?</code><a id="more"></a></li><li>前端知识滚雪球，每18个月要学的东西就会翻倍（此处省略两行泪）</li><li>CSS的框架：SASS、LESS 和 PostCSS</li><li>所有的标签都默认的样式（<code>&lt;div&gt;</code> 和 <code>&lt;span&gt;</code> 没有）</li><li>CSS准备工作：body、a、float、clear等等。</li><li>字母的拼接，用两个<code>&lt;span&gt;</code>写在同一行，再用margin-left确定间距，否则中间的间距是默认的一个空格的距离。</li><li>浏览器兼容：IE8是底线，淘宝已经放弃低版本浏览器了</li><li>横条并列导航栏：<strong>子元素float,父元素clearfix。</strong></li><li><code>&lt;a&gt;</code> 和 <code>&lt;li&gt;</code>默认的样式不一样，li没有把a包裹起来，即它们的宽度和高度不一样，解决方法：a{display:block};</li><li>hover一个下划线： <code>a:hover{border-bottom: 3px solid #E8676B;}</code></li><li>但是此时鼠标悬挂时，附近的li就会抖动，因为新生成的下划线挤占了原本的位置，解决方法：<code>a{border-bottom: 3px solid transparent;}</code>（抢先生成一个透明的下划线）</li><li>hover和字体直接的距离靠padding实现</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;code&gt;http://htmlpreview.github.io/?&lt;/code&gt; 拼接 &lt;code&gt;https://github.com/wangsiyuan233/MyResume/blob/master/cv.html&lt;/code&gt;可以直接预览我的简历进度。重点是前面的：&lt;code&gt;http://htmlpreview.github.io/?&lt;/code&gt;
+    
+    </summary>
+    
+    
+      <category term="CSS" scheme="wangsiyuan233.github.io/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CSS(二)</title>
     <link href="wangsiyuan233.github.io/2018/04/13/7CSS-%E4%BA%8C/"/>
     <id>wangsiyuan233.github.io/2018/04/13/7CSS-二/</id>
@@ -85,27 +106,6 @@
 &lt;li&gt;.xxx {text-align: center;} ：让子代的内联元素居中排列，&lt;strong&gt;【内联元素居中要把t-a加在父级元素上】&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;width 的默认值是 auto&lt;/li&gt;
 &lt;li&gt;display: inline: 设置 宽高 / margin-top/ margin-buttom 都是无效的
-    
-    </summary>
-    
-    
-      <category term="CSS" scheme="wangsiyuan233.github.io/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS(一)</title>
-    <link href="wangsiyuan233.github.io/2018/04/13/6CSS-%E4%B8%80/"/>
-    <id>wangsiyuan233.github.io/2018/04/13/6CSS-一/</id>
-    <published>2018-04-13T10:12:14.283Z</published>
-    <updated>2018-03-27T07:24:41.995Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li><code>http://htmlpreview.github.io/?</code> 拼接 <code>https://github.com/wangsiyuan233/MyResume/blob/master/cv.html</code>可以直接预览我的简历进度。重点是前面的：<code>http://htmlpreview.github.io/?</code><a id="more"></a></li><li>前端知识滚雪球，每18个月要学的东西就会翻倍（此处省略两行泪）</li><li>CSS的框架：SASS、LESS 和 PostCSS</li><li>所有的标签都默认的样式（<code>&lt;div&gt;</code> 和 <code>&lt;span&gt;</code> 没有）</li><li>CSS准备工作：body、a、float、clear等等。</li><li>字母的拼接，用两个<code>&lt;span&gt;</code>写在同一行，再用margin-left确定间距，否则中间的间距是默认的一个空格的距离。</li><li>浏览器兼容：IE8是底线，淘宝已经放弃低版本浏览器了</li><li>横条并列导航栏：<strong>子元素float,父元素clearfix。</strong></li><li><code>&lt;a&gt;</code> 和 <code>&lt;li&gt;</code>默认的样式不一样，li没有把a包裹起来，即它们的宽度和高度不一样，解决方法：a{display:block};</li><li>hover一个下划线： <code>a:hover{border-bottom: 3px solid #E8676B;}</code></li><li>但是此时鼠标悬挂时，附近的li就会抖动，因为新生成的下划线挤占了原本的位置，解决方法：<code>a{border-bottom: 3px solid transparent;}</code>（抢先生成一个透明的下划线）</li><li>hover和字体直接的距离靠padding实现</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;&lt;code&gt;http://htmlpreview.github.io/?&lt;/code&gt; 拼接 &lt;code&gt;https://github.com/wangsiyuan233/MyResume/blob/master/cv.html&lt;/code&gt;可以直接预览我的简历进度。重点是前面的：&lt;code&gt;http://htmlpreview.github.io/?&lt;/code&gt;
     
     </summary>
     
