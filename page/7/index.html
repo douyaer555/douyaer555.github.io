@@ -141,32 +141,30 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-37Algorithms1-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-12JS函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/02/37Algorithms1-1/">&lt;Algorithms&gt;-1.1基础编程模型</a>
+      <a class="article-title" href="/2018/02/10/12JS函数/">JS函数</a>
     </h1>
   
 
         
-        <a href="/2018/04/02/37Algorithms1-1/" class="archive-article-date">
-  	<time datetime="2018-04-02T06:33:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-02</time>
+        <a href="/2018/02/10/12JS函数/" class="archive-article-date">
+  	<time datetime="2018-02-10T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p><a href="https://book.douban.com/subject/10432347/">《算法 （第四版）》</a>梳理框架</p>
-</blockquote>
-<p>不建议阅读，反正你也读不下去<br>
+        <p><strong>一、函数的五种声明</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//具名函数</span></div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x,y</span>)</span>&#123;</div><div class="line">     <span class="keyword">return</span> x+y</div><div class="line"> &#125;</div><div class="line"> f.name <span class="comment">// 'f'</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 匿名函数</span></div><div class="line"> <span class="keyword">var</span> f</div><div class="line"> f = <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</div><div class="line">     <span class="keyword">return</span> x+y</div><div class="line"> &#125;</div><div class="line"> f.name <span class="comment">// 'f'</span></div></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2018/04/02/37Algorithms1-1/#more">more >></a>
+          <a class="article-more-a" href="/2018/02/10/12JS函数/#more">more >></a>
         
       
 
@@ -180,7 +178,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
         		</li>
       		
 		</ul>
@@ -216,31 +218,29 @@
 
 
   
-    <article id="post-35初探ES6-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-11周结-JS初印象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/01/35初探ES6-1/">初探ES6(1)--let</a>
+      <a class="article-title" href="/2018/02/07/11周结-JS初印象/">周结-JS初印象</a>
     </h1>
   
 
         
-        <a href="/2018/04/01/35初探ES6-1/" class="archive-article-date">
-  	<time datetime="2018-04-01T10:31:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-01</time>
+        <a href="/2018/02/07/11周结-JS初印象/" class="archive-article-date">
+  	<time datetime="2018-02-07T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>先从一块代码讲起<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> liList = <span class="built_in">document</span>.querySelectorAll(<span class="string">'li'</span>) <span class="comment">// 共5个li</span></div><div class="line"><span class="keyword">for</span>( <span class="keyword">var</span> i=<span class="number">0</span>; i&lt;liList.length; i++)&#123;</div><div class="line">  liList[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(i)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>我们知道会依次打印出5个5.<br>只是将 var 改成 let 之后<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> liList = <span class="built_in">document</span>.querySelectorAll(<span class="string">'li'</span>) <span class="comment">// 共5个li</span></div><div class="line"><span class="keyword">for</span>( <span class="keyword">let</span> i=<span class="number">0</span>; i&lt;liList.length; i++)&#123;</div><div class="line">  liList[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(i)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>我们知道会依次打印出 1 2 3 4 5.<br><strong>var 和 let 竟然还有不同？</strong><br>
+        <p><strong>一、JS数据</strong><br>1、七种数据类型：number string boolean symbol undefined null object<br>2、function不是一种类型<br>3、二进制：0b11；八进制：011；十六进制：0x11<br>4、object：<br>–object 就是上面前6种基本类型（无序地）组合在一起<br>–object 里面可以有 object<br>–object 的 key 一律是字符串，不存在其他类型的 key<br>–object[‘’] 是合法的<br>–object[‘key’] 可以写作 object.key<br>–注意 object.key 与 object[key] 不同<br>–delete object[‘key’]<br>–’key’ in object<br>
         
-          <a class="article-more-a" href="/2018/04/01/35初探ES6-1/#more">more >></a>
+          <a class="article-more-a" href="/2018/02/07/11周结-JS初印象/#more">more >></a>
         
       
 
@@ -254,7 +254,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
         		</li>
       		
 		</ul>
@@ -290,106 +294,30 @@
 
 
   
-    <article id="post-34异步系列-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-10CSS-四" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/30/34异步系列-1/">深入理解JavaScript--异步系列(1)</a>
+      <a class="article-title" href="/2018/02/05/10CSS-四/">CSS(四)</a>
     </h1>
   
 
         
-        <a href="/2018/03/30/34异步系列-1/" class="archive-article-date">
-  	<time datetime="2018-03-30T08:20:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-30</time>
+        <a href="/2018/02/05/10CSS-四/" class="archive-article-date">
+  	<time datetime="2018-02-05T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="异步的实现原理"><a href="#异步的实现原理" class="headerlink" title="异步的实现原理"></a>异步的实现原理</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ajax = $.ajax(&#123;</div><div class="line">    <span class="attr">url</span>: <span class="string">'/data/data1.json'</span>,</div><div class="line">    <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'success'</span>)</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>对于ajax这种传递过去不执行，等出来结果之后再执行的函数，叫做callback，即回调函数.<br>实现<strong>异步的最核心原理</strong>，就是将callback作为参数传递给异步执行函数，当有结果返回之后再触发 callback执行.<br>
+        <h2 id="lt-div-gt-的高度由什么决定呢？-（不支持IE）"><a href="#lt-div-gt-的高度由什么决定呢？-（不支持IE）" class="headerlink" title="&lt;div&gt;的高度由什么决定呢？ ##（不支持IE）"></a><code>&lt;div&gt;</code>的高度由什么决定呢？ ##（不支持IE）</h2><ol>
+<li>只有内联元素<br>只有内联时，高度是由行高（line-height）决定的。（与字体的大小无关）
         
-          <a class="article-more-a" href="/2018/03/30/34异步系列-1/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">异步</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-33CSS布局方案之flex-float" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/29/33CSS布局方案之flex-float/">CSS布局方案之flex+float</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/29/33CSS布局方案之flex-float/" class="archive-article-date">
-  	<time datetime="2018-03-29T08:59:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://js.jirengu.com/cinigoriva/1/edit?html,css,output">【【【&lt;&lt;&lt;我是flex的总结 我超轻便&gt;&gt;&gt;】】】</a><br><a href="http://js.jirengu.com/pezobuyoki/1/edit?html,css,output">【【【&lt;&lt;&lt;我是float的总结 我覆盖全&gt;&gt;&gt;】】】</a></p>
-<blockquote>
-<p>一、居中布局</p>
-</blockquote>
-<p><strong>1、水平居中</strong><a href="http://js.jirengu.com/sobosuvuxa/1/edit?html,css,output">【5个示例 &gt;&gt;&gt;】</a><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span> wangsiyuan wangsiyuan <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2018/03/29/33CSS布局方案之flex-float/#more">more >></a>
+          <a class="article-more-a" href="/2018/02/05/10CSS-四/#more">more >></a>
         
       
 
@@ -405,9 +333,86 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
         		</li>
-      		 
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-9CSS小结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/03/9CSS小结/">CSS小结</a>
+    </h1>
+  
+
+        
+        <a href="/2018/02/03/9CSS小结/" class="archive-article-date">
+  	<time datetime="2018-02-03T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CSS黑魔法"><a href="#CSS黑魔法" class="headerlink" title="CSS黑魔法"></a>CSS黑魔法</h2><p><strong>各属性之间相互影响</strong></p>
+<ul>
+<li>margin 和 border：</li>
+</ul>
+<ol>
+<li>上下两个div之间的margin会选择大的呈现</li>
+<li>用一个0.1px的border隔开，上下还是原来的margin数；</li>
+<li>用display：table，上下还是原来的margin数；</li>
+<li>用display：flex，上下还是原来的margin数；</li>
+<li>用overflow：hidden，上下还是原来的margin数；
+        
+          <a class="article-more-a" href="/2018/02/03/9CSS小结/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">进阶</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
         		</li>
       		
 		</ul>
@@ -443,29 +448,32 @@
 
 
   
-    <article id="post-32函数知多少" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-8CSS-三" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/28/32函数知多少/">函数知多少</a>
+      <a class="article-title" href="/2018/02/02/8CSS-三/">CSS(三)</a>
     </h1>
   
 
         
-        <a href="/2018/03/28/32函数知多少/" class="archive-article-date">
-  	<time datetime="2018-03-28T11:35:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-28</time>
+        <a href="/2018/02/02/8CSS-三/" class="archive-article-date">
+  	<time datetime="2018-02-02T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>一、定义</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1、匿名函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;<span class="keyword">return</span> <span class="number">3</span>&#125; <span class="comment">//浏览器会直接报错</span></div><div class="line"><span class="keyword">var</span> f1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;&#125; <span class="comment">//将匿名函数存在f1这个地址</span></div><div class="line">f1.name <span class="comment">//f1   虽然是匿名函数，但是它有name</span></div></pre></td></tr></table></figure></p>
+        <p><strong>遮罩</strong><br><img src="https://i.imgur.com/BLg9f51.png" alt=""><br><img src="https://i.imgur.com/StiPZuO.png" alt=""></p>
+<ol>
+<li>高能：遮罩的插入图片是在CSS中完成的</li>
+<li>background-image/background-position/background-size 保证背景图均匀平铺
         
-          <a class="article-more-a" href="/2018/03/28/32函数知多少/#more">more >></a>
+          <a class="article-more-a" href="/2018/02/02/8CSS-三/#more">more >></a>
         
       
 
@@ -479,11 +487,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">进阶</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
         		</li>
       		
 		</ul>
@@ -600,15 +604,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
