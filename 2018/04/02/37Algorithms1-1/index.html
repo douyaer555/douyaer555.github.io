@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="《算法 （第四版）》梳理框架
 不建议阅读，反正你也读不下去">
-<meta property="og:updated_time" content="2018-04-14T00:40:20.829Z">
+<meta property="og:updated_time" content="2018-04-19T11:57:59.392Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<Algorithms>-1.1基础编程模型">
 <meta name="twitter:description" content="《算法 （第四版）》梳理框架
@@ -206,7 +206,9 @@
 <p>1.1.7.3 标准库<br>我们开发了一些库用来实现一些实用的功能<br>这些库大多用与处理输入和输出<br>有些方法非常简单，为啥我们还要把它们写进一个库呢？<br>-让我们把重心放在测试和算法上，而不是随机数的计算上<br>-方法库需要大量的测试，其中就包含了极端和罕见的情况，如果我们自己手写就很麻烦<br>这些都是模块化编程的基石，当然有些夸大其词了<br>哈哈其实这些方法执行起来并不困难，它们中有些还代表了有趣的算法~</p>
 <p>1.1.7.4 自己的库<br>有没有想过自己写一个库呢？以后想要调用的时候就随时调用哦<br>-编写用例，将计算分解为可控的部分<br>-明确方法库和与其对应的API<br>-实现API和一个能够对方法进行独立测试的mian()函数<br>。。。。结果很诱人。。。。这三条我看都看不懂<br>自己的库不仅方便调用，而且能让你更好的着手复杂的工作</p>
 <p><strong>1.1.8 字符串</strong><br>字符串竟然不是Java的原始数据类型！<br>1.1.8.1 字符串拼接<br>字符串的拼接结果是：两个字符串变成一个 ———— “hi,” + “Bob” —&gt; “hi,Bob”<br>1.1.8.2 类型转换<br>字符串的两个主要用途：<br>1、用户输入的值转换为相应的数据类型<br>2、将数据类型转换为屏幕能显示的值<br>？？？？？？？？？？？？  这是啥 ？？？？？？<br>1.1.8.3 自动转换<br>我们几乎不使用 toString()方法，是因为Java提供了拼接的方法<br>使用 + 就可以把其他数据类型转换为 String 类型<br>或者 +’’ 拼接一个空字符串，也可以转换<br>1.1.8.4 命令行参数<br>Java中字符串的一个用处是接受命令行传递信息<br>当你输入 java + 库名 + 字符串<br>java会调用 main()方法，将【由字符串变成的数组】<br>作为参数，传递给main()函数</p>
-<p><strong>1.1.9 输入和输出</strong><br>Java的输入、输出和绘图库是为了与外界交流<br>1、Java的输入值来源于命令行参数 或 标准输入流，输出值 在 标准输出流中<br>2、我们必然要思考Java和操作系统之间的连接<br>3、我们把应用程序提供的输入和显示的窗口叫 终端</p>
+<p><strong>1.1.9 输入和输出</strong><br>Java的输入、输出和绘图库是为了与外界交流<br>1、Java的输入值来源于命令行参数 或 标准输入流，输出值 在 标准输出流中<br>2、我们必然要思考Java和操作系统之间的连接<br>3、我们把应用程序提供的输入和显示的窗口叫 终端<br>1.1.9.1 命令与参数<br>在终端，我们可以看到提示符，通过提示符我们可以输入命令或参数<br>/<em> 2018/4/14 p37-p41 </em>/<br>1.1.9.2 标准输出<br>StOut()库用来处理输出，一般来说，输出都会在终端窗口显示<br>1.1.9.3 格式化输出<br>printf()有两个参数，第一个参数是转换为字符串的方法，第二个参数是被转换的字符串<br>最简单的方式是 % 后面跟一个转换码：d是Java十进制整数、f是小数、s是字符串<br>% 和 转换码 中间还要加上一个表示转换出来字符串的 长度 的数字<br>1.1.9.4 标准输入<br>StIn()库的标准是空的或包含一些空格<br>标准输入的一个重要特点是，一旦你读完值，你的代码就会消失<br>也就是说，你退回去再读一遍<br>1.1.9.5 重定向和管道<br>重定向就是把标准输出保存到一个文件<br>将一个程序的输出通过【管道】作为另一个程序的输入<br>1.1.9.6 基于文件的输入和输出<br>我们的In 和 Out 库提供一些静态方法，来实现向文件中写入或从文件中读取一个原始数据类型的数组（的抽象 （？？？））<br>/<em> 2018/4/15 p42-p63 </em>/<br>1.1.9.7 标准绘图库（基本方法）<br>我们以前着眼于字符串的输入和输出，现在着眼于图像的输出<br>1.1.9.8 标准绘图 （控制方法）<br>不仅可以调整画笔的粗细，还能设置画画的时间，更能以一定的格式保存于一个文件当中，这个文件可以直接上传于网络</p>
+<p><strong>1.1.10 二分查找</strong><br>我们挑选的例子是可以精确表达这个二分查找法，且是完全由Java表示的<br>1.1.10.1 二分查找<br>第3章第2节会详细介绍二分查找，现在见到介绍一下<br>用要查找的字母不断的和mid对比大小，直到该数字就是mid。<br>1.1.10.2 开发用例<br>可以直接比较两个文件中的 数字 的大小<br>比如A文件中的第1歌数字和B文件中的第1个数字进行比较<br>1.1.10.3 白名单过滤<br>我们的测试用例会通过模拟实际情况来展示当前算法的必要性，这就是 白名单过滤<br>1.1.10.4 性能<br>rank()这个函数甚至不需要输入时有序的，就能遍历它<br>那我们为啥还需要二分查找啥的？ 因为rank()非常慢啊！</p>
+<p><strong>1.1.11 展望</strong><br>这一章节，我们学到了许多精又美的程序<br>往后，我们就要追求 抽象数据 和面向对象编程 了<br>抽象数据：程序可以自己定义数据类型，而不仅仅是静态方法里的预设类型了<br>1、不管是排序算法还是二分查找，我们都用相同的代码来处理不同的数据类型<br>2、比数组灵活，是高效算法的基础<br>3、可以让我们准确知道自己面对的是什么算法</p>
 
       
 
@@ -432,6 +434,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -440,15 +446,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -456,11 +454,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -472,11 +474,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
             
             <div class="clearfix"></div>
