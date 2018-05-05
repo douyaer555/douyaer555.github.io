@@ -6,24 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>深入理解JavaScript--原型系列(1) | wangsiyuan</title>
+  <title>EventUtil--js事件封装 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="写在前面：对学习前端70天的一个总结，说是“深入”其实有点不好意思，有什么问题一起探讨呀
-
-JavaScript中有一句“一切皆是对象”，这句话当然是不严谨的啦，让我们一起来看看怎么回事吧！">
+  <meta name="description" content="跨浏览器的事件对象EventUtil">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入理解JavaScript--原型系列(1)">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/02/24/22原型系列-1/index.html">
+<meta property="og:title" content="EventUtil--js事件封装">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/05/05/45EventUtil/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="写在前面：对学习前端70天的一个总结，说是“深入”其实有点不好意思，有什么问题一起探讨呀
-
-JavaScript中有一句“一切皆是对象”，这句话当然是不严谨的啦，让我们一起来看看怎么回事吧！">
-<meta property="og:updated_time" content="2018-04-14T00:51:50.144Z">
+<meta property="og:description" content="跨浏览器的事件对象EventUtil">
+<meta property="og:updated_time" content="2018-05-05T12:18:28.448Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入理解JavaScript--原型系列(1)">
-<meta name="twitter:description" content="写在前面：对学习前端70天的一个总结，说是“深入”其实有点不好意思，有什么问题一起探讨呀
-
-JavaScript中有一句“一切皆是对象”，这句话当然是不严谨的啦，让我们一起来看看怎么回事吧！">
+<meta name="twitter:title" content="EventUtil--js事件封装">
+<meta name="twitter:description" content="跨浏览器的事件对象EventUtil">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -149,20 +143,20 @@ JavaScript中有一句“一切皆是对象”，这句话当然是不严谨的�
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-22原型系列-1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-45EventUtil" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      深入理解JavaScript--原型系列(1)
+      EventUtil--js事件封装
     </h1>
   
 
         
-        <a href="/2018/02/24/22原型系列-1/" class="archive-article-date">
-  	<time datetime="2018-02-24T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-24</time>
+        <a href="/2018/05/05/45EventUtil/" class="archive-article-date">
+  	<time datetime="2018-05-05T12:13:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-05</time>
 </a>
         
       </header>
@@ -170,19 +164,10 @@ JavaScript中有一句“一切皆是对象”，这句话当然是不严谨的�
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>写在前面：对学习前端70天的一个总结，说是“深入”其实有点不好意思，有什么问题一起探讨呀</p>
+<p>跨浏览器的事件对象EventUtil<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> EventUtil = &#123;</div><div class="line">    <span class="attr">addHandler</span>: <span class="function"><span class="keyword">function</span>(<span class="params">element,type,handler</span>) </span>&#123; <span class="comment">//事件监听</span></div><div class="line">        <span class="keyword">if</span>(element.addEventListener) &#123;</div><div class="line">            element.addEventListener(type,handler,<span class="literal">false</span>);</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(element.attachEvent) &#123;</div><div class="line">            element.attachEvent(<span class="string">"on"</span>+type,handler);</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            element[<span class="string">"on"</span> +type] = handler;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">removeHandler</span>: <span class="function"><span class="keyword">function</span>(<span class="params">element,type,handler</span>)</span>&#123; <span class="comment">//移除事件监听</span></div><div class="line">        <span class="keyword">if</span>(element.removeEventListener) &#123;</div><div class="line">            element.removeEventListener(type,handler,<span class="literal">false</span>);</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(element.detachEvent) &#123;</div><div class="line">            element.detachEvent(<span class="string">"on"</span>+type,handler);</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            element[<span class="string">"on"</span> +type] = <span class="literal">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">getEvent</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;<span class="comment">//获取event对象，返回event对象的引用</span></div><div class="line">        <span class="keyword">return</span> event ? event : <span class="built_in">window</span>.event;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">getTarget</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;<span class="comment">//返回事件目标。</span></div><div class="line">        <span class="keyword">return</span> event.target || event.srcElement;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">preventDefault</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;<span class="comment">//取消或者阻止事件默认行为</span></div><div class="line">        <span class="keyword">if</span>(event.preventDefault) &#123;</div><div class="line">            event.preventDefault();</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            event.returnValue = <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">stopPropagation</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;<span class="comment">//阻止事件流，阻止事件冒泡</span></div><div class="line">        <span class="keyword">if</span>(event.stopPropagation) &#123;</div><div class="line">            event.stopPropagation();</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            event.cancelBubble = <span class="literal">true</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">getRelatedTarget</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;<span class="comment">//返回相关元素信息（仅对于mouseover和mouseout事件）</span></div><div class="line">        <span class="keyword">if</span> (event.relatedTarget)&#123;</div><div class="line">            <span class="keyword">return</span> event.relatedTarget;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (event.toElement)&#123;</div><div class="line">            <span class="keyword">return</span> event.toElement;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (event.fromElement)&#123;</div><div class="line">            <span class="keyword">return</span> event.fromElement;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">getWheelDelta</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;<span class="comment">//获取鼠标滚轮增量值，检测是否包含WheelDelta</span></div><div class="line">        <span class="keyword">if</span>(event.wheelDelta) &#123;</div><div class="line">            <span class="keyword">return</span> event.wheelDelta;</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">return</span> -event.detail * <span class="number">40</span></div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">getCharCode</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;<span class="comment">//获取键盘按键键码。</span></div><div class="line">        <span class="keyword">if</span>(<span class="keyword">typeof</span> event.charCode == <span class="string">'number'</span>) &#123;</div><div class="line">            <span class="keyword">return</span> event.charCode;</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">return</span> event.keyCode;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">getButton</span>:<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;<span class="comment">//在mouseup或者mousedown的时候，event存在一个button属性，用于判断是按了鼠标左键，右键，还是中键，0鼠标主键按钮，1是中间，2是次键（右键）</span></div><div class="line">        <span class="keyword">if</span>(<span class="built_in">document</span>.implementation.hasFeature(<span class="string">"MouseEvents"</span>,<span class="string">"2.0"</span>))&#123;</div><div class="line">            <span class="keyword">return</span> event.button;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">switch</span>(event.button)&#123;</div><div class="line">                <span class="keyword">case</span> <span class="number">0</span>:</div><div class="line">                <span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">                <span class="keyword">case</span> <span class="number">3</span>:</div><div class="line">                <span class="keyword">case</span> <span class="number">5</span>:</div><div class="line">                <span class="keyword">case</span> <span class="number">7</span>:</div><div class="line">                  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">                <span class="keyword">case</span> <span class="number">2</span>:</div><div class="line">                <span class="keyword">case</span> <span class="number">6</span>:</div><div class="line">                   <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">                <span class="keyword">case</span> <span class="number">4</span>:</div><div class="line">                  <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 </blockquote>
-<p>JavaScript中有一句“一切皆是对象”，这句话当然是不严谨的啦，让我们一起来看看怎么回事吧！<br><a id="more"></a><br><strong>一、判断对象</strong><br>从最开始学习JS，我们就学会了判断值类型和引用类型：<br>值类型：number、string、null、undefined、boolean<br>引用类型：函数、数组、对象这些都是对象<br>（值得注意的是，当我们用typeof判断null时，浏览器会返回object，这是因为在js中，底层是用二进制编码的，如果前三位是000的话,用typeof就会返回object,而null的编码是全部都是0，当然会被返回object ,这是js的一个bug而已。）</p>
-<blockquote>
-<p>1.1值类型：变量的交换等于在一个新的地方按照连锁店的规范标准（统一店面理解为相同的变量内容）新开一个分店，这样新开的店与其它旧店互不相关、各自运营。<br>1.2引用类型：变量的交换等同于把现有一间店的钥匙（变量引用地址）复制一把给了另外一个老板，此时两个老板同时管理一间店，两个老板的行为都有可能对一间店的运营造成影响。<br>2.1值类型的值是一经确定就不可变的；基本类型的比较是值的比较；基本类型的变量存放在栈。<br>2.2引用类型的值是可变的；引用类型的比较是引用的比较；引用类型的值是同时保存在栈和堆中的对象。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//值类型的比较</span></div><div class="line"><span class="keyword">var</span> person1 = <span class="string">'&#123;&#125;'</span>;</div><div class="line"><span class="keyword">var</span> person2 = <span class="string">'&#123;&#125;'</span>;</div><div class="line"><span class="built_in">console</span>.log(person1 == person2); <span class="comment">// true</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//引用类型的比较</span></div><div class="line"><span class="keyword">var</span> person1 = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> person2 = &#123;&#125;;</div><div class="line"><span class="built_in">console</span>.log(person1 == person2); <span class="comment">// false</span></div></pre></td></tr></table></figure>
-<p><strong>二、定义对象</strong><br>粗粗的将这些变量划分为非对象和对象，我们不难发现，（和JAVA与C#对比），JS中的“对象”非常的随意：<br>函数是对象，数组是对象，对象也是对象；<br>对象里只有属性，没有方法（方法也是一种属性，以键值对的形式出现）；<br>对象可以扩展任意属性。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//举例说明 对象中自定义属性</span></div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">	<span class="attr">a</span> : <span class="number">10</span>,</div><div class="line">	<span class="attr">b</span> : <span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;alert (x+<span class="keyword">this</span>.a);&#125;,</div><div class="line">	<span class="attr">c</span> : &#123;<span class="attr">name</span>: <span class="string">'wangsiyuan'</span>，position: <span class="string">'全栈工程师'</span>&#125;</div><div class="line">&#125;；</div><div class="line"><span class="comment">//a、b、c都是obj的属性，同时c还是一个对象，它有着name和position两个属性</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//举例说明 函数中自定义属性</span></div><div class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="number">100</span>);</div><div class="line">&#125;;</div><div class="line">fn.a = <span class="number">10</span>;</div><div class="line">fn.b = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="number">123</span>);</div><div class="line">&#125;;</div><div class="line">fn.c = &#123;</div><div class="line">	<span class="attr">name</span>: <span class="string">'wangsiyuan'</span>，</div><div class="line">	position: <span class="string">'全栈工程师'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">//$变量也是一个函数（JQ）</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> $) <span class="comment">//function</span></div></pre></td></tr></table></figure>
-<p>至此，我们可以回答开头的问题了：<br><strong>一切（引用类型）都是对象，对象是属性的集合。</strong></p>
-<hr>
-<p>我们在第一小节里确定了[对象]的范围，请问：函数、数组和对象，这三者的关系是怎样的呢？</p>
+<p>上面就是我们封装的事件对象。</p>
+<p>用法超级简单，例如click事件:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> btn1 = <span class="built_in">document</span>.getElementById(<span class="string">"myBtn1"</span>);</div><div class="line"><span class="keyword">var</span> handler = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">alert(<span class="string">"hello haorooms"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">EventUtil.addHandler(btn1, <span class="string">"click"</span>, handler);</div><div class="line"><span class="comment">//EventUtil.removeHandler(btn1, "click", handler);</span></div></pre></td></tr></table></figure></p>
 
       
 
@@ -217,7 +202,7 @@ JavaScript中有一句“一切皆是对象”，这句话当然是不严谨的�
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">原型链</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
         		</li>
       		
 		</ul>
@@ -273,7 +258,7 @@ JavaScript中有一句“一切皆是对象”，这句话当然是不严谨的�
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/02/24/22原型系列-1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/05/05/45EventUtil/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -287,18 +272,9 @@ JavaScript中有一句“一切皆是对象”，这句话当然是不严谨的�
   
 <nav id="article-nav">
   
-    <a href="/2018/02/26/23原型系列-2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          深入理解JavaScript--原型系列(2)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/02/23/21HTML知识梳理/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">HTML知识梳理</div>
+    <a href="/2018/04/21/44Flex布局/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Flex布局</div>
       <i class="icon-circle-right"></i>
     </a>
   
