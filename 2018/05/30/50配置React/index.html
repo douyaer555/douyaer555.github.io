@@ -10,27 +10,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="第一步： 安装 React
 
-1、 下载 yarn
+1、 下载yarn
 2、临时文件夹实验：123456789mkdir ~/temp; cd ~/tempnpm install -g create-react-appcreate-react-app hello-worldcd hello-worldnpm start 或者 yarn start
- create-react-app 内置了 webpack 的所有功">
+ create-react-app 内置了 webpack 的所有功能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="配置 React">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/05/30/50配置React/index.html">
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="第一步： 安装 React
 
-1、 下载 yarn
+1、 下载yarn
 2、临时文件夹实验：123456789mkdir ~/temp; cd ~/tempnpm install -g create-react-appcreate-react-app hello-worldcd hello-worldnpm start 或者 yarn start
- create-react-app 内置了 webpack 的所有功">
+ create-react-app 内置了 webpack 的所有功能">
 <meta property="og:image" content="https://i.imgur.com/RMpH2WV.jpg">
-<meta property="og:updated_time" content="2018-05-30T11:21:16.169Z">
+<meta property="og:updated_time" content="2018-05-31T15:14:35.607Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="配置 React">
 <meta name="twitter:description" content="第一步： 安装 React
 
-1、 下载 yarn
+1、 下载yarn
 2、临时文件夹实验：123456789mkdir ~/temp; cd ~/tempnpm install -g create-react-appcreate-react-app hello-worldcd hello-worldnpm start 或者 yarn start
- create-react-app 内置了 webpack 的所有功">
+ create-react-app 内置了 webpack 的所有功能">
 <meta name="twitter:image" content="https://i.imgur.com/RMpH2WV.jpg">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
@@ -180,10 +180,10 @@
         <blockquote>
 <p>第一步： 安装 React</p>
 </blockquote>
-<p>1、 <a href="https://pan.baidu.com/s/1kU4K9iJ" target="_blank" rel="external">下载 <code>yarn</code></a></p>
+<p>1、 <a href="https://pan.baidu.com/s/1kU4K9iJ" target="_blank" rel="external">下载</a><code>yarn</code></p>
 <p>2、临时文件夹实验：<br><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="string">mkdir </span>~/<span class="string">temp;</span> <span class="string">cd </span>~/<span class="string">temp</span></div><div class="line"></div><div class="line"><span class="string">npm </span><span class="string">install </span>-g <span class="built_in">create-react-app</span></div><div class="line"></div><div class="line"><span class="built_in">create-react-app</span> <span class="string">hello-world</span></div><div class="line"></div><div class="line"><span class="string">cd </span><span class="string">hello-world</span></div><div class="line"></div><div class="line"><span class="string">npm </span><span class="string">start </span>或者 <span class="string">yarn </span><span class="string">start</span></div></pre></td></tr></table></figure></p>
 <p> <code>create-react-app</code> 内置了 <code>webpack</code> 的所有功能。</p>
-<p>3、初始化 <code>React</code><br>清空 <code>temp</code> 文件夹，同时清空项目文件夹（因为 <code>create-react-app</code> 会自己创建 <code>src</code> 和 <code>index.html</code> ）<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">cd 到你在上次任务中新建的项目目录！</div><div class="line"></div><div class="line"><span class="comment"># 删除所有非隐藏文件，这一步千万不要手抖，后果自负</span></div><div class="line"></div><div class="line">rm -rf * </div><div class="line">git <span class="keyword">add</span><span class="bash"> .</span></div><div class="line">git commit -m <span class="string">"remove all files"</span></div><div class="line">git push</div></pre></td></tr></table></figure></p>
+<p>3、初始化 <code>React</code><br>清空 <code>temp</code> 文件夹，同时清空项目文件夹<br>（因为 <code>create-react-app</code> 会自己创建 <code>src</code> 和 <code>index.html</code> ）<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">cd 到你在上次任务中新建的项目目录！</div><div class="line"></div><div class="line"><span class="comment"># 删除所有非隐藏文件，这一步千万不要手抖，后果自负</span></div><div class="line"></div><div class="line">rm -rf * </div><div class="line">git <span class="keyword">add</span><span class="bash"> .</span></div><div class="line">git commit -m <span class="string">"remove all files"</span></div><div class="line">git push</div></pre></td></tr></table></figure></p>
 <p>正式开始初始化：<br><a id="more"></a><br><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">create-react-app</span> .</div><div class="line"><span class="string">yarn </span><span class="string">start</span></div></pre></td></tr></table></figure></p>
 <p><code>yarn start</code> 就相当于 <code>webpack</code> 的 <code>watch</code> 功能。</p>
 <p>注意：改 <code>JS</code> 会自动刷新页面，改 <code>HTML</code> 要手动刷新页面。</p>
@@ -212,7 +212,7 @@
 <p>反正 <code>this.state</code> 就是不会在 <code>this.setState</code> 调用之后立刻更新</p>
 <p>总结一下，<code>setState</code> 最招骂的就是不会立即修改 <code>this.state</code>。</p>
 <p>原来 <code>this.setState</code> 可以接受一个函数作为参数啊！</p>
-<p>传统式 <code>setState</code> 的存在，会把函数式 <code>setState</code> 拖下水啊！</p>
+<p>传统式 <code>setState</code> 的存在，会把函数式 <code>setState</code> 拖下水</p>
 <p>只要有一个传统式的 <code>setState</code> 调用，就把其他函数式 <code>setState</code> 调用给害了。</p>
 
       
@@ -435,19 +435,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
