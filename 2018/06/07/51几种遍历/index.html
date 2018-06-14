@@ -14,7 +14,7 @@
 <meta property="og:url" content="wangsiyuan233.github.io/2018/06/07/51几种遍历/index.html">
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="以下面的 数组 和 JSON对象：123456789var Arr = [&apos;Javascript&apos;, &apos;Gulp&apos;, &apos;CSS3&apos;, &apos;Grunt&apos;, &apos;jQuery&apos;, &apos;angular&apos;];var Obj = &amp;#123;    aaa: &apos;Javascript&apos;,    bbb: &apos;Gulp&apos;,    ccc: &apos;CSS3&apos;,    ddd: &apos;Grunt&apos;,    eee: &apos;jQuery">
-<meta property="og:updated_time" content="2018-06-07T13:35:21.808Z">
+<meta property="og:updated_time" content="2018-06-07T13:42:30.917Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 中的几种遍历">
 <meta name="twitter:description" content="以下面的 数组 和 JSON对象：123456789var Arr = [&apos;Javascript&apos;, &apos;Gulp&apos;, &apos;CSS3&apos;, &apos;Grunt&apos;, &apos;jQuery&apos;, &apos;angular&apos;];var Obj = &amp;#123;    aaa: &apos;Javascript&apos;,    bbb: &apos;Gulp&apos;,    ccc: &apos;CSS3&apos;,    ddd: &apos;Grunt&apos;,    eee: &apos;jQuery">
@@ -169,7 +169,9 @@
 </blockquote>
 <a id="more"></a>
 <figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">(<span class="name">function</span>() &#123;</div><div class="line">    for(<span class="name"><span class="builtin-name">var</span></span> i=0, len=Arr.length; i&lt;len; i++) &#123;</div><div class="line">        if (<span class="name">i</span> == <span class="number">2</span>) &#123;</div><div class="line">            // return;   // 函数执行被终止</div><div class="line">            // break;    // 循环被终止</div><div class="line">            continue; // 循环被跳过</div><div class="line">        &#125;<span class="comment">;</span></div><div class="line">        console.log(<span class="name">'Arr</span>['+ i +']<span class="symbol">:'</span> + Arr[i])<span class="comment">;</span></div><div class="line">    &#125;</div><div class="line">&#125;)()<span class="comment">;</span></div></pre></td></tr></table></figure>
-<p><strong>需要注意的是：</strong><br>1、<code>for</code>循环中的 <code>i</code> 在循环结束之后任然存在与作用域中，为了避免影响作用域中的其他变量，使用函数自执行的方式将其隔离起来<code>()()</code>;<br>2、避免使用 <code>for(var i=0; i&lt;demo1Arr.length; i++){}</code> 的方式，这样的数组长度每次都被计算，效率低于上面的方式。也可以将变量声明放在 <code>for</code> 的前面来执行，提高阅读性<br>3、跳出循环的方式有如下几种：<br><code>return</code> 函数执行被终止<br><code>break</code> 循环被终止<br><code>continue</code> 循环被跳过</p>
+<p><strong>需要注意的是：</strong><br>1、<code>for</code>循环中的 <code>i</code> 在循环结束之后任然存在与作用域中，为了避免影响作用域中的其他变量，使用函数自执行的方式将其隔离起来<code>()()</code>;</p>
+<p>2、避免使用 <code>for(var i=0; i&lt;demo1Arr.length; i++){}</code> 的方式，这样的数组长度每次都被计算，效率低于上面的方式。也可以将变量声明放在 <code>for</code> 的前面来执行，提高阅读性;</p>
+<p>3、跳出循环的方式有如下几种：<br><code>return</code> 函数执行被终止<br><code>break</code> 循环被终止<br><code>continue</code> 循环被跳过</p>
 <blockquote>
 <p>二、 For in</p>
 </blockquote>
@@ -179,7 +181,8 @@
 <li>遍历对象时，<code>item</code> 表示 <code>key</code> 值，<code>arr</code> 表示 <code>key</code> 值对应的 <code>value</code> 值 <code>obj[item]</code></li>
 </ul>
 <figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">(<span class="name">function</span>() &#123;</div><div class="line">    for(<span class="name"><span class="builtin-name">var</span></span> i in demoArr) &#123;</div><div class="line">        if (<span class="name">i</span> == <span class="number">2</span>) &#123;</div><div class="line">            return; // 函数执行被终止</div><div class="line">            // break;  // 循环被终止</div><div class="line">            // continue;  // 循环被跳过</div><div class="line">        &#125;<span class="comment">;</span></div><div class="line">        console.log(<span class="name">'demoArr</span>['+ i +']<span class="symbol">:'</span> + demoArr[i])<span class="comment">;</span></div><div class="line">    &#125;</div><div class="line">    console.log(<span class="name">'-------------'</span>)<span class="comment">;</span></div><div class="line">&#125;)()<span class="comment">;</span></div></pre></td></tr></table></figure>
-<p><strong>需要注意的是：</strong><br>1、在 <code>for</code> 循环与 <code>for in</code> 循环中，<code>i</code> 值都会在循环结束之后保留下来。因此使用函数自执行的方式避免。<br>2、使用 <code>return</code>，<code>break</code>，<code>continue</code> 跳出循环都与 <code>for</code> 循环一致，不过关于 <code>return</code> 需要注意，在函数体中，<code>return</code> 表示函数执行终止，就算是循环外面的代码，也不再继续往下执行。而 <code>break</code> 仅仅只是终止循环，后面的代码会继续执行。例如 ：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">res</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> Arr = [<span class="string">'Javascript'</span>, <span class="string">'Gulp'</span>, <span class="string">'CSS3'</span>, <span class="string">'Grunt'</span>, <span class="string">'jQuery'</span>, <span class="string">'angular'</span>];</div><div class="line"></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> item <span class="keyword">in</span> Arr) &#123;</div><div class="line">        <span class="keyword">if</span> (item == <span class="number">2</span>) &#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;;</div><div class="line">        <span class="built_in">console</span>.log(item, Arr[item]);</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'desc'</span>, <span class="string">'function res'</span>); <span class="comment">//不会执行</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>需要注意的是：</strong><br>1、在 <code>for</code> 循环与 <code>for in</code> 循环中，<code>i</code> 值都会在循环结束之后保留下来。因此使用函数自执行的方式避免;</p>
+<p>2、使用 <code>return</code>，<code>break</code>，<code>continue</code> 跳出循环都与 <code>for</code> 循环一致，不过关于 <code>return</code> 需要注意，在函数体中，<code>return</code> 表示函数执行终止，就算是循环外面的代码，也不再继续往下执行。而 <code>break</code> 仅仅只是终止循环，后面的代码会继续执行。例如 ：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">res</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> Arr = [<span class="string">'Javascript'</span>, <span class="string">'Gulp'</span>, <span class="string">'CSS3'</span>, <span class="string">'Grunt'</span>, <span class="string">'jQuery'</span>, <span class="string">'angular'</span>];</div><div class="line"></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> item <span class="keyword">in</span> Arr) &#123;</div><div class="line">        <span class="keyword">if</span> (item == <span class="number">2</span>) &#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;;</div><div class="line">        <span class="built_in">console</span>.log(item, Arr[item]);</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'desc'</span>, <span class="string">'function res'</span>); <span class="comment">//不会执行</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
 
@@ -273,8 +276,17 @@
   
 <nav id="article-nav">
   
+    <a href="/2018/06/13/52《算法》-第一章/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          《算法》--第一章 基础
+        
+      </div>
+    </a>
   
-    <a href="/2018/05/30/50配置React/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2018/05/29/50配置React/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">配置 React</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -385,15 +397,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
