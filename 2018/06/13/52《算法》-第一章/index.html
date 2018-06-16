@@ -8,16 +8,25 @@
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
   <title>《算法》--第一章--第一节 Java基础 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="《算法 （第四版）》">
+  <meta name="description" content="《算法 （第四版）》
+对于小的程序来说，用哪种方法解决问题并不重要，但是对于大的项目来说，就可以节约大量的时间了，是的，你可以通过提高硬件的配置来提升速度，但是和优雅的代码相比，这根本不是一个数量级的。
+
+1、Java 的基本结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《算法》--第一章--第一节 Java基础">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/06/13/52《算法》-第一章/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="《算法 （第四版）》">
-<meta property="og:updated_time" content="2018-06-14T22:25:53.643Z">
+<meta property="og:description" content="《算法 （第四版）》
+对于小的程序来说，用哪种方法解决问题并不重要，但是对于大的项目来说，就可以节约大量的时间了，是的，你可以通过提高硬件的配置来提升速度，但是和优雅的代码相比，这根本不是一个数量级的。
+
+1、Java 的基本结构">
+<meta property="og:updated_time" content="2018-06-16T12:59:19.814Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《算法》--第一章--第一节 Java基础">
-<meta name="twitter:description" content="《算法 （第四版）》">
+<meta name="twitter:description" content="《算法 （第四版）》
+对于小的程序来说，用哪种方法解决问题并不重要，但是对于大的项目来说，就可以节约大量的时间了，是的，你可以通过提高硬件的配置来提升速度，但是和优雅的代码相比，这根本不是一个数量级的。
+
+1、Java 的基本结构">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -163,12 +172,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="https://book.douban.com/subject/10432347/" target="_blank" rel="external">《算法 （第四版）》</a><br><a id="more"></a></p>
+        <p><a href="https://book.douban.com/subject/10432347/" target="_blank" rel="external">《算法 （第四版）》</a></p>
 <p>对于小的程序来说，用哪种方法解决问题并不重要，但是对于大的项目来说，就可以节约大量的时间了，是的，你可以通过提高硬件的配置来提升速度，但是和优雅的代码相比，这根本不是一个数量级的。</p>
 <blockquote>
 <p>1、Java 的基本结构</p>
 </blockquote>
-<p>原始数据类型： 整型int、 浮点型double、 布尔型、 字符型char;<br>语句： 声明、 赋值、 条件、 循环<br>数组：<br>静态方法：<br>字符串:<br>输入输出：<br>数据抽象：</p>
+<a id="more"></a>
+<p>要定义数据类型和创建函数，要用到下面的语法：</p>
+<p><strong>1.1 原始数据类型</strong>：<br>（包括却不仅限于）整型int、 浮点型double、 布尔型、 字符型char;<br>怎样操作这些类型呢？ —— 用表达式哦<br>表达式的优先级： <code>！&gt; &amp;&amp; &gt; ||</code></p>
+<p><strong>1.2 语句</strong>： 声明、 赋值、 条件、 循环<br>1.2.1 声明： Java 是强类型，声明一定要在使用之前，变量的作用域就是定义它的地方<br>1.2.2 赋值： <code>c=a+b</code> 是一个操作，左边必须是单个变量，语句的目的是改变c的值<br>1.2.3 条件： 通过不同的操作来处理不同的输入<br><figure class="highlight xl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// if 语句 -- 表达差异</span></div><div class="line"><span class="keyword">if</span>(&lt;<span class="keyword">boolean</span> expression&gt;)&#123;&lt;<span class="keyword">block</span> statements&gt;&#125;</div><div class="line"><span class="keyword">else</span>&#123;&lt;<span class="keyword">block</span> statements&gt;&#125;</div></pre></td></tr></table></figure></p>
+<p>1.2.4 循环： while、 break、 continue、 for<br>break 语句： 直接结束循环<br>continue 语句： 结束当前循环，进入下一循环<br><figure class="highlight xl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// while 语句 -- 重复，()内为假时，什么也不做</span></div><div class="line"><span class="keyword">while</span> (&lt;<span class="keyword">boolean</span> expression&gt;) &#123;&lt;<span class="keyword">block</span> statements&gt;&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// <span class="keyword">for</span> 语句 -- 更紧凑的将[while 循环的最后一条语句的索引值 +<span class="number">1</span>]</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="variable">&lt;initialize&gt;</span>;<span class="variable">&lt;boolean expression&gt;</span>;<span class="variable">&lt;increment&gt;</span>)&#123;<span class="variable">&lt;block statement&gt;</span>&#125;</div><div class="line"></div><div class="line">// 上面的 <span class="keyword">for</span> 语句，大大的简化了下面的 while 循环</div><div class="line"></div><div class="line"><span class="variable">&lt;initialize&gt;</span>;</div><div class="line">while(<span class="variable">&lt;boolean expression&gt;</span>)&#123;<span class="variable">&lt;block statement&gt;</span>;<span class="variable">&lt;increment&gt;</span>&#125;</div></pre></td></tr></table></figure>
+<p><strong>1.3 数组</strong>：<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//声明、创建并初始化一个数组</span></div><div class="line">double[] a = new double[N];</div><div class="line">int[] a = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">8</span>&#125;</div></pre></td></tr></table></figure></p>
+<p>数组名代表的是整个数组，如果我们将一个数组变量赋值给另一个变量，那么这两个变量将会指向同一个数组，这种情况叫做 起别名。 </p>
+<p>如果是打算复制数组，不允许通过起别名这个方法，而要通过下面这个方法进行数组复制。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//复制数组</span></div><div class="line"><span class="keyword">int</span> N = a.length;</div><div class="line"><span class="keyword">double</span>[] b = <span class="keyword">new</span> <span class="keyword">double</span>[N];</div><div class="line"><span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++ ) &#123; b[i] = a[i] &#125;</div></pre></td></tr></table></figure></p>
+<p><strong>1.4 静态方法</strong>：<br>静态方法是在被调用时顺序执行的语句，很多语言中把它叫做 函数</p>
+<p><strong>1.5 字符串</strong>:<br>字符串并不是原始基本类型；</p>
+<p>如果加号（+）的一个参数是字符串，那么 Java 会自动将其他参数都转换为字符串；也就是说，通过与一个空字符串相加，就能完成字符串的转换。 </p>
+<p><strong>1.6 输入输出</strong>：<br>你键入的字符串，显示在屏幕上的过程，就是 I/O</p>
+<p>##小结：##<br>第一小节大致的描述了一个完整的编程模型，但是现代编程更进一步，那就是数据抽象（面向对象编程OOP）；</p>
+<p>数据抽象不仅仅是操作预定义的数据类型的静态方法，同时也鼓励程序定义自己的数据类型</p>
+<blockquote>
+<p>2、数据抽象</p>
+</blockquote>
 
       
 
@@ -390,10 +416,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
@@ -407,6 +429,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
