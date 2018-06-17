@@ -20,7 +20,7 @@
 对于小的程序来说，用哪种方法解决问题并不重要，但是对于大的项目来说，就可以节约大量的时间了，是的，你可以通过提高硬件的配置来提升速度，但是和优雅的代码相比，这根本不是一个数量级的。
 
 1、Java 的基本结构">
-<meta property="og:updated_time" content="2018-06-16T13:03:08.161Z">
+<meta property="og:updated_time" content="2018-06-17T13:32:45.822Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《算法》--第一章--第一节 Java基础">
 <meta name="twitter:description" content="《算法 （第四版）》
@@ -185,12 +185,12 @@
 <figure class="highlight pf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// <span class="keyword">for</span> 语句 -- 更紧凑的将[while 循环的最后一条语句的索引值 +<span class="number">1</span>]</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="variable">&lt;initialize&gt;</span>;<span class="variable">&lt;boolean expression&gt;</span>;<span class="variable">&lt;increment&gt;</span>)&#123;<span class="variable">&lt;block statement&gt;</span>&#125;</div><div class="line"></div><div class="line">// 上面的 <span class="keyword">for</span> 语句，大大的简化了下面的 while 循环</div><div class="line"></div><div class="line"><span class="variable">&lt;initialize&gt;</span>;</div><div class="line">while(<span class="variable">&lt;boolean expression&gt;</span>)&#123;<span class="variable">&lt;block statement&gt;</span>;<span class="variable">&lt;increment&gt;</span>&#125;</div></pre></td></tr></table></figure>
 <p><strong>1.3 数组</strong>：<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//声明、创建并初始化一个数组</span></div><div class="line">double[] a = new double[N];</div><div class="line">int[] a = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">8</span>&#125;</div></pre></td></tr></table></figure></p>
 <p>数组名代表的是整个数组，如果我们将一个数组变量赋值给另一个变量，那么这两个变量将会指向同一个数组，这种情况叫做 起别名。 </p>
-<p>如果是打算复制数组，不允许通过起别名这个方法，而要通过下面这个方法进行数组复制。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//复制数组</span></div><div class="line"><span class="keyword">int</span> N = a.length;</div><div class="line"><span class="keyword">double</span>[] b = <span class="keyword">new</span> <span class="keyword">double</span>[N];</div><div class="line"><span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++ ) &#123; b[i] = a[i] &#125;</div></pre></td></tr></table></figure></p>
+<p>如果是打算复制数组，不允许通过起别名这个方法，而要通过下面这个方法进行数组复制：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//复制数组</span></div><div class="line"><span class="keyword">int</span> N = a.length;</div><div class="line"><span class="keyword">double</span>[] b = <span class="keyword">new</span> <span class="keyword">double</span>[N];</div><div class="line"><span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++ ) &#123; b[i] = a[i] &#125;</div></pre></td></tr></table></figure></p>
 <p><strong>1.4 静态方法</strong>：<br>静态方法是在被调用时顺序执行的语句，很多语言中把它叫做 函数</p>
 <p><strong>1.5 字符串</strong>:<br>字符串并不是原始基本类型；</p>
 <p>如果加号（+）的一个参数是字符串，那么 Java 会自动将其他参数都转换为字符串；也就是说，通过与一个空字符串相加，就能完成字符串的转换。 </p>
 <p><strong>1.6 输入输出</strong>：<br>你键入的字符串，显示在屏幕上的过程，就是 I/O</p>
-<h2 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h2><p>第一小节大致的描述了一个完整的编程模型，但是现代编程更进一步，那就是数据抽象（面向对象编程OOP）；</p>
+<p><em>小结：</em><br>第一小节大致的描述了一个完整的编程模型，但是现代编程更进一步，那就是数据抽象（面向对象编程OOP）；</p>
 <p>数据抽象不仅仅是操作预定义的数据类型的静态方法，同时也鼓励程序定义自己的数据类型</p>
 <blockquote>
 <p>2、数据抽象</p>
