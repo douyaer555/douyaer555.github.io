@@ -6,15 +6,36 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>wangsiyuan</title>
+  <title>JavaScript for LeetCode/Easy | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="wangsiyuan">
-<meta property="og:url" content="wangsiyuan233.github.io/tags/index.html">
+  <meta name="description" content="Two Sum 
+
+【Easy 01】【total 01】【题目链接】
+
+题目：Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+
+You may assume that each input would have exactly on">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript for LeetCode/Easy">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/06/19/54LeetCode-Easy/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:updated_time" content="2017-02-24T09:37:05.000Z">
+<meta property="og:description" content="Two Sum 
+
+【Easy 01】【total 01】【题目链接】
+
+题目：Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+
+You may assume that each input would have exactly on">
+<meta property="og:updated_time" content="2018-06-19T22:22:37.012Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wangsiyuan">
+<meta name="twitter:title" content="JavaScript for LeetCode/Easy">
+<meta name="twitter:description" content="Two Sum 
+
+【Easy 01】【total 01】【题目链接】
+
+题目：Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+
+You may assume that each input would have exactly on">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -140,12 +161,47 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="tags-undefined" class="article article-type-tags " itemscope itemprop="blogPost">
+            <article id="post-54LeetCode-Easy" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript for LeetCode/Easy
+    </h1>
+  
+
+        
+        <a href="/2018/06/19/54LeetCode-Easy/" class="archive-article-date">
+  	<time datetime="2018-06-19T07:19:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-19</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <blockquote>
+<p>Two Sum </p>
+</blockquote>
+<p>【Easy 01】【total 01】【<a href="https://leetcode.com/problems/two-sum/description/" target="_blank" rel="external">题目链接</a>】</p>
+<ul>
+<li><strong>题目：</strong><br>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</li>
+</ul>
+<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
+<ul>
+<li><p><strong>Example:</strong></p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Given nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>], target = <span class="number">9</span>,</div><div class="line"></div><div class="line">Because nums[<span class="number">0</span>] + nums[<span class="number">1</span>] = <span class="number">2</span> + <span class="number">7</span> = <span class="number">9</span>,</div><div class="line">return [<span class="number">0</span>, <span class="number">1</span>].</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>解答：</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * <span class="doctag">@param</span> &#123;number[]&#125; nums</div><div class="line"> * <span class="doctag">@param</span> &#123;number&#125; target</div><div class="line"> * <span class="doctag">@return</span> &#123;number[]&#125;</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="keyword">var</span> twoSum = <span class="function"><span class="keyword">function</span><span class="params">(nums, target)</span> </span>&#123;</div><div class="line">  <span class="keyword">var</span> a = [];</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = nums.length; i &lt; len; i++) &#123;</div><div class="line">    <span class="keyword">var</span> tmp = target - nums[i];</div><div class="line">    <span class="keyword">if</span> (a[tmp] !== undefined) <span class="keyword">return</span> [a[tmp], i];</div><div class="line">    a[nums[i]] = i;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>解析：</strong><br>Use array <code>a</code> to show the position of a number.</p>
+</li>
+</ul>
+<p>For instance, if <code>a[i] === undefined</code>, it means we don’t have the number of <code>i</code> in the array, and if not, it means the number of <code>i</code> appears in the position of <code>index === a[i]</code>.</p>
+<p>So it will be easy, we can enum the array, and check if <code>a[target - item]</code> is undefined or not.</p>
+
       
 
       
@@ -174,6 +230,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode-Easy</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -224,7 +291,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/tags/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/06/19/54LeetCode-Easy/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -236,6 +303,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2018/06/17/53美国次贷危机/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">美国次贷危机</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -286,7 +363,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

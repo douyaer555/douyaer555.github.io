@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wangsiyuan233.github.io/"/>
-  <updated>2018-06-18T19:39:45.948Z</updated>
+  <updated>2018-06-19T22:22:37.012Z</updated>
   <id>wangsiyuan233.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript for LeetCode/Easy</title>
+    <link href="wangsiyuan233.github.io/2018/06/19/54LeetCode-Easy/"/>
+    <id>wangsiyuan233.github.io/2018/06/19/54LeetCode-Easy/</id>
+    <published>2018-06-19T07:19:16.000Z</published>
+    <updated>2018-06-19T22:22:37.012Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Two Sum </p></blockquote><p>【Easy 01】【total 01】【<a href="https://leetcode.com/problems/two-sum/description/" target="_blank" rel="external">题目链接</a>】</p><ul><li><strong>题目：</strong><br>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</li></ul><p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p><ul><li><p><strong>Example:</strong></p><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Given nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>], target = <span class="number">9</span>,</div><div class="line"></div><div class="line">Because nums[<span class="number">0</span>] + nums[<span class="number">1</span>] = <span class="number">2</span> + <span class="number">7</span> = <span class="number">9</span>,</div><div class="line">return [<span class="number">0</span>, <span class="number">1</span>].</div></pre></td></tr></table></figure></li><li><p><strong>解答：</strong></p><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * <span class="doctag">@param</span> &#123;number[]&#125; nums</div><div class="line"> * <span class="doctag">@param</span> &#123;number&#125; target</div><div class="line"> * <span class="doctag">@return</span> &#123;number[]&#125;</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="keyword">var</span> twoSum = <span class="function"><span class="keyword">function</span><span class="params">(nums, target)</span> </span>&#123;</div><div class="line">  <span class="keyword">var</span> a = [];</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = nums.length; i &lt; len; i++) &#123;</div><div class="line">    <span class="keyword">var</span> tmp = target - nums[i];</div><div class="line">    <span class="keyword">if</span> (a[tmp] !== undefined) <span class="keyword">return</span> [a[tmp], i];</div><div class="line">    a[nums[i]] = i;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li><li><p><strong>解析：</strong><br>Use array <code>a</code> to show the position of a number.</p></li></ul><p>For instance, if <code>a[i] === undefined</code>, it means we don’t have the number of <code>i</code> in the array, and if not, it means the number of <code>i</code> appears in the position of <code>index === a[i]</code>.</p><p>So it will be easy, we can enum the array, and check if <code>a[target - item]</code> is undefined or not.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Two Sum &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;【Easy 01】【total 01】【&lt;a href=&quot;https://leetcode.com/problems/two-sum/description/&quot; target=&quot;_blan
+      
+    
+    </summary>
+    
+    
+      <category term="LeetCode-Easy" scheme="wangsiyuan233.github.io/tags/LeetCode-Easy/"/>
+    
+  </entry>
   
   <entry>
     <title>美国次贷危机</title>
@@ -441,27 +467,6 @@
     
     
       <category term="ES6" scheme="wangsiyuan233.github.io/tags/ES6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深入理解JavaScript--异步系列(1)</title>
-    <link href="wangsiyuan233.github.io/2018/03/29/34%E5%BC%82%E6%AD%A5%E7%B3%BB%E5%88%97-1/"/>
-    <id>wangsiyuan233.github.io/2018/03/29/34异步系列-1/</id>
-    <published>2018-03-30T01:22:09.000Z</published>
-    <updated>2018-04-14T00:56:56.066Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="异步的实现原理"><a href="#异步的实现原理" class="headerlink" title="异步的实现原理"></a>异步的实现原理</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ajax = $.ajax(&#123;</div><div class="line">    <span class="attr">url</span>: <span class="string">'/data/data1.json'</span>,</div><div class="line">    <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'success'</span>)</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure><p>对于ajax这种传递过去不执行，等出来结果之后再执行的函数，叫做callback，即回调函数.<br>实现<strong>异步的最核心原理</strong>，就是将callback作为参数传递给异步执行函数，当有结果返回之后再触发 callback执行.<br><a id="more"></a><br>JavaScript语言的一大特点就是单线程，也就是说，同一个时间只能做一件事。</p><p>单线程就意味着，所有任务需要排队，前一个任务结束，才会执行后一个任务。如果前一个任务耗时很长，后一个任务就不得不一直等着。</p><p>JavaScript语言的设计者意识到，这时主线程完全可以不管IO设备，挂起处于等待中的任务，先运行排在后面的任务。等到IO设备返回了结果，再回过头，把挂起的任务继续执行下去。</p><p>于是，所有任务可以分成两种，一种是同步任务（synchronous），另一种是异步任务（asynchronous）。</p><p>一旦”执行栈”中的所有同步任务执行完毕，系统就会读取”任务队列”，看看里面有哪些事件。那些对应的异步任务，于是结束等待状态，进入执行栈，开始执行。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">setTimeout(<span class="built_in">console</span>.log, <span class="number">0</span>, <span class="string">'a'</span>)</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'b'</span>)</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'c'</span>)</div><div class="line"><span class="comment">// b c a</span></div></pre></td></tr></table></figure></p><p>第一步，执行第一行，此时会将这个操作暂时存储到其他地方，因为setTimeout是一个异步执行操作。<br>第二步，执行第二行，打印 b<br>第三步，执行第三行，打印 c<br>第四步，等待最后一行程序（一共三行）都全部执行完了，然后立马实时查看刚才暂存的异步操作有没有。如果有可执行的，就立即拿到出来继续执行。<br>第五步，执行完毕之后，再实时查看暂存位置中是否还有未执行的异步回调。</p><p><strong>事件绑定算不算异步？</strong></p><p>原来事件绑定和异步操作的实现机制是一样的，那么<strong>事件绑定算不算异步呢？</strong>（声明一下，这里说的事件绑定是如下代码的形式）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$btn.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'你点击了按钮'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p><p><strong>一、共同之处：</strong><br>技术实现以及书写方法上是一样的，最终执行的方式也基本一样，都通过 evet-loop 执行。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$btn.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'你点击了按钮'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">fs.readFile(<span class="string">'data1.json'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</div><div class="line">    <span class="comment">// 获取数据</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p><p><strong>二、不同之处：</strong><br>第一，event-loop 执行时，调用的源不一样。异步操作是系统自动调用，无论是setTimeout时间到了还是$.ajax请求返回了，系统会自动调用。而事件绑定就需要用户手动触发<br>第二，从设计上来将，事件绑定有着明显的“订阅-发布”的设计模式，而异步操作却没有。<br>第三，事件绑定在 js 中扮演着非常重要的角色，各个地方都会用到事件绑定的形式。例如 web 页面监控鼠标、键盘，以及 nodejs 中的 EventEmitter 应用非常广泛（特别是涉及到数据流时）。而事件绑定被应用到非常广泛，却没有发生像异步操作带来的程序逻辑问题。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;异步的实现原理&quot;&gt;&lt;a href=&quot;#异步的实现原理&quot; class=&quot;headerlink&quot; title=&quot;异步的实现原理&quot;&gt;&lt;/a&gt;异步的实现原理&lt;/h2&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; ajax = $.ajax(&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;url&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;/data/data1.json&#39;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;success&lt;/span&gt;: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;success&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;对于ajax这种传递过去不执行，等出来结果之后再执行的函数，叫做callback，即回调函数.&lt;br&gt;实现&lt;strong&gt;异步的最核心原理&lt;/strong&gt;，就是将callback作为参数传递给异步执行函数，当有结果返回之后再触发 callback执行.&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="异步" scheme="wangsiyuan233.github.io/tags/%E5%BC%82%E6%AD%A5/"/>
     
   </entry>
   
