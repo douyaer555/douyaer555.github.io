@@ -6,36 +6,36 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>JavaScript for LeetCode/Easy | wangsiyuan</title>
+  <title>JavaScript for LeetCode/Easy篇 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Two Sum 
+  <meta name="description" content="Two Sum  
 
-【Easy 01】【total 01】【题目链接】
+【Easy 01】【total 01】【题目链接】【github链接】
 
 题目：Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
-You may assume that each input would have exactly on">
+You may assume that each input would have">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript for LeetCode/Easy">
+<meta property="og:title" content="JavaScript for LeetCode/Easy篇">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/06/19/54LeetCode-Easy/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="Two Sum 
+<meta property="og:description" content="Two Sum  
 
-【Easy 01】【total 01】【题目链接】
+【Easy 01】【total 01】【题目链接】【github链接】
 
 题目：Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
-You may assume that each input would have exactly on">
-<meta property="og:updated_time" content="2018-06-19T22:22:37.012Z">
+You may assume that each input would have">
+<meta property="og:updated_time" content="2018-06-20T00:01:32.998Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript for LeetCode/Easy">
-<meta name="twitter:description" content="Two Sum 
+<meta name="twitter:title" content="JavaScript for LeetCode/Easy篇">
+<meta name="twitter:description" content="Two Sum  
 
-【Easy 01】【total 01】【题目链接】
+【Easy 01】【total 01】【题目链接】【github链接】
 
 题目：Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
-You may assume that each input would have exactly on">
+You may assume that each input would have">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -168,7 +168,7 @@ You may assume that each input would have exactly on">
         
   
     <h1 class="article-title" itemprop="name">
-      JavaScript for LeetCode/Easy
+      JavaScript for LeetCode/Easy篇
     </h1>
   
 
@@ -182,25 +182,17 @@ You may assume that each input would have exactly on">
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>Two Sum </p>
+<p>Two Sum  </p>
 </blockquote>
-<p>【Easy 01】【total 01】【<a href="https://leetcode.com/problems/two-sum/description/" target="_blank" rel="external">题目链接</a>】</p>
+<p>【Easy 01】【total 01】【<a href="https://leetcode.com/problems/two-sum/description/" target="_blank" rel="external">题目链接</a>】【github链接】</p>
 <ul>
 <li><strong>题目：</strong><br>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</li>
 </ul>
 <p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
 <ul>
-<li><p><strong>Example:</strong></p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Given nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>], target = <span class="number">9</span>,</div><div class="line"></div><div class="line">Because nums[<span class="number">0</span>] + nums[<span class="number">1</span>] = <span class="number">2</span> + <span class="number">7</span> = <span class="number">9</span>,</div><div class="line">return [<span class="number">0</span>, <span class="number">1</span>].</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>解答：</strong></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * <span class="doctag">@param</span> &#123;number[]&#125; nums</div><div class="line"> * <span class="doctag">@param</span> &#123;number&#125; target</div><div class="line"> * <span class="doctag">@return</span> &#123;number[]&#125;</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="keyword">var</span> twoSum = <span class="function"><span class="keyword">function</span><span class="params">(nums, target)</span> </span>&#123;</div><div class="line">  <span class="keyword">var</span> a = [];</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = nums.length; i &lt; len; i++) &#123;</div><div class="line">    <span class="keyword">var</span> tmp = target - nums[i];</div><div class="line">    <span class="keyword">if</span> (a[tmp] !== undefined) <span class="keyword">return</span> [a[tmp], i];</div><div class="line">    a[nums[i]] = i;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>解析：</strong><br>Use array <code>a</code> to show the position of a number.</p>
+<li><strong>Example:</strong><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Given nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>], target = <span class="number">9</span>,</div><div class="line"></div><div class="line">Because nums[<span class="number">0</span>] + nums[<span class="number">1</span>] = <span class="number">2</span> + <span class="number">7</span> = <span class="number">9</span>,</div><div class="line">return [<span class="number">0</span>, <span class="number">1</span>].</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>For instance, if <code>a[i] === undefined</code>, it means we don’t have the number of <code>i</code> in the array, and if not, it means the number of <code>i</code> appears in the position of <code>index === a[i]</code>.</p>
-<p>So it will be easy, we can enum the array, and check if <code>a[target - item]</code> is undefined or not.</p>
 
       
 
@@ -304,6 +296,15 @@ You may assume that each input would have exactly on">
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/06/20/55JavaScript-Puzzlers/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JavaScript Puzzlers!
+        
+      </div>
+    </a>
   
   
     <a href="/2018/06/17/53美国次贷危机/" id="article-nav-older" class="article-nav-link-wrap">
@@ -417,6 +418,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -426,10 +431,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">

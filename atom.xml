@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wangsiyuan233.github.io/"/>
-  <updated>2018-06-19T22:22:37.012Z</updated>
+  <updated>2018-06-20T03:30:18.059Z</updated>
   <id>wangsiyuan233.github.io/</id>
   
   <author>
@@ -17,22 +17,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>JavaScript for LeetCode/Easy</title>
+    <title>JavaScript Puzzlers!</title>
+    <link href="wangsiyuan233.github.io/2018/06/20/55JavaScript-Puzzlers/"/>
+    <id>wangsiyuan233.github.io/2018/06/20/55JavaScript-Puzzlers/</id>
+    <published>2018-06-20T09:18:23.000Z</published>
+    <updated>2018-06-20T03:30:18.059Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、-“1”-“2”-“3”-map-parseInt"><a href="#一、-“1”-“2”-“3”-map-parseInt" class="headerlink" title="一、 [“1”, “2”, “3”].map(parseInt)"></a>一、 [“1”, “2”, “3”].map(parseInt)</h2><p>hint:<br>1、这里的 <code>map</code> 不是“地图”的意思，而是指“映射”。<code>[].map()</code>返回一个新的数组；map(element, index, array)三个参数。<br>2、parseInt() 解析一个字符串，并返回一个整数；<br>  parseInt(val, radix)两个参数。<br>  <code>parseInt(&quot;11&quot;,2);        //返回 3 (2+1)</code></p><h2 id="二、-typeof-null-null-instanceof-Object"><a href="#二、-typeof-null-null-instanceof-Object" class="headerlink" title="二、[typeof null, null instanceof Object]"></a>二、[typeof null, null instanceof Object]</h2><p>hint：</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;一、-“1”-“2”-“3”-map-parseInt&quot;&gt;&lt;a href=&quot;#一、-“1”-“2”-“3”-map-parseInt&quot; class=&quot;headerlink&quot; title=&quot;一、 [“1”, “2”, “3”].map(parseInt)&quot;&gt;&lt;/a&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript for LeetCode/Easy篇</title>
     <link href="wangsiyuan233.github.io/2018/06/19/54LeetCode-Easy/"/>
     <id>wangsiyuan233.github.io/2018/06/19/54LeetCode-Easy/</id>
     <published>2018-06-19T07:19:16.000Z</published>
-    <updated>2018-06-19T22:22:37.012Z</updated>
+    <updated>2018-06-20T00:01:32.998Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>Two Sum </p></blockquote><p>【Easy 01】【total 01】【<a href="https://leetcode.com/problems/two-sum/description/" target="_blank" rel="external">题目链接</a>】</p><ul><li><strong>题目：</strong><br>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</li></ul><p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p><ul><li><p><strong>Example:</strong></p><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Given nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>], target = <span class="number">9</span>,</div><div class="line"></div><div class="line">Because nums[<span class="number">0</span>] + nums[<span class="number">1</span>] = <span class="number">2</span> + <span class="number">7</span> = <span class="number">9</span>,</div><div class="line">return [<span class="number">0</span>, <span class="number">1</span>].</div></pre></td></tr></table></figure></li><li><p><strong>解答：</strong></p><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * <span class="doctag">@param</span> &#123;number[]&#125; nums</div><div class="line"> * <span class="doctag">@param</span> &#123;number&#125; target</div><div class="line"> * <span class="doctag">@return</span> &#123;number[]&#125;</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="keyword">var</span> twoSum = <span class="function"><span class="keyword">function</span><span class="params">(nums, target)</span> </span>&#123;</div><div class="line">  <span class="keyword">var</span> a = [];</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = nums.length; i &lt; len; i++) &#123;</div><div class="line">    <span class="keyword">var</span> tmp = target - nums[i];</div><div class="line">    <span class="keyword">if</span> (a[tmp] !== undefined) <span class="keyword">return</span> [a[tmp], i];</div><div class="line">    a[nums[i]] = i;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li><li><p><strong>解析：</strong><br>Use array <code>a</code> to show the position of a number.</p></li></ul><p>For instance, if <code>a[i] === undefined</code>, it means we don’t have the number of <code>i</code> in the array, and if not, it means the number of <code>i</code> appears in the position of <code>index === a[i]</code>.</p><p>So it will be easy, we can enum the array, and check if <code>a[target - item]</code> is undefined or not.</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>Two Sum  </p></blockquote><p>【Easy 01】【total 01】【<a href="https://leetcode.com/problems/two-sum/description/" target="_blank" rel="external">题目链接</a>】【github链接】</p><ul><li><strong>题目：</strong><br>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</li></ul><p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p><ul><li><strong>Example:</strong><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Given nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>], target = <span class="number">9</span>,</div><div class="line"></div><div class="line">Because nums[<span class="number">0</span>] + nums[<span class="number">1</span>] = <span class="number">2</span> + <span class="number">7</span> = <span class="number">9</span>,</div><div class="line">return [<span class="number">0</span>, <span class="number">1</span>].</div></pre></td></tr></table></figure></li></ul>]]></content>
     
     <summary type="html">
     
       
       
         &lt;blockquote&gt;
-&lt;p&gt;Two Sum &lt;/p&gt;
+&lt;p&gt;Two Sum  &lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;【Easy 01】【total 01】【&lt;a href=&quot;https://leetcode.com/problems/two-sum/description/&quot; target=&quot;_blan
+&lt;p&gt;【Easy 01】【total 01】【&lt;a href=&quot;https://leetcode.com/problems/two-sum/description/&quot; target=&quot;_bla
       
     
     </summary>
@@ -445,28 +466,6 @@
     
     
       <category term="异步" scheme="wangsiyuan233.github.io/tags/%E5%BC%82%E6%AD%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>初探ES6(1)--let</title>
-    <link href="wangsiyuan233.github.io/2018/03/31/35%E5%88%9D%E6%8E%A2ES6-1/"/>
-    <id>wangsiyuan233.github.io/2018/03/31/35初探ES6-1/</id>
-    <published>2018-04-01T01:22:09.000Z</published>
-    <updated>2018-04-14T00:57:30.809Z</updated>
-    
-    <content type="html"><![CDATA[<p>先从一块代码讲起<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> liList = <span class="built_in">document</span>.querySelectorAll(<span class="string">'li'</span>) <span class="comment">// 共5个li</span></div><div class="line"><span class="keyword">for</span>( <span class="keyword">var</span> i=<span class="number">0</span>; i&lt;liList.length; i++)&#123;</div><div class="line">  liList[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(i)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p>我们知道会依次打印出5个5.<br>只是将 var 改成 let 之后<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> liList = <span class="built_in">document</span>.querySelectorAll(<span class="string">'li'</span>) <span class="comment">// 共5个li</span></div><div class="line"><span class="keyword">for</span>( <span class="keyword">let</span> i=<span class="number">0</span>; i&lt;liList.length; i++)&#123;</div><div class="line">  liList[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(i)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p>我们知道会依次打印出 1 2 3 4 5.<br><strong>var 和 let 竟然还有不同？</strong><br><a id="more"></a><br>一个大胆的猜测：<br>1、for( let i = 0; i&lt; 5; i++) 这句话的圆括号之间，有一个隐藏的作用域<br>2、for( let i = 0; i&lt; 5; i++) { 循环体 } 在每次执行循环体之前，JS 引擎会把 i 在循环体的上下文中重新声明及初始化一次。<br>第二块代码近似近似近似于：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> liList = <span class="built_in">document</span>.querySelectorAll(<span class="string">'li'</span>) <span class="comment">// 共5个li</span></div><div class="line"><span class="keyword">for</span>( <span class="keyword">let</span> i=<span class="number">0</span>; i&lt;liList.length; i++)&#123;</div><div class="line">  <span class="keyword">let</span> i = 隐藏作用域中的i <span class="comment">// 看这里看这里看这里</span></div><div class="line">  liList[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(i)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p><strong>一、var 声明的「创建、初始化和赋值」过程</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> x = <span class="number">1</span></div><div class="line">  <span class="keyword">var</span> y = <span class="number">2</span></div><div class="line">&#125;</div><div class="line">fn()</div></pre></td></tr></table></figure></p><p><strong>二、let 声明的「创建、初始化和赋值」过程</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> x = <span class="number">1</span></div><div class="line">  x = <span class="number">2</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p><strong>三、function 声明的「创建、初始化和赋值」过程</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fn2()</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p><strong>四、const 声明的「创建、初始化和赋值」过程</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> x = <span class="number">1</span></div><div class="line">  <span class="keyword">var</span> y = <span class="number">2</span></div><div class="line">&#125;</div><div class="line">fn()</div></pre></td></tr></table></figure></p><blockquote><p>结论:</p></blockquote><p>var 的「创建」和「初始化」都被提升了。<br>let 的「创建」过程被提升了，但是「初始化」没有提升。<br>const 只有「创建」和「初始化」，没有「赋值」过程。<br>function 的「创建」「初始化」和「赋值」都被提升了。</p><p>所谓<strong>暂时死区</strong>（temp dead zone），就是不能在初始化之前，使用变量。</p><p>如果 let x 的<strong>初始化过程失败</strong>了，那么<br>1、x 变量就将永远处于 created 状态。<br>2、你无法再次对 x 进行初始化（初始化只有一次机会，而那次机会你失败了）。<br>3、由于 x 无法被初始化，所以 x 永远处在暂时死区（也就是盗梦空间里的 limbo）！<br>4、有人会觉得 JS 坑，怎么能出现这种情况；其实问题不大，因为此时代码已经报错了，后面的代码想执行也没机会。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;先从一块代码讲起&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; liList = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.querySelectorAll(&lt;span class=&quot;string&quot;&gt;&#39;li&#39;&lt;/span&gt;) &lt;span class=&quot;comment&quot;&gt;// 共5个li&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;( &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i&amp;lt;liList.length; i++)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  liList[i].onclick = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(i)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;我们知道会依次打印出5个5.&lt;br&gt;只是将 var 改成 let 之后&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; liList = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.querySelectorAll(&lt;span class=&quot;string&quot;&gt;&#39;li&#39;&lt;/span&gt;) &lt;span class=&quot;comment&quot;&gt;// 共5个li&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;( &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i&amp;lt;liList.length; i++)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  liList[i].onclick = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(i)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;我们知道会依次打印出 1 2 3 4 5.&lt;br&gt;&lt;strong&gt;var 和 let 竟然还有不同？&lt;/strong&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="ES6" scheme="wangsiyuan233.github.io/tags/ES6/"/>
     
   </entry>
   

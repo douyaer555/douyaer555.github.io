@@ -141,6 +141,66 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-55JavaScript-Puzzlers" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/20/55JavaScript-Puzzlers/">JavaScript Puzzlers!</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/20/55JavaScript-Puzzlers/" class="archive-article-date">
+  	<time datetime="2018-06-20T09:18:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、-“1”-“2”-“3”-map-parseInt"><a href="#一、-“1”-“2”-“3”-map-parseInt" class="headerlink" title="一、 [“1”, “2”, “3”].map(parseInt)"></a>一、 [“1”, “2”, “3”].map(parseInt)</h2><p>hint:<br>1、这里的 <code>map</code> 不是“地图”的意思，而是指“映射”。<code>[].map()</code>返回一个新的数组；map(element, index, array)三个参数。<br>2、parseInt() 解析一个字符串，并返回一个整数；<br>  parseInt(val, radix)两个参数。<br>  <code>parseInt(&quot;11&quot;,2);        //返回 3 (2+1)</code></p>
+<h2 id="二、-typeof-null-null-instanceof-Object"><a href="#二、-typeof-null-null-instanceof-Object" class="headerlink" title="二、[typeof null, null instanceof Object]"></a>二、[typeof null, null instanceof Object]</h2><p>hint：</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-54LeetCode-Easy" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -148,7 +208,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/19/54LeetCode-Easy/">JavaScript for LeetCode/Easy</a>
+      <a class="article-title" href="/2018/06/19/54LeetCode-Easy/">JavaScript for LeetCode/Easy篇</a>
     </h1>
   
 
@@ -162,25 +222,17 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>Two Sum </p>
+<p>Two Sum  </p>
 </blockquote>
-<p>【Easy 01】【total 01】【<a href="https://leetcode.com/problems/two-sum/description/" target="_blank" rel="external">题目链接</a>】</p>
+<p>【Easy 01】【total 01】【<a href="https://leetcode.com/problems/two-sum/description/" target="_blank" rel="external">题目链接</a>】【github链接】</p>
 <ul>
 <li><strong>题目：</strong><br>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</li>
 </ul>
 <p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
 <ul>
-<li><p><strong>Example:</strong></p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Given nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>], target = <span class="number">9</span>,</div><div class="line"></div><div class="line">Because nums[<span class="number">0</span>] + nums[<span class="number">1</span>] = <span class="number">2</span> + <span class="number">7</span> = <span class="number">9</span>,</div><div class="line">return [<span class="number">0</span>, <span class="number">1</span>].</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>解答：</strong></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * <span class="doctag">@param</span> &#123;number[]&#125; nums</div><div class="line"> * <span class="doctag">@param</span> &#123;number&#125; target</div><div class="line"> * <span class="doctag">@return</span> &#123;number[]&#125;</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="keyword">var</span> twoSum = <span class="function"><span class="keyword">function</span><span class="params">(nums, target)</span> </span>&#123;</div><div class="line">  <span class="keyword">var</span> a = [];</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = nums.length; i &lt; len; i++) &#123;</div><div class="line">    <span class="keyword">var</span> tmp = target - nums[i];</div><div class="line">    <span class="keyword">if</span> (a[tmp] !== undefined) <span class="keyword">return</span> [a[tmp], i];</div><div class="line">    a[nums[i]] = i;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>解析：</strong><br>Use array <code>a</code> to show the position of a number.</p>
+<li><strong>Example:</strong><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Given nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>], target = <span class="number">9</span>,</div><div class="line"></div><div class="line">Because nums[<span class="number">0</span>] + nums[<span class="number">1</span>] = <span class="number">2</span> + <span class="number">7</span> = <span class="number">9</span>,</div><div class="line">return [<span class="number">0</span>, <span class="number">1</span>].</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>For instance, if <code>a[i] === undefined</code>, it means we don’t have the number of <code>i</code> in the array, and if not, it means the number of <code>i</code> appears in the position of <code>index === a[i]</code>.</p>
-<p>So it will be easy, we can enum the array, and check if <code>a[target - item]</code> is undefined or not.</p>
 
       
 
@@ -428,74 +480,6 @@
 
 
   
-    <article id="post-50配置React" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/29/50配置React/">配置 React</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/29/50配置React/" class="archive-article-date">
-  	<time datetime="2018-05-30T02:11:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>第一步： 安装 React</p>
-</blockquote>
-<p>1、 <a href="https://pan.baidu.com/s/1kU4K9iJ">下载</a><code>yarn</code></p>
-<p>2、临时文件夹实验：<br><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="string">mkdir </span>~/<span class="string">temp;</span> <span class="string">cd </span>~/<span class="string">temp</div><div class="line"></span></div><div class="line"><span class="string">npm </span><span class="string">install </span>-g <span class="built_in">create-react-app</span></div><div class="line"></div><div class="line"><span class="built_in">create-react-app</span> <span class="string">hello-world</div><div class="line"></span></div><div class="line"><span class="string">cd </span><span class="string">hello-world</div><div class="line"></span></div><div class="line"><span class="string">npm </span><span class="string">start </span>或者 <span class="string">yarn </span><span class="string">start</span></div></pre></td></tr></table></figure></p>
-<p> <code>create-react-app</code> 内置了 <code>webpack</code> 的所有功能。</p>
-<p>3、初始化 <code>React</code><br>清空 <code>temp</code> 文件夹，同时清空项目文件夹<br>（因为 <code>create-react-app</code> 会自己创建 <code>src</code> 和 <code>index.html</code> ）<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">cd 到你在上次任务中新建的项目目录！</div><div class="line"></div><div class="line"><span class="comment"># 删除所有非隐藏文件，这一步千万不要手抖，后果自负</span></div><div class="line"></div><div class="line">rm -rf * </div><div class="line">git <span class="keyword">add</span><span class="bash"> .</div><div class="line"></span>git commit -m <span class="string">"remove all files"</span></div><div class="line">git push</div></pre></td></tr></table></figure></p>
-<p>正式开始初始化：<br>
-        
-          <a class="article-more-a" href="/2018/05/29/50配置React/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -577,6 +561,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -586,10 +574,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
