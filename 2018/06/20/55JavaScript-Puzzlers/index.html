@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
   <title>JavaScript Puzzlers! | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、 [“1”, “2”, “3”].map(parseInt)hint:1、这里的 map 不是“地图”的意思，而是指“映射”。[].map()返回一个新的数组；map(element, index, array)三个参数。2、parseInt() 解析一个字符串，并返回一个整数；  parseInt(val, radix)两个参数。  parseInt(&amp;quot;11&amp;quot;,2);">
+  <meta name="description" content="一、 [“1”, “2”, “3”].map(parseInt)Hint: 1、这里的 map 不是“地图”的意思，而是指“映射”，[].map()返回一个新的数组；  map(element, index, array)三个参数。2、parseInt() 解析一个字符串，并返回一个整数；  parseInt(val, radix) 两个参数。  parseInt(&amp;quot;11&amp;quot;,2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript Puzzlers!">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/06/20/55JavaScript-Puzzlers/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="一、 [“1”, “2”, “3”].map(parseInt)hint:1、这里的 map 不是“地图”的意思，而是指“映射”。[].map()返回一个新的数组；map(element, index, array)三个参数。2、parseInt() 解析一个字符串，并返回一个整数；  parseInt(val, radix)两个参数。  parseInt(&amp;quot;11&amp;quot;,2);">
-<meta property="og:updated_time" content="2018-06-20T03:30:18.059Z">
+<meta property="og:description" content="一、 [“1”, “2”, “3”].map(parseInt)Hint: 1、这里的 map 不是“地图”的意思，而是指“映射”，[].map()返回一个新的数组；  map(element, index, array)三个参数。2、parseInt() 解析一个字符串，并返回一个整数；  parseInt(val, radix) 两个参数。  parseInt(&amp;quot;11&amp;quot;,2">
+<meta property="og:updated_time" content="2018-06-20T18:10:24.076Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript Puzzlers!">
-<meta name="twitter:description" content="一、 [“1”, “2”, “3”].map(parseInt)hint:1、这里的 map 不是“地图”的意思，而是指“映射”。[].map()返回一个新的数组；map(element, index, array)三个参数。2、parseInt() 解析一个字符串，并返回一个整数；  parseInt(val, radix)两个参数。  parseInt(&amp;quot;11&amp;quot;,2);">
+<meta name="twitter:description" content="一、 [“1”, “2”, “3”].map(parseInt)Hint: 1、这里的 map 不是“地图”的意思，而是指“映射”，[].map()返回一个新的数组；  map(element, index, array)三个参数。2、parseInt() 解析一个字符串，并返回一个整数；  parseInt(val, radix) 两个参数。  parseInt(&amp;quot;11&amp;quot;,2">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -163,8 +163,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、-“1”-“2”-“3”-map-parseInt"><a href="#一、-“1”-“2”-“3”-map-parseInt" class="headerlink" title="一、 [“1”, “2”, “3”].map(parseInt)"></a>一、 [“1”, “2”, “3”].map(parseInt)</h2><p>hint:<br>1、这里的 <code>map</code> 不是“地图”的意思，而是指“映射”。<code>[].map()</code>返回一个新的数组；map(element, index, array)三个参数。<br>2、parseInt() 解析一个字符串，并返回一个整数；<br>  parseInt(val, radix)两个参数。<br>  <code>parseInt(&quot;11&quot;,2);        //返回 3 (2+1)</code></p>
-<h2 id="二、-typeof-null-null-instanceof-Object"><a href="#二、-typeof-null-null-instanceof-Object" class="headerlink" title="二、[typeof null, null instanceof Object]"></a>二、[typeof null, null instanceof Object]</h2><p>hint：</p>
+        <h2 id="一、-“1”-“2”-“3”-map-parseInt"><a href="#一、-“1”-“2”-“3”-map-parseInt" class="headerlink" title="一、 [“1”, “2”, “3”].map(parseInt)"></a>一、 [“1”, “2”, “3”].map(parseInt)</h2><p><strong>Hint: </strong><br>1、这里的 <code>map</code> 不是“地图”的意思，而是指“映射”，<code>[].map()</code>返回一个新的数组；<br>  <code>map(element, index, array)</code>三个参数。<br>2、<code>parseInt()</code> 解析一个字符串，并返回一个整数；<br>  <code>parseInt(val, radix)</code> 两个参数。<br>  <code>parseInt(&quot;11&quot;,2);        //返回 3 (2+1)</code><br><a id="more"></a></p>
+<h2 id="二、-typeof-null-null-instanceof-Object"><a href="#二、-typeof-null-null-instanceof-Object" class="headerlink" title="二、[typeof null, null instanceof Object]"></a>二、[typeof null, null instanceof Object]</h2><p><strong>Hint：</strong><br>1、对于不可调用的对象， typeof 都返回 “Object”</p>
+<h2 id="三、-3-2-1-reduce-Math-pow-reduce-Math-pow"><a href="#三、-3-2-1-reduce-Math-pow-reduce-Math-pow" class="headerlink" title="三、[ [3,2,1].reduce(Math.pow), [].reduce(Math.pow) ]"></a>三、[ [3,2,1].reduce(Math.pow), [].reduce(Math.pow) ]</h2><p><strong>Hint：</strong><br>1、<code>reduce</code> 前面不能是空的<br>2、<code>Math.pow(base,exponent)</code> 函数返回基数（base）的指数（exponent）次幂<br><code>console.log([3,2,1].reduce(Math.pow))</code> // 返回 9<br>3、<code>reduce()</code> 专为累加操作而设计</p>
+<h2 id="四"><a href="#四" class="headerlink" title="四"></a>四</h2><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> <span class="keyword">val</span> = <span class="string">'smtg'</span>;</div><div class="line">console.log(<span class="string">'Value is '</span> + (<span class="keyword">val</span> === <span class="string">'smtg'</span>) ? <span class="string">'Something'</span> : <span class="string">'Nothing'</span>);</div></pre></td></tr></table></figure>
+<p><strong>Hint：</strong><br>1、加号（<code>+</code>）比三元运算符（<code>？：</code>）优先级别更高一些  /<em>?????</em>/</p>
+<h2 id="五"><a href="#五" class="headerlink" title="五"></a>五</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">'World!'</span>;</div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> name === <span class="string">'undefined'</span>) &#123;</div><div class="line">        <span class="keyword">var</span> name = <span class="string">'Jack'</span>;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Goodbye '</span> + name);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Hello '</span> + name);</div><div class="line">    &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p><strong>Hint：</strong><br>1、函数内的声明 <code>var name = &#39;Jack&#39;</code> 提前到了/<em>?????</em>/<br>2、但是函数初始化却没有变</p>
+<h2 id="六"><a href="#六" class="headerlink" title="六"></a>六</h2><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var END = Math.pow(<span class="number">2</span>, <span class="number">53</span>)<span class="comment">;</span></div><div class="line">var START = END - <span class="number">100</span><span class="comment">;</span></div><div class="line">var <span class="built_in">count</span> = <span class="number">0</span><span class="comment">;</span></div><div class="line">for (var i = START<span class="comment">; i &lt;= END; i++) &#123;</span></div><div class="line">    <span class="built_in">count</span>++<span class="comment">;</span></div><div class="line">&#125;</div><div class="line">console.log(<span class="built_in">count</span>)<span class="comment">;</span></div></pre></td></tr></table></figure>
+<p><strong>Hint：</strong><br>1、2^53 是 JS 里最大的数了，取不到 2^53+1 ,/<em>?????</em>/为什么会取到 +1<br>2、count 就会陷入无限循环</p>
+<h2 id="七"><a href="#七" class="headerlink" title="七"></a>七</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ary = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</div><div class="line">ary[<span class="number">10</span>] = <span class="number">10</span>;</div><div class="line">ary.filter(<span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123; <span class="keyword">return</span> x === <span class="literal">undefined</span>;&#125;);</div></pre></td></tr></table></figure>
+<p><strong>Hint：</strong><br>1、 filter() 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。<br>2、 filter() 不会对空数组进行检测。<br>3、 filter() 不会改变原始数组。<br>4、 Array.prototype.filter 不调用丢失的元素</p>
 
       
 
@@ -370,10 +379,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -386,11 +391,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
