@@ -141,6 +141,70 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-51几种遍历" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/07/51几种遍历/">JavaScript 中的几种遍历</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/07/51几种遍历/" class="archive-article-date">
+  	<time datetime="2018-06-07T13:05:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有下面的 数组 和 <code>JSON</code>对象：<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">var Arr</span> = [<span class="string">'Javascript'</span>, <span class="string">'Gulp'</span>, <span class="string">'CSS3'</span>, <span class="string">'Grunt'</span>, <span class="string">'jQuery'</span>, <span class="string">'angular'</span>];</div><div class="line"><span class="attribute">var Obj</span> = &#123;</div><div class="line">    aaa: <span class="string">'Javascript'</span>,</div><div class="line">    bbb: <span class="string">'Gulp'</span>,</div><div class="line">    ccc: <span class="string">'CSS3'</span>,</div><div class="line">    ddd: <span class="string">'Grunt'</span>,</div><div class="line">    eee: <span class="string">'jQuery'</span>,</div><div class="line">    fff: <span class="string">'angular'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>一、For 循环</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2018/06/07/51几种遍历/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-50配置React" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -422,88 +486,9 @@
 
 
   
-    <article id="post-46冒泡与捕获" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/06/46冒泡与捕获/">捕获/阻止捕获、冒泡/阻止冒泡</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/06/46冒泡与捕获/" class="archive-article-date">
-  	<time datetime="2018-05-06T11:31:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <a id="more"></a>
-<blockquote>
-<p>一、冒泡事件</p>
-</blockquote>
-<p>1、虽然我们只点击了button元素，但是，button外的事件<strong>由内向外</strong>以此被触发，触发的顺序是由DOM树的下层到DOM树的最上面，故称为冒泡。<br>2、如果我们不希望事件冒泡呢？那么如何阻止事件冒泡？<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"button"</span>).addEventListener(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">        alert(<span class="string">"button"</span>);</div><div class="line">        event.stopPropagation();    </div><div class="line">&#125;,<span class="literal">false</span>);</div></pre></td></tr></table></figure></p>
-<p>这样，点击button后，只会弹出一个弹窗，显示button。<br>3、冒泡的终点是 window</p>
-<blockquote>
-<p>二、捕获事件</p>
-</blockquote>
-<p>1、把<code>addEventListener()</code>方法的第三个参数由前面例子的<code>false</code>修改为了<code>true</code>,也就是使用捕获方式获得<code>button</code>，<br>2、最外层的事件先被触发，最后才是我们点击的button事件被触发，这便是事件捕获；<br>3、<code>stopPropagation()</code> 和 <code>stopImmediatePropagation()</code> 都可以阻止事件冒泡和事件捕获；<br>4、<code>stopImmediatePropagation()</code> 不仅阻止捕获和冒泡，还阻止该元素的其他事件发生。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -598,11 +583,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">

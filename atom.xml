@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wangsiyuan233.github.io/"/>
-  <updated>2018-06-23T03:35:45.399Z</updated>
+  <updated>2018-06-27T18:17:39.627Z</updated>
   <id>wangsiyuan233.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript 能力测试</title>
+    <link href="wangsiyuan233.github.io/2018/06/26/56JS%E8%83%BD%E5%8A%9B%E6%B5%8B%E8%AF%95/"/>
+    <id>wangsiyuan233.github.io/2018/06/26/56JS能力测试/</id>
+    <published>2018-06-27T03:13:10.000Z</published>
+    <updated>2018-06-27T18:17:39.627Z</updated>
+    
+    <content type="html"><![CDATA[<p>JavaScript 能力测试<a href="https://www.nowcoder.com/ta/js-assessment?query=&amp;asc=true&amp;order=&amp;page=2" target="_blank" rel="external">[点我跳转]</a></p><blockquote><p>一、数组篇<br><a id="more"></a><br>二、Number</p><p>三、函数</p><p>四、对象</p><p>五、正则</p><p>六、其他</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;JavaScript 能力测试&lt;a href=&quot;https://www.nowcoder.com/ta/js-assessment?query=&amp;amp;asc=true&amp;amp;order=&amp;amp;page=2&quot;&gt;[点我跳转]&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一、数组篇&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>JavaScript Puzzlers!</title>
@@ -445,26 +465,6 @@
     
     
       <category term="算法" scheme="wangsiyuan233.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深入理解JavaScript--异步系列(2)</title>
-    <link href="wangsiyuan233.github.io/2018/04/01/36%E5%BC%82%E6%AD%A5%E7%B3%BB%E5%88%97-2/"/>
-    <id>wangsiyuan233.github.io/2018/04/01/36异步系列-2/</id>
-    <published>2018-04-02T01:22:09.000Z</published>
-    <updated>2018-04-14T00:57:47.827Z</updated>
-    
-    <content type="html"><![CDATA[<p>这一小节主讲ajax，可以看我之前的<a href="http://wangsiyuan233.cn/2018/02/28/AJAX%EF%BC%88一%EF%BC%89/" target="_blank" rel="external">封装一个ajax</a><br><a id="more"></a><br>实在是不想写Promise。。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这一小节主讲ajax，可以看我之前的&lt;a href=&quot;http://wangsiyuan233.cn/2018/02/28/AJAX%EF%BC%88一%EF%BC%89/&quot;&gt;封装一个ajax&lt;/a&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="异步" scheme="wangsiyuan233.github.io/tags/%E5%BC%82%E6%AD%A5/"/>
     
   </entry>
   
