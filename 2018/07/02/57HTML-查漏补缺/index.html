@@ -20,7 +20,7 @@
 
 （1）、&amp;lt;!DOCTYPE&amp;gt;声明位于 HTML 文档中的第一行，处于&amp;lt;html&amp;gt; 标签之前。告知浏览器的解析器用什么文档标准解析这个文档。 DOCTYPE 不存在或格式不正确会导致文档以兼容模式呈现。
 （2）、标准模式的排版 和JS运作模式都是以该浏览器支持的最高标准运行。在兼容模式中，页面以宽松的向后兼容的方式">
-<meta property="og:updated_time" content="2018-07-03T23:22:27.159Z">
+<meta property="og:updated_time" content="2018-07-03T23:57:21.714Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML 查漏补缺">
 <meta name="twitter:description" content="一、Doctype作用？标准模式与兼容模式各有什么区别?
@@ -186,7 +186,53 @@
 <blockquote>
 <p> 三、行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？</p>
 </blockquote>
-<p>首先：CSS规范规定，每个元素都有 <code>display</code> 属性，确定该元素的类型，每个元素都有默认的 <code>display</code> 值，如 <code>div</code> 的 <code>display</code> 默认值为<code>“block”</code>，则为“块级”元素；<code>span</code> 默认 <code>display</code> 属性值为<code>“inline”</code>，是“行内”元素。<br>（1）行内元素有：<code>a b span img input select strong（强调的语气）</code><br>（2）块级元素有：<code>div ul ol li dl dt dd h1 h2 h3 h4 p</code><br>（3）常见的空元素：<br>      <code>&lt;br&gt; &lt;hr&gt; &lt;img&gt; &lt;input&gt; &lt;link&gt; &lt;meta&gt;</code><br>      鲜为人知的是：<br>      <code>&lt;area&gt; &lt;base&gt; &lt;col&gt; &lt;command&gt; &lt;embed&gt; &lt;keygen&gt; &lt;param&gt; &lt;source&gt; &lt;track&gt; &lt;wbr&gt;</code></p>
+<p>首先：CSS规范规定，每个元素都有 <code>display</code> 属性，确定该元素的类型，每个元素都有默认的 <code>display</code> 值，如 <code>div</code> 的 <code>display</code> 默认值为<code>“block”</code>，则为“块级”元素；<code>span</code> 默认 <code>display</code> 属性值为<code>“inline”</code>，是“行内”元素。<br>（1）、行内元素有：<code>a b span img input select strong（强调的语气）</code><br>（2）、块级元素有：<code>div ul ol li dl dt dd h1 h2 h3 h4 p</code><br>（3）、常见的空元素：<br>      <code>&lt;br&gt; &lt;hr&gt; &lt;img&gt; &lt;input&gt; &lt;link&gt; &lt;meta&gt;</code><br>      鲜为人知的是：<br>      <code>&lt;area&gt; &lt;base&gt; &lt;col&gt; &lt;command&gt; &lt;embed&gt; &lt;keygen&gt; &lt;param&gt; &lt;source&gt; &lt;track&gt; &lt;wbr&gt;</code></p>
+<blockquote>
+<p> 四、页面导入样式时，使用link和@import有什么区别？</p>
+</blockquote>
+<p>（1）、 <code>link</code> 属于 <code>XHTML</code> 标签，除了加载 <code>CSS</code> 外，还能用于定义 <code>RSS</code>, 定义 <code>rel</code> 连接属性等作用；而 <code>@import</code> 是 <code>CSS</code> 提供的，只能用于加载 <code>CSS</code>;</p>
+<p>（2）、页面被加载的时，<code>link</code> 会同时被加载，而 <code>@import</code> 引用的 <code>CSS</code> 会等到页面被加载完再加载;</p>
+<p>（3）、<code>import</code>是<code>CSS2.1</code> 提出的，只在 <code>IE5</code> 以上才能被识别，而 <code>link</code> 是 <code>XHTML</code> 标签，无兼容问题;</p>
+<p>（4）、<code>link</code> 支持使用 js 控制 <code>DOM</code> 去改变样式，而<code>@import</code>不支持;</p>
+<blockquote>
+<p> 五、介绍一下你对浏览器内核的理解？</p>
+</blockquote>
+<p>主要分成两部分：渲染引擎(layout engineer或Rendering Engine)和JS引擎。</p>
+<p>（1）、渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入CSS等），以及计算网页的显示方式，然后会输出至显示器或打印机。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。</p>
+<p>（2）、JS引擎：解析和执行javascript来实现网页的动态效果。</p>
+<p>最开始渲染引擎和JS引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。</p>
+<blockquote>
+<p>六、常见的浏览器内核有哪些？</p>
+</blockquote>
+<p> Trident内核：IE,MaxThon,TT,The World,360,搜狗浏览器等。[又称MSHTML]<br> Gecko内核：Netscape6及以上版本，FF,MozillaSuite/SeaMonkey等<br> Presto内核：Opera7及以上。      [Opera内核原为：Presto，现为：Blink;]<br> Webkit内核：Safari,Chrome等。   [ Chrome的：Blink（WebKit的分支）]</p>
+<p>详细文章：<a href="http://www.cnblogs.com/fullhouse/archive/2011/12/19/2293455.html" target="_blank" rel="external">浏览器内核的解析和对比</a></p>
+<blockquote>
+<p>七、html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？</p>
+</blockquote>
+<ul>
+<li><p>HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。</p>
+<pre><code>绘画 canvas;
+用于媒介回放的 video 和 audio 元素;
+本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;
+sessionStorage 的数据在浏览器关闭后自动删除;
+语意化更好的内容元素，比如 article、footer、header、nav、section;
+表单控件，calendar、date、time、email、url、search;
+新的技术webworker, websocket, Geolocation;
+</code></pre><p>移除的元素：</p>
+<pre><code>纯表现的元素：basefont，big，center，font, s，strike，tt，u;
+对可用性产生负面影响的元素：frame，frameset，noframes；
+</code></pre></li>
+<li><p>支持HTML5新标签：<br>   IE8/IE7/IE6支持通过document.createElement方法产生的标签，</p>
+<pre><code>可以利用这一特性让这些浏览器支持HTML5新标签，
+浏览器支持新标签后，还需要添加标签默认的样式。
+</code></pre><p>   当然也可以直接使用成熟的框架、比如html5shim;</p>
+   <!--[if lt IE 9]>
+      <script> src="http://html5shim.googlecode.com/svn/trunk/html5.js"</script>
+   <![endif]-->
+</li>
+<li><p>如何区分HTML5： DOCTYPE声明\新增的结构元素\功能元素</p>
+</li>
+</ul>
 
       
 
@@ -408,11 +454,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
