@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wangsiyuan233.github.io/"/>
-  <updated>2018-07-03T23:06:05.595Z</updated>
+  <updated>2018-07-03T23:22:27.159Z</updated>
   <id>wangsiyuan233.github.io/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="wangsiyuan233.github.io/2018/07/02/57HTML-%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA/"/>
     <id>wangsiyuan233.github.io/2018/07/02/57HTML-查漏补缺/</id>
     <published>2018-07-03T03:02:51.000Z</published>
-    <updated>2018-07-03T23:06:05.595Z</updated>
+    <updated>2018-07-03T23:22:27.159Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>Doctype作用？标准模式与兼容模式各有什么区别?</p></blockquote><p>（1）、<code>&lt;!DOCTYPE&gt;</code>声明位于 <code>HTML</code> 文档中的第一行，处于<code>&lt;html&gt;</code> 标签之前。告知浏览器的解析器用什么文档标准解析这个文档。 <code>DOCTYPE</code> 不存在或格式不正确会导致文档以兼容模式呈现。</p><p>（2）、标准模式的排版 和JS运作模式都是以该浏览器支持的最高标准运行。在兼容模式中，页面以宽松的向后兼容的方式显示,模拟老式浏览器的行为以防止站点无法工作。</p><a id="more"></a><blockquote><p>HTML5 为什么只需要写 <code>&lt;!DOCTYPE HTML&gt;</code>？</p></blockquote><p>（1）、HTML5 不基于 SGML，因此不需要对DTD进行引用，但是需要doctype来规范浏览器的行为（让浏览器按照它们应该的方式来运行）；</p><p>（2）、而HTML4.01基于SGML,所以需要对DTD进行引用，才能告知浏览器文档所使用的文档类型。</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>一、Doctype作用？标准模式与兼容模式各有什么区别?</p></blockquote><p>（1）、<code>&lt;!DOCTYPE&gt;</code>声明位于 <code>HTML</code> 文档中的第一行，处于<code>&lt;html&gt;</code> 标签之前。告知浏览器的解析器用什么文档标准解析这个文档。 <code>DOCTYPE</code> 不存在或格式不正确会导致文档以兼容模式呈现。</p><p>（2）、标准模式的排版 和JS运作模式都是以该浏览器支持的最高标准运行。在兼容模式中，页面以宽松的向后兼容的方式显示,模拟老式浏览器的行为以防止站点无法工作。</p><a id="more"></a><blockquote><p>二、 HTML5 为什么只需要写 <code>&lt;!DOCTYPE HTML&gt;</code>？</p></blockquote><p>（1）、<code>HTML5</code> 不基于 <code>SGML</code>，因此不需要对 <code>DTD</code> 进行引用，但是需要 <code>doctype</code> 来规范浏览器的行为（让浏览器按照它们应该的方式来运行）；</p><p>（2）、而 <code>HTML4.01</code> 基于 <code>SGML</code> ,所以需要对 <code>DTD</code> 进行引用，才能告知浏览器文档所使用的文档类型。</p><blockquote><p> 三、行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？</p></blockquote><p>首先：CSS规范规定，每个元素都有 <code>display</code> 属性，确定该元素的类型，每个元素都有默认的 <code>display</code> 值，如 <code>div</code> 的 <code>display</code> 默认值为<code>“block”</code>，则为“块级”元素；<code>span</code> 默认 <code>display</code> 属性值为<code>“inline”</code>，是“行内”元素。<br>（1）行内元素有：<code>a b span img input select strong（强调的语气）</code><br>（2）块级元素有：<code>div ul ol li dl dt dd h1 h2 h3 h4 p</code><br>（3）常见的空元素：<br>      <code>&lt;br&gt; &lt;hr&gt; &lt;img&gt; &lt;input&gt; &lt;link&gt; &lt;meta&gt;</code><br>      鲜为人知的是：<br>      <code>&lt;area&gt; &lt;base&gt; &lt;col&gt; &lt;command&gt; &lt;embed&gt; &lt;keygen&gt; &lt;param&gt; &lt;source&gt; &lt;track&gt; &lt;wbr&gt;</code></p>]]></content>
     
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;Doctype作用？标准模式与兼容模式各有什么区别?&lt;/p&gt;
+&lt;p&gt;一、Doctype作用？标准模式与兼容模式各有什么区别?&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;（1）、&lt;code&gt;&amp;lt;!DOCTYPE&amp;gt;&lt;/code&gt;声明位于 &lt;code&gt;HTML&lt;/code&gt; 文档中的第一行，处于&lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt; 标签之前。告知浏览器的解析器用什么文档标准解析这个文档。 &lt;code&gt;DOCTYPE&lt;/code&gt; 不存在或格式不正确会导致文档以兼容模式呈现。&lt;/p&gt;
 &lt;p&gt;（2）、标准模式的排版 和JS运作模式都是以该浏览器支持的最高标准运行。在兼容模式中，页面以宽松的向后兼容的方式显示,模拟老式浏览器的行为以防止站点无法工作。&lt;/p&gt;
