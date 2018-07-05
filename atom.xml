@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wangsiyuan233.github.io/"/>
-  <updated>2018-07-04T17:22:50.504Z</updated>
+  <updated>2018-07-05T22:52:30.179Z</updated>
   <id>wangsiyuan233.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS 查漏补缺</title>
+    <link href="wangsiyuan233.github.io/2018/07/04/58CSS-%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA/"/>
+    <id>wangsiyuan233.github.io/2018/07/04/58CSS-查漏补缺/</id>
+    <published>2018-07-05T03:04:34.000Z</published>
+    <updated>2018-07-05T22:52:30.179Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>（方方-必考）一、介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？</p></blockquote><p>（1）、有两种， IE 盒子模型、W3C 盒子模型；<br>（2）、盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border)；<br>（3）、区  别： IE的content部分把 border 和 padding计算了进去;<br>（4）、content-box: width == 内容区宽度<br>（5）、border-box: width == 内容区宽度 + padding 宽度 + border 宽度</p><blockquote><p>二、CSS选择符有哪些？哪些属性可以继承？</p></blockquote><ul><li><p>1.id选择器（ # myid）<br>2.类选择器（.myclassname）<br>3.标签选择器（div, h1, p）<br>4.相邻选择器（h1 + p）<br>5.子选择器（ul &gt; li）<br>6.后代选择器（li a）<br>7.通配符选择器（ * ）<br>8.属性选择器（a[rel = “external”]）<br>9.伪类选择器（a:hover, li:nth-child）</p></li><li><p>可继承的样式： font-size font-family color, UL LI DL DD DT;</p></li><li><p>不可继承的样式：border padding margin width height ;</p><a id="more"></a><p>（1）、</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;（方方-必考）一、介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;（1）、有两种， IE 盒子模型、W3C 盒子模型；&lt;br&gt;（2）、盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border)；&lt;br&gt;（3）、区  别： IE的content部分把 border 和 padding计算了进去;&lt;br&gt;（4）、content-box: width == 内容区宽度&lt;br&gt;（5）、border-box: width == 内容区宽度 + padding 宽度 + border 宽度&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;二、CSS选择符有哪些？哪些属性可以继承？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;1.id选择器（ # myid）&lt;br&gt;2.类选择器（.myclassname）&lt;br&gt;3.标签选择器（div, h1, p）&lt;br&gt;4.相邻选择器（h1 + p）&lt;br&gt;5.子选择器（ul &amp;gt; li）&lt;br&gt;6.后代选择器（li a）&lt;br&gt;7.通配符选择器（ * ）&lt;br&gt;8.属性选择器（a[rel = “external”]）&lt;br&gt;9.伪类选择器（a:hover, li:nth-child）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;可继承的样式： font-size font-family color, UL LI DL DD DT;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;不可继承的样式：border padding margin width height ;&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>HTML 查漏补缺</title>
@@ -450,29 +480,6 @@
     
     
       <category term="ES6" scheme="wangsiyuan233.github.io/tags/ES6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>聊聊系列(3)-- HTTP</title>
-    <link href="wangsiyuan233.github.io/2018/04/02/38%E8%81%8A%E8%81%8A%E7%B3%BB%E5%88%97-3/"/>
-    <id>wangsiyuan233.github.io/2018/04/02/38聊聊系列-3/</id>
-    <published>2018-04-03T06:53:17.000Z</published>
-    <updated>2018-04-14T00:58:29.683Z</updated>
-    
-    <content type="html"><![CDATA[<p>本文是<a href="https://book.douban.com/subject/25863515/" target="_blank" rel="external">《图解HTTP》</a>的“摘要”版本，笔者更多关注得是和自身知识所融洽的部分，如果对更详细的内容感兴趣，可以移步实体书。</p><h2 id="一、TCP-IP通信传输流"><a href="#一、TCP-IP通信传输流" class="headerlink" title="一、TCP/IP通信传输流"></a>一、TCP/IP通信传输流</h2><p><img src="https://i.imgur.com/wj6Zhcp.png" alt=""><br><a id="more"></a></p><h2 id="二、TCP协议三次握手策略"><a href="#二、TCP协议三次握手策略" class="headerlink" title="二、TCP协议三次握手策略"></a>二、TCP协议三次握手策略</h2><p>第一次：客户端 ——&gt;&gt;&gt; 服务端 SYN数据打包给你啦！<br>第二次：服务端 ——&gt;&gt;&gt; 客户端 我收到啦！（SYN/ACK）<br>第三次：客户端 ——&gt;&gt;&gt; 服务端 我知道你知道啦！</p><h2 id="三、概念的厘清"><a href="#三、概念的厘清" class="headerlink" title="三、概念的厘清"></a>三、概念的厘清</h2><p>1、DNS协议提供域名查找IP，或知道IP反查域名；<br>2、IP是一组纯地址，而我们访问的<code>baidu.com</code>是域名或主机名<br>3、URL是需要输入的资源地址（网址）；URI是用字符串标识的某一互联网资源；<br>   URL是URI的子集；<br>4、POST的目的是传输（发信息）<br>   GET的目的是请求资源；<br>5、cookie通过在请求和响应报文中写入cookie信息，来控制客户端的状态<br>   翻译成人话就是：刷新以后我在这个网站还是登陆的状态。</p><h2 id="四、HTTP状态码"><a href="#四、HTTP状态码" class="headerlink" title="四、HTTP状态码"></a>四、HTTP状态码</h2><p><img src="https://i.imgur.com/HFcsVlO.png" alt=""></p><blockquote><p>200 OK 服务端正常处理了客户端发来的请求<br>204 no content 服务端正常处理了客户端发来的请求,但返回的报文中不含主体部分；</p><h2 id="206-partial-content-服务端成功的执行了范围请求"><a href="#206-partial-content-服务端成功的执行了范围请求" class="headerlink" title="206 partial content 服务端成功的执行了范围请求"></a>206 partial content 服务端成功的执行了范围请求</h2><p>301 moved permanently 永久性重定向 请求的资源被分配了新的URI，以后也要用这个新的URI<br>302 Found 临时性重定向 请求的资源被分配了新的URI，现在就要用这个新的URI （已移动的资源可能会变回了，这次先用着吧）<br>303 see other 和302不同之处在于 要求GET方法定向获取资源<br>【当301/302/303返回时，几乎所有的浏览器都会删除请求主体+把POST改成GET，之后请求会再次自动发送】<br>304 Not Modified (虽然是3系，但是和重定向没有关系) 客户端发送了附带条件的请求，服务端虽然找到了资源，但是不符合[附带的条件]</p><h2 id="307-Temporary-Redirect-临时重定向-和302很像-也是禁止POST变成GET"><a href="#307-Temporary-Redirect-临时重定向-和302很像-也是禁止POST变成GET" class="headerlink" title="307 Temporary Redirect 临时重定向 和302很像 也是禁止POST变成GET"></a>307 Temporary Redirect 临时重定向 和302很像 也是禁止POST变成GET</h2><p>400 Bad Request 请求中有语法错误<br>401 Unauthorized 表示请求中需要HTTP认证哦！浏览器第1次就收401里面会带一个认证对话窗口，第2次再接到401代表用户认证失败<br>403 Forbidden 服务器拒绝了这次请求的资源</p><h2 id="404-Not-Found-服务器上无法找到请求的资源"><a href="#404-Not-Found-服务器上无法找到请求的资源" class="headerlink" title="404 Not Found 服务器上无法找到请求的资源"></a>404 Not Found 服务器上无法找到请求的资源</h2><p>5系代表服务器本身的错误<br>500 Internal Server Error 服务器在执行请求时发生了错误<br>503 Service Unavailable 服务器暂时处于超负荷运转或者停机维护阶段</p></blockquote><h2 id="五、GET请求"><a href="#五、GET请求" class="headerlink" title="五、GET请求"></a>五、GET请求</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//GET 请求 </div><div class="line">GET /?w=1 HTTP/1.1</div><div class="line">Host: baidu.com</div><div class="line">Accept: text/html</div><div class="line"></div><div class="line"></div><div class="line">//响应</div><div class="line">HTTP/1.1 200 OK</div><div class="line">Content-Type: text/html; charset=utf-8</div><div class="line">Content-Length: 10000</div><div class="line"></div><div class="line"><span class="meta">&lt;!DOCTYPE&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span>......<span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure><h2 id="六、POST请求"><a href="#六、POST请求" class="headerlink" title="六、POST请求"></a>六、POST请求</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//POST 请求</div><div class="line">POST /login?w=1 HTTP/1.1</div><div class="line">Host: baidu.com</div><div class="line">Accept: application/ms-word</div><div class="line">Content-Type: application/x-www-form-urlencoded</div><div class="line">Content-Length: 10</div><div class="line"></div><div class="line">username=fangfang&amp;password=mima</div><div class="line"></div><div class="line">//响应</div><div class="line">HTTP/1.1 403 Forbidden</div><div class="line">Content-Type: application/md-word</div><div class="line">Content-Length: 200</div><div class="line"></div><div class="line">word格式</div></pre></td></tr></table></figure><h2 id="七、Web安全"><a href="#七、Web安全" class="headerlink" title="七、Web安全"></a>七、Web安全</h2><p>HTTP的不足之处：<br>1、通信使用明文，内容可能被窃听<br>2、通信放的什么可能被伪装<br>3、报文的完整性被篡改<br>—-&gt;&gt;&gt;&gt; 改进<br><strong>HTTP + 加密 + 认证 + 完整性保护 = HTTPS</strong><br>（HTTPS的不足：证书贵+速度很慢）</p><p>怎样给数据加密呢？<br>目前有以下几种加密方式：<br>1、对称加密 ： 加密和解密数据使用同一个密钥。这种加密方式的优点是速度很快，常见对称加密的算法有 AES；<br>2、非对称加密： 加密和解密使用不同的密钥，叫公钥和私钥。数据用公钥加密后必须用私钥解密，数据用私钥加密后必须用公钥解密。一般来说私钥自己保留好，把公钥公开给别人，让别人拿自己的公钥加密数据后发给自己，这样只有自己才能解密。 这种加密方式的特点是速度慢，CPU 开销大，常见非对称加密算法有 RSA；<br>3、Hash： hash 是把任意长度数据经过处理变成一个长度固定唯一的字符串，但任何人拿到这个字符串无法反向解密成原始数据（解开你就是密码学专家了），Hash 常用来验证数据的完整性。常见 Hash 算法有 MD5（已经不安全了）、SHA1、SHA256<br>这些加密其实都是各式各样的<strong>算法</strong>。</p><p><strong>讲个小故事</strong></p><p>班里来了个新同学小美，长的特别漂亮，小谷暗恋小美很久，终于有一天小谷鼓起勇气向小美表白。小谷写了个纸条：“我是小谷，我喜欢你，你喜欢我吗？” ，让小王转交给小美。<br>正常情况下，小王会把纸条转给小美，小美看到后很开心，回复了纸条：“我是小美，我也喜欢你”，让小王再转递给小谷。<br>可是小王也暗恋小美，当然不愿甘做嫁衣。这个时候小王可以有几方法来捣乱：<br>收到小谷的纸条后扔掉纸条。但这样做小谷收不到回应下课会去单独问小美，事情就败露了<br>偷窥纸条的内容，然后举报给老师<br>收到小谷的纸条后，小王立即给小谷发一个回复纸条：“我不喜欢你，我喜欢小王”。同时小王给小美发一个纸条：“我是小谷，你长的真丑，嘿嘿”<br>正常帮小谷和小美投递纸条，成就美事。但复印一份小谷的纸条，过两天小王把这个纸条发给了班里的其他女生小花，这样小美知道后必然会闹分手</p><p>小谷很聪明，早就看出来小王心怀不轨，可是没办法，要传信必然要经过小王，要怪就怪自己太腼腆不敢下课直接亲手送上。怎么办呢？<br>有一种办法是把纸条的信息加密(AES 加密)，小王就不知道纸条内容了。可是问题来了，小美也不知道密钥，她收到信后也无法解密啊。倒是可以把密钥放到纸条里，可这样小王也得到了密钥等于白忙活一场。<br>再说说小美，小美很漂亮，在以前的学校被称为数学女神，转学到这里后立即被小谷吸引了，她看出来小谷有点喜欢自己但又不十分确定，她不想主动。她猜到小谷会在上课的时候可能用写纸条的方式表白，也猜到猥琐的小王会在中间捣乱。如何让小谷能顺利向自己表白呢？小美在疯狂的思考：<br>方案一： 我可以生成一对公钥和私钥，把公钥公开给班里所有的同学。这样小谷就能得到公钥，把要发的信息用公钥加密，只有我自己能用私钥解密。可是我如何把我的回复发出去呢？如果用我的私钥加密，小谷倒是能用公钥解密，但班里任何同学都能解密，被其他同学看到就糗大了。而且如果小谷纸条的内容太多，他用公钥加密需要花一整节课的时间，不能耽误他学习<br>方案二：我可以生成一对公钥和私钥，把公钥公开给班里所有的同学，这样小谷就能得到公钥。如果小谷够聪明的话，他得到公钥后会生成一个对称加密AES的密钥，然后用我的公钥把 AES 密钥加密(AES 密钥长度很短加密几乎不需要时间)，然后把加密后的密钥发给我。我收到后用我的私钥解密，得到小谷和我约定的对对称加密密钥，然后我们用这个只有我们俩知道的对称密钥加密数据进行交流。 </p><p>下课休息的时候，小美给班里的同学说：“快数学考试了，我的数学很好，考场上需要要我帮忙的同学可以找我，我公布一下我的公钥，为了安全起见大家用我的公钥加密消息。”</p><p>一切貌似天衣无缝，可是小美在班里公布自己公钥的时候小谷正好拉肚子去了厕所，回来之后才知道这事，小谷于是问旁边的同学小花小美公钥是多少。小花以前是班里受欢迎的女生被很多男生仰慕，在小美来之后立即被夺了风头，一直怀恨在心。于是小花告诉了小谷一个假公钥，其实是自己生成的公钥。这样万一小谷找小美要小抄，自己可以冒充小美给一个错答案。</p><p>一切被小美看到眼里，这样不行啊， 别到时候自己和小谷的好事没成，反而同学考试被陷害栽赃到自己头上。怎么办呢？对了，班长是班里人品很正的人，可以用班长给自己做信用背书，正好前两天班长在班里通知了自己的公钥。 于是小美找到班长，做了一个证书，证书上有自己的名字、学号、公钥、公证人班长的名字，同时把这些信息通过 Hash (sha256)处理后请求班长用自己的私钥进行加密（为什么用 Hash 处理？因为东西太多非对称加密很费时），也放到证书上。于是小美再次把证书通报给班里所有的同学。</p><p>小谷这次得到了证书，发现上面的公证人是班长，于是先用班长的公钥对证书上被班长私钥加密后的字段进行解密，得到元素数据的 Hash。   再对元素数据进行 Hash和刚刚解密的 Hash 进行比对。如果比对成功表示证书上的信息无误，且是由班长担保的。这时候小谷确信证书上的公钥就是小美的。任何人因为没有班长的私钥都无法伪造证书。</p><p>你以为故事就这么圆满结束了吗？其实没有，班长前两天在公布自己的证书的时候小谷正好生病请假了。 他根本不知道班长的公钥是不是他本人的。<br>这个时候他发现班长的证书上有班主任的担保（班主任的公钥做了签名），班主任的证书上有校长的担保，而小谷是有校长的的公钥的，就印在学生证上。</p><p>终于，小谷收获了女神的芳心。</p><p>故事完了。故事中 小谷是浏览器，小美是服务器，小花和小王是坏蛋，班长是 CA 机构，班主任是上级 CA，校长是根 CA 服务器。当一个网站要使用 https 时先需在一些国际认证的 CA 机构填写网站信息申请证书，而这些 CA机构往往还有上层 CA，最终有一个根 CA。一般来说浏览器都会内置根 CA 和一些顶级 CA 的证书，但需要验证的时候会通过 CA 链逐级验证。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文是&lt;a href=&quot;https://book.douban.com/subject/25863515/&quot;&gt;《图解HTTP》&lt;/a&gt;的“摘要”版本，笔者更多关注得是和自身知识所融洽的部分，如果对更详细的内容感兴趣，可以移步实体书。&lt;/p&gt;
-&lt;h2 id=&quot;一、TCP-IP通信传输流&quot;&gt;&lt;a href=&quot;#一、TCP-IP通信传输流&quot; class=&quot;headerlink&quot; title=&quot;一、TCP/IP通信传输流&quot;&gt;&lt;/a&gt;一、TCP/IP通信传输流&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/wj6Zhcp.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="聊聊系列" scheme="wangsiyuan233.github.io/tags/%E8%81%8A%E8%81%8A%E7%B3%BB%E5%88%97/"/>
-    
-      <category term="HTTP" scheme="wangsiyuan233.github.io/tags/HTTP/"/>
     
   </entry>
   
