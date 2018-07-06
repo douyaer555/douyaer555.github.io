@@ -18,7 +18,7 @@
 <meta property="og:description" content="（方方-必考）一、介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？
 
 （1）、有两种， IE 盒子模型、W3C 盒子模型；（2）、盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border)；（3）、区  别： IE的content部分把 border 和 padding计算了进去;（4）、content-box: width == 内">
-<meta property="og:updated_time" content="2018-07-05T22:52:30.179Z">
+<meta property="og:updated_time" content="2018-07-06T16:40:29.341Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS 查漏补缺">
 <meta name="twitter:description" content="（方方-必考）一、介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？
@@ -176,17 +176,41 @@
 <blockquote>
 <p>二、CSS选择符有哪些？哪些属性可以继承？</p>
 </blockquote>
-<ul>
-<li><p>1.id选择器（ # myid）<br>2.类选择器（.myclassname）<br>3.标签选择器（div, h1, p）<br>4.相邻选择器（h1 + p）<br>5.子选择器（ul &gt; li）<br>6.后代选择器（li a）<br>7.通配符选择器（ * ）<br>8.属性选择器（a[rel = “external”]）<br>9.伪类选择器（a:hover, li:nth-child）</p>
-</li>
-<li><p>可继承的样式： font-size font-family color, UL LI DL DD DT;</p>
-</li>
-<li><p>不可继承的样式：border padding margin width height ;</p>
-<a id="more"></a>
-<p>（1）、</p>
-</li>
-</ul>
-
+<p>1.id选择器（ <code>#myid</code> ）<br>2.类选择器（ <code>.myclassname</code> ）<br>3.标签选择器（ <code>div, h1, p</code>）<br>4.相邻选择器（<code>h1 + p</code> ）<br>5.子选择器（ <code>ul &gt; li</code> ）<br>6.后代选择器（ <code>li a</code> ）<br>7.通配符选择器（ <code>*</code> ）<br>8.属性选择器（ <code>a[rel = &quot;external&quot;]</code> ）<br>9.伪类选择器（ <code>a:hover, li:nth-child</code> ）</p>
+<p>可继承的样式： <code>font-size font-family color, UL LI DL DD DT</code>;</p>
+<p>不可继承的样式：<code>border padding margin width height</code>;<br><a id="more"></a></p>
+<blockquote>
+<p>三、CSS优先级算法如何计算？</p>
+</blockquote>
+<p>优先级就近原则，同权重情况下样式定义最近者为准;<br>载入样式以最后载入的定位为准;</p>
+<p>优先级为:<br>同权重: 内联样式表（标签内部）&gt; 嵌入样式表（当前文件中）&gt; 外部样式表（外部文件中）。<br>!important &gt;  id &gt; class &gt; tag<br>important 比 内联优先级高</p>
+<blockquote>
+<p>四、CSS3新增伪类有那些？</p>
+</blockquote>
+<p>举例：<br><code>p:first-of-type</code>    选择属于其父元素的首个 </p><p> 元素的每个 </p><p> 元素。<br><code>p:last-of-type</code>    选择属于其父元素的最后 </p><p> 元素的每个 </p><p> 元素。<br><code>p:only-of-type</code>    选择属于其父元素唯一的 </p><p> 元素的每个 </p><p> 元素。<br><code>p:only-child</code>        选择属于其父元素的唯一子元素的每个 </p><p> 元素。<br><code>p:nth-child(2)</code>    选择属于其父元素的第二个子元素的每个 </p><p> 元素。</p>
+<p><code>::after</code>            在元素之前添加内容,也可以用来做清除浮动。<br><code>::before</code>       在元素之后添加内容<br><code>:enabled</code><br><code>:disabled</code>        控制表单控件的禁用状态。<br><code>:checked</code>       单选框或复选框被选中。</p>
+<blockquote>
+<p>（方方-必考）五、如何居中div？</p>
+</blockquote>
+<p><a href="http://wangsiyuan233.cn/2018/03/28/33CSS%E5%B8%83%E5%B1%80%E6%96%B9%E6%A1%88%E4%B9%8Bflex-float/" target="_blank" rel="external">点我到布局</a></p>
+<blockquote>
+<p>六、display有哪些值？说明他们的作用。</p>
+</blockquote>
+<p>block           块类型。默认宽度为父元素宽度，可设置宽高，换行显示。<br>none            缺省值。象行内元素类型一样显示。<br>inline          行内元素类型。默认宽度为内容宽度，不可设置宽高，同行显示。<br>inline-block    默认宽度为内容宽度，可以设置宽高，同行显示。<br>list-item       象块类型元素一样显示，并添加样式列表标记。<br>table           此元素会作为块级表格来显示。<br>inherit         规定应该从父元素继承 display 属性的值。</p>
+<blockquote>
+<p>七、position的值relative和absolute定位原点是？</p>
+</blockquote>
+<pre><code>absolute
+  生成绝对定位的元素，相对于值不为 static的第一个父元素进行定位。
+fixed （老IE不支持）
+  生成绝对定位的元素，相对于浏览器窗口进行定位。
+relative
+  生成相对定位的元素，相对于其正常位置进行定位。
+static
+  默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right z-index 声明）。
+inherit
+  规定从父元素继承 position 属性的值。
+</code></pre>
       
 
       
@@ -423,11 +447,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
               </li>
              
               <li class="article-tag-list-item">
