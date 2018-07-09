@@ -18,7 +18,7 @@
 <meta property="og:description" content="（方方-必考）一、介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？
 
 （1）、有两种， IE 盒子模型、W3C 盒子模型；（2）、盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border)；（3）、区  别： IE的content部分把 border 和 padding计算了进去;（4）、content-box: width == 内">
-<meta property="og:updated_time" content="2018-07-07T00:09:33.924Z">
+<meta property="og:updated_time" content="2018-07-09T05:08:37.401Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS 查漏补缺">
 <meta name="twitter:description" content="（方方-必考）一、介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？
@@ -303,6 +303,10 @@
 <p>二十五、使用 CSS 预处理器吗？喜欢那个？</p>
 </blockquote>
 <p>SASS (SASS、LESS没有本质区别，只因为团队前端都是用的SASS)</p>
+<blockquote>
+<p>二十六、CSS优化、提高性能的方法有哪些？</p>
+</blockquote>
+<p>关键选择器（key selector）。选择器的最后面的部分为关键选择器（即用来匹配目标元素的部分）；<br>如果规则拥有 ID 选择器作为其关键选择器，则不要为规则增加标签。过滤掉无关的规则（这样样式系统就不会浪费时间去匹配它们了）；<br>提取项目的通用公有样式，增强可复用性，按模块编写组件；增强项目的协同开发性、可维护性和可扩展性;<br>使用预处理工具或构建工具（gulp对css进行语法检查、自动补前缀、打包压缩、自动优雅降级）；</p>
 
       
 
@@ -508,15 +512,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,11 +544,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
               </li>
              
               <li class="article-tag-list-item">
