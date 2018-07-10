@@ -18,7 +18,7 @@
 <meta property="og:description" content="（方方-必考）一、介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？
 
 （1）、有两种， IE 盒子模型、W3C 盒子模型；（2）、盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border)；（3）、区  别： IE的content部分把 border 和 padding计算了进去;（4）、content-box: width == 内">
-<meta property="og:updated_time" content="2018-07-09T05:08:37.401Z">
+<meta property="og:updated_time" content="2018-07-10T00:27:25.814Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS 查漏补缺">
 <meta name="twitter:description" content="（方方-必考）一、介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？
@@ -306,7 +306,28 @@
 <blockquote>
 <p>二十六、CSS优化、提高性能的方法有哪些？</p>
 </blockquote>
-<p>关键选择器（key selector）。选择器的最后面的部分为关键选择器（即用来匹配目标元素的部分）；<br>如果规则拥有 ID 选择器作为其关键选择器，则不要为规则增加标签。过滤掉无关的规则（这样样式系统就不会浪费时间去匹配它们了）；<br>提取项目的通用公有样式，增强可复用性，按模块编写组件；增强项目的协同开发性、可维护性和可扩展性;<br>使用预处理工具或构建工具（gulp对css进行语法检查、自动补前缀、打包压缩、自动优雅降级）；</p>
+<p>关键选择器（key selector）。选择器的最后面的部分为关键选择器（即用来匹配目标元素的部分）；<br>如果规则拥有 ID 选择器作为其关键选择器，则不要为规则增加标签。过滤掉无关的规则（这样样式系统就不会浪费时间去匹配它们了）；<br>提取项目的通用公有样式，增强可复用性，按模块编写组件；增强项目的协同开发性、可维护性和可扩展性;<br>使用预处理工具或构建工具（gulp对css进行语法检查、自动补前缀、打包压缩、自动优雅降级）</p>
+<blockquote>
+<p>二十七、浏览器是怎样解析CSS选择器的？</p>
+</blockquote>
+<p>样式系统从关键选择器开始匹配，然后左移查找规则选择器的祖先元素。<br>只要选择器的子树一直在工作，样式系统就会持续左移，直到和规则匹配，或者是因为不匹配而放弃该规则。</p>
+<blockquote>
+<p>二十八、margin和padding分别适合什么场景使用？</p>
+</blockquote>
+<p><code>margin</code> 是用来隔开元素与元素的间距；<code>padding</code> 是用来隔开元素与内容的间隔。<br><code>margin</code> 用于布局分开元素使元素与元素互不相干；<br><code>padding</code> 用于元素与内容之间的间隔，让内容（文字）与（包裹）元素之间有一段</p>
+<blockquote>
+<p>二十九、::before 和 :after中双冒号和单冒号 有什么区别？解释一下这2个伪元素的作用。</p>
+</blockquote>
+<p>单冒号<code>(:)</code>用于CSS3伪类，双冒号<code>(::)</code>用于CSS3伪元素。（伪元素由双冒号和伪元素名称组成）<br>双冒号是在当前规范中引入的，用于区分伪类和伪元素。不过浏览器需要同时支持旧的已经存在的伪元素写法，<br>比如:<code>first-line</code>、<code>:first-letter</code>、<code>:before</code>、<code>:after</code>等，<br>而新的在CSS3中引入的伪元素则不允许再支持旧的单冒号的写法。</p>
+<p>想让插入的内容出现在其它内容前，使用<code>::before</code>，否者，使用<code>::after</code>；<br>在代码顺序上，<code>::after</code>生成的内容也比<code>::before</code>生成的内容靠后。<br>如果按堆栈视角，<code>::after</code>生成的内容会在<code>::before</code>生成的内容之上</p>
+<blockquote>
+<p>全屏滚动的原理是什么？用到了CSS的那些属性？</p>
+<p>什么是响应式设计？响应式设计的基本原理是什么？如何兼容低版本的IE？</p>
+<p>元素竖向的百分比设定是相对于容器的高度吗？</p>
+<p>视差滚动效果，如何给每页做不同的动画？（回到顶部，向下滑动要再次出现，和只出现一次分别怎么做？）</p>
+<p>抽离样式模块怎么写，说出思路，有无实践经验？[阿里航旅的面试题]</p>
+<p>在网页中的应该使用奇数还是偶数的字体？为什么呢？</p>
+</blockquote>
 
       
 
@@ -512,15 +533,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -544,11 +565,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
