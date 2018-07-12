@@ -18,12 +18,14 @@
 <meta property="og:description" content="（方方-必考）一、介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？
 
 （1）、有两种， IE 盒子模型、W3C 盒子模型；（2）、盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border)；（3）、区  别： IE的content部分把 border 和 padding计算了进去;（4）、content-box: width == 内">
-<meta property="og:updated_time" content="2018-07-11T00:22:45.987Z">
+<meta property="og:image" content="https://i.imgur.com/yJfrBZm.jpg">
+<meta property="og:updated_time" content="2018-07-12T00:13:06.240Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS 查漏补缺">
 <meta name="twitter:description" content="（方方-必考）一、介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？
 
 （1）、有两种， IE 盒子模型、W3C 盒子模型；（2）、盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border)；（3）、区  别： IE的content部分把 border 和 padding计算了进去;（4）、content-box: width == 内">
+<meta name="twitter:image" content="https://i.imgur.com/yJfrBZm.jpg">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -331,7 +333,7 @@
 <blockquote>
 <p>三十二、怎么让Chrome支持小于12px 的文字？</p>
 </blockquote>
-<p>1、用图片：如果是内容固定不变情况下，使用将小于12px文字内容切出做图片，这样不影响兼容也不影响美观。<br>2、使用12px及12px以上字体大小：为了兼容各大主流浏览器，建议设计美工图时候设置大于或等于12px的字体大小，如果是接单的这个时候就需要给客户讲解小于12px浏览器不兼容等事宜。<br>3、继续使用小于12px字体大小样式设置：如果不考虑chrome可以不用考虑兼容，同时在设置小于12px对象设置<code>-webkit-text-size-adjust:none，</code>做到最大兼容考虑。<br>4、使用12px以上字体：为了兼容、为了代码更简单 从新考虑权重下兼容性。</p>
+<p>（1）、用图片：如果是内容固定不变情况下，使用将小于12px文字内容切出做图片，这样不影响兼容也不影响美观。<br>（2）、使用12px及12px以上字体大小：为了兼容各大主流浏览器，建议设计美工图时候设置大于或等于12px的字体大小，如果是接单的这个时候就需要给客户讲解小于12px浏览器不兼容等事宜。<br>（3）、继续使用小于12px字体大小样式设置：如果不考虑chrome可以不用考虑兼容，同时在设置小于12px对象设置<code>-webkit-text-size-adjust:none，</code>做到最大兼容考虑。<br>（4）、使用12px以上字体：为了兼容、为了代码更简单 从新考虑权重下兼容性。</p>
 <blockquote>
 <p>三十三、让页面里的字体变清晰，变细用CSS怎么做？</p>
 </blockquote>
@@ -380,18 +382,53 @@
 <p>以下代码可解决这种卡顿的问题：<code>-webkit-overflow-scrolling: touch</code>;，是因为这行代码启用了硬件加速特性，所以滑动很流畅。</p>
 <blockquote>
 <p>有一个高度自适应的div，里面有两个div，一个高度100px，希望另一个填满剩下的高度。</p>
-<p>png、jpg、gif 这些图片格式解释一下，分别什么时候用。有没有了解过webp？</p>
+<p>四十三、png、jpg、gif 这些图片格式解释一下，分别什么时候用。有没有了解过webp？</p>
 </blockquote>
-<p>（1）、PNG是一种无损数据压缩位图图形文件格式。<br>优点：使用无损压缩；支持256色调色板技术以产生小体积文件<br>缺点：但也有一些软件不能使用适合的预测,而造成过分臃肿的PNG文件。<br>（2）、<br>优点：<br>缺点：<br>（3）、<br>优点：<br>缺点：<br>（4）、<br>优点：<br>缺点：</p>
+<p>（1）、PNG是一种无损数据压缩位图图形文件格式。<br>优点：使用无损压缩；支持256色调色板技术以产生小体积文件<br>缺点：但也有一些软件不能使用适合的预测,而造成过分臃肿的PNG文件。</p>
+<p>（2）、JPEG是一种针对相片影像而广泛使用的一种失真压缩标准方法。<br>优点：PEG在色调及颜色平滑变化的相片或是写实绘画（painting）上可以达到它最佳的效果。<br>缺点：它并不适合于线条绘图（drawing）和其他文字或图示（iconic）的图形,因为它的压缩方法用在这些图形的型态上,会得到不适当的结果。<br>给个活生生的例子：一张照片在Instagram反复上传下载90次之后….(在博客园找了半小时,link), 在最后jpg图片完全变样了;<br><img src="https://i.imgur.com/yJfrBZm.jpg" alt=""></p>
+<p>（3）、GIF图形交换格式是一种位图图形文件格式,以8位色（即256种颜色）重现真彩色的图像。它实际上是一种压缩文档。<br>优点：可插入多帧,从而实现动画效果。<br>缺点：最多只能处理256种颜色（2的8次方）,故不宜应用于真彩图像。</p>
+<p>（4）、　2010年谷歌推迟的图片格式,专门用来在web中使用, 压缩率只有jpg的2/3或者更低； 第一个版本的webp图片格式是有损的, 新版本中webp图片是无损的。<br>优点：体积小巧；<br>缺点：　兼容性不太好, 只有opera,和chrome支持;</p>
 <blockquote>
-<p>你对line-height是如何理解的？</p>
-<p>全屏滚动的原理是什么？用到了CSS的那些属性？</p>
-<p>什么是响应式设计？响应式设计的基本原理是什么？如何兼容低版本的IE？</p>
-<p>元素竖向的百分比设定是相对于容器的高度吗？</p>
-<p>视差滚动效果，如何给每页做不同的动画？（回到顶部，向下滑动要再次出现，和只出现一次分别怎么做？）</p>
-<p>抽离样式模块怎么写，说出思路，有无实践经验？[阿里航旅的面试题]</p>
-<p>在网页中的应该使用奇数还是偶数的字体？为什么呢？</p>
+<p>四十四、你对line-height是如何理解的？</p>
 </blockquote>
+<p>（1）、　CSS中起高度作用的应该就是height以及line-height了吧！如果一个标签没有定义height属性(包括百分比高度)，那么其最终表现的高度一定是由line-height起作用；</p>
+<p>不是文字撑开了div的高度，而是line-height！</p>
+<p>在inline box模型中，有个line boxes，这玩意是看不见的，这个玩意的工作就是包裹每行文字。一行文字一个line boxes。line boxes什么特性也没有，就高度。所以一个没有设置height属性的div的高度就是由一个一个line boxes的高度堆积而成的。</p>
+<p>其实line boxes不是直接的生产者，属于中层干部，真正的活儿都是它的手下 – inline boxes干的，这些手下就是文字啦，图片啊，span之类的inline属性的标签啦。line boxes只是个考察汇报人员，考察它的手下谁的实际line-height值最高，谁最高，它就要谁的值，然后向上汇报，形成高度。</p>
+<p>（2）、行高还有一个特性，叫做垂直居中性。line-height的最终表现是通过line boxes实现的，而无论line boxes所占据的高度是多少（无论比文字大还是比文字小），其占据的空间都是与文字内容公用水平中垂线的。还拿上面这张图来说吧。</p>
+<p>（3）、把line-height设置为您需要的box的大小可以实现单行文字的垂直居中；</p>
+<p>（4）、要实现高度不固定的文字垂直居中使用padding就好了。对于高度固定的div，里面文字单行或多行显示，字体大小有大有小的情况怎么办呢？方法之一就是借助于line-height；</p>
+<p>（5）、有个很搓的办法可以实现文字间距自动适应于文字的大小，那就是使用<em>通配符： `.article_box </em>{line-height:150%;}`；就不会出现文字重叠的情况了。</p>
+<blockquote>
+<p>四十五、全屏滚动的原理是什么？用到了CSS的那些属性？</p>
+</blockquote>
+<p>（1）、原理：方法一是整体的元素一直排列下去，假设有5个需要展示的全屏页面，那么高度是500%<br>，只是展示100%，剩下的可以通过transform进行y轴定位，也可以通过 <code>margin-top</code> 实现</p>
+<p>（2）、<code>overflow：hidden；``transition：all 1000ms ease；</code></p>
+<blockquote>
+<p>四十六、什么是响应式设计？响应式设计的基本原理是什么？如何兼容低版本的IE？</p>
+</blockquote>
+<p>（1）、响应式网站设计的理念是：集中创建页面的图片排版大小，可以智能地根据用户行为以及使用的设备环境（系统平台、屏幕尺寸、屏幕定向等）进行相对应的布局。</p>
+<p>（2）、基本原理: 媒体查询 @media</p>
+<p>（3）、兼容IE可以使用JS辅助一下来解决</p>
+<blockquote>
+<p>四十七、元素竖向的百分比设定是相对于容器的高度吗？</p>
+</blockquote>
+<p>不是，是容器宽度。</p>
+<blockquote>
+<p>四十八、视差滚动效果，如何给每页做不同的动画？（回到顶部，向下滑动要再次出现，和只出现一次分别怎么做？）</p>
+</blockquote>
+<p>视差滚动就是这样的效果之一。这种技术通过在网页向下滚动的时候，控 制背景的移动速度比前景的移动速度慢来创建出令人惊叹的3D效果。<br>（1）、CSS3实现<br>优点：开发时间短、性能和开发效率比较好，缺点是不能兼容到低版本的浏览器</p>
+<p>（2）、jquery实现<br>通过控制不同层滚动速度，计算每一层的时间，控制滚动效果。<br>优点：能兼容到各个版本的，效果可控性好<br>缺点：开发起来对制作者要求高</p>
+<p>（3）、插件实现方式<br>例如：parallax-scrolling，兼容性十分好</p>
+<blockquote>
+<p>四十九、抽离样式模块怎么写，说出思路，有无实践经验？[阿里航旅的面试题]</p>
+</blockquote>
+<p>先看视觉稿，把可复用的组件找出来。然后把命名和结构确定下来。<br><a href="https://github.com/jayli/jayli.github.com/issues/16" target="_blank" rel="external">航旅无线前端团队必备技能</a></p>
+<blockquote>
+<p>五十、在网页中的应该使用奇数还是偶数的字体？为什么呢？</p>
+</blockquote>
+<p>（1）、偶数字号相对更容易和 web 设计的其他部分构成比例关系。比如：当我用了 14 px 的正文字号，我可能会在一些地方用 14 × 0.5 = 7 px 的 margin，在另一些地方用 14 × 1.5 = 21 px 的标题字号。</p>
+<p>（2）、Windows 自带的点阵宋体（中易宋体）从 Vista 开始只提供 12、14、16 px 这三个大小的点阵，而 13、15、17 px 时用的是小一号的点阵（即每个字占的空间大了 1 px，但点阵没变），于是略显稀疏。</p>
 
       
 
@@ -629,11 +666,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
