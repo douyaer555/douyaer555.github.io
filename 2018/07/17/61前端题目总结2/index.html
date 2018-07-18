@@ -21,7 +21,7 @@ JS 有哪些数据类型？
 
 string number bool undefined null object symbolobject 包括了数组、函数、正则、日期等对象一旦出现（数组、函数、正则、日期、NaN）直接0分">
 <meta property="og:image" content="https://i.imgur.com/v7kdhsX.jpg">
-<meta property="og:updated_time" content="2018-07-18T17:15:56.413Z">
+<meta property="og:updated_time" content="2018-07-18T17:18:51.586Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端总结2">
 <meta name="twitter:description" content="JavaScript
@@ -279,6 +279,35 @@ string number bool undefined null object symbolobject 包括了数组、函数�
 <p>事件委托是什么？有什么好处？</p>
 </blockquote>
 <p>1）假设父元素有4个儿子，我不监听4个儿子，而是监听父元素，看触发事件的元素是哪个儿子，这就是事件委托。<br>2）可以监听还没有出生的儿子（动态生成的元素）。省监听器。<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">listen</span><span class="params">(element, eventType, selector, fn)</span>&#123;</span></div><div class="line"> element.addEventListener(eventType, <span class="keyword">e</span>=&gt;&#123;</div><div class="line">     <span class="keyword">if</span>(<span class="keyword">e</span>.target.matches(selector))&#123;</div><div class="line">         fn.<span class="keyword">call</span>(<span class="keyword">el</span>, <span class="keyword">e</span>, <span class="keyword">el</span>)</div><div class="line">     &#125;</div><div class="line"> &#125;)</div><div class="line">&#125;// 有 bug 但是可以应付面试官的事件委托</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">listen</span><span class="params">(element, eventType, selector, fn)</span> &#123;</span></div><div class="line"> element.addEventListener(eventType, <span class="keyword">e</span> =&gt; &#123;</div><div class="line">     <span class="keyword">let</span> <span class="keyword">el</span> = <span class="keyword">e</span>.target</div><div class="line">     <span class="keyword">while</span> (!el.matches(selector)) &#123;</div><div class="line">         <span class="keyword">if</span> (element === <span class="keyword">el</span>) &#123;</div><div class="line">             <span class="keyword">el</span> = null</div><div class="line">             <span class="keyword">break</span></div><div class="line">         &#125;</div><div class="line">         <span class="keyword">el</span> = <span class="keyword">el</span>.parentNode</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">el</span> &amp;&amp; fn.<span class="keyword">call</span>(<span class="keyword">el</span>, <span class="keyword">e</span>, <span class="keyword">el</span>)</div><div class="line"> &#125;)</div><div class="line"> <span class="keyword">return</span> element</div><div class="line">&#125; // 工资 <span class="number">12</span><span class="keyword">k</span>+ 的前端写的事件委托</div><div class="line">listen(ul, <span class="string">'click'</span>, <span class="string">'li'</span>, ()=&gt;&#123;&#125;)</div><div class="line"></div><div class="line">ul&gt;li*<span class="number">5</span>&gt;span</div></pre></td></tr></table></figure></p>
+<h1 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h1><blockquote>
+<p>HTTP 状态码知道哪些？</p>
+</blockquote>
+<p><a href="http://wangsiyuan233.cn/2018/04/02/38%E8%81%8A%E8%81%8A%E7%B3%BB%E5%88%97-3/" target="_blank" rel="external">聊聊系列(3)– HTTP</a></p>
+<blockquote>
+<p>301 和 302 的区别是什么？</p>
+</blockquote>
+<p><a href="http://wangsiyuan233.cn/2018/04/02/38%E8%81%8A%E8%81%8A%E7%B3%BB%E5%88%97-3/" target="_blank" rel="external">聊聊系列(3)– HTTP</a></p>
+<blockquote>
+<p>HTTP 缓存怎么做？</p>
+</blockquote>
+<p><a href="http://imweb.io/topic/5795dcb6fb312541492eda8c" target="_blank" rel="external">HTTP缓存控制小结</a><br>1）<code>Cache-Control: max-age=300</code><br>2）避开缓存</p>
+<blockquote>
+<p>Cookie 是什么？Session 是什么？</p>
+</blockquote>
+<p><a href="http://wangsiyuan233.cn/2018/02/19/18Cookie/" target="_blank" rel="external">小饼干</a><br><a href="http://wangsiyuan233.cn/2018/02/20/19%E7%BC%93%E5%AD%98/" target="_blank" rel="external">缓存</a></p>
+<blockquote>
+<p>LocalStorage 和 Cookie 的区别是什么？</p>
+</blockquote>
+<p><a href="http://wangsiyuan233.cn/2018/02/20/19%E7%BC%93%E5%AD%98/" target="_blank" rel="external">缓存</a></p>
+<blockquote>
+<p>（必考）GET 和 POST 的区别是什么？</p>
+</blockquote>
+<p>1）参数。GET 的参数放在 url 的查询参数里，POST 的参数（数据）放在请求消息体里。<br>2）安全（扯淡）。GET 没有 POST 安全（都不安全）<br>3）GET 的参数（url查询参数）有长度限制，一般是 1024 个字符。POST 的参数（数据）没有长度限制（扯淡，4~10Mb 限制）<br>4）包。GET 请求只需要发一个包，POST 请求需要发两个以上包（因为 POST 有消息体）（扯淡，GET 也可以用消息体）<br>5）GET 用来读数据，POST 用来写数据，POST 不幂等（幂等的意思就是不管发多少次请求，结果都一样。）</p>
+<p><a href="http://wangsiyuan233.cn/2018/04/02/38%E8%81%8A%E8%81%8A%E7%B3%BB%E5%88%97-3/" target="_blank" rel="external">聊聊系列(3)– HTTP</a></p>
+<blockquote>
+<p>（必考）怎么跨域？JSONP 是什么？CORS 是什么？postMessage 是什么？</p>
+</blockquote>
+<p><a href="https://segmentfault.com/a/1190000009624849" target="_blank" rel="external">同源策略与JS跨域（JSONP , CORS）</a><br><a href="https://www.jianshu.com/p/96a94b92e94e" target="_blank" rel="external">JSONP、CROS和postMessage跨域</a></p>
 
       
 
@@ -484,15 +513,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
