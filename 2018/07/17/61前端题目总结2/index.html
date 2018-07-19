@@ -11,7 +11,11 @@
   <meta name="description" content="JavaScript
 JS 有哪些数据类型？
 
-string number bool undefined null object symbolobject 包括了数组、函数、正则、日期等对象一旦出现（数组、函数、正则、日期、NaN）直接0分">
+string number bool undefined null object symbolobject 包括了数组、函数、正则、日期等对象一旦出现（数组、函数、正则、日期、NaN）直接0分
+
+（必考） Promise 怎么使用？
+
+深入理解JavaScript–异步系列(2)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端总结2">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/07/17/61前端题目总结2/index.html">
@@ -19,15 +23,23 @@ string number bool undefined null object symbolobject 包括了数组、函数�
 <meta property="og:description" content="JavaScript
 JS 有哪些数据类型？
 
-string number bool undefined null object symbolobject 包括了数组、函数、正则、日期等对象一旦出现（数组、函数、正则、日期、NaN）直接0分">
+string number bool undefined null object symbolobject 包括了数组、函数、正则、日期等对象一旦出现（数组、函数、正则、日期、NaN）直接0分
+
+（必考） Promise 怎么使用？
+
+深入理解JavaScript–异步系列(2)">
 <meta property="og:image" content="https://i.imgur.com/v7kdhsX.jpg">
-<meta property="og:updated_time" content="2018-07-18T17:25:57.848Z">
+<meta property="og:updated_time" content="2018-07-18T23:43:38.349Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端总结2">
 <meta name="twitter:description" content="JavaScript
 JS 有哪些数据类型？
 
-string number bool undefined null object symbolobject 包括了数组、函数、正则、日期等对象一旦出现（数组、函数、正则、日期、NaN）直接0分">
+string number bool undefined null object symbolobject 包括了数组、函数、正则、日期等对象一旦出现（数组、函数、正则、日期、NaN）直接0分
+
+（必考） Promise 怎么使用？
+
+深入理解JavaScript–异步系列(2)">
 <meta name="twitter:image" content="https://i.imgur.com/v7kdhsX.jpg">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
@@ -177,11 +189,11 @@ string number bool undefined null object symbolobject 包括了数组、函数�
         <h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><blockquote>
 <p>JS 有哪些数据类型？</p>
 </blockquote>
-<p>string number bool undefined null object symbol<br>object 包括了数组、函数、正则、日期等对象<br>一旦出现（数组、函数、正则、日期、NaN）直接0分<br><a id="more"></a></p>
+<p>string number bool undefined null object symbol<br>object 包括了数组、函数、正则、日期等对象<br>一旦出现（数组、函数、正则、日期、NaN）直接0分</p>
 <blockquote>
 <p>（必考） Promise 怎么使用？</p>
 </blockquote>
-<p><a href="http://wangsiyuan233.cn/2018/04/01/36%E5%BC%82%E6%AD%A5%E7%B3%BB%E5%88%97-2/" target="_blank" rel="external">深入理解JavaScript–异步系列(2)</a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">then</div><div class="line">  $.ajax(...).then(成功函数, 失败函数)</div><div class="line">链式 then</div><div class="line">  $.ajax(...).then(成功函数, 失败函数).then(成功函数<span class="number">2</span>, 失败函数<span class="number">2</span>)</div><div class="line">如何自己生成 <span class="built_in">Promise</span> 对象</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">xxx</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>)</span>&#123;</div><div class="line">          setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">              resolve() 或者 reject()</div><div class="line">          &#125;,<span class="number">3000</span>)</div><div class="line">      &#125;)</div><div class="line">  &#125;</div><div class="line">  xxx().then(...)</div></pre></td></tr></table></figure></p>
+<p><a href="http://wangsiyuan233.cn/2018/04/01/36%E5%BC%82%E6%AD%A5%E7%B3%BB%E5%88%97-2/" target="_blank" rel="external">深入理解JavaScript–异步系列(2)</a><br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">then</div><div class="line">  $.ajax(...).then(成功函数, 失败函数)</div><div class="line">链式 then</div><div class="line">  $.ajax(...).then(成功函数, 失败函数).then(成功函数<span class="number">2</span>, 失败函数<span class="number">2</span>)</div><div class="line">如何自己生成 <span class="built_in">Promise</span> 对象</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">xxx</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>)</span>&#123;</div><div class="line">          setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">              resolve() 或者 reject()</div><div class="line">          &#125;,<span class="number">3000</span>)</div><div class="line">      &#125;)</div><div class="line">  &#125;</div><div class="line">  xxx().then(...)</div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>（必考） AJAX 手写一下？</p>
 </blockquote>
@@ -363,7 +375,7 @@ string number bool undefined null object symbolobject 包括了数组、函数�
 </blockquote>
 <p>一开始就问，可以拜拜。<br>中间问最后问，他想压价。<br>解法：用项目打动它：你看下我的作品，跟一年经验的前端差距大吗？你们团队一年工作经验的前端，写的出来我这样的作品吗？凭我的作品，我觉得我可以胜任贵司的工作。</p>
 <h1 id="刁钻代码"><a href="#刁钻代码" class="headerlink" title="刁钻代码"></a>刁钻代码</h1><p><a href="http://wangsiyuan233.cn/2018/06/20/55JavaScript-Puzzlers/" target="_blank" rel="external">JavaScript Puzzlers!</a></p>
-<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><p>1）排序算法（背诵冒泡排序、选择排序、计数排序、快速排序、插入排序、归并排序）<br>2）二分查找法<br>3）翻转二叉树</p>
+<h1 id="前端算法"><a href="#前端算法" class="headerlink" title="前端算法"></a>前端算法</h1><p>1）排序算法（背诵冒泡排序、选择排序、计数排序、快速排序、插入排序、归并排序）<br>2）二分查找法<br>3）翻转二叉树</p>
 
       
 
@@ -456,6 +468,15 @@ string number bool undefined null object symbolobject 包括了数组、函数�
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/07/18/62排序算法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          排序算法
+        
+      </div>
+    </a>
   
   
     <a href="/2018/07/14/60面试题目总结1/" id="article-nav-older" class="article-nav-link-wrap">
@@ -569,15 +590,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
