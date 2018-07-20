@@ -154,20 +154,25 @@
 
         
         <a href="/2018/07/18/62排序算法/" class="archive-article-date">
-  	<time datetime="2018-07-18T08:43:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-18</time>
+  	<time datetime="2018-07-19T03:27:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<p><a href="https://github.com/francistao/LearningNotes/blob/master/Part3/Algorithm/Sort/%E9%9D%A2%E8%AF%95%E4%B8%AD%E7%9A%84%2010%20%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93.md" target="_blank" rel="external">面试中的 10 大排序算法总结</a><br><a href="https://javascript.ruanyifeng.com/library/sorting.html" target="_blank" rel="external">阮一峰排序算法</a></p>
-<blockquote>
-<p>一、冒泡排序</p>
+        <blockquote>
+<p> 准备</p>
 </blockquote>
-<p>冒泡排序是最简单的排序了，人如其名，从第一个开始，通过不断的和自己的邻居相比较，最后使得最小的数字在前面，最大的数字在后面。<br><img src="https://i.imgur.com/TplSwHr.gif" alt=""></p>
-
+<p>1、时间复杂度：</p>
+<p>通常使用最差的时间复杂度来衡量一个算法的好坏。</p>
+<p>常数时间 O(1) 代表这个操作和数据量没关系，是一个固定时间的操作，比如说四则运算。</p>
+<p>对于一个算法来说，可能会计算出如下操作次数 <code>aN + 1</code>，<code>N</code> 代表数据量。那么该算法的时间复杂度就是 <code>O(N)</code>。因为我们在计算时间复杂度的时候，数据量通常是非常大的，这时候低阶项和常数项可以忽略不计。</p>
+<p>当然可能会出现两个算法都是 <code>O(N)</code> 的时间复杂度，那么对比两个算法的好坏就要通过对比低阶项和常数项了。</p>
+<p>2、以下两个函数是本章节经常会用到的：<br><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> checkArray(<span class="built_in">array</span>)&#123;</div><div class="line">  <span class="keyword">if</span> (!<span class="built_in">array</span> || <span class="built_in">array</span>.length &lt;= <span class="number">2</span>) return</div><div class="line">&#125;</div><div class="line"><span class="keyword">function</span> swap(<span class="built_in">array</span>, <span class="built_in">left</span>, <span class="built_in">right</span>) &#123;</div><div class="line">  <span class="keyword">let</span> rightValue = <span class="built_in">array</span>[<span class="built_in">right</span>]</div><div class="line">  <span class="built_in">array</span>[<span class="built_in">right</span>] = <span class="built_in">array</span>[<span class="built_in">left</span>]</div><div class="line">  <span class="built_in">array</span>[<span class="built_in">left</span>] = rightValue</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2018/07/18/62排序算法/#more">more >></a>
+        
       
 
       
@@ -557,6 +562,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -565,19 +574,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
