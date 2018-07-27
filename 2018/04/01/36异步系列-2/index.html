@@ -14,7 +14,7 @@
 <meta property="og:url" content="wangsiyuan233.github.io/2018/04/01/36异步系列-2/index.html">
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="这一小节主讲ajax，可以看我之前的封装一个ajax">
-<meta property="og:updated_time" content="2018-04-14T00:57:47.827Z">
+<meta property="og:updated_time" content="2018-07-26T23:59:43.629Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解JavaScript--异步系列(2)">
 <meta name="twitter:description" content="这一小节主讲ajax，可以看我之前的封装一个ajax">
@@ -163,7 +163,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这一小节主讲ajax，可以看我之前的<a href="http://wangsiyuan233.cn/2018/02/28/AJAX%EF%BC%88一%EF%BC%89/" target="_blank" rel="external">封装一个ajax</a><br><a id="more"></a><br>实在是不想写Promise。。</p>
+        <p>这一小节主讲ajax，可以看我之前的<a href="http://wangsiyuan233.cn/2018/02/28/AJAX%EF%BC%88一%EF%BC%89/" target="_blank" rel="external">封装一个ajax</a><br><a id="more"></a></p>
+<blockquote>
+<p>一、 Promise 的由来</p>
+</blockquote>
+<p>Promise 是异步编程的一种解决方案，比我们传统的回调函数、事件更加合理，最早由社区提出并实现，ES6觉得很ok，就写进了语言标准中，统一了语法，并且提供了原生的Promise对象。<br>所谓的Promise，其实就是一个容器，里面保存着未来才会结束的事件（通常是一个异步操作）的结果，从javascript的语法上讲就是一个对象，从里面能获取异步操作的信息，Promise提供统一的api,各种异步操作都可以使用同样的方法来进行处理。</p>
+<p>特点一：Promise对象的状态不受外界影响。代表着一个异步操作，有三种状态:Pending(进行中)、Fulfilled(已成功)和Reject(已失败)。只有异步操作的结果才可以决定当前是哪一种状态，任何其他操作都无法改变这个状态，这也就是Promise的由来。“承诺”，就是其他手段无法更改。<br>特点二：一旦状态改变了，就不会再改变。任何时候都可以得到这个结果。Promise对象的状态的改变只会是两种可能：从Pending变成Fulfilled和Pending变为Rejected。这要这两种情况发生，状态就凝固了，不会再改变了，而是一直保持这样一个结果这时候就成Resolved(已定型)。就算改变已经发生，再对Promise对象添加回调函数，也会立即得到这个结果。这与事件（event）完全不同，事件的特点我们都知道，如果错过它，就监听不到结果的。</p>
+<blockquote>
+<p>二、基本用法</p>
+</blockquote>
+<p>ES6规定，Promise对象是一个构造给函数，是用来生成Promise实例的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> <span class="built_in">Promise</span>=<span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;</div><div class="line"></div><div class="line"><span class="comment">/*逻辑代码*/</span><span class="comment">/*逻辑代码*/</span><span class="comment">/*逻辑代码*/</span><span class="comment">/*逻辑代码*/</span></div><div class="line"></div><div class="line">    <span class="keyword">if</span>(<span class="comment">/*异步操作成功*/</span>)&#123;</div><div class="line">        resolve(value)</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        reject(error)</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>Promise构造函数式会接受两个参数的，该函数的两个参数是resolve和reject，是javascript引擎提供的，不用自己部署。</p>
+<p>resolve函数的作用是，将Promise对象的状态从“未完成”到“成功”（就是从Pending变为Resolved）,在异步操作成功的时候，并将异步操作的结果作为参数传递进去；</p>
+<p>reject函数的作用是将Promise对象的状态从“未完成”变成为“失败”（即从Pending变为Rejected），在异步操作失败的时候调用，将异步草字哦报出的错误传递出去。</p>
 
       
 
@@ -401,11 +413,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
