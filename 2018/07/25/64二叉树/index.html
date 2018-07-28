@@ -8,16 +8,30 @@
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
   <title>二叉树 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="来源于 LeetCode - 226">
+  <meta name="description" content="来源于 LeetCode - 226
+
+一、翻转二叉树
+
+其实思路还是比较简单的：将当前的root节点的左右分支进行对调反转，若左分支存在，则将左分支的节点作为root节点进行对调反转；若右分支存在，则将右分支的节点作为root节点进行对调反转；一直 递归 到所有节点的左右分支都不存在。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="二叉树">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/07/25/64二叉树/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="来源于 LeetCode - 226">
-<meta property="og:updated_time" content="2018-07-25T23:44:15.959Z">
+<meta property="og:description" content="来源于 LeetCode - 226
+
+一、翻转二叉树
+
+其实思路还是比较简单的：将当前的root节点的左右分支进行对调反转，若左分支存在，则将左分支的节点作为root节点进行对调反转；若右分支存在，则将右分支的节点作为root节点进行对调反转；一直 递归 到所有节点的左右分支都不存在。">
+<meta property="og:image" content="https://i.imgur.com/gIjXNsQ.png">
+<meta property="og:updated_time" content="2018-07-27T23:19:56.260Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二叉树">
-<meta name="twitter:description" content="来源于 LeetCode - 226">
+<meta name="twitter:description" content="来源于 LeetCode - 226
+
+一、翻转二叉树
+
+其实思路还是比较简单的：将当前的root节点的左右分支进行对调反转，若左分支存在，则将左分支的节点作为root节点进行对调反转；若右分支存在，则将右分支的节点作为root节点进行对调反转；一直 递归 到所有节点的左右分支都不存在。">
+<meta name="twitter:image" content="https://i.imgur.com/gIjXNsQ.png">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -164,7 +178,30 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>来源于 <a href="https://leetcode.com/problems/invert-binary-tree/description/" target="_blank" rel="external">LeetCode - 226</a></p>
-<a id="more"></a>
+<blockquote>
+<p>一、翻转二叉树</p>
+</blockquote>
+<p><img src="https://i.imgur.com/gIjXNsQ.png" alt=""><br>其实思路还是比较简单的：将当前的root节点的左右分支进行对调反转，若左分支存在，则将左分支的节点作为root节点进行对调反转；若右分支存在，则将右分支的节点作为root节点进行对调反转；一直 <strong>递归</strong> 到所有节点的左右分支都不存在。<br><a id="more"></a><br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for a binary tree node.</div><div class="line"> * function TreeNode(val) &#123;</div><div class="line"> *     this.val = val;</div><div class="line"> *     this.left = this.right = null;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line"><span class="comment">/**</span></div><div class="line"> * @param &#123;TreeNode&#125; root</div><div class="line"> * @return &#123;TreeNode&#125;</div><div class="line"> */</div><div class="line"><span class="keyword">var</span> invertTree = function(root) &#123;</div><div class="line">    <span class="comment">// 传入的根节点可能就是null或者异常节点，则对root进行判断</span></div><div class="line">    <span class="keyword">if</span>(root)&#123;</div><div class="line">        <span class="keyword">var</span> temp = null;</div><div class="line"></div><div class="line">        <span class="comment">// 将当前节点的左右分支进行对调反转</span></div><div class="line">        temp = root.<span class="keyword">left</span>;</div><div class="line">        root.<span class="keyword">left</span> = root.<span class="keyword">right</span>;</div><div class="line">        root.<span class="keyword">right</span> = temp;</div><div class="line"></div><div class="line">        <span class="comment">// 若左分支存在，则递归左分支的节点</span></div><div class="line">        <span class="keyword">if</span>(root.<span class="keyword">left</span>)&#123;</div><div class="line">            invertTree(root.<span class="keyword">left</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 若右分支存在，则递归右分支的节点</span></div><div class="line">        <span class="keyword">if</span>(root.<span class="keyword">right</span>)&#123;</div><div class="line">            invertTree(root.<span class="keyword">right</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 所有的节点遍历完成后，返回根节点</span></div><div class="line">    <span class="keyword">return</span> root;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>二、求二叉树的深度</p>
+</blockquote>
+<ul>
+<li>只有一个根结点时，二叉树深度为1</li>
+<li>只有左子树时，二叉树深度为左子树深度加1</li>
+<li>只有右子树时，二叉树深度为右子树深度加1</li>
+<li>同时存在左右子树时，二叉树深度为左右子树中深度最大者加1<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deep</span><span class="params">(root)</span>&#123;</span></div><div class="line">    <span class="keyword">if</span>(!root)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">let</span> <span class="keyword">left</span> = deep(root.<span class="keyword">left</span>)</div><div class="line">    <span class="keyword">let</span> <span class="keyword">right</span> = deep(root.<span class="keyword">right</span>)</div><div class="line">    <span class="keyword">return</span> <span class="keyword">left</span> &gt; <span class="keyword">right</span> ? <span class="keyword">left</span> + <span class="number">1</span> : <span class="keyword">right</span> + <span class="number">1</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>三、求二叉树的宽度</p>
+</blockquote>
+<ul>
+<li>算出第一层的结点数，保存</li>
+<li>算出第二层的结点数，保存一二层中较大的结点数</li>
+<li>重复以上过程<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">width</span><span class="params">(root)</span>&#123;</span></div><div class="line">    <span class="keyword">if</span>(!root)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">let</span> queue = [root], <span class="built_in">max</span> = <span class="number">1</span>, deep = <span class="number">1</span></div><div class="line">    <span class="keyword">while</span>(queue.length)&#123;</div><div class="line">        <span class="keyword">while</span>(deep--)&#123;</div><div class="line">            <span class="keyword">let</span> temp = queue.shift()</div><div class="line">            <span class="keyword">if</span>(temp.<span class="keyword">left</span>)&#123;</div><div class="line">                queue.push(temp.<span class="keyword">left</span>)</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(temp.<span class="keyword">right</span>)&#123;</div><div class="line">                queue.push(temp.<span class="keyword">right</span>)</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        deep = queue.length</div><div class="line">        <span class="built_in">max</span> = <span class="built_in">max</span> &gt; deep ? <span class="built_in">max</span> : deep</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">max</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
       
 
       
@@ -377,10 +414,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
@@ -393,11 +426,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">
