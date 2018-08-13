@@ -11,7 +11,8 @@
   <meta name="description" content="原型链+继承告一段落，我们接下来开始闭包的部分。当然不会直接开始闭包呀今天想跟大家聊聊 new函数
 声明函数的五种方式废话不多说 当我们在new一个函数的时候我们在干嘛？
 
-新生成了一个对象链接到原型绑定 this返回新对象在调用 new 的过程中会发生以上四件事情，我们也可以试着来自己实现一个 new
+1、新生成了一个对象2、链接到原型3、绑定 this4、返回新对象
+在调用 new 的过程中会发生以上四件事情，我们也可以试着来自己实现一个 new
 
 以【为程序员哥哥们批量制造女友】为例">
 <meta property="og:type" content="article">
@@ -21,17 +22,19 @@
 <meta property="og:description" content="原型链+继承告一段落，我们接下来开始闭包的部分。当然不会直接开始闭包呀今天想跟大家聊聊 new函数
 声明函数的五种方式废话不多说 当我们在new一个函数的时候我们在干嘛？
 
-新生成了一个对象链接到原型绑定 this返回新对象在调用 new 的过程中会发生以上四件事情，我们也可以试着来自己实现一个 new
+1、新生成了一个对象2、链接到原型3、绑定 this4、返回新对象
+在调用 new 的过程中会发生以上四件事情，我们也可以试着来自己实现一个 new
 
 以【为程序员哥哥们批量制造女友】为例">
 <meta property="og:image" content="https://i.imgur.com/1BjUy3y.png">
-<meta property="og:updated_time" content="2018-08-13T15:52:57.194Z">
+<meta property="og:updated_time" content="2018-08-13T15:58:07.350Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="聊聊系列(1)--new函数">
 <meta name="twitter:description" content="原型链+继承告一段落，我们接下来开始闭包的部分。当然不会直接开始闭包呀今天想跟大家聊聊 new函数
 声明函数的五种方式废话不多说 当我们在new一个函数的时候我们在干嘛？
 
-新生成了一个对象链接到原型绑定 this返回新对象在调用 new 的过程中会发生以上四件事情，我们也可以试着来自己实现一个 new
+1、新生成了一个对象2、链接到原型3、绑定 this4、返回新对象
+在调用 new 的过程中会发生以上四件事情，我们也可以试着来自己实现一个 new
 
 以【为程序员哥哥们批量制造女友】为例">
 <meta name="twitter:image" content="https://i.imgur.com/1BjUy3y.png">
@@ -183,7 +186,8 @@
         <p>原型链+继承告一段落，我们接下来开始闭包的部分。<br>当然不会直接开始闭包呀<br>今天想跟大家聊聊 new函数</p>
 <p><a href="http://wangsiyuan233.cn/JS函数.html" target="_blank" rel="external">声明函数的五种方式</a><br>废话不多说 <strong>当我们在new一个函数的时候我们在干嘛？</strong></p>
 <blockquote>
-<p>新生成了一个对象<br>链接到原型<br>绑定 this<br>返回新对象<br>在调用 new 的过程中会发生以上四件事情，我们也可以试着来自己实现一个 new</p>
+<p>1、新生成了一个对象<br>2、链接到原型<br>3、绑定 this<br>4、返回新对象</p>
+<p>在调用 new 的过程中会发生以上四件事情，我们也可以试着来自己实现一个 new</p>
 </blockquote>
 <p>以【为程序员哥哥们批量制造女友】为例<br><a id="more"></a><br>1.1、创造理想型<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> 女孩儿 = &#123;</div><div class="line">  <span class="attr">ID</span>: <span class="number">001</span>, <span class="comment">// 用于区分不同女孩儿</span></div><div class="line">  类型:<span class="string">"甜美可人"</span>,</div><div class="line">  撒娇:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">/*撒娇的代码*/</span>&#125;,</div><div class="line">  攻击:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">/*受死吧直男*/</span>   &#125;,</div><div class="line">  抛弃:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">/**/</span>&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">梦工厂.制造(女孩儿)</div></pre></td></tr></table></figure></p>
 <p>1.2、这样的女孩给我1000个<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> 女孩们 = [];</div><div class="line"><span class="keyword">var</span> 女孩儿</div><div class="line"><span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span>, i&lt;<span class="number">1000</span>, i++)&#123;</div><div class="line">	<span class="keyword">var</span> 女孩儿 = &#123;</div><div class="line">	  <span class="attr">ID</span>: <span class="number">001</span>, <span class="comment">// 用于区分不同女孩儿</span></div><div class="line">	  类型:<span class="string">"甜美可人"</span>,</div><div class="line">	  撒娇:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">/*撒娇的代码*/</span>&#125;,</div><div class="line">	  攻击:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">/*受死吧直男*/</span>   &#125;,</div><div class="line">	  抛弃:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">/*展开新生活*/</span>&#125;</div><div class="line">	 &#125;</div><div class="line">	 女孩们.push(女孩儿)</div><div class="line">&#125;</div><div class="line">梦工厂.制造(女孩儿)</div></pre></td></tr></table></figure></p>
@@ -418,10 +422,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
@@ -435,6 +435,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
