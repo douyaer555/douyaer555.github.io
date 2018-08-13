@@ -10,6 +10,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="原型链+继承告一段落，我们接下来开始闭包的部分。当然不会直接开始闭包呀今天想跟大家聊聊 new函数
 声明函数的五种方式废话不多说 当我们在new一个函数的时候我们在干嘛？
+
+新生成了一个对象链接到原型绑定 this返回新对象在调用 new 的过程中会发生以上四件事情，我们也可以试着来自己实现一个 new
+
 以【为程序员哥哥们批量制造女友】为例">
 <meta property="og:type" content="article">
 <meta property="og:title" content="聊聊系列(1)--new函数">
@@ -17,13 +20,19 @@
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="原型链+继承告一段落，我们接下来开始闭包的部分。当然不会直接开始闭包呀今天想跟大家聊聊 new函数
 声明函数的五种方式废话不多说 当我们在new一个函数的时候我们在干嘛？
+
+新生成了一个对象链接到原型绑定 this返回新对象在调用 new 的过程中会发生以上四件事情，我们也可以试着来自己实现一个 new
+
 以【为程序员哥哥们批量制造女友】为例">
 <meta property="og:image" content="https://i.imgur.com/1BjUy3y.png">
-<meta property="og:updated_time" content="2018-04-14T00:54:05.292Z">
+<meta property="og:updated_time" content="2018-08-13T15:52:57.194Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="聊聊系列(1)--new函数">
 <meta name="twitter:description" content="原型链+继承告一段落，我们接下来开始闭包的部分。当然不会直接开始闭包呀今天想跟大家聊聊 new函数
 声明函数的五种方式废话不多说 当我们在new一个函数的时候我们在干嘛？
+
+新生成了一个对象链接到原型绑定 this返回新对象在调用 new 的过程中会发生以上四件事情，我们也可以试着来自己实现一个 new
+
 以【为程序员哥哥们批量制造女友】为例">
 <meta name="twitter:image" content="https://i.imgur.com/1BjUy3y.png">
   
@@ -173,6 +182,9 @@
       
         <p>原型链+继承告一段落，我们接下来开始闭包的部分。<br>当然不会直接开始闭包呀<br>今天想跟大家聊聊 new函数</p>
 <p><a href="http://wangsiyuan233.cn/JS函数.html" target="_blank" rel="external">声明函数的五种方式</a><br>废话不多说 <strong>当我们在new一个函数的时候我们在干嘛？</strong></p>
+<blockquote>
+<p>新生成了一个对象<br>链接到原型<br>绑定 this<br>返回新对象<br>在调用 new 的过程中会发生以上四件事情，我们也可以试着来自己实现一个 new</p>
+</blockquote>
 <p>以【为程序员哥哥们批量制造女友】为例<br><a id="more"></a><br>1.1、创造理想型<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> 女孩儿 = &#123;</div><div class="line">  <span class="attr">ID</span>: <span class="number">001</span>, <span class="comment">// 用于区分不同女孩儿</span></div><div class="line">  类型:<span class="string">"甜美可人"</span>,</div><div class="line">  撒娇:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">/*撒娇的代码*/</span>&#125;,</div><div class="line">  攻击:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">/*受死吧直男*/</span>   &#125;,</div><div class="line">  抛弃:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">/**/</span>&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">梦工厂.制造(女孩儿)</div></pre></td></tr></table></figure></p>
 <p>1.2、这样的女孩给我1000个<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> 女孩们 = [];</div><div class="line"><span class="keyword">var</span> 女孩儿</div><div class="line"><span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span>, i&lt;<span class="number">1000</span>, i++)&#123;</div><div class="line">	<span class="keyword">var</span> 女孩儿 = &#123;</div><div class="line">	  <span class="attr">ID</span>: <span class="number">001</span>, <span class="comment">// 用于区分不同女孩儿</span></div><div class="line">	  类型:<span class="string">"甜美可人"</span>,</div><div class="line">	  撒娇:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">/*撒娇的代码*/</span>&#125;,</div><div class="line">	  攻击:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">/*受死吧直男*/</span>   &#125;,</div><div class="line">	  抛弃:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">/*展开新生活*/</span>&#125;</div><div class="line">	 &#125;</div><div class="line">	 女孩们.push(女孩儿)</div><div class="line">&#125;</div><div class="line">梦工厂.制造(女孩儿)</div></pre></td></tr></table></figure></p>
 <p>咦，为什么不能这样呢？<br>因为内存浪费了呀！<br>每个女孩的撒娇、攻击和抛弃都是一样的啊（划掉）<br>那我们可以把这些共同的属性写在同一个函数里，调用1000次就行了呀<br>ID和女孩儿的类型这些不同的地方再单独写出来循环<br>根据上一节<a href="http://wangsiyuan233.cn/原型闭包系列-4.html" target="_blank" rel="external">原型链</a>的知识<br>我们可以把 撒娇+攻击+抛弃 放入[女孩原型]中，然后让[女孩儿]通过 <code>__proto__</code>指向[女孩原型]<br>1.3、省空间<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> 女孩儿 = &#123;</div><div class="line">	  <span class="attr">ID</span>: <span class="number">001</span>, <span class="comment">// 用于区分不同女孩儿</span></div><div class="line">	  类型:<span class="string">"甜美可人"</span>,</div><div class="line">	  撒娇:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">/*撒娇的代码*/</span>&#125;,</div><div class="line">	  攻击:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">/*受死吧直男*/</span>   &#125;,</div><div class="line">	  抛弃:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">/*展开新生活*/</span>&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> 女孩们 = [];</div><div class="line"><span class="keyword">var</span> 女孩儿</div><div class="line"><span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span>, i&lt;<span class="number">1000</span>, i++)&#123;</div><div class="line">	女孩儿 = &#123;</div><div class="line">			ID：i;</div><div class="line">			类型:<span class="string">"甜美可人"</span></div><div class="line">&#125;</div><div class="line"><span class="comment">/*实际工作中不要这样写，因为 __proto__ 不是标准属性*/</span></div><div class="line">	女孩儿.__proto__ = 女孩原型</div><div class="line">	女孩们.push(女孩儿)</div><div class="line">&#125;</div><div class="line">梦工厂.制造(女孩儿)</div></pre></td></tr></table></figure></p>
@@ -406,6 +418,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -414,19 +434,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
