@@ -163,8 +163,31 @@
       
         <blockquote>
 <p>一、prototype</p>
+</blockquote>
+<p>1、<code>prototype</code> 是一个显式原型属性，只有函数才拥有该属性。基本上所有函数都有这个属性，但是也有一个例外:</p>
+<p> <code>let fun = Function.prototype.bind()</code></p>
+<p>如果你以上述方法创建一个函数，那么可以发现这个函数是不具有 prototype 属性的。</p>
+<p>2、当我们声明一个函数时，这个属性就被自动创建了。 <code>function Foo() {}</code></p>
+<p>并且这个属性的值是一个对象（也就是原型），只有一个属性 <code>constructor</code></p>
+<p><code>constructor</code> 对应着构造函数，也就是 <code>Foo</code>。</p>
+<p>3、<code>constructor</code>是一个公有且不可枚举的属性。一旦我们改变了函数的 <code>prototype</code> ，那么新对象就没有这个属性了（当然可以通过原型链取到 <code>constructor</code>）。</p>
+<p><code>constructor</code>属性到底有什么用呢？</p>
+<ul>
+<li><p>让实例对象知道是什么函数构造了它</p>
+</li>
+<li><p>如果想给某些类库中的构造函数增加一些自定义的方法，就可以通过 xx.constructor.method 来扩展</p>
+</li>
+</ul>
+<blockquote>
 <p>二、<code>_proto_</code></p>
 </blockquote>
+<p>这是每个对象都有的隐式原型属性，指向了创建该对象的构造函数的原型。其实这个属性指向了<code>[[prototype]]</code>，但是 <code>[[prototype]]</code> 是内部属性，我们并不能访问到，所以使用 <code>_proto_</code> 来访问。</p>
+<p>因为在 JS 中是没有类的概念的，为了实现类似继承的方式，通过 <code>_proto_</code> 将对象和原型联系起来组成原型链，得以让对象可以访问到不属于自己的属性。</p>
+<p>实例对象的 <code>_proto_</code> 如何产生的？</p>
+<p>从上图可知，当我们使用 <code>new</code> 操作符时，生成的实例对象拥有了 <code>_proto_</code> 属性。<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span></span> Foo() &#123;&#125;</div><div class="line">// 这个函数是 <span class="function"><span class="keyword">Function</span></span> 的实例对象</div><div class="line">// <span class="function"><span class="keyword">function</span></span> 就是一个语法糖</div><div class="line">// 内部调用了 new <span class="function"><span class="keyword">Function</span><span class="params">(...)</span></span></div></pre></td></tr></table></figure></p>
+<p>所以可以说，在 <code>new</code> 的过程中，新对象被添加了 <code>_proto_</code> 并且链接到构造函数的原型上。</p>
+<p>对于实例对象来说，都是通过 <code>new</code> 产生的，无论是 <code>function Foo()</code> 还是 <code>let a = { b : 1 }</code> 。</p>
+<p>对于创建一个对象来说，更推荐使用字面量的方式创建对象。因为你使用 <code>new Object()</code> 的方式创建对象需要通过作用域链一层层找到 <code>Object</code>，但是你使用字面量的方式就没这个问题。</p>
 
       
 
@@ -560,15 +583,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -576,7 +595,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -584,11 +603,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
               </li>
              
               <li class="article-tag-list-item">
