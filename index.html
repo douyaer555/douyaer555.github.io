@@ -187,7 +187,7 @@
 <p>从上图可知，当我们使用 <code>new</code> 操作符时，生成的实例对象拥有了 <code>_proto_</code> 属性。<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span></span> Foo() &#123;&#125;</div><div class="line">// 这个函数是 <span class="function"><span class="keyword">Function</span></span> 的实例对象</div><div class="line">// <span class="function"><span class="keyword">function</span></span> 就是一个语法糖</div><div class="line">// 内部调用了 new <span class="function"><span class="keyword">Function</span><span class="params">(...)</span></span></div></pre></td></tr></table></figure></p>
 <p>所以可以说，在 <code>new</code> 的过程中，新对象被添加了 <code>_proto_</code> 并且链接到构造函数的原型上。</p>
 <p>对于实例对象来说，都是通过 <code>new</code> 产生的，无论是 <code>function Foo()</code> 还是 <code>let a = { b : 1 }</code> 。</p>
-<p>对于创建一个对象来说，更推荐使用字面量的方式创建对象。因为你使用 <code>new Object()</code> 的方式创建对象需要通过作用域链一层层找到 <code>Object</code>，但是你使用字面量的方式就没这个问题。</p>
+<p>对于创建一个对象来说，更推荐使用字面量的方式创建对象。因为你使用 <code>new Object()</code> 的方式创建对象需要通过作用域链一层层找到 <code>Object</code>，但是你使用字面量的方式就没这个问题。<br><figure class="highlight monkey"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(</span>) &#123;&#125;</div><div class="line">// <span class="function"><span class="keyword">function</span> 就是个语法糖</span></div><div class="line">// 内部等同于 <span class="keyword">new</span> <span class="function"><span class="keyword">Function</span>(</span>)</div><div class="line">let a = &#123; b: <span class="number">1</span> &#125;</div><div class="line">// 这个字面量内部也是使用了 <span class="keyword">new</span> Object()</div></pre></td></tr></table></figure></p>
 <p>之前总结的<a href="http://wangsiyuan233.cn/2018/02/18/17%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%AE%9E%E4%BE%8B/" target="_blank" rel="external">原型链实例</a></p>
 
       
@@ -576,6 +576,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -584,19 +588,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
