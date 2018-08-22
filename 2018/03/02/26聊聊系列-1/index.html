@@ -27,7 +27,7 @@
 
 以【为程序员哥哥们批量制造女友】为例">
 <meta property="og:image" content="https://i.imgur.com/1BjUy3y.png">
-<meta property="og:updated_time" content="2018-08-13T15:58:07.350Z">
+<meta property="og:updated_time" content="2018-08-21T03:21:36.031Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="聊聊系列(1)--new函数">
 <meta name="twitter:description" content="原型链+继承告一段落，我们接下来开始闭包的部分。当然不会直接开始闭包呀今天想跟大家聊聊 new函数
@@ -197,6 +197,11 @@
 <p>不用创建临时对象，因为 new 会帮你做（你使用「this」就可以访问到临时对象）；<br>不用绑定原型，因为 new 会帮你做（new 为了知道原型在哪，所以指定原型的名字为 prototype）；<br>不用 return 临时对象，因为 new 会帮你做；<br>不要给原型想名字了，因为 new 指定名字为 prototype。<br><img src="https://i.imgur.com/1BjUy3y.png" alt=""><br>2.2、用 new 重写一遍<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> 女孩儿（<span class="title">ID</span>）</span>&#123;</div><div class="line">	<span class="keyword">this</span>.ID = ID</div><div class="line">	<span class="keyword">this</span>.类型 = <span class="string">'甜蜜可人'</span></div><div class="line">&#125;</div><div class="line">女孩儿.prototype = &#123;</div><div class="line">	撒娇:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">/*撒娇的代码*/</span>&#125;,</div><div class="line">	攻击:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">/*受死吧直男*/</span>   &#125;,</div><div class="line">	抛弃:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">/*展开新生活*/</span>&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//保存为 我的女孩儿.js</span></div><div class="line"></div><div class="line"><span class="comment">//引用的时候</span></div><div class="line"><span class="keyword">var</span> 女孩们 = [];</div><div class="line"><span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span>, i&lt;<span class="number">1000</span>, i++)&#123;</div><div class="line">	女孩们.push( <span class="keyword">new</span> 女孩儿(i)) <span class="comment">//新增了一个new</span></div><div class="line">&#125;</div><div class="line">梦工厂.制造(女孩儿)</div></pre></td></tr></table></figure></p>
 <p>这就是所谓的 <strong>语法糖</strong><br>2.3、值得注意的是：new 操作为了记录「临时对象是由哪个函数创建的」，所以预先给「女孩儿.prototype」加了一个 constructor 属性<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">女孩儿.prototype = &#123;</div><div class="line">  <span class="attr">constructor</span>: 女孩儿</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>当然，constructor 是可以删除或修改的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">女孩儿.prototype = &#123;</div><div class="line">    <span class="attr">constructor</span>: 女孩儿</div><div class="line">    撒娇:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">/*撒娇的代码*/</span>&#125;,</div><div class="line">	攻击:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">/*受死吧直男*/</span>   &#125;,</div><div class="line">	抛弃:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">/*展开新生活*/</span>&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>此外还需要注意 new 的运算符优先级</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">&#125;</div><div class="line">Foo.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'1'</span>);</div><div class="line">&#125;;</div><div class="line">Foo.prototype.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'2'</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">new</span> Foo.getName();   <span class="comment">// -&gt; 1</span></div><div class="line"><span class="keyword">new</span> Foo().getName(); <span class="comment">// -&gt; 2</span></div></pre></td></tr></table></figure></p>
+<p><code>new Foo()</code> 的优先级大于 <code>new Foo</code></p>
+<p>对于第一个函数来说，先执行了 <code>Foo.getName()</code> ，所以结果为 1；</p>
+<p>对于后者来说，先执行 <code>new Foo()</code> 产生了一个实例，然后通过原型链找到了 Foo 上的 getName 函数，所以结果为 2。</p>
 
       
 
@@ -434,15 +439,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">

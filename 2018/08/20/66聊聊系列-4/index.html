@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>JS函数 | wangsiyuan</title>
+  <title>聊聊系列(3)-- 深浅拷贝 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、函数的五种声明12345//具名函数 function f(x,y)&amp;#123;     return x+y &amp;#125; f.name // &apos;f&apos;
-123456// 匿名函数 var f f = function(x,y)&amp;#123;     return x+y &amp;#125; f.name // &apos;f&apos;">
+  <meta name="description" content="如果给一个变量赋值一个对象，那么两者的值会是同一个引用，其中一方改变，另一方也会相应改变。123456let a = &amp;#123;    age: 1&amp;#125;let b = aa.age = 2console.log(b.age) // 2
+我们不想要这样的情况出现在开发中，需要浅拷贝">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS函数">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/02/09/12JS函数/index.html">
+<meta property="og:title" content="聊聊系列(3)-- 深浅拷贝">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/08/20/66聊聊系列-4/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="一、函数的五种声明12345//具名函数 function f(x,y)&amp;#123;     return x+y &amp;#125; f.name // &apos;f&apos;
-123456// 匿名函数 var f f = function(x,y)&amp;#123;     return x+y &amp;#125; f.name // &apos;f&apos;">
-<meta property="og:updated_time" content="2018-04-14T00:48:54.132Z">
+<meta property="og:description" content="如果给一个变量赋值一个对象，那么两者的值会是同一个引用，其中一方改变，另一方也会相应改变。123456let a = &amp;#123;    age: 1&amp;#125;let b = aa.age = 2console.log(b.age) // 2
+我们不想要这样的情况出现在开发中，需要浅拷贝">
+<meta property="og:updated_time" content="2018-08-21T04:46:32.930Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS函数">
-<meta name="twitter:description" content="一、函数的五种声明12345//具名函数 function f(x,y)&amp;#123;     return x+y &amp;#125; f.name // &apos;f&apos;
-123456// 匿名函数 var f f = function(x,y)&amp;#123;     return x+y &amp;#125; f.name // &apos;f&apos;">
+<meta name="twitter:title" content="聊聊系列(3)-- 深浅拷贝">
+<meta name="twitter:description" content="如果给一个变量赋值一个对象，那么两者的值会是同一个引用，其中一方改变，另一方也会相应改变。123456let a = &amp;#123;    age: 1&amp;#125;let b = aa.age = 2console.log(b.age) // 2
+我们不想要这样的情况出现在开发中，需要浅拷贝">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -146,37 +146,46 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-12JS函数" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-66聊聊系列-4" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      JS函数
+      聊聊系列(3)-- 深浅拷贝
     </h1>
   
 
         
-        <a href="/2018/02/09/12JS函数/" class="archive-article-date">
-  	<time datetime="2018-02-10T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-10</time>
+        <a href="/2018/08/20/66聊聊系列-4/" class="archive-article-date">
+  	<time datetime="2018-08-20T12:27:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>一、函数的五种声明</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//具名函数</span></div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x,y</span>)</span>&#123;</div><div class="line">     <span class="keyword">return</span> x+y</div><div class="line"> &#125;</div><div class="line"> f.name <span class="comment">// 'f'</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 匿名函数</span></div><div class="line"> <span class="keyword">var</span> f</div><div class="line"> f = <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</div><div class="line">     <span class="keyword">return</span> x+y</div><div class="line"> &#125;</div><div class="line"> f.name <span class="comment">// 'f'</span></div></pre></td></tr></table></figure>
-<a id="more"></a>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//具名函数赋值</span></div><div class="line"> <span class="keyword">var</span> f</div><div class="line"> f = <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params">x,y</span>)</span>&#123; <span class="keyword">return</span> x+y &#125;</div><div class="line"> f.name <span class="comment">// 'f2'</span></div><div class="line"> <span class="built_in">console</span>.log(f2) <span class="comment">// undefined</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// window.Function</span></div><div class="line"><span class="keyword">var</span> f = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">'x'</span>,<span class="string">'y'</span>,<span class="string">'return x+y'</span>)</div><div class="line"> f.name <span class="comment">// "anonymous"</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//箭头函数</span></div><div class="line"> <span class="keyword">var</span> f = <span class="function">(<span class="params">x,y</span>) =&gt;</span> &#123;</div><div class="line">     <span class="keyword">return</span> x+y</div><div class="line"> &#125;</div><div class="line"> <span class="keyword">var</span> sum = <span class="function">(<span class="params">x,y</span>) =&gt;</span> x+y</div><div class="line"> <span class="keyword">var</span> n2 = <span class="function"><span class="params">n</span> =&gt;</span> n*n</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//例1</span></div><div class="line"><span class="keyword">var</span> f1 = <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"><span class="built_in">console</span>.log(f1.name) <span class="comment">//'f2'</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//例2</span></div><div class="line"><span class="keyword">var</span> f1 = <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"><span class="built_in">console</span>.log(f2.name) <span class="comment">//f2不存在且f2不是undefined</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//例3</span></div><div class="line">f3 = <span class="keyword">new</span> <span class="built_in">Function</span> (<span class="string">'x'</span>,<span class="string">'y'</span>)&#123;<span class="keyword">return</span> <span class="string">'x+y'</span>&#125;</div><div class="line"><span class="built_in">console</span>.log(f3.name) <span class="comment">//'anonymous'</span></div><div class="line"><span class="string">`</span></div></pre></td></tr></table></figure>
-<p><strong>二、调用函数</strong><br>f.call(aThis, a1,a2)<br>其中 aThis 会被当做 this，[a1,a2] 会被当做 arguments<br>call的第一个参数由this得到。（this有啥用呢？今天只讲源头）<br>call的其他参数都是arguments<br>禁止使用 f(a1, a2)<br>普通模式下，this会把undefined变成window<br>严格模式下，undefined还是undefined<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="meta">    'use strict'</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>)</div><div class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>)</div><div class="line">    <span class="keyword">return</span> <span class="literal">undefined</span></div><div class="line">&#125;</div><div class="line">f.call(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>) <span class="comment">// this 为 1，arguments 为 [2,3]</span></div></pre></td></tr></table></figure></p>
-<p><strong>三、作用域</strong><br>就近原则<br>1、提升声明，只有a没有值的时候，a为undefined<br>2、只能确定变量的位置，不能确定它的值（延时）<br><strong>四、闭包</strong><br>如果一个函数使用了它范围外的变量，此时（函数+变量）就是闭包。</p>
+        <p>如果<strong>给一个变量赋值一个对象</strong>，那么两者的值会是同一个引用，其中一方改变，另一方也会相应改变。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">let <span class="selector-tag">a</span> = &#123;</div><div class="line">    age: <span class="number">1</span></div><div class="line">&#125;</div><div class="line">let <span class="selector-tag">b</span> = <span class="selector-tag">a</span></div><div class="line"><span class="selector-tag">a</span><span class="selector-class">.age</span> = <span class="number">2</span></div><div class="line">console.log(<span class="selector-tag">b</span>.age) <span class="comment">// 2</span></div></pre></td></tr></table></figure></p>
+<p>我们不想要这样的情况出现在开发中，需要浅拷贝<br><a id="more"></a></p>
+<blockquote>
+<p>一、浅拷贝</p>
+</blockquote>
+<p>1、通过 <code>Object.assign</code><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">let <span class="selector-tag">a</span> = &#123;</div><div class="line">    age: <span class="number">1</span></div><div class="line">&#125;</div><div class="line">let <span class="selector-tag">b</span> = Object.assign(&#123;&#125;, a)</div><div class="line"><span class="selector-tag">a</span><span class="selector-class">.age</span> = <span class="number">2</span></div><div class="line">console.log(<span class="selector-tag">b</span>.age) <span class="comment">// 1</span></div></pre></td></tr></table></figure></p>
+<p>2、通过展开运算符（…）<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">let <span class="selector-tag">a</span> = &#123;</div><div class="line">    age: <span class="number">1</span></div><div class="line">&#125;</div><div class="line">let <span class="selector-tag">b</span> = &#123;...a&#125;</div><div class="line"><span class="selector-tag">a</span><span class="selector-class">.age</span> = <span class="number">2</span></div><div class="line">console.log(<span class="selector-tag">b</span>.age) <span class="comment">// 1</span></div></pre></td></tr></table></figure></p>
+<p>通常浅拷贝就能解决大部分问题了，但是当我们遇到如下情况就需要使用到深拷贝了<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">let <span class="selector-tag">a</span> = &#123;</div><div class="line">    age: <span class="number">1</span>,</div><div class="line">    jobs: &#123;</div><div class="line">        first: <span class="string">'FE'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">let <span class="selector-tag">b</span> = &#123;...a&#125;</div><div class="line"><span class="selector-tag">a</span><span class="selector-class">.jobs</span><span class="selector-class">.first</span> = <span class="string">'native'</span></div><div class="line">console.log(<span class="selector-tag">b</span><span class="selector-class">.jobs</span><span class="selector-class">.first</span>) <span class="comment">// native</span></div></pre></td></tr></table></figure></p>
+<p>浅拷贝只解决了第一层的问题，如果接下去的值中还有对象的话，那么就又回到刚开始的话题了，两者享有相同的引用。要解决这个问题，我们需要引入深拷贝。</p>
+<blockquote>
+<p>二、深拷贝</p>
+</blockquote>
+<p>这个问题通常可以通过 <code>JSON.parse(JSON.stringify(object))</code> 来解决。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">let <span class="selector-tag">a</span> = &#123;</div><div class="line">    age: <span class="number">1</span>,</div><div class="line">    jobs: &#123;</div><div class="line">        first: <span class="string">'FE'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">let <span class="selector-tag">b</span> = JSON.parse(JSON.stringify(a))</div><div class="line"><span class="selector-tag">a</span><span class="selector-class">.jobs</span><span class="selector-class">.first</span> = <span class="string">'native'</span></div><div class="line">console.log(<span class="selector-tag">b</span><span class="selector-class">.jobs</span><span class="selector-class">.first</span>) <span class="comment">// FE</span></div></pre></td></tr></table></figure></p>
+<p>但是该方法也是有<strong>局限性</strong>的：</p>
+<ul>
+<li>会忽略 undefined</li>
+<li>不能序列化函数</li>
+<li>不能解决循环引用的对象<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">let obj = &#123;</div><div class="line">  <span class="selector-tag">a</span>: <span class="number">1</span>,</div><div class="line">  <span class="selector-tag">b</span>: &#123;</div><div class="line">    c: <span class="number">2</span>,</div><div class="line">    d: <span class="number">3</span>,</div><div class="line">  &#125;,</div><div class="line">&#125;</div><div class="line">obj<span class="selector-class">.c</span> = obj<span class="selector-class">.b</span></div><div class="line">obj<span class="selector-class">.e</span> = obj<span class="selector-class">.a</span></div><div class="line">obj<span class="selector-class">.b</span><span class="selector-class">.c</span> = obj<span class="selector-class">.c</span></div><div class="line">obj<span class="selector-class">.b</span><span class="selector-class">.d</span> = obj<span class="selector-class">.b</span></div><div class="line">obj<span class="selector-class">.b</span><span class="selector-class">.e</span> = obj<span class="selector-class">.b</span><span class="selector-class">.c</span></div><div class="line">let newObj = JSON.parse(JSON.stringify(obj))</div><div class="line">console.log(newObj)</div></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
 
@@ -211,11 +220,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">聊聊系列</a>
         		</li>
       		
 		</ul>
@@ -271,7 +276,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/02/09/12JS函数/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/08/20/66聊聊系列-4/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -285,18 +290,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/02/10/13封装一个jQuery/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          封装一个jQuery吧！
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/02/06/11周结-JS初印象/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">周结-JS初印象</div>
+    <a href="/2018/08/13/65原型系列-5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">深入理解JavaScript--原型系列(5)</div>
       <i class="icon-circle-right"></i>
     </a>
   

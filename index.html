@@ -141,6 +141,79 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-66聊聊系列-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/20/66聊聊系列-4/">聊聊系列(3)-- 深浅拷贝</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/20/66聊聊系列-4/" class="archive-article-date">
+  	<time datetime="2018-08-20T12:27:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如果<strong>给一个变量赋值一个对象</strong>，那么两者的值会是同一个引用，其中一方改变，另一方也会相应改变。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">let <span class="selector-tag">a</span> = &#123;</div><div class="line">    age: <span class="number">1</span></div><div class="line">&#125;</div><div class="line">let <span class="selector-tag">b</span> = <span class="selector-tag">a</span></div><div class="line"><span class="selector-tag">a</span><span class="selector-class">.age</span> = <span class="number">2</span></div><div class="line">console.log(<span class="selector-tag">b</span>.age) <span class="comment">// 2</span></div></pre></td></tr></table></figure></p>
+<p>我们不想要这样的情况出现在开发中，需要浅拷贝<br>
+        
+          <a class="article-more-a" href="/2018/08/20/66聊聊系列-4/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">聊聊系列</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-65原型系列-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -177,34 +250,10 @@
 </li>
 <li><p>如果想给某些类库中的构造函数增加一些自定义的方法，就可以通过 xx.constructor.method 来扩展</p>
 </li>
-</ul>
-<blockquote>
-<p>二、<code>_proto_</code></p>
-</blockquote>
-<p>这是每个对象都有的隐式原型属性，指向了创建该对象的构造函数的原型。其实这个属性指向了<code>[[prototype]]</code>，但是 <code>[[prototype]]</code> 是内部属性，我们并不能访问到，所以使用 <code>_proto_</code> 来访问。</p>
-<p>因为在 JS 中是没有类的概念的，为了实现类似继承的方式，通过 <code>_proto_</code> 将对象和原型联系起来组成原型链，得以让对象可以访问到不属于自己的属性。</p>
-<p>实例对象的 <code>_proto_</code> 如何产生的？</p>
-<p>从上图可知，当我们使用 <code>new</code> 操作符时，生成的实例对象拥有了 <code>_proto_</code> 属性。<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span></span> Foo() &#123;&#125;</div><div class="line">// 这个函数是 <span class="function"><span class="keyword">Function</span></span> 的实例对象</div><div class="line">// <span class="function"><span class="keyword">function</span></span> 就是一个语法糖</div><div class="line">// 内部调用了 new <span class="function"><span class="keyword">Function</span><span class="params">(...)</span></span></div></pre></td></tr></table></figure></p>
-<p>所以可以说，在 <code>new</code> 的过程中，新对象被添加了 <code>_proto_</code> 并且链接到构造函数的原型上。</p>
-<p>对于实例对象来说，都是通过 <code>new</code> 产生的，无论是 <code>function Foo()</code> 还是 <code>let a = { b : 1 }</code> 。</p>
-<p>对于创建一个对象来说，更推荐使用字面量的方式创建对象。因为你使用 <code>new Object()</code> 的方式创建对象需要通过作用域链一层层找到 <code>Object</code>，但是你使用字面量的方式就没这个问题。<br><figure class="highlight monkey"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(</span>) &#123;&#125;</div><div class="line">// <span class="function"><span class="keyword">function</span> 就是个语法糖</span></div><div class="line">// 内部等同于 <span class="keyword">new</span> <span class="function"><span class="keyword">Function</span>(</span>)</div><div class="line">let a = &#123; b: <span class="number">1</span> &#125;</div><div class="line">// 这个字面量内部也是使用了 <span class="keyword">new</span> Object()</div></pre></td></tr></table></figure></p>
-<p>之前总结的<a href="http://wangsiyuan233.cn/2018/02/18/17%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%AE%9E%E4%BE%8B/" target="_blank" rel="external">原型链实例</a></p>
-<p>所有对象都可以通过原型链最终找到 <code>Object.prototype</code> ，虽然 <code>Object.prototype</code> 也是一个对象，但是这个对象却不是 <code>Object</code> 创造的，而是引擎自己创建了 <code>Object.prototype</code> 。所以可以这样说：<strong>所有实例都是对象，但是对象不一定都是实例。</strong></p>
-<p>首先引擎创建了 <code>Object.prototype</code> ，然后创建了 <code>Function.prototype</code> ，并且通过<code>__proto__</code>将两者联系了起来。</p>
-<p>这里也很好的解释了一个问题，为什么 <code>let fun = Function.prototype.bind()</code> 没有 <code>prototype</code> 属性。因为 <code>Function.prototype</code> 是引擎创建出来的对象，引擎认为不需要给这个对象添加 <code>prototype</code> 属性。</p>
-<p>所以我们又可以得出一个结论，<strong>不是所有函数都是 new Function() 产生的。</strong></p>
-<p>有了 <code>Function.prototype</code> 以后才有了 <code>function Function()</code> ，然后其他的构造函数都是 <code>function Function()</code> 生成的。</p>
-<p>现在可以来解释 <code>Function.__proto__ === Function.prototype</code> 这个问题了。因为先有的 <code>Function.prototype</code> 以后才有的 <code>function Function()</code> ，所以也就不存在鸡生蛋蛋生鸡的悖论问题了。</p>
-<p>对于为什么 <code>Function.__proto__</code> 会等于 <code>Function.prototype</code> ，个人的理解是：其他所有的构造函数都可以通过原型链找到 <code>Function.prototype</code> ，并且 <code>function Function()</code> 本质也是一个函数，为了不产生混乱就将 <code>function Function()</code> 的 <code>__proto__</code> 联系到了 <code>Function.prototype</code> 上。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li><code>Object</code> 是所有对象的爸爸，所有对象都可以通过 <code>__proto__</code> 找到它</li>
-<li><code>Function</code> 是所有函数的爸爸，所有函数都可以通过 <code>__proto__</code> 找到它</li>
-<li><code>Function.prototype</code> 和 <code>Object.prototype</code> 是两个特殊的对象，他们由引擎来创建</li>
-<li>除了以上两个特殊对象，其他对象都是通过构造器 <code>new</code> 出来的</li>
-<li>函数的 <code>prototype</code> 是一个对象，也就是原型</li>
-<li>对象的 <code>__proto__</code> 指向原型， <code>__proto__</code> 将对象和原型连接起来组成了原型链</li>
-</ul>
-
+<li>
+        
+          <a class="article-more-a" href="/2018/08/13/65原型系列-5/#more">more >></a>
+        
       
 
       
@@ -442,77 +491,9 @@
 
 
   
-    <article id="post-61前端题目总结2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/17/61前端题目总结2/">前端总结2</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/17/61前端题目总结2/" class="archive-article-date">
-  	<time datetime="2018-07-17T07:52:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><blockquote>
-<p>JS 有哪些数据类型？</p>
-</blockquote>
-<p>string number bool undefined null object symbol<br>object 包括了数组、函数、正则、日期等对象<br>一旦出现（数组、函数、正则、日期、NaN）直接0分</p>
-<blockquote>
-<p>（必考） Promise 怎么使用？</p>
-</blockquote>
-<p><a href="http://wangsiyuan233.cn/2018/04/01/36%E5%BC%82%E6%AD%A5%E7%B3%BB%E5%88%97-2/">深入理解JavaScript–异步系列(2)</a><br>
-        
-          <a class="article-more-a" href="/2018/07/17/61前端题目总结2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -603,15 +584,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
