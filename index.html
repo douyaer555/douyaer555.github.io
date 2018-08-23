@@ -141,6 +141,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-67聊聊系列-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/22/67聊聊系列-5/">聊聊系列(5)-- 继承</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/22/67聊聊系列-5/" class="archive-article-date">
+  	<time datetime="2018-08-22T13:11:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>一、ES5</p>
+</blockquote>
+<p>在 ES5 中，我们可以使用如下方式解决继承的问题,实现思路就是将子类的原型设置为父类的原型<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Super</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">Super.prototype.getNumber = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="number">1</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Sub</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line"><span class="keyword">let</span> s = <span class="keyword">new</span> Sub()</div><div class="line">Sub.prototype = <span class="built_in">Object</span>.create(Super.prototype, &#123;</div><div class="line">  <span class="attr">constructor</span>: &#123;</div><div class="line">    <span class="attr">value</span>: Sub,</div><div class="line">    <span class="attr">enumerable</span>: <span class="literal">false</span>,</div><div class="line">    <span class="attr">writable</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">configurable</span>: <span class="literal">true</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>二、ES6</p>
+</blockquote>
+<p>通过 class 语法轻松解决ES5的问题<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyDate</span> <span class="keyword">extends</span> <span class="title">Date</span> </span>&#123;</div><div class="line">  test() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.getTime()</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">let myDate = <span class="keyword">new</span> <span class="type">MyDate</span>()</div><div class="line">myDate.test()</div></pre></td></tr></table></figure></p>
+<p>但是 ES6 不是所有浏览器都兼容，所以我们需要使用 Babel 来编译这段代码。</p>
+<p>如果你使用编译过得代码调用 <code>myDate.test()</code> 你会惊奇地发现出现了报错<br><img src="https://i.imgur.com/5EPAs20.png" alt=""><br>因为在 JS 底层有限制，如果不是由 Date 构造出来的实例的话，是不能调用 Date 里的函数的。所以这也侧面的说明了：ES6 中的 <code>class</code> 继承与 ES5 中的一般继承写法是不同的。</p>
+<p>既然底层限制了实例必须由 Date 构造出来，那么我们可以改变下思路实现继承<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyData</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">MyData.prototype.test = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.getTime()</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>()</div><div class="line"><span class="built_in">Object</span>.setPrototypeOf(d, MyData.prototype)</div><div class="line"><span class="built_in">Object</span>.setPrototypeOf(MyData.prototype, <span class="built_in">Date</span>.prototype)</div></pre></td></tr></table></figure></p>
+<p>以上继承实现思路：先创建父类实例 =&gt; 改变实例原先的 <code>_proto__</code> 转而连接到子类的 <code>prototype</code> =&gt; 子类的 <code>prototype</code> 的 <code>__proto__</code> 改为父类的 <code>prototype</code>。</p>
+<p>通过以上方法实现的继承就可以完美解决 JS 底层的这个限制。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">聊聊系列</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-66聊聊系列-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -148,7 +230,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/20/66聊聊系列-4/">聊聊系列(3)-- 深浅拷贝</a>
+      <a class="article-title" href="/2018/08/20/66聊聊系列-4/">聊聊系列(4)-- 深浅拷贝</a>
     </h1>
   
 
@@ -422,75 +504,6 @@
 
 
   
-    <article id="post-62排序算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/62排序算法/">排序算法</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/18/62排序算法/" class="archive-article-date">
-  	<time datetime="2018-07-19T03:27:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p> 准备</p>
-</blockquote>
-<p>1、时间复杂度：</p>
-<p>通常使用最差的时间复杂度来衡量一个算法的好坏。</p>
-<p>常数时间 O(1) 代表这个操作和数据量没关系，是一个固定时间的操作，比如说四则运算。</p>
-<p>对于一个算法来说，可能会计算出如下操作次数 <code>aN + 1</code>，<code>N</code> 代表数据量。那么该算法的时间复杂度就是 <code>O(N)</code>。因为我们在计算时间复杂度的时候，数据量通常是非常大的，这时候低阶项和常数项可以忽略不计。</p>
-<p>当然可能会出现两个算法都是 <code>O(N)</code> 的时间复杂度，那么对比两个算法的好坏就要通过对比低阶项和常数项了。</p>
-<p>2、以下两个函数是本章节经常会用到的：<br><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> checkArray(<span class="built_in">array</span>)&#123;</div><div class="line">  <span class="keyword">if</span> (!<span class="built_in">array</span> || <span class="built_in">array</span>.length &lt;= <span class="number">2</span>) return</div><div class="line">&#125;</div><div class="line"><span class="keyword">function</span> swap(<span class="built_in">array</span>, <span class="built_in">left</span>, <span class="built_in">right</span>) &#123;</div><div class="line">  <span class="keyword">let</span> rightValue = <span class="built_in">array</span>[<span class="built_in">right</span>]</div><div class="line">  <span class="built_in">array</span>[<span class="built_in">right</span>] = <span class="built_in">array</span>[<span class="built_in">left</span>]</div><div class="line">  <span class="built_in">array</span>[<span class="built_in">left</span>] = rightValue</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2018/07/18/62排序算法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -572,6 +585,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -580,19 +597,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -604,11 +617,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
               </li>
              
               <li class="article-tag-list-item">

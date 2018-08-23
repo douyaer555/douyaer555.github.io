@@ -6,21 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>聊聊系列(3)-- 深浅拷贝 | wangsiyuan</title>
+  <title>聊聊系列(4)-- 深浅拷贝 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="如果给一个变量赋值一个对象，那么两者的值会是同一个引用，其中一方改变，另一方也会相应改变。123456let a = &amp;#123;    age: 1&amp;#125;let b = aa.age = 2console.log(b.age) // 2
 我们不想要这样的情况出现在开发中，需要浅拷贝">
 <meta property="og:type" content="article">
-<meta property="og:title" content="聊聊系列(3)-- 深浅拷贝">
+<meta property="og:title" content="聊聊系列(4)-- 深浅拷贝">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/08/20/66聊聊系列-4/index.html">
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="如果给一个变量赋值一个对象，那么两者的值会是同一个引用，其中一方改变，另一方也会相应改变。123456let a = &amp;#123;    age: 1&amp;#125;let b = aa.age = 2console.log(b.age) // 2
 我们不想要这样的情况出现在开发中，需要浅拷贝">
-<meta property="og:updated_time" content="2018-08-21T04:46:32.930Z">
+<meta property="og:image" content="https://i.imgur.com/mIZISaM.png">
+<meta property="og:updated_time" content="2018-08-23T04:11:18.183Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="聊聊系列(3)-- 深浅拷贝">
+<meta name="twitter:title" content="聊聊系列(4)-- 深浅拷贝">
 <meta name="twitter:description" content="如果给一个变量赋值一个对象，那么两者的值会是同一个引用，其中一方改变，另一方也会相应改变。123456let a = &amp;#123;    age: 1&amp;#125;let b = aa.age = 2console.log(b.age) // 2
 我们不想要这样的情况出现在开发中，需要浅拷贝">
+<meta name="twitter:image" content="https://i.imgur.com/mIZISaM.png">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -153,7 +155,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      聊聊系列(3)-- 深浅拷贝
+      聊聊系列(4)-- 深浅拷贝
     </h1>
   
 
@@ -178,14 +180,19 @@
 <blockquote>
 <p>二、深拷贝</p>
 </blockquote>
-<p>这个问题通常可以通过 <code>JSON.parse(JSON.stringify(object))</code> 来解决。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">let <span class="selector-tag">a</span> = &#123;</div><div class="line">    age: <span class="number">1</span>,</div><div class="line">    jobs: &#123;</div><div class="line">        first: <span class="string">'FE'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">let <span class="selector-tag">b</span> = JSON.parse(JSON.stringify(a))</div><div class="line"><span class="selector-tag">a</span><span class="selector-class">.jobs</span><span class="selector-class">.first</span> = <span class="string">'native'</span></div><div class="line">console.log(<span class="selector-tag">b</span><span class="selector-class">.jobs</span><span class="selector-class">.first</span>) <span class="comment">// FE</span></div></pre></td></tr></table></figure></p>
+<p>1、这个问题通常可以通过 <code>JSON.parse(JSON.stringify(object))</code> 来解决。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">let <span class="selector-tag">a</span> = &#123;</div><div class="line">    age: <span class="number">1</span>,</div><div class="line">    jobs: &#123;</div><div class="line">        first: <span class="string">'FE'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">let <span class="selector-tag">b</span> = JSON.parse(JSON.stringify(a))</div><div class="line"><span class="selector-tag">a</span><span class="selector-class">.jobs</span><span class="selector-class">.first</span> = <span class="string">'native'</span></div><div class="line">console.log(<span class="selector-tag">b</span><span class="selector-class">.jobs</span><span class="selector-class">.first</span>) <span class="comment">// FE</span></div></pre></td></tr></table></figure></p>
 <p>但是该方法也是有<strong>局限性</strong>的：</p>
 <ul>
 <li>会忽略 undefined</li>
 <li>不能序列化函数</li>
-<li>不能解决循环引用的对象<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">let obj = &#123;</div><div class="line">  <span class="selector-tag">a</span>: <span class="number">1</span>,</div><div class="line">  <span class="selector-tag">b</span>: &#123;</div><div class="line">    c: <span class="number">2</span>,</div><div class="line">    d: <span class="number">3</span>,</div><div class="line">  &#125;,</div><div class="line">&#125;</div><div class="line">obj<span class="selector-class">.c</span> = obj<span class="selector-class">.b</span></div><div class="line">obj<span class="selector-class">.e</span> = obj<span class="selector-class">.a</span></div><div class="line">obj<span class="selector-class">.b</span><span class="selector-class">.c</span> = obj<span class="selector-class">.c</span></div><div class="line">obj<span class="selector-class">.b</span><span class="selector-class">.d</span> = obj<span class="selector-class">.b</span></div><div class="line">obj<span class="selector-class">.b</span><span class="selector-class">.e</span> = obj<span class="selector-class">.b</span><span class="selector-class">.c</span></div><div class="line">let newObj = JSON.parse(JSON.stringify(obj))</div><div class="line">console.log(newObj)</div></pre></td></tr></table></figure>
-</li>
+<li>不能解决循环引用的对象</li>
 </ul>
+<p>例如：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">let obj = &#123;</div><div class="line">  <span class="selector-tag">a</span>: <span class="number">1</span>,</div><div class="line">  <span class="selector-tag">b</span>: &#123;</div><div class="line">    c: <span class="number">2</span>,</div><div class="line">    d: <span class="number">3</span>,</div><div class="line">  &#125;,</div><div class="line">&#125;</div><div class="line">obj<span class="selector-class">.c</span> = obj<span class="selector-class">.b</span></div><div class="line">obj<span class="selector-class">.e</span> = obj<span class="selector-class">.a</span></div><div class="line">obj<span class="selector-class">.b</span><span class="selector-class">.c</span> = obj<span class="selector-class">.c</span></div><div class="line">obj<span class="selector-class">.b</span><span class="selector-class">.d</span> = obj<span class="selector-class">.b</span></div><div class="line">obj<span class="selector-class">.b</span><span class="selector-class">.e</span> = obj<span class="selector-class">.b</span><span class="selector-class">.c</span></div><div class="line">let newObj = JSON.parse(JSON.stringify(obj))</div><div class="line">console.log(newObj)</div></pre></td></tr></table></figure></p>
+<p>如果你用上面的方法深拷贝，你会发现如下报错：<br><img src="https://i.imgur.com/mIZISaM.png" alt=""></p>
+<p>在遇到函数或者 undefined 的时候，该对象也不能正常的序列化<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = &#123;</div><div class="line">    <span class="attr">age</span>: <span class="literal">undefined</span>,</div><div class="line">    <span class="attr">jobs</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</div><div class="line">    <span class="attr">name</span>: <span class="string">'yck'</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> b = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(a))</div><div class="line"><span class="built_in">console</span>.log(b) <span class="comment">// &#123;name: "yck"&#125;</span></div></pre></td></tr></table></figure></p>
+<p>你会发现在上述情况中，该方法会忽略掉函数和 <code>undefined</code></p>
+<p>2、在通常情况下，复杂数据都是可以序列化的，所以这个函数可以解决大部分问题，并且该函数是内置函数中处理深拷贝性能最快的。当然如果你的数据中含有以上三种情况下，可以使用 <a href="https://lodash.com/docs/4.17.10#cloneDeep" target="_blank" rel="external">lodash 的深拷贝函数</a>。</p>
+<p>3、如果你所需拷贝的对象含有内置类型并且不包含函数，可以使用 <code>MessageChannel</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">structuralClone</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">const</span> &#123;port1, port2&#125; = <span class="keyword">new</span> MessageChannel();</div><div class="line">    port2.onmessage = <span class="function"><span class="params">ev</span> =&gt;</span> resolve(ev.data);</div><div class="line">    port1.postMessage(obj);</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: &#123;</div><div class="line">    <span class="attr">c</span>: b</div><div class="line">&#125;&#125;</div><div class="line"><span class="comment">// 注意该方法是异步的</span></div><div class="line"><span class="comment">// 可以处理 undefined 和循环引用对象</span></div><div class="line"><span class="keyword">const</span> clone = <span class="keyword">await</span> structuralClone(obj);</div></pre></td></tr></table></figure></p>
 
       
 
@@ -289,6 +296,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/08/22/67聊聊系列-5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          聊聊系列(5)-- 继承
+        
+      </div>
+    </a>
   
   
     <a href="/2018/08/13/65原型系列-5/" id="article-nav-older" class="article-nav-link-wrap">
@@ -402,6 +418,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -410,19 +430,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -434,11 +450,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
               </li>
              
               <li class="article-tag-list-item">
