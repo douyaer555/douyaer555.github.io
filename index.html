@@ -141,6 +141,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-68聊聊系列-6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/22/68聊聊系列-6/">聊聊系列(6)-- call, apply, bind 区别</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/22/68聊聊系列-6/" class="archive-article-date">
+  	<time datetime="2018-08-23T02:23:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://wangsiyuan233.cn/2018/03/04/27%E8%81%8A%E8%81%8A%E7%B3%BB%E5%88%97-2/">【【【this 实例-第9条】】】</a></p>
+<blockquote>
+<p>一、 call 和 apply 的异同</p>
+</blockquote>
+<p><code>call</code> 和 <code>apply</code> 都是为了解决改变 <code>this</code> 的指向。作用都是相同的，只是传参的方式不同。</p>
+<p>除了第一个参数外，<code>call</code> 可以接收一个参数列表，<code>apply</code> 只接受一个参数数组。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = &#123;</div><div class="line">    <span class="attr">value</span>: <span class="number">1</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getValue</span>(<span class="params">name, age</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(name)</div><div class="line">    <span class="built_in">console</span>.log(age)</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.value)</div><div class="line">&#125;</div><div class="line">getValue.call(a, <span class="string">'yck'</span>, <span class="string">'24'</span>)</div><div class="line">getValue.apply(a, [<span class="string">'yck'</span>, <span class="string">'24'</span>])</div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2018/08/22/68聊聊系列-6/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">聊聊系列</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-67聊聊系列-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -165,16 +242,9 @@
 <p>一、ES5</p>
 </blockquote>
 <p>在 ES5 中，我们可以使用如下方式解决继承的问题,实现思路就是将子类的原型设置为父类的原型<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Super</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">Super.prototype.getNumber = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="number">1</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Sub</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line"><span class="keyword">let</span> s = <span class="keyword">new</span> Sub()</div><div class="line">Sub.prototype = <span class="built_in">Object</span>.create(Super.prototype, &#123;</div><div class="line">  <span class="attr">constructor</span>: &#123;</div><div class="line">    <span class="attr">value</span>: Sub,</div><div class="line">    <span class="attr">enumerable</span>: <span class="literal">false</span>,</div><div class="line">    <span class="attr">writable</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">configurable</span>: <span class="literal">true</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>二、ES6</p>
-</blockquote>
-<p>通过 class 语法轻松解决ES5的问题<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyDate</span> <span class="keyword">extends</span> <span class="title">Date</span> </span>&#123;</div><div class="line">  test() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.getTime()</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">let myDate = <span class="keyword">new</span> <span class="type">MyDate</span>()</div><div class="line">myDate.test()</div></pre></td></tr></table></figure></p>
-<p>但是 ES6 不是所有浏览器都兼容，所以我们需要使用 Babel 来编译这段代码。</p>
-<p>如果你使用编译过得代码调用 <code>myDate.test()</code> 你会惊奇地发现出现了报错<br><img src="https://i.imgur.com/5EPAs20.png" alt=""><br>因为在 JS 底层有限制，如果不是由 Date 构造出来的实例的话，是不能调用 Date 里的函数的。所以这也侧面的说明了：ES6 中的 <code>class</code> 继承与 ES5 中的一般继承写法是不同的。</p>
-<p>既然底层限制了实例必须由 Date 构造出来，那么我们可以改变下思路实现继承<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyData</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">MyData.prototype.test = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.getTime()</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>()</div><div class="line"><span class="built_in">Object</span>.setPrototypeOf(d, MyData.prototype)</div><div class="line"><span class="built_in">Object</span>.setPrototypeOf(MyData.prototype, <span class="built_in">Date</span>.prototype)</div></pre></td></tr></table></figure></p>
-<p>以上继承实现思路：先创建父类实例 =&gt; 改变实例原先的 <code>_proto__</code> 转而连接到子类的 <code>prototype</code> =&gt; 子类的 <code>prototype</code> 的 <code>__proto__</code> 改为父类的 <code>prototype</code>。</p>
-<p>通过以上方法实现的继承就可以完美解决 JS 底层的这个限制。</p>
-
+        
+          <a class="article-more-a" href="/2018/08/22/67聊聊系列-5/#more">more >></a>
+        
       
 
       
@@ -438,72 +508,6 @@
 
 
   
-    <article id="post-63二分查找" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/23/63二分查找/">二分查找（binary search）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/23/63二分查找/" class="archive-article-date">
-  	<time datetime="2018-07-24T02:02:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>树拥有很多种结构，二叉树是树中最常用的结构，同时也是一个天然的递归结构。</p>
-<p>二分查找树也是二叉树，拥有二叉树的特性。但是区别在于二分查找树每个节点的值都<strong>比他的左子树的值大</strong>，<strong>比右子树的值小</strong>。</p>
-<blockquote>
-<p>一、创建一颗最简单的树</p>
-</blockquote>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(value) &#123;</div><div class="line">    <span class="keyword">this</span>.value = value</div><div class="line">    <span class="keyword">this</span>.left = <span class="literal">null</span></div><div class="line">    <span class="keyword">this</span>.right = <span class="literal">null</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BST</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="keyword">this</span>.root = <span class="literal">null</span></div><div class="line">    <span class="keyword">this</span>.size = <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">  getSize() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.size</div><div class="line">  &#125;</div><div class="line">  isEmpty() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.size === <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">  addNode(v) &#123;</div><div class="line">    <span class="keyword">this</span>.root = <span class="keyword">this</span>._addChild(<span class="keyword">this</span>.root, v)</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// 添加节点时，需要比较添加的节点值和当前</span></div><div class="line">  <span class="comment">// 节点值的大小</span></div><div class="line">  _addChild(node, v) &#123;</div><div class="line">    <span class="keyword">if</span> (!node) &#123;</div><div class="line">      <span class="keyword">this</span>.size++</div><div class="line">      <span class="keyword">return</span> new Node(v)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (node.value &gt; v) &#123;</div><div class="line">      node.left = <span class="keyword">this</span>._addChild(node.left, v)</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (node.value &lt; v) &#123;</div><div class="line">      node.right = <span class="keyword">this</span>._addChild(node.right, v)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> node</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/07/23/63二分查找/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -585,15 +589,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -617,11 +621,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">

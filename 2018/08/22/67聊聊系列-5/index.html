@@ -19,7 +19,7 @@
 
 在 ES5 中，我们可以使用如下方式解决继承的问题,实现思路就是将子类的原型设置为父类的原型123456789101112131415function Super() &amp;#123;&amp;#125;Super.prototype.getNumber = function() &amp;#123;  return 1&amp;#125;function Sub() &amp;#123;&amp;#125;let s =">
 <meta property="og:image" content="https://i.imgur.com/5EPAs20.png">
-<meta property="og:updated_time" content="2018-08-23T04:27:40.287Z">
+<meta property="og:updated_time" content="2018-08-23T17:16:08.313Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="聊聊系列(5)-- 继承">
 <meta name="twitter:description" content="一、ES5
@@ -175,6 +175,7 @@
 <p>一、ES5</p>
 </blockquote>
 <p>在 ES5 中，我们可以使用如下方式解决继承的问题,实现思路就是将子类的原型设置为父类的原型<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Super</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">Super.prototype.getNumber = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="number">1</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Sub</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line"><span class="keyword">let</span> s = <span class="keyword">new</span> Sub()</div><div class="line">Sub.prototype = <span class="built_in">Object</span>.create(Super.prototype, &#123;</div><div class="line">  <span class="attr">constructor</span>: &#123;</div><div class="line">    <span class="attr">value</span>: Sub,</div><div class="line">    <span class="attr">enumerable</span>: <span class="literal">false</span>,</div><div class="line">    <span class="attr">writable</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">configurable</span>: <span class="literal">true</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <blockquote>
 <p>二、ES6</p>
 </blockquote>
@@ -288,6 +289,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2018/08/22/68聊聊系列-6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          聊聊系列(6)-- call, apply, bind 区别
+        
+      </div>
+    </a>
+  
   
     <a href="/2018/08/20/66聊聊系列-4/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">聊聊系列(4)-- 深浅拷贝</div>
@@ -400,15 +410,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -432,11 +442,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -141,6 +141,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-38聊聊系列-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/02/38聊聊系列-3/">聊聊系列(3)-- HTTP</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/02/38聊聊系列-3/" class="archive-article-date">
+  	<time datetime="2018-04-03T06:53:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文是<a href="https://book.douban.com/subject/25863515/">《图解HTTP》</a>的“摘要”版本，笔者更多关注得是和自身知识所融洽的部分，如果对更详细的内容感兴趣，可以移步实体书。</p>
+<h2 id="一、TCP-IP通信传输流"><a href="#一、TCP-IP通信传输流" class="headerlink" title="一、TCP/IP通信传输流"></a>一、TCP/IP通信传输流</h2><p><img src="https://i.imgur.com/wj6Zhcp.png" alt=""><br>
+        
+          <a class="article-more-a" href="/2018/04/02/38聊聊系列-3/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">聊聊系列</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTTP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-37Algorithms1-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -238,6 +315,7 @@
 <blockquote>
 <p>一、 Promise 的由来</p>
 </blockquote>
+<p>Promise 是 ES6 新增的语法，解决了回调地狱的问题。</p>
 <p>Promise 是异步编程的一种解决方案，比我们传统的回调函数、事件更加合理，最早由社区提出并实现，ES6觉得很ok，就写进了语言标准中，统一了语法，并且提供了原生的Promise对象。<br>所谓的Promise，其实就是一个容器，里面保存着未来才会结束的事件（通常是一个异步操作）的结果，从javascript的语法上讲就是一个对象，从里面能获取异步操作的信息，Promise提供统一的api,各种异步操作都可以使用同样的方法来进行处理。</p>
 <p>特点一：Promise对象的状态不受外界影响。代表着一个异步操作，有三种状态:Pending(进行中)、Fulfilled(已成功)和Reject(已失败)。只有异步操作的结果才可以决定当前是哪一种状态，任何其他操作都无法改变这个状态，这也就是Promise的由来。“承诺”，就是其他手段无法更改。<br>特点二：一旦状态改变了，就不会再改变。任何时候都可以得到这个结果。Promise对象的状态的改变只会是两种可能：从Pending变成Fulfilled和Pending变为Rejected。这要这两种情况发生，状态就凝固了，不会再改变了，而是一直保持这样一个结果这时候就成Resolved(已定型)。就算改变已经发生，再对Promise对象添加回调函数，也会立即得到这个结果。这与事件（event）完全不同，事件的特点我们都知道，如果错过它，就监听不到结果的。</p>
 <blockquote>
@@ -460,82 +538,6 @@
 
 
   
-    <article id="post-32函数知多少" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/28/32函数知多少/">函数知多少</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/28/32函数知多少/" class="archive-article-date">
-  	<time datetime="2018-03-29T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>一、定义</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1、匿名函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;<span class="keyword">return</span> <span class="number">3</span>&#125; <span class="comment">//浏览器会直接报错</span></div><div class="line"><span class="keyword">var</span> f1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;&#125; <span class="comment">//将匿名函数存在f1这个地址</span></div><div class="line">f1.name <span class="comment">//f1   虽然是匿名函数，但是它有name</span></div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2018/03/28/32函数知多少/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">进阶</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
@@ -617,15 +619,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -649,11 +651,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
