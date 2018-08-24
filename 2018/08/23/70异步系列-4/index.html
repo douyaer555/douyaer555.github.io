@@ -6,21 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>JS函数 | wangsiyuan</title>
+  <title>深入理解JavaScript--异步系列(4) | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、函数的五种声明12345//具名函数 function f(x,y)&amp;#123;     return x+y &amp;#125; f.name // &apos;f&apos;
-123456// 匿名函数 var f f = function(x,y)&amp;#123;     return x+y &amp;#125; f.name // &apos;f&apos;">
+  <meta name="description" content="async 和 await">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS函数">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/02/09/12JS函数/index.html">
+<meta property="og:title" content="深入理解JavaScript--异步系列(4)">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/08/23/70异步系列-4/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="一、函数的五种声明12345//具名函数 function f(x,y)&amp;#123;     return x+y &amp;#125; f.name // &apos;f&apos;
-123456// 匿名函数 var f f = function(x,y)&amp;#123;     return x+y &amp;#125; f.name // &apos;f&apos;">
-<meta property="og:updated_time" content="2018-04-14T00:48:54.132Z">
+<meta property="og:description" content="async 和 await">
+<meta property="og:updated_time" content="2018-08-24T02:50:04.939Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS函数">
-<meta name="twitter:description" content="一、函数的五种声明12345//具名函数 function f(x,y)&amp;#123;     return x+y &amp;#125; f.name // &apos;f&apos;
-123456// 匿名函数 var f f = function(x,y)&amp;#123;     return x+y &amp;#125; f.name // &apos;f&apos;">
+<meta name="twitter:title" content="深入理解JavaScript--异步系列(4)">
+<meta name="twitter:description" content="async 和 await">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -146,37 +143,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-12JS函数" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-70异步系列-4" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      JS函数
+      深入理解JavaScript--异步系列(4)
     </h1>
   
 
         
-        <a href="/2018/02/09/12JS函数/" class="archive-article-date">
-  	<time datetime="2018-02-10T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-10</time>
+        <a href="/2018/08/23/70异步系列-4/" class="archive-article-date">
+  	<time datetime="2018-08-23T11:41:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>一、函数的五种声明</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//具名函数</span></div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x,y</span>)</span>&#123;</div><div class="line">     <span class="keyword">return</span> x+y</div><div class="line"> &#125;</div><div class="line"> f.name <span class="comment">// 'f'</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 匿名函数</span></div><div class="line"> <span class="keyword">var</span> f</div><div class="line"> f = <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</div><div class="line">     <span class="keyword">return</span> x+y</div><div class="line"> &#125;</div><div class="line"> f.name <span class="comment">// 'f'</span></div></pre></td></tr></table></figure>
-<a id="more"></a>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//具名函数赋值</span></div><div class="line"> <span class="keyword">var</span> f</div><div class="line"> f = <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params">x,y</span>)</span>&#123; <span class="keyword">return</span> x+y &#125;</div><div class="line"> f.name <span class="comment">// 'f2'</span></div><div class="line"> <span class="built_in">console</span>.log(f2) <span class="comment">// undefined</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// window.Function</span></div><div class="line"><span class="keyword">var</span> f = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">'x'</span>,<span class="string">'y'</span>,<span class="string">'return x+y'</span>)</div><div class="line"> f.name <span class="comment">// "anonymous"</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//箭头函数</span></div><div class="line"> <span class="keyword">var</span> f = <span class="function">(<span class="params">x,y</span>) =&gt;</span> &#123;</div><div class="line">     <span class="keyword">return</span> x+y</div><div class="line"> &#125;</div><div class="line"> <span class="keyword">var</span> sum = <span class="function">(<span class="params">x,y</span>) =&gt;</span> x+y</div><div class="line"> <span class="keyword">var</span> n2 = <span class="function"><span class="params">n</span> =&gt;</span> n*n</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//例1</span></div><div class="line"><span class="keyword">var</span> f1 = <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"><span class="built_in">console</span>.log(f1.name) <span class="comment">//'f2'</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//例2</span></div><div class="line"><span class="keyword">var</span> f1 = <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"><span class="built_in">console</span>.log(f2.name) <span class="comment">//f2不存在且f2不是undefined</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//例3</span></div><div class="line">f3 = <span class="keyword">new</span> <span class="built_in">Function</span> (<span class="string">'x'</span>,<span class="string">'y'</span>)&#123;<span class="keyword">return</span> <span class="string">'x+y'</span>&#125;</div><div class="line"><span class="built_in">console</span>.log(f3.name) <span class="comment">//'anonymous'</span></div><div class="line"><span class="string">`</span></div></pre></td></tr></table></figure>
-<p><strong>二、调用函数</strong><br>f.call(aThis, a1,a2)<br>其中 aThis 会被当做 this，[a1,a2] 会被当做 arguments<br>call的第一个参数由this得到。（this有啥用呢？今天只讲源头）<br>call的其他参数都是arguments<br>禁止使用 f(a1, a2)<br>普通模式下，this会把undefined变成window<br>严格模式下，undefined还是undefined<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="meta">    'use strict'</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>)</div><div class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>)</div><div class="line">    <span class="keyword">return</span> <span class="literal">undefined</span></div><div class="line">&#125;</div><div class="line">f.call(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>) <span class="comment">// this 为 1，arguments 为 [2,3]</span></div></pre></td></tr></table></figure></p>
-<p><strong>三、作用域</strong><br>就近原则<br>1、提升声明，只有a没有值的时候，a为undefined<br>2、只能确定变量的位置，不能确定它的值（延时）<br><strong>四、闭包</strong><br>如果一个函数使用了它范围外的变量，此时（函数+变量）就是闭包。</p>
+        <h2 id="async-和-await"><a href="#async-和-await" class="headerlink" title="async 和 await"></a>async 和 await</h2><a id="more"></a>
+<p>async 和 await<br>一个函数如果加上 <code>async</code> ，那么该函数就会返回一个 <code>Promise</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">"1"</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(test()); <span class="comment">// -&gt; Promise &#123;&lt;resolved&gt;: "1"&#125;</span></div></pre></td></tr></table></figure></p>
+<p>可以把 <code>async</code> 看成将函数返回值使用 <code>Promise.resolve()</code> 包裹了下</p>
+<p><code>await</code> 只能在 <code>async</code> 函数中使用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sleep</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</div><div class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'finish'</span>)</div><div class="line">      resolve(<span class="string">"sleep"</span>);</div><div class="line">    &#125;, <span class="number">2000</span>);</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> value = <span class="keyword">await</span> sleep();</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"object"</span>);</div><div class="line">&#125;</div><div class="line">test()</div></pre></td></tr></table></figure></p>
+<p>上面代码会先打印 <code>finish</code> 然后再打印 <code>object</code> 。因为 <code>await</code> 会等待 <code>sleep</code> 函数 <code>resolve</code> ，所以即使后面是同步代码，也不会先去执行同步代码再来执行异步代码。</p>
+<p><code>async</code> 和 <code>await</code> 相比直接使用 <code>Promise</code> 来说，优势在于处理 <code>then</code> 的调用链，能够更清晰准确的写出代码。缺点在于滥用 <code>await</code> 可能会导致性能问题，因为 <code>await</code> 会阻塞代码，也许之后的异步代码并不依赖于前者，但仍然需要等待前者完成，导致代码失去了并发性。</p>
+<p>下面来看一个使用 <code>await</code> 的代码:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">var</span> <span class="selector-tag">a</span> = <span class="number">0</span></div><div class="line"><span class="selector-tag">var</span> <span class="selector-tag">b</span> = async () =&gt; &#123;</div><div class="line">  <span class="selector-tag">a</span> = <span class="selector-tag">a</span> + await <span class="number">10</span></div><div class="line">  console.log(<span class="string">'2'</span>, a) <span class="comment">// -&gt; '2' 10</span></div><div class="line">  <span class="selector-tag">a</span> = (await <span class="number">10</span>) + <span class="selector-tag">a</span></div><div class="line">  console.log(<span class="string">'3'</span>, a) <span class="comment">// -&gt; '3' 20</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="title">b</span><span class="params">()</span></span></div><div class="line">a++</div><div class="line">console.log(<span class="string">'1'</span>, a) <span class="comment">// -&gt; '1' 1</span></div></pre></td></tr></table></figure></p>
+<p>对于以上代码你可能会有疑惑，这里说明下原理</p>
+<ul>
+<li>首先函数 b 先执行，在执行到 <code>await 10</code> 之前变量 <code>a</code> 还是 0，因为在 <code>await</code> 内部实现了 <code>generators</code> ，<code>generators</code> 会保留堆栈中东西，所以这时候 <code>a = 0</code> 被保存了下来</li>
+<li>因为 <code>await</code> 是异步操作，所以会先执行 <code>console.log(&#39;1&#39;, a)</code></li>
+<li>这时候同步代码执行完毕，开始执行异步代码，将保存下来的值拿出来使用，这时候 <code>a = 10</code></li>
+<li>然后后面就是常规执行代码了</li>
+</ul>
 
       
 
@@ -211,11 +211,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">异步</a>
         		</li>
       		
 		</ul>
@@ -271,7 +267,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/02/09/12JS函数/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/08/23/70异步系列-4/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -285,18 +281,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/02/10/13封装一个jQuery/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          封装一个jQuery吧！
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/02/06/11周结-JS初印象/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">周结-JS初印象</div>
+    <a href="/2018/08/22/69异步系列-3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">深入理解JavaScript--异步系列(3)</div>
       <i class="icon-circle-right"></i>
     </a>
   
