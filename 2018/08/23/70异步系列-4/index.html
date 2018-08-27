@@ -8,16 +8,19 @@
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
   <title>深入理解JavaScript--异步系列(4) | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="async 和 await">
+  <meta name="description" content="async 和 awaitasync 和 await一个函数如果加上 async ，那么该函数就会返回一个 Promise1234async function test() &amp;#123;  return &quot;1&quot;;&amp;#125;console.log(test()); // -&amp;gt; Promise &amp;#123;&amp;lt;resolved&amp;gt;: &quot;1&quot;&amp;#125;
+可以把 async 看成将函数返">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解JavaScript--异步系列(4)">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/08/23/70异步系列-4/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="async 和 await">
-<meta property="og:updated_time" content="2018-08-24T02:50:04.939Z">
+<meta property="og:description" content="async 和 awaitasync 和 await一个函数如果加上 async ，那么该函数就会返回一个 Promise1234async function test() &amp;#123;  return &quot;1&quot;;&amp;#125;console.log(test()); // -&amp;gt; Promise &amp;#123;&amp;lt;resolved&amp;gt;: &quot;1&quot;&amp;#125;
+可以把 async 看成将函数返">
+<meta property="og:updated_time" content="2018-08-24T17:46:27.183Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解JavaScript--异步系列(4)">
-<meta name="twitter:description" content="async 和 await">
+<meta name="twitter:description" content="async 和 awaitasync 和 await一个函数如果加上 async ，那么该函数就会返回一个 Promise1234async function test() &amp;#123;  return &quot;1&quot;;&amp;#125;console.log(test()); // -&amp;gt; Promise &amp;#123;&amp;lt;resolved&amp;gt;: &quot;1&quot;&amp;#125;
+可以把 async 看成将函数返">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -163,10 +166,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="async-和-await"><a href="#async-和-await" class="headerlink" title="async 和 await"></a>async 和 await</h2><a id="more"></a>
-<p>async 和 await<br>一个函数如果加上 <code>async</code> ，那么该函数就会返回一个 <code>Promise</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">"1"</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(test()); <span class="comment">// -&gt; Promise &#123;&lt;resolved&gt;: "1"&#125;</span></div></pre></td></tr></table></figure></p>
-<p>可以把 <code>async</code> 看成将函数返回值使用 <code>Promise.resolve()</code> 包裹了下</p>
-<p><code>await</code> 只能在 <code>async</code> 函数中使用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sleep</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</div><div class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'finish'</span>)</div><div class="line">      resolve(<span class="string">"sleep"</span>);</div><div class="line">    &#125;, <span class="number">2000</span>);</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> value = <span class="keyword">await</span> sleep();</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"object"</span>);</div><div class="line">&#125;</div><div class="line">test()</div></pre></td></tr></table></figure></p>
+        <h2 id="async-和-await"><a href="#async-和-await" class="headerlink" title="async 和 await"></a>async 和 await</h2><p>async 和 await<br>一个函数如果加上 <code>async</code> ，那么该函数就会返回一个 <code>Promise</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">"1"</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(test()); <span class="comment">// -&gt; Promise &#123;&lt;resolved&gt;: "1"&#125;</span></div></pre></td></tr></table></figure></p>
+<p>可以把 <code>async</code> 看成将函数返回值使用 <code>Promise.resolve()</code> 包裹了下<br><a id="more"></a><br><code>await</code> 只能在 <code>async</code> 函数中使用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sleep</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</div><div class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'finish'</span>)</div><div class="line">      resolve(<span class="string">"sleep"</span>);</div><div class="line">    &#125;, <span class="number">2000</span>);</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> value = <span class="keyword">await</span> sleep();</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"object"</span>);</div><div class="line">&#125;</div><div class="line">test()</div></pre></td></tr></table></figure></p>
 <p>上面代码会先打印 <code>finish</code> 然后再打印 <code>object</code> 。因为 <code>await</code> 会等待 <code>sleep</code> 函数 <code>resolve</code> ，所以即使后面是同步代码，也不会先去执行同步代码再来执行异步代码。</p>
 <p><code>async</code> 和 <code>await</code> 相比直接使用 <code>Promise</code> 来说，优势在于处理 <code>then</code> 的调用链，能够更清晰准确的写出代码。缺点在于滥用 <code>await</code> 可能会导致性能问题，因为 <code>await</code> 会阻塞代码，也许之后的异步代码并不依赖于前者，但仍然需要等待前者完成，导致代码失去了并发性。</p>
 <p>下面来看一个使用 <code>await</code> 的代码:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">var</span> <span class="selector-tag">a</span> = <span class="number">0</span></div><div class="line"><span class="selector-tag">var</span> <span class="selector-tag">b</span> = async () =&gt; &#123;</div><div class="line">  <span class="selector-tag">a</span> = <span class="selector-tag">a</span> + await <span class="number">10</span></div><div class="line">  console.log(<span class="string">'2'</span>, a) <span class="comment">// -&gt; '2' 10</span></div><div class="line">  <span class="selector-tag">a</span> = (await <span class="number">10</span>) + <span class="selector-tag">a</span></div><div class="line">  console.log(<span class="string">'3'</span>, a) <span class="comment">// -&gt; '3' 20</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="title">b</span><span class="params">()</span></span></div><div class="line">a++</div><div class="line">console.log(<span class="string">'1'</span>, a) <span class="comment">// -&gt; '1' 1</span></div></pre></td></tr></table></figure></p>
@@ -393,6 +394,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -401,7 +406,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -409,19 +414,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">

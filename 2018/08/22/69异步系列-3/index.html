@@ -14,7 +14,7 @@
 <meta property="og:url" content="wangsiyuan233.github.io/2018/08/22/69异步系列-3/index.html">
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="Generator 实现Generator 是 ES6 中新增的语法，和 Promise 一样，都可以用来异步编程123456789101112// 使用 * 表示这是一个 Generator 函数// 内部可以通过 yield 暂停代码// 通过调用 next 恢复执行function* test() &amp;#123;  let a = 1 + 2;  yield 2;  yield 3;&amp;#125">
-<meta property="og:updated_time" content="2018-08-23T18:10:41.556Z">
+<meta property="og:updated_time" content="2018-08-24T17:50:56.173Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解JavaScript--异步系列(3)">
 <meta name="twitter:description" content="Generator 实现Generator 是 ES6 中新增的语法，和 Promise 一样，都可以用来异步编程123456789101112// 使用 * 表示这是一个 Generator 函数// 内部可以通过 yield 暂停代码// 通过调用 next 恢复执行function* test() &amp;#123;  let a = 1 + 2;  yield 2;  yield 3;&amp;#125">
@@ -164,6 +164,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="Generator-实现"><a href="#Generator-实现" class="headerlink" title="Generator 实现"></a>Generator 实现</h2><p>Generator 是 ES6 中新增的语法，和 Promise 一样，都可以用来异步编程<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 使用 * 表示这是一个 Generator 函数</span></div><div class="line"><span class="comment">// 内部可以通过 yield 暂停代码</span></div><div class="line"><span class="comment">// 通过调用 next 恢复执行</span></div><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> a = <span class="number">1</span> + <span class="number">2</span>;</div><div class="line">  <span class="keyword">yield</span> <span class="number">2</span>;</div><div class="line">  <span class="keyword">yield</span> <span class="number">3</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> b = test();</div><div class="line"><span class="built_in">console</span>.log(b.next()); <span class="comment">// &gt;  &#123; value: 2, done: false &#125;</span></div><div class="line"><span class="built_in">console</span>.log(b.next()); <span class="comment">// &gt;  &#123; value: 3, done: false &#125;</span></div><div class="line"><span class="built_in">console</span>.log(b.next()); <span class="comment">// &gt;  &#123; value: undefined, done: true &#125;</span></div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>从以上代码可以发现，加上 <code>*</code> 的函数执行后拥有了 <code>next</code> 函数，也就是说函数执行后返回了一个对象。每次调用 <code>next</code> 函数可以继续执行被暂停的代码。</p>
 <p>以下是 <code>Generator</code> 函数的简单实现:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// cb 也就是编译过的 test 函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">generator</span>(<span class="params">cb</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> object = &#123;</div><div class="line">      <span class="attr">next</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">stop</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      <span class="attr">next</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> ret = cb(object);</div><div class="line">        <span class="keyword">if</span> (ret === <span class="literal">undefined</span>) <span class="keyword">return</span> &#123; <span class="attr">value</span>: <span class="literal">undefined</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;;</div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">          <span class="attr">value</span>: ret,</div><div class="line">          <span class="attr">done</span>: <span class="literal">false</span></div><div class="line">        &#125;;</div><div class="line">      &#125;</div><div class="line">    &#125;;</div><div class="line">  &#125;)();</div><div class="line">&#125;</div><div class="line"><span class="comment">// 如果你使用 babel 编译后可以发现 test 函数变成了这样</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> a;</div><div class="line">  <span class="keyword">return</span> generator(<span class="function"><span class="keyword">function</span>(<span class="params">_context</span>) </span>&#123;</div><div class="line">    <span class="keyword">while</span> (<span class="number">1</span>) &#123;</div><div class="line">      <span class="keyword">switch</span> ((_context.prev = _context.next)) &#123;</div><div class="line">        <span class="comment">// 可以发现通过 yield 将代码分割成几块</span></div><div class="line">        <span class="comment">// 每次执行 next 函数就执行一块代码</span></div><div class="line">        <span class="comment">// 并且表明下次需要执行哪块代码</span></div><div class="line">        <span class="keyword">case</span> <span class="number">0</span>:</div><div class="line">          a = <span class="number">1</span> + <span class="number">2</span>;</div><div class="line">          _context.next = <span class="number">4</span>;</div><div class="line">          <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">        <span class="keyword">case</span> <span class="number">4</span>:</div><div class="line">          _context.next = <span class="number">6</span>;</div><div class="line">          <span class="keyword">return</span> <span class="number">3</span>;</div><div class="line">		<span class="comment">// 执行完毕</span></div><div class="line">        <span class="keyword">case</span> <span class="number">6</span>:</div><div class="line">        <span class="keyword">case</span> <span class="string">"end"</span>:</div><div class="line">          <span class="keyword">return</span> _context.stop();</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;);</div></pre></td></tr></table></figure></p>
 
@@ -391,6 +392,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -399,7 +404,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -407,19 +412,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
