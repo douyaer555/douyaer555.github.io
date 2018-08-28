@@ -20,7 +20,7 @@
 &amp;lt;iframe src=&amp;quot;#&amp;quot; name=&amp;quot;xxx&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot; target=">
 <meta property="og:image" content="https://i.imgur.com/3B5SHXq.png">
 <meta property="og:image" content="https://i.imgur.com/SGaUJ8c.png">
-<meta property="og:updated_time" content="2018-04-14T00:42:42.826Z">
+<meta property="og:updated_time" content="2018-08-28T00:47:09.872Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML(三)">
 <meta name="twitter:description" content="&amp;lt;iframe&amp;gt; 标签用于嵌套页面，是一个可替换标签，默认值是50px X 100px（可以用CSS更改）（CSS的宽度和高度不是一个思路设置的，两个都写100%可能并不都是100%)
@@ -195,13 +195,13 @@
 <li>href属性:</li>
 </ul>
 <ol>
-<li>href=”qq.com” 时,会分析为一个文件然后报错，应该为<code>https://qq.com</code>.</li>
-<li>href=”” 时，当前页面刷新</li>
-<li>href=”#” 时，页面锚点变成#(只有锚点是不发请求的，锚点是页面内的跳转)</li>
-<li>href=”/xx” 时，浏览器发起GET/HTTP/1.1请求,变成xx.html</li>
-<li>href=”?name.wangsiyuan” 时，浏览器发起GET/HTTP/1.1请求，变成index.html?name.wangsiyuan</li>
-<li>href=”javascript: alert(1);”,JS伪协议，点击链接的时候执行一段代码；在地址栏输入javascript: alert(1)可以执行这段代码；伪协议可以实现[点击之后没有任何动作的超链接标签]，满足特殊要求（可以简写为”javascript:;”）</li>
-<li>href=”//qq.com”无协议链接时，浏览器会根据当前协议，补全无协议的协议；如果用file://浏览页面，就会访问到file://qq.com（这是一个不存在的路径）；尽量不这样使用，避免出错.</li>
+<li><code>href=&quot;qq.com&quot;</code> 时,会分析为一个文件然后报错，应该为<code>https://qq.com</code>.</li>
+<li><code>href=&quot;&quot;</code> 时，当前页面刷新</li>
+<li><code>href=&quot;#&quot;</code> 时，页面锚点变成#(只有锚点是不发请求的，锚点是页面内的跳转)</li>
+<li><code>href=&quot;/xx&quot;</code> 时，浏览器发起GET/HTTP/1.1请求,变成xx.html</li>
+<li><code>href=&quot;?name.wangsiyuan&quot;</code> 时，浏览器发起GET/HTTP/1.1请求，变成index.html?name.wangsiyuan</li>
+<li><code>href=&quot;javascript: alert(1);&quot;</code>,JS伪协议，点击链接的时候执行一段代码；在地址栏输入<code>javascript: alert(1)</code>可以执行这段代码；伪协议可以实现[点击之后没有任何动作的超链接标签]，满足特殊要求（可以简写为”javascript:;”）</li>
+<li><code>href=&quot;//qq.com&quot;</code>无协议链接时，浏览器会根据当前协议，补全无协议的协议；如果用<code>file://</code>浏览页面，就会访问到 <code>file://qq.com</code>（这是一个不存在的路径）；尽量不这样使用，避免出错.</li>
 </ol>
 <h2 id="lt-form-gt-标签"><a href="#lt-form-gt-标签" class="headerlink" title="&lt;form&gt; 标签"></a><code>&lt;form&gt;</code> 标签</h2><ul>
 <li>form标签跳转页面发起GET（会把参数直接放到查询框里面所以一般不用）（获取）和POST(主要)（上传）请求</li>
@@ -468,10 +468,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -484,6 +480,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
@@ -492,11 +492,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">
