@@ -18,15 +18,12 @@
 <meta property="og:description" content="&amp;lt;iframe&amp;gt; 标签用于嵌套页面，是一个可替换标签，默认值是50px X 100px（可以用CSS更改）（CSS的宽度和高度不是一个思路设置的，两个都写100%可能并不都是100%)
 
 &amp;lt;iframe src=&amp;quot;#&amp;quot; name=&amp;quot;xxx&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot; target=">
-<meta property="og:image" content="https://i.imgur.com/3B5SHXq.png">
-<meta property="og:image" content="https://i.imgur.com/SGaUJ8c.png">
-<meta property="og:updated_time" content="2018-08-28T00:47:09.872Z">
+<meta property="og:updated_time" content="2018-08-28T18:22:32.065Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML(三)">
 <meta name="twitter:description" content="&amp;lt;iframe&amp;gt; 标签用于嵌套页面，是一个可替换标签，默认值是50px X 100px（可以用CSS更改）（CSS的宽度和高度不是一个思路设置的，两个都写100%可能并不都是100%)
 
 &amp;lt;iframe src=&amp;quot;#&amp;quot; name=&amp;quot;xxx&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot; target=">
-<meta name="twitter:image" content="https://i.imgur.com/3B5SHXq.png">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -190,7 +187,7 @@
 <li><p>download属性：<br><code>&lt;a href=&quot;https://qq.com&quot; download&gt;下载&lt;/a&gt;</code><br>此时不管是安装包还是网页，都会被下载。</p>
 </li>
 </ul>
-<p>另一个办法是修改http响应层面：令content-type为application/octet-stream时，就会下载。（a标签跳转页面的时候是GET请求）</p>
+<p>另一个办法是修改http响应层面：令 <code>content-type</code> 为 <code>application/octet-stream</code> 时，就会下载。（a标签跳转页面的时候是GET请求）</p>
 <ul>
 <li>href属性:</li>
 </ul>
@@ -221,28 +218,20 @@
 <li>input的type属性：</li>
 </ul>
 <ol>
-<li>checkbox:小勾勾，一般会在<code>&lt;input type=&quot;checkbox&quot;&gt;</code>右边加个文字；怎样实现点击文字就能直接勾选框框呢？初级兄弟版（for和id必须成对出现）：<code>&lt;input type=&quot;checkbox&quot; id=&quot;xxx&quot;&gt;&lt;label for=&quot;xxx&quot;&gt;点我&lt;/label&gt;</code>；高级父子版（不需要for和id,name是必须的）：<code>&lt;label&gt;点我&lt;input type=&quot;text&quot; name=&quot;xxx&quot;&gt;&lt;/label&gt;</code>；name相同的时候仍然可以是多选框</li>
+<li>checkbox:小勾勾，一般会在<code>&lt;input type=&quot;checkbox&quot;&gt;</code>右边加个文字；怎样实现点击文字就能直接勾选框框呢？<br>初级兄弟版（for和id必须成对出现）：<code>&lt;input type=&quot;checkbox&quot; id=&quot;xxx&quot;&gt;&lt;label for=&quot;xxx&quot;&gt;点我&lt;/label&gt;</code>；<br>高级父子版（不需要for和id,name是必须的）：<code>&lt;label&gt;点我&lt;input type=&quot;text&quot; name=&quot;xxx&quot;&gt;&lt;/label&gt;</code>；name相同的时候仍然可以是多选框</li>
 <li>radio：小圆点，<code>&lt;label for=&quot;&quot;&gt;&lt;input name=&quot;pickme&quot; type=&quot;radio&quot; value=&quot;我是对的&quot;&gt;对的&lt;/label&gt;</code> 和 <code>&lt;label for=&quot;&quot;&gt;&lt;input name=&quot;pickme&quot; type=&quot;radio&quot; value=&quot;我是错的&quot;&gt;错的&lt;/label&gt;</code>相同一个name时就成为了单选框</li>
-<li>select: multiple时按着ctrl可以多选，-是空，3号不可选，4号是默认选项<blockquote>
-<p><code>&lt;select name=&quot;group&quot; multiple&gt;
- &lt;option value=&quot;&quot;&gt;-&lt;/option&gt;
- &lt;option value=&quot;1&quot;&gt;一&lt;/option&gt;
- &lt;option value=&quot;2&quot;&gt;二&lt;/option&gt;
- &lt;option value=&quot;3&quot; disable&gt;三&lt;/option&gt;
- &lt;option value=&quot;4&quot; selected&gt;四&lt;/option&gt;
-&lt;/select&gt;</code></p>
-</blockquote>
+<li><code>select: multiple</code>时按着ctrl可以多选，-是空，3号不可选，4号是默认选项<figure class="highlight xquery"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;select name=<span class="string">"group"</span> multiple&gt;</div><div class="line">&lt;<span class="keyword">option</span> <span class="keyword">value</span>=<span class="string">""</span>&gt;-&lt;/<span class="keyword">option</span>&gt;</div><div class="line">&lt;<span class="keyword">option</span> <span class="keyword">value</span>=<span class="string">"1"</span>&gt;一&lt;/<span class="keyword">option</span>&gt;</div><div class="line">&lt;<span class="keyword">option</span> <span class="keyword">value</span>=<span class="string">"2"</span>&gt;二&lt;/<span class="keyword">option</span>&gt;</div><div class="line">&lt;<span class="keyword">option</span> <span class="keyword">value</span>=<span class="string">"3"</span> disable&gt;三&lt;/<span class="keyword">option</span>&gt;</div><div class="line">&lt;<span class="keyword">option</span> <span class="keyword">value</span>=<span class="string">"4"</span> selected&gt;四&lt;/<span class="keyword">option</span>&gt;</div><div class="line">&lt;/select&gt;</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="lt-table-gt-标签"><a href="#lt-table-gt-标签" class="headerlink" title="&lt;table&gt; 标签"></a><code>&lt;table&gt;</code> 标签</h2><ul>
 <li>用户选择多行文本就用textarea,默认的是可以改变大小的，我们需要固定防止bug，可以用CSS或者rows/cols来控制行列。<code>&lt;textarea name=&quot;name&quot; rows=&quot;8&quot; cols=&quot;80&quot;&gt;&lt;/textarea&gt;</code>一定要有name哦！</li>
-<li>table里面的结构：（thead/tbody/tfoot三者的顺序变化会被浏览器自动纠正）</li>
+<li><p>table里面的结构：（thead/tbody/tfoot三者的顺序变化会被浏览器自动纠正）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">thead</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">tfoot</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">tfoot</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>colgroup里的结构：</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;colgroup&gt;</div><div class="line">   &lt;<span class="built_in">col</span> <span class="built_in">width</span>=<span class="string">""</span>&gt;</div><div class="line">   &lt;<span class="built_in">col</span> <span class="built_in">width</span>=<span class="string">""</span>&gt;</div><div class="line">   &lt;<span class="built_in">col</span> <span class="built_in">width</span>=<span class="number">100</span> bgcolor=red&gt;</div><div class="line">   &lt;<span class="built_in">col</span> <span class="built_in">width</span>=<span class="string">""</span>&gt;</div><div class="line">   &lt;<span class="built_in">col</span> <span class="built_in">width</span>=<span class="string">""</span>&gt;</div><div class="line">&lt;colgroup&gt;</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<p><img src="https://i.imgur.com/3B5SHXq.png" alt=""></p>
-<ul>
-<li>colgroup里的结构：</li>
-</ul>
-<p><img src="https://i.imgur.com/SGaUJ8c.png" alt=""></p>
 
       
 
@@ -468,6 +457,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -476,15 +469,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
