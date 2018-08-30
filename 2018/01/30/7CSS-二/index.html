@@ -11,7 +11,7 @@
   <meta name="description" content="这次主要更新userCard部分
 
 CSS的两大bug：width 和 height;尽量不要写死。规避手段：max-width
-.xxx {text-align: center;} ：让子代的内联元素居中排列，【内联元素居中要把t-a加在父级元素上】
+.xxx {text-align: center;} ：让子代的内联元素居中排列，【内联元素居中是把t-a加在父级元素上】
 width 的默认值是 auto
 display: inline: 设置 宽高 / margin-top/ margin-buttom 都是无效的">
 <meta property="og:type" content="article">
@@ -21,16 +21,16 @@ display: inline: 设置 宽高 / margin-top/ margin-buttom 都是无效的">
 <meta property="og:description" content="这次主要更新userCard部分
 
 CSS的两大bug：width 和 height;尽量不要写死。规避手段：max-width
-.xxx {text-align: center;} ：让子代的内联元素居中排列，【内联元素居中要把t-a加在父级元素上】
+.xxx {text-align: center;} ：让子代的内联元素居中排列，【内联元素居中是把t-a加在父级元素上】
 width 的默认值是 auto
 display: inline: 设置 宽高 / margin-top/ margin-buttom 都是无效的">
-<meta property="og:updated_time" content="2018-04-14T00:43:30.875Z">
+<meta property="og:updated_time" content="2018-08-29T18:17:24.683Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS(二)">
 <meta name="twitter:description" content="这次主要更新userCard部分
 
 CSS的两大bug：width 和 height;尽量不要写死。规避手段：max-width
-.xxx {text-align: center;} ：让子代的内联元素居中排列，【内联元素居中要把t-a加在父级元素上】
+.xxx {text-align: center;} ：让子代的内联元素居中排列，【内联元素居中是把t-a加在父级元素上】
 width 的默认值是 auto
 display: inline: 设置 宽高 / margin-top/ margin-buttom 都是无效的">
   
@@ -181,18 +181,20 @@ display: inline: 设置 宽高 / margin-top/ margin-buttom 都是无效的">
         <p><strong>这次主要更新userCard部分</strong></p>
 <ol>
 <li>CSS的两大bug：width 和 height;尽量不要写死。规避手段：max-width</li>
-<li>.xxx {text-align: center;} ：让子代的内联元素居中排列，<strong>【内联元素居中要把t-a加在父级元素上】</strong></li>
+<li>.xxx {text-align: center;} ：让子代的内联元素居中排列，<strong>【内联元素居中是把t-a加在父级元素上】</strong></li>
 <li>width 的默认值是 auto</li>
-<li>display: inline: 设置 宽高 / margin-top/ margin-buttom 都是无效的<a id="more"></a></li>
+<li><code>display: inline</code>: 设置 宽高 / margin-top/ margin-buttom 都是无效的<a id="more"></a></li>
 <li>文档流是文档内元素流动的方向，内联元素是从左往右，块级元素是从上到下</li>
 <li>line-height可以确定内联元素的高度，line-height = span =font-size</li>
 <li>一个元素的高度是由内容的总和决定的（不是相等哦），浮动出来的元素不算在总高度里</li>
-<li>英文默认是不会自动换行的，所有用英文填充测试的时候，用lorem吧！ 或者设置 word-break：break-all</li>
+<li>英文默认是不会自动换行的，所有用英文填充测试的时候，用lorem吧！ 或者设置 <code>word-break：break-all</code></li>
 <li>非线性流动的时候可以考虑多一层div</li>
-<li>给背景图遮罩：<code>&lt;div class=&quot;banner&quot;&gt;&lt;div class=&quot;mask&quot;&gt;&lt;/div&gt;&lt;/div&gt;</code></li>
-<li>给背景图遮罩：<code>.banner{height: 515px;background-image: url(./picture/rs-cover.jpg);background-position: center center;background-size: cover;}</code> 和 <code>.banner .mask{height: 515px;background-color: rgba(0,0,0,0.8)}</code></li>
-<li>回复出厂设置：*{margin:0; padding:0;}</li>
-<li>看不清div：border：1px solid red;</li>
+<li><p>给背景图遮罩：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// html</span></div><div class="line">&lt;div <span class="keyword">class</span>=<span class="string">"banner"</span>&gt;</div><div class="line">  &lt;div <span class="keyword">class</span>=<span class="string">"mask"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// css</span></div><div class="line">.banner&#123;</div><div class="line"><span class="built_in">height</span>: <span class="number">515</span>px;<span class="built_in">background</span>-<span class="built_in">image</span>: url(./picture/rs-cover.jpg);</div><div class="line"><span class="built_in">background</span>-<span class="built_in">position</span>: center center;</div><div class="line"><span class="built_in">background</span>-<span class="built_in">size</span>: cover;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.banner .mask&#123;</div><div class="line"><span class="built_in">height</span>: <span class="number">515</span>px;</div><div class="line"><span class="built_in">background</span>-color: rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.8</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>恢复出厂设置：<code>*{margin:0; padding:0;}</code></p>
+</li>
+<li>凸显div：<code>border：1px solid red</code>;</li>
 <li><strong>绝对定位：动的absolute,不动的relative</strong></li>
 <li>奇形怪状：<code>https://css-tricks.com/examples/ShapesOfCSS/#yin-yang</code></li>
 </ol>
@@ -453,11 +455,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
               </li>
              
               <li class="article-tag-list-item">
