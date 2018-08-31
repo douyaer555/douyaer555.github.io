@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>wangsiyuan233.github.io/2018/02/10/13%E5%B0%81%E8%A3%85%E4%B8%80%E4%B8%AAjQuery/</loc>
+        <lastmod>2018-08-31T03:10:01.690Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>wangsiyuan233.github.io/2018/02/06/11%E5%91%A8%E7%BB%93-JS%E5%88%9D%E5%8D%B0%E8%B1%A1/</loc>
+        <lastmod>2018-08-31T01:51:44.509Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>wangsiyuan233.github.io/2018/02/01/8CSS-%E4%B8%89/</loc>
         <lastmod>2018-08-30T04:18:22.697Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -511,24 +527,8 @@
     </url>
 
     <url>
-        <loc>wangsiyuan233.github.io/2018/02/10/13%E5%B0%81%E8%A3%85%E4%B8%80%E4%B8%AAjQuery/</loc>
-        <lastmod>2018-04-14T00:49:13.264Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>wangsiyuan233.github.io/2018/02/09/12JS%E5%87%BD%E6%95%B0/</loc>
         <lastmod>2018-04-14T00:48:54.132Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>wangsiyuan233.github.io/2018/02/06/11%E5%91%A8%E7%BB%93-JS%E5%88%9D%E5%8D%B0%E8%B1%A1/</loc>
-        <lastmod>2018-04-14T00:48:28.357Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
