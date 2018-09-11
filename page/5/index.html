@@ -141,6 +141,74 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-50配置React" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/30/50配置React/">配置 React</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/30/50配置React/" class="archive-article-date">
+  	<time datetime="2018-05-30T02:11:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>第一步： 安装 React</p>
+</blockquote>
+<p>1、 <a href="https://pan.baidu.com/s/1kU4K9iJ">下载</a><code>yarn</code></p>
+<p>2、临时文件夹实验：<br><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="string">mkdir </span>~/<span class="string">temp;</span> <span class="string">cd </span>~/<span class="string">temp</div><div class="line"></span></div><div class="line"><span class="string">npm </span><span class="string">install </span>-g <span class="built_in">create-react-app</span></div><div class="line"></div><div class="line"><span class="built_in">create-react-app</span> <span class="string">hello-world</div><div class="line"></span></div><div class="line"><span class="string">cd </span><span class="string">hello-world</div><div class="line"></span></div><div class="line"><span class="string">npm </span><span class="string">start </span>或者 <span class="string">yarn </span><span class="string">start</span></div></pre></td></tr></table></figure></p>
+<p> <code>create-react-app</code> 内置了 <code>webpack</code> 的所有功能。</p>
+<p>3、初始化 <code>React</code><br>清空 <code>temp</code> 文件夹，同时清空项目文件夹<br>（因为 <code>create-react-app</code> 会自己创建 <code>src</code> 和 <code>index.html</code> ）<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">cd 到你在上次任务中新建的项目目录！</div><div class="line"></div><div class="line"><span class="comment"># 删除所有非隐藏文件，这一步千万不要手抖，后果自负</span></div><div class="line"></div><div class="line">rm -rf * </div><div class="line">git <span class="keyword">add</span><span class="bash"> .</div><div class="line"></span>git commit -m <span class="string">"remove all files"</span></div><div class="line">git push</div></pre></td></tr></table></figure></p>
+<p>正式开始初始化：<br>
+        
+          <a class="article-more-a" href="/2018/05/30/50配置React/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-49Webpack配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -433,80 +501,6 @@
 
 
   
-    <article id="post-45EventUtil" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/05/45EventUtil/">EventUtil--js事件封装</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/05/45EventUtil/" class="archive-article-date">
-  	<time datetime="2018-05-05T12:13:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>跨浏览器的事件对象EventUtil</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2018/05/05/45EventUtil/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
@@ -600,11 +594,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
