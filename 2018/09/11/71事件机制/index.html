@@ -8,28 +8,31 @@
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
   <title>事件机制 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="事件触发有三个阶段
+  <meta name="description" content="一、事件触发
 
-window 往事件触发处传播，遇到注册的捕获事件会触发
-传播到事件触发处时触发注册的事件
-从事件触发处往 window 传播，遇到注册的冒泡事件会触发">
+
+window 到 触发处 的途中，碰到了 捕获 就会触发
+到了 触发处，肯定也会激活啊
+从 触发处 往 window 传播，碰到了 冒泡 就会触发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="事件机制">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/09/11/71事件机制/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="事件触发有三个阶段
+<meta property="og:description" content="一、事件触发
 
-window 往事件触发处传播，遇到注册的捕获事件会触发
-传播到事件触发处时触发注册的事件
-从事件触发处往 window 传播，遇到注册的冒泡事件会触发">
-<meta property="og:updated_time" content="2018-09-11T14:49:13.568Z">
+
+window 到 触发处 的途中，碰到了 捕获 就会触发
+到了 触发处，肯定也会激活啊
+从 触发处 往 window 传播，碰到了 冒泡 就会触发">
+<meta property="og:updated_time" content="2018-09-12T01:36:20.651Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="事件机制">
-<meta name="twitter:description" content="事件触发有三个阶段
+<meta name="twitter:description" content="一、事件触发
 
-window 往事件触发处传播，遇到注册的捕获事件会触发
-传播到事件触发处时触发注册的事件
-从事件触发处往 window 传播，遇到注册的冒泡事件会触发">
+
+window 到 触发处 的途中，碰到了 捕获 就会触发
+到了 触发处，肯定也会激活啊
+从 触发处 往 window 传播，碰到了 冒泡 就会触发">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -175,12 +178,38 @@ window 往事件触发处传播，遇到注册的捕获事件会触发
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>事件触发有三个阶段</p>
+        <blockquote>
+<p>一、事件触发</p>
+</blockquote>
+<ol>
+<li><code>window</code> 到 触发处 的途中，碰到了 捕获 就会触发</li>
+<li>到了 触发处，肯定也会激活啊</li>
+<li>从 触发处 往 <code>window</code> 传播，碰到了 冒泡 就会触发<a id="more"></a>
+一般情况下都是按照上面三个步骤发展，如果一个事件同时有 冒泡和捕获，那就按照发生的顺序来<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">node.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="params">(event)</span> =&gt;</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'冒泡'</span>)</div><div class="line">&#125;,<span class="literal">false</span>);</div><div class="line">node.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="params">(event)</span> =&gt;</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'捕获 '</span>)</div><div class="line">&#125;,<span class="literal">true</span>)</div><div class="line"></div><div class="line"><span class="regexp">//</span> 冒泡 捕获</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>二、注册事件</p>
+</blockquote>
+<p>我们用 addEventListener 注册事件，这个函数的第三个参数可以是 布尔值useCapture，也可以是对象</p>
 <ul>
-<li>window 往事件触发处传播，遇到注册的捕获事件会触发</li>
-<li>传播到事件触发处时触发注册的事件</li>
-<li>从事件触发处往 window 传播，遇到注册的冒泡事件会触发</li>
-<li><a id="more"></a></li>
+<li>参数为 布尔值useCapture 时，默认的是 false，即 冒泡事件。</li>
+<li>参数为对象时，省略。</li>
+</ul>
+<p>我们希望事件到了触发处就停止了，这时可以使用 stopPropagation 来阻止进一步传播：</p>
+<ul>
+<li>stopPropagation 不仅可以阻止冒泡，也可以阻止捕获</li>
+<li>stopImmediatePropagation 更强，在上面基础上，还可以阻止除了当前事件的其他事件注册<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">node.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="params">(event)</span> =&gt;</span>&#123;</div><div class="line">	event.stopImmediatePropagation()</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'冒泡'</span>)</div><div class="line">&#125;,<span class="literal">false</span>);</div><div class="line"><span class="regexp">//</span> 点击 node 只会执行上面的函数，该函数不会执行</div><div class="line">node.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="params">(event)</span> =&gt;</span> &#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'捕获 '</span>)</div><div class="line">&#125;,<span class="literal">true</span>)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>三、事件代理</p>
+</blockquote>
+<p>如果一个节点中的子节点是动态生成的，那么子节点需要注册事件的话应该注册在父节点上。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"ul"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>5<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">	<span class="keyword">let</span> ul = <span class="built_in">document</span>.querySelector(<span class="string">'#ul'</span>)</div><div class="line">	ul.addEventListener(<span class="string">'click'</span>, (event) =&gt; &#123;</div><div class="line">		<span class="built_in">console</span>.log(event.target);</div><div class="line">	&#125;)</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>事件代理的优点：</p>
+<ul>
+<li>节省内存</li>
+<li>不需要给子节点注销事件</li>
 </ul>
 
       
@@ -387,6 +416,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -399,15 +432,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
