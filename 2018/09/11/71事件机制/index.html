@@ -24,7 +24,7 @@ window 到 触发处 的途中，碰到了 捕获 就会触发
 window 到 触发处 的途中，碰到了 捕获 就会触发
 到了 触发处，肯定也会激活啊
 从 触发处 往 window 传播，碰到了 冒泡 就会触发">
-<meta property="og:updated_time" content="2018-09-12T01:36:20.651Z">
+<meta property="og:updated_time" content="2018-09-12T02:17:18.126Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="事件机制">
 <meta name="twitter:description" content="一、事件触发
@@ -184,10 +184,10 @@ window 到 触发处 的途中，碰到了 捕获 就会触发
 <ol>
 <li><code>window</code> 到 触发处 的途中，碰到了 捕获 就会触发</li>
 <li>到了 触发处，肯定也会激活啊</li>
-<li>从 触发处 往 <code>window</code> 传播，碰到了 冒泡 就会触发<a id="more"></a>
-一般情况下都是按照上面三个步骤发展，如果一个事件同时有 冒泡和捕获，那就按照发生的顺序来<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">node.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="params">(event)</span> =&gt;</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'冒泡'</span>)</div><div class="line">&#125;,<span class="literal">false</span>);</div><div class="line">node.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="params">(event)</span> =&gt;</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'捕获 '</span>)</div><div class="line">&#125;,<span class="literal">true</span>)</div><div class="line"></div><div class="line"><span class="regexp">//</span> 冒泡 捕获</div></pre></td></tr></table></figure>
-</li>
+<li>从 触发处 往 <code>window</code> 传播，碰到了 冒泡 就会触发</li>
 </ol>
+<a id="more"></a>
+<p>一般情况下都是按照上面三个步骤发展，如果一个事件同时有 冒泡和捕获，那就按照发生的顺序来<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">node.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="params">(event)</span> =&gt;</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'冒泡'</span>)</div><div class="line">&#125;,<span class="literal">false</span>);</div><div class="line">node.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="params">(event)</span> =&gt;</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'捕获 '</span>)</div><div class="line">&#125;,<span class="literal">true</span>)</div><div class="line"></div><div class="line"><span class="regexp">//</span> 冒泡 捕获</div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>二、注册事件</p>
 </blockquote>
@@ -198,8 +198,8 @@ window 到 触发处 的途中，碰到了 捕获 就会触发
 </ul>
 <p>我们希望事件到了触发处就停止了，这时可以使用 stopPropagation 来阻止进一步传播：</p>
 <ul>
-<li>stopPropagation 不仅可以阻止冒泡，也可以阻止捕获</li>
-<li>stopImmediatePropagation 更强，在上面基础上，还可以阻止除了当前事件的其他事件注册<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">node.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="params">(event)</span> =&gt;</span>&#123;</div><div class="line">	event.stopImmediatePropagation()</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'冒泡'</span>)</div><div class="line">&#125;,<span class="literal">false</span>);</div><div class="line"><span class="regexp">//</span> 点击 node 只会执行上面的函数，该函数不会执行</div><div class="line">node.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="params">(event)</span> =&gt;</span> &#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'捕获 '</span>)</div><div class="line">&#125;,<span class="literal">true</span>)</div></pre></td></tr></table></figure>
+<li><code>stopPropagation</code> 不仅可以阻止冒泡，也可以阻止捕获</li>
+<li><code>stopImmediatePropagation</code> 更强，在上面基础上，还可以阻止除了当前事件的其他事件注册<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">node.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="params">(event)</span> =&gt;</span>&#123;</div><div class="line">	event.stopImmediatePropagation()</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'冒泡'</span>)</div><div class="line">&#125;,<span class="literal">false</span>);</div><div class="line"><span class="regexp">//</span> 点击 node 只会执行上面的函数，该函数不会执行</div><div class="line">node.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="params">(event)</span> =&gt;</span> &#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'捕获 '</span>)</div><div class="line">&#125;,<span class="literal">true</span>)</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <blockquote>
@@ -210,6 +210,11 @@ window 到 触发处 的途中，碰到了 捕获 就会触发
 <ul>
 <li>节省内存</li>
 <li>不需要给子节点注销事件</li>
+</ul>
+<h2 id="30s总结"><a href="#30s总结" class="headerlink" title="30s总结"></a>30s总结</h2><ul>
+<li>事件机制 <code>addEventListener</code> 分三步走: 捕获、触发和冒泡</li>
+<li><code>stopPropagation</code> 和 <code>stopImmediatePropagation</code> 都可以阻止触发</li>
+<li>动态的子节点，需要去父节点上触发</li>
 </ul>
 
       
@@ -416,10 +421,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -428,15 +429,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
