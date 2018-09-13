@@ -6,24 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>深入理解JavaScript--原型系列(1) | wangsiyuan</title>
+  <title>跨域 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="写在前面：对学习前端70天的一个总结，说是“深入”其实有点不好意思，有什么问题一起探讨呀
-
-JavaScript中有一句“一切皆是对象”，这句话当然是不严谨的啦，让我们一起来看看怎么回事吧！">
+  <meta name="description" content="浏览器出于安全的考虑，采用的是同源策略。
+协议、域名和端口号三者统一，就是同域，只要有其中一个不一样，就是跨域，这时Ajax就会请求失败。
+下面有三种方法可以解决跨域的问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入理解JavaScript--原型系列(1)">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/02/24/22原型系列-1/index.html">
+<meta property="og:title" content="跨域">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/09/13/72跨域/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="写在前面：对学习前端70天的一个总结，说是“深入”其实有点不好意思，有什么问题一起探讨呀
-
-JavaScript中有一句“一切皆是对象”，这句话当然是不严谨的啦，让我们一起来看看怎么回事吧！">
-<meta property="og:updated_time" content="2018-04-14T00:51:50.145Z">
+<meta property="og:description" content="浏览器出于安全的考虑，采用的是同源策略。
+协议、域名和端口号三者统一，就是同域，只要有其中一个不一样，就是跨域，这时Ajax就会请求失败。
+下面有三种方法可以解决跨域的问题">
+<meta property="og:updated_time" content="2018-09-13T08:45:05.306Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入理解JavaScript--原型系列(1)">
-<meta name="twitter:description" content="写在前面：对学习前端70天的一个总结，说是“深入”其实有点不好意思，有什么问题一起探讨呀
-
-JavaScript中有一句“一切皆是对象”，这句话当然是不严谨的啦，让我们一起来看看怎么回事吧！">
+<meta name="twitter:title" content="跨域">
+<meta name="twitter:description" content="浏览器出于安全的考虑，采用的是同源策略。
+协议、域名和端口号三者统一，就是同域，只要有其中一个不一样，就是跨域，这时Ajax就会请求失败。
+下面有三种方法可以解决跨域的问题">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -149,41 +149,58 @@ JavaScript中有一句“一切皆是对象”，这句话当然是不严谨的�
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-22原型系列-1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-72跨域" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      深入理解JavaScript--原型系列(1)
+      跨域
     </h1>
   
 
         
-        <a href="/2018/02/24/22原型系列-1/" class="archive-article-date">
-  	<time datetime="2018-02-24T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-24</time>
+        <a href="/2018/09/13/72跨域/" class="archive-article-date">
+  	<time datetime="2018-09-13T01:36:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>写在前面：对学习前端70天的一个总结，说是“深入”其实有点不好意思，有什么问题一起探讨呀</p>
-</blockquote>
-<p>JavaScript中有一句“一切皆是对象”，这句话当然是不严谨的啦，让我们一起来看看怎么回事吧！<br><a id="more"></a><br><strong>一、判断对象</strong><br>从最开始学习JS，我们就学会了判断值类型和引用类型：<br>值类型：number、string、null、undefined、boolean<br>引用类型：函数、数组、对象这些都是对象<br>（值得注意的是，当我们用typeof判断null时，浏览器会返回object，这是因为在js中，底层是用二进制编码的，如果前三位是000的话,用typeof就会返回object,而null的编码是全部都是0，当然会被返回object ,这是js的一个bug而已。）</p>
+        <p>浏览器出于安全的考虑，采用的是同源策略。</p>
+<p>协议、域名和端口号三者统一，就是同域，只要有其中一个不一样，就是跨域，这时Ajax就会请求失败。</p>
+<p>下面有三种方法可以解决跨域的问题<br><a id="more"></a></p>
 <blockquote>
-<p>1.1值类型：变量的交换等于在一个新的地方按照连锁店的规范标准（统一店面理解为相同的变量内容）新开一个分店，这样新开的店与其它旧店互不相关、各自运营。<br>1.2引用类型：变量的交换等同于把现有一间店的钥匙（变量引用地址）复制一把给了另外一个老板，此时两个老板同时管理一间店，两个老板的行为都有可能对一间店的运营造成影响。<br>2.1值类型的值是一经确定就不可变的；基本类型的比较是值的比较；基本类型的变量存放在栈。<br>2.2引用类型的值是可变的；引用类型的比较是引用的比较；引用类型的值是同时保存在栈和堆中的对象。</p>
+<p>一、JSONP</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//值类型的比较</span></div><div class="line"><span class="keyword">var</span> person1 = <span class="string">'&#123;&#125;'</span>;</div><div class="line"><span class="keyword">var</span> person2 = <span class="string">'&#123;&#125;'</span>;</div><div class="line"><span class="built_in">console</span>.log(person1 == person2); <span class="comment">// true</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//引用类型的比较</span></div><div class="line"><span class="keyword">var</span> person1 = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> person2 = &#123;&#125;;</div><div class="line"><span class="built_in">console</span>.log(person1 == person2); <span class="comment">// false</span></div></pre></td></tr></table></figure>
-<p><strong>二、定义对象</strong><br>粗粗的将这些变量划分为非对象和对象，我们不难发现，（和JAVA与C#对比），JS中的“对象”非常的随意：<br>函数是对象，数组是对象，对象也是对象；<br>对象里只有属性，没有方法（方法也是一种属性，以键值对的形式出现）；<br>对象可以扩展任意属性。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//举例说明 对象中自定义属性</span></div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">	<span class="attr">a</span> : <span class="number">10</span>,</div><div class="line">	<span class="attr">b</span> : <span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;alert (x+<span class="keyword">this</span>.a);&#125;,</div><div class="line">	<span class="attr">c</span> : &#123;<span class="attr">name</span>: <span class="string">'wangsiyuan'</span>，position: <span class="string">'全栈工程师'</span>&#125;</div><div class="line">&#125;；</div><div class="line"><span class="comment">//a、b、c都是obj的属性，同时c还是一个对象，它有着name和position两个属性</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//举例说明 函数中自定义属性</span></div><div class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="number">100</span>);</div><div class="line">&#125;;</div><div class="line">fn.a = <span class="number">10</span>;</div><div class="line">fn.b = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="number">123</span>);</div><div class="line">&#125;;</div><div class="line">fn.c = &#123;</div><div class="line">	<span class="attr">name</span>: <span class="string">'wangsiyuan'</span>，</div><div class="line">	position: <span class="string">'全栈工程师'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">//$变量也是一个函数（JQ）</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> $) <span class="comment">//function</span></div></pre></td></tr></table></figure>
-<p>至此，我们可以回答开头的问题了：<br><strong>一切（引用类型）都是对象，对象是属性的集合。</strong></p>
-<hr>
-<p>我们在第一小节里确定了[对象]的范围，请问：函数、数组和对象，这三者的关系是怎样的呢？</p>
-
+<p><code>JSONP</code> 的原理非常简单：</p>
+<p>利用 <code>&lt;script&gt;</code> 标签没有跨域限制的漏洞，通过 <code>&lt;script&gt;</code> 标签指向一个需要访问的地址并提供一个回调函数来接收数据。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://domain/api?param1=a&amp;param2=b&amp;callback=jsonp"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">jsonp</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">    	<span class="built_in">console</span>.log(data)</div><div class="line">	&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><code>JSONP</code>的兼容性很好，但只限于 <strong>GET</strong> 请求</p>
+<p>在开发中可能会遇到多个 <code>JSONP</code> 请求的回调函数名是相同的，这时候就需要自己封装一个 <code>JSONP</code>，以下是简单实现：<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function <span class="keyword">jsonp(url, </span><span class="keyword">jsonpCallback, </span>success) &#123;</div><div class="line">  let <span class="keyword">script </span>= document.createElement(<span class="string">"script"</span>)<span class="comment">;</span></div><div class="line">  <span class="keyword">script.src </span>= url<span class="comment">;</span></div><div class="line">  <span class="keyword">script.async </span>= true<span class="comment">;</span></div><div class="line">  <span class="keyword">script.type </span>= <span class="string">"text/javascript"</span><span class="comment">;</span></div><div class="line">  window[<span class="keyword">jsonpCallback] </span>= function(data) &#123;</div><div class="line">    success &amp;&amp; success(data)<span class="comment">;</span></div><div class="line">  &#125;<span class="comment">;</span></div><div class="line">  document.<span class="keyword">body.appendChild(script);</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">jsonp(</span></div><div class="line">  <span class="string">"http://xxx"</span>,</div><div class="line">  <span class="string">"callback"</span>,</div><div class="line">  function(value) &#123;</div><div class="line">    console.log(value)<span class="comment">;</span></div><div class="line">  &#125;</div><div class="line">)<span class="comment">;</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>二、CORS</p>
+</blockquote>
+<p><code>CORS</code> 需要<strong>浏览器</strong>和<strong>后端</strong>同时支持。</p>
+<p>服务端设置 <code>Access-Control-Allow-Origin</code> 就可以开启 CORS。 该属性表示哪些域名可以访问资源，如果设置通配符则表示所有网站都可以访问资源。</p>
+<p>实现 <code>CORS</code> 通信的关键是后端。只要后端实现了 <code>CORS</code>，就实现了跨域。</p>
+<blockquote>
+<p>三、document.domain</p>
+</blockquote>
+<p>该方式只能用于二级域名相同的情况下，比如 <code>a.test.com</code> 和 <code>b.test.com</code> 适用于该方式。</p>
+<p>只需要给页面添加 <code>document.domain = &#39;test.com&#39;</code> 表示二级域名都相同就可以实现跨域。</p>
+<blockquote>
+<p>四、postMessage</p>
+</blockquote>
+<p>这种方式通常用于获取嵌入页面中的第三方页面数据。一个页面发送消息，另一个页面判断来源并接收消息<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 发送消息端</span></div><div class="line"><span class="built_in">window</span>.parent.postMessage(<span class="string">'message'</span>, <span class="string">'http://test.com'</span>);</div><div class="line"><span class="comment">// 接收消息端</span></div><div class="line"><span class="keyword">var</span> mc = <span class="keyword">new</span> MessageChannel();</div><div class="line">mc.addEventListener(<span class="string">'message'</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">var</span> origin = event.origin || event.originalEvent.origin; </div><div class="line">    <span class="keyword">if</span> (origin === <span class="string">'http://test.com'</span>) &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'验证通过'</span>)</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h2 id="30s总结"><a href="#30s总结" class="headerlink" title="30s总结"></a>30s总结</h2><ul>
+<li>JSONP : 利用 <script> 标签的漏洞来跨域；</li>
+<li>CORS：服务端和后端，后端是关键</li>
+<li>document.domian ： 二级域名相同</li>
+<li>postMessage ： 一个页面发送，另一个页面接收并验证</li>
+</ul>
+</script></li></ul>
       
 
       
@@ -212,17 +229,6 @@ JavaScript中有一句“一切皆是对象”，这句话当然是不严谨的�
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">原型链</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -273,7 +279,7 @@ JavaScript中有一句“一切皆是对象”，这句话当然是不严谨的�
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/02/24/22原型系列-1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/09/13/72跨域/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -287,18 +293,9 @@ JavaScript中有一句“一切皆是对象”，这句话当然是不严谨的�
   
 <nav id="article-nav">
   
-    <a href="/2018/02/26/23原型系列-2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          深入理解JavaScript--原型系列(2)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/02/23/21HTML知识梳理/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">HTML知识梳理</div>
+    <a href="/2018/09/11/71事件机制/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">事件机制</div>
       <i class="icon-circle-right"></i>
     </a>
   

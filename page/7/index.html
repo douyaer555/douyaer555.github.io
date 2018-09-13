@@ -141,6 +141,79 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-41初探ES6-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/10/41初探ES6-4/">初探ES6(4)--Class的基本语法</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/10/41初探ES6-4/" class="archive-article-date">
+  	<time datetime="2018-04-10T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>类和模块的内部，默认就是<strong>严格模式</strong>，所以不需要使用<code>use strict</code>指定运行模式。只要你的代码写在类或模块之中，就只有严格模式可用。<br>考虑到未来所有的代码，其实都是运行在模块之中，所以 ES6 实际上把整个语言升级到了严格模式。</p>
+<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><p>JavaScript 中：<strong>生成一个对象的传统方法就是new一个函数</strong><br>
+        
+          <a class="article-more-a" href="/2018/04/10/41初探ES6-4/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-40初探ES6-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -436,109 +509,9 @@
 
 
   
-    <article id="post-36异步系列-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/02/36异步系列-2/">深入理解JavaScript--异步系列(2)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/02/36异步系列-2/" class="archive-article-date">
-  	<time datetime="2018-04-02T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ajax可以看我之前的<a href="http://wangsiyuan233.cn/2018/02/28/AJAX%EF%BC%88一%EF%BC%89/" target="_blank" rel="external">封装一个ajax</a></p>
-<blockquote>
-<p>一、 Promise 的由来</p>
-</blockquote>
-<p>Promise 是 ES6 新增的语法，解决了回调地狱的问题。</p>
-<p>Promise 是异步编程的一种解决方案，比我们传统的回调函数、事件更加合理，最早由社区提出并实现，ES6觉得很ok，就写进了语言标准中，统一了语法，并且提供了原生的Promise对象。<br>所谓的Promise，其实就是一个容器，里面保存着未来才会结束的事件（通常是一个异步操作）的结果，从javascript的语法上讲就是一个对象，从里面能获取异步操作的信息，Promise提供统一的api,各种异步操作都可以使用同样的方法来进行处理。</p>
-<p>特点一：Promise对象的状态不受外界影响。代表着一个异步操作，有三种状态:Pending(进行中)、Fulfilled(已成功)和Reject(已失败)。只有异步操作的结果才可以决定当前是哪一种状态，任何其他操作都无法改变这个状态，这也就是Promise的由来。“承诺”，就是其他手段无法更改。<br>特点二：一旦状态改变了，就不会再改变。任何时候都可以得到这个结果。Promise对象的状态的改变只会是两种可能：从Pending变成Fulfilled和Pending变为Rejected。这要这两种情况发生，状态就凝固了，不会再改变了，而是一直保持这样一个结果这时候就成Resolved(已定型)。就算改变已经发生，再对Promise对象添加回调函数，也会立即得到这个结果。这与事件（event）完全不同，事件的特点我们都知道，如果错过它，就监听不到结果的。</p>
-<blockquote>
-<p>二、基本用法</p>
-</blockquote>
-<p>ES6规定，Promise对象是一个构造给函数，是用来生成Promise实例的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> <span class="built_in">Promise</span>=<span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;</div><div class="line"></div><div class="line"><span class="comment">/*逻辑代码*/</span><span class="comment">/*逻辑代码*/</span><span class="comment">/*逻辑代码*/</span><span class="comment">/*逻辑代码*/</span></div><div class="line"></div><div class="line">    <span class="keyword">if</span>(<span class="comment">/*异步操作成功*/</span>)&#123;</div><div class="line">        resolve(value)</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        reject(error)</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>Promise构造函数式会接受两个参数的，该函数的两个参数是resolve和reject，是javascript引擎提供的，不用自己部署。</p>
-<p>resolve函数的作用是，将Promise对象的状态从“未完成”到“成功”（就是从Pending变为Resolved）,在异步操作成功的时候，并将异步操作的结果作为参数传递进去；</p>
-<p>reject函数的作用是将Promise对象的状态从“未完成”变成为“失败”（即从Pending变为Rejected），在异步操作失败的时候调用，将异步草字哦报出的错误传递出去。</p>
-<p>Promise实例生成以后，可以用then方法分别指定Resolve状态和Reject状态的回调函数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> <span class="built_in">Promise</span>=<span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;&#125;)</div><div class="line"><span class="built_in">Promise</span>.then(<span class="function"><span class="keyword">function</span>(<span class="params">value</span>)</span>&#123;</div><div class="line">    <span class="comment">//success</span></div><div class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">error</span>)</span>&#123;</div><div class="line">    <span class="comment">//failuer</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>then方法可以接受两个回调函数作为参数，第一个是Promise对象变成Resolved时调用，第二个是Promise对象的状态变为Rejectd的时候调用，第二个函数式可选的，也可以不写，这两个函数都接受Promise对象传出值作为参数。举一个栗子吧：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">timeout</span>(<span class="params">ms</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>&#123;</div><div class="line">        setTimeout(resolve,ms,<span class="string">'done'</span>)</div><div class="line">    &#125;)</div><div class="line">&#125;</div><div class="line">timeout(<span class="number">100</span>).then(<span class="function">(<span class="params">value</span>)=&gt;</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(value)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>上面的代码,timeout方法会返回一个Promise的实例，一段时间以后才会发生的结果，过了指定时间（ms）以后，Promise实例就会变成Resolve，就会触发then的方法绑定的回调函数。</p>
-<p>Promise初始化实例与以后就会立即执行，不妨看一下下面的打印验证：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> promise=<span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"我是Promise"</span>)</div><div class="line">    resolve()</div><div class="line">&#125;)</div><div class="line">promise.then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    comsole.log(<span class="string">"我时候then的回调"</span>)</div><div class="line">&#125;)</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'hello,promise!'</span>)</div><div class="line"></div><div class="line"><span class="comment">//我是Promise</span></div><div class="line"><span class="comment">//hello,promise!</span></div><div class="line"><span class="comment">//我时候then的回调</span></div></pre></td></tr></table></figure></p>
-<p>上面的代码中，Promise实例化之后会立即执行，所以首先输出的是Promise，然后，then方法指定的回调函数将在当前脚本所有同步脚本执行完才会执行，所以上述代码中“我时候then的回调”最后输出。</p>
-<blockquote>
-<p>三、Promise.prototype.then()</p>
-</blockquote>
-<p>Promise实例具有then方法，即then方法是定义在原型对象Promise.prototype上的，作用是给Promise实例添加状态改变时的回调函数。then方法的第一个参数是Resolve状态的回调函数，第二个是Rejected（可选）状态的回调函数。</p>
-<p>then方法返回的是一个新的Promise实例，不是原来那个Promise实例，因此可以采用链式写法，即then方法后面再调用另一个then方法。<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">getJSON(<span class="string">'xxx/xx.json'</span>).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span><span class="params">(json)</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> json.post</div><div class="line">&#125;).tnen(<span class="function"><span class="keyword">function</span><span class="params">(post)</span></span>&#123;</div><div class="line">    </div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>采用链式的then可以指定一组按照次序调用的回调函数，这时，前一个回调函数有可能返回的还是一个异步操作，即Promise实例，而后一个回调函数会等待该Promise对象状态改变才调用。</p>
-<blockquote>
-<p>四、Promise.prototype.catch()</p>
-</blockquote>
-<p>Promise.prototype.catch的方法是<code>.then(null,rejection)</code>的别名，用于指定发生错误的回调函数。<br><figure class="highlight scilab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">getJSON(<span class="string">'xxx/xx.json'</span>).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span><span class="params">(json)</span>&#123;</span></div><div class="line">   <span class="comment">//...</span></div><div class="line">&#125;).<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span><span class="params">(err)</span>&#123;</span></div><div class="line">    console.<span class="built_in">log</span>(<span class="string">'错误'</span>+<span class="built_in">error</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>上面的代码，只要then中某一步异步操作抛出错误，状态变成Rejected，都会被<code>catch()</code>所捕获到，然后指定其回调函数执行，处理这个错误。Promise对象的错误具有冒泡机制，会一直向后传递，一直到被<code>catch()</code>处理函数所捕获，也就是说错误会被下一个catch语句捕获。<br><figure class="highlight scilab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">getJSON(<span class="string">'xxx/xx.json'</span>).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span><span class="params">(json)</span>&#123;</span></div><div class="line">   <span class="comment">//...some code1</span></div><div class="line">&#125;).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span><span class="params">(json)</span>&#123;</span></div><div class="line">   <span class="comment">//...some code2</span></div><div class="line">&#125;).<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span><span class="params">(err)</span>&#123;</span></div><div class="line">    console.<span class="built_in">log</span>(<span class="string">'错误'</span>+<span class="built_in">error</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>上面的代码中一共有四个Promise对象，getJSON产生，两个then产生两个，其中任何一个报错，都会被最后一个catch所捕获，一般使用的时候，注意不要在<code>then()</code>中定义Rejected回调函数，官方建议总是使用catch方法处理错误异常回调。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">异步</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
     </nav>
   
 
@@ -629,11 +602,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -649,11 +622,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
               </li>
              
               <li class="article-tag-list-item">
