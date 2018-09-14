@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="异步的实现原理123456var ajax = $.ajax(&amp;#123;    url: &apos;/data/data1.json&apos;,    success: function () &amp;#123;        console.log(&apos;success&apos;)    &amp;#125;&amp;#125;)
 对于ajax这种传递过去不执行，等出来结果之后再执行的函数，叫做callback，即回调函数.实现异步的最核心原">
-<meta property="og:updated_time" content="2018-04-14T00:56:56.066Z">
+<meta property="og:updated_time" content="2018-09-13T11:57:40.677Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解JavaScript--异步系列(1)">
 <meta name="twitter:description" content="异步的实现原理123456var ajax = $.ajax(&amp;#123;    url: &apos;/data/data1.json&apos;,    success: function () &amp;#123;        console.log(&apos;success&apos;)    &amp;#125;&amp;#125;)
@@ -176,7 +176,9 @@
 <p><strong>事件绑定算不算异步？</strong></p>
 <p>原来事件绑定和异步操作的实现机制是一样的，那么<strong>事件绑定算不算异步呢？</strong>（声明一下，这里说的事件绑定是如下代码的形式）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$btn.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'你点击了按钮'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
 <p><strong>一、共同之处：</strong><br>技术实现以及书写方法上是一样的，最终执行的方式也基本一样，都通过 evet-loop 执行。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$btn.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'你点击了按钮'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">fs.readFile(<span class="string">'data1.json'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</div><div class="line">    <span class="comment">// 获取数据</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p><strong>二、不同之处：</strong><br>第一，event-loop 执行时，调用的源不一样。异步操作是系统自动调用，无论是setTimeout时间到了还是$.ajax请求返回了，系统会自动调用。而事件绑定就需要用户手动触发<br>第二，从设计上来将，事件绑定有着明显的“订阅-发布”的设计模式，而异步操作却没有。<br>第三，事件绑定在 js 中扮演着非常重要的角色，各个地方都会用到事件绑定的形式。例如 web 页面监控鼠标、键盘，以及 nodejs 中的 EventEmitter 应用非常广泛（特别是涉及到数据流时）。而事件绑定被应用到非常广泛，却没有发生像异步操作带来的程序逻辑问题。</p>
+<p><strong>二、不同之处：</strong><br>第一，event-loop 执行时，调用的源不一样。异步操作是系统自动调用，无论是setTimeout时间到了还是$.ajax请求返回了，系统会自动调用。而事件绑定就需要用户手动触发.</p>
+<p>第二，从设计上来将，事件绑定有着明显的“订阅-发布”的设计模式，而异步操作却没有。</p>
+<p>第三，事件绑定在 js 中扮演着非常重要的角色，各个地方都会用到事件绑定的形式。例如 web 页面监控鼠标、键盘，以及 nodejs 中的 EventEmitter 应用非常广泛（特别是涉及到数据流时）。而事件绑定被应用到非常广泛，却没有发生像异步操作带来的程序逻辑问题。</p>
 
       
 
@@ -402,19 +404,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -426,6 +424,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
@@ -434,11 +436,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
