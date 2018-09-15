@@ -18,7 +18,7 @@
 <meta property="og:description" content="浏览器出于安全的考虑，采用的是同源策略。
 协议、域名和端口号三者统一，就是同域，只要有其中一个不一样，就是跨域，这时Ajax就会请求失败。
 下面有三种方法可以解决跨域的问题">
-<meta property="og:updated_time" content="2018-09-13T08:45:05.306Z">
+<meta property="og:updated_time" content="2018-09-15T10:57:34.577Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="跨域">
 <meta name="twitter:description" content="浏览器出于安全的考虑，采用的是同源策略。
@@ -194,13 +194,13 @@
 <p>四、postMessage</p>
 </blockquote>
 <p>这种方式通常用于获取嵌入页面中的第三方页面数据。一个页面发送消息，另一个页面判断来源并接收消息<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 发送消息端</span></div><div class="line"><span class="built_in">window</span>.parent.postMessage(<span class="string">'message'</span>, <span class="string">'http://test.com'</span>);</div><div class="line"><span class="comment">// 接收消息端</span></div><div class="line"><span class="keyword">var</span> mc = <span class="keyword">new</span> MessageChannel();</div><div class="line">mc.addEventListener(<span class="string">'message'</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">var</span> origin = event.origin || event.originalEvent.origin; </div><div class="line">    <span class="keyword">if</span> (origin === <span class="string">'http://test.com'</span>) &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'验证通过'</span>)</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h2 id="30s总结"><a href="#30s总结" class="headerlink" title="30s总结"></a>30s总结</h2><ul>
-<li>JSONP : 利用 <script> 标签的漏洞来跨域；</li>
-<li>CORS：服务端和后端，后端是关键</li>
-<li>document.domian ： 二级域名相同</li>
-<li>postMessage ： 一个页面发送，另一个页面接收并验证</li>
+<h2 id="★30s总结"><a href="#★30s总结" class="headerlink" title="★30s总结"></a>★30s总结</h2><ul>
+<li><code>JSONP</code> : 利用 <code>&lt;script&gt;</code> 标签的漏洞来跨域；</li>
+<li><code>CORS</code>：服务端和后端，后端是关键</li>
+<li><code>document.domian</code> ： 二级域名相同</li>
+<li><code>postMessage</code> ： 一个页面发送，另一个页面接收并验证</li>
 </ul>
-</script></li></ul>
+
       
 
       
@@ -292,6 +292,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/09/15/73Event-Loop/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Event Loop
+        
+      </div>
+    </a>
   
   
     <a href="/2018/09/11/71事件机制/" id="article-nav-older" class="article-nav-link-wrap">
@@ -421,11 +430,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
