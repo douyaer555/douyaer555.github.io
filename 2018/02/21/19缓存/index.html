@@ -6,21 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>缓存 | wangsiyuan</title>
+  <title>储存 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、Cookie 和 Session 的区别【Cookie】Cookie 有几个特点,1、服务端通过Set-Cookie来设置Cookie,Cookie的本质就是一串字符串。2、客户端得到这个字符串后，每次登陆这个网页，都会携带上这串字符串。3、服务端再通过这串字符串去找到对应的隐私信息。4、Cookie大小一般为4kb。5、Cookie默认有失效时间，但是后台可以设置过期时间。
-因为Cookie">
+  <meta name="description" content="从上表可以看到，cookie 已经不建议用于存储。如果没有大量数据存储需求的话，可以使用 localStorage 和 sessionStorage 。对于不怎么改变的数据尽量使用 localStorage 存储，否则可以用 sessionStorage 存储。
+一、Cookie 和 Session 的区别【Cookie】Cookie 有几个特点,1、服务端通过 Set-Cookie 来设置 Co">
 <meta property="og:type" content="article">
-<meta property="og:title" content="缓存">
+<meta property="og:title" content="储存">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/02/21/19缓存/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="一、Cookie 和 Session 的区别【Cookie】Cookie 有几个特点,1、服务端通过Set-Cookie来设置Cookie,Cookie的本质就是一串字符串。2、客户端得到这个字符串后，每次登陆这个网页，都会携带上这串字符串。3、服务端再通过这串字符串去找到对应的隐私信息。4、Cookie大小一般为4kb。5、Cookie默认有失效时间，但是后台可以设置过期时间。
-因为Cookie">
-<meta property="og:updated_time" content="2018-04-14T00:51:18.007Z">
+<meta property="og:description" content="从上表可以看到，cookie 已经不建议用于存储。如果没有大量数据存储需求的话，可以使用 localStorage 和 sessionStorage 。对于不怎么改变的数据尽量使用 localStorage 存储，否则可以用 sessionStorage 存储。
+一、Cookie 和 Session 的区别【Cookie】Cookie 有几个特点,1、服务端通过 Set-Cookie 来设置 Co">
+<meta property="og:image" content="https://i.imgur.com/sbZ0NjX.png">
+<meta property="og:image" content="https://i.imgur.com/zhhd2fg.png">
+<meta property="og:updated_time" content="2018-09-16T22:38:26.606Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="缓存">
-<meta name="twitter:description" content="一、Cookie 和 Session 的区别【Cookie】Cookie 有几个特点,1、服务端通过Set-Cookie来设置Cookie,Cookie的本质就是一串字符串。2、客户端得到这个字符串后，每次登陆这个网页，都会携带上这串字符串。3、服务端再通过这串字符串去找到对应的隐私信息。4、Cookie大小一般为4kb。5、Cookie默认有失效时间，但是后台可以设置过期时间。
-因为Cookie">
+<meta name="twitter:title" content="储存">
+<meta name="twitter:description" content="从上表可以看到，cookie 已经不建议用于存储。如果没有大量数据存储需求的话，可以使用 localStorage 和 sessionStorage 。对于不怎么改变的数据尽量使用 localStorage 存储，否则可以用 sessionStorage 存储。
+一、Cookie 和 Session 的区别【Cookie】Cookie 有几个特点,1、服务端通过 Set-Cookie 来设置 Co">
+<meta name="twitter:image" content="https://i.imgur.com/sbZ0NjX.png">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -153,7 +156,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      缓存
+      储存
     </h1>
   
 
@@ -166,8 +169,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、Cookie-和-Session-的区别"><a href="#一、Cookie-和-Session-的区别" class="headerlink" title="一、Cookie 和 Session 的区别"></a>一、Cookie 和 Session 的区别</h2><p>【Cookie】<br>Cookie 有几个特点,<br>1、服务端通过Set-Cookie来设置Cookie,Cookie的本质就是一串字符串。<br>2、客户端得到这个字符串后，每次登陆这个网页，都会携带上这串字符串。<br>3、服务端再通过这串字符串去找到对应的隐私信息。<br>4、Cookie大小一般为4kb。<br>5、Cookie默认有失效时间，但是后台可以设置过期时间。</p>
-<p>因为Cookie可以篡改，而且是明文传输的，所以存在漏洞，Session就解决了这个问题。<br><a id="more"></a><br>【Session】<br>Session的特点：<br>1、一般来说，Session是基于Cookie来设置的一个哈希表。<br>2、将SessionId(随机数)通过Cookie发给服务端。<br>3、客户端访问服务器时，服务器读取SessionID。<br>4、服务器有一块内存(哈希表),存储了所有的Session。<br>5、通过SessionID，我们可以得到用户的隐私信息。<br>6、这块内存(哈希表)就是服务器上所有的Session。 </p>
+        <p><img src="https://i.imgur.com/sbZ0NjX.png" alt=""><br>从上表可以看到，<code>cookie</code> 已经不建议用于存储。如果没有大量数据存储需求的话，可以使用 <code>localStorage</code> 和 <code>sessionStorage</code> 。对于不怎么改变的数据尽量使用 <code>localStorage</code> 存储，否则可以用 <code>sessionStorage</code> 存储。</p>
+<h2 id="一、Cookie-和-Session-的区别"><a href="#一、Cookie-和-Session-的区别" class="headerlink" title="一、Cookie 和 Session 的区别"></a>一、Cookie 和 Session 的区别</h2><p>【Cookie】<br>Cookie 有几个特点,<br>1、服务端通过 <code>Set-Cookie</code> 来设置 <code>Cookie</code> , <code>Cookie</code> 的本质就是一串字符串。<br>2、客户端得到这个字符串后，每次登陆这个网页，都会携带上这串字符串。<br>3、服务端再通过这串字符串去找到对应的隐私信息。<br>4、Cookie大小一般为4kb。<br>5、Cookie默认有失效时间，但是后台可以设置过期时间。<br><img src="https://i.imgur.com/zhhd2fg.png" alt=""><br>因为 <code>Cookie</code> 可以篡改，而且是明文传输的，所以存在漏洞，<code>Session</code> 就解决了这个问题。<br><a id="more"></a><br>【Session】<br>Session的特点：<br>1、一般来说，Session是基于Cookie来设置的一个哈希表。<br>2、将SessionId(随机数)通过Cookie发给服务端。<br>3、客户端访问服务器时，服务器读取SessionID。<br>4、服务器有一块内存(哈希表),存储了所有的Session。<br>5、通过SessionID，我们可以得到用户的隐私信息。<br>6、这块内存(哈希表)就是服务器上所有的Session。 </p>
 <h2 id="二、Cookie-和-LocalStorage-的区别"><a href="#二、Cookie-和-LocalStorage-的区别" class="headerlink" title="二、Cookie 和 LocalStorage 的区别"></a>二、Cookie 和 LocalStorage 的区别</h2><p>【Cookie】<br>Cookie 有几个特点：<br>1、服务端通过Set-Cookie来设置Cookie,Cookie的本质就是一串字符串。<br>2、客户端得到这个字符串后，每次登陆这个网页，都会携带上这串字符串。<br>3、服务端再通过这串字符串去找到对应的隐私信息。<br>4、Cookie大小一般为4kb。<br>5、Cookie默认有失效时间，但是后台可以设置过期时间。</p>
 <p>【LocalStorage】<br>LocalStorage的实质也是一个hash，它是html5标准提供的一个API，用来持久化存储一些不是那么重要的信息。<br>它的特点：<br>1、LocalStorage与HTTP无关。<br>2、HTTP不会带上LocalStorage。<br>3、只有相同的页面才能互相读取LocalStorage。<br>4、浏览器对每个域名分配的LocalStorage最大的存储量为5Mb左右。<br>5、记录一些无关紧要的信息，不记录用户敏感信息。<br>6、LocalStorage永久有效，除非用户清理缓存。 </p>
 <p>它与Cookie的区别就是，一个通过Set-Cookie设置，一个是HTML5提供的APi，<br>一个是通过HTTP设置，一个与HTTP无关。</p>
@@ -402,10 +405,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -414,15 +413,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -434,11 +437,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
               </li>
              
               <li class="article-tag-list-item">
