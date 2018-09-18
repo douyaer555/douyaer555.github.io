@@ -6,14 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>Tag: 算法 | wangsiyuan</title>
+  <title>剑指offer--JavaScript版 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="wangsiyuan">
-<meta property="og:url" content="wangsiyuan233.github.io/tags/算法/index.html">
+  <meta name="description" content="一、 二维数组中的查找p44
+
+描述：在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。1234567891011121314function Find(target, array) &amp;#123;  let i = 0;  let j = array[i].length - 1;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="剑指offer--JavaScript版">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/09/17/74剑指offer/index.html">
 <meta property="og:site_name" content="wangsiyuan">
+<meta property="og:description" content="一、 二维数组中的查找p44
+
+描述：在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。1234567891011121314function Find(target, array) &amp;#123;  let i = 0;  let j = array[i].length - 1;">
+<meta property="og:updated_time" content="2018-09-18T02:11:31.741Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wangsiyuan">
+<meta name="twitter:title" content="剑指offer--JavaScript版">
+<meta name="twitter:description" content="一、 二维数组中的查找p44
+
+描述：在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。1234567891011121314function Find(target, array) &amp;#123;  let i = 0;  let j = array[i].length - 1;">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -139,98 +149,168 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-74剑指offer" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/15/43Algorithms1-2/" class="archive-article-date">
-  	<time datetime="2018-04-15T13:08:59.792Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-15</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/15/43Algorithms1-2/">&lt;Algorithms&gt;-1.2数据抽象</a>
+    <h1 class="article-title" itemprop="name">
+      剑指offer--JavaScript版
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/02/37Algorithms1-1/" class="archive-article-date">
-  	<time datetime="2018-04-02T06:33:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-02</time>
+        
+        <a href="/2018/09/17/74剑指offer/" class="archive-article-date">
+  	<time datetime="2018-09-17T06:02:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
 </a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>一、 <a href="https://www.nowcoder.com/ta/coding-interviews/question-ranking?tpId=13&amp;tqId=11154&amp;uuid=abc3fe2ce8e146608e868a70efebf62e&amp;rp=1&amp;lang=14" target="_blank" rel="external">二维数组中的查找</a>p44</p>
+</blockquote>
+<p>描述：在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。<br><figure class="highlight zephir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Find</span><span class="params">(target, array)</span> </span>&#123;</div><div class="line">  <span class="keyword">let</span> i = <span class="number">0</span>;</div><div class="line">  <span class="keyword">let</span> j = <span class="keyword">array</span>[i].length - <span class="number">1</span>; <span class="comment">// i</span></div><div class="line">  <span class="keyword">while</span> (i &lt; <span class="keyword">array</span>.length &amp;&amp; j &gt;= <span class="number">0</span>) &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">array</span>[i][j] &lt; target) &#123;</div><div class="line">      i++;</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">array</span>[i][j] &gt; target) &#123;</div><div class="line">      j--;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>思路：通过对 i 和 j 的设置可以得出，最先定位的点是在矩形的左下角，如果某数比目标数小，则向右移动一个单位；如果比目标数大，就向上移动一个单位，直到最后找到这个数（true），没找到就是false<br><a id="more"></a></p>
+<blockquote>
+<p>二、 <a href="https://www.nowcoder.com/ta/coding-interviews/question-ranking?tpId=13&amp;tqId=11155&amp;uuid=4060ac7e3e404ad1a894ef3e17650423&amp;rp=1&amp;lang=14" target="_blank" rel="external">替换空格</a>p51</p>
+</blockquote>
+<p>描述：请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="title">changeSpace</span>(str)&#123;</div><div class="line">	<span class="keyword">return</span> <span class="type">str.replace(/\s/g,'%20/)</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>思路：这题还蛮神奇的。。在C里还要讨论时间复杂度，而JS。。傻傻惹人爱。。。</p>
+<blockquote>
+<p>三、</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/02/37Algorithms1-1/">&lt;Algorithms&gt;-1.1基础编程模型</a>
-    </h1>
-  
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/09/17/74剑指offer/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/09/15/73Event-Loop/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Event Loop</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -253,9 +333,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
