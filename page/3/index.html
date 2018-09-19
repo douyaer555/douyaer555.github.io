@@ -141,19 +141,169 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-64二叉树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-66聊聊系列-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/25/64二叉树/">二叉树</a>
+      <a class="article-title" href="/2018/08/20/66聊聊系列-4/">聊聊系列(4)-- 深浅拷贝</a>
     </h1>
   
 
         
-        <a href="/2018/07/25/64二叉树/" class="archive-article-date">
+        <a href="/2018/08/20/66聊聊系列-4/" class="archive-article-date">
+  	<time datetime="2018-08-20T12:27:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如果<strong>给一个变量赋值一个对象</strong>，那么两者的值会是同一个引用，其中一方改变，另一方也会相应改变。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">let <span class="selector-tag">a</span> = &#123;</div><div class="line">    age: <span class="number">1</span></div><div class="line">&#125;</div><div class="line">let <span class="selector-tag">b</span> = <span class="selector-tag">a</span></div><div class="line"><span class="selector-tag">a</span><span class="selector-class">.age</span> = <span class="number">2</span></div><div class="line">console.log(<span class="selector-tag">b</span>.age) <span class="comment">// 2</span></div></pre></td></tr></table></figure></p>
+<p>我们不想要这样的情况出现在开发中，需要浅拷贝<br>
+        
+          <a class="article-more-a" href="/2018/08/20/66聊聊系列-4/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">聊聊系列</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-65原型系列-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/13/65原型系列-5/">深入理解JavaScript--原型系列(5)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/13/65原型系列-5/" class="archive-article-date">
+  	<time datetime="2018-08-13T12:18:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>一、prototype</p>
+</blockquote>
+<p>1、<code>prototype</code> 是一个显式原型属性，只有函数才拥有该属性。基本上所有函数都有这个属性，但是也有一个例外:</p>
+<p> <code>let fun = Function.prototype.bind()</code></p>
+<p>如果你以上述方法创建一个函数，那么可以发现这个函数是不具有 prototype 属性的。</p>
+<p>2、当我们声明一个函数时，这个属性就被自动创建了。 <code>function Foo() {}</code></p>
+<p>并且这个属性的值是一个对象（也就是原型），只有一个属性 <code>constructor</code></p>
+<p><code>constructor</code> 对应着构造函数，也就是 <code>Foo</code>。</p>
+<p>3、<code>constructor</code>是一个公有且不可枚举的属性。一旦我们改变了函数的 <code>prototype</code> ，那么新对象就没有这个属性了（当然可以通过原型链取到 <code>constructor</code>）。</p>
+<p><code>constructor</code>属性到底有什么用呢？</p>
+<ul>
+<li><p>让实例对象知道是什么函数构造了它</p>
+</li>
+<li><p>如果想给某些类库中的构造函数增加一些自定义的方法，就可以通过 xx.constructor.method 来扩展</p>
+</li>
+<li>
+        
+          <a class="article-more-a" href="/2018/08/13/65原型系列-5/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-64数据结构-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/25/64数据结构-1/">数据结构(1) -- 二叉树</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/25/64数据结构-1/" class="archive-article-date">
   	<time datetime="2018-07-25T08:30:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-25</time>
 </a>
         
@@ -167,7 +317,7 @@
 </blockquote>
 <p><img src="https://i.imgur.com/gIjXNsQ.png" alt=""><br>其实思路还是比较简单的：将当前的root节点的左右分支进行对调反转，若左分支存在，则将左分支的节点作为root节点进行对调反转；若右分支存在，则将右分支的节点作为root节点进行对调反转；一直 <strong>递归</strong> 到所有节点的左右分支都不存在。<br>
         
-          <a class="article-more-a" href="/2018/07/25/64二叉树/#more">more >></a>
+          <a class="article-more-a" href="/2018/07/25/64数据结构-1/#more">more >></a>
         
       
 
@@ -341,138 +491,6 @@
 
 
   
-    <article id="post-61前端题目总结2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/17/61前端题目总结2/">前端总结2</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/17/61前端题目总结2/" class="archive-article-date">
-  	<time datetime="2018-07-17T07:52:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><blockquote>
-<p>JS 有哪些数据类型？</p>
-</blockquote>
-<p>七个小矮子：<code>string</code> <code>number</code> <code>bool</code> <code>undefined</code> <code>null</code> <code>object</code> <code>symbol</code><br><code>object</code> 包括了数组、函数、正则、日期等对象<br>一旦出现（数组、函数、正则、日期、NaN）直接0分</p>
-<blockquote>
-<p>（必考） Promise 怎么使用？</p>
-</blockquote>
-<p><a href="http://wangsiyuan233.cn/2018/04/02/36%E5%BC%82%E6%AD%A5%E7%B3%BB%E5%88%97-2/">深入理解JavaScript–异步系列(2)</a><br>
-        
-          <a class="article-more-a" href="/2018/07/17/61前端题目总结2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-60面试题目总结1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/14/60面试题目总结1/">前端总结1</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/14/60面试题目总结1/" class="archive-article-date">
-  	<time datetime="2018-07-14T09:16:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>请你谈谈Cookie的弊端</p>
-</blockquote>
-<p><strong>优点</strong>： 极高的扩展性和可用性<br>1) 数据持久性。<br>2) 不需要任何服务器资源。 Cookie 存储在客户端并在发送后由服务器读取。<br>3) 可配置到期规则。 控制 cookie 的生命期，使之不会永远有效。偷盗者很可能拿到一个过期的 cookie 。<br>4) 简单性。 基于文本的轻量结构。<br>5) 通过良好的编程，控制保存在 cookie 中的 session 对象的大小。<br>6) 通过加密和安全传输技术（ SSL ），减少 cookie 被破解的可能性。<br>7) 只在 cookie 中存放不敏感数据，即使被盗也不会有重大损失。<br>
-        
-          <a class="article-more-a" href="/2018/07/14/60面试题目总结1/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -554,10 +572,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -570,11 +584,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -594,11 +612,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">剑指offer</a>
               </li>
             
             <div class="clearfix"></div>
