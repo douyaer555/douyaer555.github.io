@@ -6,21 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>周结-计算机基础 | wangsiyuan</title>
+  <title>梳理系列（1）-- 页面布局 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这周有了一些感悟，在技术部分之前想记录下来：
-1.知识的诅咒：一个掌握了某项知识A的人，是无法想象不懂A的人是怎样想的。刚好完成了7个课时，神奇之处在于进度条到了此时此刻，我还没有真正入门HTML，也就是说，方方连尖角号是什么都没开始教。那么我学了些什么呢？疯狂装各种软件 –&amp;gt;搭建博客 –&amp;gt;HTTP协议 –&amp;gt;命令行基础 –&amp;gt;写脚本 –&amp;gt;写服务器。好在我自学了一点点，要">
+  <meta name="description" content="假设高度已知，请写出三栏布局，左右各300px，中间自适应
+
+解法一：浮动布局">
 <meta property="og:type" content="article">
-<meta property="og:title" content="周结-计算机基础">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/01/22/2周结-计算机基础/index.html">
+<meta property="og:title" content="梳理系列（1）-- 页面布局">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/09/23/77梳理系列（1）/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="这周有了一些感悟，在技术部分之前想记录下来：
-1.知识的诅咒：一个掌握了某项知识A的人，是无法想象不懂A的人是怎样想的。刚好完成了7个课时，神奇之处在于进度条到了此时此刻，我还没有真正入门HTML，也就是说，方方连尖角号是什么都没开始教。那么我学了些什么呢？疯狂装各种软件 –&amp;gt;搭建博客 –&amp;gt;HTTP协议 –&amp;gt;命令行基础 –&amp;gt;写脚本 –&amp;gt;写服务器。好在我自学了一点点，要">
-<meta property="og:updated_time" content="2018-04-14T00:34:31.129Z">
+<meta property="og:description" content="假设高度已知，请写出三栏布局，左右各300px，中间自适应
+
+解法一：浮动布局">
+<meta property="og:updated_time" content="2018-09-23T14:18:06.895Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="周结-计算机基础">
-<meta name="twitter:description" content="这周有了一些感悟，在技术部分之前想记录下来：
-1.知识的诅咒：一个掌握了某项知识A的人，是无法想象不懂A的人是怎样想的。刚好完成了7个课时，神奇之处在于进度条到了此时此刻，我还没有真正入门HTML，也就是说，方方连尖角号是什么都没开始教。那么我学了些什么呢？疯狂装各种软件 –&amp;gt;搭建博客 –&amp;gt;HTTP协议 –&amp;gt;命令行基础 –&amp;gt;写脚本 –&amp;gt;写服务器。好在我自学了一点点，要">
+<meta name="twitter:title" content="梳理系列（1）-- 页面布局">
+<meta name="twitter:description" content="假设高度已知，请写出三栏布局，左右各300px，中间自适应
+
+解法一：浮动布局">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -146,42 +149,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2周结-计算机基础" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-77梳理系列（1）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      周结-计算机基础
+      梳理系列（1）-- 页面布局
     </h1>
   
 
         
-        <a href="/2018/01/22/2周结-计算机基础/" class="archive-article-date">
-  	<time datetime="2018-01-22T00:33:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-22</time>
+        <a href="/2018/09/23/77梳理系列（1）/" class="archive-article-date">
+  	<time datetime="2018-09-23T10:35:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这周有了一些感悟，在技术部分之前想记录下来：</p>
-<p>1.<strong>知识的诅咒：一个掌握了某项知识A的人，是无法想象不懂A的人是怎样想的。</strong>刚好完成了7个课时，神奇之处在于进度条到了此时此刻，我还没有真正入门HTML，也就是说，方方连尖角号是什么都没开始教。那么我学了些什么呢？疯狂装各种软件 –&gt;搭建博客 –&gt;HTTP协议 –&gt;命令行基础 –&gt;写脚本 –&gt;写服务器。好在我自学了一点点，要不然半条命都要进去吧。<br><a id="more"></a></p>
-<p>2.<strong>入门的正确姿势。</strong>自己走了很多的弯路，不仅仅是编程，还有健身/日语，浪费的时间不一而足，自学的人总会扯各种不着边际的理由，其实是穷，我用自己摔的坑告诉大家：看视频学钢琴是不可能的。0基础是一定要找师傅带的，最后：找个好师傅和花钱买课一样的重要。</p>
-<hr>
-<p>废话不多说，下面开始技术梳理</p>
-<p><strong>一切都是以server.js为目的展开的。</strong><br>（我打乱了方方的顺序）</p>
-<ol>
-<li>各种软件的安装，关注酷客+阮一峰，git+colourpix+atom+hexo+科学上网etc。(谷歌大法是真好</li>
-<li>拦路虎：git+github+hexo,可以参考我上一篇博客<a href="http://wangsiyuan233.cn/GitHub-for-babies/" target="_blank" rel="external">《github for babies》</a>。</li>
-<li>进制的转换 + 存储方式 = 小脚本（自动生成目录并填充内容）</li>
-<li>HTTP基础 + 请求响应 = 极简服务器（发出请求返回内容）</li>
-</ol>
-<p>我对于写一个自己的服务器server.js没有那么强的愿景，发出了又能给此时此刻的我带来什么呢？方方演示的时候，左边是发出的命令行，右边是返回的命令行，呼哧呼哧的狂写，示意我们头部和尾部不用理会，只用知道中间的response.end就行了。作业是copy他的代码就行了</p>
-<p>这七个课时过得很魔幻，自己和科班出身的想法差太远。</p>
-<hr>
-<p>因为学到的知识稀疏不已，写起总结就会捉襟见肘。<br>要不我把课后标答都传上来充充门面哈哈哈</p>
+        <blockquote>
+<p>假设高度已知，请写出三栏布局，左右各300px，中间自适应</p>
+</blockquote>
+<p><strong>解法一：浮动布局</strong><br><a id="more"></a></p>
 
       
 
@@ -216,7 +207,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">梳理系列</a>
         		</li>
       		
 		</ul>
@@ -272,7 +263,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/01/22/2周结-计算机基础/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/09/23/77梳理系列（1）/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -286,18 +277,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/24/3HTML-一/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          HTML(一)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/01/21/1GitHub-for-babies/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">GitHub for babies</div>
+    <a href="/2018/09/19/74剑指offer-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">剑指offer(1)--JavaScript版(01-11)</div>
       <i class="icon-circle-right"></i>
     </a>
   

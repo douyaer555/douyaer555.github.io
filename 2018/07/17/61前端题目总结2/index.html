@@ -29,7 +29,7 @@ JS 有哪些数据类型？
 
 深入理解JavaScript–异步系列(2)">
 <meta property="og:image" content="https://i.imgur.com/v7kdhsX.jpg">
-<meta property="og:updated_time" content="2018-09-20T02:58:52.919Z">
+<meta property="og:updated_time" content="2018-09-20T03:37:15.632Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端总结2">
 <meta name="twitter:description" content="JavaScript
@@ -230,15 +230,15 @@ JS 有哪些数据类型？
 </blockquote>
 </li>
 </ul>
-<p><a href="https://www.cnblogs.com/penghuwan/p/7359026.html" target="_blank" rel="external">javascript】详解javaScript的深拷贝</a></p>
+<p>【javascript】详解javaScript的深拷贝](<a href="https://www.cnblogs.com/penghuwan/p/7359026.html" target="_blank" rel="external">https://www.cnblogs.com/penghuwan/p/7359026.html</a>)</p>
 <p>1) JSON 来深拷贝<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="meta">&#123;...&#125;</span></div><div class="line"><span class="keyword">var</span> b = <span class="type">JSON</span>.parse( <span class="type">JSON</span>.stringify(a) )</div></pre></td></tr></table></figure></p>
 <p>缺点：JSON 不支持函数、引用、undefined、RegExp、Date……</p>
-<p>2) 递归拷贝<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">object</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> object2</div><div class="line">    <span class="keyword">if</span>(! (object <span class="keyword">instanceof</span> <span class="built_in">Object</span>) )&#123;</div><div class="line">        <span class="keyword">return</span> object</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(object <span class="keyword">instanceof</span> <span class="built_in">Array</span>)&#123;</div><div class="line">        object2 = []</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(object <span class="keyword">instanceof</span> <span class="built_in">Function</span>)&#123;</div><div class="line">        object2 = <span class="built_in">eval</span>(object.toString())</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(object <span class="keyword">instanceof</span> <span class="built_in">Object</span>)&#123;</div><div class="line">        object2 = &#123;&#125;</div><div class="line">    &#125;</div><div class="line">    你也可以把 <span class="built_in">Array</span> <span class="built_in">Function</span> <span class="built_in">Object</span> 都当做 <span class="built_in">Object</span> 来看待，参考 https:<span class="comment">//juejin.im/post/587dab348d6d810058d87a0a</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> object)&#123;</div><div class="line">        object2[key] = clone(object[key])</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> object2</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>2) 递归拷贝<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function clone(<span class="class"><span class="keyword">object</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> object2</div><div class="line">    <span class="keyword">if</span>(! (<span class="class"><span class="keyword">object</span> <span class="title">instanceof</span> <span class="title">Object</span>) )</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="class"><span class="keyword">object</span></span></div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="class"><span class="keyword">object</span> <span class="title">instanceof</span> <span class="title">Array</span>)</span>&#123;</div><div class="line">        object2 = []</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="class"><span class="keyword">object</span> <span class="title">instanceof</span> <span class="title">Function</span>)</span>&#123;</div><div class="line">        object2 = eval(<span class="class"><span class="keyword">object</span>.<span class="title">toString</span>(<span class="params"></span>))</span></div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="class"><span class="keyword">object</span> <span class="title">instanceof</span> <span class="title">Object</span>)</span>&#123;</div><div class="line">        object2 = &#123;&#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//你也可以把 Array Function Object 都当做 Object 来看待，参考 https://juejin.im/post/587dab348d6d810058d87a0a</span></div><div class="line">    <span class="keyword">for</span>(let key in <span class="class"><span class="keyword">object</span>)</span>&#123;</div><div class="line">        object2[key] = clone(<span class="class"><span class="keyword">object</span>[key])</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> object2</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>如何实现数组去重？</p>
 </blockquote>
 <p>1) 计数排序的逻辑（只能正整数）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var a = [4,2,5,6,3,4,5]</div><div class="line"> var <span class="built_in">hash</span>Tab = &#123;&#125;</div><div class="line"> <span class="keyword">for</span>(<span class="built_in">let</span> i=0; i&lt;a.length;i++)&#123;</div><div class="line">     <span class="keyword">if</span>(a[i] <span class="keyword">in</span> <span class="built_in">hash</span>Tab)&#123;</div><div class="line">         // 什么也不做</div><div class="line">     &#125;<span class="keyword">else</span>&#123;</div><div class="line">         <span class="built_in">hash</span>Tab[ a[i] ] = <span class="literal">true</span></div><div class="line">     &#125;</div><div class="line"> &#125;</div><div class="line"> //<span class="built_in">hash</span>Tab: &#123;4: <span class="literal">true</span>, 2: <span class="literal">true</span>, 5: <span class="literal">true</span>, 6:<span class="literal">true</span>, 3: <span class="literal">true</span>&#125;</div><div class="line"> console.log(Object.keys(<span class="built_in">hash</span>Tab)) // [<span class="string">'4'</span>,<span class="string">'2'</span>,<span class="string">'5'</span>,<span class="string">'6'</span>,<span class="string">'3'</span>]</div></pre></td></tr></table></figure></p>
-<p>2) Set 去重<br> <code>Array.from(new Set(a))</code><br>3) WeakMap 任意类型去重</p>
+<p>2) Set 去重<br> <code>Array.from(new Set(a))</code></p>
 <blockquote>
 <p>如何用正则实现 string.trim() ？</p>
 </blockquote>
@@ -608,15 +608,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -628,11 +628,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -640,11 +640,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -652,11 +652,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">剑指offer</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color5">梳理系列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">剑指offer</a>
               </li>
             
             <div class="clearfix"></div>
