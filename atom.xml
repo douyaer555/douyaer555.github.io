@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wangsiyuan233.github.io/"/>
-  <updated>2018-09-23T14:18:06.895Z</updated>
+  <updated>2018-09-24T07:39:50.837Z</updated>
   <id>wangsiyuan233.github.io/</id>
   
   <author>
@@ -18,19 +18,21 @@
   
   <entry>
     <title>梳理系列（1）-- 页面布局</title>
-    <link href="wangsiyuan233.github.io/2018/09/23/77%E6%A2%B3%E7%90%86%E7%B3%BB%E5%88%97%EF%BC%881%EF%BC%89/"/>
-    <id>wangsiyuan233.github.io/2018/09/23/77梳理系列（1）/</id>
+    <link href="wangsiyuan233.github.io/2018/09/23/77%E6%A2%B3%E7%90%86%E7%B3%BB%E5%88%97-1/"/>
+    <id>wangsiyuan233.github.io/2018/09/23/77梳理系列-1/</id>
     <published>2018-09-23T10:35:09.000Z</published>
-    <updated>2018-09-23T14:18:06.895Z</updated>
+    <updated>2018-09-24T07:39:50.837Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>假设高度已知，请写出三栏布局，左右各300px，中间自适应</p></blockquote><p><strong>解法一：浮动布局</strong><br><a id="more"></a></p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>假设高度已知，请写出三栏布局，左右各300px，中间自适应</p></blockquote><p><strong>解法一：浮动布局</strong></p><p><a href="http://js.jirengu.com/duzotakuse/1/edit?html,css,output" target="_blank" rel="external">【看代码点我】&gt;&gt;&gt;</a></p><h2 id="★30s总结"><a href="#★30s总结" class="headerlink" title="★30s总结"></a>★30s总结</h2><p>1、 在 <code>div</code> 里面，并不是按照 左中右 的顺序来写<br>2、 给3个 <code>div</code> 最小高度<br>3、 左浮 + 右浮<br>4、 缺点是压缩太小时，中间的字会漏下来，需要清除浮动<br><a id="more"></a><br><strong>解法二：绝对定位</strong></p><p><a href="http://js.jirengu.com/liwaluguji/1/edit?html,css,output" target="_blank" rel="external">【看代码点我】&gt;&gt;&gt;</a></p><h2 id="★30s总结-1"><a href="#★30s总结-1" class="headerlink" title="★30s总结"></a>★30s总结</h2><p>1、绝对定位就是按顺序写<br>2、中间到左边多少，中间到右边多少<br>3、每个 <code>div</code> 是 <code>absolute</code>，容器是 <code>relative</code><br>4、缺点是脱离了文档流</p><p><strong>解法三：flex布局</strong></p><p><a href="http://js.jirengu.com/domoviyevo/1/edit?html,css,output" target="_blank" rel="external">【看代码点我】&gt;&gt;&gt;</a></p><h2 id="★30s总结-2"><a href="#★30s总结-2" class="headerlink" title="★30s总结"></a>★30s总结</h2><p>1、容器是 <code>display:flex;</code><br>2、自适应是 <code>flex:1;</code><br>3、拖动时也没有漏下来<br>4、那么缺点一定是不兼容IE吧</p><p><strong>解法四：表格布局</strong></p><p><a href="http://js.jirengu.com/ronoxigemu/1/edit?html,css,output" target="_blank" rel="external">【看代码点我】&gt;&gt;&gt;</a></p><h2 id="★30s总结-3"><a href="#★30s总结-3" class="headerlink" title="★30s总结"></a>★30s总结</h2><p>1、容器里是 <code>display:table；</code><br>2、各个 <code>div</code> 里是 <code>display:table-cell;</code><br>3、优点是兼容性好<br>4、缺点是压缩以后，所有的格子都会变长</p><p><strong>解法五：网格布局</strong></p><p><a href="http://js.jirengu.com/rogilehema/1/edit?html,css,output" target="_blank" rel="external">【看代码点我】&gt;&gt;&gt;</a></p><h2 id="★30s总结-4"><a href="#★30s总结-4" class="headerlink" title="★30s总结"></a>★30s总结</h2><p>1、看起来挺清爽的<br>2、设置网格的行和咧</p><h2 id="去掉高度已知，哪种解法会崩？"><a href="#去掉高度已知，哪种解法会崩？" class="headerlink" title="去掉高度已知，哪种解法会崩？"></a>去掉高度已知，哪种解法会崩？</h2><p>只有 <code>table</code> 和 <code>flex</code> 还可以用</p>]]></content>
     
     <summary type="html">
     
       &lt;blockquote&gt;
 &lt;p&gt;假设高度已知，请写出三栏布局，左右各300px，中间自适应&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;解法一：浮动布局&lt;/strong&gt;&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;解法一：浮动布局&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://js.jirengu.com/duzotakuse/1/edit?html,css,output&quot;&gt;【看代码点我】&amp;gt;&amp;gt;&amp;gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;★30s总结&quot;&gt;&lt;a href=&quot;#★30s总结&quot; class=&quot;headerlink&quot; title=&quot;★30s总结&quot;&gt;&lt;/a&gt;★30s总结&lt;/h2&gt;&lt;p&gt;1、 在 &lt;code&gt;div&lt;/code&gt; 里面，并不是按照 左中右 的顺序来写&lt;br&gt;2、 给3个 &lt;code&gt;div&lt;/code&gt; 最小高度&lt;br&gt;3、 左浮 + 右浮&lt;br&gt;4、 缺点是压缩太小时，中间的字会漏下来，需要清除浮动&lt;br&gt;
     
     </summary>
     
