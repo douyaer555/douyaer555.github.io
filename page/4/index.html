@@ -141,6 +141,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-63二分查找" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/24/63二分查找/">二分查找（binary search）</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/24/63二分查找/" class="archive-article-date">
+  	<time datetime="2018-07-24T02:02:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>树拥有很多种结构，二叉树是树中最常用的结构，同时也是一个天然的递归结构。</p>
+<p>二分查找树也是二叉树，拥有二叉树的特性。但是区别在于二分查找树每个节点的值都<strong>比他的左子树的值大</strong>，<strong>比右子树的值小</strong>。</p>
+<blockquote>
+<p>一、创建一颗最简单的树</p>
+</blockquote>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(value) &#123;</div><div class="line">    <span class="keyword">this</span>.value = value</div><div class="line">    <span class="keyword">this</span>.left = <span class="literal">null</span></div><div class="line">    <span class="keyword">this</span>.right = <span class="literal">null</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BST</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="keyword">this</span>.root = <span class="literal">null</span></div><div class="line">    <span class="keyword">this</span>.size = <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">  getSize() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.size</div><div class="line">  &#125;</div><div class="line">  isEmpty() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.size === <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">  addNode(v) &#123;</div><div class="line">    <span class="keyword">this</span>.root = <span class="keyword">this</span>._addChild(<span class="keyword">this</span>.root, v)</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// 添加节点时，需要比较添加的节点值和当前</span></div><div class="line">  <span class="comment">// 节点值的大小</span></div><div class="line">  _addChild(node, v) &#123;</div><div class="line">    <span class="keyword">if</span> (!node) &#123;</div><div class="line">      <span class="keyword">this</span>.size++</div><div class="line">      <span class="keyword">return</span> new Node(v)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (node.value &gt; v) &#123;</div><div class="line">      node.left = <span class="keyword">this</span>._addChild(node.left, v)</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (node.value &lt; v) &#123;</div><div class="line">      node.right = <span class="keyword">this</span>._addChild(node.right, v)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> node</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2018/07/24/63二分查找/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-62排序算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -411,76 +477,6 @@
 
 
   
-    <article id="post-58CSS-查漏补缺" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/05/58CSS-查漏补缺/">CSS 查漏补缺</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/05/58CSS-查漏补缺/" class="archive-article-date">
-  	<time datetime="2018-07-05T03:04:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>（方方-必考）一、介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？</p>
-</blockquote>
-<p>（1）、有两种， IE 盒子模型、W3C 盒子模型；<br>（2）、盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border)；<br>（3）、区  别： IE的content部分把 border 和 padding计算了进去;<br>（4）、content-box: width == 内容区宽度<br>（5）、border-box: width == 内容区宽度 + padding 宽度 + border 宽度</p>
-<blockquote>
-<p>二、CSS选择符有哪些？哪些属性可以继承？</p>
-</blockquote>
-<p>1.id选择器（ <code>#myid</code> ）<br>2.类选择器（ <code>.myclassname</code> ）<br>3.标签选择器（ <code>div, h1, p</code>）<br>4.相邻选择器（<code>h1 + p</code> ）<br>5.子选择器（ <code>ul &gt; li</code> ）<br>6.后代选择器（ <code>li a</code> ）<br>7.通配符选择器（ <code>*</code> ）<br>8.属性选择器（ <code>a[rel = &quot;external&quot;]</code> ）<br>9.伪类选择器（ <code>a:hover, li:nth-child</code> ）</p>
-<p>可继承的样式： <code>font-size font-family color, UL LI DL DD DT</code>;</p>
-<p>不可继承的样式：<code>border padding margin width height</code>;<br>
-        
-          <a class="article-more-a" href="/2018/07/05/58CSS-查漏补缺/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -562,10 +558,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -574,15 +566,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -598,11 +594,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -610,15 +606,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">梳理系列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">剑指offer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">一面知识块</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>

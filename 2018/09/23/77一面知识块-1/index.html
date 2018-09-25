@@ -6,14 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>Tag: 梳理系列 | wangsiyuan</title>
+  <title>一面知识块（1）-- 页面布局 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="wangsiyuan">
-<meta property="og:url" content="wangsiyuan233.github.io/tags/梳理系列/index.html">
+  <meta name="description" content="假设高度已知，请写出三栏布局，左右各300px，中间自适应
+
+解法一：浮动布局
+【看代码点我】&amp;gt;&amp;gt;&amp;gt;
+★30s总结1、 在 div 里面，并不是按照 左中右 的顺序来写2、 给3个 div 最小高度3、 左浮 + 右浮4、 缺点是压缩太小时，中间的字会漏下来，需要清除浮动">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一面知识块（1）-- 页面布局">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/09/23/77一面知识块-1/index.html">
 <meta property="og:site_name" content="wangsiyuan">
+<meta property="og:description" content="假设高度已知，请写出三栏布局，左右各300px，中间自适应
+
+解法一：浮动布局
+【看代码点我】&amp;gt;&amp;gt;&amp;gt;
+★30s总结1、 在 div 里面，并不是按照 左中右 的顺序来写2、 给3个 div 最小高度3、 左浮 + 右浮4、 缺点是压缩太小时，中间的字会漏下来，需要清除浮动">
+<meta property="og:updated_time" content="2018-09-24T08:10:35.541Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wangsiyuan">
+<meta name="twitter:title" content="一面知识块（1）-- 页面布局">
+<meta name="twitter:description" content="假设高度已知，请写出三栏布局，左右各300px，中间自适应
+
+解法一：浮动布局
+【看代码点我】&amp;gt;&amp;gt;&amp;gt;
+★30s总结1、 在 div 里面，并不是按照 左中右 的顺序来写2、 给3个 div 最小高度3、 左浮 + 右浮4、 缺点是压缩太小时，中间的字会漏下来，需要清除浮动">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -139,60 +155,193 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-77一面知识块-1" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/23/77梳理系列-1/" class="archive-article-date">
-  	<time datetime="2018-09-23T10:35:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-23</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/23/77梳理系列-1/">梳理系列（1）-- 页面布局</a>
+    <h1 class="article-title" itemprop="name">
+      一面知识块（1）-- 页面布局
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/09/23/77一面知识块-1/" class="archive-article-date">
+  	<time datetime="2018-09-23T10:35:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>假设高度已知，请写出三栏布局，左右各300px，中间自适应</p>
+</blockquote>
+<p><strong>解法一：浮动布局</strong></p>
+<p><a href="http://js.jirengu.com/duzotakuse/1/edit?html,css,output" target="_blank" rel="external">【看代码点我】&gt;&gt;&gt;</a></p>
+<h2 id="★30s总结"><a href="#★30s总结" class="headerlink" title="★30s总结"></a>★30s总结</h2><p>1、 在 <code>div</code> 里面，并不是按照 左中右 的顺序来写<br>2、 给3个 <code>div</code> 最小高度<br>3、 左浮 + 右浮<br>4、 缺点是压缩太小时，中间的字会漏下来，需要清除浮动<br><a id="more"></a><br><strong>解法二：绝对定位</strong></p>
+<p><a href="http://js.jirengu.com/liwaluguji/1/edit?html,css,output" target="_blank" rel="external">【看代码点我】&gt;&gt;&gt;</a></p>
+<h2 id="★30s总结-1"><a href="#★30s总结-1" class="headerlink" title="★30s总结"></a>★30s总结</h2><p>1、绝对定位就是按顺序写<br>2、中间到左边多少，中间到右边多少<br>3、每个 <code>div</code> 是 <code>absolute</code>，容器是 <code>relative</code><br>4、缺点是脱离了文档流</p>
+<p><strong>解法三：flex布局</strong></p>
+<p><a href="http://js.jirengu.com/domoviyevo/1/edit?html,css,output" target="_blank" rel="external">【看代码点我】&gt;&gt;&gt;</a></p>
+<h2 id="★30s总结-2"><a href="#★30s总结-2" class="headerlink" title="★30s总结"></a>★30s总结</h2><p>1、容器是 <code>display:flex;</code><br>2、自适应是 <code>flex:1;</code><br>3、拖动时也没有漏下来<br>4、那么缺点一定是不兼容IE吧</p>
+<p><strong>解法四：表格布局</strong></p>
+<p><a href="http://js.jirengu.com/ronoxigemu/1/edit?html,css,output" target="_blank" rel="external">【看代码点我】&gt;&gt;&gt;</a></p>
+<h2 id="★30s总结-3"><a href="#★30s总结-3" class="headerlink" title="★30s总结"></a>★30s总结</h2><p>1、容器里是 <code>display:table；</code><br>2、各个 <code>div</code> 里是 <code>display:table-cell;</code><br>3、优点是兼容性好<br>4、缺点是压缩以后，所有的格子都会变长</p>
+<p><strong>解法五：网格布局</strong></p>
+<p><a href="http://js.jirengu.com/rogilehema/1/edit?html,css,output" target="_blank" rel="external">【看代码点我】&gt;&gt;&gt;</a></p>
+<h2 id="★30s总结-4"><a href="#★30s总结-4" class="headerlink" title="★30s总结"></a>★30s总结</h2><p>1、看起来挺清爽的<br>2、设置网格的行和咧</p>
+<h2 id="去掉高度已知，哪种解法会崩？"><a href="#去掉高度已知，哪种解法会崩？" class="headerlink" title="去掉高度已知，哪种解法会崩？"></a>去掉高度已知，哪种解法会崩？</h2><p>只有 <code>table</code> 和 <code>flex</code> 还可以用</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">梳理系列</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">一面知识块</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/09/23/77一面知识块-1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/09/24/78一面知识块-2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          一面知识块(2)-- CSS盒模型
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2018/09/19/74剑指offer-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">剑指offer(1)--JavaScript版(01-11)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -215,9 +364,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
@@ -269,10 +418,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -281,15 +426,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -305,11 +454,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -317,15 +466,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">梳理系列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">剑指offer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">一面知识块</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>
