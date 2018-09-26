@@ -18,7 +18,7 @@
 <meta property="og:description" content="一、 二维数组中的查找p44
 
 描述：在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。1234567891011121314function Find(target, array) &amp;#123;  let i = 0;  let j = array[i].length - 1;">
-<meta property="og:updated_time" content="2018-09-19T09:31:01.297Z">
+<meta property="og:updated_time" content="2018-09-26T14:01:14.955Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑指offer(1)--JavaScript版(01-11)">
 <meta name="twitter:description" content="一、 二维数组中的查找p44
@@ -172,7 +172,7 @@
         <blockquote>
 <p>一、 <a href="https://www.nowcoder.com/ta/coding-interviews/question-ranking?tpId=13&amp;tqId=11154&amp;uuid=abc3fe2ce8e146608e868a70efebf62e&amp;rp=1&amp;lang=14" target="_blank" rel="external">二维数组中的查找</a>p44</p>
 </blockquote>
-<p><strong>描述</strong>：在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。<br><figure class="highlight zephir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Find</span><span class="params">(target, array)</span> </span>&#123;</div><div class="line">  <span class="keyword">let</span> i = <span class="number">0</span>;</div><div class="line">  <span class="keyword">let</span> j = <span class="keyword">array</span>[i].length - <span class="number">1</span>; <span class="comment">// i</span></div><div class="line">  <span class="keyword">while</span> (i &lt; <span class="keyword">array</span>.length &amp;&amp; j &gt;= <span class="number">0</span>) &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">array</span>[i][j] &lt; target) &#123;</div><div class="line">      i++;</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">array</span>[i][j] &gt; target) &#123;</div><div class="line">      j--;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>描述</strong>：在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。<br><figure class="highlight zephir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Find</span><span class="params">(target, array)</span> </span>&#123;</div><div class="line">  <span class="keyword">let</span> i = <span class="number">0</span>;</div><div class="line">  <span class="keyword">let</span> j = <span class="keyword">array</span>[i].length - <span class="number">1</span>; <span class="comment">// i</span></div><div class="line">  <span class="keyword">while</span> (i &lt; <span class="keyword">array</span>.length &amp;&amp; j &gt;= <span class="number">0</span>)&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">array</span>[i][j] &lt; target) &#123;</div><div class="line">      i++;</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">array</span>[i][j] &gt; target)&#123;</div><div class="line">      j--;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><strong>思路</strong>：通过对 i 和 j 的设置可以得出，最先定位的点是在矩形的左下角，如果某数比目标数小，则向右移动一个单位；如果比目标数大，就向上移动一个单位，直到最后找到这个数（true），没找到就是false<br><a id="more"></a></p>
 <blockquote>
 <p>二、 <a href="https://www.nowcoder.com/ta/coding-interviews/question-ranking?tpId=13&amp;tqId=11155&amp;uuid=4060ac7e3e404ad1a894ef3e17650423&amp;rp=1&amp;lang=14" target="_blank" rel="external">替换空格</a>p51</p>
@@ -217,6 +217,32 @@
 </blockquote>
 <p><strong>描述</strong>：大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fibonacci</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(n==<span class="number">0</span>) &#123;</div><div class="line">    <span class="keyword">return</span> n;</div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">    <span class="keyword">var</span> pre =<span class="number">0</span>; <span class="comment">//前一个值</span></div><div class="line">        cur =<span class="number">1</span> <span class="comment">// 当前值</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</div><div class="line">      cur += pre; <span class="comment">//???</span></div><div class="line">      pre = cur - pre; <span class="comment">//???</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> cur;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><strong>思路</strong>：</p>
+<blockquote>
+<p>八、跳台阶 p77</p>
+</blockquote>
+<p><strong>描述</strong>：一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">jumpFloor</span>(<span class="params"><span class="built_in">number</span></span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(<span class="built_in">number</span> === <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">  <span class="keyword">if</span>(<span class="built_in">number</span> === <span class="number">2</span>) <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">  <span class="keyword">let</span> two_step = <span class="number">1</span>, one_step = <span class="number">2</span>;</div><div class="line">  <span class="keyword">let</span> next = <span class="number">0</span> ;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">2</span>; i &lt; <span class="built_in">number</span>; i++)&#123;</div><div class="line">    <span class="comment">// ????</span></div><div class="line">    next = two_step + one_step;</div><div class="line">    two_step = one_step;</div><div class="line">    one_step = next;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> next;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>思路</strong>：</p>
+<blockquote>
+<p>九、变态跳台阶 p78<br><strong>描述</strong>：一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span></span> jumpFloorII(<span class="keyword">number</span>)&#123;</div><div class="line">  <span class="keyword">if</span>(<span class="keyword">number</span> &lt;= <span class="number">1</span>)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span> </div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">2</span>*jumpFloorII(<span class="keyword">number</span> - <span class="number">1</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p><strong>思路</strong>：因为n级台阶，第一步有n种跳法：跳1级、跳2级、到跳n级<br>跳1级，剩下n-1级，则剩下跳法是f(n-1)<br>跳2级，剩下n-2级，则剩下跳法是f(n-2)<br>所以f(n)=f(n-1)+f(n-2)+…+f(1)<br>因为f(n-1)=f(n-2)+f(n-3)+…+f(1)<br>所以f(n)=2*f(n-1)</p>
+<blockquote>
+<p>十、矩形覆盖 p79</p>
+</blockquote>
+<p><strong>描述</strong>：我们可以用2<em>1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2</em>1的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function rectCover(number)&#123;</div><div class="line">  <span class="keyword">if</span>(number &lt;= 2)&#123;</div><div class="line">    <span class="keyword">return</span> number;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">var</span> <span class="keyword">one</span> = 1;</div><div class="line">  <span class="keyword">var</span> <span class="keyword">two</span> = 2;</div><div class="line">  <span class="comment">//为什么上面的青蛙跳的 next 是 0；</span></div><div class="line">  <span class="keyword">var</span> result = 1;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = 3; i &lt;= number; i++)&#123;</div><div class="line">    <span class="comment">//???</span></div><div class="line">    result = <span class="keyword">one</span> + <span class="keyword">two</span>;</div><div class="line">    <span class="keyword">one</span> = <span class="keyword">two</span>;</div><div class="line">    <span class="keyword">two</span> = result;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>思路</strong>：</p>
+<blockquote>
+<p>十一：二进制中1的个数 p100</p>
+</blockquote>
+<p><strong>描述</strong>：输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。<br><figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//常规解法</span></div><div class="line">function NumberOf1(n)&#123;</div><div class="line">  var <span class="built_in">count</span> = <span class="number">0</span>, <span class="built_in">flag</span> = <span class="number">1</span>;</div><div class="line">  <span class="keyword">while</span>(<span class="built_in">flag</span>)&#123;</div><div class="line">    <span class="keyword">if</span>(n&amp;<span class="built_in">flag</span>)<span class="built_in">count</span>++;</div><div class="line">    <span class="built_in">flag</span> = <span class="built_in">flag</span> &lt;&lt; <span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line">  return <span class="built_in">count</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>高级解法<br>如果一个整数不为0，那么这个整数至少有一位是1。如果我们把这个整数减1，那么原来处在整数最右边的1就会变为0，原来在1后面的所有的0都会变成1(如果最右边的1后面还有0的话)。其余所有位将不会受到影响。<br>举个例子：一个二进制数1100，从右边数起第三位是处于最右边的一个1。减去1后，第三位变成0，它后面的两位0变成了1，而前面的1保持不变，因此得到的结果是1011.我们发现减1的结果是把最右边的一个1开始的所有位都取反了。这个时候如果我们再把原来的整数和减去1之后的结果做与运算，从原来整数最右边一个1那一位开始所有位都会变成0。如1100&amp;1011=1000.也就是说，把一个整数减去1，再和原整数做与运算，会把该整数最右边一个1变成0.那么一个整数的二进制有多少个1，就可以进行多少次这样的操作。<br><figure class="highlight excel"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function NumberOf1(<span class="built_in">n</span>)&#123;</div><div class="line">    // write <span class="built_in">code</span> here</div><div class="line">  <span class="built_in">var</span> <span class="built_in">count</span> = <span class="number">0</span>;</div><div class="line">  while (<span class="built_in">n</span>)&#123;</div><div class="line">   <span class="built_in">count</span>++;</div><div class="line">   <span class="built_in">n</span> = (<span class="built_in">n</span>-<span class="number">1</span>)&amp;<span class="built_in">n</span>;//把最右边的一个<span class="number">1</span>变成<span class="number">0</span></div><div class="line">&#125;</div><div class="line">  return <span class="built_in">count</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>思路</strong>：</p>
+<p><strong>描述</strong>：<br><strong>思路</strong>：</p>
+<p><strong>描述</strong>：<br><strong>思路</strong>：</p>
+<p><strong>描述</strong>：<br><strong>思路</strong>：</p>
+<p><strong>描述</strong>：<br><strong>思路</strong>：</p>
+<p><strong>描述</strong>：<br><strong>思路</strong>：</p>
+<p><strong>描述</strong>：<br><strong>思路</strong>：</p>
 <p><strong>描述</strong>：<br><strong>思路</strong>：</p>
 <p><strong>描述</strong>：<br><strong>思路</strong>：</p>
 <p><strong>描述</strong>：<br><strong>思路</strong>：</p>
@@ -460,7 +486,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -468,7 +494,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -476,15 +502,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">进阶</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -492,7 +510,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
