@@ -10,26 +10,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="谈谈你对CSS盒模型的认识
 
-一、基本概念1、标准模型：宽高就是 content 的宽高2、IE模型：content + border + padding (没有margin
-二、怎么设置两种模型1、标准模型：box-sizing:content-box;（默认）2、IE模型：box-sizing:border-box;
-三、JS如何设置获取盒模型对应的宽和高1、dom.style.width/">
+一、基本概念1、标准模型：宽高就是 content 的宽高2、IE模型：content + border + padding (没有margin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一面知识块(2)-- CSS盒模型">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/09/24/78一面知识块-2/index.html">
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="谈谈你对CSS盒模型的认识
 
-一、基本概念1、标准模型：宽高就是 content 的宽高2、IE模型：content + border + padding (没有margin
-二、怎么设置两种模型1、标准模型：box-sizing:content-box;（默认）2、IE模型：box-sizing:border-box;
-三、JS如何设置获取盒模型对应的宽和高1、dom.style.width/">
-<meta property="og:updated_time" content="2018-09-24T12:30:00.954Z">
+一、基本概念1、标准模型：宽高就是 content 的宽高2、IE模型：content + border + padding (没有margin">
+<meta property="og:updated_time" content="2018-10-01T00:57:56.549Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一面知识块(2)-- CSS盒模型">
 <meta name="twitter:description" content="谈谈你对CSS盒模型的认识
 
-一、基本概念1、标准模型：宽高就是 content 的宽高2、IE模型：content + border + padding (没有margin
-二、怎么设置两种模型1、标准模型：box-sizing:content-box;（默认）2、IE模型：box-sizing:border-box;
-三、JS如何设置获取盒模型对应的宽和高1、dom.style.width/">
+一、基本概念1、标准模型：宽高就是 content 的宽高2、IE模型：content + border + padding (没有margin">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -178,12 +172,11 @@
         <blockquote>
 <p>谈谈你对CSS盒模型的认识</p>
 </blockquote>
-<p>一、基本概念<br>1、标准模型：宽高就是 content 的宽高<br>2、IE模型：<code>content + border + padding</code> (没有margin</p>
-<p>二、怎么设置两种模型<br>1、标准模型：<code>box-sizing:content-box;</code>（默认）<br>2、IE模型：<code>box-sizing:border-box;</code></p>
+<p>一、基本概念<br>1、标准模型：宽高就是 content 的宽高<br>2、IE模型：<code>content + border + padding</code> (没有margin<br><a id="more"></a><br>二、怎么设置两种模型<br>1、标准模型：<code>box-sizing:content-box;</code>（默认）<br>2、IE模型：<code>box-sizing:border-box;</code></p>
 <p>三、JS如何设置获取盒模型对应的宽和高<br>1、<code>dom.style.width/height</code><br>只能用于写在 <code>&lt;html&gt;</code> 尖括号里面的宽高，对于 <code>&lt;style&gt;</code> 和 link 外链表没用<br>2、<code>dom.currentStyle.width/height</code><br>都可以用，但是只支持 IE<br>3、<code>window.getComputedStyle.width/height</code><br>都可以兼容<br>4、<code>dom.getBoundingClientRect().width/height</code><br>计算元素的绝对位置,根据视窗（左上角），拿到 l-r-t-b</p>
 <p>四、根据盒模型解释边距重叠<br>父子元素边距重叠，兄弟元素重叠，引出了BFC</p>
 <p>五、BFC<br>概念：块级元素上下文<br>1、在BFC垂直方向上的边距会发生重叠<br>2、BFC的区域与浮动元素重叠<br>3、是一个独立的元素，内外元素互不影响<br>4、浮动元素不参与计算<br>创建BFC:【float:none】【overflow:hidden】【position不是relative,也不是static】</p>
-<h2 id="★30s总结"><a href="#★30s总结" class="headerlink" title="★30s总结"></a>★30s总结</h2><a id="more"></a>
+<h2 id="★30s总结"><a href="#★30s总结" class="headerlink" title="★30s总结"></a>★30s总结</h2>
       
 
       
@@ -286,6 +279,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/10/01/剑指offer-2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          剑指offer(1)--JavaScript版(T12-T22)
+        
+      </div>
+    </a>
   
   
     <a href="/2018/09/23/77一面知识块-1/" id="article-nav-older" class="article-nav-link-wrap">
@@ -399,6 +401,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -407,7 +413,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -419,7 +425,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -435,7 +441,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -443,19 +449,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">剑指offer</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">一面知识块</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color1">一面知识块</a>
               </li>
             
             <div class="clearfix"></div>
