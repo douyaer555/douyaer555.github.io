@@ -6,14 +6,34 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>Archives | wangsiyuan</title>
+  <title>基本的数据结构 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="wangsiyuan">
-<meta property="og:url" content="wangsiyuan233.github.io/archives/page/12/index.html">
+  <meta name="description" content="来源于 LeetCode - 226
+
+一、翻转二叉树
+
+其实思路还是比较简单的：将当前的root节点的左右分支进行对调反转，若左分支存在，则将左分支的节点作为root节点进行对调反转；若右分支存在，则将右分支的节点作为root节点进行对调反转；一直 递归 到所有节点的左右分支都不存在。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基本的数据结构">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/07/25/64基本的数据结构/index.html">
 <meta property="og:site_name" content="wangsiyuan">
+<meta property="og:description" content="来源于 LeetCode - 226
+
+一、翻转二叉树
+
+其实思路还是比较简单的：将当前的root节点的左右分支进行对调反转，若左分支存在，则将左分支的节点作为root节点进行对调反转；若右分支存在，则将右分支的节点作为root节点进行对调反转；一直 递归 到所有节点的左右分支都不存在。">
+<meta property="og:image" content="https://i.imgur.com/gIjXNsQ.png">
+<meta property="og:image" content="https://i.imgur.com/UcwdXxz.png">
+<meta property="og:image" content="https://i.imgur.com/t7QNGSm.png">
+<meta property="og:updated_time" content="2018-10-06T10:54:25.208Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wangsiyuan">
+<meta name="twitter:title" content="基本的数据结构">
+<meta name="twitter:description" content="来源于 LeetCode - 226
+
+一、翻转二叉树
+
+其实思路还是比较简单的：将当前的root节点的左右分支进行对调反转，若左分支存在，则将左分支的节点作为root节点进行对调反转；若右分支存在，则将右分支的节点作为root节点进行对调反转；一直 递归 到所有节点的左右分支都不存在。">
+<meta name="twitter:image" content="https://i.imgur.com/gIjXNsQ.png">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -139,101 +159,207 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-64基本的数据结构" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/22/2周结-计算机基础/" class="archive-article-date">
-  	<time datetime="2018-01-22T00:33:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/22/2周结-计算机基础/">周结-计算机基础</a>
+    <h1 class="article-title" itemprop="name">
+      基本的数据结构
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/21/1GitHub-for-babies/" class="archive-article-date">
-  	<time datetime="2018-01-21T00:33:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-21</time>
+        
+        <a href="/2018/07/25/64基本的数据结构/" class="archive-article-date">
+  	<time datetime="2018-07-25T08:30:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-25</time>
 </a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>来源于 <a href="https://leetcode.com/problems/invert-binary-tree/description/" target="_blank" rel="external">LeetCode - 226</a></p>
+<blockquote>
+<p>一、翻转二叉树</p>
+</blockquote>
+<p><img src="https://i.imgur.com/gIjXNsQ.png" alt=""><br>其实思路还是比较简单的：将当前的root节点的左右分支进行对调反转，若左分支存在，则将左分支的节点作为root节点进行对调反转；若右分支存在，则将右分支的节点作为root节点进行对调反转；一直 <strong>递归</strong> 到所有节点的左右分支都不存在。<br><a id="more"></a><br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for a binary tree node.</div><div class="line"> * function TreeNode(val) &#123;</div><div class="line"> *     this.val = val;</div><div class="line"> *     this.left = this.right = null;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line"><span class="comment">/**</span></div><div class="line"> * @param &#123;TreeNode&#125; root</div><div class="line"> * @return &#123;TreeNode&#125;</div><div class="line"> */</div><div class="line"><span class="keyword">var</span> invertTree = function(root) &#123;</div><div class="line">    <span class="comment">// 传入的根节点可能就是null或者异常节点，则对root进行判断</span></div><div class="line">    <span class="keyword">if</span>(root)&#123;</div><div class="line">        <span class="keyword">var</span> temp = null;</div><div class="line"></div><div class="line">        <span class="comment">// 将当前节点的左右分支进行对调反转</span></div><div class="line">        temp = root.<span class="keyword">left</span>;</div><div class="line">        root.<span class="keyword">left</span> = root.<span class="keyword">right</span>;</div><div class="line">        root.<span class="keyword">right</span> = temp;</div><div class="line"></div><div class="line">        <span class="comment">// 若左分支存在，则递归左分支的节点</span></div><div class="line">        <span class="keyword">if</span>(root.<span class="keyword">left</span>)&#123;</div><div class="line">            invertTree(root.<span class="keyword">left</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 若右分支存在，则递归右分支的节点</span></div><div class="line">        <span class="keyword">if</span>(root.<span class="keyword">right</span>)&#123;</div><div class="line">            invertTree(root.<span class="keyword">right</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 所有的节点遍历完成后，返回根节点</span></div><div class="line">    <span class="keyword">return</span> root;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>二、求二叉树的深度</p>
+</blockquote>
+<ul>
+<li>只有一个根结点时，二叉树深度为1</li>
+<li>只有左子树时，二叉树深度为左子树深度加1</li>
+<li>只有右子树时，二叉树深度为右子树深度加1</li>
+<li>同时存在左右子树时，二叉树深度为左右子树中深度最大者加1<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deep</span><span class="params">(root)</span>&#123;</span></div><div class="line">    <span class="keyword">if</span>(!root)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">let</span> <span class="keyword">left</span> = deep(root.<span class="keyword">left</span>)</div><div class="line">    <span class="keyword">let</span> <span class="keyword">right</span> = deep(root.<span class="keyword">right</span>)</div><div class="line">    <span class="keyword">return</span> <span class="keyword">left</span> &gt; <span class="keyword">right</span> ? <span class="keyword">left</span> + <span class="number">1</span> : <span class="keyword">right</span> + <span class="number">1</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>三、求二叉树的宽度</p>
+</blockquote>
+<ul>
+<li>算出第一层的结点数，保存</li>
+<li>算出第二层的结点数，保存一二层中较大的结点数</li>
+<li>重复以上过程<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">width</span><span class="params">(root)</span>&#123;</span></div><div class="line">    <span class="keyword">if</span>(!root)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">let</span> queue = [root], <span class="built_in">max</span> = <span class="number">1</span>, deep = <span class="number">1</span></div><div class="line">    <span class="keyword">while</span>(queue.length)&#123;</div><div class="line">        <span class="keyword">while</span>(deep--)&#123;</div><div class="line">            <span class="keyword">let</span> temp = queue.shift()</div><div class="line">            <span class="keyword">if</span>(temp.<span class="keyword">left</span>)&#123;</div><div class="line">                queue.push(temp.<span class="keyword">left</span>)</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(temp.<span class="keyword">right</span>)&#123;</div><div class="line">                queue.push(temp.<span class="keyword">right</span>)</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        deep = queue.length</div><div class="line">        <span class="built_in">max</span> = <span class="built_in">max</span> &gt; deep ? <span class="built_in">max</span> : deep</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">max</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<p>栈是一个线性结构</p>
+<p>栈的特点是只能在<strong>某一端</strong>添加或删除数据，遵循<strong>先进后出</strong>的原则<br><!--more--><br><img src="https://i.imgur.com/UcwdXxz.png" alt=""><br>把栈看成是数组的一个子集:<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stack</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="keyword">this</span>.stack = []</div><div class="line">  &#125;</div><div class="line">  push(item) &#123;</div><div class="line">    <span class="keyword">this</span>.stack.push(item)</div><div class="line">  &#125;</div><div class="line">  pop() &#123;</div><div class="line">    <span class="keyword">this</span>.stack.pop()</div><div class="line">  &#125;</div><div class="line">  peek() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.stack[<span class="keyword">this</span>.getCount() - <span class="number">1</span>]</div><div class="line">  &#125;</div><div class="line">  getCount() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.stack.length</div><div class="line">  &#125;</div><div class="line">  isEmpty() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.getCount() === <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>应用题<br>题目：<a href="https://leetcode.com/problems/valid-parentheses/description/" target="_blank" rel="external">Valid Parentheses</a><br>匹配括号，可以用栈来做<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">var</span> isValid = function (s) &#123;</div><div class="line">  <span class="built_in">let</span> <span class="built_in">map</span> = &#123;</div><div class="line">    '(': -<span class="number">1</span>,</div><div class="line">    ')': <span class="number">1</span>,</div><div class="line">    '[': -<span class="number">2</span>,</div><div class="line">    ']': <span class="number">2</span>,</div><div class="line">    '&#123;': -<span class="number">3</span>,</div><div class="line">    '&#125;': <span class="number">3</span></div><div class="line">  &#125;</div><div class="line">  <span class="built_in">let</span> stack = []</div><div class="line">  <span class="keyword">for</span> (<span class="built_in">let</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">length</span>; i++) &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="built_in">map</span>[s[i]] &lt; <span class="number">0</span>) &#123;</div><div class="line">      stack.<span class="built_in">push</span>(s[i])</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="built_in">let</span> <span class="built_in">last</span> = stack.<span class="built_in">pop</span>()</div><div class="line">      <span class="keyword">if</span> (<span class="built_in">map</span>[<span class="built_in">last</span>] + <span class="built_in">map</span>[s[i]] != <span class="number">0</span>) <span class="built_in">return</span> <span class="literal">false</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (stack.<span class="built_in">length</span> &gt; <span class="number">0</span>) <span class="built_in">return</span> <span class="literal">false</span></div><div class="line">  <span class="built_in">return</span> <span class="literal">true</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h2 id="★30s总结"><a href="#★30s总结" class="headerlink" title="★30s总结"></a>★30s总结</h2><ul>
+<li>记住图，先进后出</li>
+</ul>
+<hr>
+<p>队列一个线性结构，特点是在某一端添加数据，在另一端删除数据，遵循<strong>先进先出</strong>的原则。<br><!--more--><br><img src="https://i.imgur.com/t7QNGSm.png" alt=""></p>
+<blockquote>
+<p>一、 单链队列 </p>
+</blockquote>
+<p>因为单链队列在出队操作的时候需要 O(n) 的时间复杂度，所以引入了循环队列。循环队列的出队操作平均是 O(1) 的时间复杂度。<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Queue</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="keyword">this</span>.queue = []</div><div class="line">  &#125;</div><div class="line">  enQueue(item) &#123;</div><div class="line">    <span class="keyword">this</span>.queue.push(item)</div><div class="line">  &#125;</div><div class="line">  deQueue() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.queue.shift()</div><div class="line">  &#125;</div><div class="line">  getHeader() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.queue[<span class="number">0</span>]</div><div class="line">  &#125;</div><div class="line">  getLength() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.queue.length</div><div class="line">  &#125;</div><div class="line">  isEmpty() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.getLength() === <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>二、循环队列</p>
+</blockquote>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SqQueue</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(length) &#123;</div><div class="line">    <span class="keyword">this</span>.queue = new Array(length + <span class="number">1</span>)</div><div class="line">    <span class="comment">// 队头</span></div><div class="line">    <span class="keyword">this</span>.first = <span class="number">0</span></div><div class="line">    <span class="comment">// 队尾</span></div><div class="line">    <span class="keyword">this</span>.last = <span class="number">0</span></div><div class="line">    <span class="comment">// 当前队列大小</span></div><div class="line">    <span class="keyword">this</span>.size = <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">  enQueue(item) &#123;</div><div class="line">    <span class="comment">// 判断队尾 + 1 是否为队头</span></div><div class="line">    <span class="comment">// 如果是就代表需要扩容数组</span></div><div class="line">    <span class="comment">// % this.queue.length 是为了防止数组越界</span></div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.first === (<span class="keyword">this</span>.last + <span class="number">1</span>) % <span class="keyword">this</span>.queue.length) &#123;</div><div class="line">      <span class="keyword">this</span>.resize(<span class="keyword">this</span>.getLength() * <span class="number">2</span> + <span class="number">1</span>)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">this</span>.queue[<span class="keyword">this</span>.last] = item</div><div class="line">    <span class="keyword">this</span>.size++</div><div class="line">    <span class="keyword">this</span>.last = (<span class="keyword">this</span>.last + <span class="number">1</span>) % <span class="keyword">this</span>.queue.length</div><div class="line">  &#125;</div><div class="line">  deQueue() &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.isEmpty()) &#123;</div><div class="line">      <span class="keyword">throw</span> Error(<span class="string">'Queue is empty'</span>)</div><div class="line">    &#125;</div><div class="line">    let r = <span class="keyword">this</span>.queue[<span class="keyword">this</span>.first]</div><div class="line">    <span class="keyword">this</span>.queue[<span class="keyword">this</span>.first] = <span class="literal">null</span></div><div class="line">    <span class="keyword">this</span>.first = (<span class="keyword">this</span>.first + <span class="number">1</span>) % <span class="keyword">this</span>.queue.length</div><div class="line">    <span class="keyword">this</span>.size--</div><div class="line">    <span class="comment">// 判断当前队列大小是否过小</span></div><div class="line">    <span class="comment">// 为了保证不浪费空间，在队列空间等于总长度四分之一时</span></div><div class="line">    <span class="comment">// 且不为 2 时缩小总长度为当前的一半</span></div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.size === <span class="keyword">this</span>.getLength() / <span class="number">4</span> &amp;&amp; <span class="keyword">this</span>.getLength() / <span class="number">2</span> !== <span class="number">0</span>) &#123;</div><div class="line">      <span class="keyword">this</span>.resize(<span class="keyword">this</span>.getLength() / <span class="number">2</span>)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> r</div><div class="line">  &#125;</div><div class="line">  getHeader() &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.isEmpty()) &#123;</div><div class="line">      <span class="keyword">throw</span> Error(<span class="string">'Queue is empty'</span>)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.queue[<span class="keyword">this</span>.first]</div><div class="line">  &#125;</div><div class="line">  getLength() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.queue.length - <span class="number">1</span></div><div class="line">  &#125;</div><div class="line">  isEmpty() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.first === <span class="keyword">this</span>.last</div><div class="line">  &#125;</div><div class="line">  resize(length) &#123;</div><div class="line">    let q = new Array(length)</div><div class="line">    <span class="keyword">for</span> (let i = <span class="number">0</span>; i &lt; length; i++) &#123;</div><div class="line">      q[i] = <span class="keyword">this</span>.queue[(i + <span class="keyword">this</span>.first) % <span class="keyword">this</span>.queue.length]</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">this</span>.queue = q</div><div class="line">    <span class="keyword">this</span>.first = <span class="number">0</span></div><div class="line">    <span class="keyword">this</span>.last = <span class="keyword">this</span>.size</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="★30s总结-1"><a href="#★30s总结-1" class="headerlink" title="★30s总结"></a>★30s总结</h2><ul>
+<li>记住图，先进先出</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/21/1GitHub-for-babies/">GitHub for babies</a>
-    </h1>
-  
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/07/25/64基本的数据结构/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/08/13/65原型系列-5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          深入理解JavaScript--原型系列(5)
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2018/07/24/63二分查找/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">二分查找（binary search）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/11/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/10/">10</a><a class="page-number" href="/archives/page/11/">11</a><span class="page-number current">12</span>
-    </nav>
+  
+
+  
+
   
 
 
@@ -257,8 +383,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
@@ -311,15 +437,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -359,15 +485,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">剑指offer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">一面知识块</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">剑指offer</a>
               </li>
             
             <div class="clearfix"></div>

@@ -141,228 +141,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-70异步系列-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/23/70异步系列-4/">深入理解JavaScript--异步系列(4)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/08/23/70异步系列-4/" class="archive-article-date">
-  	<time datetime="2018-08-23T11:41:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="async-和-await"><a href="#async-和-await" class="headerlink" title="async 和 await"></a>async 和 await</h2><p>async 和 await<br>1、一个函数如果加上 <code>async</code> ，那么该函数就会返回一个 <code>Promise</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">"1"</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(test()); <span class="comment">// -&gt; Promise &#123;&lt;resolved&gt;: "1"&#125;</span></div></pre></td></tr></table></figure></p>
-<p>可以把 <code>async</code> 看成将函数返回值使用 <code>Promise.resolve()</code> 包裹了下<br>
-        
-          <a class="article-more-a" href="/2018/08/23/70异步系列-4/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">异步</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-69异步系列-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/23/69异步系列-3/">深入理解JavaScript--异步系列(3)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/08/23/69异步系列-3/" class="archive-article-date">
-  	<time datetime="2018-08-23T03:03:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Generator-实现"><a href="#Generator-实现" class="headerlink" title="Generator 实现"></a>Generator 实现</h2><p>Generator 是 ES6 中新增的语法，和 Promise 一样，都可以用来异步编程<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 使用 * 表示这是一个 Generator 函数</span></div><div class="line"><span class="comment">// 内部可以通过 yield 暂停代码</span></div><div class="line"><span class="comment">// 通过调用 next 恢复执行</span></div><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> a = <span class="number">1</span> + <span class="number">2</span>;</div><div class="line">  <span class="keyword">yield</span> <span class="number">2</span>;</div><div class="line">  <span class="keyword">yield</span> <span class="number">3</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> b = test();</div><div class="line"><span class="built_in">console</span>.log(b.next()); <span class="comment">// &gt;  &#123; value: 2, done: false &#125;</span></div><div class="line"><span class="built_in">console</span>.log(b.next()); <span class="comment">// &gt;  &#123; value: 3, done: false &#125;</span></div><div class="line"><span class="built_in">console</span>.log(b.next()); <span class="comment">// &gt;  &#123; value: undefined, done: true &#125;</span></div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2018/08/23/69异步系列-3/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">异步</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-68聊聊系列-6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/23/68聊聊系列-6/">聊聊系列(6)-- call, apply, bind 区别</a>
-    </h1>
-  
-
-        
-        <a href="/2018/08/23/68聊聊系列-6/" class="archive-article-date">
-  	<time datetime="2018-08-23T02:23:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://wangsiyuan233.cn/2018/03/04/27%E8%81%8A%E8%81%8A%E7%B3%BB%E5%88%97-2/">【【【this 实例-第9条】】】</a></p>
-<blockquote>
-<p>一、 call 和 apply 的异同</p>
-</blockquote>
-<p><code>call</code> 和 <code>apply</code> 都是为了解决改变 <code>this</code> 的指向。作用都是相同的，只是传参的方式不同。</p>
-<p>除了第一个参数外，<code>call</code> 可以接收一个参数列表，<code>apply</code> 只接受一个参数数组。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = &#123;</div><div class="line">    <span class="attr">value</span>: <span class="number">1</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getValue</span>(<span class="params">name, age</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(name)</div><div class="line">    <span class="built_in">console</span>.log(age)</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.value)</div><div class="line">&#125;</div><div class="line">getValue.call(a, <span class="string">'yck'</span>, <span class="string">'24'</span>)</div><div class="line">getValue.apply(a, [<span class="string">'yck'</span>, <span class="string">'24'</span>])</div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2018/08/23/68聊聊系列-6/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">聊聊系列</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-67聊聊系列-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -511,6 +289,214 @@
 
 
   
+    <article id="post-65原型系列-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/13/65原型系列-5/">深入理解JavaScript--原型系列(5)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/13/65原型系列-5/" class="archive-article-date">
+  	<time datetime="2018-08-13T12:18:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>一、prototype</p>
+</blockquote>
+<p>1、<code>prototype</code> 是一个显式原型属性，只有函数才拥有该属性。基本上所有函数都有这个属性，但是也有一个例外:</p>
+<p> <code>let fun = Function.prototype.bind()</code></p>
+<p>如果你以上述方法创建一个函数，那么可以发现这个函数是不具有 prototype 属性的。</p>
+<p>2、当我们声明一个函数时，这个属性就被自动创建了。 <code>function Foo() {}</code></p>
+<p>并且这个属性的值是一个对象（也就是原型），只有一个属性 <code>constructor</code></p>
+<p><code>constructor</code> 对应着构造函数，也就是 <code>Foo</code>。</p>
+<p>3、<code>constructor</code>是一个公有且不可枚举的属性。一旦我们改变了函数的 <code>prototype</code> ，那么新对象就没有这个属性了（当然可以通过原型链取到 <code>constructor</code>）。</p>
+<p><code>constructor</code>属性到底有什么用呢？</p>
+<ul>
+<li><p>让实例对象知道是什么函数构造了它</p>
+</li>
+<li><p>如果想给某些类库中的构造函数增加一些自定义的方法，就可以通过 xx.constructor.method 来扩展</p>
+</li>
+<li>
+        
+          <a class="article-more-a" href="/2018/08/13/65原型系列-5/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-64基本的数据结构" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/25/64基本的数据结构/">基本的数据结构</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/25/64基本的数据结构/" class="archive-article-date">
+  	<time datetime="2018-07-25T08:30:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>来源于 <a href="https://leetcode.com/problems/invert-binary-tree/description/">LeetCode - 226</a></p>
+<blockquote>
+<p>一、翻转二叉树</p>
+</blockquote>
+<p><img src="https://i.imgur.com/gIjXNsQ.png" alt=""><br>其实思路还是比较简单的：将当前的root节点的左右分支进行对调反转，若左分支存在，则将左分支的节点作为root节点进行对调反转；若右分支存在，则将右分支的节点作为root节点进行对调反转；一直 <strong>递归</strong> 到所有节点的左右分支都不存在。<br>
+        
+          <a class="article-more-a" href="/2018/07/25/64基本的数据结构/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-63二分查找" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/24/63二分查找/">二分查找（binary search）</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/24/63二分查找/" class="archive-article-date">
+  	<time datetime="2018-07-24T02:02:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>树拥有很多种结构，二叉树是树中最常用的结构，同时也是一个天然的递归结构。</p>
+<p>二分查找树也是二叉树，拥有二叉树的特性。但是区别在于二分查找树每个节点的值都<strong>比他的左子树的值大</strong>，<strong>比右子树的值小</strong>。</p>
+<blockquote>
+<p>一、创建一颗最简单的树</p>
+</blockquote>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(value) &#123;</div><div class="line">    <span class="keyword">this</span>.value = value</div><div class="line">    <span class="keyword">this</span>.left = <span class="literal">null</span></div><div class="line">    <span class="keyword">this</span>.right = <span class="literal">null</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BST</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="keyword">this</span>.root = <span class="literal">null</span></div><div class="line">    <span class="keyword">this</span>.size = <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">  getSize() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.size</div><div class="line">  &#125;</div><div class="line">  isEmpty() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.size === <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">  addNode(v) &#123;</div><div class="line">    <span class="keyword">this</span>.root = <span class="keyword">this</span>._addChild(<span class="keyword">this</span>.root, v)</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// 添加节点时，需要比较添加的节点值和当前</span></div><div class="line">  <span class="comment">// 节点值的大小</span></div><div class="line">  _addChild(node, v) &#123;</div><div class="line">    <span class="keyword">if</span> (!node) &#123;</div><div class="line">      <span class="keyword">this</span>.size++</div><div class="line">      <span class="keyword">return</span> new Node(v)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (node.value &gt; v) &#123;</div><div class="line">      node.left = <span class="keyword">this</span>._addChild(node.left, v)</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (node.value &lt; v) &#123;</div><div class="line">      node.right = <span class="keyword">this</span>._addChild(node.right, v)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> node</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2018/07/24/63二分查找/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -592,15 +578,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -640,15 +626,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">剑指offer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">一面知识块</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">剑指offer</a>
               </li>
             
             <div class="clearfix"></div>

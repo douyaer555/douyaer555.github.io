@@ -6,20 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>数据结构(3) -- 队列 | wangsiyuan</title>
+  <title>一面知识块（1）-- 页面布局 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="队列一个线性结构，特点是在某一端添加数据，在另一端删除数据，遵循先进先出的原则。">
+  <meta name="description" content="假设高度已知，请写出三栏布局，左右各300px，中间自适应
+
+解法一：浮动布局
+【看代码点我】&amp;gt;&amp;gt;&amp;gt;
+★30s总结1、 在 div 里面，并不是按照 左中右 的顺序来写2、 给3个 div 最小高度3、 左浮 + 右浮4、 缺点是压缩太小时，中间的字会漏下来，需要清除浮动">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构(3) -- 队列">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/09/18/76数据结构-3/index.html">
+<meta property="og:title" content="一面知识块（1）-- 页面布局">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/09/23/74一面知识块-1/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="队列一个线性结构，特点是在某一端添加数据，在另一端删除数据，遵循先进先出的原则。">
-<meta property="og:image" content="https://i.imgur.com/t7QNGSm.png">
-<meta property="og:updated_time" content="2018-09-18T09:35:05.184Z">
+<meta property="og:description" content="假设高度已知，请写出三栏布局，左右各300px，中间自适应
+
+解法一：浮动布局
+【看代码点我】&amp;gt;&amp;gt;&amp;gt;
+★30s总结1、 在 div 里面，并不是按照 左中右 的顺序来写2、 给3个 div 最小高度3、 左浮 + 右浮4、 缺点是压缩太小时，中间的字会漏下来，需要清除浮动">
+<meta property="og:updated_time" content="2018-09-24T08:10:35.541Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构(3) -- 队列">
-<meta name="twitter:description" content="队列一个线性结构，特点是在某一端添加数据，在另一端删除数据，遵循先进先出的原则。">
-<meta name="twitter:image" content="https://i.imgur.com/t7QNGSm.png">
+<meta name="twitter:title" content="一面知识块（1）-- 页面布局">
+<meta name="twitter:description" content="假设高度已知，请写出三栏布局，左右各300px，中间自适应
+
+解法一：浮动布局
+【看代码点我】&amp;gt;&amp;gt;&amp;gt;
+★30s总结1、 在 div 里面，并不是按照 左中右 的顺序来写2、 给3个 div 最小高度3、 左浮 + 右浮4、 缺点是压缩太小时，中间的字会漏下来，需要清除浮动">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -145,38 +155,44 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-76数据结构-3" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-74一面知识块-1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      数据结构(3) -- 队列
+      一面知识块（1）-- 页面布局
     </h1>
   
 
         
-        <a href="/2018/09/18/76数据结构-3/" class="archive-article-date">
-  	<time datetime="2018-09-18T02:49:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-18</time>
+        <a href="/2018/09/23/74一面知识块-1/" class="archive-article-date">
+  	<time datetime="2018-09-23T10:35:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>队列一个线性结构，特点是在某一端添加数据，在另一端删除数据，遵循<strong>先进先出</strong>的原则。<br><a id="more"></a><br><img src="https://i.imgur.com/t7QNGSm.png" alt=""></p>
-<blockquote>
-<p>一、 单链队列 </p>
+        <blockquote>
+<p>假设高度已知，请写出三栏布局，左右各300px，中间自适应</p>
 </blockquote>
-<p>因为单链队列在出队操作的时候需要 O(n) 的时间复杂度，所以引入了循环队列。循环队列的出队操作平均是 O(1) 的时间复杂度。<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Queue</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="keyword">this</span>.queue = []</div><div class="line">  &#125;</div><div class="line">  enQueue(item) &#123;</div><div class="line">    <span class="keyword">this</span>.queue.push(item)</div><div class="line">  &#125;</div><div class="line">  deQueue() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.queue.shift()</div><div class="line">  &#125;</div><div class="line">  getHeader() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.queue[<span class="number">0</span>]</div><div class="line">  &#125;</div><div class="line">  getLength() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.queue.length</div><div class="line">  &#125;</div><div class="line">  isEmpty() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.getLength() === <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>二、循环队列</p>
-</blockquote>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SqQueue</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(length) &#123;</div><div class="line">    <span class="keyword">this</span>.queue = new Array(length + <span class="number">1</span>)</div><div class="line">    <span class="comment">// 队头</span></div><div class="line">    <span class="keyword">this</span>.first = <span class="number">0</span></div><div class="line">    <span class="comment">// 队尾</span></div><div class="line">    <span class="keyword">this</span>.last = <span class="number">0</span></div><div class="line">    <span class="comment">// 当前队列大小</span></div><div class="line">    <span class="keyword">this</span>.size = <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">  enQueue(item) &#123;</div><div class="line">    <span class="comment">// 判断队尾 + 1 是否为队头</span></div><div class="line">    <span class="comment">// 如果是就代表需要扩容数组</span></div><div class="line">    <span class="comment">// % this.queue.length 是为了防止数组越界</span></div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.first === (<span class="keyword">this</span>.last + <span class="number">1</span>) % <span class="keyword">this</span>.queue.length) &#123;</div><div class="line">      <span class="keyword">this</span>.resize(<span class="keyword">this</span>.getLength() * <span class="number">2</span> + <span class="number">1</span>)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">this</span>.queue[<span class="keyword">this</span>.last] = item</div><div class="line">    <span class="keyword">this</span>.size++</div><div class="line">    <span class="keyword">this</span>.last = (<span class="keyword">this</span>.last + <span class="number">1</span>) % <span class="keyword">this</span>.queue.length</div><div class="line">  &#125;</div><div class="line">  deQueue() &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.isEmpty()) &#123;</div><div class="line">      <span class="keyword">throw</span> Error(<span class="string">'Queue is empty'</span>)</div><div class="line">    &#125;</div><div class="line">    let r = <span class="keyword">this</span>.queue[<span class="keyword">this</span>.first]</div><div class="line">    <span class="keyword">this</span>.queue[<span class="keyword">this</span>.first] = <span class="literal">null</span></div><div class="line">    <span class="keyword">this</span>.first = (<span class="keyword">this</span>.first + <span class="number">1</span>) % <span class="keyword">this</span>.queue.length</div><div class="line">    <span class="keyword">this</span>.size--</div><div class="line">    <span class="comment">// 判断当前队列大小是否过小</span></div><div class="line">    <span class="comment">// 为了保证不浪费空间，在队列空间等于总长度四分之一时</span></div><div class="line">    <span class="comment">// 且不为 2 时缩小总长度为当前的一半</span></div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.size === <span class="keyword">this</span>.getLength() / <span class="number">4</span> &amp;&amp; <span class="keyword">this</span>.getLength() / <span class="number">2</span> !== <span class="number">0</span>) &#123;</div><div class="line">      <span class="keyword">this</span>.resize(<span class="keyword">this</span>.getLength() / <span class="number">2</span>)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> r</div><div class="line">  &#125;</div><div class="line">  getHeader() &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.isEmpty()) &#123;</div><div class="line">      <span class="keyword">throw</span> Error(<span class="string">'Queue is empty'</span>)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.queue[<span class="keyword">this</span>.first]</div><div class="line">  &#125;</div><div class="line">  getLength() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.queue.length - <span class="number">1</span></div><div class="line">  &#125;</div><div class="line">  isEmpty() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.first === <span class="keyword">this</span>.last</div><div class="line">  &#125;</div><div class="line">  resize(length) &#123;</div><div class="line">    let q = new Array(length)</div><div class="line">    <span class="keyword">for</span> (let i = <span class="number">0</span>; i &lt; length; i++) &#123;</div><div class="line">      q[i] = <span class="keyword">this</span>.queue[(i + <span class="keyword">this</span>.first) % <span class="keyword">this</span>.queue.length]</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">this</span>.queue = q</div><div class="line">    <span class="keyword">this</span>.first = <span class="number">0</span></div><div class="line">    <span class="keyword">this</span>.last = <span class="keyword">this</span>.size</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="★30s总结"><a href="#★30s总结" class="headerlink" title="★30s总结"></a>★30s总结</h2><ul>
-<li>记住图，先进先出</li>
-</ul>
+<p><strong>解法一：浮动布局</strong></p>
+<p><a href="http://js.jirengu.com/duzotakuse/1/edit?html,css,output" target="_blank" rel="external">【看代码点我】&gt;&gt;&gt;</a></p>
+<h2 id="★30s总结"><a href="#★30s总结" class="headerlink" title="★30s总结"></a>★30s总结</h2><p>1、 在 <code>div</code> 里面，并不是按照 左中右 的顺序来写<br>2、 给3个 <code>div</code> 最小高度<br>3、 左浮 + 右浮<br>4、 缺点是压缩太小时，中间的字会漏下来，需要清除浮动<br><a id="more"></a><br><strong>解法二：绝对定位</strong></p>
+<p><a href="http://js.jirengu.com/liwaluguji/1/edit?html,css,output" target="_blank" rel="external">【看代码点我】&gt;&gt;&gt;</a></p>
+<h2 id="★30s总结-1"><a href="#★30s总结-1" class="headerlink" title="★30s总结"></a>★30s总结</h2><p>1、绝对定位就是按顺序写<br>2、中间到左边多少，中间到右边多少<br>3、每个 <code>div</code> 是 <code>absolute</code>，容器是 <code>relative</code><br>4、缺点是脱离了文档流</p>
+<p><strong>解法三：flex布局</strong></p>
+<p><a href="http://js.jirengu.com/domoviyevo/1/edit?html,css,output" target="_blank" rel="external">【看代码点我】&gt;&gt;&gt;</a></p>
+<h2 id="★30s总结-2"><a href="#★30s总结-2" class="headerlink" title="★30s总结"></a>★30s总结</h2><p>1、容器是 <code>display:flex;</code><br>2、自适应是 <code>flex:1;</code><br>3、拖动时也没有漏下来<br>4、那么缺点一定是不兼容IE吧</p>
+<p><strong>解法四：表格布局</strong></p>
+<p><a href="http://js.jirengu.com/ronoxigemu/1/edit?html,css,output" target="_blank" rel="external">【看代码点我】&gt;&gt;&gt;</a></p>
+<h2 id="★30s总结-3"><a href="#★30s总结-3" class="headerlink" title="★30s总结"></a>★30s总结</h2><p>1、容器里是 <code>display:table；</code><br>2、各个 <code>div</code> 里是 <code>display:table-cell;</code><br>3、优点是兼容性好<br>4、缺点是压缩以后，所有的格子都会变长</p>
+<p><strong>解法五：网格布局</strong></p>
+<p><a href="http://js.jirengu.com/rogilehema/1/edit?html,css,output" target="_blank" rel="external">【看代码点我】&gt;&gt;&gt;</a></p>
+<h2 id="★30s总结-4"><a href="#★30s总结-4" class="headerlink" title="★30s总结"></a>★30s总结</h2><p>1、看起来挺清爽的<br>2、设置网格的行和咧</p>
+<h2 id="去掉高度已知，哪种解法会崩？"><a href="#去掉高度已知，哪种解法会崩？" class="headerlink" title="去掉高度已知，哪种解法会崩？"></a>去掉高度已知，哪种解法会崩？</h2><p>只有 <code>table</code> 和 <code>flex</code> 还可以用</p>
 
       
 
@@ -211,7 +227,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">一面知识块</a>
         		</li>
       		
 		</ul>
@@ -267,7 +283,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/09/18/76数据结构-3/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/09/23/74一面知识块-1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -281,18 +297,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/19/74剑指offer-1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/24/75一面知识块-2/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          剑指offer(1)--JavaScript版(T01-T11)
+          一面知识块(2)-- CSS盒模型
         
       </div>
     </a>
   
   
-    <a href="/2018/09/18/75数据结构-2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数据结构(2) -- 栈</div>
+    <a href="/2018/09/15/73Event-Loop/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Event Loop</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -402,15 +418,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -450,15 +466,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">剑指offer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">一面知识块</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">剑指offer</a>
               </li>
             
             <div class="clearfix"></div>
