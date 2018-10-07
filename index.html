@@ -454,7 +454,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/05/76剑指-链表篇/">剑指offer(1)--链表篇(JavaScript版)/共 题</a>
+      <a class="article-title" href="/2018/10/05/76剑指-链表篇/">剑指offer(1)--链表篇(JavaScript版)/共 九 题</a>
     </h1>
   
 
@@ -467,9 +467,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>三、从尾到头打印链表 p58</p>
+        <ul>
+<li>【第一部分：】 逆序链表<blockquote>
+<p>一、从尾到头打印链表 p58/t3</p>
 </blockquote>
+</li>
+</ul>
 <p><strong>描述</strong>：输入一个链表，按链表值从尾到头的顺序返回一个 <code>ArrayList</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">printListFromTailToHead</span>(<span class="params">head</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> p = head;</div><div class="line">    <span class="keyword">var</span> result = [];</div><div class="line">    <span class="keyword">while</span>(p)&#123;</div><div class="line">      <span class="comment">// unshift 需要添加到数组开头的元素。</span></div><div class="line">      <span class="comment">// val() 方法返回或设置被选元素的值。</span></div><div class="line">        result.unshift(p.val);</div><div class="line">        <span class="comment">// next() 获得匹配元素集合中每个元素紧邻的同胞元素</span></div><div class="line">        p = p.next;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><strong>思路</strong>：BUG题/<code>unshift()</code>在数组的头部添加任意个项并返回新数组的长度<br>
         
@@ -620,15 +623,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -636,15 +635,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">进阶</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
