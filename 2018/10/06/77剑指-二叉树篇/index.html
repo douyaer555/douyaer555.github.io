@@ -8,22 +8,31 @@
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
   <title>剑指offer(2)--二叉树篇(JavaScript版)/共 题 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="四、 重建二叉树 p62
+  <meta name="description" content="【源码地址】 || 【代码调试】
 
-描述：输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。1234567891011121314151617181920212223242526272829303132333435fun">
+
+四、 重建二叉树 p62
+
+描述：输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。1234567891011121314151617181920212223242526272">
 <meta property="og:type" content="article">
 <meta property="og:title" content="剑指offer(2)--二叉树篇(JavaScript版)/共 题">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/10/06/77剑指-二叉树篇/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="四、 重建二叉树 p62
+<meta property="og:description" content="【源码地址】 || 【代码调试】
 
-描述：输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。1234567891011121314151617181920212223242526272829303132333435fun">
-<meta property="og:updated_time" content="2018-10-06T12:01:38.758Z">
+
+四、 重建二叉树 p62
+
+描述：输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。1234567891011121314151617181920212223242526272">
+<meta property="og:updated_time" content="2018-10-07T03:12:49.140Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑指offer(2)--二叉树篇(JavaScript版)/共 题">
-<meta name="twitter:description" content="四、 重建二叉树 p62
+<meta name="twitter:description" content="【源码地址】 || 【代码调试】
 
-描述：输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。1234567891011121314151617181920212223242526272829303132333435fun">
+
+四、 重建二叉树 p62
+
+描述：输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。1234567891011121314151617181920212223242526272">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -169,7 +178,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
+        <p>【<a href="https://github.com/wangsiyuan233/NowCoder" target="_blank" rel="external">源码地址</a>】 || 【<a href="https://www.nowcoder.com/ta/coding-interviews?page=1" target="_blank" rel="external">代码调试</a>】</p>
+<hr>
+<blockquote>
 <p>四、 重建二叉树 p62</p>
 </blockquote>
 <p><strong>描述</strong>：输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reConstructBinaryTree</span>(<span class="params">pre, vin</span>)</span>&#123; <span class="comment">//pre 是前序遍历，vin 是中序遍历</span></div><div class="line">  <span class="comment">// null 是真正的空，[] 里面还有东西</span></div><div class="line">    <span class="keyword">var</span> result =<span class="literal">null</span>;</div><div class="line">    <span class="keyword">if</span>(pre.length&gt;<span class="number">1</span>)&#123;</div><div class="line">      <span class="keyword">var</span> root = pre[<span class="number">0</span>];</div><div class="line">      <span class="comment">// indexOf() 方法可返回某个指定的字符串值首次出现的位置。</span></div><div class="line">      <span class="comment">// 下面开始中序遍历</span></div><div class="line">      <span class="comment">// 找到根节点的位置</span></div><div class="line">      <span class="keyword">var</span> vinRootIndex = vin.indexOf(root);</div><div class="line">      <span class="comment">// 根节点的左边是左子树</span></div><div class="line">      <span class="keyword">var</span> vinLeft = vin.slice(<span class="number">0</span>,vinRootIndex);</div><div class="line">      <span class="comment">// 右边就是右子树</span></div><div class="line">      <span class="keyword">var</span> vinRight = vin.slice(vinRootIndex+<span class="number">1</span>,vin.length);</div><div class="line">      <span class="comment">// 下面开始前序遍历：</span></div><div class="line">      <span class="comment">// shift() 把数组的第一个元素从其中删除，并返回第一个元素的值</span></div><div class="line">      <span class="comment">// 取走第一个数</span></div><div class="line">      pre.shift();</div><div class="line">      <span class="comment">// 此时的第一个数是左子树的第一个数</span></div><div class="line">      <span class="keyword">var</span> preLeft = pre.slice(<span class="number">0</span>,vinLeft.length);</div><div class="line">      <span class="keyword">var</span> preRight = pre.slice(vinLeft.length,pre.length);</div><div class="line">      result=&#123;</div><div class="line">        <span class="attr">val</span>:root,</div><div class="line">        <span class="attr">left</span>:reConstructBinaryTree(preLeft,vinLeft),</div><div class="line">        <span class="attr">right</span>:reConstructBinaryTree(preRight,vinRight)</div><div class="line">      &#125;</div><div class="line"></div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(pre.length ===<span class="number">1</span>)&#123;</div><div class="line">        result= &#123;</div><div class="line">            <span class="attr">val</span> :pre[<span class="number">0</span>],</div><div class="line">            <span class="attr">left</span>:<span class="literal">null</span>,</div><div class="line">            <span class="attr">right</span>:<span class="literal">null</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -364,7 +375,7 @@
   
   
     <a href="/2018/10/05/76剑指-链表篇/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">剑指offer(1)--链表篇(JavaScript版)/共 九 题</div>
+      <div class="article-nav-title">剑指offer(1)--链表篇(JavaScript版)/共 9 题</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -478,15 +489,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,11 +521,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,11 +533,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">一面知识块</a>
+                <a href="javascript:void(0)" class="js-tag color3">剑指offer</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">剑指offer</a>
+                <a href="javascript:void(0)" class="js-tag color1">一面知识块</a>
               </li>
             
             <div class="clearfix"></div>
