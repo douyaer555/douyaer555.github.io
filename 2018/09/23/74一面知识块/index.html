@@ -6,7 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>一面知识块（1）-- 页面布局 | wangsiyuan</title>
+  <title>一面知识块 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="假设高度已知，请写出三栏布局，左右各300px，中间自适应
 
@@ -14,17 +14,17 @@
 【看代码点我】&amp;gt;&amp;gt;&amp;gt;
 ★30s总结1、 在 div 里面，并不是按照 左中右 的顺序来写2、 给3个 div 最小高度3、 左浮 + 右浮4、 缺点是压缩太小时，中间的字会漏下来，需要清除浮动">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一面知识块（1）-- 页面布局">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/09/23/74一面知识块-1/index.html">
+<meta property="og:title" content="一面知识块">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/09/23/74一面知识块/index.html">
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="假设高度已知，请写出三栏布局，左右各300px，中间自适应
 
 解法一：浮动布局
 【看代码点我】&amp;gt;&amp;gt;&amp;gt;
 ★30s总结1、 在 div 里面，并不是按照 左中右 的顺序来写2、 给3个 div 最小高度3、 左浮 + 右浮4、 缺点是压缩太小时，中间的字会漏下来，需要清除浮动">
-<meta property="og:updated_time" content="2018-09-24T08:10:35.541Z">
+<meta property="og:updated_time" content="2018-10-08T12:51:42.587Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一面知识块（1）-- 页面布局">
+<meta name="twitter:title" content="一面知识块">
 <meta name="twitter:description" content="假设高度已知，请写出三栏布局，左右各300px，中间自适应
 
 解法一：浮动布局
@@ -155,19 +155,19 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-74一面知识块-1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-74一面知识块" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      一面知识块（1）-- 页面布局
+      一面知识块
     </h1>
   
 
         
-        <a href="/2018/09/23/74一面知识块-1/" class="archive-article-date">
+        <a href="/2018/09/23/74一面知识块/" class="archive-article-date">
   	<time datetime="2018-09-23T10:35:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-23</time>
 </a>
         
@@ -193,7 +193,15 @@
 <p><a href="http://js.jirengu.com/rogilehema/1/edit?html,css,output" target="_blank" rel="external">【看代码点我】&gt;&gt;&gt;</a></p>
 <h2 id="★30s总结-4"><a href="#★30s总结-4" class="headerlink" title="★30s总结"></a>★30s总结</h2><p>1、看起来挺清爽的<br>2、设置网格的行和咧</p>
 <h2 id="去掉高度已知，哪种解法会崩？"><a href="#去掉高度已知，哪种解法会崩？" class="headerlink" title="去掉高度已知，哪种解法会崩？"></a>去掉高度已知，哪种解法会崩？</h2><p>只有 <code>table</code> 和 <code>flex</code> 还可以用</p>
-
+<hr>
+<blockquote>
+<p>谈谈你对CSS盒模型的认识</p>
+</blockquote>
+<p>一、基本概念<br>1、标准模型：宽高就是 <code>content</code> 的宽高<br>2、IE模型：<code>content + border + padding</code> (没有margin<br><!--more--><br>二、怎么设置两种模型<br>1、标准模型：<code>box-sizing:content-box;</code>（默认）<br>2、IE模型：<code>box-sizing:border-box;</code></p>
+<p>三、JS如何设置获取盒模型对应的宽和高<br>1、<code>dom.style.width/height</code><br>只能用于写在 <code>&lt;html&gt;</code> 尖括号里面的宽高，对于 <code>&lt;style&gt;</code> 和 link 外链表没用<br>2、<code>dom.currentStyle.width/height</code><br>都可以用，但是只支持 IE<br>3、<code>window.getComputedStyle.width/height</code><br>都可以兼容<br>4、<code>dom.getBoundingClientRect().width/height</code><br>计算元素的绝对位置,根据视窗（左上角），拿到 l-r-t-b</p>
+<p>四、根据盒模型解释边距重叠<br>父子元素边距重叠，兄弟元素重叠，引出了BFC</p>
+<p>五、BFC<br>概念：块级元素上下文<br>1、在BFC垂直方向上的边距会发生重叠<br>2、BFC的区域与浮动元素重叠<br>3、是一个独立的元素，内外元素互不影响<br>4、浮动元素不参与计算<br>创建BFC:【<code>float:none</code>】【<code>overflow:hidden</code>】<code>【position</code>不是<code>relative</code>,也不是<code>static</code>】</p>
+<h2 id="★30s总结-5"><a href="#★30s总结-5" class="headerlink" title="★30s总结"></a>★30s总结</h2>
       
 
       
@@ -222,17 +230,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">一面知识块</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -283,7 +280,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/09/23/74一面知识块-1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/09/23/74一面知识块/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -297,11 +294,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/24/75一面知识块-2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/10/05/76剑指-链表篇/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          一面知识块(2)-- CSS盒模型
+          剑指offer(1)--链表篇(JavaScript版)/共 9 题
         
       </div>
     </a>
@@ -430,11 +427,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -442,11 +439,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -454,19 +451,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">一面知识块</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
