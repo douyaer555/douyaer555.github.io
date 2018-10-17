@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>Archives | wangsiyuan</title>
+  <title>&lt;Algorithms&gt;-1.2数据抽象 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="wangsiyuan">
-<meta property="og:url" content="wangsiyuan233.github.io/archives/page/12/index.html">
+  <meta name="description" content="《算法 （第四版）》梳理框架
+不建议阅读，反正你也读不下去">
+<meta property="og:type" content="article">
+<meta property="og:title" content="<Algorithms>-1.2数据抽象">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/10/17/43Algorithms1-2/index.html">
 <meta property="og:site_name" content="wangsiyuan">
+<meta property="og:description" content="《算法 （第四版）》梳理框架
+不建议阅读，反正你也读不下去">
+<meta property="og:updated_time" content="2018-04-22T13:39:27.090Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wangsiyuan">
+<meta name="twitter:title" content="<Algorithms>-1.2数据抽象">
+<meta name="twitter:description" content="《算法 （第四版）》梳理框架
+不建议阅读，反正你也读不下去">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -139,101 +146,183 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-43Algorithms1-2" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/22/2周结-计算机基础/" class="archive-article-date">
-  	<time datetime="2018-01-22T00:33:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/22/2周结-计算机基础/">周结-计算机基础</a>
+    <h1 class="article-title" itemprop="name">
+      &lt;Algorithms&gt;-1.2数据抽象
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/10/17/43Algorithms1-2/" class="archive-article-date">
+  	<time datetime="2018-10-17T11:45:08.793Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://book.douban.com/subject/10432347/" target="_blank" rel="external">《算法 （第四版）》</a>梳理框架</p>
+<p>不建议阅读，反正你也读不下去<br><a id="more"></a></p>
+<blockquote>
+<p>1.2 数据抽象</p>
+</blockquote>
+<p>从这一个小节开始，我们讨论一种更加抽象的表达类型<br>/<em> 2018/4/21 p63-p72 </em>/<br>在使用抽象数据时，我们的注意力在API的操作</p>
+<p><strong>1.2.1使用抽象数据类型</strong><br>Counter的值是一个名称和非负整数，初始化0 + 当前值加一 +获取当前值<br>1.2.1.1 抽象数据类型的API<br>抽象数据类型和静态方法库有很多相同之处：<br>1、均为Java类<br>2、可以有0 或 多个参数<br>3、可以返回一个指定数据类型，也有可能不会<br>抽象数据类型和静态方法库的不同之处：<br>1、构造函数会出现若干个名称和类名相同且没有返回值的函数<br>2、实例方法不需要 static 关键字<br>3、继承方法<br>1.2.1.2 继承方法<br>任意数据类型都可以通过API获得<br>1.2.1.3 用例代码<br>API可以让我们写出用例代码而不用知道它是怎样具体实现的<br>1.2.1.4 对象<br>对象是能够承载数据类型的值的实体<br>1.2.1.5 创建对象<br>每一个数据类型的值都存在对象里<br>当我们new一个函数的时候<br>1、分配一个内存空间<br>2、初始化一个值<br>3、返回引用对象<br>1.2.1.6 调用实例方法<br>实例方法和静态方法的调用方式完全相同<br>静态方法的主要作用是实现函数<br>实例方法的主要作用是实现数据类型的操作<br>1.2.1.7 使用对象<br>声明变量，使用new触发函数，调用实例方法<br>1.2.1.8 赋值语句<br>使用引用类型的赋值语句会创建该引用类型的一个副本<br>赋值语句不会创建新的对象<br>两个变量同时指向同一个对象<br>1.2.1.9 将对象作为参数<br>将对象作为参数传给方法，一般能简化用例代码<br>1.2.1.10 将对象作为返回值<br>Java中的方法只有一个返回值，而有了对象我们就能返回多个值了<br>1.2.1.11 数组也是对象<br>Java中，非原始数据类型的值都是对象<br>当我们将数组传递给一个方法或是将一个数组变量放在赋值语句的右侧时<br>我们是在创建该数组引用的一个副本，而不是这个数组的副本<br>1.2.1.12 对象的数组<br>/<em> 2018/4/22 p72-p84 </em>/<br>当我们创建了一个数组对象，意味着我们：<br>1、用括号语法创建了一个数组构造器<br>2、运用一个标准的构造器创建了数组里的每一个对象</p>
+<p><strong>1.2.2 抽象数据类型举例</strong><br>这一小节会介绍一些ADT，你不用知道它的原理就可以用它<br>1.2.2.1 几何对象<br>面向对象编程的一个典型例子是为几何对象设计数据类型<br>1.2.2.2 信息处理<br>为了简化用例的代码，我们为每个类型都提供了两个构造函数<br>一个接受数据，一个解析数据<br>用例还是不需要知道数据的表示方法<br>1.2.2.3 字符串<br>string值和字符数组是不同的<br>数组可以访问每个字符<br>string为操作准备了实例方法<br>1.2.2.4 再谈输入和输出<br>面向对象编程要求我们同时输入和输出</p>
+<p>1.2.3 抽象数据类型的实现<br>第一部分 定义数据类型的值的实例变量<br>第二部分 构造函数和实例方法</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/10/17/43Algorithms1-2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/21/1GitHub-for-babies/" class="archive-article-date">
-  	<time datetime="2018-01-21T00:33:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-21</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/10/17/58CSS-查漏补缺/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/10/08/75剑指-递归和回溯法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">剑指offer(6)--递归和回溯法(JavaScript版)/共 题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/21/1GitHub-for-babies/">GitHub for babies</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/11/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/10/">10</a><a class="page-number" href="/archives/page/11/">11</a><span class="page-number current">12</span>
-    </nav>
+  
+
   
 
 
@@ -257,8 +346,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
@@ -311,11 +400,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -324,10 +417,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -343,7 +432,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -351,11 +452,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
              
               <li class="article-tag-list-item">
