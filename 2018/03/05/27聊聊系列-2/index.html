@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="先从 this 说起吧！（这一天终于来了）
 工作中我们总会面临：这个this指的是代码里的那一块呢?">
-<meta property="og:updated_time" content="2018-08-21T03:30:34.727Z">
+<meta property="og:updated_time" content="2018-10-18T06:33:37.542Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="聊聊系列(2)--this">
 <meta name="twitter:description" content="先从 this 说起吧！（这一天终于来了）
@@ -179,6 +179,13 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//用bind也差不了多少</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">handler</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">// 请问这里的 this 是什么</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> handlerWrapper = handler.bind(&#123;<span class="attr">name</span>:<span class="string">'wangsiyuan'</span>&#125;)</div><div class="line">btn.addEventListener(<span class="string">'click'</span>, handlerWrapper)</div><div class="line"></div><div class="line"><span class="comment">//变身面试套路题</span></div><div class="line">btn.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">// 请问这里的 this 是什么</span></div><div class="line">&#125;.bind(&#123;<span class="attr">name</span>:<span class="string">'wangsiyuan'</span>&#125;))</div></pre></td></tr></table></figure>
 <p>10、立即执行函数<br>每个函数只有一个this<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myObject = &#123;</div><div class="line">	<span class="attr">foo</span>: <span class="string">"bar"</span>;</div><div class="line">	func: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> self = <span class="keyword">this</span>; <span class="comment">//这里的this并不是下面立即执行函数的this，它是中函数的this</span></div><div class="line">		<span class="built_in">console</span>.log(<span class="string">"outer func: this.foo ="</span> + <span class="keyword">this</span>.foo) <span class="comment">// bar</span></div><div class="line">		<span class="built_in">console</span>.log(<span class="string">"outer func: self.foo ="</span> + self.foo) <span class="comment">// bar</span></div><div class="line">		(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			<span class="built_in">console</span>.log(<span class="string">"inner func: this.foo ="</span> + <span class="keyword">this</span>.foo) <span class="comment">// undefined</span></div><div class="line">			<span class="built_in">console</span>.log(<span class="string">"inner func: self.foo ="</span> + self.foo) <span class="comment">// bar</span></div><div class="line">		&#125;());</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line">myObject.func();</div></pre></td></tr></table></figure></p>
 <p>结论：<strong>「this 就是 call 的第一个参数」</strong><br>记住了吗？</p>
+<hr>
+<blockquote>
+<p>面试 this</p>
+</blockquote>
+<p>很长时间我都是按照方方的方法来找出 this 的指向，但是今天我们可以把 this 的绑定方法分为四种：</p>
+<p>1、显式绑定</p>
+<p>2、隐式绑定</p>
 
       
 
@@ -404,11 +411,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -416,7 +419,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -428,15 +435,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">

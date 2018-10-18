@@ -141,6 +141,164 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-79剑指-运算篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/06/79剑指-运算篇/">剑指offer(4)--运算篇(JavaScript版)/共 题</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/06/79剑指-运算篇/" class="archive-article-date">
+  	<time datetime="2018-10-06T12:48:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>【<a href="https://github.com/wangsiyuan233/NowCoder">源码地址</a>】 || 【<a href="https://www.nowcoder.com/ta/coding-interviews?page=1">代码调试</a>】</p>
+<hr>
+<blockquote>
+<p>十一、二进制中1的个数 p100</p>
+</blockquote>
+<p><strong>描述</strong>：输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。</p>
+<p><strong>方法一：常规解法</strong><br>1、怎样判断一个整数的最右边是不是1<br>2、把整数和1做【位与运算】，看结果是不是0就知道了。<br>3、如果结果是1，那最右边的一位就是1<br>4、bug就是不能分析出来负数，会陷入死循环<br><figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function NumberOf1(n)&#123;</div><div class="line">  var <span class="built_in">count</span> = <span class="number">0</span>, <span class="built_in">flag</span> = <span class="number">1</span>;</div><div class="line">  <span class="keyword">while</span>(<span class="built_in">flag</span>)&#123;</div><div class="line">    <span class="keyword">if</span>(n&amp;<span class="built_in">flag</span>)<span class="built_in">count</span>++;</div><div class="line">    <span class="built_in">flag</span> = <span class="built_in">flag</span> &lt;&lt; <span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line">  return <span class="built_in">count</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>方法二：高级解法</strong><br>1、如果一个整数不为0，那么这个整数至少有一位是1。<br>如果我们把这个整数减1，那么原来处在整数最右边的1就会变为0，原来在1后面的所有的0都会变成1(如果最右边的1后面还有0的话)。<br>其余所有位将不会受到影响。</p>
+<p>2、举个例子：一个二进制数 <code>1100</code>，从右边数起第三位是处于最右边的一个1。减去1后，第三位变成0，它后面的两位0变成了1，而前面的1保持不变，因此得到的结果是 <code>1011</code>.我们发现减1的结果是把最右边的一个1开始的所有位都取反了。这个时候如果我们再把原来的整数和减去1之后的结果做与运算，从原来整数最右边一个1那一位开始所有位都会变成0。如<code>1100&amp;1011=1000</code>.也就是说，把一个整数减去1，再和原整数做与运算，会把该整数最右边一个1变成0.那么一个整数的二进制有多少个1，就可以进行多少次这样的操作。<br><figure class="highlight excel"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function NumberOf1(<span class="built_in">n</span>)&#123;</div><div class="line">  <span class="built_in">var</span> <span class="built_in">count</span> = <span class="number">0</span>;</div><div class="line">  while (<span class="built_in">n</span>)&#123;</div><div class="line">   <span class="built_in">count</span>++;</div><div class="line">   <span class="built_in">n</span> = (<span class="built_in">n</span>-<span class="number">1</span>)&amp;<span class="built_in">n</span>;//把最右边的一个<span class="number">1</span>变成<span class="number">0</span></div><div class="line">&#125;</div><div class="line">  return <span class="built_in">count</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2018/10/06/79剑指-运算篇/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指offer</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-78剑指-数组篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/06/78剑指-数组篇/">剑指offer(3)--数组篇(JavaScript版)/共 题</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/06/78剑指-数组篇/" class="archive-article-date">
+  	<time datetime="2018-10-06T11:52:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>【<a href="https://github.com/wangsiyuan233/NowCoder">源码地址</a>】 || 【<a href="https://www.nowcoder.com/ta/coding-interviews?page=1">代码调试</a>】</p>
+<hr>
+<blockquote>
+<p>一、 二维数组中的查找 p44</p>
+</blockquote>
+<p><strong>描述</strong>：在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。<br><figure class="highlight zephir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Find</span><span class="params">(target, array)</span> </span>&#123;</div><div class="line">  <span class="keyword">let</span> i = <span class="number">0</span>;<span class="comment">// column 竖列</span></div><div class="line">  <span class="keyword">let</span> j = <span class="keyword">array</span>[i].length - <span class="number">1</span>; <span class="comment">// row 横行</span></div><div class="line">  <span class="keyword">while</span> (i &lt; <span class="keyword">array</span>.length &amp;&amp; j &gt;= <span class="number">0</span>)&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">array</span>[i][j] &lt; target) &#123;</div><div class="line">      i++;</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">array</span>[i][j] &gt; target)&#123;</div><div class="line">      j--;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>思路</strong>：？？？<br>
+        
+          <a class="article-more-a" href="/2018/10/06/78剑指-数组篇/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指offer</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-77剑指-二叉树篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -166,7 +324,7 @@
 <blockquote>
 <p>四、 重建二叉树 p62/t4</p>
 </blockquote>
-<p><strong>描述</strong>：输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reConstructBinaryTree</span>(<span class="params">pre, vin</span>)</span>&#123; <span class="comment">//pre 是前序遍历，vin 是中序遍历</span></div><div class="line">  <span class="comment">// null 是真正的空，[] 里面还有东西</span></div><div class="line">    <span class="keyword">var</span> result =<span class="literal">null</span>;</div><div class="line">    <span class="keyword">if</span>(pre.length&gt;<span class="number">1</span>)&#123;</div><div class="line">      <span class="keyword">var</span> root = pre[<span class="number">0</span>];</div><div class="line">      <span class="comment">// indexOf() 方法可返回某个指定的字符串值首次出现的位置。</span></div><div class="line">      <span class="comment">// 下面开始中序遍历</span></div><div class="line">      <span class="comment">// 找到根节点的位置</span></div><div class="line">      <span class="keyword">var</span> vinRootIndex = vin.indexOf(root);</div><div class="line">      <span class="comment">// 根节点的左边是左子树</span></div><div class="line">      <span class="keyword">var</span> vinLeft = vin.slice(<span class="number">0</span>,vinRootIndex);</div><div class="line">      <span class="comment">// 右边就是右子树</span></div><div class="line">      <span class="keyword">var</span> vinRight = vin.slice(vinRootIndex+<span class="number">1</span>,vin.length);</div><div class="line">      <span class="comment">// 下面开始前序遍历：</span></div><div class="line">      <span class="comment">// shift() 把数组的第一个元素从其中删除，并返回第一个元素的值</span></div><div class="line">      <span class="comment">// 取走第一个数</span></div><div class="line">      pre.shift();</div><div class="line">      <span class="comment">// 此时的第一个数是左子树的第一个数</span></div><div class="line">      <span class="keyword">var</span> preLeft = pre.slice(<span class="number">0</span>,vinLeft.length);</div><div class="line">      <span class="keyword">var</span> preRight = pre.slice(vinLeft.length,pre.length);</div><div class="line">      result=&#123;</div><div class="line">        <span class="attr">val</span>:root,</div><div class="line">        <span class="attr">left</span>:reConstructBinaryTree(preLeft,vinLeft),</div><div class="line">        <span class="attr">right</span>:reConstructBinaryTree(preRight,vinRight)</div><div class="line">      &#125;</div><div class="line">    <span class="comment">// 二叉树只有一个元素</span></div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(pre.length ===<span class="number">1</span>)&#123;</div><div class="line">        result= &#123;</div><div class="line">            <span class="attr">val</span> :pre[<span class="number">0</span>],</div><div class="line">            <span class="attr">left</span>:<span class="literal">null</span>,</div><div class="line">            <span class="attr">right</span>:<span class="literal">null</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>描述</strong>：输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reConstructBinaryTree</span><span class="params">(pre, vin)</span></span>&#123; <span class="comment">//pre 是前序遍历，vin 是中序遍历</span></div><div class="line">  <span class="comment">// null 是真正的空，[] 里面还有东西</span></div><div class="line">    <span class="keyword">var</span> result =<span class="literal">null</span>;</div><div class="line">    <span class="keyword">if</span>(pre.length&gt;<span class="number">1</span>)&#123;</div><div class="line">      <span class="keyword">var</span> root = pre[<span class="number">0</span>];</div><div class="line">      <span class="comment">// indexOf() 方法可返回某个指定的字符串值首次出现的位置。</span></div><div class="line">      <span class="comment">// 下面开始中序遍历</span></div><div class="line">      <span class="comment">// 找到根节点的位置</span></div><div class="line">      <span class="keyword">var</span> vinRootIndex = vin.indexOf(root);</div><div class="line">      <span class="comment">// 根节点的左边是左子树</span></div><div class="line">      <span class="keyword">var</span> vinLeft = vin.slice(<span class="number">0</span>,vinRootIndex);</div><div class="line">      <span class="comment">// 右边就是右子树</span></div><div class="line">      <span class="keyword">var</span> vinRight = vin.slice(vinRootIndex+<span class="number">1</span>,vin.length);</div><div class="line">      <span class="comment">// 下面开始前序遍历：</span></div><div class="line">      <span class="comment">// shift() 把数组的第一个元素从其中删除，并返回第一个元素的值</span></div><div class="line">      <span class="comment">// 取走第一个数</span></div><div class="line">      pre.shift();</div><div class="line">      <span class="comment">// 此时的第一个数是左子树的第一个数</span></div><div class="line">      <span class="keyword">var</span> preLeft = pre.slice(<span class="number">0</span>,vinLeft.length);</div><div class="line">      <span class="keyword">var</span> preRight = pre.slice(vinLeft.length,pre.length);</div><div class="line">      result=&#123;</div><div class="line">        val:root,</div><div class="line">        left:reConstructBinaryTree(preLeft,vinLeft),</div><div class="line">        right:reConstructBinaryTree(preRight,vinRight)</div><div class="line">      &#125;</div><div class="line">    <span class="comment">// 二叉树只有一个元素</span></div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(pre.length ===<span class="number">1</span>)&#123;</div><div class="line">        result= &#123;</div><div class="line">            val :pre[<span class="number">0</span>],</div><div class="line">            left:<span class="literal">null</span>,</div><div class="line">            right:<span class="literal">null</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><strong>思路</strong>：<br>1、函数里面的参数 <code>pre</code> 是前序遍历，<code>vin</code> 是中序遍历；<br>2、第一步我们进行的是中序遍历：<br>3、前序的第一个点就是根节点，用 <code>indexOf</code> 找到根节点的位置；<br>4、中序遍历中，根节点前面就是左子树，根节点后面就是右子树<br>5、第二步我们开始前序遍历：<br>6、取出根节点！很重要<br>7、用中序遍历中左子树<strong>的长度</strong>，可以知道前序遍历的左子树<br>8、同理可以得到前序遍历的右子树<br>9、第三步就是 <strong>递归</strong><br>10、你不是让我重构这个二叉树吗？OK，我的整体左子树也有小左子树和小右子树啊<br>11、这个时候，“根节点”变了，逻辑却没变，还是用开始的大函数。<br>12、重建的二叉树也是数组<br>
         
           <a class="article-more-a" href="/2018/10/06/77剑指-二叉树篇/#more">more >></a>
@@ -247,7 +405,7 @@
 </blockquote>
 </li>
 </ul>
-<p><strong>描述</strong>：输入一个链表，按链表值从尾到头的顺序返回一个 <code>ArrayList</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">printListFromTailToHead</span>(<span class="params">head</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> result = [];</div><div class="line">  <span class="keyword">while</span>(head)&#123;</div><div class="line">    result.unshift(head.val);</div><div class="line">    head = head.next;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>描述</strong>：输入一个链表，按链表值从尾到头的顺序返回一个 <code>ArrayList</code>。<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">printListFromTailToHead</span><span class="params">(head)</span></span>&#123;</div><div class="line">  <span class="keyword">var</span> result = [];</div><div class="line">  <span class="keyword">while</span>(head)&#123;</div><div class="line">    result.unshift(head.val);</div><div class="line">    head = head.next;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><strong>思路</strong>：<br>1、BUG题/<code>unshift()</code>在数组的头部添加任意个项并返回新数组的长度<br>2、翻转后的 <code>head</code> 和 <code>head.next</code>，被一个一个加进了空数组的头部<br>
         
           <a class="article-more-a" href="/2018/10/05/76剑指-链表篇/#more">more >></a>
@@ -327,131 +485,6 @@
 <p><a href="http://js.jirengu.com/duzotakuse/1/edit?html,css,output">【看代码点我】&gt;&gt;&gt;</a><br>★30s总结<br>1、 在 <code>div</code> 里面，并不是按照 左中右 的顺序来写<br>2、 给3个 <code>div</code> 最小高度<br>3、 左浮 + 右浮<br>4、 缺点是压缩太小时，中间的字会漏下来，需要清除浮动<br>
         
           <a class="article-more-a" href="/2018/09/23/74一面知识块/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-73Event-Loop" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/15/73Event-Loop/">Event Loop</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/15/73Event-Loop/" class="archive-article-date">
-  	<time datetime="2018-09-15T10:56:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>JS 是单线程语言</p>
-<p>JS 在执行的过程中会产生执行环境，这些执行环境会被顺序的加入到执行栈中。如果遇到异步的代码，会被挂起并加入到 Task（有多种 task） 队列中。一旦执行栈为空，Event Loop 就会从 Task 队列中拿出需要执行的代码并放入执行栈中执行，所以本质上来说 <strong>JS 中的异步还是同步行为</strong>。<br>
-        
-          <a class="article-more-a" href="/2018/09/15/73Event-Loop/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-72跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/13/72跨域/">跨域</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/13/72跨域/" class="archive-article-date">
-  	<time datetime="2018-09-13T01:36:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>浏览器出于安全的考虑，采用的是同源策略。</p>
-<p>协议、域名和端口号三者统一，就是同域，只要有其中一个不一样，就是跨域，这时Ajax就会请求失败。</p>
-<p>下面有三种方法可以解决跨域的问题<br>
-        
-          <a class="article-more-a" href="/2018/09/13/72跨域/#more">more >></a>
         
       
 
@@ -571,11 +604,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -583,7 +612,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -595,15 +628,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">

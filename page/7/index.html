@@ -141,6 +141,141 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-50配置React" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/30/50配置React/">配置 React</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/30/50配置React/" class="archive-article-date">
+  	<time datetime="2018-05-30T02:11:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>第一步： 安装 React</p>
+</blockquote>
+<p>1、 <a href="https://pan.baidu.com/s/1kU4K9iJ">下载</a><code>yarn</code></p>
+<p>2、临时文件夹实验：<br><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="string">mkdir </span>~/<span class="string">temp;</span> <span class="string">cd </span>~/<span class="string">temp</div><div class="line"></span></div><div class="line"><span class="string">npm </span><span class="string">install </span>-g <span class="built_in">create-react-app</span></div><div class="line"></div><div class="line"><span class="built_in">create-react-app</span> <span class="string">hello-world</div><div class="line"></span></div><div class="line"><span class="string">cd </span><span class="string">hello-world</div><div class="line"></span></div><div class="line"><span class="string">npm </span><span class="string">start </span>或者 <span class="string">yarn </span><span class="string">start</span></div></pre></td></tr></table></figure></p>
+<p> <code>create-react-app</code> 内置了 <code>webpack</code> 的所有功能。</p>
+<p>3、初始化 <code>React</code><br>清空 <code>temp</code> 文件夹，同时清空项目文件夹<br>（因为 <code>create-react-app</code> 会自己创建 <code>src</code> 和 <code>index.html</code> ）<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">cd 到你在上次任务中新建的项目目录！</div><div class="line"></div><div class="line"><span class="comment"># 删除所有非隐藏文件，这一步千万不要手抖，后果自负</span></div><div class="line"></div><div class="line">rm -rf * </div><div class="line">git <span class="keyword">add</span><span class="bash"> .</div><div class="line"></span>git commit -m <span class="string">"remove all files"</span></div><div class="line">git push</div></pre></td></tr></table></figure></p>
+<p>正式开始初始化：<br>
+        
+          <a class="article-more-a" href="/2018/05/30/50配置React/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-49Webpack配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/29/49Webpack配置/">Webpack配置</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/29/49Webpack配置/" class="archive-article-date">
+  	<time datetime="2018-05-29T08:48:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="webpack-的作用-使用各种-loader-加载不同的资源-把所有资源打包起来"><a href="#webpack-的作用-使用各种-loader-加载不同的资源-把所有资源打包起来" class="headerlink" title="webpack 的作用:使用各种 loader 加载不同的资源,把所有资源打包起来"></a>webpack 的作用:使用各种 loader 加载不同的资源,把所有资源打包起来</h3><blockquote>
+<p>第一步：设置一个 <code>npm</code>，让 <code>npm</code> 下载得更快一些</p>
+</blockquote>
+<p>1、运行 <code>npm config set loglevel http</code> 让你知道 <code>npm</code> 发的每一个请求<br>2、运行 <code>npm config set progress false</code>，关闭那个无聊的进度条<br>3、运行 <code>npm config set registry https://registry.npm.taobao.org/</code> ， 从淘宝的服务器下载各种包。不过这会让你在运行 <code>npm adduser</code> 的时候出问题，想要恢复成原样，只需要运行 <code>npm config delete registry</code> 即可。<br>4、运行 <code>touch ~/.bashrc; echo &#39;export PHANTOMJS_CDNURL=&quot;http://npm.taobao.org/mirrors/phantomjs&quot;&#39; &gt;&gt; ~/.bashrc</code> 让 <code>npm</code> 从淘宝下载 <code>phantomjs</code><br>5、运行 <code>touch ~/.bashrc; echo &#39;export SASS_BINARY_SITE=&quot;https://npm.taobao.org/mirrors/node-sass&quot;&#39; &gt;&gt; ~/.bashrc</code> 让 npm 从淘宝下载 SASS<br>6、运行 <code>source ~/.bashrc</code></p>
+<blockquote>
+<p>第二步：复制 <code>webpack</code> 的<a href="https://webpack.js.org/guides/getting-started/">指引</a></p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2018/05/29/49Webpack配置/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-48MVC与模块化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -287,85 +422,6 @@
 
 
   
-    <article id="post-46冒泡与捕获" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/06/46冒泡与捕获/">捕获/阻止捕获、冒泡/阻止冒泡</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/06/46冒泡与捕获/" class="archive-article-date">
-  	<time datetime="2018-05-06T11:31:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <a id="more"></a>
-<blockquote>
-<p>一、冒泡事件</p>
-</blockquote>
-<p>1、虽然我们只点击了button元素，但是，button外的事件<strong>由内向外</strong>以此被触发，触发的顺序是由DOM树的下层到DOM树的最上面，故称为冒泡。<br>2、如果我们不希望事件冒泡呢？那么如何阻止事件冒泡？<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"button"</span>).addEventListener(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">        alert(<span class="string">"button"</span>);</div><div class="line">        event.stopPropagation();    </div><div class="line">&#125;,<span class="literal">false</span>);</div></pre></td></tr></table></figure></p>
-<p>这样，点击button后，只会弹出一个弹窗，显示button。<br>3、冒泡的终点是 window</p>
-<blockquote>
-<p>二、捕获事件</p>
-</blockquote>
-<p>1、把<code>addEventListener()</code>方法的第三个参数由前面例子的<code>false</code>修改为了<code>true</code>,也就是使用捕获方式获得<code>button</code>，<br>2、最外层的事件先被触发，最后才是我们点击的button事件被触发，这便是事件捕获；<br>3、<code>stopPropagation()</code> 和 <code>stopImmediatePropagation()</code> 都可以阻止事件冒泡和事件捕获；<br>4、<code>stopImmediatePropagation()</code> 不仅阻止捕获和冒泡，还阻止该元素的其他事件发生。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-45EventUtil" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -405,81 +461,6 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-44Flex布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/21/44Flex布局/">Flex布局</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/21/44Flex布局/" class="archive-article-date">
-  	<time datetime="2018-04-21T10:47:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>Flex出现前</p>
-</blockquote>
-<p>我们是这样布局的：<br>1、正常文档流<br>2、<code>float</code> + <code>clear</code> 清除浮动<br>3、<code>relative</code> + <code>absolute</code><br>4、负<code>margin</code><br>
-        
-          <a class="article-more-a" href="/2018/04/21/44Flex布局/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
         		</li>
       		
 		</ul>
@@ -596,11 +577,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -608,7 +585,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -620,15 +601,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">

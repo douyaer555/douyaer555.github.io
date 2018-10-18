@@ -6,24 +6,48 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>捕获/阻止捕获、冒泡/阻止冒泡 | wangsiyuan</title>
+  <title>CSS 盒模型及其衍生物 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、冒泡事件
+  <meta name="description" content="一、两种盒模型
 
-1、虽然我们只点击了button元素，但是，button外的事件由内向外以此被触发，触发的顺序是由DOM树的下层到DOM树的最上面，故称为冒泡。2、如果我们不希望事件冒泡呢？那么如何阻止事件冒泡？1234document.getElementById(&quot;button&quot;).addEventListener(&quot;click&quot;,function(event)&amp;#123;">
+1、标准模型：宽高就是 content 的宽高2、IE模型： 宽高是 content + border + padding (木有margin)
+
+二、怎么设置盒模型？
+
+1、box-sizing: content-box;(默认、标准）2、box-sizing: border-box;(IE)
+
+三、怎样用JS获取盒模型对应的宽高
+
+1、Element.currentStyl">
 <meta property="og:type" content="article">
-<meta property="og:title" content="捕获/阻止捕获、冒泡/阻止冒泡">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/05/06/46冒泡与捕获/index.html">
+<meta property="og:title" content="CSS 盒模型及其衍生物">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/10/17/82对象继承的方式/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="一、冒泡事件
+<meta property="og:description" content="一、两种盒模型
 
-1、虽然我们只点击了button元素，但是，button外的事件由内向外以此被触发，触发的顺序是由DOM树的下层到DOM树的最上面，故称为冒泡。2、如果我们不希望事件冒泡呢？那么如何阻止事件冒泡？1234document.getElementById(&quot;button&quot;).addEventListener(&quot;click&quot;,function(event)&amp;#123;">
-<meta property="og:updated_time" content="2018-05-06T11:56:30.074Z">
+1、标准模型：宽高就是 content 的宽高2、IE模型： 宽高是 content + border + padding (木有margin)
+
+二、怎么设置盒模型？
+
+1、box-sizing: content-box;(默认、标准）2、box-sizing: border-box;(IE)
+
+三、怎样用JS获取盒模型对应的宽高
+
+1、Element.currentStyl">
+<meta property="og:updated_time" content="2018-10-18T12:59:22.102Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="捕获/阻止捕获、冒泡/阻止冒泡">
-<meta name="twitter:description" content="一、冒泡事件
+<meta name="twitter:title" content="CSS 盒模型及其衍生物">
+<meta name="twitter:description" content="一、两种盒模型
 
-1、虽然我们只点击了button元素，但是，button外的事件由内向外以此被触发，触发的顺序是由DOM树的下层到DOM树的最上面，故称为冒泡。2、如果我们不希望事件冒泡呢？那么如何阻止事件冒泡？1234document.getElementById(&quot;button&quot;).addEventListener(&quot;click&quot;,function(event)&amp;#123;">
+1、标准模型：宽高就是 content 的宽高2、IE模型： 宽高是 content + border + padding (木有margin)
+
+二、怎么设置盒模型？
+
+1、box-sizing: content-box;(默认、标准）2、box-sizing: border-box;(IE)
+
+三、怎样用JS获取盒模型对应的宽高
+
+1、Element.currentStyl">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -149,36 +173,50 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-46冒泡与捕获" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-82对象继承的方式" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      捕获/阻止捕获、冒泡/阻止冒泡
+      CSS 盒模型及其衍生物
     </h1>
   
 
         
-        <a href="/2018/05/06/46冒泡与捕获/" class="archive-article-date">
-  	<time datetime="2018-05-06T11:31:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-06</time>
+        <a href="/2018/10/17/82对象继承的方式/" class="archive-article-date">
+  	<time datetime="2018-10-17T05:57:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<blockquote>
-<p>一、冒泡事件</p>
+        <blockquote>
+<p>一、两种盒模型</p>
 </blockquote>
-<p>1、虽然我们只点击了button元素，但是，button外的事件<strong>由内向外</strong>以此被触发，触发的顺序是由DOM树的下层到DOM树的最上面，故称为冒泡。<br>2、如果我们不希望事件冒泡呢？那么如何阻止事件冒泡？<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"button"</span>).addEventListener(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">        alert(<span class="string">"button"</span>);</div><div class="line">        event.stopPropagation();    </div><div class="line">&#125;,<span class="literal">false</span>);</div></pre></td></tr></table></figure></p>
-<p>这样，点击button后，只会弹出一个弹窗，显示button。<br>3、冒泡的终点是 window</p>
+<p>1、标准模型：宽高就是 <code>content</code> 的宽高<br>2、IE模型： 宽高是 <code>content + border + padding</code> (木有margin)</p>
 <blockquote>
-<p>二、捕获事件</p>
+<p>二、怎么设置盒模型？</p>
 </blockquote>
-<p>1、把<code>addEventListener()</code>方法的第三个参数由前面例子的<code>false</code>修改为了<code>true</code>,也就是使用捕获方式获得<code>button</code>，<br>2、最外层的事件先被触发，最后才是我们点击的button事件被触发，这便是事件捕获；<br>3、<code>stopPropagation()</code> 和 <code>stopImmediatePropagation()</code> 都可以阻止事件冒泡和事件捕获；<br>4、<code>stopImmediatePropagation()</code> 不仅阻止捕获和冒泡，还阻止该元素的其他事件发生。</p>
+<p>1、<code>box-sizing: content-box;</code>(默认、标准）<br>2、<code>box-sizing: border-box;</code>(IE)</p>
+<blockquote>
+<p>三、怎样用JS获取盒模型对应的宽高</p>
+</blockquote>
+<p>1、<code>Element.currentStyle.width/height;</code> 只支持IE<br>2、<code>Window.getComputedStyle().width/height;</code>都可以用<br>3、<code>Element.getBoundingClientRect().width/height;</code> 根据视窗的左上角拿到位置坐标</p>
+<blockquote>
+<p>四、边距重叠</p>
+</blockquote>
+<p>当两个垂直外边距相遇时，他们将形成一个外边距；<br>合并后的外边距高度 = 两个发生合并的外边距中的较大值；</p>
+<p>只有<strong>普通</strong>文档流中<strong>块级</strong>元素的<strong>垂直</strong>外边距才能合并</p>
+<blockquote>
+<p>BFC（块级格式化上下文）</p>
+</blockquote>
+<p>1、独立的渲染区域，规定了其内部盒子如何布局，盒子内的区域与外界不相干</p>
+<p>2、触发条件：（满足一个就行了）<br>2.1 <code>float ≠ none;</code><br>2.2 <code>overflow ≠ visible;</code><br>2.3 <code>display: inline-block / table-cell / table-caption;</code><br>2.4 <code>position: absolute / fixed;</code></p>
+<p>3、布局规则<br>垂直方向上，一个接一个的放置，上下距离由 <code>margin</code> 决定，BFC 内外互不干扰，浮动元素参与总的高度计算</p>
+<p>4、 BFC 的作用<br>自适应俩栏布局，阻止元素被浮动元素覆盖，可以包含浮动元素。</p>
 
       
 
@@ -208,17 +246,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -269,7 +296,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/05/06/46冒泡与捕获/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/10/17/82对象继承的方式/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -283,18 +310,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/05/08/47各种高度/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/10/18/81手撕代码/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          窗口高度与obj的高度
+          手撕代码
         
       </div>
     </a>
   
   
-    <a href="/2018/05/05/45EventUtil/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">EventUtil--js事件封装</div>
+    <a href="/2018/10/08/75剑指-递归和回溯法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">剑指offer(6)--递归和回溯法(JavaScript版)/共 题</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -404,11 +431,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -416,7 +439,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -428,15 +455,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -14,7 +14,7 @@
 <meta property="og:url" content="wangsiyuan233.github.io/2018/02/19/17原型链实例/index.html">
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="1、所有构造器/函数（包括自定义的）的 __proto__ 都指向Function.prototype(它是一个空函数)2、Function.prototype.__proto__ === Object.prototype3、Object.prototype.__proto__ === null">
-<meta property="og:updated_time" content="2018-05-09T01:08:04.693Z">
+<meta property="og:updated_time" content="2018-10-18T02:40:14.492Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型链实例">
 <meta name="twitter:description" content="1、所有构造器/函数（包括自定义的）的 __proto__ 都指向Function.prototype(它是一个空函数)2、Function.prototype.__proto__ === Object.prototype3、Object.prototype.__proto__ === null">
@@ -168,6 +168,15 @@
 </blockquote>
 <a id="more"></a>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> object = &#123;&#125;</div><div class="line">object.__proto__  === <span class="built_in">Object</span>.prototype</div><div class="line"></div><div class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">fn.__proto__ === <span class="built_in">Function</span>.prototype </div><div class="line">fn.__proto__.__proto__ ==== <span class="built_in">Object</span>.prototype</div><div class="line"></div><div class="line"><span class="keyword">var</span> array = []</div><div class="line">array.__proto__ === <span class="built_in">Array</span>.prototype</div><div class="line">array.__proto__.__proto__ === <span class="built_in">Object</span>.prototype</div><div class="line"></div><div class="line"><span class="built_in">Function</span>.__proto__ === <span class="built_in">Function</span>.prototype</div><div class="line"><span class="built_in">Array</span>.__proto__ === <span class="built_in">Function</span>.prototype</div><div class="line"><span class="built_in">Object</span>.__proto__ === <span class="built_in">Function</span>.prototype</div><div class="line"></div><div class="line"><span class="literal">true</span>.__proto__ === <span class="built_in">Function</span>.prototype</div><div class="line"></div><div class="line"><span class="built_in">Function</span>.prototype.__proto__ ===  <span class="built_in">Object</span>.prototype</div><div class="line"><span class="built_in">Object</span>.prototype.__proto__ === <span class="literal">null</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>面试原型链</p>
+</blockquote>
+<p>我们<strong>创建的每一个函数都有一个prototype</strong>(属性)，这个prototype啊其实就是个指针，它指向了一个对象（函数的原型对象），<br>这个【函数原型对象】值得好好说说：<br>1、这个对象里有什么呢？有【所有实例共享的所有属性和方法】，换句话说，我们可以不用在构造函数中定义实例的信息，把这些信息添加到原型对象中，我们直接取出来用就可以了。</p>
+<p>2、prototype默认的仅有的属性叫constructor，constructor指向这个函数本身。 是的，Person.prototype.construcot 指向了 Person.</p>
+<p><strong>当构造函数创建一个新实例后，该实例的内部将包含一个指针，指向构造函数的原型对象</strong> 即：<code>fn.__proto__ === Fn.prototype</code>.</p>
+<p>既然函数【作为函数时】有prototype,那么当函数【作为对象时】，它有 <code>_proto_</code> 吗？？？（即：是谁创建了函数？）<br> <code>Object.__proto__ === Function.prototype</code></p>
+<p>当读取到某个代码的属性时，执行搜索的顺序是：实例本身 – 原型对象，一路利用<code>_proto_</code>向上查找就是原型链了。</p>
+
       
 
       
@@ -392,11 +401,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -404,7 +409,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -416,15 +425,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
