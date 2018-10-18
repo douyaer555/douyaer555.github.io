@@ -6,14 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>Archives | wangsiyuan</title>
+  <title>CSS 查漏补缺 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="wangsiyuan">
-<meta property="og:url" content="wangsiyuan233.github.io/archives/page/3/index.html">
+  <meta name="description" content="（方方-必考）介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？
+
+（1）、有两种， IE 盒模型、标准盒模型；（2）、盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border)；（3）、区  别： IE的content部分把 border 和 padding计算了进去;（4）、content-box: width == 内容区宽度（5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS 查漏补缺">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/07/05/58CSS-查漏补缺/index.html">
 <meta property="og:site_name" content="wangsiyuan">
+<meta property="og:description" content="（方方-必考）介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？
+
+（1）、有两种， IE 盒模型、标准盒模型；（2）、盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border)；（3）、区  别： IE的content部分把 border 和 padding计算了进去;（4）、content-box: width == 内容区宽度（5">
+<meta property="og:updated_time" content="2018-10-18T23:05:55.734Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wangsiyuan">
+<meta name="twitter:title" content="CSS 查漏补缺">
+<meta name="twitter:description" content="（方方-必考）介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？
+
+（1）、有两种， IE 盒模型、标准盒模型；（2）、盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border)；（3）、区  别： IE的content部分把 border 和 padding计算了进去;（4）、content-box: width == 内容区宽度（5">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -139,247 +149,239 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-58CSS-查漏补缺" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS 查漏补缺
+    </h1>
+  
+
+        
+        <a href="/2018/07/05/58CSS-查漏补缺/" class="archive-article-date">
+  	<time datetime="2018-07-05T03:02:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>（方方-必考）介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？</p>
+</blockquote>
+<p>（1）、有两种， IE 盒模型、标准盒模型；<br>（2）、盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border)；<br>（3）、区  别： IE的content部分把 border 和 padding计算了进去;<br>（4）、content-box: width == 内容区宽度<br>（5）、border-box: width == 内容区宽度 + padding 宽度 + border 宽度<br><a id="more"></a></p>
+<blockquote>
+<p>（方方-必考）五、如何居中div？</p>
+</blockquote>
+<p><a href="http://wangsiyuan233.cn/2018/03/28/33CSS%E5%B8%83%E5%B1%80%E6%96%B9%E6%A1%88%E4%B9%8Bflex-float/" target="_blank" rel="external">点我到布局</a></p>
+<blockquote>
+<p>（方方）对BFC规范(块级格式化上下文：block formatting context)的理解？</p>
+</blockquote>
+<p>占坑符</p>
+<blockquote>
+<p>CSS选择符有哪些？哪些属性可以继承？</p>
+</blockquote>
+<p>1.id选择器（ <code>#myid</code> ）<br>2.类选择器（ <code>.myclassname</code> ）<br>3.标签选择器（ <code>div, h1, p</code>）<br>4.相邻选择器（<code>h1 + p</code> ）<br>5.子选择器（ <code>ul &gt; li</code> ）<br>6.后代选择器（ <code>li a</code> ）<br>7.通配符选择器（ <code>*</code> ）<br>8.属性选择器（ <code>a[rel = &quot;external&quot;]</code> ）<br>9.伪类选择器（ <code>a:hover, li:nth-child</code> ）</p>
+<p>可继承的样式： <code>font-size font-family color, UL LI DL DD DT</code>;</p>
+<p>不可继承的样式：<code>border padding margin width height</code>;</p>
+<blockquote>
+<p>CSS3新增伪类有那些？</p>
+</blockquote>
+<p>举例：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-pseudo">::after</span>			在元素之后添加内容,也可以用来做清除浮动。</div><div class="line"><span class="selector-pseudo">::before</span>       在元素之前添加内容</div><div class="line"><span class="selector-pseudo">:enabled</span>  		</div><div class="line"><span class="selector-pseudo">:disabled</span>		控制表单控件的禁用状态。</div><div class="line"><span class="selector-pseudo">:checked</span>       单选框或复选框被选中。</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>display有哪些值？说明他们的作用。</p>
+</blockquote>
+<p><code>block</code>           块类型。默认宽度为父元素宽度，可设置宽高，换行显示。<br><code>none</code>           缺省值。象行内元素类型一样显示。<br><code>inline</code>          行内元素类型。默认宽度为内容宽度，不可设置宽高，同行显示。<br><code>inline-block</code>  默认宽度为内容宽度，可以设置宽高，同行显示。<br><code>list-item</code>     象块类型元素一样显示，并添加样式列表标记。<br><code>table</code>           此元素会作为块级表格来显示。<br><code>inherit</code>         规定应该从父元素继承 display 属性的值。</p>
+<blockquote>
+<p><code>position</code>的值<code>relative</code>和<code>absolute</code>定位原点是？</p>
+</blockquote>
+<p><code>static</code>   ： 默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right z-index 声明）。<br><code>absolute</code> ： 生成绝对定位的元素会悬浮在页面上方，遮挡住下方的页面内容；根据最近的定位上下文确定位置。<br><code>fixed</code>    ：（老IE不支持）生成绝对定位的元素，相对于浏览器窗口进行定位。<br><code>relative</code> ： 会导致自身位置的相对变化，而不会影响其他元素的位置、大小。这是 relative 的要点之一。还有第二个要点，就是 relative 产生一个新的定位上下文。<br><code>inherit</code>  ： 规定从父元素继承 position 属性的值。</p>
+<blockquote>
+<p>CSS3有哪些新特性？</p>
+</blockquote>
+<p>新增各种CSS选择器    （<code>: not(.input)：所有 class 不是“input”的节点</code>）<br>圆角            （<code>border-radius:8px</code>）<br>多列布局        （<code>multi-column layout</code>）<br>阴影和反射    （<code>Shadow\Reflect</code>）<br>文字特效        （<code>text-shadow</code>）<br>文字渲染        （<code>Text-decoration</code>）<br>线性渐变        （<code>gradient</code>）<br>旋转             （<code>transform</code>）<br>缩放,定位,倾斜,动画,多背景<br>例如:<code>transform:\scale(0.85,0.90)\ translate(0px,-30px)\ skew(-9deg,0deg)\Animation:</code></p>
+<blockquote>
+<p>用纯CSS创建一个三角形的原理是什么？</p>
+</blockquote>
+<p>把上、左、右三条边隐藏掉（颜色设为 transparent）<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#demo</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">border-width</span>: <span class="number">20px</span>;</div><div class="line">  <span class="attribute">border-style</span>: solid;</div><div class="line">  <span class="attribute">border-color</span>: transparent transparent red transparent;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>请解释一下为什么需要清除浮动？清除浮动的方式</p>
+</blockquote>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.clearfix</span>::before, <span class="selector-class">.clearfix</span>::after &#123;</div><div class="line">    <span class="attribute">content</span>: <span class="string">" "</span>;</div><div class="line">    <span class="attribute">display</span>: block;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.clearfix</span>::after &#123;</div><div class="line">    <span class="attribute">clear</span>: both;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.clearfix</span> &#123;</div><div class="line">    *zoom: <span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>::before 和 :after中双冒号和单冒号 有什么区别？解释一下这2个伪元素的作用。</p>
+</blockquote>
+<p>单冒号<code>(:)</code>用于CSS3伪类，双冒号<code>(::)</code>用于CSS3伪元素。（伪元素由双冒号和伪元素名称组成）<br>双冒号是在当前规范中引入的，用于区分伪类和伪元素。不过浏览器需要同时支持旧的已经存在的伪元素写法，<br>比如:<code>first-line</code>、<code>:first-letter</code>、<code>:before</code>、<code>:after</code>等，<br>而新的在CSS3中引入的伪元素则不允许再支持旧的单冒号的写法。</p>
+<blockquote>
+<p>rem布局的优缺点</p>
+</blockquote>
+<p>（1）、原理是，先按定高宽设计出来页面，然后转换为rem单位，配合js查询屏幕大小来改变html的font-size，最终做出所谓的完美自适应。</p>
+<p>（2）、rem+js是宽度自适应，无法做到高度自适应，所以那些对高度要求很高的rem+js无法实现；</p>
+<blockquote>
+<p>遮罩</p>
+</blockquote>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="keyword">class</span>=<span class="string">"banner"</span>&gt;</div><div class="line">  &lt;div <span class="keyword">class</span>=<span class="string">"mask"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line"></div><div class="line">.banner&#123;</div><div class="line">  <span class="built_in">height</span>: <span class="number">515</span>px;</div><div class="line">  <span class="built_in">background</span>-<span class="built_in">image</span>: url(./img/hehe,png);</div><div class="line">  <span class="built_in">background</span>-<span class="built_in">position</span>: center center;</div><div class="line">  <span class="built_in">background</span>-<span class="built_in">size</span>: cover;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.mask&#123;</div><div class="line">  <span class="built_in">height</span>: <span class="number">515</span>px;</div><div class="line">  <span class="built_in">background</span>-color: rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.5</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>进度条</p>
+</blockquote>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">ol</span> class=<span class="string">"clearfix"</span>&gt;</div><div class="line">  &lt;li&gt;</div><div class="line">    &lt;h3&gt;技能条<span class="number">1</span>&lt;/h3&gt;</div><div class="line">    &lt;<span class="selector-tag">div</span> class=<span class="string">"progressbar"</span>&gt;</div><div class="line">      &lt;<span class="selector-tag">div</span> class=<span class="string">"progress"</span> style=<span class="string">"width:80%;"</span>&gt;&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/li&gt;</div><div class="line"></div><div class="line">  &lt;li&gt;</div><div class="line">    &lt;h3&gt;技能条<span class="number">2</span>&lt;/h3&gt;</div><div class="line">    &lt;<span class="selector-tag">div</span> class=<span class="string">"progressbar"</span>&gt;</div><div class="line">      &lt;<span class="selector-tag">div</span> class=<span class="string">"progress"</span> style=<span class="string">"width:80%;"</span>&gt;&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/li&gt;</div><div class="line"></div><div class="line">&lt;/ol&gt;</div><div class="line"></div><div class="line"></div><div class="line">.progressbar&#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">5px</span>;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#aaa</span>;</div><div class="line">  <span class="attribute">border-radius</span>: <span class="number">2px</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">4px</span> <span class="number">0px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.progress&#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">80%</span>;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#ccc</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>任意朝向三角形</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.triangle</span>&#123;</div><div class="line">  <span class="attribute">display</span>: block;</div><div class="line">  <span class="attribute">border</span>: <span class="number">10px</span> solid transparent;</div><div class="line">  <span class="attribute">width</span>: <span class="number">0px</span>;</div><div class="line">  <span class="attribute">border-right-color</span>: red;</div><div class="line">  <span class="attribute">border-top-width</span>: <span class="number">0px</span>;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">left</span>: <span class="number">4px</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">100%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p><code>&lt;div&gt;</code>的高度由什么决定呢？（不支持IE）</p>
+</blockquote>
+<ol>
+<li><p>只有内联元素<br>只有内联时，高度是由行高（line-height）决定的。（与字体的大小无关）</p>
+<!--more-->
+<p><a href="http://js.jirengu.com/befaqebuva/1/edit?html,output" target="_blank" rel="external"><strong>套路1：中文上下对齐</strong></a><br><a href="http://js.jirengu.com/domacivuzu/1/edit?html,output" target="_blank" rel="external"><strong>套路2：一行文字超出部分变省略号</strong></a><br><a href="http://js.jirengu.com/hesekirunu/1/edit?html,output" target="_blank" rel="external"><strong>套路3：多行文字超出部分变省略号</strong></a><br><strong>套路4：div里文字垂直居中</strong>:用padding和text-align:center</p>
+</li>
+<li><p>只有块级元素（div里div居中）<br><a href="http://js.jirengu.com/nibirivabi/1/edit?html,output" target="_blank" rel="external"><strong>套路1：父定子中</strong></a><br><strong>套路2：margin合并</strong>:如果父级元素没有【padding、border和overflow：hidden】挡住子级，子级撑开时就会越过它，margin就会合并在一起。<br><a href="http://js.jirengu.com/dobiposone/1/edit?html,output" target="_blank" rel="external"><strong>套路3：1:1 响应式div</strong></a></p>
+</li>
+<li><p>内联+块级<br>文档流的高度是由内联＋块级的高度决定的，脱离文档流就不算高度里面了<br>包括不限于：<code>float：left；position：absolute / fixed;</code><br>绝对定位 <code>absolute/fixed</code> 脱离了文档流，相对定位 <code>relative</code> 不脱离文档流；</p>
+</li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/23/68聊聊系列-6/" class="archive-article-date">
-  	<time datetime="2018-08-23T02:23:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/23/68聊聊系列-6/">聊聊系列(6)-- call, apply, bind 区别</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">聊聊系列</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/07/05/58CSS-查漏补缺/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/22/67聊聊系列-5/" class="archive-article-date">
-  	<time datetime="2018-08-22T13:11:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-22</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/07/11/59Javascript-查漏补缺/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Javascript 查漏补缺
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/07/03/57HTML-查漏补缺/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HTML 查漏补缺</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/22/67聊聊系列-5/">聊聊系列(5)-- 继承</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">聊聊系列</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/20/66聊聊系列-4/" class="archive-article-date">
-  	<time datetime="2018-08-20T12:27:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/20/66聊聊系列-4/">聊聊系列(4)-- 深浅拷贝</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">聊聊系列</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/13/65原型系列-5/" class="archive-article-date">
-  	<time datetime="2018-08-13T12:18:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/13/65原型系列-5/">深入理解JavaScript--原型系列(5)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/25/64基本的数据结构/" class="archive-article-date">
-  	<time datetime="2018-07-25T08:30:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/25/64基本的数据结构/">基本的数据结构</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/24/63二分查找/" class="archive-article-date">
-  	<time datetime="2018-07-24T02:02:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/24/63二分查找/">二分查找（binary search）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/19/62排序算法/" class="archive-article-date">
-  	<time datetime="2018-07-19T03:27:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/19/62排序算法/">排序算法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/10/">10</a><a class="extend next" rel="next" href="/archives/page/4/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -403,8 +405,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

@@ -39,22 +39,19 @@
   
   <entry>
     <title>CSS 盒模型及其衍生物</title>
-    <link href="wangsiyuan233.github.io/2018/10/17/82%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF%E7%9A%84%E6%96%B9%E5%BC%8F/"/>
-    <id>wangsiyuan233.github.io/2018/10/17/82对象继承的方式/</id>
+    <link href="wangsiyuan233.github.io/2018/10/17/82CSS-%E7%9B%92%E6%A8%A1%E5%9E%8B%E5%8F%8A%E5%85%B6%E8%A1%8D%E7%94%9F%E7%89%A9/"/>
+    <id>wangsiyuan233.github.io/2018/10/17/82CSS-盒模型及其衍生物/</id>
     <published>2018-10-17T05:57:39.000Z</published>
-    <updated>2018-10-18T12:59:22.102Z</updated>
+    <updated>2018-10-18T22:26:08.054Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>一、两种盒模型</p></blockquote><p>1、标准模型：宽高就是 <code>content</code> 的宽高<br>2、IE模型： 宽高是 <code>content + border + padding</code> (木有margin)</p><blockquote><p>二、怎么设置盒模型？</p></blockquote><p>1、<code>box-sizing: content-box;</code>(默认、标准）<br>2、<code>box-sizing: border-box;</code>(IE)</p><blockquote><p>三、怎样用JS获取盒模型对应的宽高</p></blockquote><p>1、<code>Element.currentStyle.width/height;</code> 只支持IE<br>2、<code>Window.getComputedStyle().width/height;</code>都可以用<br>3、<code>Element.getBoundingClientRect().width/height;</code> 根据视窗的左上角拿到位置坐标</p><blockquote><p>四、边距重叠</p></blockquote><p>当两个垂直外边距相遇时，他们将形成一个外边距；<br>合并后的外边距高度 = 两个发生合并的外边距中的较大值；</p><p>只有<strong>普通</strong>文档流中<strong>块级</strong>元素的<strong>垂直</strong>外边距才能合并</p><blockquote><p>BFC（块级格式化上下文）</p></blockquote><p>1、独立的渲染区域，规定了其内部盒子如何布局，盒子内的区域与外界不相干</p><p>2、触发条件：（满足一个就行了）<br>2.1 <code>float ≠ none;</code><br>2.2 <code>overflow ≠ visible;</code><br>2.3 <code>display: inline-block / table-cell / table-caption;</code><br>2.4 <code>position: absolute / fixed;</code></p><p>3、布局规则<br>垂直方向上，一个接一个的放置，上下距离由 <code>margin</code> 决定，BFC 内外互不干扰，浮动元素参与总的高度计算</p><p>4、 BFC 的作用<br>自适应俩栏布局，阻止元素被浮动元素覆盖，可以包含浮动元素。</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>一、两种盒模型</p></blockquote><p>1、标准模型：宽高就是 <code>content</code> 的宽高<br>2、IE模型： 宽高是 <code>content + border + padding</code> (木有margin)<br><a id="more"></a></p><blockquote><p>二、怎么设置盒模型？</p></blockquote><p>1、<code>box-sizing: content-box;</code>(默认、标准）<br>2、<code>box-sizing: border-box;</code>(IE)</p><blockquote><p>三、怎样用JS获取盒模型对应的宽高</p></blockquote><p>1、<code>Element.currentStyle.width/height;</code> 只支持IE<br>2、<code>Window.getComputedStyle().width/height;</code>都可以用<br>3、<code>Element.getBoundingClientRect().width/height;</code> 根据视窗的左上角拿到位置坐标</p><blockquote><p>四、边距重叠</p></blockquote><p>当两个垂直外边距相遇时，他们将形成一个外边距；<br>合并后的外边距高度 = 两个发生合并的外边距中的较大值；</p><p>只有<strong>普通</strong>文档流中<strong>块级</strong>元素的<strong>垂直</strong>外边距才能合并</p><blockquote><p>BFC（块级格式化上下文）</p></blockquote><p>1、独立的渲染区域，规定了其内部盒子如何布局，盒子内的区域与外界不相干</p><p>2、触发条件：（满足一个就行了）<br>2.1 <code>float ≠ none;</code><br>2.2 <code>overflow ≠ visible;</code><br>2.3 <code>display: inline-block / table-cell / table-caption;</code><br>2.4 <code>position: absolute / fixed;</code></p><p>3、布局规则<br>垂直方向上，一个接一个的放置，上下距离由 <code>margin</code> 决定，BFC 内外互不干扰，浮动元素参与总的高度计算</p><p>4、 BFC 的作用<br>自适应俩栏布局，阻止元素被浮动元素覆盖，可以包含浮动元素。</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;blockquote&gt;
+      &lt;blockquote&gt;
 &lt;p&gt;一、两种盒模型&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;1、标准模型：宽高就是 &lt;code&gt;content&lt;/code&gt; 的宽高&lt;br&gt;2、IE模型： 宽高是 &lt;code&gt;content + border + padding&lt;/code&gt; (木有
-      
+&lt;p&gt;1、标准模型：宽高就是 &lt;code&gt;content&lt;/code&gt; 的宽高&lt;br&gt;2、IE模型： 宽高是 &lt;code&gt;content + border + padding&lt;/code&gt; (木有margin)&lt;br&gt;
     
     </summary>
     
