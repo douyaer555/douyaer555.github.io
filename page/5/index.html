@@ -141,143 +141,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-62排序算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/19/62排序算法/">排序算法</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/19/62排序算法/" class="archive-article-date">
-  	<time datetime="2018-07-19T03:27:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p> 准备</p>
-</blockquote>
-<p>1、时间复杂度：</p>
-<p>通常使用最差的时间复杂度来衡量一个算法的好坏。</p>
-<p>常数时间 O(1) 代表这个操作和数据量没关系，是一个固定时间的操作，比如说四则运算。</p>
-<p>对于一个算法来说，可能会计算出如下操作次数 <code>aN + 1</code>，<code>N</code> 代表数据量。那么该算法的时间复杂度就是 <code>O(N)</code>。因为我们在计算时间复杂度的时候，数据量通常是非常大的，这时候低阶项和常数项可以忽略不计。</p>
-<p>当然可能会出现两个算法都是 <code>O(N)</code> 的时间复杂度，那么对比两个算法的好坏就要通过对比低阶项和常数项了。</p>
-<p>2、以下两个函数是本章节经常会用到的：<br><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> checkArray(<span class="built_in">array</span>)&#123;</div><div class="line">  <span class="keyword">if</span> (!<span class="built_in">array</span> || <span class="built_in">array</span>.length &lt;= <span class="number">2</span>) return</div><div class="line">&#125;</div><div class="line"><span class="keyword">function</span> swap(<span class="built_in">array</span>, <span class="built_in">left</span>, <span class="built_in">right</span>) &#123;</div><div class="line">  <span class="keyword">let</span> rightValue = <span class="built_in">array</span>[<span class="built_in">right</span>]</div><div class="line">  <span class="built_in">array</span>[<span class="built_in">right</span>] = <span class="built_in">array</span>[<span class="built_in">left</span>]</div><div class="line">  <span class="built_in">array</span>[<span class="built_in">left</span>] = rightValue</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2018/07/19/62排序算法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-61前端题目总结2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/17/61前端题目总结2/">前端总结2</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/17/61前端题目总结2/" class="archive-article-date">
-  	<time datetime="2018-07-17T07:52:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><blockquote>
-<p>JS 有哪些数据类型？</p>
-</blockquote>
-<p>七个小矮子：<code>string</code> <code>number</code> <code>bool</code> <code>undefined</code> <code>null</code> <code>object</code> <code>symbol</code><br><code>object</code> 包括了数组、函数、正则、日期等对象<br>一旦出现（数组、函数、正则、日期、NaN）直接0分</p>
-<blockquote>
-<p>（必考） Promise 怎么使用？</p>
-</blockquote>
-<p><a href="https://wangsiyuan233.cn/2018/04/02/36%E5%BC%82%E6%AD%A5%E7%B3%BB%E5%88%97-2/">深入理解JavaScript–异步系列(2)</a><br>
-        
-          <a class="article-more-a" href="/2018/07/17/61前端题目总结2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-60面试题目总结1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -475,9 +338,168 @@
 
 
   
+    <article id="post-57HTML-查漏补缺" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/03/57HTML-查漏补缺/">HTML 查漏补缺</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/03/57HTML-查漏补缺/" class="archive-article-date">
+  	<time datetime="2018-07-03T03:02:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>一、html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？</p>
+</blockquote>
+<p>（1）、<code>HTML5</code>主要是关于图像，位置，存储等功能的增加。<br>绘画 <code>canvas</code>;<br>用于媒介回放的 <code>video</code> 和 <code>audio</code> 元素;<br>本地离线存储 <code>localStorage</code> 长期存储数据，浏览器关闭后数据不丢失;<br><code>sessionStorage</code> 的数据在浏览器关闭后自动删除;<br>语义化更好的内容元素，比如 <code>article、footer、header、nav、section</code>;<br>表单控件，<code>calendar、date、time、email、url、search</code>;<br>新的技术 <code>webworker, websocket, Geolocation</code>;</p>
+<p>（2）、移除的元素：<br>纯表现的元素：<code>basefont，big，center，font, s，strike，tt，u</code>;<br>对可用性产生负面影响的元素：<code>frame，frameset，noframes</code>；</p>
+<p>（3）、支持<code>HTML5</code>新标签：<br><code>IE8/IE7/IE6</code>支持通过<code>document.createElement</code>方法产生的标签，<br>可以利用这一特性让这些浏览器支持 <code>HTML5</code> 新标签，<br>浏览器支持新标签后，还需要添加标签默认的样式。<br>当然也可以直接使用成熟的框架、比如<code>html5shim</code>;</p>
+<p>（4）、如何区分 <code>HTML5</code>： <code>DOCTYPE</code>声明\新增的结构元素\功能元素</p>
+<blockquote>
+<p>二、简述一下你对HTML语义化的理解？</p>
+</blockquote>
+<p>用正确的标签做正确的事情。<br>结构清晰便于浏览器解析；<br>内容结构化便于后期的维护管理。</p>
+<blockquote>
+<p>三、<code>meta viewport</code>是做什么用的，怎么写？</p>
+</blockquote>
+<p>控制页面在移动端不要缩小显示。</p>
+<p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;</code></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Basic</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-56JS能力测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/27/56JS能力测试/">JavaScript 能力测试</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/27/56JS能力测试/" class="archive-article-date">
+  	<time datetime="2018-06-27T08:13:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.nowcoder.com/ta/js-assessment?query=&amp;asc=true&amp;order=&amp;page=2">[牛客原题]</a> || <a href="https://github.com/wangsiyuan233/NowCoder/blob/master/JS%E8%83%BD%E5%8A%9B%E6%B5%8B%E8%AF%84.js">[我的源码]</a></p>
+<blockquote>
+<p>一、数组篇</p>
+</blockquote>
+<p>（也就数组篇值得总结，剩下的都是些啥）</p>
+<p><strong>1、 增加元素</strong><br>1.1 头部增加<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="title">prepend</span>(arr, item)&#123;</div><div class="line">  <span class="keyword">return</span> <span class="type">[item].concat(arr)</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>1.2 尾部增加<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> append2 = <span class="function"><span class="keyword">function</span><span class="params">(arr, item)</span></span>&#123;</div><div class="line"><span class="comment">// slice(start, end)浅拷贝数组</span></div><div class="line">    <span class="keyword">var</span> a = arr.slice(<span class="number">0</span>); </div><div class="line">    a.push(item);</div><div class="line">    <span class="keyword">return</span> a;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> append3 = <span class="function"><span class="keyword">function</span><span class="params">(arr, item)</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> arr.concat(item);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>1.3 数组合并<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="title">concat</span>(arr1, arr2)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="type">arr1.concat(arr2)</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>1.4 指定位置添加<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">insert</span><span class="params">(arr, item, index)</span></span>&#123;</div><div class="line"><span class="comment">//复制数组</span></div><div class="line">  <span class="keyword">var</span> a = arr.slice(<span class="number">0</span>);</div><div class="line"><span class="comment">// splice(数组开始的下标，替换/删除的长度，替换的值)</span></div><div class="line">  a.splice(index, <span class="number">0</span>, item);</div><div class="line">  <span class="keyword">return</span> a;</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2018/06/27/56JS能力测试/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 
@@ -556,10 +578,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
@@ -572,11 +590,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -584,11 +598,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -596,11 +610,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">

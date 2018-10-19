@@ -8,16 +8,25 @@
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
   <title>移动端配适 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、meta viewport1234567//html head&amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&amp;gt; // width=device-width: 让当前viewport">
+  <meta name="description" content="一、meta viewport
+
+&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&amp;quot;&amp;gt;
+1、width=device-width: 让当前view">
 <meta property="og:type" content="article">
 <meta property="og:title" content="移动端配适">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/02/15/15移动端配适/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="一、meta viewport1234567//html head&amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&amp;gt; // width=device-width: 让当前viewport">
-<meta property="og:updated_time" content="2018-09-02T04:36:33.609Z">
+<meta property="og:description" content="一、meta viewport
+
+&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&amp;quot;&amp;gt;
+1、width=device-width: 让当前view">
+<meta property="og:updated_time" content="2018-10-19T07:55:36.783Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端配适">
-<meta name="twitter:description" content="一、meta viewport1234567//html head&amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&amp;gt; // width=device-width: 让当前viewport">
+<meta name="twitter:description" content="一、meta viewport
+
+&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&amp;quot;&amp;gt;
+1、width=device-width: 让当前view">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -163,15 +172,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>一、meta viewport</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//html head</div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>&gt;</span></div><div class="line"> // width=device-width: 让当前viewport宽度等于设备的宽度</div><div class="line"> // user-scalable=no: 禁止用户缩放</div><div class="line"> // initial-scale=1.0: 设置页面的初始缩放值为不缩放</div><div class="line"> // maximum-scale=1.0: 允许用户的最大缩放值为1.0</div><div class="line"> // minimum-scale=1.0: 允许用户的最小缩放值为1.0</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p><strong>二、媒体查询</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//html head</div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"> @media(max-width:375px)&#123; body&#123;background: blue;&#125; &#125; </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>这里的 <code>max-width</code>:375px指手机分辨率，如果媒体满足 <code>max-width</code>:375px，就生效这个css样式。</p>
-<p><strong>三、动态 rem 方案</strong></p>
-<p>方法一：使用 JS 动态调整 REM<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//html head</div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="keyword">var</span> pageWidth = <span class="built_in">window</span>.innerWidth</div><div class="line">    <span class="built_in">document</span>.write(<span class="string">'&lt;style&gt;html&#123;font-size:'</span>+pageWidth/<span class="number">10</span>+<span class="string">'px;&#125;&lt;/style&gt;'</span>)</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-<p>方法二： 在 scss 文件里添加，这个方法可实现 px 自动变 rem<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">@function px( <span class="variable">$px</span> )&#123;</div><div class="line">  @return <span class="variable">$px</span>/<span class="variable">$designWidth</span>*<span class="number">10</span> + rem;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="variable">$designWidth</span> : <span class="number">750</span>;  </div><div class="line"></div><div class="line"><span class="selector-class">.child</span>&#123;</div><div class="line">  <span class="attribute">width</span>: px(<span class="number">375</span>);</div><div class="line">  <span class="attribute">height</span>: px(<span class="number">160</span>);</div><div class="line">  <span class="attribute">margin</span>: px(<span class="number">40</span>) px(<span class="number">40</span>);</div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid red;</div><div class="line">  <span class="attribute">float</span>: left;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">1.2em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <blockquote>
+<p>一、meta viewport</p>
+</blockquote>
 <p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;</code></p>
+<p>1、<code>width=device-width</code>: 让当前viewport宽度等于设备的宽度<br>2、<code>user-scalable=no</code>:  禁止用户缩放<br>3、<code>initial-scale=1.0</code>: 设置页面的初始缩放值为不缩放<br>4、<code>maximum-scale=1.0</code>: 允许用户的最大缩放值为1.0<br>5、<code>minimum-scale=1.0</code>: 允许用户的最小缩放值为1.0<br><a id="more"></a></p>
+<blockquote>
+<p>二、媒体查询</p>
+</blockquote>
+<p><code>&lt;style&gt; @media(max-width:375px){ body{background: blue;} } &lt;/style&gt;</code></p>
+<p>这里的 <code>max-width</code>:375px指手机分辨率，如果媒体满足 <code>max-width</code>:375px，就生效这个css样式。</p>
+<blockquote>
+<p>三、动态 rem 方案</p>
+</blockquote>
+<p>方法一：使用 JS 动态调整 REM</p>
+<p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="handlebars"><span class="xml"></span></span></div><div class="line">    var pageWidth = window.innerWidth</div><div class="line">    document.write('<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"><span class="selector-tag">html</span>&#123;<span class="attribute">font-size</span>:<span class="string">'+pageWidth/10+'</span>px;&#125;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span>')</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>方法二： 在 scss 文件里添加，这个方法可实现 px 自动变 rem<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">@function px( <span class="variable">$px</span> )&#123;</div><div class="line">  @return <span class="variable">$px</span>/<span class="variable">$designWidth</span>*<span class="number">10</span> + rem;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="variable">$designWidth</span> : <span class="number">750</span>;  </div><div class="line"></div><div class="line"><span class="selector-class">.child</span>&#123;</div><div class="line">  <span class="attribute">width</span>: px(<span class="number">375</span>);</div><div class="line">  <span class="attribute">height</span>: px(<span class="number">160</span>);</div><div class="line">  <span class="attribute">margin</span>: px(<span class="number">40</span>) px(<span class="number">40</span>);</div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid red;</div><div class="line">  <span class="attribute">float</span>: left;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">1.2em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
 
@@ -276,7 +293,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/02/17/16AJAX（一）/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/02/17/16AJAX/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -286,7 +303,7 @@
     </a>
   
   
-    <a href="/2018/02/14/14DOM/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/02/14/14DOM1/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">DOM</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -397,10 +414,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
@@ -413,11 +426,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -425,11 +434,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -437,11 +446,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">

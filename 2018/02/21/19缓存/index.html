@@ -9,20 +9,20 @@
   <title>储存 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="从上表可以看到，cookie 已经不建议用于存储。如果没有大量数据存储需求的话，可以使用 localStorage 和 sessionStorage 。对于不怎么改变的数据尽量使用 localStorage 存储，否则可以用 sessionStorage 存储。
-一、Cookie 和 Session 的区别【Cookie】Cookie 有几个特点,1、服务端通过 Set-Cookie 来设置 Co">
+一、Cookie 和 Session 的区别【Cookie】Cookie 的特点:1、服务端通过 Set-Cookie 来设置 Cook">
 <meta property="og:type" content="article">
 <meta property="og:title" content="储存">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/02/21/19缓存/index.html">
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="从上表可以看到，cookie 已经不建议用于存储。如果没有大量数据存储需求的话，可以使用 localStorage 和 sessionStorage 。对于不怎么改变的数据尽量使用 localStorage 存储，否则可以用 sessionStorage 存储。
-一、Cookie 和 Session 的区别【Cookie】Cookie 有几个特点,1、服务端通过 Set-Cookie 来设置 Co">
+一、Cookie 和 Session 的区别【Cookie】Cookie 的特点:1、服务端通过 Set-Cookie 来设置 Cook">
 <meta property="og:image" content="https://i.imgur.com/sbZ0NjX.png">
 <meta property="og:image" content="https://i.imgur.com/zhhd2fg.png">
-<meta property="og:updated_time" content="2018-09-16T22:38:26.606Z">
+<meta property="og:updated_time" content="2018-10-19T03:06:14.071Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="储存">
 <meta name="twitter:description" content="从上表可以看到，cookie 已经不建议用于存储。如果没有大量数据存储需求的话，可以使用 localStorage 和 sessionStorage 。对于不怎么改变的数据尽量使用 localStorage 存储，否则可以用 sessionStorage 存储。
-一、Cookie 和 Session 的区别【Cookie】Cookie 有几个特点,1、服务端通过 Set-Cookie 来设置 Co">
+一、Cookie 和 Session 的区别【Cookie】Cookie 的特点:1、服务端通过 Set-Cookie 来设置 Cook">
 <meta name="twitter:image" content="https://i.imgur.com/sbZ0NjX.png">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
@@ -170,16 +170,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="https://i.imgur.com/sbZ0NjX.png" alt=""><br>从上表可以看到，<code>cookie</code> 已经不建议用于存储。如果没有大量数据存储需求的话，可以使用 <code>localStorage</code> 和 <code>sessionStorage</code> 。对于不怎么改变的数据尽量使用 <code>localStorage</code> 存储，否则可以用 <code>sessionStorage</code> 存储。</p>
-<h2 id="一、Cookie-和-Session-的区别"><a href="#一、Cookie-和-Session-的区别" class="headerlink" title="一、Cookie 和 Session 的区别"></a>一、Cookie 和 Session 的区别</h2><p>【Cookie】<br>Cookie 有几个特点,<br>1、服务端通过 <code>Set-Cookie</code> 来设置 <code>Cookie</code> , <code>Cookie</code> 的本质就是一串字符串。<br>2、客户端得到这个字符串后，每次登陆这个网页，都会携带上这串字符串。<br>3、服务端再通过这串字符串去找到对应的隐私信息。<br>4、Cookie大小一般为4kb。<br>5、Cookie默认有失效时间，但是后台可以设置过期时间。<br><img src="https://i.imgur.com/zhhd2fg.png" alt=""><br>因为 <code>Cookie</code> 可以篡改，而且是明文传输的，所以存在漏洞，<code>Session</code> 就解决了这个问题。<br><a id="more"></a><br>【Session】<br>Session的特点：<br>1、一般来说，Session是基于Cookie来设置的一个哈希表。<br>2、将SessionId(随机数)通过Cookie发给服务端。<br>3、客户端访问服务器时，服务器读取SessionID。<br>4、服务器有一块内存(哈希表),存储了所有的Session。<br>5、通过SessionID，我们可以得到用户的隐私信息。<br>6、这块内存(哈希表)就是服务器上所有的Session。 </p>
-<h2 id="二、Cookie-和-LocalStorage-的区别"><a href="#二、Cookie-和-LocalStorage-的区别" class="headerlink" title="二、Cookie 和 LocalStorage 的区别"></a>二、Cookie 和 LocalStorage 的区别</h2><p>【Cookie】<br>Cookie 有几个特点：<br>1、服务端通过Set-Cookie来设置Cookie,Cookie的本质就是一串字符串。<br>2、客户端得到这个字符串后，每次登陆这个网页，都会携带上这串字符串。<br>3、服务端再通过这串字符串去找到对应的隐私信息。<br>4、Cookie大小一般为4kb。<br>5、Cookie默认有失效时间，但是后台可以设置过期时间。</p>
-<p>【LocalStorage】<br>LocalStorage的实质也是一个hash，它是html5标准提供的一个API，用来持久化存储一些不是那么重要的信息。<br>它的特点：<br>1、LocalStorage与HTTP无关。<br>2、HTTP不会带上LocalStorage。<br>3、只有相同的页面才能互相读取LocalStorage。<br>4、浏览器对每个域名分配的LocalStorage最大的存储量为5Mb左右。<br>5、记录一些无关紧要的信息，不记录用户敏感信息。<br>6、LocalStorage永久有效，除非用户清理缓存。 </p>
-<p>它与Cookie的区别就是，一个通过Set-Cookie设置，一个是HTML5提供的APi，<br>一个是通过HTTP设置，一个与HTTP无关。</p>
-<h2 id="三、LocalStorage-和-SessionStorage-的区别"><a href="#三、LocalStorage-和-SessionStorage-的区别" class="headerlink" title="三、LocalStorage 和 SessionStorage 的区别"></a>三、LocalStorage 和 SessionStorage 的区别</h2><p>SessionStorage与Session无关，同样，它也是浏览器提供的一个API。<br>它与LocalStorage一样,只有一点不一样，就是它的存储时间在用户关闭页面之后就会失效。</p>
-<h2 id="四、Cookie-如何设置过期时间？如何删除-Cookie？"><a href="#四、Cookie-如何设置过期时间？如何删除-Cookie？" class="headerlink" title="四、Cookie 如何设置过期时间？如何删除 Cookie？"></a>四、Cookie 如何设置过期时间？如何删除 Cookie？</h2><p>【过期】：<br>cookie.setMaxAge(0);//不记录cookie<br>cookie.setMaxAge(-1);//会话级cookie，关闭浏览器失效<br>cookie.setMaxAge(60*60);//过期时间为1小时</p>
+<h2 id="一、Cookie-和-Session-的区别"><a href="#一、Cookie-和-Session-的区别" class="headerlink" title="一、Cookie 和 Session 的区别"></a>一、Cookie 和 Session 的区别</h2><p>【Cookie】<br><code>Cookie</code> 的特点:<br>1、服务端通过 <code>Set-Cookie</code> 来设置 <code>Cookie</code> , <code>Cookie</code> 的本质就是一串字符串。<br>2、客户端得到这个字符串后，每次登陆这个网页，都会携带上这串字符串。<br>3、服务端再通过这串字符串去找到对应的隐私信息。<br>4、<code>Cookie</code> 大小一般为4kb。<br>5、<code>Cookie</code> 默认有失效时间，但是后台可以设置过期时间。<br><img src="https://i.imgur.com/zhhd2fg.png" alt=""><br>因为 <code>Cookie</code> 可以篡改，而且是明文传输的，所以存在漏洞，<code>Session</code> 就解决了这个问题。<br><a id="more"></a><br>【Session】<br><code>Session</code> 的特点：<br>1、一般来说，<code>Session</code> 是基于 <code>Cookie</code> 来设置的一个哈希表。<br>2、将 <code>SessionId</code> (随机数)通过 <code>Cookie</code> 发给服务端。<br>3、客户端访问服务器时，服务器读取 <code>SessionID</code>。<br>4、服务器有一块内存(哈希表),存储了所有的 <code>Session</code>。<br>5、通过 <code>SessionID</code>，我们可以得到用户的隐私信息。<br>6、这块内存(哈希表)就是服务器上所有的 <code>Session</code>。 </p>
+<h2 id="二、Cookie-和-LocalStorage-的区别"><a href="#二、Cookie-和-LocalStorage-的区别" class="headerlink" title="二、Cookie 和 LocalStorage 的区别"></a>二、Cookie 和 LocalStorage 的区别</h2><p>【Cookie】<br><code>Cookie</code> 的特点:<br>1、服务端通过 <code>Set-Cookie</code> 来设置 <code>Cookie</code> , <code>Cookie</code> 的本质就是一串字符串。<br>2、客户端得到这个字符串后，每次登陆这个网页，都会携带上这串字符串。<br>3、服务端再通过这串字符串去找到对应的隐私信息。<br>4、<code>Cookie</code> 大小一般为4kb。<br>5、<code>Cookie</code> 默认有失效时间，但是后台可以设置过期时间。</p>
+<p>【LocalStorage】<br><code>LocalStorage</code> 的实质也是一个 <code>hash</code>，它是 <code>html5</code> 标准提供的一个 <code>API</code>，用来持久化存储一些不是那么重要的信息。<br>它的特点：<br>1、<code>LocalStorage</code> 与 <code>HTTP</code> 无关。<br>2、<code>HTTP</code> 不会带上 <code>LocalStorage</code>。<br>3、只有相同的页面才能互相读取 <code>LocalStorage</code>。<br>4、浏览器对每个域名分配的 <code>LocalStorage</code> 最大的存储量为5Mb左右。<br>5、记录一些无关紧要的信息，不记录用户敏感信息。<br>6、<code>LocalStorage</code> 永久有效，除非用户清理缓存。 </p>
+<p>它与 <code>Cookie</code> 的区别就是，一个通过 <code>Set-Cookie</code> 设置，一个是 <code>HTML5</code> 提供的APi，<br>一个是通过 <code>HTTP</code> 设置，一个与 <code>HTTP</code> 无关。</p>
+<h2 id="三、LocalStorage-和-SessionStorage-的区别"><a href="#三、LocalStorage-和-SessionStorage-的区别" class="headerlink" title="三、LocalStorage 和 SessionStorage 的区别"></a>三、LocalStorage 和 SessionStorage 的区别</h2><p><code>SessionStorage</code> 与 <code>Session</code> 无关，同样，它也是浏览器提供的一个 API。<br>它与 <code>LocalStorage</code> 一样,只有一点不一样，就是它的存储时间在用户关闭页面之后就会失效。</p>
+<h2 id="四、Cookie-如何设置过期时间？如何删除-Cookie？"><a href="#四、Cookie-如何设置过期时间？如何删除-Cookie？" class="headerlink" title="四、Cookie 如何设置过期时间？如何删除 Cookie？"></a>四、Cookie 如何设置过期时间？如何删除 Cookie？</h2><p>【过期】：<br><code>cookie.setMaxAge(0);</code> //不记录cookie<br><code>cookie.setMaxAge(-1);</code> //会话级cookie，关闭浏览器失效<br><code>cookie.setMaxAge(60*60);</code> //过期时间为1小时</p>
 <p>【删除】<br>1、Internet Explorer<br>通过“其他”菜单打开“Internet 属性”。在“常规”选项卡上，单击“Internet 属性”对话框“浏览历史记录”下的“删除”。在“删除浏览历史记录”对话框中，单击以便清除“Cookies”复选框以外的所有复选框，然后单击“删除”。<br>2、Google Chrome<br>单击浏览器工具栏上的扳手图标。选择“选项”，单击“高级选项”选项卡并单击“隐私”部分中的“内容”设置。在出现的“内容”设置对话框中单击 cookies 选项卡。单击“显示” cookies 和其他站点数据。要删除所有 cookies，单击“删除所有”；要删除特定 cookie，选择发布 cookie 的站点然后选择该 cookie，并单击删除。</p>
-<h2 id="五、Cache-Control-max-age-1000-缓存-与-ETag-的「缓存」有什么区别？"><a href="#五、Cache-Control-max-age-1000-缓存-与-ETag-的「缓存」有什么区别？" class="headerlink" title="五、Cache-Control: max-age=1000 缓存 与 ETag 的「缓存」有什么区别？"></a>五、Cache-Control: max-age=1000 缓存 与 ETag 的「缓存」有什么区别？</h2><p>【Cache-Control】<br>Cache-Control 在 HTTP 响应头中，当Cache-Control为可缓存时，同时可指定缓存时间（比如public, max-age:1000）。 这意味着在 1000秒内，浏览器都可以直接使用该缓存（此时服务器收不到任何请求）。</p>
-<p>如果资源本身确实会随时发生改动，还用 Cache-Control 就会使用户看到的页面得不到更新。 但如果还希望利用 HTTP 缓存（万一资源没变呢），这就需要有条件的（conditional）HTTP 请求。</p>
-<p>【ETag】<br>Etag 响应头字段表示资源的版本，浏览器在发送请求时会带 If-None-Match 头字段， 来询问服务器该版本是否仍然可用。如果服务器发现该版本仍然是最新的， 就可以返回 304 状态码指示 UA 继续使用缓存。</p>
+<h2 id="五、Cache-Control-max-age-1000-缓存-与-ETag-的「缓存」有什么区别？"><a href="#五、Cache-Control-max-age-1000-缓存-与-ETag-的「缓存」有什么区别？" class="headerlink" title="五、Cache-Control: max-age=1000 缓存 与 ETag 的「缓存」有什么区别？"></a>五、Cache-Control: max-age=1000 缓存 与 ETag 的「缓存」有什么区别？</h2><p>【Cache-Control】<br><code>Cache-Control</code> 在 <code>HTTP</code> 响应头中，当 <code>Cache-Control</code> 为可缓存时，同时可指定缓存时间（比如public, max-age:1000）。 这意味着在 1000秒内，浏览器都可以直接使用该缓存（此时服务器收不到任何请求）。</p>
+<p>如果资源本身确实会随时发生改动，还用 <code>Cache-Control</code> 就会使用户看到的页面得不到更新。 但如果还希望利用 <code>HTTP</code> 缓存（万一资源没变呢），这就需要有条件的（conditional）<code>HTTP</code> 请求。</p>
+<p>【ETag】<br><code>Etag</code> 响应头字段表示资源的版本，浏览器在发送请求时会带 <code>If-None-Match</code> 头字段， 来询问服务器该版本是否仍然可用。如果服务器发现该版本仍然是最新的， 就可以返回 <code>304</code> 状态码指示 <code>UA</code> 继续使用缓存。</p>
 
       
 
@@ -405,10 +405,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
@@ -421,11 +417,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -433,11 +425,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -445,11 +437,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">

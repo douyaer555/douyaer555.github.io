@@ -141,141 +141,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-50配置React" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/30/50配置React/">配置 React</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/30/50配置React/" class="archive-article-date">
-  	<time datetime="2018-05-30T02:11:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>第一步： 安装 React</p>
-</blockquote>
-<p>1、 <a href="https://pan.baidu.com/s/1kU4K9iJ">下载</a><code>yarn</code></p>
-<p>2、临时文件夹实验：<br><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="string">mkdir </span>~/<span class="string">temp;</span> <span class="string">cd </span>~/<span class="string">temp</div><div class="line"></span></div><div class="line"><span class="string">npm </span><span class="string">install </span>-g <span class="built_in">create-react-app</span></div><div class="line"></div><div class="line"><span class="built_in">create-react-app</span> <span class="string">hello-world</div><div class="line"></span></div><div class="line"><span class="string">cd </span><span class="string">hello-world</div><div class="line"></span></div><div class="line"><span class="string">npm </span><span class="string">start </span>或者 <span class="string">yarn </span><span class="string">start</span></div></pre></td></tr></table></figure></p>
-<p> <code>create-react-app</code> 内置了 <code>webpack</code> 的所有功能。</p>
-<p>3、初始化 <code>React</code><br>清空 <code>temp</code> 文件夹，同时清空项目文件夹<br>（因为 <code>create-react-app</code> 会自己创建 <code>src</code> 和 <code>index.html</code> ）<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">cd 到你在上次任务中新建的项目目录！</div><div class="line"></div><div class="line"><span class="comment"># 删除所有非隐藏文件，这一步千万不要手抖，后果自负</span></div><div class="line"></div><div class="line">rm -rf * </div><div class="line">git <span class="keyword">add</span><span class="bash"> .</div><div class="line"></span>git commit -m <span class="string">"remove all files"</span></div><div class="line">git push</div></pre></td></tr></table></figure></p>
-<p>正式开始初始化：<br>
-        
-          <a class="article-more-a" href="/2018/05/30/50配置React/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-49Webpack配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/29/49Webpack配置/">Webpack配置</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/29/49Webpack配置/" class="archive-article-date">
-  	<time datetime="2018-05-29T08:48:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="webpack-的作用-使用各种-loader-加载不同的资源-把所有资源打包起来"><a href="#webpack-的作用-使用各种-loader-加载不同的资源-把所有资源打包起来" class="headerlink" title="webpack 的作用:使用各种 loader 加载不同的资源,把所有资源打包起来"></a>webpack 的作用:使用各种 loader 加载不同的资源,把所有资源打包起来</h3><blockquote>
-<p>第一步：设置一个 <code>npm</code>，让 <code>npm</code> 下载得更快一些</p>
-</blockquote>
-<p>1、运行 <code>npm config set loglevel http</code> 让你知道 <code>npm</code> 发的每一个请求<br>2、运行 <code>npm config set progress false</code>，关闭那个无聊的进度条<br>3、运行 <code>npm config set registry https://registry.npm.taobao.org/</code> ， 从淘宝的服务器下载各种包。不过这会让你在运行 <code>npm adduser</code> 的时候出问题，想要恢复成原样，只需要运行 <code>npm config delete registry</code> 即可。<br>4、运行 <code>touch ~/.bashrc; echo &#39;export PHANTOMJS_CDNURL=&quot;http://npm.taobao.org/mirrors/phantomjs&quot;&#39; &gt;&gt; ~/.bashrc</code> 让 <code>npm</code> 从淘宝下载 <code>phantomjs</code><br>5、运行 <code>touch ~/.bashrc; echo &#39;export SASS_BINARY_SITE=&quot;https://npm.taobao.org/mirrors/node-sass&quot;&#39; &gt;&gt; ~/.bashrc</code> 让 npm 从淘宝下载 SASS<br>6、运行 <code>source ~/.bashrc</code></p>
-<blockquote>
-<p>第二步：复制 <code>webpack</code> 的<a href="https://webpack.js.org/guides/getting-started/">指引</a></p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2018/05/29/49Webpack配置/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-48MVC与模块化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -300,7 +165,7 @@
 <p>一、模块化</p>
 </blockquote>
 <p><strong>目的：通过对文件的命名和代码的简化，可以更加方便的辨别代码的功能与作用。</strong></p>
-<p>以js代码为例，我们把admin.js，按照功能拆分成module-1.js等三个文件，形成模块。这样每个文件的代码都会小而清晰，这也就是模块化的一种体现。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--index.html--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    module-1 of html</div><div class="line">    module-2 of html</div><div class="line">    module-3 of html</div><div class="line">    <span class="tag">&lt;<span class="name">scirpt</span> <span class="attr">src</span>=<span class="string">"module-1.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>   </div><div class="line">    <span class="tag">&lt;<span class="name">scirpt</span> <span class="attr">src</span>=<span class="string">"module-2.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>   </div><div class="line">    <span class="tag">&lt;<span class="name">scirpt</span> <span class="attr">src</span>=<span class="string">"module-3.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>以js代码为例，我们把<code>admin.js</code>，按照功能拆分成<code>module-1.js</code>等三个文件，形成模块。这样每个文件的代码都会小而清晰，这也就是模块化的一种体现。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--index.html--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    module-1 of html</div><div class="line">    module-2 of html</div><div class="line">    module-3 of html</div><div class="line">    <span class="tag">&lt;<span class="name">scirpt</span> <span class="attr">src</span>=<span class="string">"module-1.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>   </div><div class="line">    <span class="tag">&lt;<span class="name">scirpt</span> <span class="attr">src</span>=<span class="string">"module-2.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>   </div><div class="line">    <span class="tag">&lt;<span class="name">scirpt</span> <span class="attr">src</span>=<span class="string">"module-3.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure></p>
         
           <a class="article-more-a" href="/2018/05/15/48MVC与模块化/#more">more >></a>
         
@@ -496,9 +361,155 @@
 
 
   
+    <article id="post-44三栏布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/21/44三栏布局/">三栏布局</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/21/44三栏布局/" class="archive-article-date">
+  	<time datetime="2018-04-21T10:47:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="已知高度，请写出三栏布局，左右各-100-px，中间自适应"><a href="#已知高度，请写出三栏布局，左右各-100-px，中间自适应" class="headerlink" title="已知高度，请写出三栏布局，左右各 100 px，中间自适应"></a>已知高度，请写出三栏布局，左右各 100 px，中间自适应</h2><p><strong>解法一：浮动布局</strong></p>
+<p><a href="http://js.jirengu.com/duzotakuse/1/edit?html,css,output">【看代码点我】&gt;&gt;&gt;</a><br>★30s总结<br>1、 在 <code>div</code> 里面，并不是按照 左中右 的顺序来写<br>2、 给3个 <code>div</code> 最小高度<br>3、 左浮 + 右浮<br>4、 缺点是压缩太小时，中间的字会漏下来，需要清除浮动<br>
+        
+          <a class="article-more-a" href="/2018/04/21/44三栏布局/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-42初探ES6-5-Class继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/13/42初探ES6-5-Class继承/">初探ES6(5)--Class的继承</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/13/42初探ES6-5-Class继承/" class="archive-article-date">
+  	<time datetime="2018-04-13T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><p><strong>1、</strong>Class 可以通过<code>extends</code>关键字实现继承，这比 ES5 的通过修改原型链实现继承，要清晰和方便很多。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColorPoint</span> <span class="keyword">extends</span> <span class="title">Point</span> </span>&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>（上面代码定义了一个<code>ColorPoint</code>类，该类通过<code>extends</code>关键字，继承了<code>Point</code>类的所有属性和方法。但是由于没有部署任何代码，所以这两个类完全一样，等于复制了一个<code>Point</code>类。下面，我们在<code>ColorPoint</code>内部加上代码。）<br>
+        
+          <a class="article-more-a" href="/2018/04/13/42初探ES6-5-Class继承/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
     </nav>
   
 
@@ -577,10 +588,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
@@ -593,11 +600,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -605,11 +608,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -617,11 +620,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">

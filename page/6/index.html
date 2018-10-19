@@ -141,165 +141,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-57HTML-查漏补缺" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/03/57HTML-查漏补缺/">HTML 查漏补缺</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/03/57HTML-查漏补缺/" class="archive-article-date">
-  	<time datetime="2018-07-03T03:02:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>一、html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？</p>
-</blockquote>
-<p>（1）、<code>HTML5</code>主要是关于图像，位置，存储等功能的增加。<br>绘画 <code>canvas</code>;<br>用于媒介回放的 <code>video</code> 和 <code>audio</code> 元素;<br>本地离线存储 <code>localStorage</code> 长期存储数据，浏览器关闭后数据不丢失;<br><code>sessionStorage</code> 的数据在浏览器关闭后自动删除;<br>语义化更好的内容元素，比如 <code>article、footer、header、nav、section</code>;<br>表单控件，<code>calendar、date、time、email、url、search</code>;<br>新的技术 <code>webworker, websocket, Geolocation</code>;</p>
-<p>（2）、移除的元素：<br>纯表现的元素：<code>basefont，big，center，font, s，strike，tt，u</code>;<br>对可用性产生负面影响的元素：<code>frame，frameset，noframes</code>；</p>
-<p>（3）、支持<code>HTML5</code>新标签：<br><code>IE8/IE7/IE6</code>支持通过<code>document.createElement</code>方法产生的标签，<br>可以利用这一特性让这些浏览器支持 <code>HTML5</code> 新标签，<br>浏览器支持新标签后，还需要添加标签默认的样式。<br>当然也可以直接使用成熟的框架、比如<code>html5shim</code>;</p>
-<p>（4）、如何区分 <code>HTML5</code>： <code>DOCTYPE</code>声明\新增的结构元素\功能元素</p>
-<blockquote>
-<p>二、简述一下你对HTML语义化的理解？</p>
-</blockquote>
-<p>用正确的标签做正确的事情。<br>结构清晰便于浏览器解析；<br>内容结构化便于后期的维护管理。</p>
-<blockquote>
-<p>三、<code>meta viewport</code>是做什么用的，怎么写？</p>
-</blockquote>
-<p>控制页面在移动端不要缩小显示。</p>
-<p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;</code></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Basic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-56JS能力测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/27/56JS能力测试/">JavaScript 能力测试</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/27/56JS能力测试/" class="archive-article-date">
-  	<time datetime="2018-06-27T08:13:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://www.nowcoder.com/ta/js-assessment?query=&amp;asc=true&amp;order=&amp;page=2">[牛客原题]</a> || <a href="https://github.com/wangsiyuan233/NowCoder/blob/master/JS%E8%83%BD%E5%8A%9B%E6%B5%8B%E8%AF%84.js">[我的源码]</a></p>
-<blockquote>
-<p>一、数组篇</p>
-</blockquote>
-<p>（也就数组篇值得总结，剩下的都是些啥）</p>
-<p><strong>1、 增加元素</strong><br>1.1 头部增加<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="title">prepend</span>(arr, item)&#123;</div><div class="line">  <span class="keyword">return</span> <span class="type">[item].concat(arr)</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>1.2 尾部增加<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> append2 = <span class="function"><span class="keyword">function</span><span class="params">(arr, item)</span></span>&#123;</div><div class="line"><span class="comment">// slice(start, end)浅拷贝数组</span></div><div class="line">    <span class="keyword">var</span> a = arr.slice(<span class="number">0</span>); </div><div class="line">    a.push(item);</div><div class="line">    <span class="keyword">return</span> a;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> append3 = <span class="function"><span class="keyword">function</span><span class="params">(arr, item)</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> arr.concat(item);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>1.3 数组合并<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="title">concat</span>(arr1, arr2)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="type">arr1.concat(arr2)</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>1.4 指定位置添加<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">insert</span><span class="params">(arr, item, index)</span></span>&#123;</div><div class="line"><span class="comment">//复制数组</span></div><div class="line">  <span class="keyword">var</span> a = arr.slice(<span class="number">0</span>);</div><div class="line"><span class="comment">// splice(数组开始的下标，替换/删除的长度，替换的值)</span></div><div class="line">  a.splice(index, <span class="number">0</span>, item);</div><div class="line">  <span class="keyword">return</span> a;</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2018/06/27/56JS能力测试/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-55JavaScript-Puzzlers" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -431,19 +272,19 @@
 
 
   
-    <article id="post-51几种遍历" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-51遍历JS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/07/51几种遍历/">JavaScript 中的几种遍历</a>
+      <a class="article-title" href="/2018/06/07/51遍历JS/">JavaScript 中的几种遍历</a>
     </h1>
   
 
         
-        <a href="/2018/06/07/51几种遍历/" class="archive-article-date">
+        <a href="/2018/06/07/51遍历JS/" class="archive-article-date">
   	<time datetime="2018-06-07T13:05:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-07</time>
 </a>
         
@@ -452,11 +293,140 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>有下面的 数组 和 <code>JSON</code>对象：<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">var Arr</span> = [<span class="string">'Javascript'</span>, <span class="string">'Gulp'</span>, <span class="string">'CSS3'</span>, <span class="string">'Grunt'</span>, <span class="string">'jQuery'</span>, <span class="string">'angular'</span>];</div><div class="line"><span class="attribute">var Obj</span> = &#123;</div><div class="line">    aaa: <span class="string">'Javascript'</span>,</div><div class="line">    bbb: <span class="string">'Gulp'</span>,</div><div class="line">    ccc: <span class="string">'CSS3'</span>,</div><div class="line">    ddd: <span class="string">'Grunt'</span>,</div><div class="line">    eee: <span class="string">'jQuery'</span>,</div><div class="line">    fff: <span class="string">'angular'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>一、For 循环</p>
-</blockquote>
         
-          <a class="article-more-a" href="/2018/06/07/51几种遍历/#more">more >></a>
+          <a class="article-more-a" href="/2018/06/07/51遍历JS/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-50配置React" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/30/50配置React/">配置 React</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/30/50配置React/" class="archive-article-date">
+  	<time datetime="2018-05-30T02:11:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>第一步： 安装 React</p>
+</blockquote>
+<p>1、 <a href="https://pan.baidu.com/s/1kU4K9iJ">下载</a><code>yarn</code></p>
+<p>2、临时文件夹实验：<br><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="string">mkdir </span>~/<span class="string">temp;</span> <span class="string">cd </span>~/<span class="string">temp</div><div class="line"></span></div><div class="line"><span class="string">npm </span><span class="string">install </span>-g <span class="built_in">create-react-app</span></div><div class="line"></div><div class="line"><span class="built_in">create-react-app</span> <span class="string">hello-world</div><div class="line"></span></div><div class="line"><span class="string">cd </span><span class="string">hello-world</div><div class="line"></span></div><div class="line"><span class="string">npm </span><span class="string">start </span>或者 <span class="string">yarn </span><span class="string">start</span></div></pre></td></tr></table></figure></p>
+<p> <code>create-react-app</code> 内置了 <code>webpack</code> 的所有功能。</p>
+<p>3、初始化 <code>React</code><br>清空 <code>temp</code> 文件夹，同时清空项目文件夹<br>（因为 <code>create-react-app</code> 会自己创建 <code>src</code> 和 <code>index.html</code> ）<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">cd 到你在上次任务中新建的项目目录！</div><div class="line"></div><div class="line"><span class="comment"># 删除所有非隐藏文件，这一步千万不要手抖，后果自负</span></div><div class="line"></div><div class="line">rm -rf * </div><div class="line">git <span class="keyword">add</span><span class="bash"> .</div><div class="line"></span>git commit -m <span class="string">"remove all files"</span></div><div class="line">git push</div></pre></td></tr></table></figure></p>
+<p>正式开始初始化：<br>
+        
+          <a class="article-more-a" href="/2018/05/30/50配置React/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-49Webpack配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/29/49Webpack配置/">Webpack配置</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/29/49Webpack配置/" class="archive-article-date">
+  	<time datetime="2018-05-29T08:48:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="webpack-的作用-使用各种-loader-加载不同的资源-把所有资源打包起来"><a href="#webpack-的作用-使用各种-loader-加载不同的资源-把所有资源打包起来" class="headerlink" title="webpack 的作用:使用各种 loader 加载不同的资源,把所有资源打包起来"></a>webpack 的作用:使用各种 loader 加载不同的资源,把所有资源打包起来</h3><blockquote>
+<p>第一步：设置一个 <code>npm</code>，让 <code>npm</code> 下载得更快一些</p>
+</blockquote>
+<p>1、运行 <code>npm config set loglevel http</code> 让你知道 <code>npm</code> 发的每一个请求<br>2、运行 <code>npm config set progress false</code>，关闭那个无聊的进度条<br>3、运行 <code>npm config set registry https://registry.npm.taobao.org/</code> ， 从淘宝的服务器下载各种包。不过这会让你在运行 <code>npm adduser</code> 的时候出问题，想要恢复成原样，只需要运行 <code>npm config delete registry</code> 即可。<br>4、运行 <code>touch ~/.bashrc; echo &#39;export PHANTOMJS_CDNURL=&quot;http://npm.taobao.org/mirrors/phantomjs&quot;&#39; &gt;&gt; ~/.bashrc</code> 让 <code>npm</code> 从淘宝下载 <code>phantomjs</code><br>5、运行 <code>touch ~/.bashrc; echo &#39;export SASS_BINARY_SITE=&quot;https://npm.taobao.org/mirrors/node-sass&quot;&#39; &gt;&gt; ~/.bashrc</code> 让 npm 从淘宝下载 SASS<br>6、运行 <code>source ~/.bashrc</code><br>
+        
+          <a class="article-more-a" href="/2018/05/29/49Webpack配置/#more">more >></a>
         
       
 
@@ -497,7 +467,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
     </nav>
   
 
@@ -576,10 +546,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
@@ -592,11 +558,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -604,11 +566,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -616,11 +578,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
