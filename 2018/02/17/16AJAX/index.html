@@ -16,7 +16,7 @@ AJAX即Async JavaScript And Xml 是异步的JS和Xml的技术。">
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="AJAX是一种实现在不刷新网页的情况下通过XmlHttpRequest()来访问服务器并根据数据的处理结果按照预期的方式对页面进行修改的技术。
 AJAX即Async JavaScript And Xml 是异步的JS和Xml的技术。">
-<meta property="og:updated_time" content="2018-10-19T02:51:41.914Z">
+<meta property="og:updated_time" content="2018-10-19T12:08:24.126Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="封装一个ajax">
 <meta name="twitter:description" content="AJAX是一种实现在不刷新网页的情况下通过XmlHttpRequest()来访问服务器并根据数据的处理结果按照预期的方式对页面进行修改的技术。
@@ -167,10 +167,12 @@ AJAX即Async JavaScript And Xml 是异步的JS和Xml的技术。">
     <div class="article-entry" itemprop="articleBody">
       
         <p>AJAX是一种实现在不刷新网页的情况下通过<code>XmlHttpRequest()</code>来访问服务器并根据数据的处理结果按照预期的方式对页面进行修改的技术。</p>
-<p>AJAX即Async JavaScript And Xml 是异步的JS和Xml的技术。</p>
-<a id="more"></a>
+<p>AJAX即Async JavaScript And Xml 是异步的JS和Xml的技术。<br><a id="more"></a></p>
 <blockquote>
-<p>一、核心用法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</div><div class="line">xhr.open()     </div><div class="line"><span class="comment">// open有3个参数 xhr.open('method','path',true)</span></div><div class="line"><span class="comment">// method 可以是GET POST DELETE PUT 等等 具体参考mdn</span></div><div class="line"><span class="comment">// path 就是获取网址的地址</span></div><div class="line"><span class="comment">// 第三个参数为boolean 可以选择同步 和 异步 默认为true 为异步</span></div><div class="line">xhr.onreadystatechange = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">  <span class="keyword">if</span>(xhr.readyState === <span class="number">4</span>)&#123;</div><div class="line">    <span class="keyword">if</span>(xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>)&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'请求成功'</span>)</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(xhr.status &gt;= <span class="number">400</span>)&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'请求失败'</span>)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">xhr.send()</div><div class="line"><span class="comment">// send 可以设置请求体 即请求的第四部分</span></div></pre></td></tr></table></figure></p>
+<p>一、核心用法</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</div><div class="line">xhr.open()     </div><div class="line"><span class="comment">// open有3个参数 xhr.open('method','path',true)</span></div><div class="line"><span class="comment">// method 可以是GET POST DELETE PUT 等等 具体参考mdn</span></div><div class="line"><span class="comment">// path 就是获取网址的地址</span></div><div class="line"><span class="comment">// 第三个参数为boolean 可以选择同步 和 异步 默认为true 为异步</span></div><div class="line">xhr.onreadystatechange = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">  <span class="keyword">if</span>(xhr.readyState === <span class="number">4</span>)&#123;</div><div class="line">    <span class="keyword">if</span>(xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>)&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'请求成功'</span>)</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(xhr.status &gt;= <span class="number">400</span>)&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'请求失败'</span>)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">xhr.send()</div><div class="line"><span class="comment">// send 可以设置请求体 即请求的第四部分</span></div></pre></td></tr></table></figure>
+<blockquote>
 <p>二、JS设置请求头</p>
 </blockquote>
 <p>2.1 通过setRequestHeader()的方法可以设置请求头。<br>    设置响应头有2个注意事项：<br>2.1.1 设置响应头需要在open()和send()之间。<br>2.1.2 如设置多行,浏览器会合并成一行。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</div><div class="line">xhr.open(<span class="string">'post'</span>,<span class="string">'/xxx'</span>,<span class="literal">true</span>) <span class="comment">//第一部分</span></div><div class="line">xhr.setRequestHeader(<span class="string">'Content-Type'</span>,<span class="string">'application/x-www-from-encoded'</span>) <span class="comment">//第二部分</span></div><div class="line">xhr.send(<span class="string">'a=1&amp;b=2'</span>)<span class="comment">//第四部分</span></div></pre></td></tr></table></figure></p>
@@ -412,6 +414,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
@@ -420,23 +438,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -448,11 +450,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">
