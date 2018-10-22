@@ -18,7 +18,7 @@ JS中，使用最广泛，认同度最高的就是：【组合使用构造函数
 <meta property="og:description" content="一共用 7 种创建对象的方式：工厂模式、构造函数模式、原型模式、组合模式、动态原型模式、寄生构造函数模式、稳妥构造函数模式反正说了这么多你也记不住
 当然直接 划重点！
 JS中，使用最广泛，认同度最高的就是：【组合使用构造函数模式和原型模式】JS中，最完美的是：【动态原型模式】（解决了上面一种方法看起来很奇怪的弊端）有重大缺陷的是：【构造函数模式】、【原型模式】其中明确提出“不推荐”的是：【工厂模式">
-<meta property="og:updated_time" content="2018-10-22T09:31:54.033Z">
+<meta property="og:updated_time" content="2018-10-22T12:39:04.290Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="创建对象">
 <meta name="twitter:description" content="一共用 7 种创建对象的方式：工厂模式、构造函数模式、原型模式、组合模式、动态原型模式、寄生构造函数模式、稳妥构造函数模式反正说了这么多你也记不住
@@ -179,7 +179,7 @@ JS中，使用最广泛，认同度最高的就是：【组合使用构造函数
 <p>首先是该模式的标准样子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 第一块</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">  <span class="keyword">this</span>.age = age;</div><div class="line">  <span class="keyword">this</span>.job = job;</div><div class="line">  <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="keyword">this</span>.name)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">"Sue"</span>,<span class="number">22</span>,<span class="string">'Master'</span>)</div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person(<span class="string">"Siwei"</span>,<span class="number">22</span>,<span class="string">'Phd'</span>)</div><div class="line"></div><div class="line"><span class="comment">//第二块</span></div><div class="line">alert(person1.constructor == Person); <span class="comment">// true</span></div><div class="line">alert(person2.constructor == Person); <span class="comment">// true</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// 第三块</span></div><div class="line">alert(person1 <span class="keyword">instanceof</span> <span class="built_in">Object</span>); <span class="comment">//true</span></div><div class="line">alert(person1 <span class="keyword">instanceof</span> Person); <span class="comment">//true</span></div><div class="line">alert(person2 <span class="keyword">instanceof</span> <span class="built_in">Object</span>); <span class="comment">//true</span></div><div class="line">alert(person2 <span class="keyword">instanceof</span> Person); <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
 <p><em>【第一块】信息</em><br>new 替我们做好的四个步骤：创建新对象、this 指向新对象、为新对象添加属性、返回新对象；</p>
 <p><em>【第二块】信息</em><br>实例的 constructor 属性都指向 Person;</p>
-<p><em>【第三块】信息</em></p>
+<p><em>【第三块】信息</em><br>Person 是 person1/person2 的父类；<br>Object 是 person1/person2 的顶端；</p>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span><span class="params">(name,age,job)</span></span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">  <span class="keyword">this</span>.age = age;</div><div class="line">  <span class="keyword">this</span>.job = job;</div><div class="line">  <span class="keyword">this</span>.sayName = sayName；</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayName</span><span class="params">()</span></span>&#123;alert(<span class="keyword">this</span>.name);&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">"Sue"</span>,<span class="number">22</span>,<span class="string">'Master'</span>)</div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person(<span class="string">"Siwei"</span>,<span class="number">22</span>,<span class="string">'Phd'</span>)</div></pre></td></tr></table></figure>
       
 
@@ -389,19 +389,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
