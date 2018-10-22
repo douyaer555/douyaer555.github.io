@@ -38,7 +38,7 @@
 1、GET请求12345678910111213//GET 请求 GET /?w=1 HTTP/1.1Host: ba">
 <meta property="og:image" content="https://i.imgur.com/HFcsVlO.png">
 <meta property="og:image" content="https://i.imgur.com/wj6Zhcp.png">
-<meta property="og:updated_time" content="2018-10-19T02:44:40.077Z">
+<meta property="og:updated_time" content="2018-10-22T01:56:14.483Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="聊聊系列(3)-- HTTP">
 <meta name="twitter:description" content="本文是《图解HTTP》的“摘要”版本，笔者更多关注得是和自身知识所融洽的部分，如果对更详细的内容感兴趣，可以移步实体书。
@@ -225,8 +225,9 @@
 <p>5系代表服务器本身的错误<br>500 Internal Server Error 服务器在执行请求时发生了错误<br>503 Service Unavailable 服务器暂时处于超负荷运转或者停机维护阶段</p>
 <p>四、持久连接</p>
 <p>五、管线化</p>
-<p>六、补充<br><strong>1、TCP/IP通信传输流</strong><br><img src="https://i.imgur.com/wj6Zhcp.png" alt=""><br><a id="more"></a><br><strong>2、TCP协议三次握手策略</strong><br>第一次：客户端 ——&gt;&gt;&gt; 服务端 SYN数据打包给你啦！<br>第二次：服务端 ——&gt;&gt;&gt; 客户端 我收到啦！（SYN/ACK）<br>第三次：客户端 ——&gt;&gt;&gt; 服务端 我知道你知道啦！<br><strong>3、概念的厘清</strong><br>3.1、DNS协议提供域名查找IP，或知道IP反查域名；<br>3.2、IP是一组纯地址，而我们访问的<code>baidu.com</code>是域名或主机名<br>3.3、URL是需要输入的资源地址（网址）；URI是用字符串标识的某一互联网资源；<br>   URL是URI的子集；<br>3.4、POST的目的是传输（发信息）<br>   GET的目的是请求资源；<br>3.5、cookie通过在请求和响应报文中写入cookie信息，来控制客户端的状态<br>   翻译成人话就是：刷新以后我在这个网站还是登陆的状态。<br><strong>4、Web安全</strong><br>HTTP的不足之处：<br>4.1、通信使用明文，内容可能被窃听<br>4.2、通信放的什么可能被伪装<br>4.3、报文的完整性被篡改<br>—-&gt;&gt;&gt;&gt; 改进<br><strong>HTTP + 加密 + 认证 + 完整性保护 = HTTPS</strong><br>（HTTPS的不足：证书贵+速度很慢）</p>
+<p>六、补充</p>
 </blockquote>
+<p><strong>1、TCP/IP通信传输流</strong><br><img src="https://i.imgur.com/wj6Zhcp.png" alt=""><br><a id="more"></a><br><strong>2、TCP协议三次握手策略</strong><br>第一次：客户端 ——&gt;&gt;&gt; 服务端 SYN数据打包给你啦！<br>第二次：服务端 ——&gt;&gt;&gt; 客户端 我收到啦！（SYN/ACK）<br>第三次：客户端 ——&gt;&gt;&gt; 服务端 我知道你知道啦！<br><strong>3、概念的厘清</strong><br>3.1、DNS协议提供域名查找IP，或知道IP反查域名；<br>3.2、IP是一组纯地址，而我们访问的<code>baidu.com</code>是域名或主机名<br>3.3、URL是需要输入的资源地址（网址）；URI是用字符串标识的某一互联网资源；<br>   URL是URI的子集；<br>3.4、POST的目的是传输（发信息）<br>   GET的目的是请求资源；<br>3.5、cookie通过在请求和响应报文中写入cookie信息，来控制客户端的状态<br>   翻译成人话就是：刷新以后我在这个网站还是登陆的状态。<br><strong>4、Web安全</strong><br>HTTP的不足之处：<br>4.1、通信使用明文，内容可能被窃听<br>4.2、通信放的什么可能被伪装<br>4.3、报文的完整性被篡改<br>—-&gt;&gt;&gt;&gt; 改进<br><strong>HTTP + 加密 + 认证 + 完整性保护 = HTTPS</strong><br>（HTTPS的不足：证书贵+速度很慢）</p>
 <p>怎样给数据加密呢？<br>目前有以下几种加密方式：<br>1、对称加密 ： 加密和解密数据使用同一个密钥。这种加密方式的优点是速度很快，常见对称加密的算法有 AES；<br>2、非对称加密： 加密和解密使用不同的密钥，叫公钥和私钥。数据用公钥加密后必须用私钥解密，数据用私钥加密后必须用公钥解密。一般来说私钥自己保留好，把公钥公开给别人，让别人拿自己的公钥加密数据后发给自己，这样只有自己才能解密。 这种加密方式的特点是速度慢，CPU 开销大，常见非对称加密算法有 RSA；<br>3、Hash： hash 是把任意长度数据经过处理变成一个长度固定唯一的字符串，但任何人拿到这个字符串无法反向解密成原始数据（解开你就是密码学专家了），Hash 常用来验证数据的完整性。常见 Hash 算法有 MD5（已经不安全了）、SHA1、SHA256<br>这些加密其实都是各式各样的<strong>算法</strong>。</p>
 <p><strong>讲个小故事</strong></p>
 <p>班里来了个新同学小美，长的特别漂亮，小谷暗恋小美很久，终于有一天小谷鼓起勇气向小美表白。小谷写了个纸条：“我是小谷，我喜欢你，你喜欢我吗？” ，让小王转交给小美。<br>正常情况下，小王会把纸条转给小美，小美看到后很开心，回复了纸条：“我是小美，我也喜欢你”，让小王再转递给小谷。<br>可是小王也暗恋小美，当然不愿甘做嫁衣。这个时候小王可以有几方法来捣乱：<br>收到小谷的纸条后扔掉纸条。但这样做小谷收不到回应下课会去单独问小美，事情就败露了<br>偷窥纸条的内容，然后举报给老师<br>收到小谷的纸条后，小王立即给小谷发一个回复纸条：“我不喜欢你，我喜欢小王”。同时小王给小美发一个纸条：“我是小谷，你长的真丑，嘿嘿”<br>正常帮小谷和小美投递纸条，成就美事。但复印一份小谷的纸条，过两天小王把这个纸条发给了班里的其他女生小花，这样小美知道后必然会闹分手</p>
@@ -467,6 +468,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
@@ -476,14 +485,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">

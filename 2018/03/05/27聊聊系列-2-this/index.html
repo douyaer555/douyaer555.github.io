@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="先从 this 说起吧！（这一天终于来了）
 工作中我们总会面临：这个this指的是代码里的那一块呢?">
-<meta property="og:updated_time" content="2018-10-18T06:33:37.542Z">
+<meta property="og:updated_time" content="2018-10-21T14:02:22.908Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="聊聊系列(2)--this">
 <meta name="twitter:description" content="先从 this 说起吧！（这一天终于来了）
@@ -183,9 +183,11 @@
 <blockquote>
 <p>面试 this</p>
 </blockquote>
-<p>很长时间我都是按照方方的方法来找出 this 的指向，但是今天我们可以把 this 的绑定方法分为四种：</p>
-<p>1、显式绑定</p>
-<p>2、隐式绑定</p>
+<p><code>this</code> 绑定的优先级：</p>
+<p>1、<code>new</code> 一个构造函数时，<code>new</code> 永远指向构造函数的生成的实例对象；</p>
+<p>2、<code>call</code>、<code>apply</code>、<code>bind</code>时，指向第一个参数；</p>
+<p>3、普通函数 <code>p.getName()</code> 和 <code>getName()</code>,调用的前一个对象是 <code>this</code>；</p>
+<p>4、箭头函数没有 <code>this</code>，所以他的 <code>this</code> 取决于外部第一个不是箭头函数的 <code>this</code>。</p>
 
       
 
@@ -415,6 +417,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
@@ -424,14 +434,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">

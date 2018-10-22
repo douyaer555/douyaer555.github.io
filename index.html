@@ -141,6 +141,70 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-10创建对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/22/10创建对象/">创建对象</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/22/10创建对象/" class="archive-article-date">
+  	<time datetime="2018-10-22T08:59:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一共用 7 种创建对象的方式：<br>工厂模式、构造函数模式、原型模式、组合模式、动态原型模式、寄生构造函数模式、稳妥构造函数模式<br>反正说了这么多你也记不住</p>
+<p>当然直接 划重点！</p>
+<p>JS中，使用最广泛，认同度最高的就是：【组合使用构造函数模式和原型模式】<br>JS中，最完美的是：【动态原型模式】（解决了上面一种方法看起来很奇怪的弊端）<br>有重大缺陷的是：【构造函数模式】、【原型模式】<br>其中明确提出“不推荐”的是：【工厂模式】、【寄生构造函数模式】</p>
+<p>其实我特别想一开始就说说【组合使用构造函数模式和原型模式】的神奇之处的，你说谁不喜欢这种上手就能用的东西呢，谁要关心剩下的 6 个是什么鬼啦！但是。。这是个组合模式呀！ 废话已多说，我们就从 【构造函数模式】 和 【原型模式】 开始吧！<br>
+        
+          <a class="article-more-a" href="/2018/10/22/10创建对象/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-81手撕代码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -232,24 +296,10 @@
 <blockquote>
 <p>二、怎么设置盒模型？</p>
 </blockquote>
-<p>1、<code>box-sizing: content-box;</code>(默认、标准）<br>2、<code>box-sizing: border-box;</code>(IE)</p>
-<blockquote>
-<p>三、怎样用JS获取盒模型对应的宽高</p>
-</blockquote>
-<p>1、<code>Element.currentStyle.width/height;</code> 只支持IE<br>2、<code>Window.getComputedStyle().width/height;</code>都可以用<br>3、<code>Element.getBoundingClientRect().width/height;</code> 根据视窗的左上角拿到位置坐标</p>
-<blockquote>
-<p>四、边距重叠</p>
-</blockquote>
-<p>当两个垂直外边距相遇时，他们将形成一个外边距；<br>合并后的外边距高度 = 两个发生合并的外边距中的较大值；</p>
-<p>只有<strong>普通</strong>文档流中<strong>块级</strong>元素的<strong>垂直</strong>外边距才能合并</p>
-<blockquote>
-<p>BFC（块级格式化上下文）</p>
-</blockquote>
-<p>1、独立的渲染区域，规定了其内部盒子如何布局，盒子内的区域与外界不相干</p>
-<p>2、触发条件：（满足一个就行了）<br>2.1 <code>float ≠ none;</code><br>2.2 <code>overflow ≠ visible;</code><br>2.3 <code>display: inline-block / table-cell / table-caption;</code><br>2.4 <code>position: absolute / fixed;</code></p>
-<p>3、布局规则<br>垂直方向上，一个接一个的放置，上下距离由 <code>margin</code> 决定，BFC 内外互不干扰，浮动元素参与总的高度计算</p>
-<p>4、 BFC 的作用<br>自适应俩栏布局，阻止元素被浮动元素覆盖，可以包含浮动元素。</p>
-
+<p>1、<code>box-sizing: content-box;</code>(默认、标准）<br>2、<code>box-sizing: border-box;</code>(IE)<br>
+        
+          <a class="article-more-a" href="/2018/10/17/82盒模型/#more">more >></a>
+        
       
 
       
@@ -443,86 +493,6 @@
 
 
   
-    <article id="post-79剑指-运算篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/06/79剑指-运算篇/">剑指offer(4)--运算篇(JavaScript版)/共 题</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/06/79剑指-运算篇/" class="archive-article-date">
-  	<time datetime="2018-10-06T12:48:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>【<a href="https://github.com/wangsiyuan233/NowCoder">源码地址</a>】 || 【<a href="https://www.nowcoder.com/ta/coding-interviews?page=1">代码调试</a>】</p>
-<hr>
-<blockquote>
-<p>十一、二进制中1的个数 p100</p>
-</blockquote>
-<p><strong>描述</strong>：输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。</p>
-<p><strong>方法一：常规解法</strong><br>1、怎样判断一个整数的最右边是不是1<br>2、把整数和1做【位与运算】，看结果是不是0就知道了。<br>3、如果结果是1，那最右边的一位就是1<br>4、bug就是不能分析出来负数，会陷入死循环<br><figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function NumberOf1(n)&#123;</div><div class="line">  var <span class="built_in">count</span> = <span class="number">0</span>, <span class="built_in">flag</span> = <span class="number">1</span>;</div><div class="line">  <span class="keyword">while</span>(<span class="built_in">flag</span>)&#123;</div><div class="line">    <span class="keyword">if</span>(n&amp;<span class="built_in">flag</span>)<span class="built_in">count</span>++;</div><div class="line">    <span class="built_in">flag</span> = <span class="built_in">flag</span> &lt;&lt; <span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line">  return <span class="built_in">count</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>方法二：高级解法</strong><br>1、如果一个整数不为0，那么这个整数至少有一位是1。<br>如果我们把这个整数减1，那么原来处在整数最右边的1就会变为0，原来在1后面的所有的0都会变成1(如果最右边的1后面还有0的话)。<br>其余所有位将不会受到影响。</p>
-<p>2、举个例子：一个二进制数 <code>1100</code>，从右边数起第三位是处于最右边的一个1。减去1后，第三位变成0，它后面的两位0变成了1，而前面的1保持不变，因此得到的结果是 <code>1011</code>.我们发现减1的结果是把最右边的一个1开始的所有位都取反了。这个时候如果我们再把原来的整数和减去1之后的结果做与运算，从原来整数最右边一个1那一位开始所有位都会变成0。如<code>1100&amp;1011=1000</code>.也就是说，把一个整数减去1，再和原整数做与运算，会把该整数最右边一个1变成0.那么一个整数的二进制有多少个1，就可以进行多少次这样的操作。<br><figure class="highlight excel"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function NumberOf1(<span class="built_in">n</span>)&#123;</div><div class="line">  <span class="built_in">var</span> <span class="built_in">count</span> = <span class="number">0</span>;</div><div class="line">  while (<span class="built_in">n</span>)&#123;</div><div class="line">   <span class="built_in">count</span>++;</div><div class="line">   <span class="built_in">n</span> = (<span class="built_in">n</span>-<span class="number">1</span>)&amp;<span class="built_in">n</span>;//把最右边的一个<span class="number">1</span>变成<span class="number">0</span></div><div class="line">&#125;</div><div class="line">  return <span class="built_in">count</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2018/10/06/79剑指-运算篇/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指offer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -608,6 +578,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
@@ -617,14 +595,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
