@@ -6,23 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>配置Webpack | wangsiyuan</title>
+  <title>Webpack配置 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="webpack 的作用:使用各种 loader 加载不同的资源,把所有资源打包起来
 第一步：设置一个 npm，让 npm 下载得更快一些
 
 1、运行 npm config set loglevel http 让你知道 npm 发的每一个请求2、运行 npm config set progress false，关闭那个无聊的进度条3、运行 npm config set registry https:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="配置Webpack">
+<meta property="og:title" content="Webpack配置">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/05/29/06配置Webpack/index.html">
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="webpack 的作用:使用各种 loader 加载不同的资源,把所有资源打包起来
 第一步：设置一个 npm，让 npm 下载得更快一些
 
 1、运行 npm config set loglevel http 让你知道 npm 发的每一个请求2、运行 npm config set progress false，关闭那个无聊的进度条3、运行 npm config set registry https:">
-<meta property="og:updated_time" content="2018-10-22T14:17:04.612Z">
+<meta property="og:updated_time" content="2018-10-19T05:39:47.461Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="配置Webpack">
+<meta name="twitter:title" content="Webpack配置">
 <meta name="twitter:description" content="webpack 的作用:使用各种 loader 加载不同的资源,把所有资源打包起来
 第一步：设置一个 npm，让 npm 下载得更快一些
 
@@ -159,7 +159,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      配置Webpack
+      Webpack配置
     </h1>
   
 
@@ -205,7 +205,7 @@
 <blockquote>
 <p>第六步： 浏览器自动刷新</p>
 </blockquote>
-<p>如果能边写边改多好啊！（不是保存后再自动刷新）<br>1、 <code>index.html</code> 里 改为 <code>&lt;script src=&quot;/bundle.js&quot;&gt;&lt;/script&gt;</code><br>2、 <code>package.json</code>：<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">-    <span class="string">"dev"</span>: <span class="string">"webpack --progress --watch"</span></div><div class="line">+    <span class="string">"dev"</span>: <span class="string">"webpack-dev-server --open"</span></div><div class="line"></div><div class="line"></div><div class="line">-    <span class="string">"webpack"</span>: <span class="string">"^2.3.2"</span></div><div class="line">+    <span class="string">"webpack"</span>: <span class="string">"^2.3.2"</span>,</div><div class="line">+    <span class="string">"webpack-dev-server"</span>: <span class="string">"^2.4.2"</span></div></pre></td></tr></table></figure></p>
+<p>如果能边写边改多好啊！（不是保存后再自动刷新）<br>1、 <code>index.html</code> 里 改为 <code>&lt;script src=&quot;/bundle.js&quot;&gt;&lt;/script&gt;</code><br>2、 <code>package.json</code>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">-    <span class="string">"dev"</span>: <span class="string">"webpack --progress --watch"</span></div><div class="line">+    <span class="string">"dev"</span>: <span class="string">"webpack-dev-server --open"</span></div><div class="line"></div><div class="line"></div><div class="line">-    <span class="string">"webpack"</span>: <span class="string">"^2.3.2"</span></div><div class="line">+    <span class="string">"webpack"</span>: <span class="string">"^2.3.2"</span>,</div><div class="line">+    <span class="string">"webpack-dev-server"</span>: <span class="string">"^2.4.2"</span></div></pre></td></tr></table></figure></p>
 <p>3、运行 <code>npm run dev</code>，然后浏览器就会自动打开 <code>http://localhost:8080/</code> ，你会看到 <code>index.html</code> 页面</p>
 <p>当我们修改 <code>index.js</code> 时：bundle.js 自动打包； <code>http://localhost:8080/</code> 自动刷新</p>
 <p>注意，期间 <code>dist/bundle.js</code> 不会自动变化，你在<strong>部署代码之前</strong>，依然要运行 <code>npm run build</code> 才行。</p>
@@ -427,11 +427,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -439,7 +439,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -447,11 +447,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -463,7 +463,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -141,6 +141,141 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-63二分查找" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/24/63二分查找/">二分查找（binary search）</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/24/63二分查找/" class="archive-article-date">
+  	<time datetime="2018-07-24T02:02:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>树拥有很多种结构，二叉树是树中最常用的结构，同时也是一个天然的递归结构。</p>
+<p>二分查找树也是二叉树，拥有二叉树的特性。但是区别在于二分查找树每个节点的值都<strong>比他的左子树的值大</strong>，<strong>比右子树的值小</strong>。</p>
+<blockquote>
+<p>一、创建一颗最简单的树</p>
+</blockquote>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(value) &#123;</div><div class="line">    <span class="keyword">this</span>.value = value</div><div class="line">    <span class="keyword">this</span>.left = <span class="literal">null</span></div><div class="line">    <span class="keyword">this</span>.right = <span class="literal">null</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BST</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="keyword">this</span>.root = <span class="literal">null</span></div><div class="line">    <span class="keyword">this</span>.size = <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">  getSize() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.size</div><div class="line">  &#125;</div><div class="line">  isEmpty() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.size === <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">  addNode(v) &#123;</div><div class="line">    <span class="keyword">this</span>.root = <span class="keyword">this</span>._addChild(<span class="keyword">this</span>.root, v)</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// 添加节点时，需要比较添加的节点值和当前</span></div><div class="line">  <span class="comment">// 节点值的大小</span></div><div class="line">  _addChild(node, v) &#123;</div><div class="line">    <span class="keyword">if</span> (!node) &#123;</div><div class="line">      <span class="keyword">this</span>.size++</div><div class="line">      <span class="keyword">return</span> new Node(v)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (node.value &gt; v) &#123;</div><div class="line">      node.left = <span class="keyword">this</span>._addChild(node.left, v)</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (node.value &lt; v) &#123;</div><div class="line">      node.right = <span class="keyword">this</span>._addChild(node.right, v)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> node</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2018/07/24/63二分查找/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-62排序算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/19/62排序算法/">排序算法</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/19/62排序算法/" class="archive-article-date">
+  	<time datetime="2018-07-19T03:27:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p> 准备</p>
+</blockquote>
+<p>1、时间复杂度：</p>
+<p>通常使用最差的时间复杂度来衡量一个算法的好坏。</p>
+<p>常数时间 O(1) 代表这个操作和数据量没关系，是一个固定时间的操作，比如说四则运算。</p>
+<p>对于一个算法来说，可能会计算出如下操作次数 <code>aN + 1</code>，<code>N</code> 代表数据量。那么该算法的时间复杂度就是 <code>O(N)</code>。因为我们在计算时间复杂度的时候，数据量通常是非常大的，这时候低阶项和常数项可以忽略不计。</p>
+<p>当然可能会出现两个算法都是 <code>O(N)</code> 的时间复杂度，那么对比两个算法的好坏就要通过对比低阶项和常数项了。</p>
+<p>2、以下两个函数是本章节经常会用到的：<br><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> checkArray(<span class="built_in">array</span>)&#123;</div><div class="line">  <span class="keyword">if</span> (!<span class="built_in">array</span> || <span class="built_in">array</span>.length &lt;= <span class="number">2</span>) return</div><div class="line">&#125;</div><div class="line"><span class="keyword">function</span> swap(<span class="built_in">array</span>, <span class="built_in">left</span>, <span class="built_in">right</span>) &#123;</div><div class="line">  <span class="keyword">let</span> rightValue = <span class="built_in">array</span>[<span class="built_in">right</span>]</div><div class="line">  <span class="built_in">array</span>[<span class="built_in">right</span>] = <span class="built_in">array</span>[<span class="built_in">left</span>]</div><div class="line">  <span class="built_in">array</span>[<span class="built_in">left</span>] = rightValue</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2018/07/19/62排序算法/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-61前端题目总结2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -342,162 +477,9 @@
 
 
   
-    <article id="post-58CSS-查漏补缺" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/05/58CSS-查漏补缺/">CSS 查漏补缺</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/05/58CSS-查漏补缺/" class="archive-article-date">
-  	<time datetime="2018-07-05T03:02:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>（方方-必考）介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？</p>
-</blockquote>
-<p>（1）、有两种， IE 盒模型、标准盒模型；<br>（2）、盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border)；<br>（3）、区  别： IE的content部分把 border 和 padding计算了进去;<br>（4）、content-box: width == 内容区宽度<br>（5）、border-box: width == 内容区宽度 + padding 宽度 + border 宽度<br>
-        
-          <a class="article-more-a" href="/2018/07/05/58CSS-查漏补缺/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-57HTML-查漏补缺" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/03/57HTML-查漏补缺/">HTML 查漏补缺</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/03/57HTML-查漏补缺/" class="archive-article-date">
-  	<time datetime="2018-07-03T03:02:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>一、html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？</p>
-</blockquote>
-<p>（1）、<code>HTML5</code>主要是关于图像，位置，存储等功能的增加。<br>绘画 <code>canvas</code>;<br>用于媒介回放的 <code>video</code> 和 <code>audio</code> 元素;<br>本地离线存储 <code>localStorage</code> 长期存储数据，浏览器关闭后数据不丢失;<br><code>sessionStorage</code> 的数据在浏览器关闭后自动删除;<br>语义化更好的内容元素，比如 <code>article、footer、header、nav、section</code>;<br>表单控件，<code>calendar、date、time、email、url、search</code>;<br>新的技术 <code>webworker, websocket, Geolocation</code>;</p>
-<p>（2）、移除的元素：<br>纯表现的元素：<code>basefont，big，center，font, s，strike，tt，u</code>;<br>对可用性产生负面影响的元素：<code>frame，frameset，noframes</code>；</p>
-<p>（3）、支持<code>HTML5</code>新标签：<br><code>IE8/IE7/IE6</code>支持通过<code>document.createElement</code>方法产生的标签，<br>可以利用这一特性让这些浏览器支持 <code>HTML5</code> 新标签，<br>浏览器支持新标签后，还需要添加标签默认的样式。<br>当然也可以直接使用成熟的框架、比如<code>html5shim</code>;</p>
-<p>（4）、如何区分 <code>HTML5</code>： <code>DOCTYPE</code>声明\新增的结构元素\功能元素</p>
-<blockquote>
-<p>二、简述一下你对HTML语义化的理解？</p>
-</blockquote>
-<p>用正确的标签做正确的事情。<br>结构清晰便于浏览器解析；<br>内容结构化便于后期的维护管理。</p>
-<blockquote>
-<p>三、<code>meta viewport</code>是做什么用的，怎么写？</p>
-</blockquote>
-<p>控制页面在移动端不要缩小显示。</p>
-<p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;</code></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Basic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 
@@ -580,11 +562,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -592,7 +574,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -600,11 +582,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -616,7 +598,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -141,6 +141,240 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-17DOM3扩展" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/24/17DOM3扩展/">DOM扩展</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/24/17DOM3扩展/" class="archive-article-date">
+  	<time datetime="2018-10-24T08:54:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-15DOM1基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/24/15DOM1基础/">DOM基础</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/24/15DOM1基础/" class="archive-article-date">
+  	<time datetime="2018-10-24T02:58:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="节点层次"><a href="#节点层次" class="headerlink" title="节点层次"></a>节点层次</h2><blockquote>
+<p>一、Node 类型</p>
+</blockquote>
+<p><em>1、节点关系</em><br><code>nodeList</code> : 基于 <code>DOM</code> 结构动态查询的结果；<br>所有节点都有 <code>childNode</code> / <code>parentNode</code> / <code>ownerDocument</code> 属性</p>
+<p><em>2、操作节点</em><br><code>appendChild()</code> : 在列表的末尾添加一个元素；<br><code>insertBefore()</code> ： 接受两个参数，要插入的节点 和 作为参考的节点；<br><code>replaceChild()</code> ： 接受两个参数，要插入的节点 和 要替换的节点；<br><code>removeChild()</code> : 移除的节点仍然为文档所有，只不过在文档中没有自己的位置了。</p>
+<p><code>cloneNode()</code> : 参数是 <code>true</code> 时，进行深拷贝，复制节点及其整个子节点树；参数为 <code>false</code> 时，只复制节点。<br><code>normalize()</code> : 处理文档中文本节点，找到的是空文本节点就删除，找到了相邻的文本节点，就合并成一个文本节点。</p>
+<blockquote>
+<p>二、Document 类型</p>
+</blockquote>
+<p><em>查找元素</em><br><code>getElemntById()</code> :<br><code>getElemntsByName()</code> :<br><code>getElemntsByTagName()</code> : 返回的是 <code>NodeList</code> </p>
+<blockquote>
+<p>三、Element 类型</p>
+</blockquote>
+<p><em>1、取得特性</em><br><code>getAttribute()</code> ： 操作 <code>DOM</code> 时一般不用这个方法，一般在取自定义特性值的情况下，才会使用这个方法<br><code>setAttribute()</code> ： 两个参数，名字和值；<br><code>removeAttribute()</code> : 不仅会清除特性的值，而且也会从元素中完全删除特性</p>
+<p><em>2、创建元素</em><br><code>createElement()</code> : </p>
+<blockquote>
+<p>四、Text 类型</p>
+</blockquote>
+<p><em>创建文本节点</em><br><code>createTextNode()</code> : 里面只接受一个参数 —— 要插入的文本，一般情况下每个元素只有一个文本节点；<br><code>normalize()</code> : 处理文档中文本节点，找到的是空文本节点就删除，找到了相邻的文本节点，就合并成一个文本节点。<br><code>splitText()</code> : 参数是数字，代表了分开的位置，比如是 5,那么 5 五个字符串就在第二部分。</p>
+<blockquote>
+<p>五、Comment 类型</p>
+</blockquote>
+<p><code>Comment</code> 类型和 <code>Text</code> 类型继承自相同的几类，<code>Comment</code> 类型除了没有 <code>splitText()</code>，其他都有</p>
+<h2 id="操作技术"><a href="#操作技术" class="headerlink" title="操作技术"></a>操作技术</h2><p>1、<code>&lt;script&gt;</code><br>动态脚本是指：在页面加载时不存在，但将来的某一时刻通过修改 <code>DOM</code> 动态添加的脚本；</p>
+<p>2、<code>&lt;link&gt;</code> 和 <code>&lt;style&gt;</code><br>动态样式是指：页面加载完成后动态添加到页面中;</p>
+<p>3、<code>&lt;table&gt;</code><br>使用 <code>&lt;table&gt;</code> 自带的属性，可以极大的减少编写代码的数量；</p>
+<p>4、NodeList<br><code>NodeList</code> 、 <code>NameNodeMap</code> 和 <code>HTMLClloection</code>都是动态的；<br>每当文档结构发生变化时，它们都会更新；<br>所以它们始终保存着最新、最准确的信息。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-11继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/23/11继承/">继承</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/23/11继承/" class="archive-article-date">
+  	<time datetime="2018-10-23T12:37:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上一小节我们介绍了 创建对象 的 7 种方式，里面预警了好多次 <em>继承</em>；</p>
+<p>今天我们也要介绍 6 种继承发方式：<br>原型链、构造函数、组合式、原型式、寄生式、寄生组合式</p>
+<p><em>最常用的是</em> ：【组合继承】<br><em>最理想的是</em>：【寄生组合式】</p>
+<p>想要讲清楚 继承 的概念，我们先回到 原型链 的基础知识，想想 构造函数、原型和实例之间的关系</p>
+<blockquote>
+<p>一、原型链继承</p>
+</blockquote>
+<p>每个构造函数都有一个原型对象； <code>Person.prototype</code><br>原型对象都包含了一个指向构造函数的指针; <code>Person.prototype.constructor === Person</code><br>而实例都包含一个指向原型对象的内部指针; <code>person1._proto_ === Person.prototype</code></p>
+<p>OK,上面的概念我们熟悉得不能再熟悉了，那么<br>
+        
+          <a class="article-more-a" href="/2018/10/23/11继承/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">聊聊系列</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-10创建对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -163,8 +397,13 @@
       
         <p>一共用 7 种创建对象的方式：<br>工厂模式、构造函数模式、原型模式、组合模式、动态原型模式、寄生构造函数模式、稳妥构造函数模式<br>反正说了这么多你也记不住</p>
 <p>当然直接 划重点！</p>
-<p>JS中，使用最广泛，认同度最高的就是：【组合使用构造函数模式和原型模式】<br>JS中，最完美的是：【动态原型模式】（解决了上面一种方法看起来很奇怪的弊端）<br>有重大缺陷的是：【构造函数模式】、【原型模式】<br>其中明确提出“不推荐”的是：【工厂模式】、【寄生构造函数模式】</p>
-<p>其实我特别想一开始就说说【组合使用构造函数模式和原型模式】的神奇之处的，你说谁不喜欢这种上手就能用的东西呢，谁要关心剩下的 6 个是什么鬼啦！但是。。这是个组合模式呀！ 废话已多说，我们就从 【构造函数模式】 和 【原型模式】 开始吧！<br>
+<ul>
+<li>JS中，使用最广泛，认同度最高的就是：【组合使用构造函数模式和原型模式】</li>
+<li>JS中，最完美的是：【动态原型模式】（解决了上面一种方法看起来很奇怪的弊端,这个弊端就是“看起来很奇怪”）</li>
+<li>有重大缺陷的是：【构造函数模式】、【原型模式】</li>
+<li>其中明确提出“不推荐”的是：【工厂模式】、【寄生构造函数模式】</li>
+</ul>
+<p>其实我特别想一开始就说说【组合使用构造函数模式和原型模式】的神奇之处的，谁不喜欢这种上手就能用的东西呢，谁要关心剩下的 6 个是什么鬼啦！但是。。这是个组合模式呀！ 废话已多说，我们就从 【构造函数模式】 和 【原型模式】 开始吧！<br>
         
           <a class="article-more-a" href="/2018/10/22/10创建对象/#more">more >></a>
         
@@ -269,233 +508,9 @@
 
 
   
-    <article id="post-82盒模型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/17/82盒模型/">盒模型</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/17/82盒模型/" class="archive-article-date">
-  	<time datetime="2018-10-17T05:57:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>一、两种盒模型</p>
-</blockquote>
-<p>1、标准模型：宽高就是 <code>content</code> 的宽高<br>2、IE模型： 宽高是 <code>content + border + padding</code> (木有margin)</p>
-<blockquote>
-<p>二、怎么设置盒模型呢</p>
-</blockquote>
-<p>1、<code>box-sizing: content-box;</code>(默认、标准）<br>2、<code>box-sizing: border-box;</code>(IE)<br>
-        
-          <a class="article-more-a" href="/2018/10/17/82盒模型/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-75剑指-递归和回溯法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/08/75剑指-递归和回溯法/">剑指offer(6)--递归和回溯法(JavaScript版)/共 题</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/08/75剑指-递归和回溯法/" class="archive-article-date">
-  	<time datetime="2018-10-08T12:14:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>【<a href="https://github.com/wangsiyuan233/NowCoder">源码地址</a>】 || 【<a href="https://www.nowcoder.com/ta/coding-interviews?page=1">代码调试</a>】</p>
-<hr>
-<blockquote>
-<p>七、斐波那契数列 p74</p>
-</blockquote>
-<p><strong>描述</strong>：大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function Fibonacci(<span class="keyword">n</span>)&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">n</span>==0)&#123;<span class="keyword">return</span> 0;&#125;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">n</span>==1)&#123;<span class="keyword">return</span> 1;&#125;</div><div class="line">    <span class="keyword">var</span> <span class="keyword">one</span> = 0,<span class="keyword">two</span>=1; <span class="comment">// 这个部分的值是由上面的 return 决定的</span></div><div class="line">    <span class="keyword">var</span> fbnum=1; <span class="comment">// 是0 1 undefined 都可以</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i =2;i&lt;=<span class="keyword">n</span>;i++)&#123;</div><div class="line">        fbnum = <span class="keyword">one</span>+<span class="keyword">two</span>;</div><div class="line">        <span class="keyword">one</span> = <span class="keyword">two</span>; <span class="comment">// 小的数在下一次迭代变成大的数</span></div><div class="line">        <span class="keyword">two</span> = fbnum;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> fbnum;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>思路</strong>：套路请熟记<br>
-        
-          <a class="article-more-a" href="/2018/10/08/75剑指-递归和回溯法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指offer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-80剑指-字符串、栈和队列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/07/80剑指-字符串、栈和队列/">剑指offer(5)--字符串、栈和队列(JavaScript版)/共 题</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/07/80剑指-字符串、栈和队列/" class="archive-article-date">
-  	<time datetime="2018-10-07T01:43:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>【<a href="https://github.com/wangsiyuan233/NowCoder">源码地址</a>】 || 【<a href="https://www.nowcoder.com/ta/coding-interviews?page=1">代码调试</a>】</p>
-<hr>
-<blockquote>
-<p>二、 替换空格 p51</p>
-</blockquote>
-<p><strong>描述</strong>：请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="title">changeSpace</span>(str)&#123; </div><div class="line">	<span class="keyword">return</span> <span class="type">str.replace(/\s/g,'%20/)</span> </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>思路</strong>：BUG题/<code>replace()</code><br>
-        
-          <a class="article-more-a" href="/2018/10/07/80剑指-字符串、栈和队列/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指offer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -578,11 +593,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -590,7 +605,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -598,11 +613,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -614,7 +629,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">

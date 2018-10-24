@@ -226,7 +226,7 @@ Object 是 JavaScript 中所有对象的父对象
 <p>九、Javascript如何实现继承？</p>
 </blockquote>
 <p>（1）、构造继承<br>（2）、原型继承<br>（3）、实例继承<br>（4）、拷贝继承</p>
-<p> 原型prototype机制或apply和call方法去实现较简单，建议使用构造函数与原型混合方式。<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = <span class="string">'wang'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">this</span>.age = <span class="number">28</span>;</div><div class="line">&#125;</div><div class="line">Child.prototype = <span class="keyword">new</span> Parent();<span class="comment">//继承了Parent，通过原型</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> demo = <span class="keyword">new</span> Child();</div><div class="line">alert(demo.age);</div><div class="line">alert(demo.name);<span class="comment">//得到被继承的属性</span></div></pre></td></tr></table></figure></p>
+<p> 原型prototype机制或apply和call方法去实现较简单，建议使用构造函数与原型混合方式。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = <span class="string">'wang'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.age = <span class="number">28</span>;</div><div class="line">&#125;</div><div class="line">Child.prototype = <span class="keyword">new</span> Parent();<span class="comment">//继承了Parent，通过原型</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> demo = <span class="keyword">new</span> Child();</div><div class="line">alert(demo.age);</div><div class="line">alert(demo.name);<span class="comment">//得到被继承的属性</span></div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>十、JavaScript继承的几种实现方式？</p>
 </blockquote>
@@ -275,7 +275,7 @@ Object 是 JavaScript 中所有对象的父对象
 <blockquote>
 <p>二十、如何判断一个对象是否属于某个类？</p>
 </blockquote>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">使用<span class="keyword">instanceof</span> （待完善）</div><div class="line"> <span class="keyword">if</span>(a <span class="keyword">instanceof</span> Person)&#123;</div><div class="line">     alert(<span class="string">'yes'</span>);</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">使用<span class="keyword">instanceof</span> （待完善）</div><div class="line"> <span class="keyword">if</span>(a <span class="keyword">instanceof</span> Person)&#123;</div><div class="line">     alert(<span class="string">'yes'</span>);</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
 <blockquote>
 <p>二十一、new操作符具体干了什么呢?</p>
 </blockquote>
@@ -339,7 +339,7 @@ Object 是 JavaScript 中所有对象的父对象
 <blockquote>
 <p>三十二、模块化开发怎么做？</p>
 </blockquote>
-<p><a href="http://benalman.com/news/2010/11/immediately-invoked-function-expression/" target="_blank" rel="external">立即执行函数</a>，不暴露私有成员<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> module1 = (<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">　　　　<span class="keyword">var</span> _count = <span class="number">0</span>;</div><div class="line">　　　　<span class="keyword">var</span> m1 = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">　　　　　　<span class="comment">//...</span></div><div class="line">　　　　&#125;;</div><div class="line">　　　　<span class="keyword">var</span> m2 = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">　　　　　　<span class="comment">//...</span></div><div class="line">　　　　&#125;;</div><div class="line">　　　　<span class="keyword">return</span> &#123;</div><div class="line">　　　　　　m1 : m1,</div><div class="line">　　　　　　m2 : m2</div><div class="line">　　　　&#125;;</div><div class="line">　　&#125;)();</div></pre></td></tr></table></figure></p>
+<p><a href="http://benalman.com/news/2010/11/immediately-invoked-function-expression/" target="_blank" rel="external">立即执行函数</a>，不暴露私有成员<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> module1 = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　<span class="keyword">var</span> _count = <span class="number">0</span>;</div><div class="line">　　　　<span class="keyword">var</span> m1 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　　　<span class="comment">//...</span></div><div class="line">　　　　&#125;;</div><div class="line">　　　　<span class="keyword">var</span> m2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　　　<span class="comment">//...</span></div><div class="line">　　　　&#125;;</div><div class="line">　　　　<span class="keyword">return</span> &#123;</div><div class="line">　　　　　　<span class="attr">m1</span> : m1,</div><div class="line">　　　　　　<span class="attr">m2</span> : m2</div><div class="line">　　　　&#125;;</div><div class="line">　　&#125;)();</div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>三十三、AMD（Modules/Asynchronous-Definition）、CMD（Common Module Definition）规范区别？</p>
 </blockquote>
@@ -575,11 +575,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -587,7 +587,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -595,11 +595,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -611,7 +611,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">

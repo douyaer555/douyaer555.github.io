@@ -6,21 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>封装一个ajax | wangsiyuan</title>
+  <title>wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="AJAX是一种实现在不刷新网页的情况下通过XmlHttpRequest()来访问服务器并根据数据的处理结果按照预期的方式对页面进行修改的技术。
-AJAX即Async JavaScript And Xml 是异步的JS和Xml的技术。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="封装一个ajax">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/02/17/16AJAX/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="wangsiyuan">
+<meta property="og:url" content="wangsiyuan233.github.io/page/12/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="AJAX是一种实现在不刷新网页的情况下通过XmlHttpRequest()来访问服务器并根据数据的处理结果按照预期的方式对页面进行修改的技术。
-AJAX即Async JavaScript And Xml 是异步的JS和Xml的技术。">
-<meta property="og:updated_time" content="2018-10-19T12:08:24.126Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="封装一个ajax">
-<meta name="twitter:description" content="AJAX是一种实现在不刷新网页的情况下通过XmlHttpRequest()来访问服务器并根据数据的处理结果按照预期的方式对页面进行修改的技术。
-AJAX即Async JavaScript And Xml 是异步的JS和Xml的技术。">
+<meta name="twitter:title" content="wangsiyuan">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -146,69 +139,34 @@ AJAX即Async JavaScript And Xml 是异步的JS和Xml的技术。">
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-16AJAX" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-02封装一个jQuery" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      封装一个ajax
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/11/02封装一个jQuery/">封装一个jQuery吧！</a>
     </h1>
   
 
         
-        <a href="/2018/02/17/16AJAX/" class="archive-article-date">
-  	<time datetime="2018-02-17T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-17</time>
+        <a href="/2018/02/11/02封装一个jQuery/" class="archive-article-date">
+  	<time datetime="2018-02-11T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>AJAX是一种实现在不刷新网页的情况下通过<code>XmlHttpRequest()</code>来访问服务器并根据数据的处理结果按照预期的方式对页面进行修改的技术。</p>
-<p>AJAX即Async JavaScript And Xml 是异步的JS和Xml的技术。<br><a id="more"></a></p>
-<blockquote>
-<p>一、核心用法</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</div><div class="line">xhr.open()     </div><div class="line"><span class="comment">// open有3个参数 xhr.open('method','path',true)</span></div><div class="line"><span class="comment">// method 可以是GET POST DELETE PUT 等等 具体参考mdn</span></div><div class="line"><span class="comment">// path 就是获取网址的地址</span></div><div class="line"><span class="comment">// 第三个参数为boolean 可以选择同步 和 异步 默认为true 为异步</span></div><div class="line">xhr.onreadystatechange = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">  <span class="keyword">if</span>(xhr.readyState === <span class="number">4</span>)&#123;</div><div class="line">    <span class="keyword">if</span>(xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>)&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'请求成功'</span>)</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(xhr.status &gt;= <span class="number">400</span>)&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'请求失败'</span>)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">xhr.send()</div><div class="line"><span class="comment">// send 可以设置请求体 即请求的第四部分</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>二、JS设置请求头</p>
-</blockquote>
-<p>2.1 通过setRequestHeader()的方法可以设置请求头。<br>    设置响应头有2个注意事项：<br>2.1.1 设置响应头需要在open()和send()之间。<br>2.1.2 如设置多行,浏览器会合并成一行。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</div><div class="line">xhr.open(<span class="string">'post'</span>,<span class="string">'/xxx'</span>,<span class="literal">true</span>) <span class="comment">//第一部分</span></div><div class="line">xhr.setRequestHeader(<span class="string">'Content-Type'</span>,<span class="string">'application/x-www-from-encoded'</span>) <span class="comment">//第二部分</span></div><div class="line">xhr.send(<span class="string">'a=1&amp;b=2'</span>)<span class="comment">//第四部分</span></div></pre></td></tr></table></figure></p>
-<p>2.2 通过send()可以设置请求的第四部分即请求体。<br>一般如果是GET请求，浏览器会屏蔽第四部分，如果是POST请求，浏览器会展示出来。<br>  具体查看方法:<br>    2.2.1 打开浏览器控制台<br>    2.2.2 点到Network,点到文件,点击View Source,就可以看到请求头,请求体了。</p>
-<blockquote>
-<p>三、JS读取响应的任意一个部分<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">let xhr = new XMLHttpRequest()</div><div class="line">xhr<span class="selector-class">.status</span>      <span class="comment">// 获取状态码,第一部分</span></div><div class="line">xhr<span class="selector-class">.statusText</span>  <span class="comment">// 获取状态码描述，第一部分</span></div><div class="line">xhr.getResponseHeader()     <span class="comment">// 获取响应头，第二部分</span></div><div class="line">xhr.getAllResponseHeaders() <span class="comment">// 获取所有响应头，第二部分</span></div><div class="line">xhr<span class="selector-class">.responseText</span> <span class="comment">// 获取响应描述即后台的 response.write()中的内容，第四部分</span></div></pre></td></tr></table></figure></p>
-<p>四、封装一个AJAX**<br>3.1.1第一次封装<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.jquery = <span class="function"><span class="keyword">function</span>(<span class="params">nodeOrSelector</span>)</span>&#123;</div><div class="line">  <span class="keyword">let</span> nodes = &#123;</div><div class="line">    <span class="number">0</span>:nodeOrSelector,</div><div class="line">    <span class="attr">length</span>:<span class="number">1</span></div><div class="line">  &#125;</div><div class="line">  nodes.addClass = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">  ndoes.text = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">  <span class="keyword">return</span> nodes</div><div class="line">&#125;</div><div class="line"><span class="built_in">window</span>.$ = <span class="built_in">window</span>.jquery</div><div class="line"><span class="built_in">window</span>.jquery.ajax = <span class="function"><span class="keyword">function</span>(<span class="params">url,method,requestBody,successFn,failFn,headers</span>)</span>&#123;</div><div class="line">  <span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</div><div class="line">  xhr.open(method,url)</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> headers)&#123;</div><div class="line">    <span class="keyword">let</span> value = headers[key]</div><div class="line">    xhr.setRequestHeader(key,value)</div><div class="line">  &#125;</div><div class="line">  xhr.onreadystatechange = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">    <span class="keyword">if</span>(xhr.readyState === <span class="number">4</span>)&#123;</div><div class="line">      <span class="keyword">if</span>(xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>)&#123;</div><div class="line">        successfn.call(<span class="literal">undefined</span>,xhr.responseText)</div><div class="line">      &#125;<span class="keyword">else</span> <span class="keyword">if</span>(xhr.status &gt;= <span class="number">400</span>)&#123;</div><div class="line">        failFn.call(<span class="literal">undefined</span>,xhr.status)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  xhr.send(requestBody)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 调用方法 假设有一个按钮id为button</span></div><div class="line"><span class="keyword">let</span> button = <span class="built_in">document</span>.querySector(<span class="string">'button'</span>)</div><div class="line">button.addEventListener(click,(e)=&gt;&#123;</div><div class="line">  <span class="keyword">let</span> f1 = <span class="function">(<span class="params">x</span>)=&gt;</span>successFn.call(<span class="literal">undefined</span>,x)</div><div class="line">  <span class="keyword">let</span> f2 = <span class="function">(<span class="params">x</span>)=&gt;</span>&#123;<span class="built_in">console</span>.log(x.status)&#125;</div><div class="line">  <span class="built_in">window</span>.jquery.ajax(<span class="string">'/xxx'</span>, <span class="string">'post'</span>, <span class="string">'a=1&amp;&amp;b=2'</span>,f1,f2,<span class="literal">null</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-</blockquote>
-<p>这个方法设置有一个缺点,传参很乱容易写出别人无法理解的函数比如没有请求体和设置请求头的<br><code>window.jquery.ajax(&#39;get&#39;,&#39;/xxx&#39;,null,null,successFn,failFn)</code>这样不好,容易忘,所以来优化一下代码。 </p>
-<p>3.1.2第一次优化<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 上面全一样</span></div><div class="line"><span class="built_in">window</span>.jquery.ajax = <span class="function"><span class="keyword">function</span>(<span class="params">options</span>)</span>&#123;</div><div class="line">  <span class="keyword">let</span> url = options.url</div><div class="line">  <span class="keyword">let</span> method = options.method</div><div class="line">  <span class="keyword">let</span> requestBody = options.requestBody</div><div class="line">  <span class="keyword">let</span> successFn = options.successFn</div><div class="line">  <span class="keyword">let</span> failFn = options.failFn</div><div class="line">  <span class="keyword">let</span> headers = options.headers</div><div class="line">  </div><div class="line">  <span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</div><div class="line">  xhr.open(method,url)</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> headers)&#123;</div><div class="line">    <span class="keyword">let</span> value = headers[key]</div><div class="line">    xhr.setRequestHeader(key,value)</div><div class="line">  &#125;</div><div class="line">  xhr.onreadystatechange = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">    <span class="keyword">if</span>(xhr.readyState === <span class="number">4</span>)&#123;</div><div class="line">      <span class="keyword">if</span>(xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>)&#123;</div><div class="line">        successfn.call(<span class="literal">undefined</span>,xhr.responseText)</div><div class="line">      &#125;<span class="keyword">else</span> <span class="keyword">if</span>(xhr.status &gt;= <span class="number">400</span>)&#123;</div><div class="line">        failFn.call(<span class="literal">undefined</span>,xhr.status)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  xhr.send(requestBody)</div><div class="line">&#125;</div><div class="line"></div><div class="line"> <span class="comment">// 把变量以对象的形式调用 就不会出现上面那种尴尬的形式了</span></div><div class="line"><span class="built_in">window</span>.jquery.ajax(&#123;</div><div class="line">  <span class="string">'url'</span>:<span class="string">'/xxx'</span>,</div><div class="line">  <span class="string">'method'</span>:<span class="string">'post'</span>,</div><div class="line">  <span class="string">'requestBody'</span>:<span class="string">'a=1&amp;&amp;b=2'</span>,</div><div class="line">  <span class="string">'headers'</span>:&#123;</div><div class="line">    <span class="string">'lee'</span>:<span class="number">18</span>  <span class="comment">// 可以设置任何请求头</span></div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// 两个回调函数</span></div><div class="line">  <span class="string">'successFn'</span>:<span class="function">(<span class="params">x</span>)=&gt;</span>&#123;</div><div class="line">      f1.call(<span class="literal">undefined</span>,x)</div><div class="line">      f2.call(<span class="literal">undefined</span>,x)</div><div class="line">    &#125;,</div><div class="line">  <span class="string">'failFn'</span>:<span class="function">(<span class="params">x</span>)=&gt;</span>&#123;</div><div class="line">          <span class="built_in">console</span>.log(x)</div><div class="line">          <span class="built_in">console</span>.log(x.status)</div><div class="line">          <span class="built_in">console</span>.log(x.responseText)</div><div class="line">    &#125;  </div><div class="line">  &#125;)</div></pre></td></tr></table></figure></p>
-<p>3.1.3第二次优化<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 解构赋值</span></div><div class="line"><span class="comment">// 把上面6个let 以下面形式 声明</span></div><div class="line"><span class="keyword">let</span> &#123;url,method,headers,successFn,failFn,requestBody&#125; = options</div><div class="line"></div><div class="line"><span class="comment">// 再次优化</span></div><div class="line"><span class="comment">// 这样就可以了</span></div><div class="line"><span class="built_in">window</span>.jquery.ajax = <span class="function"><span class="keyword">function</span>(<span class="params">&#123;url,method,headers,successFn,failFn,requestBody&#125;</span>)</span>&#123;&#125;</div></pre></td></tr></table></figure></p>
-<p>3.2Promise形式的封装<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.jquery.ajax = <span class="function"><span class="keyword">function</span>(<span class="params">&#123;url,method,requestBody,headers&#125;</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>&#123;</div><div class="line">    <span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</div><div class="line">      xhr.open(method,url)</div><div class="line">      <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> headers)&#123;</div><div class="line">        <span class="keyword">let</span> value = headers[key]</div><div class="line">        xhr.setRequestHeader(key,value)</div><div class="line">      &#125;</div><div class="line">      xhr.onreadystatechange = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">        <span class="keyword">if</span>(xhr.readyState === <span class="number">4</span>)&#123;</div><div class="line">          <span class="keyword">if</span>(xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>)&#123;</div><div class="line">            resolve.call(<span class="literal">undefined</span>,xhr.responseText)</div><div class="line">          &#125;<span class="keyword">else</span> <span class="keyword">if</span>(xhr.status &gt;= <span class="number">400</span>)&#123;</div><div class="line">            reject.call(<span class="literal">undefined</span>,xhr.status)</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      xhr.send(requestBody)    </div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 调用</span></div><div class="line"><span class="built_in">window</span>.jquery.ajax(&#123;</div><div class="line">  <span class="string">'url'</span>:<span class="string">'/xxx'</span>,</div><div class="line">  <span class="string">'method'</span>:<span class="string">'post'</span>,</div><div class="line">  <span class="string">'requestBody'</span>:<span class="string">'a=1&amp;&amp;b=2'</span>,</div><div class="line">  <span class="string">'headers'</span>:&#123;</div><div class="line">    <span class="string">'lee'</span>:<span class="number">18</span>  <span class="comment">// 可以设置任何请求头</span></div><div class="line">    &#125;</div><div class="line">  &#125;).then(</div><div class="line">    <span class="function">(<span class="params">text</span>)=&gt;</span>&#123;<span class="built_in">console</span>.log(text)&#125;, <span class="comment">// resolve</span></div><div class="line">    (xhr)=&gt;&#123;<span class="built_in">console</span>.log(xhr)&#125;    <span class="comment">// reject</span></div><div class="line">    )</div></pre></td></tr></table></figure></p>
+        <p>首先用一个立即执行函数把他们都包裹起来；</p>
+<p>我们使用<code>document.querySelectorAll</code>函数查找所有匹配的<code>HTMLElement</code>并绑定到返回的对象上。我们还给返回的<code>q</code>对象创建了<code>html</code>函数，用来返回匹配对象的<code>innerHTML</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> $ = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> (<span class="function"><span class="keyword">function</span>(<span class="params">selector</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> q = &#123;&#125;;</div><div class="line">    q.selector = selector;</div><div class="line">    q.nodes = <span class="built_in">document</span>.querySelectorAll(selector);</div><div class="line">    q.html = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="built_in">Array</span>.prototype.map.call(<span class="keyword">this</span>.nodes, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> node.innerHTML</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;)</div><div class="line">&#125;)();</div><div class="line"></div><div class="line"><span class="comment">// 第一个：自己写一个 each 函数</span></div><div class="line">q.each = <span class="function"><span class="keyword">function</span>(<span class="params">action</span>)</span>&#123;</div><div class="line">      <span class="keyword">this</span>.nodes.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item, i</span>)</span>&#123;</div><div class="line">        action(item,i)</div><div class="line">      &#125;)</div><div class="line">      <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="comment">// 第二个：自己写个 CSS 功能</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">doCSS</span>(<span class="params">prop,val</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> args = argument</div><div class="line">  <span class="keyword">if</span>(<span class="built_in">Boolean</span>(val))&#123;    <span class="comment">//setter</span></div><div class="line">    <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">node, i</span>)</span>&#123;</div><div class="line">        CSSStyleDeclaration.prototype.setProperty.apply(node.style,args);</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span></div><div class="line">  &#125;<span class="keyword">else</span>&#123;                   <span class="comment">//getter</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.nodes[<span class="number">0</span>].style[prop];</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">q.css = <span class="function"><span class="keyword">function</span>(<span class="params">prop, val</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> doCSS.call(<span class="keyword">this</span>, prop,val);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 第三个给dom对象添加属性的方法</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">doATTR</span>(<span class="params">prop, val</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> args = <span class="built_in">arguments</span></div><div class="line">  <span class="keyword">if</span>(<span class="built_in">Boolean</span>(val))&#123;</div><div class="line">    <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">node, i</span>)</span>&#123;</div><div class="line">      Element.prototype.setAttribute.apply(node, args);</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.prototype.map.call(<span class="keyword">this</span>.nodes,</div><div class="line">      <span class="function"><span class="keyword">function</span>(<span class="params">node</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> node.getAttribute(prop);</div><div class="line">      &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">q.attr = <span class="function"><span class="keyword">function</span>(<span class="params">prop, val</span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> doATTR.call(<span class="keyword">this</span>, prop, val);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//测试 each 函数</span></div><div class="line">$(<span class="string">'p'</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params">item, i</span>) </span>&#123;</div><div class="line">   <span class="built_in">console</span>.log(item.innerHTML)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 测试 CSS 功能</span></div><div class="line">$(<span class="string">'p'</span>).css(<span class="string">'font-size'</span>, <span class="string">"20px"</span>).css(<span class="string">'color'</span>, <span class="string">'green'</span>)</div><div class="line">$(<span class="string">'p'</span>).css(<span class="string">'color'</span>)   <span class="comment">//green</span></div><div class="line"></div><div class="line"><span class="comment">// 测试给dom对象添加属性的方法</span></div><div class="line">$(<span class="string">'#test'</span>).attr(<span class="string">'test'</span>, <span class="string">'hello'</span>)</div><div class="line"><span class="built_in">console</span>.log($(<span class="string">'#test'</span>).attr(<span class="string">'test'</span>)) <span class="comment">//hello</span></div></pre></td></tr></table></figure>
 
       
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -219,11 +177,11 @@ AJAX即Async JavaScript And Xml 是异步的JS和Xml的技术。">
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">异步</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Basic</a>
         		</li>
       		
 		</ul>
@@ -234,82 +192,10 @@ AJAX即Async JavaScript And Xml 是异步的JS和Xml的技术。">
       
 
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/02/17/16AJAX/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/02/21/19缓存/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          储存
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2018/02/15/03移动端配适/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">移动端配适</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -329,14 +215,89 @@ AJAX即Async JavaScript And Xml 是异步的JS和Xml的技术。">
 
 
 
-  
-  
-  
 
   
-
+    <article id="post-01GitHub-for-babies" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/21/01GitHub-for-babies/">GitHub for babies</a>
+    </h1>
   
 
+        
+        <a href="/2018/01/21/01GitHub-for-babies/" class="archive-article-date">
+  	<time datetime="2018-01-21T00:33:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>《GitHub for babies》   又名：如何让我的天才男友入门GitHub</p>
+<p>搭建博客走了很多弯路，记录一下我摔的坑。<strong>（基础名词自己谷歌一下）</strong></p>
+<hr>
+<h3 id="第一步：注册github"><a href="#第一步：注册github" class="headerlink" title="第一步：注册github"></a>第一步：注册github</h3><p>这个是最简单的了，邮箱＋密码就能实现。<br>别的网站总能告诉你</p>
+<blockquote>
+<p>想学github,就要先知道git是什么~<br>
+        
+          <a class="article-more-a" href="/2018/01/21/01GitHub-for-babies/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/11/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span>
+    </nav>
   
 
 
@@ -359,8 +320,8 @@ AJAX即Async JavaScript And Xml 是异步的JS和Xml的技术。">
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
@@ -418,11 +379,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -430,7 +391,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -438,11 +399,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -454,7 +415,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">

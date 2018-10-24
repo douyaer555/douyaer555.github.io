@@ -6,24 +6,39 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>手搭Server.js | wangsiyuan</title>
+  <title>继承 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="自己动手搭建一个服务器 server.js
+  <meta name="description" content="上一小节我们介绍了 创建对象 的 7 种方式，里面预警了好多次 继承；
+今天我们也要介绍 6 种继承发方式：原型链、构造函数、组合式、原型式、寄生式、寄生组合式
+最常用的是 ：【组合继承】最理想的是：【寄生组合式】
+想要讲清楚 继承 的概念，我们先回到 原型链 的基础知识，想想 构造函数、原型和实例之间的关系
 
-一、server.js 1.0根据我的指示在逐步输入：1、桌面打开gitbash，输入 mkdir server,创建一个名为 server 的文件夹2、gitbash输入: cd server ，进入文件夹3、gitbash输入：touch server.js ，新建一个 server.js4.1 去我的github找到源码链接，在gitbash输">
+一、原型链继承
+
+每个构造函数都有一个原型对象； Person.prototype原型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="手搭Server.js">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/02/22/04手搭Server-js/index.html">
+<meta property="og:title" content="继承">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/10/23/11继承/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="自己动手搭建一个服务器 server.js
+<meta property="og:description" content="上一小节我们介绍了 创建对象 的 7 种方式，里面预警了好多次 继承；
+今天我们也要介绍 6 种继承发方式：原型链、构造函数、组合式、原型式、寄生式、寄生组合式
+最常用的是 ：【组合继承】最理想的是：【寄生组合式】
+想要讲清楚 继承 的概念，我们先回到 原型链 的基础知识，想想 构造函数、原型和实例之间的关系
 
-一、server.js 1.0根据我的指示在逐步输入：1、桌面打开gitbash，输入 mkdir server,创建一个名为 server 的文件夹2、gitbash输入: cd server ，进入文件夹3、gitbash输入：touch server.js ，新建一个 server.js4.1 去我的github找到源码链接，在gitbash输">
-<meta property="og:updated_time" content="2018-10-22T01:54:00.037Z">
+一、原型链继承
+
+每个构造函数都有一个原型对象； Person.prototype原型">
+<meta property="og:updated_time" content="2018-10-23T12:48:18.682Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="手搭Server.js">
-<meta name="twitter:description" content="自己动手搭建一个服务器 server.js
+<meta name="twitter:title" content="继承">
+<meta name="twitter:description" content="上一小节我们介绍了 创建对象 的 7 种方式，里面预警了好多次 继承；
+今天我们也要介绍 6 种继承发方式：原型链、构造函数、组合式、原型式、寄生式、寄生组合式
+最常用的是 ：【组合继承】最理想的是：【寄生组合式】
+想要讲清楚 继承 的概念，我们先回到 原型链 的基础知识，想想 构造函数、原型和实例之间的关系
 
-一、server.js 1.0根据我的指示在逐步输入：1、桌面打开gitbash，输入 mkdir server,创建一个名为 server 的文件夹2、gitbash输入: cd server ，进入文件夹3、gitbash输入：touch server.js ，新建一个 server.js4.1 去我的github找到源码链接，在gitbash输">
+一、原型链继承
+
+每个构造函数都有一个原型对象； Person.prototype原型">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -149,32 +164,69 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-04手搭Server-js" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-11继承" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      手搭Server.js
+      继承
     </h1>
   
 
         
-        <a href="/2018/02/22/04手搭Server-js/" class="archive-article-date">
-  	<time datetime="2018-02-22T01:21:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-22</time>
+        <a href="/2018/10/23/11继承/" class="archive-article-date">
+  	<time datetime="2018-10-23T12:37:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>自己动手搭建一个服务器 server.js</p>
+        <p>上一小节我们介绍了 创建对象 的 7 种方式，里面预警了好多次 <em>继承</em>；</p>
+<p>今天我们也要介绍 6 种继承发方式：<br>原型链、构造函数、组合式、原型式、寄生式、寄生组合式</p>
+<p><em>最常用的是</em> ：【组合继承】<br><em>最理想的是</em>：【寄生组合式】</p>
+<p>想要讲清楚 继承 的概念，我们先回到 原型链 的基础知识，想想 构造函数、原型和实例之间的关系</p>
+<blockquote>
+<p>一、原型链继承</p>
 </blockquote>
-<h2 id="一、server-js-1-0"><a href="#一、server-js-1-0" class="headerlink" title="一、server.js 1.0"></a>一、server.js 1.0</h2><p>根据我的指示在逐步输入：<br>1、桌面打开gitbash，输入 <code>mkdir server</code>,创建一个名为 server 的文件夹<br>2、gitbash输入: <code>cd server</code> ，进入文件夹<br>3、gitbash输入：<code>touch server.js</code> ，新建一个 <code>server.js</code><br>4.1 去我的github找到<a href="https://github.com/wangsiyuan233/jirengu--fangfang/blob/master/server.js" target="_blank" rel="external">源码</a>链接，在gitbash输入：<code>curl http://... &gt;server.js</code> （注意源码是否一致）<br>4.2 直接复制下面的代码到 <code>server.js</code><br>5、gitbash输入：<code>node server.js 8080</code> , 返回语句为：恭喜你小源！监听8080成功 请用在空中转体720度然后用电饭煲打开 <code>http://localhost:8080</code><br>6、【保持第一个gitbash不关闭的情况下在第二个gitbash并输入】：<br>6.1 <code>curl &quot;http://localhost:8080&quot;</code>时返回：  //打字太麻烦了自己打开试试就知道了<br>6.2 <code>curl &quot;http://localhost:8080/xxx&quot;</code>时返回：  //打字太麻烦了自己打开试试就知道了<br>6.3 <code>curl &quot;http://localhost:8080?name=yuan&quot;</code>时返回：   //打字太麻烦了自己打开试试就知道了<br>7、总结：当我们发送一个请求的时候，服务器是会返回给我们想要的东西<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</div><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</div><div class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>)</div><div class="line"><span class="keyword">var</span> port = process.argv[<span class="number">2</span>]</div><div class="line"></div><div class="line"><span class="keyword">if</span>(!port)&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'请指定端口号好不啦？--&gt; \nnode server.js 8888 '</span>)</div><div class="line">  process.exit(<span class="number">1</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> server = http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> parsedUrl = url.parse(request.url, <span class="literal">true</span>)</div><div class="line">  <span class="keyword">var</span> path = request.url</div><div class="line">  <span class="keyword">var</span> query = <span class="string">''</span></div><div class="line">  <span class="keyword">if</span>(path.indexOf(<span class="string">'?'</span>) &gt;= <span class="number">0</span>)&#123; query = path.substring(path.indexOf(<span class="string">'?'</span>)) &#125;</div><div class="line">  <span class="keyword">var</span> pathNoQuery = parsedUrl.pathname</div><div class="line">  <span class="keyword">var</span> queryObject = parsedUrl.query</div><div class="line">  <span class="keyword">var</span> method = request.method</div><div class="line"></div><div class="line">  <span class="comment">/******** 从这里开始看，上面不要看 ************/</span></div><div class="line"></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'小源说：得到 HTTP 路径\n'</span> + path) </div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'小源说：查询字符串为\n'</span> + query)</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'小源说：不含查询字符串的路径为\n'</span> + pathNoQuery)</div><div class="line">  <span class="comment">//均出现在bash上</span></div><div class="line"></div><div class="line">  <span class="comment">/******** 代码结束，下面不要看 ************/</span></div><div class="line">&#125;) <span class="comment">// var server = 的反括号  不要删！！</span></div><div class="line"></div><div class="line">server.listen(port)</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'恭喜你小源！监听 '</span> + port + <span class="string">' 成功\n请用在空中转体720度然后用电饭煲打开 http://localhost:'</span> + port)</div></pre></td></tr></table></figure></p>
-<h2 id="二、server-js-1-1"><a href="#二、server-js-1-1" class="headerlink" title="二、server.js 1.1"></a>二、server.js 1.1</h2><p>1、发送不同的请求，通过代码来筛选符合条件的内容，否则就404你。<br>2、response.setHeader(‘Content-Type’,’text/html;charset=utf-8’) 需要理解+熟记<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</div><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</div><div class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>)</div><div class="line"><span class="keyword">var</span> port = process.argv[<span class="number">2</span>]</div><div class="line"></div><div class="line"><span class="keyword">if</span>(!port)&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'请指定端口号好不啦？--&gt; \nnode server.js 8888 '</span>)</div><div class="line">  process.exit(<span class="number">1</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> server = http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> parsedUrl = url.parse(request.url, <span class="literal">true</span>)</div><div class="line">  <span class="keyword">var</span> path = request.url</div><div class="line">  <span class="keyword">var</span> query = <span class="string">''</span></div><div class="line">  <span class="keyword">if</span>(path.indexOf(<span class="string">'?'</span>) &gt;= <span class="number">0</span>)&#123; query = path.substring(path.indexOf(<span class="string">'?'</span>)) &#125;</div><div class="line">  <span class="keyword">var</span> pathNoQuery = parsedUrl.pathname</div><div class="line">  <span class="keyword">var</span> queryObject = parsedUrl.query</div><div class="line">  <span class="keyword">var</span> method = request.method</div><div class="line"></div><div class="line">  <span class="comment">/******** 从这里开始看，上面不要看 ************/</span></div><div class="line"></div><div class="line">	<span class="keyword">if</span>(path == <span class="string">'/'</span>)&#123;  <span class="comment">//只是路径，和文件的格式对应的没有关系</span></div><div class="line">    	<span class="built_in">console</span>.log(<span class="string">'小源说：得到 HTTP 路径\n'</span> + path) <span class="comment">//出现在bash上</span></div><div class="line">    	response.end()</div><div class="line">	&#125;<span class="keyword">else</span> <span class="keyword">if</span> (path == <span class="string">'/index'</span>)&#123;</div><div class="line">    	response.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/html;charset=utf-8'</span>)</div><div class="line">    	response.write(<span class="string">'我pang回来了小源！'</span>) <span class="comment">//出现在浏览器上</span></div><div class="line">    	response.end()</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">    	response.statusCode == <span class="number">404</span></div><div class="line">    	response.end()</div><div class="line">	&#125;</div><div class="line"></div><div class="line">  <span class="comment">/******** 代码结束，下面不要看 ************/</span></div><div class="line">&#125;) <span class="comment">// var server = 的反括号  不要删！！</span></div><div class="line"></div><div class="line">server.listen(port)</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'恭喜你小源！监听 '</span> + port + <span class="string">' 成功\n请用在空中转体720度然后用电饭煲打开 http://localhost:'</span> + port)</div></pre></td></tr></table></figure></p>
-<h2 id="三、server-js-1-2"><a href="#三、server-js-1-2" class="headerlink" title="三、server.js 1.2"></a>三、server.js 1.2</h2><p>write里的内容由setHeader里的Content-Type决定，和路径是什么无关<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</div><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</div><div class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>)</div><div class="line"><span class="keyword">var</span> port = process.argv[<span class="number">2</span>]</div><div class="line"></div><div class="line"><span class="keyword">if</span>(!port)&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'请指定端口号好不啦？--&gt; \nnode server.js 8888 '</span>)</div><div class="line">  process.exit(<span class="number">1</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> server = http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> parsedUrl = url.parse(request.url, <span class="literal">true</span>)</div><div class="line">  <span class="keyword">var</span> path = request.url</div><div class="line">  <span class="keyword">var</span> query = <span class="string">''</span></div><div class="line">  <span class="keyword">if</span>(path.indexOf(<span class="string">'?'</span>) &gt;= <span class="number">0</span>)&#123; query = path.substring(path.indexOf(<span class="string">'?'</span>)) &#125;</div><div class="line">  <span class="keyword">var</span> pathNoQuery = parsedUrl.pathname</div><div class="line">  <span class="keyword">var</span> queryObject = parsedUrl.query</div><div class="line">  <span class="keyword">var</span> method = request.method</div><div class="line"></div><div class="line">  <span class="comment">/******** 从这里开始看，上面不要看 ************/</span></div><div class="line"></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'HTTP 路径为\n'</span> + path)</div><div class="line">  <span class="keyword">if</span>(path == <span class="string">'/style.js'</span>)&#123; <span class="comment">//只是路径，和文件的格式对应的没有关系</span></div><div class="line">    response.setHeader(<span class="string">'Content-Type'</span>, <span class="string">'text/css; charset=utf-8'</span>)</div><div class="line">    response.write(<span class="string">'body&#123;background-color: #ddd;&#125;h1&#123;color: red;&#125;'</span>)</div><div class="line">    response.end()</div><div class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(path == <span class="string">'/script.html'</span>)&#123;</div><div class="line">    response.setHeader(<span class="string">'Content-Type'</span>, <span class="string">'text/javascript; charset=utf-8'</span>)</div><div class="line">    response.write(<span class="string">'alert("这是JS执行的")'</span>)</div><div class="line">    response.end()</div><div class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(path == <span class="string">'/index.css'</span>)&#123;</div><div class="line">    response.setHeader(<span class="string">'Content-Type'</span>, <span class="string">'text/html; charset=utf-8'</span>)</div><div class="line">    response.write(<span class="string">'&lt;!DOCTYPE&gt;\n&lt;html&gt;'</span>  + </div><div class="line">      <span class="string">'&lt;head&gt;&lt;link rel="stylesheet" href="/style.js"&gt;'</span> +</div><div class="line">      <span class="string">'&lt;/head&gt;&lt;body&gt;'</span>  +</div><div class="line">      <span class="string">'&lt;h1&gt;你好&lt;/h1&gt;'</span> +</div><div class="line">      <span class="string">'&lt;script src="/script.html"&gt;&lt;/script&gt;'</span> +</div><div class="line">      <span class="string">'&lt;/body&gt;&lt;/html&gt;'</span>)</div><div class="line">    response.end()</div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">    response.statusCode = <span class="number">404</span></div><div class="line">    response.end()</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">/******** 代码结束，下面不要看 ************/</span></div><div class="line">&#125;) <span class="comment">// var server = 的反括号  不要删！！</span></div><div class="line"></div><div class="line">server.listen(port)</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'恭喜你小源！监听 '</span> + port + <span class="string">' 成功\n请用在空中转体720度然后用电饭煲打开 http://localhost:'</span> + port)</div></pre></td></tr></table></figure></p>
+<p>每个构造函数都有一个原型对象； <code>Person.prototype</code><br>原型对象都包含了一个指向构造函数的指针; <code>Person.prototype.constructor === Person</code><br>而实例都包含一个指向原型对象的内部指针; <code>person1._proto_ === Person.prototype</code></p>
+<p>OK,上面的概念我们熟悉得不能再熟悉了，那么<br><a id="more"></a><br>我们让 <em>原型对象 A 等于另一个类型的实例 b</em>;<br><em>此时的原型对象 A 包含指向另一个原型 B 的指针</em>;<br><em>相应地，另一个原型 B 中也包含着一个指向另一个构造函数的指针</em><br>上面就是 原型链 的基本概念</p>
+<h2 id="继承的本质是：重写原型对象，代之以一个新类型的实例"><a href="#继承的本质是：重写原型对象，代之以一个新类型的实例" class="headerlink" title="继承的本质是：重写原型对象，代之以一个新类型的实例"></a>继承的本质是：重写原型对象，代之以一个新类型的实例</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>)</span>&#123;<span class="keyword">this</span>.property = <span class="literal">true</span>;&#125;</div><div class="line">A.prototype.getAValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.property;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>)</span>&#123;<span class="keyword">this</span>.property = <span class="literal">false</span>;&#125;</div><div class="line"></div><div class="line"><span class="comment">// B 继承了 A</span></div><div class="line">B.prototype = <span class="keyword">new</span> A();</div><div class="line"></div><div class="line">B.prototype.getBValue() = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.Bproperty;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// instance 是 B 的实例</span></div><div class="line"><span class="keyword">var</span> instance = <span class="keyword">new</span> B();</div><div class="line">alert(instance.getAValue())  <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<p>上面的代码中，<code>B</code> 继承了 A，这种继承是通过创建 <code>A</code> 的实例，并将该实例赋值给 <code>B.prototype</code> 实现的；<br>我们没有使用 <code>B</code> 默认的原型，而是给它换了一个新原型，这个新原型就是 <code>A</code> 的实例；<br>OK，这个新原型很厉害，不仅有 <code>A</code> 的实例的属性和方法，而且它的内部还有一个指针，指向了 <code>A</code> 的原型；<br>这里需要注意的是，<code>instance.contructor === A</code>，因为 <code>B</code> 的原型指向了 <code>A</code> 的原型，而 A 的原型的 <code>constructor</code> 指向了 <code>A</code>；<br>最后我们不能忘记的是： A 继承了 Object，所有函数的默认原型都是 Object 的实例。</p>
+<p><em>【两种确定原型和实例关系的方法】</em><br>1、<code>alert(instance instanceof Object) // true</code><br>2、<code>alert(Object.prototype.isPrototypeOf(instance)); // true</code></p>
+<p>通过原型链实现继承时，<strong>不能使用对象字面量创建原型方法</strong>，因为这样会切断原型链， A 和 B 之间就没有关系了。</p>
+<p><em>原型链实现继承的缺点</em><br>1、和 创建对象 比较一下，如果原型中包含引用类型，所有的实例中都有新添加的私有属性了，然而我们当然不希望发生这么尴尬的局面；<br>2、没有办法在不影响所有实例的情况下，给父类型的构造函数传参。<br>3、让我们看看 借用构造函数 实现继承效果怎么样~</p>
+<blockquote>
+<p>二、借用构造函数继承</p>
+</blockquote>
+<p>核心技术是：在子类构造函数的内部调用父类的构造函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">// 继承了 A ，同时还传递了参数</span></div><div class="line">  A.call(<span class="keyword">this</span>,<span class="string">'Sue'</span>);</div><div class="line">  <span class="comment">// 实例属性</span></div><div class="line">  <span class="keyword">this</span>.age = <span class="number">22</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> instance = <span class="keyword">new</span> B();</div><div class="line">alert(instance.name); <span class="comment">//'Sue'</span></div><div class="line">alert(instance.age); <span class="comment">//22</span></div></pre></td></tr></table></figure></p>
+<p><em>构造函数实现继承的缺点</em><br>1、方法都在构造函数中定义，调用函数不方便；<br>2、父类型中定义的方法，对子类型也是不可见的<br>3、下面介绍一下最常见的 【组合拳】</p>
+<blockquote>
+<p>三、组合类型</p>
+</blockquote>
+<p><em>传说中最常用的继承方法哦！</em><br>用 原型链 实现对属性和方法的继承，用构造函数实现对实例属性的继承<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">  <span class="keyword">this</span>.colors = [<span class="string">'red'</span>,<span class="string">'blue'</span>,<span class="string">'green'</span>];</div><div class="line">&#125;</div><div class="line">A.prototype,sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="keyword">this</span>.name);&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">  A.call(<span class="keyword">this</span>.name); <span class="comment">// 第二次调用 A()</span></div><div class="line">  <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line"></div><div class="line">B.prototype = <span class="keyword">new</span> A(); <span class="comment">// 第一次调用 A()</span></div><div class="line">B.prototype.construct = B;</div><div class="line">B.prototype.sayAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="keyword">this</span>.age);&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> instance1 = <span class="keyword">new</span> B(<span class="string">'Sue'</span>,<span class="number">22</span>);</div><div class="line">instance1.colors.push(<span class="string">'black'</span>);</div><div class="line">alert(instance1.colors); <span class="comment">// 'red,blue,greed,black'</span></div><div class="line">instance1.sayName(); <span class="comment">// Sue </span></div><div class="line">instance1.sayAge(); <span class="comment">// 22</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> instance2 = <span class="keyword">new</span> B(<span class="string">'Siwei'</span>,<span class="number">23</span>);</div><div class="line">alert(instance2.colors); <span class="comment">// 'red,blue,greed'</span></div><div class="line">instance2.sayName(); <span class="comment">// Siwei</span></div><div class="line">instance2.sayAge(); <span class="comment">// 23</span></div></pre></td></tr></table></figure></p>
+<p>惊喜吧，和创建对象里面的组合拳是一样的效果哦<br>缺点：无论什么情况都会调用两次父类构造函数，一次是在创建子类型时，另一次是在子类型构造函数内部（代码内已标明）<br>所以我们需要 【寄生组合式继承】</p>
+<blockquote>
+<p>四、寄生组合式</p>
+</blockquote>
+<p><em>传说中最理想的继承方法哦！</em><br><figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="title">function</span> inheritProto<span class="keyword">type</span>(<span class="type">B</span>,<span class="type">A</span>)&#123;</div><div class="line">  // 创建父类原型的副本</div><div class="line">  var prototype = object(<span class="type">A</span>.prototype); </div><div class="line">  // 为创建的副本添加 constructor 属性</div><div class="line">  prototype.constructor = <span class="type">B</span>; </div><div class="line">  // 将副本赋值给子类的原型</div><div class="line">  <span class="type">B</span>.prototype = prototype; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>下面我们可以在日常环境中调用 <code>inheritPrototype()</code>函数了<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">  <span class="keyword">this</span>.colors = [<span class="string">'red'</span>,<span class="string">'green'</span>,<span class="string">'blue'</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line">A.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="keyword">this</span>.name);&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">  A.call(<span class="keyword">this</span>.name);</div><div class="line">  <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line"></div><div class="line">inheritPrototype(B,A); <span class="comment">// 在这儿调用了！~</span></div><div class="line"></div><div class="line">B.prototype.sayAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="keyword">this</span>.age);&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>最后介绍两种不常用的继承方法</p>
+<blockquote>
+<p>五、原型式继承</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">  <span class="attr">name</span> : <span class="string">'Sue'</span>,</div><div class="line">  <span class="attr">friends</span>: [<span class="string">'Lily1'</span>,<span class="string">'Lily2'</span>,<span class="string">'Lily3'</span>]</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> anotherPerson = <span class="built_in">Object</span>.create(person);</div><div class="line">anotherPerson.name = <span class="string">'Lily4'</span>;</div><div class="line">anotherPerson.friends.push(<span class="string">'Lily5'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> yetAnotherPerson = <span class="built_in">Object</span>.create(person);</div><div class="line">yetAnotherPerson.name = <span class="string">'Lily6'</span>;</div><div class="line">yetAnotherPerson.friends.push(<span class="string">'Lily7'</span>)</div><div class="line"></div><div class="line">alert(person.friends) <span class="comment">// 'Lily1,Lily2,Lily3,Lily5,Lily7'</span></div></pre></td></tr></table></figure>
+<p>灵魂当然是 <code>Object.create()</code> 啦！</p>
+<blockquote>
+<p>六、寄生式继承</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createAnother</span><span class="params">(original)</span></span>&#123;</div><div class="line">  <span class="keyword">var</span> <span class="keyword">clone</span> = object(original);</div><div class="line">  <span class="keyword">clone</span>.sayHi = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">    alert(<span class="string">'hi'</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">clone</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>和工厂模式相类似，即创建一个仅用于封装继承过程的函数，该函数在内部以某种方式来增强对象，最后再像真地是它做了所有工作一样返回对象。</p>
+<p>继承 这一小节是从 创建对象 一节延伸下来的，所以手段极其相似</p>
+<p>关于 <code>ES6</code> 的 <code>extends</code> 继承方法，敬请期待哦！~</p>
 
       
 
@@ -209,7 +261,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">聊聊系列</a>
         		</li>
       		
 		</ul>
@@ -265,7 +317,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/02/22/04手搭Server-js/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/10/23/11继承/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -279,18 +331,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/02/24/22从原型到原型链/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/10/24/15DOM1基础/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          深入理解JavaScript--原型及原型链
+          DOM基础
         
       </div>
     </a>
   
   
-    <a href="/2018/02/21/19缓存/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">储存</div>
+    <a href="/2018/10/22/10创建对象/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">创建对象</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -404,11 +456,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -416,7 +468,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -424,11 +476,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -440,7 +492,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">

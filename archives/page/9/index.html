@@ -6,28 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>聊聊系列(5)-- 继承 | wangsiyuan</title>
+  <title>Archives | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、ES5
-
-在 ES5 中，我们可以使用如下方式解决继承的问题,实现思路就是将子类的原型设置为父类的原型123456789101112131415function Super() &amp;#123;&amp;#125;Super.prototype.getNumber = function() &amp;#123;  return 1&amp;#125;function Sub() &amp;#123;&amp;#125;let s =">
-<meta property="og:type" content="article">
-<meta property="og:title" content="聊聊系列(5)-- 继承">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/08/22/67聊聊系列-5-继承/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="wangsiyuan">
+<meta property="og:url" content="wangsiyuan233.github.io/archives/page/9/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="一、ES5
-
-在 ES5 中，我们可以使用如下方式解决继承的问题,实现思路就是将子类的原型设置为父类的原型123456789101112131415function Super() &amp;#123;&amp;#125;Super.prototype.getNumber = function() &amp;#123;  return 1&amp;#125;function Sub() &amp;#123;&amp;#125;let s =">
-<meta property="og:image" content="https://i.imgur.com/5EPAs20.png">
-<meta property="og:image" content="https://i.imgur.com/UFtvJWC.png">
-<meta property="og:image" content="https://i.imgur.com/rzCp6Ux.png">
-<meta property="og:updated_time" content="2018-10-19T09:09:54.859Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="聊聊系列(5)-- 继承">
-<meta name="twitter:description" content="一、ES5
-
-在 ES5 中，我们可以使用如下方式解决继承的问题,实现思路就是将子类的原型设置为父类的原型123456789101112131415function Super() &amp;#123;&amp;#125;Super.prototype.getNumber = function() &amp;#123;  return 1&amp;#125;function Sub() &amp;#123;&amp;#125;let s =">
-<meta name="twitter:image" content="https://i.imgur.com/5EPAs20.png">
+<meta name="twitter:title" content="wangsiyuan">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -153,196 +139,63 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-67聊聊系列-5-继承" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      聊聊系列(5)-- 继承
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/01/21/01GitHub-for-babies/" class="archive-article-date">
+  	<time datetime="2018-01-21T00:33:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-21</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/01/21/01GitHub-for-babies/">GitHub for babies</a>
     </h1>
   
 
-        
-        <a href="/2018/08/22/67聊聊系列-5-继承/" class="archive-article-date">
-  	<time datetime="2018-08-22T13:11:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>一、ES5</p>
-</blockquote>
-<p>在 ES5 中，我们可以使用如下方式解决继承的问题,实现思路就是将子类的原型设置为父类的原型<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Super</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">Super.prototype.getNumber = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="number">1</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Sub</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line"><span class="keyword">let</span> s = <span class="keyword">new</span> Sub()</div><div class="line">Sub.prototype = <span class="built_in">Object</span>.create(Super.prototype, &#123;</div><div class="line">  <span class="attr">constructor</span>: &#123;</div><div class="line">    <span class="attr">value</span>: Sub,</div><div class="line">    <span class="attr">enumerable</span>: <span class="literal">false</span>,</div><div class="line">    <span class="attr">writable</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">configurable</span>: <span class="literal">true</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<blockquote>
-<p>二、ES6</p>
-</blockquote>
-<p>通过 class 语法轻松解决ES5的问题<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyDate</span> <span class="keyword">extends</span> <span class="title">Date</span> </span>&#123;</div><div class="line">  test() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.getTime()</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">let myDate = <span class="keyword">new</span> <span class="type">MyDate</span>()</div><div class="line">myDate.test()</div></pre></td></tr></table></figure></p>
-<p>但是 ES6 不是所有浏览器都兼容，所以我们需要使用 Babel 来编译这段代码。</p>
-<p>如果你使用编译过得代码调用 <code>myDate.test()</code> 你会惊奇地发现出现了报错<br><img src="https://i.imgur.com/5EPAs20.png" alt=""><br>因为在 JS 底层有限制，如果不是由 Date 构造出来的实例的话，是不能调用 Date 里的函数的。所以这也侧面的说明了：ES6 中的 <code>class</code> 继承与 ES5 中的一般继承写法是不同的。</p>
-<p>既然底层限制了实例必须由 Date 构造出来，那么我们可以改变下思路实现继承<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyData</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">MyData.prototype.test = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.getTime()</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>()</div><div class="line"><span class="built_in">Object</span>.setPrototypeOf(d, MyData.prototype)</div><div class="line"><span class="built_in">Object</span>.setPrototypeOf(MyData.prototype, <span class="built_in">Date</span>.prototype)</div></pre></td></tr></table></figure></p>
-<p>以上继承实现思路：先创建父类实例 =&gt; 改变实例原先的 <code>_proto__</code> 转而连接到子类的 <code>prototype</code> =&gt; 子类的 <code>prototype</code> 的 <code>__proto__</code> 改为父类的 <code>prototype</code>。</p>
-<p>通过以上方法实现的继承就可以完美解决 JS 底层的这个限制。</p>
-<hr>
-<p>通过原型和原型链的储备知识，我们首先要厘定一下【构造函数、对象、实例之间的关系】这三者之间的关系</p>
-<p>借用 一段代码 和 一张图 吧！</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">People</span><span class="params">()</span></span>&#123; </div><div class="line">	<span class="keyword">this</span>.type=<span class="string">'人'</span> </div><div class="line">&#125; </div><div class="line">People.prototype.showType=<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line"> alert(<span class="keyword">this</span>.type); </div><div class="line">&#125; </div><div class="line"><span class="keyword">var</span> person=<span class="keyword">new</span> People(); <span class="comment">//调用原型对象上面的方法</span></div><div class="line">person.showType();<span class="comment">//最后结果弹框弹出人</span></div><div class="line">People.prototype.constructor==People；<span class="comment">//返回true</span></div></pre></td></tr></table></figure>
-<p>以上代码定义了一个<strong>构造函数<code>People()</code></strong>,<strong><code>People.prototype</code>指向原型对象</strong>，其自带属性 <code>construtor</code> 又指回了 <code>People</code>，即<code>People.prototype.constructor==People</code>.<strong>实例对象 <code>person</code></strong>由于其内部指针指向了原型对象，所以可以访问原型对象上的 <code>showType</code> 方法。</p>
-<p><img src="https://i.imgur.com/UFtvJWC.png" alt=""></p>
-<p>总结：三者的关系是，每个构造函数都有一个原型对象，原型对象上包含着一个指向构造函数的指针，而实例都包含着一个指向原型对象的内部指针。通俗的说，实例可以通过<strong>内部指针(<code>_proto_</code>)</strong>访问到原型对象，原型对象可以通过 <strong>constructor</strong> 找到构造函数。</p>
-<p><img src="https://i.imgur.com/rzCp6Ux.png" alt=""></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">聊聊系列</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/08/22/67聊聊系列-5-继承/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/08/23/68聊聊系列-6-abc绑定/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          聊聊系列(6)-- call, apply, bind 区别
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/08/20/66聊聊系列-4-深浅拷贝/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">聊聊系列(4)-- 深浅拷贝</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/page/8/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="page-number current">9</span>
+    </nav>
   
 
 
@@ -366,8 +219,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
@@ -424,11 +277,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -436,7 +289,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -444,11 +297,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -460,7 +313,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">
