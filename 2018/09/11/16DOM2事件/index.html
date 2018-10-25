@@ -24,7 +24,7 @@ window 到 触发处 的途中，碰到了 捕获 就会触发
 window 到 触发处 的途中，碰到了 捕获 就会触发
 到了 触发处，肯定也会激活啊
 从 触发处 往 window 传播，碰到了 冒泡 就会触发">
-<meta property="og:updated_time" content="2018-10-24T08:54:39.969Z">
+<meta property="og:updated_time" content="2018-10-25T13:00:32.712Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DOM事件">
 <meta name="twitter:description" content="一、事件触发
@@ -184,10 +184,10 @@ window 到 触发处 的途中，碰到了 捕获 就会触发
 <ol>
 <li><code>window</code> 到 触发处 的途中，碰到了 捕获 就会触发</li>
 <li>到了 触发处，肯定也会激活啊</li>
-<li>从 触发处 往 <code>window</code> 传播，碰到了 冒泡 就会触发</li>
+<li>从 触发处 往 <code>window</code> 传播，碰到了 冒泡 就会触发<a id="more"></a>
+一般情况下都是按照上面三个步骤发展，如果一个事件同时有 冒泡和捕获，那就按照发生的顺序来<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">node.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="params">(event)</span> =&gt;</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'冒泡'</span>)</div><div class="line">&#125;,<span class="literal">false</span>);</div><div class="line">node.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="params">(event)</span> =&gt;</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'捕获 '</span>)</div><div class="line">&#125;,<span class="literal">true</span>)</div><div class="line"></div><div class="line"><span class="regexp">//</span> 冒泡 捕获</div></pre></td></tr></table></figure>
+</li>
 </ol>
-<a id="more"></a>
-<p>一般情况下都是按照上面三个步骤发展，如果一个事件同时有 冒泡和捕获，那就按照发生的顺序来<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">node.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="params">(event)</span> =&gt;</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'冒泡'</span>)</div><div class="line">&#125;,<span class="literal">false</span>);</div><div class="line">node.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="params">(event)</span> =&gt;</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'捕获 '</span>)</div><div class="line">&#125;,<span class="literal">true</span>)</div><div class="line"></div><div class="line"><span class="regexp">//</span> 冒泡 捕获</div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>二、注册事件</p>
 </blockquote>
@@ -434,6 +434,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
@@ -443,10 +447,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -148,13 +148,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/24/17DOM3扩展/">DOM扩展</a>
+      <a class="article-title" href="/2018/10/25/17DOM3扩展/">DOM扩展</a>
     </h1>
   
 
         
-        <a href="/2018/10/24/17DOM3扩展/" class="archive-article-date">
-  	<time datetime="2018-10-24T08:54:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-24</time>
+        <a href="/2018/10/25/17DOM3扩展/" class="archive-article-date">
+  	<time datetime="2018-10-25T14:10:37.122Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-25</time>
 </a>
         
       </header>
@@ -224,29 +224,10 @@
 </blockquote>
 <p><em>1、节点关系</em><br><code>nodeList</code> : 基于 <code>DOM</code> 结构动态查询的结果；<br>所有节点都有 <code>childNode</code> / <code>parentNode</code> / <code>ownerDocument</code> 属性</p>
 <p><em>2、操作节点</em><br><code>appendChild()</code> : 在列表的末尾添加一个元素；<br><code>insertBefore()</code> ： 接受两个参数，要插入的节点 和 作为参考的节点；<br><code>replaceChild()</code> ： 接受两个参数，要插入的节点 和 要替换的节点；<br><code>removeChild()</code> : 移除的节点仍然为文档所有，只不过在文档中没有自己的位置了。</p>
-<p><code>cloneNode()</code> : 参数是 <code>true</code> 时，进行深拷贝，复制节点及其整个子节点树；参数为 <code>false</code> 时，只复制节点。<br><code>normalize()</code> : 处理文档中文本节点，找到的是空文本节点就删除，找到了相邻的文本节点，就合并成一个文本节点。</p>
-<blockquote>
-<p>二、Document 类型</p>
-</blockquote>
-<p><em>查找元素</em><br><code>getElemntById()</code> :<br><code>getElemntsByName()</code> :<br><code>getElemntsByTagName()</code> : 返回的是 <code>NodeList</code> </p>
-<blockquote>
-<p>三、Element 类型</p>
-</blockquote>
-<p><em>1、取得特性</em><br><code>getAttribute()</code> ： 操作 <code>DOM</code> 时一般不用这个方法，一般在取自定义特性值的情况下，才会使用这个方法<br><code>setAttribute()</code> ： 两个参数，名字和值；<br><code>removeAttribute()</code> : 不仅会清除特性的值，而且也会从元素中完全删除特性</p>
-<p><em>2、创建元素</em><br><code>createElement()</code> : </p>
-<blockquote>
-<p>四、Text 类型</p>
-</blockquote>
-<p><em>创建文本节点</em><br><code>createTextNode()</code> : 里面只接受一个参数 —— 要插入的文本，一般情况下每个元素只有一个文本节点；<br><code>normalize()</code> : 处理文档中文本节点，找到的是空文本节点就删除，找到了相邻的文本节点，就合并成一个文本节点。<br><code>splitText()</code> : 参数是数字，代表了分开的位置，比如是 5,那么 5 五个字符串就在第二部分。</p>
-<blockquote>
-<p>五、Comment 类型</p>
-</blockquote>
-<p><code>Comment</code> 类型和 <code>Text</code> 类型继承自相同的几类，<code>Comment</code> 类型除了没有 <code>splitText()</code>，其他都有</p>
-<h2 id="操作技术"><a href="#操作技术" class="headerlink" title="操作技术"></a>操作技术</h2><p>1、<code>&lt;script&gt;</code><br>动态脚本是指：在页面加载时不存在，但将来的某一时刻通过修改 <code>DOM</code> 动态添加的脚本；</p>
-<p>2、<code>&lt;link&gt;</code> 和 <code>&lt;style&gt;</code><br>动态样式是指：页面加载完成后动态添加到页面中;</p>
-<p>3、<code>&lt;table&gt;</code><br>使用 <code>&lt;table&gt;</code> 自带的属性，可以极大的减少编写代码的数量；</p>
-<p>4、NodeList<br><code>NodeList</code> 、 <code>NameNodeMap</code> 和 <code>HTMLClloection</code>都是动态的；<br>每当文档结构发生变化时，它们都会更新；<br>所以它们始终保存着最新、最准确的信息。</p>
-
+<p><code>cloneNode()</code> : 参数是 <code>true</code> 时，进行深拷贝，复制节点及其整个子节点树；参数为 <code>false</code> 时，只复制节点。<br><code>normalize()</code> : 处理文档中文本节点，找到的是空文本节点就删除，找到了相邻的文本节点，就合并成一个文本节点。<br>
+        
+          <a class="article-more-a" href="/2018/10/24/15DOM1基础/#more">more >></a>
+        
       
 
       
@@ -467,7 +448,7 @@
         <blockquote>
 <p>深拷贝</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 方法一</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> newobj=obj.instanceof <span class="built_in">Array</span>?[]:&#123;&#125;;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> obj!==<span class="string">"object"</span>)&#123;</div><div class="line">    <span class="keyword">return</span> obj;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> obj)&#123;</div><div class="line">            newobj[i]=obj[i].typeof obj[i]==<span class="string">"object"</span>?deepClone(obj[i]):obj[i];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"><span class="keyword">return</span> newobj;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//方法二</span></div><div class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, &#123;<span class="attr">username</span>: <span class="string">'Wayne'</span>&#125;]</div><div class="line"><span class="keyword">let</span> arr2 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(arr1)) <span class="comment">// 深度拷贝：js对象-&gt;JSON字符串-&gt;新js对象</span></div><div class="line">arr2[<span class="number">0</span>] = <span class="number">5</span></div><div class="line">arr2[<span class="number">2</span>].username = <span class="string">'Jack'</span></div><div class="line"><span class="built_in">console</span>.log(arr1) <span class="comment">// [1, 2, &#123;username: 'Wayne'&#125;]</span></div><div class="line"><span class="built_in">console</span>.log(arr2) <span class="comment">// [5, 2, &#123;username: 'Jack'&#125;]</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, &#123;<span class="attr">username</span>: <span class="string">'Wayne'</span>&#125;]</div><div class="line"><span class="keyword">let</span> arr2 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(arr1)) <span class="comment">// 深度拷贝：js对象-&gt;JSON字符串-&gt;新js对象</span></div><div class="line">arr2[<span class="number">0</span>] = <span class="number">5</span></div><div class="line">arr2[<span class="number">2</span>].username = <span class="string">'Jack'</span></div><div class="line"><span class="built_in">console</span>.log(arr1) <span class="comment">// [1, 2, &#123;username: 'Wayne'&#125;]</span></div><div class="line"><span class="built_in">console</span>.log(arr2) <span class="comment">// [5, 2, &#123;username: 'Jack'&#125;]</span></div></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2018/10/18/81手撕代码/#more">more >></a>
         
@@ -593,6 +574,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
@@ -602,10 +587,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
