@@ -8,13 +8,34 @@
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
   <title>DOM扩展 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="一、事件流 
+
+捕获、冒泡和和DOM事件流
+
+二、事件处理程序 
+
+1、HTML 事件处理程序">
+<meta property="og:type" content="article">
 <meta property="og:title" content="DOM扩展">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/10/25/17DOM3扩展/index.html">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/10/26/17DOM3扩展/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:updated_time" content="2018-10-25T06:17:55.530Z">
+<meta property="og:description" content="一、事件流 
+
+捕获、冒泡和和DOM事件流
+
+二、事件处理程序 
+
+1、HTML 事件处理程序">
+<meta property="og:updated_time" content="2018-10-26T09:30:21.214Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DOM扩展">
+<meta name="twitter:description" content="一、事件流 
+
+捕获、冒泡和和DOM事件流
+
+二、事件处理程序 
+
+1、HTML 事件处理程序">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -152,15 +173,48 @@
   
 
         
-        <a href="/2018/10/25/17DOM3扩展/" class="archive-article-date">
-  	<time datetime="2018-10-25T14:10:37.122Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-25</time>
+        <a href="/2018/10/26/17DOM3扩展/" class="archive-article-date">
+  	<time datetime="2018-10-26T03:03:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <blockquote>
+<p>一、事件流 </p>
+</blockquote>
+<p>捕获、冒泡和和DOM事件流</p>
+<blockquote>
+<p>二、事件处理程序 </p>
+</blockquote>
+<p><em>1、HTML 事件处理程序</em><br><a id="more"></a><br><em>2、DOM 0事件处理</em></p>
+<p><em>3、DOM 2事件处理</em><br><code>addEventListener()</code>:<br><code>removeEventListener()</code>:</p>
+<p><em>4、IE 事件处理</em><br><code>attachEvent()</code>:<br><code>detachEvent()</code>:</p>
+<p><em>5、跨浏览器事件处理</em><br>下面两个方法都会检测传入的元素是否存在 DOM2 级方法。<br><code>addHandler()</code>:<br><code>removeHandler()</code>:</p>
+<blockquote>
+<p>三、事件对象</p>
+</blockquote>
+<p><em>1、DOM 中的事件对象</em><br>在事件处理程序的内部，对象 this 始终等于 currentTarget 的值，而 Target 则只包含事件的实际目标。<br><code>preventDefault()</code>:要阻止特定事件的默认行为;<br><code>stopPropagation()</code>: 立即停止事件在 DOM 层次中的传播；</p>
+<p><em>2、IE 中的事件对象</em><br><code>cancelBubble()</code>: 与 stopPropagation() 相同<br><code>returnValue()</code>: 与 preventDefault() 相同<br><code>srcElement()</code>: 与 target 相同<br><code>type()</code>: 被触发的事件的类型</p>
+<p><em>3、跨浏览器的事件对象</em><br><code>getEvent()</code>: 返回对 event 对象的引用；<br><code>getTarget()</code>: 返回事件的目标；<br><code>preventDefault()</code>: 取消事件的默认行为；<br><code>stopPropagation()</code>:阻止事件流</p>
+<blockquote>
+<p>四、事件类型 </p>
+</blockquote>
+<p><em>1、UI 事件</em><br>指那些不一定与用户操作有关的事件</p>
+<p><em>2、焦点事件</em><br>在页面元素获得或失去时触发。<br>最主要的是 <code>focus</code> 和 <code>blur</code></p>
+<p><em>3、鼠标与滚轮事件</em><br>客户坐标： <code>event.clientX</code> / <code>event.clientY</code><br>页面坐标： <code>event.pageX</code> / <code>event.pageY</code><br>屏幕坐标： <code>event.screenX</code> / <code>event.screenY</code></p>
+<p><em>4、键盘与文本事件</em><br><code>keydown</code>: 任意键触发；<br><code>keypress</code>: 字符键触发；<br><code>keyup</code>: 释放键是触发</p>
+<p><em>5、复合事件</em><br><em>6、变动事件</em><br><em>7、H5事件</em><br><em>8、设备事件</em><br><em>9、触摸与手势事件</em></p>
+<blockquote>
+<p>五、内存与性能</p>
+</blockquote>
+<p><em>1、事件委托</em><br><em>2、移除事件处理程序</em></p>
+<blockquote>
+<p>六、模拟事件</p>
+</blockquote>
+<p><em>1、DOM 中的事件模拟</em><br><em>2、IE中的时事件模拟</em></p>
+
       
 
       
@@ -239,7 +293,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/10/25/17DOM3扩展/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/10/26/17DOM3扩展/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -369,7 +423,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -377,11 +431,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -390,10 +444,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -406,6 +456,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
