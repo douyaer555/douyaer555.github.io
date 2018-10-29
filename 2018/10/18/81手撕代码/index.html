@@ -18,7 +18,7 @@
 <meta property="og:description" content="深拷贝
 
 123456let arr1 = [1, 2, &amp;#123;username: &apos;Wayne&apos;&amp;#125;]let arr2 = JSON.parse(JSON.stringify(arr1)) // 深度拷贝：js对象-&amp;gt;JSON字符串-&amp;gt;新js对象arr2[0] = 5arr2[2].username = &apos;Jack&apos;console.log(arr1) // [1, 2">
-<meta property="og:updated_time" content="2018-10-27T03:23:42.527Z">
+<meta property="og:updated_time" content="2018-10-27T13:22:03.352Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="手撕代码">
 <meta name="twitter:description" content="深拷贝
@@ -186,6 +186,10 @@
 <p>继承</p>
 </blockquote>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Elem</span><span class="params">(id)</span></span>&#123;</div><div class="line">  <span class="keyword">this</span>.elem = document.getElementById(<span class="string">'id'</span>)</div><div class="line">&#125;</div><div class="line">Elem.prototype.html = <span class="function"><span class="keyword">function</span><span class="params">(val)</span></span>&#123;</div><div class="line">  <span class="keyword">var</span> elem = <span class="keyword">this</span>.elem;</div><div class="line">  <span class="keyword">if</span>(val)&#123;</div><div class="line">    elem.innerHTML = val</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">    <span class="keyword">return</span> elem.innerHTML</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Elem.prototype.html = <span class="function"><span class="keyword">function</span><span class="params">(type,fn)</span></span>&#123;</div><div class="line">  <span class="keyword">var</span> elem = <span class="keyword">this</span>.elem;</div><div class="line">  elem.addEventListener.on = <span class="function"><span class="keyword">function</span><span class="params">(type,fn)</span></span>;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> div1 = <span class="keyword">new</span> Elem(<span class="string">'div1'</span>)</div><div class="line"><span class="comment">// console.log(div1.html)</span></div><div class="line">div1.html(<span class="string">'&lt;p&gt;hello world&lt;/p&gt;'</span>)</div><div class="line">div1.on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;alert(<span class="string">'已经点过啦！'</span>)&#125;.html(<span class="string">'&lt;p&gt;javascript&lt;/p&gt;'</span>))</div></pre></td></tr></table></figure>
+<blockquote>
+<p>闭包</p>
+</blockquote>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isFirstLoad</span><span class="params">()</span></span>&#123;</div><div class="line">  <span class="keyword">var</span> _list = []</div><div class="line"></div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">(id)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(_list.indexOf(id) &gt;= <span class="number">0</span>)&#123;</div><div class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">      _list.push(id);</div><div class="line">      <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> firstLoad = isFirstLoad()</div><div class="line">firstLoad(<span class="number">10</span>) <span class="comment">// true</span></div><div class="line">firstLoad(<span class="number">10</span>) <span class="comment">// false</span></div><div class="line">firstLoad(<span class="number">20</span>) <span class="comment">// true</span></div><div class="line">firstLoad(<span class="number">20</span>) <span class="comment">// false</span></div></pre></td></tr></table></figure>
 <blockquote>
 <p>实现push</p>
 </blockquote>
@@ -444,7 +448,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -452,15 +456,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
