@@ -6,7 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>DOM扩展 | wangsiyuan</title>
+  <title>DOM全集 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="一、事件流 
 
@@ -16,7 +16,7 @@
 
 1、HTML 事件处理程序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DOM扩展">
+<meta property="og:title" content="DOM全集">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/10/26/17DOM3全集/index.html">
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="一、事件流 
@@ -26,9 +26,9 @@
 二、事件处理程序 
 
 1、HTML 事件处理程序">
-<meta property="og:updated_time" content="2018-10-26T09:30:21.214Z">
+<meta property="og:updated_time" content="2018-10-29T02:20:14.665Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DOM扩展">
+<meta name="twitter:title" content="DOM全集">
 <meta name="twitter:description" content="一、事件流 
 
 捕获、冒泡和和DOM事件流
@@ -168,7 +168,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      DOM扩展
+      DOM全集
     </h1>
   
 
@@ -197,7 +197,7 @@
 </blockquote>
 <p><em>1、DOM 中的事件对象</em><br>在事件处理程序的内部，对象 this 始终等于 currentTarget 的值，而 Target 则只包含事件的实际目标。<br><code>preventDefault()</code>:要阻止特定事件的默认行为;<br><code>stopPropagation()</code>: 立即停止事件在 DOM 层次中的传播；</p>
 <p><em>2、IE 中的事件对象</em><br><code>cancelBubble()</code>: 与 stopPropagation() 相同<br><code>returnValue()</code>: 与 preventDefault() 相同<br><code>srcElement()</code>: 与 target 相同<br><code>type()</code>: 被触发的事件的类型</p>
-<p><em>3、跨浏览器的事件对象</em><br><code>getEvent()</code>: 返回对 event 对象的引用；<br><code>getTarget()</code>: 返回事件的目标；<br><code>preventDefault()</code>: 取消事件的默认行为；<br><code>stopPropagation()</code>:阻止事件流</p>
+<p><em>3、跨浏览器的事件对象</em><br><code>getEvent()</code>: 返回对 event 对象的引用；<br><code>getTarget()</code>: 返回事件的目标；<br><code>preventDefault()</code>: 取消事件的默认行为；<br><code>stopPropagation()</code>: 阻止事件流</p>
 <blockquote>
 <p>四、事件类型 </p>
 </blockquote>
@@ -205,11 +205,13 @@
 <p><em>2、焦点事件</em><br>在页面元素获得或失去时触发。<br>最主要的是 <code>focus</code> 和 <code>blur</code></p>
 <p><em>3、鼠标与滚轮事件</em><br>客户坐标： <code>event.clientX</code> / <code>event.clientY</code><br>页面坐标： <code>event.pageX</code> / <code>event.pageY</code><br>屏幕坐标： <code>event.screenX</code> / <code>event.screenY</code></p>
 <p><em>4、键盘与文本事件</em><br><code>keydown</code>: 任意键触发；<br><code>keypress</code>: 字符键触发；<br><code>keyup</code>: 释放键是触发</p>
-<p><em>5、复合事件</em><br><em>6、变动事件</em><br><em>7、H5事件</em><br><em>8、设备事件</em><br><em>9、触摸与手势事件</em></p>
+<p><em>5、复合事件</em><br><code>DOM 3</code> 新添加的一类事件，用于处理 IME 的输入序列</p>
+<p><em>6、变动事件</em><br>为 XML 或 HTML DOM 设计的<br>其实 删除节点 和 插入节点 并不仅仅是一个 API 就解决了<br>有很多中间过程（相当于打包起来了</p>
+<p><em>7、H5事件</em><br><code>contentmene</code> 事件： 何时应该显示上下文菜单；<br><code>beforeunload</code> 事件： 向用户显示消息，询问是否真的要关闭页面<br><code>DOMContentLoaded</code> 事件： 页面一切加载完毕时触发<br><code>readystatechange</code> 事件： 提供与文档加载状态有关的信息<br><em>8、设备事件</em><br><em>9、触摸与手势事件</em></p>
 <blockquote>
 <p>五、内存与性能</p>
 </blockquote>
-<p><em>1、事件委托</em><br><em>2、移除事件处理程序</em></p>
+<p><em>1、事件委托</em><br>利用了 冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件<br><em>2、移除事件处理程序</em></p>
 <blockquote>
 <p>六、模拟事件</p>
 </blockquote>
@@ -306,6 +308,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/10/29/19JSON/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JSON
+        
+      </div>
+    </a>
   
   
     <a href="/2018/10/24/15DOM1基础/" id="article-nav-older" class="article-nav-link-wrap">
@@ -419,7 +430,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -427,11 +438,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -439,7 +446,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -455,11 +462,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">

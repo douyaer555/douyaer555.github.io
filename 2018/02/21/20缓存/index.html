@@ -6,24 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>跨域 | wangsiyuan</title>
+  <title>储存 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="浏览器出于安全的考虑，采用的是同源策略。
-协议、域名和端口号三者统一，就是同域，只要有其中一个不一样，就是跨域，这时Ajax就会请求失败。
-下面有三种方法可以解决跨域的问题">
+  <meta name="description" content="从上表可以看到，cookie 已经不建议用于存储。如果没有大量数据存储需求的话，可以使用 localStorage 和 sessionStorage 。对于不怎么改变的数据尽量使用 localStorage 存储，否则可以用 sessionStorage 存储。
+一、Cookie 和 Session 的区别【Cookie】Cookie 的特点:1、服务端通过 Set-Cookie 来设置 Cook">
 <meta property="og:type" content="article">
-<meta property="og:title" content="跨域">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/09/13/72跨域/index.html">
+<meta property="og:title" content="储存">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/02/21/20缓存/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="浏览器出于安全的考虑，采用的是同源策略。
-协议、域名和端口号三者统一，就是同域，只要有其中一个不一样，就是跨域，这时Ajax就会请求失败。
-下面有三种方法可以解决跨域的问题">
-<meta property="og:updated_time" content="2018-10-20T08:01:27.416Z">
+<meta property="og:description" content="从上表可以看到，cookie 已经不建议用于存储。如果没有大量数据存储需求的话，可以使用 localStorage 和 sessionStorage 。对于不怎么改变的数据尽量使用 localStorage 存储，否则可以用 sessionStorage 存储。
+一、Cookie 和 Session 的区别【Cookie】Cookie 的特点:1、服务端通过 Set-Cookie 来设置 Cook">
+<meta property="og:image" content="https://i.imgur.com/sbZ0NjX.png">
+<meta property="og:image" content="https://i.imgur.com/zhhd2fg.png">
+<meta property="og:updated_time" content="2018-10-19T03:06:14.071Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="跨域">
-<meta name="twitter:description" content="浏览器出于安全的考虑，采用的是同源策略。
-协议、域名和端口号三者统一，就是同域，只要有其中一个不一样，就是跨域，这时Ajax就会请求失败。
-下面有三种方法可以解决跨域的问题">
+<meta name="twitter:title" content="储存">
+<meta name="twitter:description" content="从上表可以看到，cookie 已经不建议用于存储。如果没有大量数据存储需求的话，可以使用 localStorage 和 sessionStorage 。对于不怎么改变的数据尽量使用 localStorage 存储，否则可以用 sessionStorage 存储。
+一、Cookie 和 Session 的区别【Cookie】Cookie 的特点:1、服务端通过 Set-Cookie 来设置 Cook">
+<meta name="twitter:image" content="https://i.imgur.com/sbZ0NjX.png">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -149,57 +149,37 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-72跨域" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-20缓存" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      跨域
+      储存
     </h1>
   
 
         
-        <a href="/2018/09/13/72跨域/" class="archive-article-date">
-  	<time datetime="2018-09-13T01:36:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-13</time>
+        <a href="/2018/02/21/20缓存/" class="archive-article-date">
+  	<time datetime="2018-02-21T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>浏览器出于安全的考虑，采用的是同源策略。</strong></p>
-<p>协议、域名和端口号三者统一，就是同域，只要有其中一个不一样，就是跨域，这时Ajax就会请求失败。</p>
-<p>下面有三种方法可以解决跨域的问题<br><a id="more"></a></p>
-<blockquote>
-<p>一、JSONP</p>
-</blockquote>
-<p><code>JSONP</code> 的原理非常简单：</p>
-<p>利用 <code>&lt;script&gt;</code> 标签没有跨域限制的漏洞，通过 <code>&lt;script&gt;</code> 标签指向一个需要访问的地址并提供一个回调函数来接收数据。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://domain/api?param1=a&amp;param2=b&amp;callback=jsonp"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">jsonp</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">    	<span class="built_in">console</span>.log(data)</div><div class="line">	&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p><code>JSONP</code>的兼容性很好，但只限于 <strong>GET</strong> 请求</p>
-<p>在开发中可能会遇到多个 <code>JSONP</code> 请求的回调函数名是相同的，这时候就需要自己封装一个 <code>JSONP</code>，以下是简单实现：<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function <span class="keyword">jsonp(url, </span><span class="keyword">jsonpCallback, </span>success) &#123;</div><div class="line">  let <span class="keyword">script </span>= document.createElement(<span class="string">"script"</span>)<span class="comment">;</span></div><div class="line">  <span class="keyword">script.src </span>= url<span class="comment">;</span></div><div class="line">  <span class="keyword">script.async </span>= true<span class="comment">;</span></div><div class="line">  <span class="keyword">script.type </span>= <span class="string">"text/javascript"</span><span class="comment">;</span></div><div class="line">  window[<span class="keyword">jsonpCallback] </span>= function(data) &#123;</div><div class="line">    success &amp;&amp; success(data)<span class="comment">;</span></div><div class="line">  &#125;<span class="comment">;</span></div><div class="line">  document.<span class="keyword">body.appendChild(script);</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">jsonp(</span></div><div class="line">  <span class="string">"http://xxx"</span>,</div><div class="line">  <span class="string">"callback"</span>,</div><div class="line">  function(value) &#123;</div><div class="line">    console.log(value)<span class="comment">;</span></div><div class="line">  &#125;</div><div class="line">)<span class="comment">;</span></div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>二、CORS</p>
-</blockquote>
-<p><code>CORS</code> 需要<strong>浏览器</strong>和<strong>后端</strong>同时支持。</p>
-<p>服务端设置 <code>Access-Control-Allow-Origin</code> 就可以开启 CORS。 该属性表示哪些域名可以访问资源，如果设置通配符则表示所有网站都可以访问资源。</p>
-<p>实现 <code>CORS</code> 通信的关键是后端。只要后端实现了 <code>CORS</code>，就实现了跨域。</p>
-<blockquote>
-<p>三、document.domain</p>
-</blockquote>
-<p>该方式只能用于二级域名相同的情况下，比如 <code>a.test.com</code> 和 <code>b.test.com</code> 适用于该方式。</p>
-<p>只需要给页面添加 <code>document.domain = &#39;test.com&#39;</code> 表示二级域名都相同就可以实现跨域。</p>
-<blockquote>
-<p>四、postMessage</p>
-</blockquote>
-<p>这种方式通常用于获取嵌入页面中的第三方页面数据。一个页面发送消息，另一个页面判断来源并接收消息<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 发送消息端</span></div><div class="line"><span class="built_in">window</span>.parent.postMessage(<span class="string">'message'</span>, <span class="string">'http://test.com'</span>);</div><div class="line"><span class="comment">// 接收消息端</span></div><div class="line"><span class="keyword">var</span> mc = <span class="keyword">new</span> MessageChannel();</div><div class="line">mc.addEventListener(<span class="string">'message'</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">var</span> origin = event.origin || event.originalEvent.origin; </div><div class="line">    <span class="keyword">if</span> (origin === <span class="string">'http://test.com'</span>) &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'验证通过'</span>)</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h2 id="★30s总结"><a href="#★30s总结" class="headerlink" title="★30s总结"></a>★30s总结</h2><ul>
-<li><code>JSONP</code> : 利用 <code>&lt;script&gt;</code> 标签的漏洞来跨域；</li>
-<li><code>CORS</code>：服务端和后端，后端是关键</li>
-<li><code>document.domian</code> ： 二级域名相同</li>
-<li><code>postMessage</code> ： 一个页面发送，另一个页面接收并验证</li>
-</ul>
+        <p><img src="https://i.imgur.com/sbZ0NjX.png" alt=""><br>从上表可以看到，<code>cookie</code> 已经不建议用于存储。如果没有大量数据存储需求的话，可以使用 <code>localStorage</code> 和 <code>sessionStorage</code> 。对于不怎么改变的数据尽量使用 <code>localStorage</code> 存储，否则可以用 <code>sessionStorage</code> 存储。</p>
+<h2 id="一、Cookie-和-Session-的区别"><a href="#一、Cookie-和-Session-的区别" class="headerlink" title="一、Cookie 和 Session 的区别"></a>一、Cookie 和 Session 的区别</h2><p>【Cookie】<br><code>Cookie</code> 的特点:<br>1、服务端通过 <code>Set-Cookie</code> 来设置 <code>Cookie</code> , <code>Cookie</code> 的本质就是一串字符串。<br>2、客户端得到这个字符串后，每次登陆这个网页，都会携带上这串字符串。<br>3、服务端再通过这串字符串去找到对应的隐私信息。<br>4、<code>Cookie</code> 大小一般为4kb。<br>5、<code>Cookie</code> 默认有失效时间，但是后台可以设置过期时间。<br><img src="https://i.imgur.com/zhhd2fg.png" alt=""><br>因为 <code>Cookie</code> 可以篡改，而且是明文传输的，所以存在漏洞，<code>Session</code> 就解决了这个问题。<br><a id="more"></a><br>【Session】<br><code>Session</code> 的特点：<br>1、一般来说，<code>Session</code> 是基于 <code>Cookie</code> 来设置的一个哈希表。<br>2、将 <code>SessionId</code> (随机数)通过 <code>Cookie</code> 发给服务端。<br>3、客户端访问服务器时，服务器读取 <code>SessionID</code>。<br>4、服务器有一块内存(哈希表),存储了所有的 <code>Session</code>。<br>5、通过 <code>SessionID</code>，我们可以得到用户的隐私信息。<br>6、这块内存(哈希表)就是服务器上所有的 <code>Session</code>。 </p>
+<h2 id="二、Cookie-和-LocalStorage-的区别"><a href="#二、Cookie-和-LocalStorage-的区别" class="headerlink" title="二、Cookie 和 LocalStorage 的区别"></a>二、Cookie 和 LocalStorage 的区别</h2><p>【Cookie】<br><code>Cookie</code> 的特点:<br>1、服务端通过 <code>Set-Cookie</code> 来设置 <code>Cookie</code> , <code>Cookie</code> 的本质就是一串字符串。<br>2、客户端得到这个字符串后，每次登陆这个网页，都会携带上这串字符串。<br>3、服务端再通过这串字符串去找到对应的隐私信息。<br>4、<code>Cookie</code> 大小一般为4kb。<br>5、<code>Cookie</code> 默认有失效时间，但是后台可以设置过期时间。</p>
+<p>【LocalStorage】<br><code>LocalStorage</code> 的实质也是一个 <code>hash</code>，它是 <code>html5</code> 标准提供的一个 <code>API</code>，用来持久化存储一些不是那么重要的信息。<br>它的特点：<br>1、<code>LocalStorage</code> 与 <code>HTTP</code> 无关。<br>2、<code>HTTP</code> 不会带上 <code>LocalStorage</code>。<br>3、只有相同的页面才能互相读取 <code>LocalStorage</code>。<br>4、浏览器对每个域名分配的 <code>LocalStorage</code> 最大的存储量为5Mb左右。<br>5、记录一些无关紧要的信息，不记录用户敏感信息。<br>6、<code>LocalStorage</code> 永久有效，除非用户清理缓存。 </p>
+<p>它与 <code>Cookie</code> 的区别就是，一个通过 <code>Set-Cookie</code> 设置，一个是 <code>HTML5</code> 提供的APi，<br>一个是通过 <code>HTTP</code> 设置，一个与 <code>HTTP</code> 无关。</p>
+<h2 id="三、LocalStorage-和-SessionStorage-的区别"><a href="#三、LocalStorage-和-SessionStorage-的区别" class="headerlink" title="三、LocalStorage 和 SessionStorage 的区别"></a>三、LocalStorage 和 SessionStorage 的区别</h2><p><code>SessionStorage</code> 与 <code>Session</code> 无关，同样，它也是浏览器提供的一个 API。<br>它与 <code>LocalStorage</code> 一样,只有一点不一样，就是它的存储时间在用户关闭页面之后就会失效。</p>
+<h2 id="四、Cookie-如何设置过期时间？如何删除-Cookie？"><a href="#四、Cookie-如何设置过期时间？如何删除-Cookie？" class="headerlink" title="四、Cookie 如何设置过期时间？如何删除 Cookie？"></a>四、Cookie 如何设置过期时间？如何删除 Cookie？</h2><p>【过期】：<br><code>cookie.setMaxAge(0);</code> //不记录cookie<br><code>cookie.setMaxAge(-1);</code> //会话级cookie，关闭浏览器失效<br><code>cookie.setMaxAge(60*60);</code> //过期时间为1小时</p>
+<p>【删除】<br>1、Internet Explorer<br>通过“其他”菜单打开“Internet 属性”。在“常规”选项卡上，单击“Internet 属性”对话框“浏览历史记录”下的“删除”。在“删除浏览历史记录”对话框中，单击以便清除“Cookies”复选框以外的所有复选框，然后单击“删除”。<br>2、Google Chrome<br>单击浏览器工具栏上的扳手图标。选择“选项”，单击“高级选项”选项卡并单击“隐私”部分中的“内容”设置。在出现的“内容”设置对话框中单击 cookies 选项卡。单击“显示” cookies 和其他站点数据。要删除所有 cookies，单击“删除所有”；要删除特定 cookie，选择发布 cookie 的站点然后选择该 cookie，并单击删除。</p>
+<h2 id="五、Cache-Control-max-age-1000-缓存-与-ETag-的「缓存」有什么区别？"><a href="#五、Cache-Control-max-age-1000-缓存-与-ETag-的「缓存」有什么区别？" class="headerlink" title="五、Cache-Control: max-age=1000 缓存 与 ETag 的「缓存」有什么区别？"></a>五、Cache-Control: max-age=1000 缓存 与 ETag 的「缓存」有什么区别？</h2><p>【Cache-Control】<br><code>Cache-Control</code> 在 <code>HTTP</code> 响应头中，当 <code>Cache-Control</code> 为可缓存时，同时可指定缓存时间（比如public, max-age:1000）。 这意味着在 1000秒内，浏览器都可以直接使用该缓存（此时服务器收不到任何请求）。</p>
+<p>如果资源本身确实会随时发生改动，还用 <code>Cache-Control</code> 就会使用户看到的页面得不到更新。 但如果还希望利用 <code>HTTP</code> 缓存（万一资源没变呢），这就需要有条件的（conditional）<code>HTTP</code> 请求。</p>
+<p>【ETag】<br><code>Etag</code> 响应头字段表示资源的版本，浏览器在发送请求时会带 <code>If-None-Match</code> 头字段， 来询问服务器该版本是否仍然可用。如果服务器发现该版本仍然是最新的， 就可以返回 <code>304</code> 状态码指示 <code>UA</code> 继续使用缓存。</p>
 
       
 
@@ -229,6 +209,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -279,7 +270,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/09/13/72跨域/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/02/21/20缓存/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -293,18 +284,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/15/73Event-Loop/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/02/22/04配置Server-js/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Event Loop
+          配置Server.js
         
       </div>
     </a>
   
   
-    <a href="/2018/09/11/16DOM2事件/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">DOM事件</div>
+    <a href="/2018/02/17/25AJAX/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">封装一个ajax</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -414,7 +405,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -422,11 +413,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -434,7 +421,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -450,11 +437,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">
