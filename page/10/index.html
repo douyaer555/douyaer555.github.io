@@ -141,80 +141,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-35初探ES6-1-let" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/01/35初探ES6-1-let/">初探ES6(1)--let</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/01/35初探ES6-1-let/" class="archive-article-date">
-  	<time datetime="2018-04-01T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>先从一块代码讲起<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> liList = <span class="built_in">document</span>.querySelectorAll(<span class="string">'li'</span>) <span class="comment">// 共5个li</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;liList.length; i++)&#123;</div><div class="line">  liList[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(i)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>我们知道会依次打印出5个5.<br>只是将 var 改成 let 之后<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> liList = <span class="built_in">document</span>.querySelectorAll(<span class="string">'li'</span>) <span class="comment">// 共5个li</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;liList.length; i++)&#123;</div><div class="line">  liList[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(i)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>我们知道会依次打印出 1 2 3 4 5.<br><strong>var 和 let 竟然还有不同？</strong><br>
-        
-          <a class="article-more-a" href="/2018/04/01/35初探ES6-1-let/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-34异步系列-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -235,8 +161,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="异步的实现原理"><a href="#异步的实现原理" class="headerlink" title="异步的实现原理"></a>异步的实现原理</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ajax = $.ajax(&#123;</div><div class="line">    <span class="attr">url</span>: <span class="string">'/data/data1.json'</span>,</div><div class="line">    <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'success'</span>)</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>对于ajax这种传递过去不执行，等出来结果之后再执行的函数，叫做callback，即回调函数.<br>实现<strong>异步的最核心原理</strong>，就是将callback作为参数传递给异步执行函数，当有结果返回之后再触发 callback执行.<br>
+        <h2 id="什么事单线程，它和异步的关系是？"><a href="#什么事单线程，它和异步的关系是？" class="headerlink" title="什么事单线程，它和异步的关系是？"></a>什么事单线程，它和异步的关系是？</h2><p>JavaScript语言的一大特点就是<strong>单线程</strong>，也就是说，同一个时间只能做一件事。</p>
+<p>单线程就意味着，所有任务需要排队，前一个任务结束，才会执行后一个任务。如果前一个任务耗时很长，后一个任务就不得不一直等着。</p>
+<p>JavaScript语言的设计者意识到，这时主线程完全可以不管IO设备，挂起处于等待中的任务，先运行排在后面的任务。等到IO设备返回了结果，再回过头，把挂起的任务继续执行下去。</p>
+<p>于是，所有任务可以分成两种，一种是同步任务（synchronous），另一种是异步任务（asynchronous）。<br>
         
           <a class="article-more-a" href="/2018/03/30/34异步系列-1/#more">more >></a>
         
@@ -514,6 +442,84 @@
 
 
   
+    <article id="post-26聊聊系列-1-new" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/03/26聊聊系列-1-new/">聊聊系列(1)--new函数</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/03/26聊聊系列-1-new/" class="archive-article-date">
+  	<time datetime="2018-03-03T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原型链+继承告一段落，我们接下来开始闭包的部分。<br>当然不会直接开始闭包呀<br>今天想跟大家聊聊 new函数</p>
+<p><a href="http://wangsiyuan233.cn/JS函数.html">声明函数的五种方式</a><br>废话不多说 <strong>当我们在new一个函数的时候我们在干嘛？</strong></p>
+<blockquote>
+<p>1、新生成了一个对象<br>2、链接到原型<br>3、绑定 this<br>4、返回新对象</p>
+<p>在调用 new 的过程中会发生以上四件事情，我们也可以试着来自己实现一个 new</p>
+</blockquote>
+<p>以【为程序员哥哥们批量制造女友】为例<br>
+        
+          <a class="article-more-a" href="/2018/03/03/26聊聊系列-1-new/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">聊聊系列</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
@@ -607,15 +613,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -627,7 +633,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
