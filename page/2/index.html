@@ -141,6 +141,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-11继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/23/11继承/">继承</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/23/11继承/" class="archive-article-date">
+  	<time datetime="2018-10-23T12:37:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上一小节我们介绍了 创建对象 的 7 种方式，里面预警了好多次 <em>继承</em>；</p>
+<p>今天我们也要介绍 6 种继承发方式：<br>原型链、构造函数、组合式、原型式、寄生式、寄生组合式</p>
+<p><em>最常用的是</em> ：【组合继承】<br><em>最理想的是</em>：【寄生组合式】</p>
+<p>想要讲清楚 继承 的概念，我们先回到 原型链 的基础知识，想想 构造函数、原型和实例之间的关系</p>
+<blockquote>
+<p>一、原型链继承</p>
+</blockquote>
+<p>每个构造函数都有一个原型对象； <code>Person.prototype</code><br>原型对象都包含了一个指向构造函数的指针; <code>Person.prototype.constructor === Person</code><br>而实例都包含一个指向原型对象的内部指针; <code>person1._proto_ === Person.prototype</code></p>
+<p>OK,上面的概念我们熟悉得不能再熟悉了，那么<br>
+        
+          <a class="article-more-a" href="/2018/10/23/11继承/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">聊聊系列</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-10创建对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -342,19 +422,19 @@
 
 
   
-    <article id="post-75剑指-递归和回溯法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-75算法-递归和回溯法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/08/75剑指-递归和回溯法/">剑指offer(6)--递归和回溯法(JavaScript版)/共 题</a>
+      <a class="article-title" href="/2018/10/08/75算法-递归和回溯法/">是算法呀！--递归和回溯法(JavaScript版)/共 题</a>
     </h1>
   
 
         
-        <a href="/2018/10/08/75剑指-递归和回溯法/" class="archive-article-date">
+        <a href="/2018/10/08/75算法-递归和回溯法/" class="archive-article-date">
   	<time datetime="2018-10-08T12:14:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-08</time>
 </a>
         
@@ -370,85 +450,7 @@
 <p><strong>描述</strong>：大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function Fibonacci(<span class="keyword">n</span>)&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">n</span>==0)&#123;<span class="keyword">return</span> 0;&#125;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">n</span>==1)&#123;<span class="keyword">return</span> 1;&#125;</div><div class="line">    <span class="keyword">var</span> <span class="keyword">one</span> = 0,<span class="keyword">two</span>=1; <span class="comment">// 这个部分的值是由上面的 return 决定的</span></div><div class="line">    <span class="keyword">var</span> fbnum=1; <span class="comment">// 是0 1 undefined 都可以</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i =2;i&lt;=<span class="keyword">n</span>;i++)&#123;</div><div class="line">        fbnum = <span class="keyword">one</span>+<span class="keyword">two</span>;</div><div class="line">        <span class="keyword">one</span> = <span class="keyword">two</span>; <span class="comment">// 小的数在下一次迭代变成大的数</span></div><div class="line">        <span class="keyword">two</span> = fbnum;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> fbnum;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><strong>思路</strong>：套路请熟记<br>
         
-          <a class="article-more-a" href="/2018/10/08/75剑指-递归和回溯法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指offer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-80剑指-字符串、栈和队列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/07/80剑指-字符串、栈和队列/">剑指offer(5)--字符串、栈和队列(JavaScript版)/共 题</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/07/80剑指-字符串、栈和队列/" class="archive-article-date">
-  	<time datetime="2018-10-07T01:43:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>【<a href="https://github.com/wangsiyuan233/NowCoder">源码地址</a>】 || 【<a href="https://www.nowcoder.com/ta/coding-interviews?page=1">代码调试</a>】</p>
-<hr>
-<blockquote>
-<p>二、 替换空格 p51</p>
-</blockquote>
-<p><strong>描述</strong>：请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="title">changeSpace</span>(str)&#123; </div><div class="line">	<span class="keyword">return</span> <span class="type">str.replace(/\s/g,'%20/)</span> </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>思路</strong>：BUG题/<code>replace()</code><br>
-        
-          <a class="article-more-a" href="/2018/10/07/80剑指-字符串、栈和队列/#more">more >></a>
+          <a class="article-more-a" href="/2018/10/08/75算法-递归和回溯法/#more">more >></a>
         
       
 
@@ -579,19 +581,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -603,14 +601,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
@@ -619,7 +609,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -628,6 +618,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">剑指offer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
             
             <div class="clearfix"></div>
