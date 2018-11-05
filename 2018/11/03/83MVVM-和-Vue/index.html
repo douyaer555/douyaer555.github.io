@@ -18,7 +18,7 @@
 <meta property="og:description" content="一、 jq 和使用 vue 的区别
 
 1234567891011121314151617181920212223242526272829303132&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;    &amp;lt;title&amp;gt;to-do-list by jquery&amp;lt;/title&amp;">
-<meta property="og:updated_time" content="2018-11-04T11:13:01.820Z">
+<meta property="og:updated_time" content="2018-11-05T01:17:12.549Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MVVM 和 Vue">
 <meta name="twitter:description" content="一、 jq 和使用 vue 的区别
@@ -184,7 +184,7 @@
 </blockquote>
 <p>1、什么是响应式</p>
 <p>修改 <code>data</code> 属性后，<code>vue</code> 立刻可以监听到<br><code>data</code> 属性被代理到 <code>vm</code> 上 </p>
-<p>2、<code>Object.defineProperty</code>是 <code>vue</code> 中事件监听的核心用法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">        <span class="keyword">var</span> obj = &#123;&#125;</div><div class="line">        <span class="keyword">var</span> _name = <span class="string">'shangsan'</span></div><div class="line">        <span class="built_in">Object</span>.defineProperty(obj, <span class="string">'name'</span>, &#123;</div><div class="line">            <span class="attr">get</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'get'</span>, _name) <span class="comment">// 监听</span></div><div class="line">                <span class="keyword">return</span> _name</div><div class="line">            &#125;,</div><div class="line">            <span class="attr">set</span>: <span class="function"><span class="keyword">function</span> (<span class="params">newVal</span>) </span>&#123;</div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'set'</span>, newVal)  <span class="comment">// 监听</span></div><div class="line">                _name = newVal</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line"><span class="string">``</span><span class="string">`</span></div></pre></td></tr></table></figure></p>
+<p>2、<code>Object.defineProperty</code>是 <code>vue</code> 中事件监听的核心用法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">        <span class="keyword">var</span> obj = &#123;&#125;</div><div class="line">        <span class="keyword">var</span> _name = <span class="string">'shangsan'</span></div><div class="line">        <span class="built_in">Object</span>.defineProperty(obj, <span class="string">'name'</span>, &#123;</div><div class="line">            <span class="attr">get</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'get'</span>, _name) <span class="comment">// 监听</span></div><div class="line">                <span class="keyword">return</span> _name</div><div class="line">            &#125;,</div><div class="line">            <span class="attr">set</span>: <span class="function"><span class="keyword">function</span> (<span class="params">newVal</span>) </span>&#123;</div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'set'</span>, newVal)  <span class="comment">// 监听</span></div><div class="line">                _name = newVal</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line"><span class="string">``</span><span class="string">` </span></div><div class="line">第二种情况：</div></pre></td></tr></table></figure></p>
 <pre><code>var vm = {}
 var data = {
     name: &apos;zhangsan&apos;,
@@ -218,7 +218,7 @@ for (key in data) {
         &lt;/ul&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-</code></pre><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">对于 `vue` 来说，模板的本质就是字符串，模板有逻辑功能，模板是动态的，`html` 是静态的，不过模板最后还是要转换为 `html` 来显示。</div><div class="line">模板最后必须转换为JS代码：因为模板是有逻辑的，必须是 `JS` 实现；转换为 `html` 渲染页面，必须是 `JS` 实现；模板最终要转换为一个 `JS` 函数（`render` 函数）</div><div class="line"></div><div class="line"><span class="number">2</span>、<span class="keyword">with</span> 的用法</div><div class="line">（原生 JS 中不要用 <span class="keyword">with</span>，调试成本很高，vue 中 OK）</div></pre></td></tr></table></figure>
+</code></pre><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">对于 `vue` 来说，模板的本质就是字符串，模板有逻辑功能，模板是动态的，`html` 是静态的，不过模板最后还是要转换为 `html` 来显示。</div><div class="line">模板最后必须转换为JS代码：因为模板是有逻辑的，必须是 `JS` 实现；转换为 `html` 渲染页面，必须是 `JS` 实现；模板最终要转换为一个 `JS` 函数（`render` 函数）</div><div class="line"></div><div class="line"><span class="number">2</span>、<span class="keyword">with</span> 的用法</div><div class="line">（原生 JS 中不要用 <span class="keyword">with</span>，调试成本很高，vue 中 OK）</div></pre></td></tr></table></figure>
 <p>&lt;!DOCTYPE html&gt;</p>
 <p><html></html></p>
 <p><head><br>    <meta charset="UTF-8"><br>    <title>Document</title><br></head></p>
@@ -234,7 +234,7 @@ for (key in data) {
 </code></pre><p>//第一部分，普通用法<br>        function fn() {<br>            alert(obj.name)<br>            alert(obj.age)<br>            obj.getAddress()<br>        }<br>        fn()</p>
 <p>//第二部分，with用法<br>        function fn1() {<br>            with(obj) {<br>                alert(age)<br>                alert(name)<br>                getAddress()<br>            }<br>        }<br>        fn1()<br>    <br><br><br><code>``
 以上分了 普通用法 和</code>with` 用法，其实最后的结果都是一样的，那就是不停的弹窗。。</p>
-<p>上面的内容是为了 <code>render</code> 函数铺垫的<br>1、模板中所有的信息都可以包含在 <code>render</code> 函数中<br>2、<code>this</code> 即 <code>vm</code><br>3、<code>price</code> 即 <code>this.price</code> 即 <code>vm.price</code> 即 <code>data</code> 中的 <code>price</code><br>4、<code>_c</code> 即 <code>this._c</code> 即<code>vm._cxq</code></p>
+<p>上面的内容是为了 <code>render</code> 函数铺垫的:<br>1、模板中所有的信息都可以包含在 <code>render</code> 函数中<br>2、<code>this</code> 即 <code>vm</code><br>3、<code>price</code> 即 <code>this.price</code> 即 <code>vm.price</code> 即 <code>data</code> 中的 <code>price</code><br>4、<code>_c</code> 即 <code>this._c</code> 即<code>vm._cxq</code></p>
 <blockquote>
 <p>五、vue 的整个渲染流程</p>
 </blockquote>
@@ -455,11 +455,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
