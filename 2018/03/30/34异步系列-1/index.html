@@ -8,22 +8,28 @@
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
   <title>深入理解JavaScript--异步系列(1) | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="什么事单线程，它和异步的关系是？JavaScript语言的一大特点就是单线程，也就是说，同一个时间只能做一件事。
+  <meta name="description" content="一、单线程
+
+JavaScript语言的一大特点就是单线程，也就是说，同一个时间只能做一件事。
 单线程就意味着，所有任务需要排队，前一个任务结束，才会执行后一个任务。如果前一个任务耗时很长，后一个任务就不得不一直等着。
-JavaScript语言的设计者意识到，这时主线程完全可以不管IO设备，挂起处于等待中的任务，先运行排在后面的任务。等到IO设备返回了结果，再回过头，把挂起的任务">
+JavaScript语言的设计者意识到，这时主线程完全可以不管IO设备，挂起处于等待中的任务，先运行排在后面的任务。等到IO设备返回了结果，再回过头，把挂起的任务继续执行下去。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解JavaScript--异步系列(1)">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/03/30/34异步系列-1/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="什么事单线程，它和异步的关系是？JavaScript语言的一大特点就是单线程，也就是说，同一个时间只能做一件事。
+<meta property="og:description" content="一、单线程
+
+JavaScript语言的一大特点就是单线程，也就是说，同一个时间只能做一件事。
 单线程就意味着，所有任务需要排队，前一个任务结束，才会执行后一个任务。如果前一个任务耗时很长，后一个任务就不得不一直等着。
-JavaScript语言的设计者意识到，这时主线程完全可以不管IO设备，挂起处于等待中的任务，先运行排在后面的任务。等到IO设备返回了结果，再回过头，把挂起的任务">
-<meta property="og:updated_time" content="2018-10-31T09:07:27.022Z">
+JavaScript语言的设计者意识到，这时主线程完全可以不管IO设备，挂起处于等待中的任务，先运行排在后面的任务。等到IO设备返回了结果，再回过头，把挂起的任务继续执行下去。">
+<meta property="og:updated_time" content="2018-11-05T10:35:04.293Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解JavaScript--异步系列(1)">
-<meta name="twitter:description" content="什么事单线程，它和异步的关系是？JavaScript语言的一大特点就是单线程，也就是说，同一个时间只能做一件事。
+<meta name="twitter:description" content="一、单线程
+
+JavaScript语言的一大特点就是单线程，也就是说，同一个时间只能做一件事。
 单线程就意味着，所有任务需要排队，前一个任务结束，才会执行后一个任务。如果前一个任务耗时很长，后一个任务就不得不一直等着。
-JavaScript语言的设计者意识到，这时主线程完全可以不管IO设备，挂起处于等待中的任务，先运行排在后面的任务。等到IO设备返回了结果，再回过头，把挂起的任务">
+JavaScript语言的设计者意识到，这时主线程完全可以不管IO设备，挂起处于等待中的任务，先运行排在后面的任务。等到IO设备返回了结果，再回过头，把挂起的任务继续执行下去。">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -169,38 +175,45 @@ JavaScript语言的设计者意识到，这时主线程完全可以不管IO设�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="什么事单线程，它和异步的关系是？"><a href="#什么事单线程，它和异步的关系是？" class="headerlink" title="什么事单线程，它和异步的关系是？"></a>什么事单线程，它和异步的关系是？</h2><p>JavaScript语言的一大特点就是<strong>单线程</strong>，也就是说，同一个时间只能做一件事。</p>
+        <blockquote>
+<p>一、单线程</p>
+</blockquote>
+<p>JavaScript语言的一大特点就是<strong>单线程</strong>，也就是说，同一个时间只能做一件事。</p>
 <p>单线程就意味着，所有任务需要排队，前一个任务结束，才会执行后一个任务。如果前一个任务耗时很长，后一个任务就不得不一直等着。</p>
 <p>JavaScript语言的设计者意识到，这时主线程完全可以不管IO设备，挂起处于等待中的任务，先运行排在后面的任务。等到IO设备返回了结果，再回过头，把挂起的任务继续执行下去。</p>
 <p>于是，所有任务可以分成两种，一种是同步任务（synchronous），另一种是异步任务（asynchronous）。<br><a id="more"></a><br>一旦”执行栈”中的所有同步任务执行完毕，系统就会读取”任务队列”，看看里面有哪些事件。那些对应的异步任务，于是结束等待状态，进入执行栈，开始执行。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">setTimeout(console.<span class="built_in">log</span>, <span class="number">0</span>, <span class="string">'a'</span>)</div><div class="line">console.<span class="built_in">log</span>(<span class="string">'b'</span>)</div><div class="line">console.<span class="built_in">log</span>(<span class="string">'c'</span>)</div><div class="line"><span class="comment">// b c a</span></div></pre></td></tr></table></figure></p>
-<p>第一步，执行第一行，此时会将这个操作暂时存储到其他地方，因为setTimeout是一个异步执行操作。<br>第二步，执行第二行，打印 b<br>第三步，执行第三行，打印 c<br>第四步，等待最后一行程序（一共三行）都全部执行完了，然后立马实时查看刚才暂存的异步操作有没有。如果有可执行的，就立即拿到出来继续执行。<br>第五步，执行完毕之后，再实时查看暂存位置中是否还有未执行的异步回调。</p>
+<p>第一步，执行第一行，此时会将这个操作暂时存储到其他地方，因为setTimeout 是一个异步执行操作。<br>第二步，执行第二行，打印 b<br>第三步，执行第三行，打印 c<br>第四步，等待最后一行程序（一共三行）都全部执行完了，然后立马实时查看刚才暂存的异步操作有没有。如果有可执行的，就立即拿到出来继续执行。<br>第五步，执行完毕之后，再实时查看暂存位置中是否还有未执行的异步回调。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ajax = $.ajax(&#123;</div><div class="line">    <span class="attr">url</span>: <span class="string">'/data/data1.json'</span>,</div><div class="line">    <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'success'</span>)</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>对于ajax这种传递过去不执行，等出来结果之后再执行的函数，叫做callback，即回调函数.<br>实现<strong>异步的最核心原理</strong>，就是将 callback 作为参数传递给异步执行函数，当有结果返回之后再触发 callback 执行.</p>
 <p><strong>事件绑定算不算异步？</strong></p>
 <p><em>1、共同之处：</em><br>技术实现以及书写方法上是一样的，最终执行的方式也基本一样，都通过 <code>evet-loop</code> 执行。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$btn.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'你点击了按钮'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">fs.readFile(<span class="string">'data1.json'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</div><div class="line">    <span class="comment">// 获取数据</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
 <p><em>2、不同之处：</em><br>第一，<code>event-loop</code> 执行时，调用的源不一样。异步操作是系统自动调用，无论是<code>setTimeout</code>时间到了还是<code>$.ajax</code>请求返回了，系统会自动调用。而事件绑定就需要用户手动触发。</p>
 <p>第二，从设计上来将，事件绑定有着明显的“订阅-发布”的设计模式，而异步操作却没有。</p>
-<p>第三，事件绑定在 <code>js</code> 中扮演着非常重要的角色，各个地方都会用到事件绑定的形式。例如 web 页面监控鼠标、键盘，以及 <code>nodejs</code> 中的<code>EventEmitter</code> 应用非常广泛（特别是涉及到数据流时）。而事件绑定被应用到非常广泛，却没有发生像异步操作带来的程序逻辑问题。</p>
+<p>第三，事件绑定在 <code>js</code> 中扮演着非常重要的角色，各个地方都会用到事件绑定的形式。例如 <code>web</code> 页面监控鼠标、键盘，以及 <code>nodejs</code> 中的<code>EventEmitter</code> 应用非常广泛（特别是涉及到数据流时）。而事件绑定被应用到非常广泛，却没有发生像异步操作带来的程序逻辑问题。</p>
 <p>图片/ <code>ajax</code> /绑定事件 <code>addEventListener</code> /定时 <code>setTimeout</code> 都算异步</p>
 <p>不过异步也有自己的 <em>缺点</em>：<br>1、没有按照执行的顺序来书写，可读性差<br>2、<code>callback</code> 中不容易模块化</p>
-<hr>
-<p>下面讲讲 <strong>Event Loop</strong></p>
+<blockquote>
+<p>二、Event Loop</p>
+</blockquote>
 <p>JS 是单线程语言</p>
 <p>JS 在执行的过程中会产生执行环境，这些执行环境会被顺序的加入到执行栈中。如果遇到异步的代码，会被挂起并加入到 Task（有多种 task） 队列中。一旦执行栈为空，Event Loop 就会从 Task 队列中拿出需要执行的代码并放入执行栈中执行，所以本质上来说 <strong>JS 中的异步还是同步行为</strong>。</p>
-<p>不同的任务源会被分配到不同的 Task 队列中，任务源可以分为 微任务（microtask） 和 宏任务（macrotask）。在 ES6 规范中，microtask 称为 jobs，macrotask 称为 task。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">'script start'</span>);</div><div class="line"></div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'setTimeout'</span>);</div><div class="line">&#125;, <span class="number">0</span>);</div><div class="line"></div><div class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Promise'</span>)</div><div class="line">    resolve()</div><div class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'promise1'</span>);</div><div class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'promise2'</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'script end'</span>);</div><div class="line"><span class="comment">// script start =&gt; Promise =&gt; script end =&gt; promise1 =&gt; promise2 =&gt; setTimeout</span></div></pre></td></tr></table></figure></p>
+<p>不同的任务源会被分配到不同的 Task 队列中，任务源可以分为 微任务（microtask） 和 宏任务（macrotask）。在 ES6 规范中，microtask 称为 jobs，macrotask 称为 task。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">'script start'</span>);</div><div class="line"></div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'setTimeout'</span>);</div><div class="line">&#125;, <span class="number">0</span>);</div><div class="line"></div><div class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Promise'</span>)</div><div class="line">    resolve()</div><div class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'promise1'</span>);</div><div class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'promise2'</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'script end'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 重要！！</span></div><div class="line"><span class="comment">// script start =&gt; Promise =&gt; script end =&gt; promise1 =&gt; promise2 =&gt; setTimeout</span></div></pre></td></tr></table></figure></p>
 <p>以上代码虽然 <code>setTimeout</code> 写在 <code>Promise</code> 之前，但是因为 <code>Promise</code> 属于微任务而 <code>setTimeout</code> 属于宏任务，所以会有以上的打印。</p>
-<p>微任务包括 <code>process.nextTick</code> ，<code>promise</code> ，<code>Object.observe</code> ，<code>MutationObserver</code></p>
-<p>宏任务包括 <code>script</code> ， <code>setTimeout</code> ，<code>setInterval</code> ，<code>setImmediate</code> ，<code>I/O</code> ，<code>UI rendering</code></p>
+<p><em>微任务</em> 包括 <code>process.nextTick</code> ，<code>promise</code> ，<code>Object.observe</code> ，<code>MutationObserver</code></p>
+<p><em>宏任务</em> 包括 <code>script</code> ， <code>setTimeout</code> ，<code>setInterval</code> ，<code>setImmediate</code> ，<code>I/O</code> ，<code>UI rendering</code></p>
 <p>很多人有个误区，认为微任务快于宏任务，其实是错误的。因为宏任务中包括了 <code>script</code> ，<strong>浏览器会先执行一个宏任务，接下来有异步代码的话就先执行微任务。</strong></p>
-<p>所以正确的一次 Event loop 顺序是这样的：</p>
+<p>所以正确的一次 <em>Event loop</em> 顺序是这样的：</p>
 <ul>
 <li>执行同步代码，这属于宏任务</li>
 <li>执行栈为空，查询是否有微任务需要执行</li>
 <li>执行所有微任务</li>
 <li>必要的话渲染 UI</li>
-<li>然后开始下一轮 Event loop，执行宏任务中的异步代码<br>通过上述的 Event loop 顺序可知，如果宏任务中的异步代码有大量的计算并且需要操作 DOM 的话，为了更快的 界面响应，我们可以把操作 DOM 放入微任务中。</li>
+<li>然后开始下一轮 <em>Event loop</em>，执行宏任务中的异步代码<br>通过上述的 <em>Event loop</em> 顺序可知，如果宏任务中的异步代码有大量的计算并且需要操作 <em>DOM</em> 的话，为了更快的 界面响应，我们可以把操作 <em>DOM</em> 放入微任务中。</li>
 </ul>
-<hr>
+<blockquote>
+<p>三、jq 的 deferred(延迟)</p>
+</blockquote>
+<p>迭代过程：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 第一种：jq 1.5 之前</span></div><div class="line">      <span class="keyword">var</span> ajax = $.ajax(&#123;</div><div class="line">          <span class="attr">url</span>: <span class="string">'./data.json'</span>,</div><div class="line">          <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">              <span class="built_in">console</span>.log(<span class="string">'success 1'</span>)</div><div class="line">              <span class="built_in">console</span>.log(<span class="string">'success 2'</span>)</div><div class="line">              <span class="built_in">console</span>.log(<span class="string">'success 3'</span>)</div><div class="line">          &#125;,</div><div class="line">          <span class="attr">error</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">              <span class="built_in">console</span>.log(<span class="string">'error'</span>)</div><div class="line">          &#125;</div><div class="line">      &#125;)</div><div class="line"></div><div class="line">      <span class="comment">// 第二种 ：jq 1.5 之后</span></div><div class="line">      <span class="keyword">var</span> ajax = $.ajax(<span class="string">'./data.json'</span>)</div><div class="line">      ajax.done(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'success a'</span>)</div><div class="line">      &#125;).fail(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'fail 1'</span>)</div><div class="line">      &#125;).done(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'success b'</span>)</div><div class="line">      &#125;).fail(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'fail 2'</span>)</div><div class="line">      &#125;).done(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'success c'</span>)</div><div class="line">      &#125;).fail(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'fail 3'</span>)</div><div class="line">      &#125;)</div><div class="line"></div><div class="line"></div><div class="line">      <span class="comment">// 第三种 ：jq 1.5 之后 promise前生版</span></div><div class="line">      <span class="keyword">var</span> ajax = $.ajax(<span class="string">'./data.json'</span>)</div><div class="line">      ajax.then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'success 100'</span>)</div><div class="line">      &#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'fail 100'</span>)</div><div class="line">      &#125;).then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'success 200'</span>)</div><div class="line">      &#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'fail 200'</span>)</div><div class="line">      &#125;).then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'success 300'</span>)</div><div class="line">      &#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          conso3le.log(<span class="string">'fail 00'</span>)</div><div class="line">      &#125;)</div></pre></td></tr></table></figure></p>
 
       
 
@@ -426,10 +439,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
@@ -438,11 +447,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -463,14 +476,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">剑指offer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">

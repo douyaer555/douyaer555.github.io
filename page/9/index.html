@@ -489,8 +489,8 @@
 <p><code>Promise</code> 是 <code>ES6</code> 新增的语法，解决了回调地狱的问题。</p>
 <p><code>Promise</code> 是异步编程的一种解决方案，比我们传统的回调函数、事件更加合理，最早由社区提出并实现，ES6觉得很ok，就写进了语言标准中，统一了语法，并且提供了原生的Promise对象。</p>
 <p>所谓的 <code>Promise</code>，<strong>其实就是一个容器</strong>，里面保存着未来才会结束的事件（通常是一个异步操作）的结果，从 <code>javascript</code> 的语法上讲就是一个对象，从里面能获取异步操作的信息，<code>Promise</code> 提供统一的 <code>api</code> ,各种异步操作都可以使用同样的方法来进行处理。</p>
-<p>特点一：<code>Promise</code> 对象的状态不受外界影响。代表着一个异步操作，有三种状态: <code>Pending</code> (进行中)、<code>Fulfilled</code> (已成功)和 <code>Reject</code> (已失败)。只有异步操作的结果才可以决定当前是哪一种状态，任何其他操作都无法改变这个状态，这也就是 <code>Promise</code> 的由来。“承诺”，就是其他手段无法更改。</p>
-<p>特点二：一旦状态改变了，就不会再改变。任何时候都可以得到这个结果。Promise对象的状态的改变只会是两种可能：从 <code>Pending</code> 变成 <code>Fulfilled</code> 和 <code>Pending</code> 变为 <code>Rejected</code> 。这要这两种情况发生，状态就凝固了，不会再改变了，而是一直保持这样一个结果这时候就成 <code>Resolved</code> (已定型)。就算改变已经发生，再对 <code>Promise</code> 对象添加回调函数，也会立即得到这个结果。这与事件（event）完全不同，事件的特点我们都知道，如果错过它，就监听不到结果的。</p>
+<p><em>特点一：</em><code>Promise</code> 对象的状态不受外界影响。代表着一个异步操作，有三种状态: <code>Pending</code> (进行中)、<code>Fulfilled</code> (已成功)和 <code>Reject</code> (已失败)。只有异步操作的结果才可以决定当前是哪一种状态，任何其他操作都无法改变这个状态，这也就是 <code>Promise</code> 的由来。“承诺”，就是其他手段无法更改。</p>
+<p><em>特点二：</em>一旦状态改变了，就不会再改变。任何时候都可以得到这个结果。Promise对象的状态的改变只会是两种可能：从 <code>Pending</code> 变成 <code>Fulfilled</code> 和 <code>Pending</code> 变为 <code>Rejected</code> 。这要这两种情况发生，状态就凝固了，不会再改变了，而是一直保持这样一个结果这时候就成 <code>Resolved</code> (已定型)。就算改变已经发生，再对 <code>Promise</code> 对象添加回调函数，也会立即得到这个结果。这与事件（event）完全不同，事件的特点我们都知道，如果错过它，就监听不到结果的。</p>
 <blockquote>
 <p>二、基本用法</p>
 </blockquote>
@@ -645,10 +645,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
@@ -657,11 +653,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -682,14 +682,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">剑指offer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">

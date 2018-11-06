@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://i.imgur.com/PcGbarw.png">
 <meta property="og:image" content="https://i.imgur.com/AoMaqBi.png">
 <meta property="og:image" content="https://i.imgur.com/ApNdBSw.png">
-<meta property="og:updated_time" content="2018-10-23T10:11:44.179Z">
+<meta property="og:updated_time" content="2018-11-05T09:43:05.685Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解JavaScript--闭包">
 <meta name="twitter:description" content="其实闭包的核心内容特别的少，但是铺垫非常的长谈到闭包，无论如何都不能绕过去的，就是 作用域 啦
@@ -211,7 +211,7 @@
 <p>为什么闭包这个怪物不会被销毁啊？我们看一下红宝书对闭包的定义：</p>
 <p><strong>闭包是指有权访问另一个函数作用域中的变量的函数</strong></p>
 <p>说到这里我们必须要借助两个辅助的概念来厘清<strong>【闭包】</strong>了：</p>
-<p>1、作用域：除了全局作用域以外，JS中只有函数才能创建作用域，它的作用是隔离变量，不同的作用域里相同的变量名不会有冲突，无论你调用不调用，函数只要创建了，它就有独立的作用域。<br>2、上下文环境：上下文环境是动态的计算（作用域是静态的组织结构）；在执行代码之前，把将要用到的所有的变量都事先拿出来，有的直接赋值了，有的先用undefined占个空。</p>
+<p><em>1、作用域</em>：除了全局作用域以外，JS中只有函数才能创建作用域，它的作用是隔离变量，不同的作用域里相同的变量名不会有冲突，无论你调用不调用，函数只要创建了，它就有独立的作用域。<br><em>2、上下文环境</em>：上下文环境是动态的计算（作用域是静态的组织结构）；在执行代码之前，把将要用到的所有的变量都事先拿出来，有的直接赋值了，有的先用undefined占个空。</p>
 <p>一个作用域下可能包含若干个上下文环境。有可能从来没有过上下文环境（函数从来就没有被调用过）；有可能有过，现在函数被调用完毕后，上下文环境被销毁了；有可能同时存在一个或多个（闭包）。</p>
 <p>严格来说，闭包需要满足三个条件：【1】访问所在作用域；【2】函数嵌套；【3】在所在作用域外被调用<br>有些人觉得只满足条件1就可以，所以立即执行函数是闭包；有些人觉得满足条件1和2才可以，所以被嵌套的函数才是闭包；有些人觉得3个条件都满足才可以，所以在作用域以外的地方被调用的函数才是闭包 </p>
 
@@ -243,17 +243,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">闭包</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -439,10 +428,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
@@ -451,11 +436,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -476,14 +465,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">剑指offer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">

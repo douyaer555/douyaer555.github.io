@@ -16,7 +16,7 @@ AJAX即Async JavaScript And Xml 是异步的JS和Xml的技术。">
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="AJAX是一种实现在不刷新网页的情况下通过XmlHttpRequest()来访问服务器并根据数据的处理结果按照预期的方式对页面进行修改的技术。
 AJAX即Async JavaScript And Xml 是异步的JS和Xml的技术。">
-<meta property="og:updated_time" content="2018-10-19T12:08:24.126Z">
+<meta property="og:updated_time" content="2018-11-05T09:41:41.450Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="封装一个ajax">
 <meta name="twitter:description" content="AJAX是一种实现在不刷新网页的情况下通过XmlHttpRequest()来访问服务器并根据数据的处理结果按照预期的方式对页面进行修改的技术。
@@ -179,6 +179,9 @@ AJAX即Async JavaScript And Xml 是异步的JS和Xml的技术。">
 <p>2.2 通过send()可以设置请求的第四部分即请求体。<br>一般如果是GET请求，浏览器会屏蔽第四部分，如果是POST请求，浏览器会展示出来。<br>  具体查看方法:<br>    2.2.1 打开浏览器控制台<br>    2.2.2 点到Network,点到文件,点击View Source,就可以看到请求头,请求体了。</p>
 <blockquote>
 <p>三、JS读取响应的任意一个部分<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">let xhr = new XMLHttpRequest()</div><div class="line">xhr<span class="selector-class">.status</span>      <span class="comment">// 获取状态码,第一部分</span></div><div class="line">xhr<span class="selector-class">.statusText</span>  <span class="comment">// 获取状态码描述，第一部分</span></div><div class="line">xhr.getResponseHeader()     <span class="comment">// 获取响应头，第二部分</span></div><div class="line">xhr.getAllResponseHeaders() <span class="comment">// 获取所有响应头，第二部分</span></div><div class="line">xhr<span class="selector-class">.responseText</span> <span class="comment">// 获取响应描述即后台的 response.write()中的内容，第四部分</span></div></pre></td></tr></table></figure></p>
+</blockquote>
+<hr>
+<blockquote>
 <p>四、封装一个AJAX**<br>3.1.1第一次封装<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.jquery = <span class="function"><span class="keyword">function</span>(<span class="params">nodeOrSelector</span>)</span>&#123;</div><div class="line">  <span class="keyword">let</span> nodes = &#123;</div><div class="line">    <span class="number">0</span>:nodeOrSelector,</div><div class="line">    <span class="attr">length</span>:<span class="number">1</span></div><div class="line">  &#125;</div><div class="line">  nodes.addClass = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">  ndoes.text = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">  <span class="keyword">return</span> nodes</div><div class="line">&#125;</div><div class="line"><span class="built_in">window</span>.$ = <span class="built_in">window</span>.jquery</div><div class="line"><span class="built_in">window</span>.jquery.ajax = <span class="function"><span class="keyword">function</span>(<span class="params">url,method,requestBody,successFn,failFn,headers</span>)</span>&#123;</div><div class="line">  <span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</div><div class="line">  xhr.open(method,url)</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> headers)&#123;</div><div class="line">    <span class="keyword">let</span> value = headers[key]</div><div class="line">    xhr.setRequestHeader(key,value)</div><div class="line">  &#125;</div><div class="line">  xhr.onreadystatechange = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">    <span class="keyword">if</span>(xhr.readyState === <span class="number">4</span>)&#123;</div><div class="line">      <span class="keyword">if</span>(xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>)&#123;</div><div class="line">        successfn.call(<span class="literal">undefined</span>,xhr.responseText)</div><div class="line">      &#125;<span class="keyword">else</span> <span class="keyword">if</span>(xhr.status &gt;= <span class="number">400</span>)&#123;</div><div class="line">        failFn.call(<span class="literal">undefined</span>,xhr.status)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  xhr.send(requestBody)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 调用方法 假设有一个按钮id为button</span></div><div class="line"><span class="keyword">let</span> button = <span class="built_in">document</span>.querySector(<span class="string">'button'</span>)</div><div class="line">button.addEventListener(click,(e)=&gt;&#123;</div><div class="line">  <span class="keyword">let</span> f1 = <span class="function">(<span class="params">x</span>)=&gt;</span>successFn.call(<span class="literal">undefined</span>,x)</div><div class="line">  <span class="keyword">let</span> f2 = <span class="function">(<span class="params">x</span>)=&gt;</span>&#123;<span class="built_in">console</span>.log(x.status)&#125;</div><div class="line">  <span class="built_in">window</span>.jquery.ajax(<span class="string">'/xxx'</span>, <span class="string">'post'</span>, <span class="string">'a=1&amp;&amp;b=2'</span>,f1,f2,<span class="literal">null</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
 </blockquote>
 <p>这个方法设置有一个缺点,传参很乱容易写出别人无法理解的函数比如没有请求体和设置请求头的<br><code>window.jquery.ajax(&#39;get&#39;,&#39;/xxx&#39;,null,null,successFn,failFn)</code>这样不好,容易忘,所以来优化一下代码。 </p>
@@ -414,10 +417,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
@@ -426,11 +425,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -451,14 +454,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">剑指offer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">闭包</a>
               </li>
              
               <li class="article-tag-list-item">
