@@ -6,18 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>EventUtil--js事件封装 | wangsiyuan</title>
+  <title>跨域面试 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="跨浏览器的事件对象EventUtil">
+  <meta name="description" content="浏览器出于安全的考虑，采用的是同源策略。
+协议、域名和端口号三者统一，就是同域，只要有其中一个不一样，就是跨域，这时Ajax就会请求失败。
+下面有三种方法可以解决跨域的问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="EventUtil--js事件封装">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/05/05/05EventUtil？？？/index.html">
+<meta property="og:title" content="跨域面试">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/09/13/22跨域面试/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="跨浏览器的事件对象EventUtil">
-<meta property="og:updated_time" content="2018-10-19T03:55:52.158Z">
+<meta property="og:description" content="浏览器出于安全的考虑，采用的是同源策略。
+协议、域名和端口号三者统一，就是同域，只要有其中一个不一样，就是跨域，这时Ajax就会请求失败。
+下面有三种方法可以解决跨域的问题">
+<meta property="og:updated_time" content="2018-11-06T11:19:40.887Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="EventUtil--js事件封装">
-<meta name="twitter:description" content="跨浏览器的事件对象EventUtil">
+<meta name="twitter:title" content="跨域面试">
+<meta name="twitter:description" content="浏览器出于安全的考虑，采用的是同源策略。
+协议、域名和端口号三者统一，就是同域，只要有其中一个不一样，就是跨域，这时Ajax就会请求失败。
+下面有三种方法可以解决跨域的问题">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -143,33 +149,57 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-05EventUtil？？？" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-22跨域面试" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      EventUtil--js事件封装
+      跨域面试
     </h1>
   
 
         
-        <a href="/2018/05/05/05EventUtil？？？/" class="archive-article-date">
-  	<time datetime="2018-05-05T12:13:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-05</time>
+        <a href="/2018/09/13/22跨域面试/" class="archive-article-date">
+  	<time datetime="2018-09-13T01:36:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>跨浏览器的事件对象EventUtil</p>
+        <p><strong>浏览器出于安全的考虑，采用的是同源策略。</strong></p>
+<p>协议、域名和端口号三者统一，就是同域，只要有其中一个不一样，就是跨域，这时Ajax就会请求失败。</p>
+<p>下面有三种方法可以解决跨域的问题<br><a id="more"></a></p>
+<blockquote>
+<p>一、JSONP</p>
 </blockquote>
-<a id="more"></a>
-<figure class="highlight verilog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> EventUtil = &#123;</div><div class="line"></div><div class="line">	<span class="comment">//事件监听</span></div><div class="line">    addHandler: <span class="keyword">function</span>(element,<span class="keyword">type</span>,handler) &#123; </div><div class="line">        <span class="keyword">if</span>(element<span class="variable">.addEventListener</span>) &#123;</div><div class="line">            element<span class="variable">.addEventListener</span>(<span class="keyword">type</span>,handler,false);</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(element<span class="variable">.attachEvent</span>) &#123;</div><div class="line">            element<span class="variable">.attachEvent</span>(<span class="string">"on"</span>+<span class="keyword">type</span>,handler);</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            element[<span class="string">"on"</span> +<span class="keyword">type</span>] = handler;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">	</div><div class="line">	<span class="comment">//移除事件监听</span></div><div class="line">    removeHandler: <span class="keyword">function</span>(element,<span class="keyword">type</span>,handler)&#123; </div><div class="line">        <span class="keyword">if</span>(element<span class="variable">.removeEventListener</span>) &#123;</div><div class="line">            element<span class="variable">.removeEventListener</span>(<span class="keyword">type</span>,handler,false);</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(element<span class="variable">.detachEvent</span>) &#123;</div><div class="line">            element<span class="variable">.detachEvent</span>(<span class="string">"on"</span>+<span class="keyword">type</span>,handler);</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            element[<span class="string">"on"</span> +<span class="keyword">type</span>] = <span class="literal">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">	<span class="comment">//获取event对象，返回event对象的引用</span></div><div class="line">    getEvent: <span class="keyword">function</span>(<span class="keyword">event</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">event</span> ? <span class="keyword">event</span> : window<span class="variable">.event</span>;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">	<span class="comment">//返回事件目标。</span></div><div class="line">    getTarget: <span class="keyword">function</span>(<span class="keyword">event</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">event</span><span class="variable">.target</span> || <span class="keyword">event</span><span class="variable">.srcElement</span>;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">	<span class="comment">//取消或者阻止事件默认行为</span></div><div class="line">    preventDefault: <span class="keyword">function</span>(<span class="keyword">event</span>)&#123;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">event</span><span class="variable">.preventDefault</span>) &#123;</div><div class="line">            <span class="keyword">event</span><span class="variable">.preventDefault</span>();</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">event</span><span class="variable">.returnValue</span> = false;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">	<span class="comment">//阻止事件流，阻止事件冒泡</span></div><div class="line">    stopPropagation: <span class="keyword">function</span>(<span class="keyword">event</span>) &#123;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">event</span><span class="variable">.stopPropagation</span>) &#123;</div><div class="line">            <span class="keyword">event</span><span class="variable">.stopPropagation</span>();</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">event</span><span class="variable">.cancelBubble</span> = true;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">	<span class="comment">//返回相关元素信息（仅对于mouseover和mouseout事件）</span></div><div class="line">    getRelatedTarget: <span class="keyword">function</span>(<span class="keyword">event</span>)&#123;</div><div class="line">        <span class="keyword">if</span> (<span class="keyword">event</span><span class="variable">.relatedTarget</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">event</span><span class="variable">.relatedTarget</span>;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">event</span><span class="variable">.toElement</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">event</span><span class="variable">.toElement</span>;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">event</span><span class="variable">.fromElement</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">event</span><span class="variable">.fromElement</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">	<span class="comment">//获取鼠标滚轮增量值，检测是否包含WheelDelta</span></div><div class="line">    getWheelDelta: <span class="keyword">function</span>(<span class="keyword">event</span>) &#123;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">event</span><span class="variable">.wheelDelta</span>) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">event</span><span class="variable">.wheelDelta</span>;</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">return</span> -<span class="keyword">event</span><span class="variable">.detail</span> * <span class="number">40</span></div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">	<span class="comment">//获取键盘按键键码。</span></div><div class="line">    getCharCode: <span class="keyword">function</span>(<span class="keyword">event</span>) &#123;</div><div class="line">        <span class="keyword">if</span>(typeof <span class="keyword">event</span><span class="variable">.charCode</span> == 'number') &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">event</span><span class="variable">.charCode</span>;</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">event</span><span class="variable">.keyCode</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">	<span class="comment">//在mouseup或者mousedown的时候，event存在一个button属性，用于判断是按了鼠标左键，右键，还是中键，0鼠标主键按钮，1是中间，2是次键（右键）</span></div><div class="line">    getButton:<span class="keyword">function</span>(<span class="keyword">event</span>)&#123;</div><div class="line">        <span class="keyword">if</span>(document<span class="variable">.implementation</span><span class="variable">.hasFeature</span>(<span class="string">"MouseEvents"</span>,<span class="string">"2.0"</span>))&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">event</span><span class="variable">.button</span>;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            switch(<span class="keyword">event</span><span class="variable">.button</span>)&#123;</div><div class="line">                <span class="keyword">case</span> <span class="number">0</span>:</div><div class="line">                <span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">                <span class="keyword">case</span> <span class="number">3</span>:</div><div class="line">                <span class="keyword">case</span> <span class="number">5</span>:</div><div class="line">                <span class="keyword">case</span> <span class="number">7</span>:</div><div class="line">                  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">                <span class="keyword">case</span> <span class="number">2</span>:</div><div class="line">                <span class="keyword">case</span> <span class="number">6</span>:</div><div class="line">                   <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">                <span class="keyword">case</span> <span class="number">4</span>:</div><div class="line">                  <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>上面就是我们封装的事件对象。</p>
-<p>用法超级简单，例如click事件:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> btn1 = <span class="built_in">document</span>.getElementById(<span class="string">"myBtn1"</span>);</div><div class="line"><span class="keyword">var</span> handler = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">alert(<span class="string">"hello haorooms"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">EventUtil.addHandler(btn1, <span class="string">"click"</span>, handler);</div><div class="line"><span class="comment">//EventUtil.removeHandler(btn1, "click", handler);</span></div></pre></td></tr></table></figure></p>
+<p><code>JSONP</code> 的原理非常简单：</p>
+<p>利用 <code>&lt;script&gt;</code> 标签没有跨域限制的漏洞，通过 <code>&lt;script&gt;</code> 标签指向一个需要访问的地址并提供一个回调函数来接收数据。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://domain/api?param1=a&amp;param2=b&amp;callback=jsonp"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">jsonp</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">    	<span class="built_in">console</span>.log(data)</div><div class="line">	&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><code>JSONP</code>的兼容性很好，但只限于 <strong>GET</strong> 请求</p>
+<p>在开发中可能会遇到多个 <code>JSONP</code> 请求的回调函数名是相同的，这时候就需要自己封装一个 <code>JSONP</code>，以下是简单实现：<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function <span class="keyword">jsonp(url, </span><span class="keyword">jsonpCallback, </span>success) &#123;</div><div class="line">  let <span class="keyword">script </span>= document.createElement(<span class="string">"script"</span>)<span class="comment">;</span></div><div class="line">  <span class="keyword">script.src </span>= url<span class="comment">;</span></div><div class="line">  <span class="keyword">script.async </span>= true<span class="comment">;</span></div><div class="line">  <span class="keyword">script.type </span>= <span class="string">"text/javascript"</span><span class="comment">;</span></div><div class="line">  window[<span class="keyword">jsonpCallback] </span>= function(data) &#123;</div><div class="line">    success &amp;&amp; success(data)<span class="comment">;</span></div><div class="line">  &#125;<span class="comment">;</span></div><div class="line">  document.<span class="keyword">body.appendChild(script);</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">jsonp(</span></div><div class="line">  <span class="string">"http://xxx"</span>,</div><div class="line">  <span class="string">"callback"</span>,</div><div class="line">  function(value) &#123;</div><div class="line">    console.log(value)<span class="comment">;</span></div><div class="line">  &#125;</div><div class="line">)<span class="comment">;</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>二、CORS</p>
+</blockquote>
+<p><code>CORS</code> 需要<strong>浏览器</strong>和<strong>后端</strong>同时支持。</p>
+<p>服务端设置 <code>Access-Control-Allow-Origin</code> 就可以开启 CORS。 该属性表示哪些域名可以访问资源，如果设置通配符则表示所有网站都可以访问资源。</p>
+<p>实现 <code>CORS</code> 通信的关键是后端。只要后端实现了 <code>CORS</code>，就实现了跨域。</p>
+<blockquote>
+<p>三、document.domain</p>
+</blockquote>
+<p>该方式只能用于二级域名相同的情况下，比如 <code>a.test.com</code> 和 <code>b.test.com</code> 适用于该方式。</p>
+<p>只需要给页面添加 <code>document.domain = &#39;test.com&#39;</code> 表示二级域名都相同就可以实现跨域。</p>
+<blockquote>
+<p>四、postMessage</p>
+</blockquote>
+<p>这种方式通常用于获取嵌入页面中的第三方页面数据。一个页面发送消息，另一个页面判断来源并接收消息<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 发送消息端</span></div><div class="line"><span class="built_in">window</span>.parent.postMessage(<span class="string">'message'</span>, <span class="string">'http://test.com'</span>);</div><div class="line"><span class="comment">// 接收消息端</span></div><div class="line"><span class="keyword">var</span> mc = <span class="keyword">new</span> MessageChannel();</div><div class="line">mc.addEventListener(<span class="string">'message'</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">var</span> origin = event.origin || event.originalEvent.origin; </div><div class="line">    <span class="keyword">if</span> (origin === <span class="string">'http://test.com'</span>) &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'验证通过'</span>)</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h2 id="★30s总结"><a href="#★30s总结" class="headerlink" title="★30s总结"></a>★30s总结</h2><ul>
+<li><code>JSONP</code> : 利用 <code>&lt;script&gt;</code> 标签的漏洞来跨域；</li>
+<li><code>CORS</code>：服务端和后端，后端是关键</li>
+<li><code>document.domian</code> ： 二级域名相同</li>
+<li><code>postMessage</code> ： 一个页面发送，另一个页面接收并验证</li>
+</ul>
 
       
 
@@ -199,17 +229,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -260,7 +279,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/05/05/05EventUtil？？？/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/09/13/22跨域面试/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -274,18 +293,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/05/08/47各种高度/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/10/05/76算法-链表篇/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          窗口高度与obj的高度
+          是算法呀！--链表篇(JavaScript版)/共 9 题
         
       </div>
     </a>
   
   
-    <a href="/2018/04/21/44三栏布局/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">三栏布局</div>
+    <a href="/2018/09/11/16DOM2事件/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">DOM事件</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -395,6 +414,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
@@ -403,19 +426,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">

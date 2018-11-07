@@ -141,228 +141,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-41初探ES6-4-Class语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/10/41初探ES6-4-Class语法/">初探ES6(4)--Class的基本语法</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/10/41初探ES6-4-Class语法/" class="archive-article-date">
-  	<time datetime="2018-04-10T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>类和模块的内部，默认就是<strong>严格模式</strong>，所以不需要使用<code>use strict</code>指定运行模式。只要你的代码写在类或模块之中，就只有严格模式可用。<br>考虑到未来所有的代码，其实都是运行在模块之中，所以 ES6 实际上把整个语言升级到了严格模式。</p>
-<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><p>JavaScript 中：<strong>生成一个对象的传统方法就是new一个函数</strong><br>
-        
-          <a class="article-more-a" href="/2018/04/10/41初探ES6-4-Class语法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-40初探ES6-3-箭头函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/07/40初探ES6-3-箭头函数/">初探ES6(3)--箭头函数</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/07/40初探ES6-3-箭头函数/" class="archive-article-date">
-  	<time datetime="2018-04-07T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p> ٩(๑&gt;◡&lt;๑)۶</p>
-<blockquote>
-<p>用处一：简化回调函数</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 正常函数写法1</span></div><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].map(<span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> x * x;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 箭头函数写法1</span></div><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].map(<span class="function"><span class="params">x</span> =&gt;</span> x * x);</div><div class="line"></div><div class="line"><span class="comment">// 正常函数写法2</span></div><div class="line"><span class="keyword">var</span> result = values.sort(<span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> a - b;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 箭头函数写法2</span></div><div class="line"><span class="keyword">var</span> result = values.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b);</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/04/07/40初探ES6-3-箭头函数/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-39初探ES6-2-变量的解构赋值" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/05/39初探ES6-2-变量的解构赋值/">初探ES6(2)--变量的解构赋值</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/05/39初探ES6-2-变量的解构赋值/" class="archive-article-date">
-  	<time datetime="2018-04-05T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>从数组和对象中提取值，对变量进行赋值，这被称为解构。</strong></p>
-<h2 id="一、数组的解构赋值"><a href="#一、数组的解构赋值" class="headerlink" title="一、数组的解构赋值"></a>一、数组的解构赋值</h2><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//以前ES5</span></div><div class="line">let a = <span class="number">1</span>;</div><div class="line">let b = <span class="number">2</span>;</div><div class="line">let c = <span class="number">3</span>;</div><div class="line"></div><div class="line"><span class="comment">//现在ES6</span></div><div class="line">let [a, b, c] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"></div><div class="line">let [foo, [[bar], baz]] = [<span class="number">1</span>, [[<span class="number">2</span>], <span class="number">3</span>]];</div><div class="line">foo <span class="comment">// 1</span></div><div class="line">bar <span class="comment">// 2</span></div><div class="line">baz <span class="comment">// 3</span></div><div class="line"></div><div class="line">let [ , , third] = [<span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="string">"baz"</span>];</div><div class="line">third <span class="comment">// "baz"</span></div><div class="line"></div><div class="line">let [x, , y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line">x <span class="comment">// 1</span></div><div class="line">y <span class="comment">// 3</span></div><div class="line"></div><div class="line">let [head, ...tail] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</div><div class="line">head <span class="comment">// 1</span></div><div class="line">tail <span class="comment">// [2, 3, 4]</span></div><div class="line"></div><div class="line">let [x, y, ...z] = ['a'];</div><div class="line">x <span class="comment">// "a"</span></div><div class="line">y <span class="comment">// undefined 解构不成功，变量的值就等于undefined。</span></div><div class="line">z <span class="comment">// []</span></div><div class="line"></div><div class="line"><span class="comment">//下面两个例子属于不完全结构，也可以成功</span></div><div class="line">let [x, y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line">x <span class="comment">// 1</span></div><div class="line">y <span class="comment">// 2</span></div><div class="line"></div><div class="line">let [a, [b], d] = [<span class="number">1</span>, [<span class="number">2</span>, <span class="number">3</span>], <span class="number">4</span>];</div><div class="line">a <span class="comment">// 1</span></div><div class="line">b <span class="comment">// 2 是个谜</span></div><div class="line">d <span class="comment">// 4</span></div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/04/05/39初探ES6-2-变量的解构赋值/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-38聊聊系列-3-HTTP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -463,59 +241,32 @@
 
 
   
-    <article id="post-36异步系列-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-35初探ES6-1-let" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/02/36异步系列-2/">深入理解JavaScript--异步系列(2)</a>
+      <a class="article-title" href="/2018/04/01/35初探ES6-1-let/">初探ES6(1)--let</a>
     </h1>
   
 
         
-        <a href="/2018/04/02/36异步系列-2/" class="archive-article-date">
-  	<time datetime="2018-04-02T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-02</time>
+        <a href="/2018/04/01/35初探ES6-1-let/" class="archive-article-date">
+  	<time datetime="2018-04-01T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>一、 Promise 的由来</p>
-</blockquote>
-<p><code>Promise</code> 是 <code>ES6</code> 新增的语法，解决了回调地狱的问题。</p>
-<p><code>Promise</code> 是异步编程的一种解决方案，比我们传统的回调函数、事件更加合理，最早由社区提出并实现，ES6觉得很ok，就写进了语言标准中，统一了语法，并且提供了原生的Promise对象。</p>
-<p>所谓的 <code>Promise</code>，<strong>其实就是一个容器</strong>，里面保存着未来才会结束的事件（通常是一个异步操作）的结果，从 <code>javascript</code> 的语法上讲就是一个对象，从里面能获取异步操作的信息，<code>Promise</code> 提供统一的 <code>api</code> ,各种异步操作都可以使用同样的方法来进行处理。</p>
-<p><em>特点一：</em><code>Promise</code> 对象的状态不受外界影响。代表着一个异步操作，有三种状态: <code>Pending</code> (进行中)、<code>Fulfilled</code> (已成功)和 <code>Reject</code> (已失败)。只有异步操作的结果才可以决定当前是哪一种状态，任何其他操作都无法改变这个状态，这也就是 <code>Promise</code> 的由来。“承诺”，就是其他手段无法更改。</p>
-<p><em>特点二：</em>一旦状态改变了，就不会再改变。任何时候都可以得到这个结果。Promise对象的状态的改变只会是两种可能：从 <code>Pending</code> 变成 <code>Fulfilled</code> 和 <code>Pending</code> 变为 <code>Rejected</code> 。这要这两种情况发生，状态就凝固了，不会再改变了，而是一直保持这样一个结果这时候就成 <code>Resolved</code> (已定型)。就算改变已经发生，再对 <code>Promise</code> 对象添加回调函数，也会立即得到这个结果。这与事件（event）完全不同，事件的特点我们都知道，如果错过它，就监听不到结果的。</p>
-<blockquote>
-<p>二、基本用法</p>
-</blockquote>
-<p>ES6 规定，<code>Promise</code> 对象是一个构造给函数，是用来生成 <code>Promise</code> 实例的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> <span class="built_in">Promise</span>=<span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;</div><div class="line"></div><div class="line"><span class="comment">/*逻辑代码*/</span><span class="comment">/*逻辑代码*/</span><span class="comment">/*逻辑代码*/</span><span class="comment">/*逻辑代码*/</span></div><div class="line"></div><div class="line">    <span class="keyword">if</span>(<span class="comment">/*异步操作成功*/</span>)&#123;</div><div class="line">        resolve(value)</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        reject(error)</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p><code>Promise</code> 构造函数式会接受两个参数的，该函数的两个参数是 <code>resolve</code> 和 <code>reject</code> ，是 <code>javascript</code> 引擎提供的，不用自己部署。</p>
-<p><code>resolve</code> 函数的作用是，将 <code>Promise</code> 对象的状态从“未完成”到“成功”（就是从 <code>Pending</code> 变为 <code>Resolved</code> ）,在异步操作成功的时候，并将异步操作的结果作为参数传递进去；</p>
-<p><code>reject</code> 函数的作用是将 <code>Promise</code> 对象的状态从“未完成”变成为“失败”（即从 <code>Pending</code> 变为 <code>Rejected</code> ），在异步操作失败的时候调用，将异步报出的错误传递出去。</p>
-<p><code>Promise</code> 实例生成以后，可以用 <code>then</code> 方法分别指定 <code>Resolve</code> 状态和 <code>Reject</code> 状态的回调函数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> <span class="built_in">Promise</span>=<span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;&#125;)</div><div class="line"><span class="built_in">Promise</span>.then(<span class="function"><span class="keyword">function</span>(<span class="params">value</span>)</span>&#123;</div><div class="line">    <span class="comment">//success</span></div><div class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">error</span>)</span>&#123;</div><div class="line">    <span class="comment">//failuer</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>then方法可以接受两个回调函数作为参数，第一个是 <code>Promise</code> 对象变成 <code>Resolved</code> 时调用，第二个是 <code>Promise</code> 对象的状态变为 <code>Rejectd</code> 的时候调用，第二个函数式可选的，也可以不写，这两个函数都接受 <code>Promise</code> 对象传出值作为参数。举一个栗子吧：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">timeout</span>(<span class="params">ms</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>&#123;</div><div class="line">        setTimeout(resolve,ms,<span class="string">'done'</span>)</div><div class="line">    &#125;)</div><div class="line">&#125;</div><div class="line">timeout(<span class="number">100</span>).then(<span class="function">(<span class="params">value</span>)=&gt;</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(value)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>上面的代码,timeout 方法会返回一个 Promise 的实例，一段时间以后才会发生的结果，过了指定时间（ms）以后，<code>Promise</code> 实例就会变成 <code>Resolve</code>，就会触发 <code>then</code> 的方法绑定的回调函数。</p>
-<p><code>Promise</code> 初始化实例与以后就会立即执行，不妨看一下下面的打印验证：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> promise=<span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"我是Promise"</span>)</div><div class="line">    resolve()</div><div class="line">&#125;)</div><div class="line">promise.then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    comsole.log(<span class="string">"我时候then的回调"</span>)</div><div class="line">&#125;)</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'hello,promise!'</span>)</div><div class="line"></div><div class="line"><span class="comment">//我是Promise</span></div><div class="line"><span class="comment">//hello,promise!</span></div><div class="line"><span class="comment">//我时候then的回调</span></div></pre></td></tr></table></figure></p>
-<p>上面的代码中，<code>Promise</code> 实例化之后会立即执行，所以首先输出的是 <code>Promise</code> ，然后，<code>then</code> 方法指定的回调函数将在当前脚本所有同步脚本执行完才会执行，所以上述代码中“我时候 <code>then</code> 的回调”最后输出。</p>
-<blockquote>
-<p>三、Promise.prototype.then()</p>
-</blockquote>
-<p><code>Promise</code> 实例具有 <code>then</code> 方法，即 <code>then</code> 方法是定义在原型对象 <code>Promise.prototype</code> 上的，作用是给 <code>Promise</code> 实例添加状态改变时的回调函数。then方法的第一个参数是 <code>Resolve</code> 状态的回调函数，第二个是 <code>Rejected</code> （可选）状态的回调函数。</p>
-<p><code>then</code> 方法返回的是一个新的 <code>Promise</code> 实例，不是原来那个 <code>Promise</code> 实例，因此可以采用链式写法，即 <code>then</code> 方法后面再调用另一个 <code>then</code> 方法。<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">getJSON(<span class="string">'xxx/xx.json'</span>).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span><span class="params">(json)</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> json.post</div><div class="line">&#125;).tnen(<span class="function"><span class="keyword">function</span><span class="params">(post)</span></span>&#123;</div><div class="line">    </div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>采用链式的 <code>then</code> 可以指定一组按照次序调用的回调函数，这时，前一个回调函数有可能返回的还是一个异步操作，即 <code>Promise</code> 实例，而后一个回调函数会等待该 <code>Promise</code> 对象状态改变才调用。</p>
-<blockquote>
-<p>四、Promise.prototype.catch()</p>
-</blockquote>
-<p><code>Promise.prototype.catch</code> 的方法是<code>.then(null,rejection)</code>的别名，用于指定发生错误的回调函数。<br><figure class="highlight scilab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">getJSON(<span class="string">'xxx/xx.json'</span>).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span><span class="params">(json)</span>&#123;</span></div><div class="line">   <span class="comment">//...</span></div><div class="line">&#125;).<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span><span class="params">(err)</span>&#123;</span></div><div class="line">    console.<span class="built_in">log</span>(<span class="string">'错误'</span>+<span class="built_in">error</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>上面的代码，只要 then 中某一步异步操作抛出错误，状态变成Rejected，都会被<code>catch()</code>所捕获到，然后指定其回调函数执行，处理这个错误。 <code>Promise</code> 对象的错误具有冒泡机制，会一直向后传递，一直到被<code>catch()</code>处理函数所捕获，也就是说错误会被下一个catch语句捕获。<br><figure class="highlight scilab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">getJSON(<span class="string">'xxx/xx.json'</span>).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span><span class="params">(json)</span>&#123;</span></div><div class="line">   <span class="comment">//...some code1</span></div><div class="line">&#125;).<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span><span class="params">(json)</span>&#123;</span></div><div class="line">   <span class="comment">//...some code2</span></div><div class="line">&#125;).<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span><span class="params">(err)</span>&#123;</span></div><div class="line">    console.<span class="built_in">log</span>(<span class="string">'错误'</span>+<span class="built_in">error</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>上面的代码中一共有四个 <code>Promise</code> 对象，<code>getJSON</code> 产生，两个 <code>then</code> 产生两个，其中任何一个报错，都会被最后一个 <code>catch</code> 所捕获，一般使用的时候，注意不要在<code>then()</code>中定义 <code>Rejected</code> 回调函数，官方建议总是使用 <code>catch</code> 方法处理错误异常回调。</p>
-
+        <p>先从一块代码讲起<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> liList = <span class="built_in">document</span>.querySelectorAll(<span class="string">'li'</span>) <span class="comment">// 共5个li</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;liList.length; i++)&#123;</div><div class="line">  liList[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(i)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>我们知道会依次打印出5个5.<br>只是将 var 改成 let 之后<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> liList = <span class="built_in">document</span>.querySelectorAll(<span class="string">'li'</span>) <span class="comment">// 共5个li</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;liList.length; i++)&#123;</div><div class="line">  liList[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(i)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>我们知道会依次打印出 1 2 3 4 5.<br><strong>var 和 let 竟然还有不同？</strong><br>
+        
+          <a class="article-more-a" href="/2018/04/01/35初探ES6-1-let/#more">more >></a>
+        
       
 
       
@@ -528,7 +279,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">异步</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
         		</li>
       		
 		</ul>
@@ -564,9 +315,218 @@
 
 
   
+    <article id="post-12异步" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/30/12异步/">异步</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/30/12异步/" class="archive-article-date">
+  	<time datetime="2018-03-30T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>一、单线程</p>
+</blockquote>
+<p>JavaScript语言的一大特点就是<strong>单线程</strong>，也就是说，同一个时间只能做一件事。</p>
+<p>单线程就意味着，所有任务需要排队，前一个任务结束，才会执行后一个任务。如果前一个任务耗时很长，后一个任务就不得不一直等着。</p>
+<p>JavaScript语言的设计者意识到，这时主线程完全可以不管IO设备，挂起处于等待中的任务，先运行排在后面的任务。等到IO设备返回了结果，再回过头，把挂起的任务继续执行下去。</p>
+<p>于是，所有任务可以分成两种，一种是同步任务（synchronous），另一种是异步任务（asynchronous）。<br>
+        
+          <a class="article-more-a" href="/2018/03/30/12异步/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-33CSS布局方案之flex-float" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/29/33CSS布局方案之flex-float/">CSS布局方案之flex+float</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/29/33CSS布局方案之flex-float/" class="archive-article-date">
+  	<time datetime="2018-03-29T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://js.jirengu.com/cinigoriva/1/edit?html,css,output">【【【&lt;&lt;&lt;我是flex的总结 我超轻便&gt;&gt;&gt;】】】</a><br><a href="http://js.jirengu.com/pezobuyoki/1/edit?html,css,output">【【【&lt;&lt;&lt;我是float的总结 我覆盖全&gt;&gt;&gt;】】】</a></p>
+<blockquote>
+<p>一、居中布局</p>
+</blockquote>
+<p><strong>1、水平居中</strong><a href="http://js.jirengu.com/sobosuvuxa/1/edit?html,css,output">【5个示例 &gt;&gt;&gt;】</a><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span> wangsiyuan wangsiyuan <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2018/03/29/33CSS布局方案之flex-float/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">进阶</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-08闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/08/08闭包/">深入理解JavaScript--闭包</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/08/08闭包/" class="archive-article-date">
+  	<time datetime="2018-03-08T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>其实闭包的核心内容特别的少，但是铺垫非常的长<br>谈到闭包，无论如何都不能绕过去的，就是 作用域 啦</p>
+<p>在代码块开始执行之前，JS先着手一些“准备工作”<br>我们把这种数据的准备情况叫做 ———— 【执行上下文】<br>他们包括：<br>1、函数表达式（变量）赋值为undefined;<br>2、函数声明 赋值；<br>3、this赋值。<br>
+        
+          <a class="article-more-a" href="/2018/03/08/08闭包/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
     </nav>
   
 
@@ -645,6 +605,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
@@ -653,19 +617,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">

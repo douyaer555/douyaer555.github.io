@@ -6,32 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>配置 React | wangsiyuan</title>
+  <title>Webpack配置 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第一步： 安装 React
+  <meta name="description" content="webpack 的作用:使用各种 loader 加载不同的资源,把所有资源打包起来
+第一步：设置一个 npm，让 npm 下载得更快一些
 
-1、 下载yarn
-2、临时文件夹实验：123456789mkdir ~/temp; cd ~/tempnpm install -g create-react-appcreate-react-app hello-worldcd hello-worldnpm start 或者 yarn start
- create-react-app 内置了 webpack 的所有功能">
+1、运行 npm config set loglevel http 让你知道 npm 发的每一个请求2、运行 npm config set progress false，关闭那个无聊的进度条3、运行 npm config set registry https:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="配置 React">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/05/30/07配置React/index.html">
+<meta property="og:title" content="Webpack配置">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/05/29/05配置Webpack/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="第一步： 安装 React
+<meta property="og:description" content="webpack 的作用:使用各种 loader 加载不同的资源,把所有资源打包起来
+第一步：设置一个 npm，让 npm 下载得更快一些
 
-1、 下载yarn
-2、临时文件夹实验：123456789mkdir ~/temp; cd ~/tempnpm install -g create-react-appcreate-react-app hello-worldcd hello-worldnpm start 或者 yarn start
- create-react-app 内置了 webpack 的所有功能">
-<meta property="og:image" content="https://i.imgur.com/RMpH2WV.jpg">
-<meta property="og:updated_time" content="2018-05-31T15:14:35.607Z">
+1、运行 npm config set loglevel http 让你知道 npm 发的每一个请求2、运行 npm config set progress false，关闭那个无聊的进度条3、运行 npm config set registry https:">
+<meta property="og:updated_time" content="2018-10-19T05:39:47.461Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="配置 React">
-<meta name="twitter:description" content="第一步： 安装 React
+<meta name="twitter:title" content="Webpack配置">
+<meta name="twitter:description" content="webpack 的作用:使用各种 loader 加载不同的资源,把所有资源打包起来
+第一步：设置一个 npm，让 npm 下载得更快一些
 
-1、 下载yarn
-2、临时文件夹实验：123456789mkdir ~/temp; cd ~/tempnpm install -g create-react-appcreate-react-app hello-worldcd hello-worldnpm start 或者 yarn start
- create-react-app 内置了 webpack 的所有功能">
-<meta name="twitter:image" content="https://i.imgur.com/RMpH2WV.jpg">
+1、运行 npm config set loglevel http 让你知道 npm 发的每一个请求2、运行 npm config set progress false，关闭那个无聊的进度条3、运行 npm config set registry https:">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -157,63 +152,63 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-07配置React" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-05配置Webpack" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      配置 React
+      Webpack配置
     </h1>
   
 
         
-        <a href="/2018/05/30/07配置React/" class="archive-article-date">
-  	<time datetime="2018-05-30T02:11:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-30</time>
+        <a href="/2018/05/29/05配置Webpack/" class="archive-article-date">
+  	<time datetime="2018-05-29T08:48:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>第一步： 安装 React</p>
+        <h3 id="webpack-的作用-使用各种-loader-加载不同的资源-把所有资源打包起来"><a href="#webpack-的作用-使用各种-loader-加载不同的资源-把所有资源打包起来" class="headerlink" title="webpack 的作用:使用各种 loader 加载不同的资源,把所有资源打包起来"></a>webpack 的作用:使用各种 loader 加载不同的资源,把所有资源打包起来</h3><blockquote>
+<p>第一步：设置一个 <code>npm</code>，让 <code>npm</code> 下载得更快一些</p>
 </blockquote>
-<p>1、 <a href="https://pan.baidu.com/s/1kU4K9iJ" target="_blank" rel="external">下载</a><code>yarn</code></p>
-<p>2、临时文件夹实验：<br><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="string">mkdir </span>~/<span class="string">temp;</span> <span class="string">cd </span>~/<span class="string">temp</span></div><div class="line"></div><div class="line"><span class="string">npm </span><span class="string">install </span>-g <span class="built_in">create-react-app</span></div><div class="line"></div><div class="line"><span class="built_in">create-react-app</span> <span class="string">hello-world</span></div><div class="line"></div><div class="line"><span class="string">cd </span><span class="string">hello-world</span></div><div class="line"></div><div class="line"><span class="string">npm </span><span class="string">start </span>或者 <span class="string">yarn </span><span class="string">start</span></div></pre></td></tr></table></figure></p>
-<p> <code>create-react-app</code> 内置了 <code>webpack</code> 的所有功能。</p>
-<p>3、初始化 <code>React</code><br>清空 <code>temp</code> 文件夹，同时清空项目文件夹<br>（因为 <code>create-react-app</code> 会自己创建 <code>src</code> 和 <code>index.html</code> ）<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">cd 到你在上次任务中新建的项目目录！</div><div class="line"></div><div class="line"><span class="comment"># 删除所有非隐藏文件，这一步千万不要手抖，后果自负</span></div><div class="line"></div><div class="line">rm -rf * </div><div class="line">git <span class="keyword">add</span><span class="bash"> .</span></div><div class="line">git commit -m <span class="string">"remove all files"</span></div><div class="line">git push</div></pre></td></tr></table></figure></p>
-<p>正式开始初始化：<br><a id="more"></a><br><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">create-react-app</span> .</div><div class="line"><span class="string">yarn </span><span class="string">start</span></div></pre></td></tr></table></figure></p>
-<p><code>yarn start</code> 就相当于 <code>webpack</code> 的 <code>watch</code> 功能。</p>
-<p>注意：改 <code>JS</code> 会自动刷新页面，改 <code>HTML</code> 要手动刷新页面。</p>
+<p>1、运行 <code>npm config set loglevel http</code> 让你知道 <code>npm</code> 发的每一个请求<br>2、运行 <code>npm config set progress false</code>，关闭那个无聊的进度条<br>3、运行 <code>npm config set registry https://registry.npm.taobao.org/</code> ， 从淘宝的服务器下载各种包。不过这会让你在运行 <code>npm adduser</code> 的时候出问题，想要恢复成原样，只需要运行 <code>npm config delete registry</code> 即可。<br>4、运行 <code>touch ~/.bashrc; echo &#39;export PHANTOMJS_CDNURL=&quot;http://npm.taobao.org/mirrors/phantomjs&quot;&#39; &gt;&gt; ~/.bashrc</code> 让 <code>npm</code> 从淘宝下载 <code>phantomjs</code><br>5、运行 <code>touch ~/.bashrc; echo &#39;export SASS_BINARY_SITE=&quot;https://npm.taobao.org/mirrors/node-sass&quot;&#39; &gt;&gt; ~/.bashrc</code> 让 npm 从淘宝下载 SASS<br>6、运行 <code>source ~/.bashrc</code><br><a id="more"></a></p>
 <blockquote>
-<p>第二步：部署</p>
+<p>第二步：复制 <code>webpack</code> 的<a href="https://webpack.js.org/guides/getting-started/" target="_blank" rel="external">指引</a></p>
 </blockquote>
-<p>1、 在 <code>package.json</code> 里添加  <code>&quot;homepage&quot;: &quot;https://wangsiyuan233.github.io/react-todolist /build &quot;,</code></p>
-<p>2、 <code>yarn start</code></p>
+<p>1、<code>cd</code> 到你喜欢的一个地方，比如 <code>~/code/</code> 目录  <code>mkdir webpack-demo &amp;&amp; cd webpack-demo</code><br>2、好了，现在我身处 <code>webpack-demo</code> 目录 <code>npm init -y</code><br>3、上面命令创建了一个 <code>package.json</code> 文件 <code>npm install --save-dev webpack</code><br>非 Windows 用户复制这一行：<code>./node_modules/.bin/webpack --help</code> </p>
+<p>看到刷刷刷的英文，就是安装成功，试着运行一下吧</p>
 <blockquote>
-<p>第三步： React 的生命周期</p>
+<p>第三步：现在创建一个子目录（<code>app.js</code>)</p>
 </blockquote>
-<p>组件不能改变得到的 <code>props</code>，可变的东西要放在 <code>state</code></p>
-<p>直接在 <code>render</code> 或 <code>constructor</code> 里面改 <code>state</code> ，都失败了</p>
-<p>必须使用 <code>this.setState()</code> 方法来改变 <code>state</code>，直接对 <code>state</code> 赋值毫无用处。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">     setInterval(<span class="function"><span class="params">()</span>=&gt;</span>&#123; <span class="comment">// 搜索「JS 箭头函数 MDN」</span></div><div class="line">-      <span class="keyword">this</span>.state = &#123;</div><div class="line">+      <span class="keyword">this</span>.setState(&#123;</div><div class="line">         <span class="attr">date</span>: <span class="keyword">new</span> <span class="built_in">Date</span>() <span class="comment">// 更新 date</span></div><div class="line">-      &#125;</div><div class="line">+      &#125;)</div><div class="line">     &#125;)</div></pre></td></tr></table></figure></p>
-<p>OK,那我们把 <code>setState</code> 放在那儿呢？</p>
-<p><code>React</code> 的生命周期包括三个阶段：<code>mount</code>（挂载）、<code>update</code>（更新）和 <code>unmount</code>（移除）</p>
-<h2 id="mount（挂载）"><a href="#mount（挂载）" class="headerlink" title="mount（挂载）"></a><code>mount</code>（挂载）</h2><p><img src="https://i.imgur.com/RMpH2WV.jpg" alt=""></p>
-<h2 id="update（更新）"><a href="#update（更新）" class="headerlink" title="update（更新）"></a><code>update</code>（更新）</h2><p>mount 之后，如果数据有任何变动，就会来到 update 过程，这个过程有 5 个钩子：</p>
-<p>1、<code>componentWillReceiveProps(nextProps)</code> - 我要读取 <code>props</code> 啦！<br>2、<code>shouldComponentUpdate(nextProps, nextState)</code> - 请问要不要更新组件？<code>true / false</code><br>3、<code>componentWillUpdate()</code> - 我要更新组件啦！<br>4、<code>render()</code> - 更新！<br>5、<code>componentDidUpdate()</code> - 更新完毕啦！</p>
-<h2 id="unmount（移除）"><a href="#unmount（移除）" class="headerlink" title="unmount（移除）"></a><code>unmount</code>（移除）</h2><p>当一个组件将要从页面中移除时，会进入 <code>unmount</code> 过程，这个过程就一个钩子：</p>
-<p><code>componentWillUnmount()</code> - 我要死啦！</p>
-<p>你可以在这个组件死之前做一些清理工作。</p>
-<p><strong>废话那么多，所以 <code>setState</code> 到底放哪儿？</strong></p>
-<p>一般，我们只在这几个钩子里 <code>setState</code>：</p>
-<p>1、<code>componentWillMount</code><br>2、<code>componentDidMount</code><br>3、<code>componentWillReceiveProps</code></p>
-<p>反正 <code>this.state</code> 就是不会在 <code>this.setState</code> 调用之后立刻更新</p>
-<p>总结一下，<code>setState</code> 最招骂的就是不会立即修改 <code>this.state</code>。</p>
-<p>原来 <code>this.setState</code> 可以接受一个函数作为参数啊！</p>
-<p>传统式 <code>setState</code> 的存在，会把函数式 <code>setState</code> 拖下水</p>
-<p>只要有一个传统式的 <code>setState</code> 调用，就把其他函数式 <code>setState</code> 调用给害了。</p>
+<p>1、<code>mkdir app &amp;&amp; cd app</code><br>2、<code>touch index.js</code><br>3、编辑 <code>app/index.js</code>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">component</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> element = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</div><div class="line"></div><div class="line">  <span class="comment">/* lodash is required for the next line to work */</span></div><div class="line">  element.innerHTML = _.join([<span class="string">'Hello'</span>,<span class="string">'webpack'</span>], <span class="string">' '</span>);</div><div class="line"></div><div class="line">  <span class="keyword">return</span> element;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">document</span>.body.appendChild(component());</div></pre></td></tr></table></figure></p>
+<p>4、在 <code>app</code> 文件夹外面创建 <code>touch index.html</code>：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>webpack 2 demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/lodash@4.16.6"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"app/index.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>5、引入 <code>lodash</code> : <code>npm install --save lodash</code><br>6、然后在 <code>app/index.js</code> 的第一行添加 ： <code>import _ from &#39;lodash&#39;;</code><br>7、把 <code>app/index.html</code> 改动一下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">title</span>&gt;</span>webpack 2 demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">-    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/lodash@4.16.6"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">   <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">-    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"app/index.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">+    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"dist/bundle.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">   <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>浏览器打开 <code>index.html</code>，看到 <code>hello webpack</code>，就证明 <code>webpack</code> 安装成功了~</p>
+<blockquote>
+<p>第四步： 快速启动</p>
+</blockquote>
+<p>1、<code>webpack-demo</code> 目录下新建并编辑 <code>webpack.config.js</code>, (连接<code>app/index.js</code> 、<code>dist</code> 和 <code>bundle.js</code> 这三个关键词)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">entry</span>: <span class="string">'./app/index.js'</span>,</div><div class="line">  <span class="attr">output</span>: &#123;</div><div class="line">    <span class="attr">filename</span>: <span class="string">'bundle.js'</span>,</div><div class="line">    <span class="attr">path</span>: path.resolve(__dirname, <span class="string">'dist'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>2、修改 <code>package.json</code><br><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">   <span class="string">"scripts"</span>: &#123;</div><div class="line">-    <span class="string">"test"</span>: <span class="string">"echo \"</span><span class="keyword">Error</span>: <span class="keyword">no</span> <span class="keyword">test</span> specified\<span class="string">" &amp;&amp; exit 1"</span></div><div class="line">+    <span class="string">"test"</span>: <span class="string">"echo \"</span><span class="keyword">Error</span>: <span class="keyword">no</span> <span class="keyword">test</span> specified\<span class="string">" &amp;&amp; exit 1"</span>,</div><div class="line">+    <span class="string">"build"</span>: <span class="string">"webpack"</span></div><div class="line">   &#125;,</div><div class="line">   <span class="string">"keywords"</span>: [],</div></pre></td></tr></table></figure></p>
+<p>3、然后运行 <code>npm run build</code> 那么说明运行 <code>npm run build</code> 就等于运行 <code>node_modules</code> 里的 <code>webpack</code> 可执行文件，这个可执行文件会自己去 <code>webpack.config.js</code> 里找 <code>app/index.js</code>、<code>dist</code> 和 <code>bundle.js</code> 三个关键词。</p>
+<p>所以现在不用运行 <code>./node_modules/.bin/webpack app/index.js dist/bundle.js</code><br>而是运行 <code>npm run build</code> 就可以了</p>
+<p><strong><code>npm run build</code> 特别重要，把 <code>src</code> 里面的代码打包好提交到 <code>build</code> 里面， 就是这么来的啊！</strong></p>
+<blockquote>
+<p>第五步：监听文件变动</p>
+</blockquote>
+<p>我们需要 <code>watch</code> 来 <code>webpack</code> 监听文件变动，一旦我们保存了文件，它就重新 <code>build</code> 代码。</p>
+<p>1、在 <code>package.jason</code> 中添加一个 <code>npm script</code>：<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">   <span class="string">"scripts"</span>: &#123;</div><div class="line">     <span class="string">"test"</span>: <span class="string">"echo \"</span><span class="keyword">Error</span>: <span class="keyword">no</span> <span class="keyword">test</span> specified\<span class="string">" &amp;&amp; exit 1"</span>,</div><div class="line">-    <span class="string">"build"</span>: <span class="string">"webpack -p"</span></div><div class="line">+    <span class="string">"build"</span>: <span class="string">"webpack -p"</span>,</div><div class="line">+    <span class="string">"dev"</span>: <span class="string">"webpack --progress --watch"</span></div><div class="line">   &#125;,</div><div class="line">   <span class="string">"keywords"</span>: [],</div></pre></td></tr></table></figure></p>
+<p>此时打开 <code>index.html</code>， 编辑 <code>app/index.js</code>，<strong>保存</strong>，你会发现 <code>webpack</code> 自动 <code>build</code> 了，这是刷新 <code>index.html</code></p>
+<blockquote>
+<p>第六步： 浏览器自动刷新</p>
+</blockquote>
+<p>如果能边写边改多好啊！（不是保存后再自动刷新）<br>1、 <code>index.html</code> 里 改为 <code>&lt;script src=&quot;/bundle.js&quot;&gt;&lt;/script&gt;</code><br>2、 <code>package.json</code>：<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">-    <span class="string">"dev"</span>: <span class="string">"webpack --progress --watch"</span></div><div class="line">+    <span class="string">"dev"</span>: <span class="string">"webpack-dev-server --open"</span></div><div class="line"></div><div class="line"></div><div class="line">-    <span class="string">"webpack"</span>: <span class="string">"^2.3.2"</span></div><div class="line">+    <span class="string">"webpack"</span>: <span class="string">"^2.3.2"</span>,</div><div class="line">+    <span class="string">"webpack-dev-server"</span>: <span class="string">"^2.4.2"</span></div></pre></td></tr></table></figure></p>
+<p>3、运行 <code>npm run dev</code>，然后浏览器就会自动打开 <code>http://localhost:8080/</code> ，你会看到 <code>index.html</code> 页面</p>
+<p>当我们修改 <code>index.js</code> 时：bundle.js 自动打包； <code>http://localhost:8080/</code> 自动刷新</p>
+<p>注意，期间 <code>dist/bundle.js</code> 不会自动变化，你在<strong>部署代码之前</strong>，依然要运行 <code>npm run build</code> 才行。</p>
 
       
 
@@ -293,7 +288,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/05/30/07配置React/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/05/29/05配置Webpack/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -307,18 +302,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/06/07/51遍历JS/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/05/30/06配置React/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          JavaScript 中的几种遍历
+          配置 React
         
       </div>
     </a>
   
   
-    <a href="/2018/05/29/06配置Webpack/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Webpack配置</div>
+    <a href="/2018/05/15/48MVC与模块化/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MVC与模块化</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -428,6 +423,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
@@ -436,19 +435,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">

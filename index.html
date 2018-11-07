@@ -205,19 +205,19 @@
 
 
   
-    <article id="post-21跨域1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-21跨域全集" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/30/21跨域1/">跨域1</a>
+      <a class="article-title" href="/2018/10/30/21跨域全集/">跨域全集</a>
     </h1>
   
 
         
-        <a href="/2018/10/30/21跨域1/" class="archive-article-date">
+        <a href="/2018/10/30/21跨域全集/" class="archive-article-date">
   	<time datetime="2018-10-30T11:34:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
 </a>
         
@@ -233,7 +233,7 @@
 <p><em>2、HTTP 头部</em><br>要成功发送请求头部信息，必须在调用 open() 方法之后调用 send() 方法之前调用 setRequestHeader()<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var xhr = creatXHR();</div><div class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">  <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</div><div class="line">    <span class="keyword">if</span>((xhr.<span class="built_in">status</span> &gt;= <span class="number">200</span> &amp;&amp; xhr.<span class="built_in">status</span> &lt; <span class="number">300</span>) || xhr.<span class="built_in">status</span> == <span class="number">304</span>)&#123;</div><div class="line">      alert(xhr.responseText);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">      alert(<span class="string">'失败了！'</span> + xhr.<span class="built_in">status</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line">xhr.<span class="built_in">open</span>(<span class="string">'get'</span>,<span class="string">'example.php'</span>,<span class="literal">true</span>);</div><div class="line">xhr.setRequestHeader(<span class="string">'MyHeader'</span>,<span class="string">'MyValue'</span>); //添加了这一行</div><div class="line">xhr.send(null);</div></pre></td></tr></table></figure></p>
 <p><em>3、GET 请求</em><br><em>4、POST 请求</em><br>
         
-          <a class="article-more-a" href="/2018/10/30/21跨域1/#more">more >></a>
+          <a class="article-more-a" href="/2018/10/30/21跨域全集/#more">more >></a>
         
       
 
@@ -492,7 +492,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -571,6 +571,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
@@ -579,19 +583,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">

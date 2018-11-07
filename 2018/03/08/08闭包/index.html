@@ -6,14 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>wangsiyuan</title>
+  <title>深入理解JavaScript--闭包 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="wangsiyuan">
-<meta property="og:url" content="wangsiyuan233.github.io/page/12/index.html">
+  <meta name="description" content="其实闭包的核心内容特别的少，但是铺垫非常的长谈到闭包，无论如何都不能绕过去的，就是 作用域 啦
+在代码块开始执行之前，JS先着手一些“准备工作”我们把这种数据的准备情况叫做 ———— 【执行上下文】他们包括：1、函数表达式（变量）赋值为undefined;2、函数声明 赋值；3、this赋值。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入理解JavaScript--闭包">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/03/08/08闭包/index.html">
 <meta property="og:site_name" content="wangsiyuan">
+<meta property="og:description" content="其实闭包的核心内容特别的少，但是铺垫非常的长谈到闭包，无论如何都不能绕过去的，就是 作用域 啦
+在代码块开始执行之前，JS先着手一些“准备工作”我们把这种数据的准备情况叫做 ———— 【执行上下文】他们包括：1、函数表达式（变量）赋值为undefined;2、函数声明 赋值；3、this赋值。">
+<meta property="og:image" content="https://i.imgur.com/H5dRIKU.png">
+<meta property="og:image" content="https://i.imgur.com/SbjCI3s.png">
+<meta property="og:image" content="https://i.imgur.com/PcGbarw.png">
+<meta property="og:image" content="https://i.imgur.com/AoMaqBi.png">
+<meta property="og:image" content="https://i.imgur.com/ApNdBSw.png">
+<meta property="og:updated_time" content="2018-11-05T09:43:05.685Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wangsiyuan">
+<meta name="twitter:title" content="深入理解JavaScript--闭包">
+<meta name="twitter:description" content="其实闭包的核心内容特别的少，但是铺垫非常的长谈到闭包，无论如何都不能绕过去的，就是 作用域 啦
+在代码块开始执行之前，JS先着手一些“准备工作”我们把这种数据的准备情况叫做 ———— 【执行上下文】他们包括：1、函数表达式（变量）赋值为undefined;2、函数声明 赋值；3、this赋值。">
+<meta name="twitter:image" content="https://i.imgur.com/H5dRIKU.png">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -139,294 +152,178 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-03移动端配适" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-08闭包" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/15/03移动端配适/">移动端配适</a>
+    <h1 class="article-title" itemprop="name">
+      深入理解JavaScript--闭包
     </h1>
   
 
         
-        <a href="/2018/02/15/03移动端配适/" class="archive-article-date">
-  	<time datetime="2018-02-15T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-15</time>
+        <a href="/2018/03/08/08闭包/" class="archive-article-date">
+  	<time datetime="2018-03-08T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>一、meta viewport</p>
-</blockquote>
-<p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;</code></p>
-<p>1、<code>width=device-width</code>: 让当前viewport宽度等于设备的宽度<br>2、<code>user-scalable=no</code>:  禁止用户缩放<br>3、<code>initial-scale=1.0</code>: 设置页面的初始缩放值为不缩放<br>4、<code>maximum-scale=1.0</code>: 允许用户的最大缩放值为1.0<br>5、<code>minimum-scale=1.0</code>: 允许用户的最小缩放值为1.0<br>
-        
-          <a class="article-more-a" href="/2018/02/15/03移动端配适/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-18DOM4面试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/14/18DOM4面试/">DOM面试</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/14/18DOM4面试/" class="archive-article-date">
-  	<time datetime="2018-02-14T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>一、事件级别</p>
-</blockquote>
-<p>1、DOM 0 ：<code>elemnt.onclick = function(){};</code></p>
-<p>2、DOM 2 ：<code>elemnt.addEventListener(&#39;click&#39;,function(){},false} //冒泡</code></p>
-<p>3、DOM 3： <code>elemnt.addEventListener(&#39;keyup&#39;,function(){},true} //捕获</code></p>
-<p>DOM 1 没有事件相关部分的升级；<br>DOM 3 比 DOM 2 增加了许多事件级别，比如鼠标和键盘。<br>
-        
-          <a class="article-more-a" href="/2018/02/14/18DOM4面试/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-02封装一个jQuery" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/11/02封装一个jQuery/">封装一个jQuery吧！</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/11/02封装一个jQuery/" class="archive-article-date">
-  	<time datetime="2018-02-11T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>首先用一个立即执行函数把他们都包裹起来；</p>
-<p>我们使用<code>document.querySelectorAll</code>函数查找所有匹配的<code>HTMLElement</code>并绑定到返回的对象上。我们还给返回的<code>q</code>对象创建了<code>html</code>函数，用来返回匹配对象的<code>innerHTML</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> $ = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> (<span class="function"><span class="keyword">function</span>(<span class="params">selector</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> q = &#123;&#125;;</div><div class="line">    q.selector = selector;</div><div class="line">    q.nodes = <span class="built_in">document</span>.querySelectorAll(selector);</div><div class="line">    q.html = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="built_in">Array</span>.prototype.map.call(<span class="keyword">this</span>.nodes, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> node.innerHTML</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;)</div><div class="line">&#125;)();</div><div class="line"></div><div class="line"><span class="comment">// 第一个：自己写一个 each 函数</span></div><div class="line">q.each = <span class="function"><span class="keyword">function</span>(<span class="params">action</span>)</span>&#123;</div><div class="line">      <span class="keyword">this</span>.nodes.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item, i</span>)</span>&#123;</div><div class="line">        action(item,i)</div><div class="line">      &#125;)</div><div class="line">      <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="comment">// 第二个：自己写个 CSS 功能</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">doCSS</span>(<span class="params">prop,val</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> args = argument</div><div class="line">  <span class="keyword">if</span>(<span class="built_in">Boolean</span>(val))&#123;    <span class="comment">//setter</span></div><div class="line">    <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">node, i</span>)</span>&#123;</div><div class="line">        CSSStyleDeclaration.prototype.setProperty.apply(node.style,args);</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span></div><div class="line">  &#125;<span class="keyword">else</span>&#123;                   <span class="comment">//getter</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.nodes[<span class="number">0</span>].style[prop];</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">q.css = <span class="function"><span class="keyword">function</span>(<span class="params">prop, val</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> doCSS.call(<span class="keyword">this</span>, prop,val);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 第三个给dom对象添加属性的方法</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">doATTR</span>(<span class="params">prop, val</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> args = <span class="built_in">arguments</span></div><div class="line">  <span class="keyword">if</span>(<span class="built_in">Boolean</span>(val))&#123;</div><div class="line">    <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">node, i</span>)</span>&#123;</div><div class="line">      Element.prototype.setAttribute.apply(node, args);</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.prototype.map.call(<span class="keyword">this</span>.nodes,</div><div class="line">      <span class="function"><span class="keyword">function</span>(<span class="params">node</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> node.getAttribute(prop);</div><div class="line">      &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">q.attr = <span class="function"><span class="keyword">function</span>(<span class="params">prop, val</span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> doATTR.call(<span class="keyword">this</span>, prop, val);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//测试 each 函数</span></div><div class="line">$(<span class="string">'p'</span>).each(<span class="function"><span class="keyword">function</span><span class="params">(item, i)</span> <span class="comment">&#123;</span></span></div><div class="line">   console.log(item.innerHTML)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 测试 CSS 功能</span></div><div class="line">$<span class="params">(<span class="string">'p'</span>)</span>.<span class="title">css</span><span class="params">(<span class="string">'font-size'</span>, "20px")</span>.<span class="title">css</span><span class="params">(<span class="string">'color'</span>, <span class="string">'green'</span>)</span></div><div class="line">$<span class="params">(<span class="string">'p'</span>)</span>.<span class="title">css</span><span class="params">(<span class="string">'color'</span>)</span>   <span class="comment">//green</span></div><div class="line"></div><div class="line"><span class="comment">// 测试给dom对象添加属性的方法</span></div><div class="line">$<span class="params">(<span class="string">'#test'</span>)</span>.<span class="title">attr</span><span class="params">(<span class="string">'test'</span>, <span class="string">'hello'</span>)</span></div><div class="line"><span class="title">console</span>.<span class="title">log</span><span class="params">($(<span class="string">'#test'</span>)</span>.<span class="title">attr</span><span class="params">(<span class="string">'test'</span>)</span>) <span class="comment">//hello</span></div></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Basic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-01GitHub-for-babies" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/21/01GitHub-for-babies/">GitHub for babies</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/21/01GitHub-for-babies/" class="archive-article-date">
-  	<time datetime="2018-01-21T00:33:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>《GitHub for babies》   又名：如何让我的天才男友入门GitHub</p>
-<p>搭建博客走了很多弯路，记录一下我摔的坑。<strong>（基础名词自己谷歌一下）</strong></p>
+        <p>其实闭包的核心内容特别的少，但是铺垫非常的长<br>谈到闭包，无论如何都不能绕过去的，就是 作用域 啦</p>
+<p>在代码块开始执行之前，JS先着手一些“准备工作”<br>我们把这种数据的准备情况叫做 ———— 【执行上下文】<br>他们包括：<br>1、函数表达式（变量）赋值为undefined;<br>2、函数声明 赋值；<br>3、this赋值。<br><a id="more"></a><br>执行的代码块也分为3种情况：<br>1、全局代码；（手写文本到<code>&lt;script&gt;</code>标签里面）<br>2、函数体；（new一个函数，里面必须有文本）<br>3、eval代码（不常用，不推荐）</p>
+<p><strong>给执行上下文环境下一个通俗的定义——在执行代码之前，把将要用到的所有的变量都事先拿出来，有的直接赋值了，有的先用undefined占个空。</strong></p>
+<p>在执行js代码时，会有数不清的函数调用次数，会产生许多个上下文环境。这么多上下文环境该如何管理，以及如何销毁而释放内存呢？</p>
+<p>执行全局代码时，会产生一个执行上下文环境，每次调用函数都又会产生执行上下文环境。当函数调用完成时，这个<strong>上下文环境以及其中的数据(变量)都会被消除</strong>，再重新回到全局上下文环境。处于活动状态的执行上下文环境只有一个。（特殊情况就是闭包）<br><img src="https://i.imgur.com/H5dRIKU.png" alt=""><br>上面这种情况其实是一种非常理想的状况，在实际的工作应用中，我们无法做到及时销毁<br>因为我们有伟大的————闭包！</p>
 <hr>
-<h3 id="第一步：注册github"><a href="#第一步：注册github" class="headerlink" title="第一步：注册github"></a>第一步：注册github</h3><p>这个是最简单的了，邮箱＋密码就能实现。<br>别的网站总能告诉你</p>
+<p>先说<strong>作用域</strong></p>
+<p>光知道“JavaScript没有块级作用域”是完全不够的，你需要知道的是——JavaScript除了全局作用域之外，只有<strong>函数</strong>可以创建的作用域。<br>所以，我们在声明变量时，全局代码要在代码前端声明，函数中要在函数体一开始就声明好。除了这两个地方，其他地方都不要出现变量声明。而且建议用“单var”形式。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</div><div class="line">    b = <span class="number">20</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">100</span>;</div><div class="line">		c = <span class="number">300</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> a = <span class="number">1000</span>;</div><div class="line">		    d = <span class="number">4000</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="https://i.imgur.com/SbjCI3s.png" alt=""><br>如图，f1就是f2的上级作用域</p>
+<p>除了全局作用域之外，每个函数都会创建自己的作用域，作用域在函数<strong>定义</strong>时就已经确定了。而不是在函数调用时确定。<br>作用域最大的用处就是隔离变量，不同作用域下同名变量不会有冲突。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</div><div class="line">    b = <span class="number">20</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">100</span>;</div><div class="line">		c = <span class="number">300</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> a = <span class="number">1000</span>;</div><div class="line">		    d = <span class="number">4000</span>;</div><div class="line">	&#125;</div><div class="line">f2(<span class="number">111</span>);</div><div class="line">f2(<span class="number">222</span>);</div><div class="line">&#125;</div><div class="line">f1(<span class="number">33</span>);</div></pre></td></tr></table></figure></p>
+<p><img src="https://i.imgur.com/PcGbarw.png" alt=""><br>作用域中变量的值是在执行过程中产生的确定的，而作用域却是在函数创建时就确定了。<br>所以，如果要查找一个作用域下某个<strong>变量</strong>的值，就需要找到这个作用域对应的执行上下文环境，再在其中寻找变量的值。</p>
+<hr>
+<p>看到这里的朋友可能把<strong>作用域</strong>和<strong>上下文环境</strong>搞混了，认为它们是同一样东西<br>当然不是的。</p>
+<p><strong>【上下文环境】</strong>可以理解为一个看不见摸不着的对象（有若干个属性），虽然看不见摸不着，但确实实实在在存在的，因为所有的变量都在里面存储着，要不然咱们定义的变量在哪里存？</p>
+<p><strong>【作用域】</strong>首先，它很抽象。第二，记住一句话：除了全局作用域，只有函数才能创建作用域。创建一个函数就创建了一个作用域，无论你调用不调用，函数只要创建了，它就有独立的作用域，就有自己的一个“地盘”。<br>作用域链本质上是一个指向变量对象的指针列表，它只引用但不实际包含变量对象。</p>
+<p>区别和联系：一个作用域下可能包含若干个上下文环境。有可能从来没有过上下文环境（函数从来就没有被调用过）；有可能有过，现在函数被调用完毕后，上下文环境被销毁了；有可能同时存在一个或多个（闭包）。</p>
+<p>可以简记为：<strong>作用域是静态的组织结构，上下文是动态的计算。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">100</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(x);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> f1 = fn(<span class="number">5</span>);</div><div class="line"><span class="keyword">var</span> f2 = fn(<span class="number">10</span>);</div><div class="line">f1();</div><div class="line">f2();</div></pre></td></tr></table></figure></p>
+<p><img src="https://i.imgur.com/AoMaqBi.png" alt=""><br>我们通过具体例子可以发现：执行第13行，再次调用fn函数——fn(10)。产生fn(5)的上下文环境，并压栈，并设置为活动状态。但是此时fn(5)的上下文环境还在内存中———— <strong>一个作用域下同时存在两个上下文环境。</strong></p>
+<hr>
+<p>首先定义一下<strong>自由变量</strong>：如下图这个函数，x就不是f1里定义的变量，它就是个自由变量。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">23</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> b = <span class="number">34</span>;</div><div class="line">	<span class="built_in">console</span>.log(x + b)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>所以自由变量就是在当前函数的父级作用域里面找吗？<br>当然不是的。<br>1、可能它的作用域链上根本就没有这个函数，最后就是undefined<br>2、最重要的是从【创造】这个函数的作用域里寻找，而不是【调用】。<br>如下图：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x= <span class="number">76</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(x);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">f2</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> x = <span class="number">32</span>;</div><div class="line">	(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;f2();&#125;)(); </div><div class="line">&#125;</div><div class="line">show(f1) <span class="comment">//76</span></div></pre></td></tr></table></figure></p>
+<p>引出<strong>作用域链</strong>的概念，一层一层的往外找：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">34</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> b = <span class="number">21</span>;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(a + b)</div><div class="line">&#125;</div><div class="line">	<span class="keyword">return</span> f2;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> x = f1();</div><div class="line">	b = <span class="number">248</span>；</div><div class="line">x();</div></pre></td></tr></table></figure></p>
+<p>第7行时，f1()返回的是f2，将f2赋值给x,第9行x()相当于console.log（a + b）</p>
+<hr>
+<p>终于讲到了正题，也是我们的最后一部分了！<br>大家打起精神耶耶耶！~<br>（图书馆关门之前我一定要整理完）</p>
+<p>如果你看到这里还对闭包的知识有任何的疑问<br>请跟我默念这两种应用场景：<strong>函数作为返回值，函数作为参数传递</strong><br>1、<strong>【函数作为返回值】</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> max = <span class="number">10</span>;</div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span> ( x &gt; max) &#123;<span class="built_in">console</span>.log(x);&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> f1 = fn;</div><div class="line">f1(<span class="number">15</span>); <span class="comment">// 15</span></div></pre></td></tr></table></figure></p>
+<p>2、<strong>【函数作为参数传递】</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> max = <span class="number">10</span>;</div><div class="line">fn = <span class="function"><span class="keyword">function</span> (<span class="params">x</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span> ( x &gt; max) &#123;<span class="built_in">console</span>.log(x);&#125;</div><div class="line">&#125;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">f1</span>)</span>&#123;<span class="keyword">var</span> max = <span class="number">100</span>; f1(<span class="number">15</span>)&#125; )(fn); <span class="comment">// 15</span></div></pre></td></tr></table></figure></p>
+<hr>
+<p>在<a href="http://wangsiyuan233.cn/2018/03/26/闭包系列-1/" target="_blank" rel="external">闭包系列1</a>中我们提到当一个函数被调用完成之后，其执行上下文环境将被销毁，其中的变量也会被同时销毁。<br>但是在当时那篇文章中留了一个问号——有些情况下，函数调用完成之后，其执行上下文环境不会被销毁。这就是<strong>【闭包】</strong><br>（还是被赶出来了…）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> max = <span class="number">10</span>;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span> ( x &gt; max) &#123;<span class="built_in">console</span>.log(x);&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> f2 = fn();</div><div class="line">	max = <span class="number">100</span>;</div><div class="line">f2(<span class="number">15</span>);</div></pre></td></tr></table></figure></p>
+<p><img src="https://i.imgur.com/ApNdBSw.png" alt=""><br>第一步：全局上下文环境时，max为undefined;<br>第二步：执行到第9行 <code>var f2 = fn()</code>，产生fn()执行上下文环境；<br>第三步：按理说第9行执行完了，fn()的执行上下文环境应该被销毁，【但是】，重点来了：因为执行fn()时，返回的是一个函数。函数的特别之处在于可以创建一个独立的作用域。而正巧合的是，返回的这个函数体中，还有一个自由变量max要引用fn作用域下的fn()上下文环境中的max;<br>因此，这个max不能被销毁，销毁了之后f1函数中的max就找不到值了;<br>因此，这里的fn()上下文环境不能被销毁，还依然存在与执行上下文栈中;<br>因此，执行到第10行时，全局上下文环境将变为活动状态，但是fn()上下文环境依然会在执行上下文栈中。另外，执行完第10行，全局上下文环境中的max被赋值为100。<br>第四步：第11行，执行f2(15)，即执行f1(15)，创建f1(15)上下文环境;<br>执行f1(15)时，max是自由变量，需要向创建f1函数的作用域中查找，找到了max的值为10;<br>这里的重点就在于，创建f1函数是在执行fn()时创建的。fn()早就执行结束了，但是fn()执行上下文环境还存在与栈中，因此f1(15)时，max可以查找到。如果fn()上下文环境销毁了，那么max就找不到了。<br>使用闭包会消耗更多的内存哦！</p>
+<hr>
 <blockquote>
-<p>想学github,就要先知道git是什么~<br>
-        
-          <a class="article-more-a" href="/2018/01/21/01GitHub-for-babies/#more">more >></a>
-        
+<p>面试闭包</p>
+</blockquote>
+<p>在JS中，当一个函数被调用完成之后，其执行上下文环境将被销毁，其中的变量也会被同时销毁。</p>
+<p>但在有些情况下，函数调用完成之后，其执行上下文环境不会接着被销毁。这就是<strong>【闭包】</strong></p>
+<p>为什么闭包这个怪物不会被销毁啊？我们看一下红宝书对闭包的定义：</p>
+<p><strong>闭包是指有权访问另一个函数作用域中的变量的函数</strong></p>
+<p>说到这里我们必须要借助两个辅助的概念来厘清<strong>【闭包】</strong>了：</p>
+<p><em>1、作用域</em>：除了全局作用域以外，JS中只有函数才能创建作用域，它的作用是隔离变量，不同的作用域里相同的变量名不会有冲突，无论你调用不调用，函数只要创建了，它就有独立的作用域。<br><em>2、上下文环境</em>：上下文环境是动态的计算（作用域是静态的组织结构）；在执行代码之前，把将要用到的所有的变量都事先拿出来，有的直接赋值了，有的先用undefined占个空。</p>
+<p>一个作用域下可能包含若干个上下文环境。有可能从来没有过上下文环境（函数从来就没有被调用过）；有可能有过，现在函数被调用完毕后，上下文环境被销毁了；有可能同时存在一个或多个（闭包）。</p>
+<p>严格来说，闭包需要满足三个条件：【1】访问所在作用域；【2】函数嵌套；【3】在所在作用域外被调用<br>有些人觉得只满足条件1就可以，所以立即执行函数是闭包；有些人觉得满足条件1和2才可以，所以被嵌套的函数才是闭包；有些人觉得3个条件都满足才可以，所以在作用域以外的地方被调用的函数才是闭包 </p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/03/08/08闭包/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/03/29/33CSS布局方案之flex-float/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          CSS布局方案之flex+float
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/05/27聊聊系列-2-this/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">聊聊系列(2)--this</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -446,12 +343,14 @@
 
 
 
+  
+  
+  
 
   
+
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/11/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span>
-    </nav>
+
   
 
 
@@ -474,8 +373,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
@@ -529,6 +428,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
@@ -537,19 +440,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
