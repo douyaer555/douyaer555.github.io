@@ -225,7 +225,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Ajax 技术的核心是 XMLHttpRequest对象，XHR 为向服务器发送请求和解析服务器响应提供了流畅的接口。能够以异步方式从服务器取得更多信息，意味着用户单击后，可以不必刷新页面也能取得新数据。也就是说，可以使用 XHR 对象取得新数据，然后再通过 DOM 将新数据插入到页面中。<br>Ajax 通信与数据结构无关。</p>
+        <p><code>Ajax</code> 技术的核心是 <code>XMLHttpRequest</code> 对象，<code>XHR</code> 为向服务器发送请求和解析服务器响应提供了流畅的接口。能够以异步方式从服务器取得更多信息，意味着用户单击后，可以不必刷新页面也能取得新数据。也就是说，可以使用 <code>XHR</code> 对象取得新数据，然后再通过 <code>DOM</code> 将新数据插入到页面中。<br><code>Ajax</code> 通信与数据结构无关。</p>
 <blockquote>
 <p>一、XMLHttpRequest</p>
 </blockquote>
@@ -298,16 +298,10 @@
 <p>一、语法</p>
 </blockquote>
 <p>三种语法都必须遵循相同的规则：<br>JSON 没有声明、没有分号 必须使用双引号</p>
-<p>1、简单值 ： <code>&quot;hello world!&quot;</code><br>2、对象 ： <code>{&quot;name&quot;:&quot;Sue&quot;,&quot;age&quot;:&quot;22&quot;}</code><br>3、数组 ： <code>&quot;[25,&quot;hi&quot;,true]&quot;</code></p>
-<blockquote>
-<p>二、序列化和解析</p>
-</blockquote>
-<p><em>1、序列化 stringify()</em><br>将 JS 对象转换为 JSON 字符串</p>
-<p>下面举例 3 种不同参数情况下的 序列化<br><figure class="highlight excel"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 情况一 第一个参数是过滤器，第二个是选项</div><div class="line"><span class="built_in">var</span> book = &#123;</div><div class="line">  <span class="string">"title"</span> <span class="symbol">:</span> <span class="string">"professional JavaScript"</span>,</div><div class="line">  <span class="string">"authors"</span> <span class="symbol">:</span> [<span class="string">"Sue"</span>],</div><div class="line">  editi<span class="symbol">on:</span> <span class="number">3</span>,</div><div class="line">  <span class="built_in">year</span> <span class="symbol">:</span> <span class="number">2018</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">var</span> jsonText = JSON.stringify(book,[<span class="string">"title"</span>,<span class="string">"edition"</span>]);</div><div class="line"></div><div class="line">// &#123;<span class="string">"title"</span> <span class="symbol">:</span> <span class="string">"professional JavaScript"</span>,<span class="string">"edition"</span><span class="symbol">:</span> <span class="number">3</span>&#125;</div></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 情况二 第一个参数是过滤器，第二个数是函数</span></div><div class="line"><span class="keyword">var</span> book = &#123;</div><div class="line">  <span class="string">"title"</span> : <span class="string">"professional JavaScript"</span>,</div><div class="line">  <span class="string">"authors"</span> : [<span class="string">"Sue"</span>],</div><div class="line">  <span class="attr">edition</span>: <span class="number">3</span>,</div><div class="line">  <span class="attr">year</span> : <span class="number">2018</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> jsonText = <span class="built_in">JSON</span>.stringify(book,<span class="function"><span class="keyword">function</span>(<span class="params">key,value</span>)</span>&#123;</div><div class="line">  <span class="keyword">switch</span>(key)&#123;</div><div class="line">    <span class="keyword">case</span> <span class="string">"authors"</span> :</div><div class="line">      <span class="keyword">return</span> value.join(<span class="string">","</span>)</div><div class="line"></div><div class="line">    <span class="keyword">case</span> <span class="string">"year"</span> :</div><div class="line">      <span class="keyword">return</span> <span class="number">5000</span>;</div><div class="line"></div><div class="line">    <span class="keyword">case</span> <span class="string">"edition"</span> :</div><div class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</div><div class="line"></div><div class="line">    <span class="keyword">default</span>:</div><div class="line">      <span class="keyword">return</span> value;</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// &#123;"title" : "professional JavaScript","authors":"Sue","year": 5000&#125;</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 情况三 第二个参数是 null，第三个参数是 数字，代表每个级别缩进的空格数</span></div><div class="line"><span class="keyword">var</span> book = &#123;</div><div class="line">  <span class="string">"title"</span> : <span class="string">"professional JavaScript"</span>,</div><div class="line">  <span class="string">"authors"</span> : [<span class="string">"Sue"</span>],</div><div class="line">  <span class="attr">edition</span>: <span class="number">3</span>,</div><div class="line">  <span class="attr">year</span> : <span class="number">2018</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> jsonText = <span class="built_in">JSON</span>.stringify(book,<span class="literal">null</span>,<span class="number">4</span>);</div><div class="line"></div><div class="line">&#123;</div><div class="line">  <span class="string">"title"</span> : <span class="string">"professional JavaScript"</span>,</div><div class="line">  <span class="string">"authors"</span>: [<span class="string">"Sue"</span>],</div><div class="line">  <span class="string">"edition"</span> : <span class="number">3</span>,</div><div class="line">  <span class="string">"year"</span>: <span class="number">2018</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><em>2、解析 parse()</em><br>无话可说，一样的模式</p>
-
+<p>1、简单值 ： <code>&quot;hello world!&quot;</code><br>2、对象 ： <code>{&quot;name&quot;:&quot;Sue&quot;,&quot;age&quot;:&quot;22&quot;}</code><br>3、数组 ： <code>&quot;[25,&quot;hi&quot;,true]&quot;</code><br>
+        
+          <a class="article-more-a" href="/2018/10/29/19JSON/#more">more >></a>
+        
       
 
       
@@ -571,15 +565,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
