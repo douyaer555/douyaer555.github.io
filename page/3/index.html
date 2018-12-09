@@ -141,6 +141,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-75算法-递归和回溯法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/08/75算法-递归和回溯法/">是算法呀！--递归和回溯法(JavaScript版)/共 题</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/08/75算法-递归和回溯法/" class="archive-article-date">
+  	<time datetime="2018-10-08T12:14:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>【<a href="https://github.com/wangsiyuan233/NowCoder">源码地址</a>】 || 【<a href="https://www.nowcoder.com/ta/coding-interviews?page=1">代码调试</a>】</p>
+<hr>
+<blockquote>
+<p>七、斐波那契数列 p74</p>
+</blockquote>
+<p><strong>描述</strong>：大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function Fibonacci(<span class="keyword">n</span>)&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">n</span>==0)&#123;<span class="keyword">return</span> 0;&#125;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">n</span>==1)&#123;<span class="keyword">return</span> 1;&#125;</div><div class="line">    <span class="keyword">var</span> <span class="keyword">one</span> = 0,<span class="keyword">two</span>=1; <span class="comment">// 这个部分的值是由上面的 return 决定的</span></div><div class="line">    <span class="keyword">var</span> fbnum=1; <span class="comment">// 是0 1 undefined 都可以</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i =2;i&lt;=<span class="keyword">n</span>;i++)&#123;</div><div class="line">        fbnum = <span class="keyword">one</span>+<span class="keyword">two</span>;</div><div class="line">        <span class="keyword">one</span> = <span class="keyword">two</span>; <span class="comment">// 小的数在下一次迭代变成大的数</span></div><div class="line">        <span class="keyword">two</span> = fbnum;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> fbnum;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>思路</strong>：套路请熟记<br>
+        
+          <a class="article-more-a" href="/2018/10/08/75算法-递归和回溯法/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指offer</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-80算法-字符串、栈和队列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -455,87 +533,6 @@
 
 
   
-    <article id="post-76算法-链表篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/05/76算法-链表篇/">是算法呀！--链表篇(JavaScript版)/共 9 题</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/05/76算法-链表篇/" class="archive-article-date">
-  	<time datetime="2018-10-05T10:59:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>【<a href="https://github.com/wangsiyuan233/NowCoder">源码地址</a>】 || 【<a href="https://www.nowcoder.com/ta/coding-interviews?page=1">代码调试</a>】</p>
-<hr>
-<ul>
-<li>【第一部分：】 逆序链表 2 题<blockquote>
-<p>一、从尾到头打印链表 p58/t3</p>
-</blockquote>
-</li>
-</ul>
-<p><strong>描述</strong>：输入一个链表，按链表值从尾到头的顺序返回一个 <code>ArrayList</code>。<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">printListFromTailToHead</span><span class="params">(head)</span></span>&#123;</div><div class="line">  <span class="keyword">var</span> result = [];</div><div class="line">  <span class="keyword">while</span>(head)&#123;</div><div class="line">    result.unshift(head.val);</div><div class="line">    head = head.next;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>思路</strong>：<br>1、BUG题/<code>unshift()</code>在数组的头部添加任意个项并返回新数组的长度<br>2、翻转后的 <code>head</code> 和 <code>head.next</code>，被一个一个加进了空数组的头部<br>
-        
-          <a class="article-more-a" href="/2018/10/05/76算法-链表篇/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指offer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -617,14 +614,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -634,6 +623,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">聊聊系列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
