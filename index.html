@@ -141,29 +141,29 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-84-Vue的简单小实例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-55Vue-梳理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/09/84-Vue的简单小实例/">Vue的简单小实例</a>
+      <a class="article-title" href="/2018/12/15/55Vue-梳理/">Vue 梳理</a>
     </h1>
   
 
         
-        <a href="/2018/12/09/84-Vue的简单小实例/" class="archive-article-date">
-  	<time datetime="2018-12-09T03:38:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-09</time>
+        <a href="/2018/12/15/55Vue-梳理/" class="archive-article-date">
+  	<time datetime="2018-12-14T18:09:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一、<a href="http://js.jirengu.com/retuy/1/edit?html,output">实现 todolist 添加功能</a><br><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>todolist<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"inputValue"</span> /&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"handleSubmit"</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"(item,index) of list"</span> <span class="attr">:key</span>=<span class="string">"index"</span>&gt;</span></span><span class="template-variable">&#123;&#123;item&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript"></div><div class="line">    <span class="keyword">new</span> Vue(&#123;</div><div class="line">      el:<span class="string">"#root"</span>,</div><div class="line">      data:&#123;</div><div class="line">        inputValue:<span class="string">""</span>,</div><div class="line">        list:[]</div><div class="line">      &#125;,</div><div class="line">      methods:&#123;</div><div class="line">        handleSubmit:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">          <span class="keyword">this</span>.list.push(<span class="keyword">this</span>.inputValue)</div><div class="line">          <span class="keyword">this</span>.inputValue = <span class="string">''</span></div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
+        <p>data 一定要写成 function 形式，避免直接引用赋值（data:()）<br>
         
-          <a class="article-more-a" href="/2018/12/09/84-Vue的简单小实例/#more">more >></a>
+          <a class="article-more-a" href="/2018/12/15/55Vue-梳理/#more">more >></a>
         
       
 
@@ -202,19 +202,80 @@
 
 
   
-    <article id="post-83MVVM-和-Vue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-54Vue的小实例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/03/83MVVM-和-Vue/">MVVM 和 Vue</a>
+      <a class="article-title" href="/2018/12/09/54Vue的小实例/">Vue 的小实例</a>
     </h1>
   
 
         
-        <a href="/2018/11/03/83MVVM-和-Vue/" class="archive-article-date">
+        <a href="/2018/12/09/54Vue的小实例/" class="archive-article-date">
+  	<time datetime="2018-12-09T03:38:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、<a href="http://js.jirengu.com/retuy/1/edit?html,output">实现 todolist 添加功能</a><br><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>todolist<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"inputValue"</span> /&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"handleSubmit"</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"(item,index) of list"</span> <span class="attr">:key</span>=<span class="string">"index"</span>&gt;</span></span><span class="template-variable">&#123;&#123;item&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript"></div><div class="line">    <span class="keyword">new</span> Vue(&#123;</div><div class="line">      el:<span class="string">"#root"</span>,</div><div class="line">      data:&#123;</div><div class="line">        inputValue:<span class="string">""</span>,</div><div class="line">        list:[]</div><div class="line">      &#125;,</div><div class="line">      methods:&#123;</div><div class="line">        handleSubmit:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">          <span class="keyword">this</span>.list.push(<span class="keyword">this</span>.inputValue)</div><div class="line">          <span class="keyword">this</span>.inputValue = <span class="string">''</span></div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2018/12/09/54Vue的小实例/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-53MVVM-和-Vue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/03/53MVVM-和-Vue/">MVVM 和 Vue</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/03/53MVVM-和-Vue/" class="archive-article-date">
   	<time datetime="2018-11-03T03:00:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-03</time>
 </a>
         
@@ -227,7 +288,7 @@
 </blockquote>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>to-do-list by jquery<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"txt-title"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn-submit"</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"ul-list"</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    </div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></div><div class="line">        <span class="keyword">var</span> $txtTitle = $(<span class="string">'#txt-title'</span>)</div><div class="line">        <span class="keyword">var</span> $btnSubmit = $(<span class="string">'#btn-submit'</span>)</div><div class="line">        <span class="keyword">var</span> $ulList = $(<span class="string">'#ul-list'</span>)</div><div class="line">        $btnSubmit.click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> title = $txtTitle.val()</div><div class="line">            <span class="keyword">if</span> (!title) &#123;</div><div class="line">                <span class="keyword">return</span></div><div class="line">            &#125;</div><div class="line">            <span class="keyword">var</span> $li = $(<span class="string">'&lt;li&gt;'</span> + title + <span class="string">'&lt;/li&gt;'</span>)</div><div class="line">            $ulList.append($li)</div><div class="line">            $txtTitle.val(<span class="string">''</span>)</div><div class="line">        &#125;)</div><div class="line">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2018/11/03/83MVVM-和-Vue/#more">more >></a>
+          <a class="article-more-a" href="/2018/11/03/53MVVM-和-Vue/#more">more >></a>
         
       
 
@@ -266,19 +327,19 @@
 
 
   
-    <article id="post-21跨域全集" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-14跨域全集" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/30/21跨域全集/">跨域全集</a>
+      <a class="article-title" href="/2018/10/30/14跨域全集/">跨域全集</a>
     </h1>
   
 
         
-        <a href="/2018/10/30/21跨域全集/" class="archive-article-date">
+        <a href="/2018/10/30/14跨域全集/" class="archive-article-date">
   	<time datetime="2018-10-30T11:34:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
 </a>
         
@@ -294,7 +355,7 @@
 <p><em>2、HTTP 头部</em><br>要成功发送请求头部信息，必须在调用 open() 方法之后调用 send() 方法之前调用 setRequestHeader()<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var xhr = creatXHR();</div><div class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">  <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</div><div class="line">    <span class="keyword">if</span>((xhr.<span class="built_in">status</span> &gt;= <span class="number">200</span> &amp;&amp; xhr.<span class="built_in">status</span> &lt; <span class="number">300</span>) || xhr.<span class="built_in">status</span> == <span class="number">304</span>)&#123;</div><div class="line">      alert(xhr.responseText);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">      alert(<span class="string">'失败了！'</span> + xhr.<span class="built_in">status</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line">xhr.<span class="built_in">open</span>(<span class="string">'get'</span>,<span class="string">'example.php'</span>,<span class="literal">true</span>);</div><div class="line">xhr.setRequestHeader(<span class="string">'MyHeader'</span>,<span class="string">'MyValue'</span>); //添加了这一行</div><div class="line">xhr.send(null);</div></pre></td></tr></table></figure></p>
 <p><em>3、GET 请求</em><br><em>4、POST 请求</em><br>
         
-          <a class="article-more-a" href="/2018/10/30/21跨域全集/#more">more >></a>
+          <a class="article-more-a" href="/2018/10/30/14跨域全集/#more">more >></a>
         
       
 
@@ -333,19 +394,19 @@
 
 
   
-    <article id="post-19JSON" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-12JSON" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/29/19JSON/">JSON</a>
+      <a class="article-title" href="/2018/10/29/12JSON/">JSON</a>
     </h1>
   
 
         
-        <a href="/2018/10/29/19JSON/" class="archive-article-date">
+        <a href="/2018/10/29/12JSON/" class="archive-article-date">
   	<time datetime="2018-10-29T03:09:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-29</time>
 </a>
         
@@ -361,75 +422,7 @@
 <p>三种语法都必须遵循相同的规则：<br>JSON 没有声明、没有分号 必须使用双引号</p>
 <p>1、简单值 ： <code>&quot;hello world!&quot;</code><br>2、对象 ： <code>{&quot;name&quot;:&quot;Sue&quot;,&quot;age&quot;:&quot;22&quot;}</code><br>3、数组 ： <code>&quot;[25,&quot;hi&quot;,true]&quot;</code><br>
         
-          <a class="article-more-a" href="/2018/10/29/19JSON/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-17DOM3全集" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/26/17DOM3全集/">DOM全集</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/26/17DOM3全集/" class="archive-article-date">
-  	<time datetime="2018-10-26T03:03:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>一、事件流 </p>
-</blockquote>
-<p>捕获、冒泡和和DOM事件流</p>
-<blockquote>
-<p>二、事件处理程序 </p>
-</blockquote>
-<p><em>1、HTML 事件处理程序</em><br>
-        
-          <a class="article-more-a" href="/2018/10/26/17DOM3全集/#more">more >></a>
+          <a class="article-more-a" href="/2018/10/29/12JSON/#more">more >></a>
         
       
 
@@ -470,7 +463,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -482,7 +475,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 wangsiyuan
+    		&copy; 2019 wangsiyuan
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -549,15 +542,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
