@@ -22,7 +22,7 @@
 一、XMLHttpRequest
 
 1、XHR 用法12345678910">
-<meta property="og:updated_time" content="2018-11-07T03:04:57.473Z">
+<meta property="og:updated_time" content="2019-01-05T05:27:26.288Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="跨域全集">
 <meta name="twitter:description" content="Ajax 技术的核心是 XMLHttpRequest 对象，XHR 为向服务器发送请求和解析服务器响应提供了流畅的接口。能够以异步方式从服务器取得更多信息，意味着用户单击后，可以不必刷新页面也能取得新数据。也就是说，可以使用 XHR 对象取得新数据，然后再通过 DOM 将新数据插入到页面中。Ajax 通信与数据结构无关。
@@ -206,7 +206,9 @@
 <blockquote>
 <p>六、安全</p>
 </blockquote>
-<p><code>CSRF</code> 和 <code>XHR</code></p>
+<p><em>XSRF</em> (跨站请求伪造)</p>
+<p>顾名思义，在你进行付费时候，会收到一封邮件，里面的图片也就是你当前付费的地址，不小心点开以后，你的cookie就会被窃取，自动填充，付费成功.<br>预防：短信、图片验证码</p>
+<p><em>XSS</em>(跨站请求攻击)<br>在文字中插入 <code>&lt;script&gt;</code> 代码获取 cookie，有人查看你的维博就会把查看者的 cookie 发送到攻击者的服务器里。<br>预防：前端把 <code>&lt;</code> 替换为 <code>&amp;it</code></p>
 
       
 
@@ -421,15 +423,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
