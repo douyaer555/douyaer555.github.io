@@ -6,30 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>跨域全集 | wangsiyuan</title>
+  <title>跨域 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Ajax 技术的核心是 XMLHttpRequest 对象，XHR 为向服务器发送请求和解析服务器响应提供了流畅的接口。能够以异步方式从服务器取得更多信息，意味着用户单击后，可以不必刷新页面也能取得新数据。也就是说，可以使用 XHR 对象取得新数据，然后再通过 DOM 将新数据插入到页面中。Ajax 通信与数据结构无关。
 
-一、XMLHttpRequest
+手写 ajax
 
-1、XHR 用法12345678910">
+12345678let xhr = new XMLHtt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="跨域全集">
-<meta property="og:url" content="wangsiyuan233.github.io/2018/10/30/14跨域全集/index.html">
+<meta property="og:title" content="跨域">
+<meta property="og:url" content="wangsiyuan233.github.io/2018/10/30/14跨域/index.html">
 <meta property="og:site_name" content="wangsiyuan">
 <meta property="og:description" content="Ajax 技术的核心是 XMLHttpRequest 对象，XHR 为向服务器发送请求和解析服务器响应提供了流畅的接口。能够以异步方式从服务器取得更多信息，意味着用户单击后，可以不必刷新页面也能取得新数据。也就是说，可以使用 XHR 对象取得新数据，然后再通过 DOM 将新数据插入到页面中。Ajax 通信与数据结构无关。
 
-一、XMLHttpRequest
+手写 ajax
 
-1、XHR 用法12345678910">
-<meta property="og:updated_time" content="2019-01-05T05:27:26.288Z">
+12345678let xhr = new XMLHtt">
+<meta property="og:updated_time" content="2019-01-06T05:24:57.150Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="跨域全集">
+<meta name="twitter:title" content="跨域">
 <meta name="twitter:description" content="Ajax 技术的核心是 XMLHttpRequest 对象，XHR 为向服务器发送请求和解析服务器响应提供了流畅的接口。能够以异步方式从服务器取得更多信息，意味着用户单击后，可以不必刷新页面也能取得新数据。也就是说，可以使用 XHR 对象取得新数据，然后再通过 DOM 将新数据插入到页面中。Ajax 通信与数据结构无关。
 
-一、XMLHttpRequest
+手写 ajax
 
-1、XHR 用法12345678910">
+12345678let xhr = new XMLHtt">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -155,19 +155,19 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-14跨域全集" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-14跨域" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      跨域全集
+      跨域
     </h1>
   
 
         
-        <a href="/2018/10/30/14跨域全集/" class="archive-article-date">
+        <a href="/2018/10/30/14跨域/" class="archive-article-date">
   	<time datetime="2018-10-30T11:34:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
 </a>
         
@@ -177,32 +177,45 @@
       
         <p><code>Ajax</code> 技术的核心是 <code>XMLHttpRequest</code> 对象，<code>XHR</code> 为向服务器发送请求和解析服务器响应提供了流畅的接口。能够以异步方式从服务器取得更多信息，意味着用户单击后，可以不必刷新页面也能取得新数据。也就是说，可以使用 <code>XHR</code> 对象取得新数据，然后再通过 <code>DOM</code> 将新数据插入到页面中。<br><code>Ajax</code> 通信与数据结构无关。</p>
 <blockquote>
-<p>一、XMLHttpRequest</p>
+<p>手写 ajax</p>
 </blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</div><div class="line">xhr.open(<span class="string">'POST'</span>, <span class="string">'/xxxx'</span>)</div><div class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(xhr.readyState === <span class="number">4</span> &amp;&amp; xhr.status === <span class="number">200</span>)&#123;</div><div class="line">        <span class="built_in">console</span>.log(xhr.responseText)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">xhr.send(<span class="string">'a=1&amp;b=2'</span>)</div></pre></td></tr></table></figure>
+<p>1、XMLHttpRequest</p>
 <p><em>1、XHR 用法</em><br><figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var xhr = creatXHR();</div><div class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">  <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</div><div class="line">    <span class="keyword">if</span>((xhr.<span class="built_in">status</span> &gt;= <span class="number">200</span> &amp;&amp; xhr.<span class="built_in">status</span> &lt; <span class="number">300</span>) || xhr.<span class="built_in">status</span> == <span class="number">304</span>)&#123;</div><div class="line">      alert(xhr.responseText);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">      alert(<span class="string">'失败了！'</span> + xhr.<span class="built_in">status</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line">xhr.<span class="built_in">open</span>(<span class="string">'get'</span>,<span class="string">'example.txt'</span>,<span class="literal">true</span>);</div><div class="line">xhr.send(null)</div></pre></td></tr></table></figure></p>
 <p><em>2、HTTP 头部</em><br>要成功发送请求头部信息，必须在调用 open() 方法之后调用 send() 方法之前调用 setRequestHeader()<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var xhr = creatXHR();</div><div class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">  <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</div><div class="line">    <span class="keyword">if</span>((xhr.<span class="built_in">status</span> &gt;= <span class="number">200</span> &amp;&amp; xhr.<span class="built_in">status</span> &lt; <span class="number">300</span>) || xhr.<span class="built_in">status</span> == <span class="number">304</span>)&#123;</div><div class="line">      alert(xhr.responseText);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">      alert(<span class="string">'失败了！'</span> + xhr.<span class="built_in">status</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line">xhr.<span class="built_in">open</span>(<span class="string">'get'</span>,<span class="string">'example.php'</span>,<span class="literal">true</span>);</div><div class="line">xhr.setRequestHeader(<span class="string">'MyHeader'</span>,<span class="string">'MyValue'</span>); //添加了这一行</div><div class="line">xhr.send(null);</div></pre></td></tr></table></figure></p>
-<p><em>3、GET 请求</em><br><em>4、POST 请求</em><br><a id="more"></a></p>
+<p><em>3、GET 请求</em><br><em>4、POST 请求</em></p>
+<p>2、各种状态码<br><a id="more"></a></p>
+<p><strong>浏览器出于安全的考虑，采用的是同源策略。</strong></p>
+<p>协议、域名和端口号三者统一，就是同域，只要有其中一个不一样，就是跨域，这时Ajax就会请求失败。</p>
+<p>下面有三种方法可以解决跨域的问题<br><!--more--></p>
 <blockquote>
-<p>二、HMLHttpRequest 2级</p>
+<p>一、JSONP</p>
 </blockquote>
-<p><em>1、FormData</em><br>表单数据的序列化<br><em>2、超时设定</em><br>请求响应多少毫秒以后就会停止<br><em>3、overrideMimeType</em><br>重写 XHR 响应的 MIME 类型</p>
+<p><code>JSONP</code> 的原理非常简单：</p>
+<p>利用 <code>&lt;script&gt;</code> 标签没有跨域限制的漏洞，通过 <code>&lt;script&gt;</code> 标签指向一个需要访问的地址并提供一个回调函数来接收数据。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://domain/api?param1=a&amp;param2=b&amp;callback=jsonp"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">jsonp</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">    	<span class="built_in">console</span>.log(data)</div><div class="line">	&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><code>JSONP</code>的兼容性很好，但只限于 <strong>GET</strong> 请求</p>
+<p>在开发中可能会遇到多个 <code>JSONP</code> 请求的回调函数名是相同的，这时候就需要自己封装一个 <code>JSONP</code>，以下是简单实现：<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function <span class="keyword">jsonp(url, </span><span class="keyword">jsonpCallback, </span>success) &#123;</div><div class="line">  let <span class="keyword">script </span>= document.createElement(<span class="string">"script"</span>)<span class="comment">;</span></div><div class="line">  <span class="keyword">script.src </span>= url<span class="comment">;</span></div><div class="line">  <span class="keyword">script.async </span>= true<span class="comment">;</span></div><div class="line">  <span class="keyword">script.type </span>= <span class="string">"text/javascript"</span><span class="comment">;</span></div><div class="line">  window[<span class="keyword">jsonpCallback] </span>= function(data) &#123;</div><div class="line">    success &amp;&amp; success(data)<span class="comment">;</span></div><div class="line">  &#125;<span class="comment">;</span></div><div class="line">  document.<span class="keyword">body.appendChild(script);</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">jsonp(</span></div><div class="line">  <span class="string">"http://xxx"</span>,</div><div class="line">  <span class="string">"callback"</span>,</div><div class="line">  function(value) &#123;</div><div class="line">    console.log(value)<span class="comment">;</span></div><div class="line">  &#125;</div><div class="line">)<span class="comment">;</span></div></pre></td></tr></table></figure></p>
 <blockquote>
-<p>三、进度事件</p>
+<p>二、CORS</p>
 </blockquote>
-<p><em>1、load </em><br>只要浏览器接收到服务器的响应，不管状态如何，都会触发 load 事件。<br><em>2、progress</em><br>浏览器接收到新数据期间周期性地触发</p>
+<p><code>CORS</code> 需要<strong>浏览器</strong>和<strong>后端</strong>同时支持。</p>
+<p>服务端设置 <code>Access-Control-Allow-Origin</code> 就可以开启 CORS。 该属性表示哪些域名可以访问资源，如果设置通配符则表示所有网站都可以访问资源。</p>
+<p>实现 <code>CORS</code> 通信的关键是后端。只要后端实现了 <code>CORS</code>，就实现了跨域。</p>
 <blockquote>
-<p>四、跨资源共享</p>
+<p>三、document.domain</p>
 </blockquote>
-<p>XHR 对象只能访问与包含它的页面位于同一个域中的资源，这种安全策略可以预防某些恶意行为；<br>CORS 定义了在必须访问跨域资源时，浏览器与服务器应该如何沟通。</p>
-<p><em>1、IE 对 CROS 的实现</em><br><em>2、其他浏览器对 CROS 的实现</em><br><em>3、preflighted Requests</em><br><em>4、带凭据的请求</em></p>
-<p><em>5、跨浏览器的 CORS</em><br>检测 <code>XHR</code> 是否支持 <code>CORS</code> 的最简单方式，就是检查是否存在 <code>withCredentials</code> 属性。再结合检测 <code>XDomainRequest</code> 对象是否存在，就可以兼顾所以浏览器了</p>
+<p>该方式只能用于二级域名相同的情况下，比如 <code>a.test.com</code> 和 <code>b.test.com</code> 适用于该方式。</p>
+<p>只需要给页面添加 <code>document.domain = &#39;test.com&#39;</code> 表示二级域名都相同就可以实现跨域。</p>
 <blockquote>
-<p>五、其它跨域</p>
+<p>四、postMessage</p>
 </blockquote>
-<p><em>1、图像ping</em><br>在线广告跟踪浏览量的主要方式。<br>缺点：只能发送 <code>Get</code> 和 无法访问服务器的响应文本。</p>
-<p><em>2、JSONP</em><br>包含在调用函数中的 <code>JSON</code><br>优点：直接访问响应文本 和 支持在浏览器与服务器之间双向通信<br>缺点：从其他域中加载代码执行 和 判断请求是否失败并不容易</p>
-<p><em>3、Comet</em><br>Ajax 是一种从页面向服务器请求数据的技术，而 Comet 则是一种服务器向页面推送数据的技术。</p>
-<p><em>4、服务器发送</em><br><em>5、Web Sockets</em><br><em>6、SSE 与 Web Sockets</em></p>
+<p>这种方式通常用于获取嵌入页面中的第三方页面数据。一个页面发送消息，另一个页面判断来源并接收消息<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 发送消息端</span></div><div class="line"><span class="built_in">window</span>.parent.postMessage(<span class="string">'message'</span>, <span class="string">'http://test.com'</span>);</div><div class="line"><span class="comment">// 接收消息端</span></div><div class="line"><span class="keyword">var</span> mc = <span class="keyword">new</span> MessageChannel();</div><div class="line">mc.addEventListener(<span class="string">'message'</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">var</span> origin = event.origin || event.originalEvent.origin; </div><div class="line">    <span class="keyword">if</span> (origin === <span class="string">'http://test.com'</span>) &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'验证通过'</span>)</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h2 id="★30s总结"><a href="#★30s总结" class="headerlink" title="★30s总结"></a>★30s总结</h2><ul>
+<li><code>JSONP</code> : 利用 <code>&lt;script&gt;</code> 标签的漏洞来跨域；</li>
+<li><code>CORS</code>：服务端和后端，后端是关键</li>
+<li><code>document.domian</code> ： 二级域名相同</li>
+<li><code>postMessage</code> ： 一个页面发送，另一个页面接收并验证</li>
+</ul>
 <blockquote>
 <p>六、安全</p>
 </blockquote>
@@ -288,7 +301,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/10/30/14跨域全集/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2018/10/30/14跨域/" alt="微信分享二维码">
     </div>
 </div>
 
