@@ -141,6 +141,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-56组件化与-React" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/16/56组件化与-React/">组件化与 React</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/16/56组件化与-React/" class="archive-article-date">
+  	<time datetime="2019-01-16T03:32:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>一、对组件化的理解</p>
+</blockquote>
+<p><em>1、组件的封装</em></p>
+<p>视图 + 数据 + 变化逻辑（数据驱动视图变化）<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Todo</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</div><div class="line">  constructor(props)&#123;</div><div class="line">    <span class="keyword">super</span>(props)</div><div class="line">    <span class="comment">// 下面是数据</span></div><div class="line">    <span class="keyword">this</span>.state = &#123;list:[]&#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render()&#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      <span class="comment">// 里面是视图</span></div><div class="line">      &lt;div&gt;</div><div class="line">        &lt;<span class="type">Input</span> addTitle = &#123;<span class="keyword">this</span>.addTitle.bind(<span class="keyword">this</span>)&#125;/&gt;</div><div class="line">        &lt;<span class="type">List</span> data = &#123;<span class="keyword">this</span>.state.list&#125;/&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  addTitle(title)&#123;</div><div class="line">    const currentList = <span class="keyword">this</span>.state.list</div><div class="line">    <span class="comment">// 数据驱动视图的改变</span></div><div class="line">    <span class="keyword">this</span>.setState (&#123;</div><div class="line">      list:currentList.cancat(title)</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2019/01/16/56组件化与-React/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-55Virtual-Dom" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -403,76 +468,9 @@
 
 
   
-    <article id="post-12JSON" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/29/12JSON/">JSON</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/29/12JSON/" class="archive-article-date">
-  	<time datetime="2018-10-29T03:09:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>其实 <code>JSON</code> 的知识点特别的少</p>
-<p>主要是围绕 <code>stringify()</code> 和 <code>parse()</code>来展开的</p>
-<blockquote>
-<p>一、语法</p>
-</blockquote>
-<p>三种语法都必须遵循相同的规则：<br>JSON 没有声明、没有分号 必须使用双引号</p>
-<p>1、简单值 ： <code>&quot;hello world!&quot;</code><br>2、对象 ： <code>{&quot;name&quot;:&quot;Sue&quot;,&quot;age&quot;:&quot;22&quot;}</code><br>3、数组 ： <code>&quot;[25,&quot;hi&quot;,true]&quot;</code><br>
-        
-          <a class="article-more-a" href="/2018/10/29/12JSON/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 

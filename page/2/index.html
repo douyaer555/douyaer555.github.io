@@ -141,6 +141,73 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-12JSON" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/29/12JSON/">JSON</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/29/12JSON/" class="archive-article-date">
+  	<time datetime="2018-10-29T03:09:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>其实 <code>JSON</code> 的知识点特别的少</p>
+<p>主要是围绕 <code>stringify()</code> 和 <code>parse()</code>来展开的</p>
+<blockquote>
+<p>一、语法</p>
+</blockquote>
+<p>三种语法都必须遵循相同的规则：<br>JSON 没有声明、没有分号 必须使用双引号</p>
+<p>1、简单值 ： <code>&quot;hello world!&quot;</code><br>2、对象 ： <code>{&quot;name&quot;:&quot;Sue&quot;,&quot;age&quot;:&quot;22&quot;}</code><br>3、数组 ： <code>&quot;[25,&quot;hi&quot;,true]&quot;</code><br>
+        
+          <a class="article-more-a" href="/2018/10/29/12JSON/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-18DOM3全集" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -424,73 +491,9 @@
 
 
   
-    <article id="post-51手撕代码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/18/51手撕代码/">手撕代码</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/18/51手撕代码/" class="archive-article-date">
-  	<time datetime="2018-10-18T05:57:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>深拷贝</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, &#123;<span class="attr">username</span>: <span class="string">'Wayne'</span>&#125;]</div><div class="line"><span class="keyword">let</span> arr2 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(arr1)) <span class="comment">// 深度拷贝：js对象-&gt;JSON字符串-&gt;新js对象</span></div><div class="line">arr2[<span class="number">0</span>] = <span class="number">5</span></div><div class="line">arr2[<span class="number">2</span>].username = <span class="string">'Jack'</span></div><div class="line"><span class="built_in">console</span>.log(arr1) <span class="comment">// [1, 2, &#123;username: 'Wayne'&#125;]</span></div><div class="line"><span class="built_in">console</span>.log(arr2) <span class="comment">// [5, 2, &#123;username: 'Jack'&#125;]</span></div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/10/18/51手撕代码/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 

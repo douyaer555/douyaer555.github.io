@@ -141,6 +141,79 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-43聊聊系列-4-深浅拷贝" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/20/43聊聊系列-4-深浅拷贝/">聊聊系列(4)-- 深浅拷贝</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/20/43聊聊系列-4-深浅拷贝/" class="archive-article-date">
+  	<time datetime="2018-08-20T12:27:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如果<strong>给一个变量赋值一个对象</strong>，那么两者的值会是同一个引用，其中一方改变，另一方也会相应改变。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">let <span class="selector-tag">a</span> = &#123;</div><div class="line">    age: <span class="number">1</span></div><div class="line">&#125;</div><div class="line">let <span class="selector-tag">b</span> = <span class="selector-tag">a</span></div><div class="line"><span class="selector-tag">a</span><span class="selector-class">.age</span> = <span class="number">2</span></div><div class="line">console.log(<span class="selector-tag">b</span>.age) <span class="comment">// 2</span></div></pre></td></tr></table></figure></p>
+<p>我们不想要这样的情况出现在开发中，需要浅拷贝<br>
+        
+          <a class="article-more-a" href="/2018/08/20/43聊聊系列-4-深浅拷贝/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">聊聊系列</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-42基本的数据结构" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -409,73 +482,9 @@
 
 
   
-    <article id="post-38面试题目总结1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/14/38面试题目总结1/">前端总结1</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/14/38面试题目总结1/" class="archive-article-date">
-  	<time datetime="2018-07-14T09:16:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>请你谈谈Cookie的弊端</p>
-</blockquote>
-<p><strong>优点</strong>： 极高的扩展性和可用性<br>1) 数据持久性。<br>2) 不需要任何服务器资源。 Cookie 存储在客户端并在发送后由服务器读取。<br>3) 可配置到期规则。 控制 cookie 的生命期，使之不会永远有效。偷盗者很可能拿到一个过期的 cookie 。<br>4) 简单性。 基于文本的轻量结构。<br>5) 通过良好的编程，控制保存在 cookie 中的 session 对象的大小。<br>6) 通过加密和安全传输技术（ SSL ），减少 cookie 被破解的可能性。<br>7) 只在 cookie 中存放不敏感数据，即使被盗也不会有重大损失。<br>
-        
-          <a class="article-more-a" href="/2018/07/14/38面试题目总结1/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 

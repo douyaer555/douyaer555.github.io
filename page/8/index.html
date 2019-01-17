@@ -141,6 +141,82 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-31MVC与模块化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/15/31MVC与模块化/">MVC与模块化</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/15/31MVC与模块化/" class="archive-article-date">
+  	<time datetime="2018-05-15T02:16:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>一、模块化</p>
+</blockquote>
+<p><strong>目的：通过对文件的命名和代码的简化，可以更加方便的辨别代码的功能与作用。</strong></p>
+<p>以js代码为例，我们把<code>admin.js</code>，按照功能拆分成<code>module-1.js</code>等三个文件，形成模块。这样每个文件的代码都会小而清晰，这也就是模块化的一种体现。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--index.html--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    module-1 of html</div><div class="line">    module-2 of html</div><div class="line">    module-3 of html</div><div class="line">    <span class="tag">&lt;<span class="name">scirpt</span> <span class="attr">src</span>=<span class="string">"module-1.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>   </div><div class="line">    <span class="tag">&lt;<span class="name">scirpt</span> <span class="attr">src</span>=<span class="string">"module-2.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>   </div><div class="line">    <span class="tag">&lt;<span class="name">scirpt</span> <span class="attr">src</span>=<span class="string">"module-3.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2018/05/15/31MVC与模块化/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-30各种高度" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -430,85 +506,9 @@
 
 
   
-    <article id="post-26初探ES6-3-箭头函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/07/26初探ES6-3-箭头函数/">初探ES6(3)--箭头函数</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/07/26初探ES6-3-箭头函数/" class="archive-article-date">
-  	<time datetime="2018-04-07T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p> ٩(๑&gt;◡&lt;๑)۶</p>
-<blockquote>
-<p>用处一：简化回调函数</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 正常函数写法1</span></div><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].map(<span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> x * x;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 箭头函数写法1</span></div><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].map(<span class="function"><span class="params">x</span> =&gt;</span> x * x);</div><div class="line"></div><div class="line"><span class="comment">// 正常函数写法2</span></div><div class="line"><span class="keyword">var</span> result = values.sort(<span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> a - b;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 箭头函数写法2</span></div><div class="line"><span class="keyword">var</span> result = values.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b);</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/04/07/26初探ES6-3-箭头函数/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
     </nav>
   
 
