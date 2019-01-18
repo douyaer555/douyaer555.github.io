@@ -20,13 +20,15 @@
 
 1、组件的封装
 视图 + 数据 + 变化逻辑（数据驱动视图变化）12345678910111213141516171819202122232425class Todo extends Component&amp;#123;  constructor(props)&amp;#123;    super(props)    // 下面是数据    this.state = &amp;#123;list">
-<meta property="og:updated_time" content="2019-01-17T05:09:05.521Z">
+<meta property="og:image" content="https://i.imgur.com/tttfemc.png">
+<meta property="og:updated_time" content="2019-01-18T04:05:30.769Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="组件化与 React">
 <meta name="twitter:description" content="一、对组件化的理解
 
 1、组件的封装
 视图 + 数据 + 变化逻辑（数据驱动视图变化）12345678910111213141516171819202122232425class Todo extends Component&amp;#123;  constructor(props)&amp;#123;    super(props)    // 下面是数据    this.state = &amp;#123;list">
+<meta name="twitter:image" content="https://i.imgur.com/tttfemc.png">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -185,13 +187,45 @@
 <p>二、JSX 本质是什么</p>
 </blockquote>
 <p><em>1、JSX 语法</em></p>
+<p><img src="https://i.imgur.com/tttfemc.png" alt=""><br>JSX 无法被浏览器解析<br>那么它是如何工作的呢？</p>
 <p><em>2、JSX 解析成 JS</em></p>
+<p><code>JSX</code> 其实是语法糖，开发环境会将 <code>JSX</code> 编译成 <code>JS</code> 代码<br><code>JSX</code> 的写法大大降低了学习成本和编码工作量，同时，<code>JSX</code> 也会增加 <code>debug</code> 成本</p>
 <p><em>3、独立的标准</em></p>
+<p><code>JSX</code> 是 <code>React</code> 引入的，但不是 <code>React</code> 独有的<br><code>React</code> 已经将它作为一个独立标准开放，其他项目也可以用<br><code>React.creatElement</code> 是可以自定义修改的</p>
 <blockquote>
 <p>三、JSX 和 vdom 的关系</p>
-<p>四、说一下 setState 的过程</p>
-<p>五、阐述一下 Vue 和 React 的认识</p>
 </blockquote>
+<p><em>1、为何需要 vdom</em></p>
+<p><code>vdom</code> 是 <code>React</code> 初次推广开来的，结合 <code>JSX</code><br><code>JSX</code> 就是模板，最终要渲染成 <code>html</code><br>初次渲染 + 修改 <code>state</code> 后的 <code>re-render</code><br>正好符合 <code>vdom</code> 的应用场景</p>
+<p><em>2、React.creatElement 和 h 函数</em></p>
+<p>都会生成 <code>vnode</code><br><code>h</code> 函数第一个参数是标签的名称<br><code>React.creatElement</code> 还需要额外考虑自定义组件的名称</p>
+<p><em>3、何时 patch</em></p>
+<p>初次渲染 - <code>ReactDOM.render(&lt;App/&gt;,container)</code><br>会触发 <code>patch(container,vnode)</code><br><code>re-reder</code>  —— <code>setState</code><br>会触发 <code>patch(vnode,newVnode)</code></p>
+<p><em>4、自定义组件的解析</em></p>
+<p>比如 <code>Input</code> 和 <code>List</code> 都是我们自定义的组件，<code>vdom</code> 不认识<br>所以 <code>Input</code> 和 <code>List</code> 定义的时候必须声明 <code>render</code> 函数<br>根据 <code>props</code> 初始化实例，然后执行实例的 <code>render</code> 函数<br><code>render</code> 函数返回的还是 <code>vnode</code> 对象</p>
+<blockquote>
+<p>四、说一下 setState 的过程</p>
+</blockquote>
+<p>是 <code>React</code> 很核心的一个函数</p>
+<p><em>1、setState 的异步</em></p>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">addTitle(title)&#123;</div><div class="line">	const currentList = this.<span class="keyword">state</span>.list</div><div class="line">	console.<span class="keyword">log</span>(this.<span class="keyword">state</span>.list)//['a','b']</div><div class="line">	this.<span class="built_in">set</span>State(&#123;</div><div class="line">		list: currentList.concat(title) // 'c'</div><div class="line">	&#125;)</div><div class="line">	console.<span class="keyword">log</span>(this.<span class="keyword">state</span>.list)//['a','b']</div></pre></td></tr></table></figure>
+<p>可能会一次性执行多次 <code>setState</code><br>无法规定、限制用户如何使用 <code>setState</code><br>没必要每次 <code>setState</code> 都重新渲染，考虑性能<br>即便是每次重新渲染，用户也看不到中间的效果</p>
+<p><em>2、vue 修改属性也是异步</em></p>
+<p>效果、原因和 setState 都是一样的<br><a href="http://wangsiyuan233.cn/2018/11/03/53MVVM-%E5%92%8C-Vue/" target="_blank" rel="external">vue 的整个实现流程</a></p>
+<p><em>3、setState 的过程</em></p>
+<p>每个组件实例，都有 <code>renderComponent</code> 方法<br>执行 <code>renderComponent</code> 会重新执行实例的 <code>render</code><br><code>render</code> 函数返回 <code>newVnode</code>，然后拿到 <code>preVnode</code><br>执行 <code>patch(preVnode,newVnode)</code></p>
+<p>怎样才能拿到 <code>[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]</code> ???<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">addTitle(title)&#123;</div><div class="line">	const currentList = this.<span class="keyword">state</span>.list</div><div class="line">	console.<span class="keyword">log</span>(this.<span class="keyword">state</span>.list)//['a','b']</div><div class="line">	this.<span class="built_in">set</span>State(&#123;</div><div class="line">		list: currentList.concat(title) // 'c'</div><div class="line">	&#125;,function()&#123;</div><div class="line">		console.<span class="keyword">log</span>(this.<span class="keyword">state</span>.list)//['a','b','c']</div><div class="line">		&#125;)</div><div class="line">  	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>五、阐述一下对 Vue 和 React 的认识</p>
+</blockquote>
+<p><em>1、两者的本质区别</em></p>
+<p><code>Vue</code> - 本质是 <code>MVVM</code> 框架，由 <code>MVC</code> 发展而来<br><code>React</code> - 本质是前端组件框架，由后端组件化发展而来<br>但是不妨碍它们都可以实现相同的功能</p>
+<p><em>2、模板的区别</em></p>
+<p><code>Vue</code> - 使用模板（最初由 <code>angular</code> 提出）<br><code>React</code>- 使用 <code>JSX</code></p>
+<p><em>3、组件化的区别</em></p>
+<p><code>React</code> 本身就是组件化，没有组件化就不是 <code>React</code><br><code>Vue</code> 也支持组件化，不过是在 <code>MVVM</code> 上的扩展</p>
+<p><em>4、两者的共同点</em></p>
+<p>都支持组件化</p>
 
       
 
