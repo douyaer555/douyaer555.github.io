@@ -8,26 +8,26 @@
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
   <title>原型及原型链 | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="写在前面：对学习前端70天的一个总结，说是“深入”其实有点不好意思，有什么问题一起探讨呀
+  <meta name="description" content="写在前面：学习前端70天的一个总结，说是“深入”其实有点不好意思，有什么问题一起探讨呀
 
-JavaScript中有一句“一切皆是对象”，这句话当然是不严谨的啦，让我们一起来看看怎么回事吧！">
+JavaScript 中有一句“一切皆是对象”，这句话当然是不严谨的啦，让我们一起来看看怎么回事吧！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="原型及原型链">
 <meta property="og:url" content="wangsiyuan233.github.io/2018/02/24/07从原型到原型链/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:description" content="写在前面：对学习前端70天的一个总结，说是“深入”其实有点不好意思，有什么问题一起探讨呀
+<meta property="og:description" content="写在前面：学习前端70天的一个总结，说是“深入”其实有点不好意思，有什么问题一起探讨呀
 
-JavaScript中有一句“一切皆是对象”，这句话当然是不严谨的啦，让我们一起来看看怎么回事吧！">
+JavaScript 中有一句“一切皆是对象”，这句话当然是不严谨的啦，让我们一起来看看怎么回事吧！">
 <meta property="og:image" content="https://i.imgur.com/7BYXesw.png">
 <meta property="og:image" content="https://i.imgur.com/vAwUmea.png">
 <meta property="og:image" content="https://i.imgur.com/E0G47Yo.png">
 <meta property="og:image" content="https://i.imgur.com/r7M68Fc.png">
-<meta property="og:updated_time" content="2019-01-16T03:11:36.757Z">
+<meta property="og:updated_time" content="2019-01-21T05:35:26.274Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型及原型链">
-<meta name="twitter:description" content="写在前面：对学习前端70天的一个总结，说是“深入”其实有点不好意思，有什么问题一起探讨呀
+<meta name="twitter:description" content="写在前面：学习前端70天的一个总结，说是“深入”其实有点不好意思，有什么问题一起探讨呀
 
-JavaScript中有一句“一切皆是对象”，这句话当然是不严谨的啦，让我们一起来看看怎么回事吧！">
+JavaScript 中有一句“一切皆是对象”，这句话当然是不严谨的啦，让我们一起来看看怎么回事吧！">
 <meta name="twitter:image" content="https://i.imgur.com/7BYXesw.png">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
@@ -175,9 +175,9 @@ JavaScript中有一句“一切皆是对象”，这句话当然是不严谨的�
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>写在前面：对学习前端70天的一个总结，说是“深入”其实有点不好意思，有什么问题一起探讨呀</p>
+<p>写在前面：学习前端70天的一个总结，说是“深入”其实有点不好意思，有什么问题一起探讨呀</p>
 </blockquote>
-<p>JavaScript中有一句“一切皆是对象”，这句话当然是不严谨的啦，让我们一起来看看怎么回事吧！<br><a id="more"></a><br><strong>一、判断对象</strong><br>从最开始学习JS，我们就学会了判断值类型和引用类型：<br>值类型：<code>number、string、null、undefined、boolean</code><br>引用类型：函数、数组、对象这些都是对象<br>（值得注意的是，当我们用typeof判断null时，浏览器会返回object，这是因为在js中，底层是用二进制编码的，如果前三位是000的话,用typeof就会返回object,而null的编码是全部都是0，当然会被返回object ,这是js的一个bug而已。）</p>
+<p>JavaScript 中有一句“一切皆是对象”，这句话当然是不严谨的啦，让我们一起来看看怎么回事吧！<br><a id="more"></a><br><strong>一、判断对象</strong><br>从最开始学习JS，我们就学会了判断值类型和引用类型：<br>值类型：<code>number、string、null、undefined、boolean</code><br>引用类型：函数、数组、对象这些都是对象<br>（值得注意的是，当我们用 <code>typeof</code> 判断 <code>null</code> 时，浏览器会返回 <code>object</code>，这是因为在 <code>js</code> 中，底层是用二进制编码的，如果前三位是 <code>000</code> 的话,用 <code>typeof</code> 就会返回 <code>object</code> ,而 <code>null</code> 的编码是全部都是 <code>0</code>，当然会被返回 <code>object</code> ,这是 <code>js</code> 的一个 <code>bug</code> 而已。）</p>
 <blockquote>
 <p>1.1值类型：变量的交换等于在一个新的地方按照连锁店的规范标准（统一店面理解为相同的变量内容）新开一个分店，这样新开的店与其它旧店互不相关、各自运营。<br>1.2引用类型：变量的交换等同于把现有一间店的钥匙（变量引用地址）复制一把给了另外一个老板，此时两个老板同时管理一间店，两个老板的行为都有可能对一间店的运营造成影响。<br>2.1值类型的值是一经确定就不可变的；基本类型的比较是值的比较；基本类型的变量存放在栈。<br>2.2引用类型的值是可变的；引用类型的比较是引用的比较；引用类型的值是同时保存在栈和堆中的对象。</p>
 </blockquote>
