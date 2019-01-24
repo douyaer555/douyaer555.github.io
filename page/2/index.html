@@ -141,6 +141,76 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-14跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/30/14跨域/">跨域</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/30/14跨域/" class="archive-article-date">
+  	<time datetime="2018-10-30T11:34:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>Ajax</code> 技术的核心是 <code>XMLHttpRequest</code> 对象，<code>XHR</code> 为向服务器发送请求和解析服务器响应提供了流畅的接口。能够以异步方式从服务器取得更多信息，意味着用户单击后，可以不必刷新页面也能取得新数据。也就是说，可以使用 <code>XHR</code> 对象取得新数据，然后再通过 <code>DOM</code> 将新数据插入到页面中。<br><code>Ajax</code> 通信与数据结构无关。</p>
+<blockquote>
+<p>手写 ajax</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</div><div class="line">xhr.open(<span class="string">'POST'</span>, <span class="string">'/xxxx'</span>)</div><div class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(xhr.readyState === <span class="number">4</span> &amp;&amp; xhr.status === <span class="number">200</span>)&#123;</div><div class="line">        <span class="built_in">console</span>.log(xhr.responseText)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">xhr.send(<span class="string">'a=1&amp;b=2'</span>)</div></pre></td></tr></table></figure>
+<p>1、XMLHttpRequest</p>
+<p><em>1、XHR 用法</em><br><figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var xhr = creatXHR();</div><div class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">  <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</div><div class="line">    <span class="keyword">if</span>((xhr.<span class="built_in">status</span> &gt;= <span class="number">200</span> &amp;&amp; xhr.<span class="built_in">status</span> &lt; <span class="number">300</span>) || xhr.<span class="built_in">status</span> == <span class="number">304</span>)&#123;</div><div class="line">      alert(xhr.responseText);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">      alert(<span class="string">'失败了！'</span> + xhr.<span class="built_in">status</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line">xhr.<span class="built_in">open</span>(<span class="string">'get'</span>,<span class="string">'example.txt'</span>,<span class="literal">true</span>);</div><div class="line">xhr.send(null)</div></pre></td></tr></table></figure></p>
+<p><em>2、HTTP 头部</em><br>要成功发送请求头部信息，必须在调用 open() 方法之后调用 send() 方法之前调用 setRequestHeader()<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var xhr = creatXHR();</div><div class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">  <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</div><div class="line">    <span class="keyword">if</span>((xhr.<span class="built_in">status</span> &gt;= <span class="number">200</span> &amp;&amp; xhr.<span class="built_in">status</span> &lt; <span class="number">300</span>) || xhr.<span class="built_in">status</span> == <span class="number">304</span>)&#123;</div><div class="line">      alert(xhr.responseText);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">      alert(<span class="string">'失败了！'</span> + xhr.<span class="built_in">status</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line">xhr.<span class="built_in">open</span>(<span class="string">'get'</span>,<span class="string">'example.php'</span>,<span class="literal">true</span>);</div><div class="line">xhr.setRequestHeader(<span class="string">'MyHeader'</span>,<span class="string">'MyValue'</span>); //添加了这一行</div><div class="line">xhr.send(null);</div></pre></td></tr></table></figure></p>
+<p><em>3、GET 请求</em><br><em>4、POST 请求</em></p>
+<p>2、各种状态码<br>
+        
+          <a class="article-more-a" href="/2018/10/30/14跨域/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-12JSON" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -422,75 +492,6 @@
 
 
   
-    <article id="post-09创建对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/22/09创建对象/">创建对象</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/22/09创建对象/" class="archive-article-date">
-  	<time datetime="2018-10-22T08:59:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一共用 7 种创建对象的方式：<br>工厂模式、构造函数模式、原型模式、组合模式、动态原型模式、寄生构造函数模式、稳妥构造函数模式<br>反正说了这么多你也记不住</p>
-<p>当然直接 划重点！</p>
-<ul>
-<li>JS中，使用最广泛，认同度最高的就是：【组合使用构造函数模式和原型模式】</li>
-<li>JS中，最完美的是：【动态原型模式】（解决了上面一种方法看起来很奇怪的弊端,这个弊端就是“看起来很奇怪”）</li>
-<li>有重大缺陷的是：【构造函数模式】、【原型模式】</li>
-<li>其中明确提出“不推荐”的是：【工厂模式】、【寄生构造函数模式】</li>
-</ul>
-<p>其实我特别想一开始就说说【组合使用构造函数模式和原型模式】的神奇之处的，谁不喜欢这种上手就能用的东西呢，谁要关心剩下的 6 个是什么鬼啦！但是。。这是个组合模式呀！ 废话已多说，我们就从 【构造函数模式】 和 【原型模式】 开始吧！<br>
-        
-          <a class="article-more-a" href="/2018/10/22/09创建对象/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -572,15 +573,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">

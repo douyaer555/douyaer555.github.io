@@ -141,6 +141,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-49算法-运算篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/06/49算法-运算篇/">是算法呀！--运算篇(JavaScript版)/共 题</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/06/49算法-运算篇/" class="archive-article-date">
+  	<time datetime="2018-10-06T12:48:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>【<a href="https://github.com/wangsiyuan233/NowCoder">源码地址</a>】 || 【<a href="https://www.nowcoder.com/ta/coding-interviews?page=1">代码调试</a>】</p>
+<hr>
+<blockquote>
+<p>十一、二进制中1的个数 p100</p>
+</blockquote>
+<p><strong>描述</strong>：输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。</p>
+<p><strong>方法一：常规解法</strong><br>1、怎样判断一个整数的最右边是不是1<br>2、把整数和1做【位与运算】，看结果是不是0就知道了。<br>3、如果结果是1，那最右边的一位就是1<br>4、bug就是不能分析出来负数，会陷入死循环<br><figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function NumberOf1(n)&#123;</div><div class="line">  var <span class="built_in">count</span> = <span class="number">0</span>, <span class="built_in">flag</span> = <span class="number">1</span>;</div><div class="line">  <span class="keyword">while</span>(<span class="built_in">flag</span>)&#123;</div><div class="line">    <span class="keyword">if</span>(n&amp;<span class="built_in">flag</span>)<span class="built_in">count</span>++;</div><div class="line">    <span class="built_in">flag</span> = <span class="built_in">flag</span> &lt;&lt; <span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line">  return <span class="built_in">count</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>方法二：高级解法</strong><br>1、如果一个整数不为0，那么这个整数至少有一位是1。<br>如果我们把这个整数减1，那么原来处在整数最右边的1就会变为0，原来在1后面的所有的0都会变成1(如果最右边的1后面还有0的话)。<br>其余所有位将不会受到影响。</p>
+<p>2、举个例子：一个二进制数 <code>1100</code>，从右边数起第三位是处于最右边的一个1。减去1后，第三位变成0，它后面的两位0变成了1，而前面的1保持不变，因此得到的结果是 <code>1011</code>.我们发现减1的结果是把最右边的一个1开始的所有位都取反了。这个时候如果我们再把原来的整数和减去1之后的结果做与运算，从原来整数最右边一个1那一位开始所有位都会变成0。如<code>1100&amp;1011=1000</code>.也就是说，把一个整数减去1，再和原整数做与运算，会把该整数最右边一个1变成0.那么一个整数的二进制有多少个1，就可以进行多少次这样的操作。<br><figure class="highlight excel"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function NumberOf1(<span class="built_in">n</span>)&#123;</div><div class="line">  <span class="built_in">var</span> <span class="built_in">count</span> = <span class="number">0</span>;</div><div class="line">  while (<span class="built_in">n</span>)&#123;</div><div class="line">   <span class="built_in">count</span>++;</div><div class="line">   <span class="built_in">n</span> = (<span class="built_in">n</span>-<span class="number">1</span>)&amp;<span class="built_in">n</span>;//把最右边的一个<span class="number">1</span>变成<span class="number">0</span></div><div class="line">&#125;</div><div class="line">  return <span class="built_in">count</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2018/10/06/49算法-运算篇/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指offer</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-48算法-数组篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -445,83 +525,6 @@
 
 
   
-    <article id="post-44聊聊系列-6-abc绑定" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/23/44聊聊系列-6-abc绑定/">聊聊系列(6)-- call, apply, bind 区别</a>
-    </h1>
-  
-
-        
-        <a href="/2018/08/23/44聊聊系列-6-abc绑定/" class="archive-article-date">
-  	<time datetime="2018-08-23T02:23:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://wangsiyuan233.cn/2018/03/04/27%E8%81%8A%E8%81%8A%E7%B3%BB%E5%88%97-2/">【【【this 实例-第9条】】】</a></p>
-<blockquote>
-<p>一、 call 和 apply 的异同</p>
-</blockquote>
-<p><code>call</code> 和 <code>apply</code> 都是为了解决改变 <code>this</code> 的指向。作用都是相同的，只是传参的方式不同。</p>
-<p>除了第一个参数外，<code>call</code> 可以接收一个参数列表，<code>apply</code> 只接受一个参数数组。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = &#123;</div><div class="line">    <span class="attr">value</span>: <span class="number">1</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getValue</span>(<span class="params">name, age</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(name)</div><div class="line">    <span class="built_in">console</span>.log(age)</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.value)</div><div class="line">&#125;</div><div class="line">getValue.call(a, <span class="string">'yck'</span>, <span class="string">'24'</span>)</div><div class="line">getValue.apply(a, [<span class="string">'yck'</span>, <span class="string">'24'</span>])</div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2018/08/23/44聊聊系列-6-abc绑定/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">聊聊系列</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -603,15 +606,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">

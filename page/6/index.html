@@ -141,6 +141,74 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-39前端题目总结2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/17/39前端题目总结2/">前端总结2</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/17/39前端题目总结2/" class="archive-article-date">
+  	<time datetime="2018-07-17T07:52:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><blockquote>
+<p>JS 有哪些数据类型？</p>
+</blockquote>
+<p>七个小矮子：<code>string</code> <code>number</code> <code>bool</code> <code>undefined</code> <code>null</code> <code>object</code> <code>symbol</code><br><code>object</code> 包括了数组、函数、正则、日期等对象<br>一旦出现（数组、函数、正则、日期、NaN）直接0分</p>
+<blockquote>
+<p>（必考） Promise 怎么使用？</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//then</span></div><div class="line">  $.ajax(...).then(成功函数, 失败函数)</div><div class="line"></div><div class="line"><span class="comment">//链式 then</span></div><div class="line">  $.ajax(...).then(成功函数, 失败函数).then(成功函数<span class="number">2</span>, 失败函数<span class="number">2</span>)</div><div class="line"></div><div class="line"><span class="comment">//如何自己生成 Promise 对象</span></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">xxx</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>)</span>&#123;</div><div class="line">          setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">              resolve() 或者 reject()</div><div class="line">          &#125;,<span class="number">3000</span>)</div><div class="line">      &#125;)</div><div class="line">  &#125;</div><div class="line">  xxx().then(...)</div></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2018/07/17/39前端题目总结2/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-38面试题目总结1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -427,76 +495,6 @@
 
 
   
-    <article id="post-34JS能力测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/27/34JS能力测试/">JavaScript 能力测试</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/27/34JS能力测试/" class="archive-article-date">
-  	<time datetime="2018-06-27T08:13:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://www.nowcoder.com/ta/js-assessment?query=&amp;asc=true&amp;order=&amp;page=2">[牛客原题]</a> || <a href="https://github.com/wangsiyuan233/NowCoder/blob/master/JS%E8%83%BD%E5%8A%9B%E6%B5%8B%E8%AF%84.js">[我的源码]</a></p>
-<blockquote>
-<p>一、数组篇</p>
-</blockquote>
-<p>（也就数组篇值得总结，剩下的都是些啥）</p>
-<p><strong>1、 增加元素</strong><br>1.1 头部增加<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="title">prepend</span>(arr, item)&#123;</div><div class="line">  <span class="keyword">return</span> <span class="type">[item].concat(arr)</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>1.2 尾部增加<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> append2 = <span class="function"><span class="keyword">function</span><span class="params">(arr, item)</span></span>&#123;</div><div class="line"><span class="comment">// slice(start, end)浅拷贝数组</span></div><div class="line">    <span class="keyword">var</span> a = arr.slice(<span class="number">0</span>); </div><div class="line">    a.push(item);</div><div class="line">    <span class="keyword">return</span> a;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> append3 = <span class="function"><span class="keyword">function</span><span class="params">(arr, item)</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> arr.concat(item);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>1.3 数组合并<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="title">concat</span>(arr1, arr2)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="type">arr1.concat(arr2)</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>1.4 指定位置添加<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">insert</span><span class="params">(arr, item, index)</span></span>&#123;</div><div class="line"><span class="comment">//复制数组</span></div><div class="line">  <span class="keyword">var</span> a = arr.slice(<span class="number">0</span>);</div><div class="line"><span class="comment">// splice(数组开始的下标，替换/删除的长度，替换的值)</span></div><div class="line">  a.splice(index, <span class="number">0</span>, item);</div><div class="line">  <span class="keyword">return</span> a;</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2018/06/27/34JS能力测试/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
@@ -578,15 +576,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">

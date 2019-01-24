@@ -141,6 +141,70 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-07从原型到原型链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/24/07从原型到原型链/">原型及原型链</a>
+    </h1>
+  
+
+        
+        <a href="/2018/02/24/07从原型到原型链/" class="archive-article-date">
+  	<time datetime="2018-02-24T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>写在前面：学习前端70天的一个总结，说是“深入”其实有点不好意思，有什么问题一起探讨呀</p>
+</blockquote>
+<p>JavaScript 中有一句“一切皆是对象”，这句话当然是不严谨的啦，让我们一起来看看怎么回事吧！<br>
+        
+          <a class="article-more-a" href="/2018/02/24/07从原型到原型链/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-04配置Server-js" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -421,82 +485,6 @@
 
 
   
-    <article id="post-02封装一个jQuery" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/11/02封装一个jQuery/">封装一个jQuery吧！</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/11/02封装一个jQuery/" class="archive-article-date">
-  	<time datetime="2018-02-11T01:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>首先用一个立即执行函数把他们都包裹起来；</p>
-<p>我们使用<code>document.querySelectorAll</code>函数查找所有匹配的<code>HTMLElement</code>并绑定到返回的对象上。我们还给返回的<code>q</code>对象创建了<code>html</code>函数，用来返回匹配对象的<code>innerHTML</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> $ = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> (<span class="function"><span class="keyword">function</span>(<span class="params">selector</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> q = &#123;&#125;;</div><div class="line">    q.selector = selector;</div><div class="line">    q.nodes = <span class="built_in">document</span>.querySelectorAll(selector);</div><div class="line">    q.html = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="built_in">Array</span>.prototype.map.call(<span class="keyword">this</span>.nodes, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> node.innerHTML</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;)</div><div class="line">&#125;)();</div><div class="line"></div><div class="line"><span class="comment">// 第一个：自己写一个 each 函数</span></div><div class="line">q.each = <span class="function"><span class="keyword">function</span>(<span class="params">action</span>)</span>&#123;</div><div class="line">      <span class="keyword">this</span>.nodes.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item, i</span>)</span>&#123;</div><div class="line">        action(item,i)</div><div class="line">      &#125;)</div><div class="line">      <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="comment">// 第二个：自己写个 CSS 功能</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">doCSS</span>(<span class="params">prop,val</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> args = argument</div><div class="line">  <span class="keyword">if</span>(<span class="built_in">Boolean</span>(val))&#123;    <span class="comment">//setter</span></div><div class="line">    <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">node, i</span>)</span>&#123;</div><div class="line">        CSSStyleDeclaration.prototype.setProperty.apply(node.style,args);</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span></div><div class="line">  &#125;<span class="keyword">else</span>&#123;                   <span class="comment">//getter</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.nodes[<span class="number">0</span>].style[prop];</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">q.css = <span class="function"><span class="keyword">function</span>(<span class="params">prop, val</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> doCSS.call(<span class="keyword">this</span>, prop,val);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 第三个给dom对象添加属性的方法</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">doATTR</span>(<span class="params">prop, val</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> args = <span class="built_in">arguments</span></div><div class="line">  <span class="keyword">if</span>(<span class="built_in">Boolean</span>(val))&#123;</div><div class="line">    <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">node, i</span>)</span>&#123;</div><div class="line">      Element.prototype.setAttribute.apply(node, args);</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.prototype.map.call(<span class="keyword">this</span>.nodes,</div><div class="line">      <span class="function"><span class="keyword">function</span>(<span class="params">node</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> node.getAttribute(prop);</div><div class="line">      &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">q.attr = <span class="function"><span class="keyword">function</span>(<span class="params">prop, val</span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> doATTR.call(<span class="keyword">this</span>, prop, val);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//测试 each 函数</span></div><div class="line">$(<span class="string">'p'</span>).each(<span class="function"><span class="keyword">function</span><span class="params">(item, i)</span> <span class="comment">&#123;</span></span></div><div class="line">   console.log(item.innerHTML)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 测试 CSS 功能</span></div><div class="line">$<span class="params">(<span class="string">'p'</span>)</span>.<span class="title">css</span><span class="params">(<span class="string">'font-size'</span>, "20px")</span>.<span class="title">css</span><span class="params">(<span class="string">'color'</span>, <span class="string">'green'</span>)</span></div><div class="line">$<span class="params">(<span class="string">'p'</span>)</span>.<span class="title">css</span><span class="params">(<span class="string">'color'</span>)</span>   <span class="comment">//green</span></div><div class="line"></div><div class="line"><span class="comment">// 测试给dom对象添加属性的方法</span></div><div class="line">$<span class="params">(<span class="string">'#test'</span>)</span>.<span class="title">attr</span><span class="params">(<span class="string">'test'</span>, <span class="string">'hello'</span>)</span></div><div class="line"><span class="title">console</span>.<span class="title">log</span><span class="params">($(<span class="string">'#test'</span>)</span>.<span class="title">attr</span><span class="params">(<span class="string">'test'</span>)</span>) <span class="comment">//hello</span></div></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Basic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/10/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/12/">Next &raquo;</a>
@@ -578,15 +566,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
