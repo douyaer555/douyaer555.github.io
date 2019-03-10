@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="wangsiyuan233.github.io">
-  <title>Vue 初级造轮子 | wangsiyuan</title>
+  <title>React todolist | wangsiyuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="Vue 初级造轮子">
-<meta property="og:url" content="wangsiyuan233.github.io/2019/01/24/57Vue-初级造轮子/index.html">
+  <meta name="description" content="一、 在 todolist.js 里
+
+1、建立一个基本的骨架，有一个 input，有一个 add 按钮，注意的是 render 里面只有一个 div12345678910111213141516171819202122import React from &apos;react&apos;class TodoList extends React.Component &amp;#123;render()&amp;#123;    r">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React todolist">
+<meta property="og:url" content="wangsiyuan233.github.io/2019/03/08/57Vue-初级造轮子/index.html">
 <meta property="og:site_name" content="wangsiyuan">
-<meta property="og:updated_time" content="2019-01-24T05:22:43.293Z">
+<meta property="og:description" content="一、 在 todolist.js 里
+
+1、建立一个基本的骨架，有一个 input，有一个 add 按钮，注意的是 render 里面只有一个 div12345678910111213141516171819202122import React from &apos;react&apos;class TodoList extends React.Component &amp;#123;render()&amp;#123;    r">
+<meta property="og:updated_time" content="2019-03-10T10:18:17.945Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue 初级造轮子">
+<meta name="twitter:title" content="React todolist">
+<meta name="twitter:description" content="一、 在 todolist.js 里
+
+1、建立一个基本的骨架，有一个 input，有一个 add 按钮，注意的是 render 里面只有一个 div12345678910111213141516171819202122import React from &apos;react&apos;class TodoList extends React.Component &amp;#123;render()&amp;#123;    r">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -147,20 +156,29 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Vue 初级造轮子
+      React todolist
     </h1>
   
 
         
-        <a href="/2019/01/24/57Vue-初级造轮子/" class="archive-article-date">
-  	<time datetime="2019-01-24T05:22:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-24</time>
+        <a href="/2019/03/08/57Vue-初级造轮子/" class="archive-article-date">
+  	<time datetime="2019-03-07T19:12:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <blockquote>
+<p>一、 在 todolist.js 里</p>
+</blockquote>
+<p>1、建立一个基本的骨架，有一个 input，有一个 add 按钮，注意的是 render 里面只有一个 div<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line"></div><div class="line">render()&#123;</div><div class="line">  </div><div class="line">  <span class="keyword">return</span>(</div><div class="line"></div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">button</span>&gt;</span>add<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span> hello xiaowei<span class="tag">&lt;/<span class="name">li</span>&gt;</span>  </div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span> hello xiayuan<span class="tag">&lt;/<span class="name">li</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  );</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> TodoList;</div></pre></td></tr></table></figure></p>
+<p>2、把数据写在 state 里， ul 里面只负责遍历<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  </div><div class="line">  <span class="keyword">constructor</span>(props)&#123;</div><div class="line">    <span class="keyword">super</span>(props);</div><div class="line">    <span class="keyword">this</span>.state = &#123;</div><div class="line">      <span class="attr">list</span>:[</div><div class="line">        <span class="string">'hello xiayuan'</span>,</div><div class="line">        <span class="string">'hello xiaowei'</span></div><div class="line">      ]</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  </div><div class="line">  handleBtnClick()&#123;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">render()&#123;</div><div class="line">  </div><div class="line">  <span class="keyword">return</span>(</div><div class="line"></div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;this.handleBtnClick&#125;</span>&gt;</span>add<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    &#123;</div><div class="line">          this.state.list.map((item) =&gt;&#123;</div><div class="line">            return <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;item&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">          &#125;)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  );</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> TodoList;</div></pre></td></tr></table></figure></p>
+<p>此时此刻只用在 state 里面定义数据就可以了，不用在 ul 里面写东西，下一步当然是：</p>
+<p>3、点击 add，列表里增加写死的内容”hehehe”<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  </div><div class="line">  <span class="keyword">constructor</span>(props)&#123;</div><div class="line">    <span class="keyword">super</span>(props);</div><div class="line">    <span class="keyword">this</span>.state = &#123;</div><div class="line">      <span class="attr">list</span>:[</div><div class="line">        <span class="string">'hello xiayuan'</span>,</div><div class="line">        <span class="string">'hello xiaowei'</span></div><div class="line">      ]</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  </div><div class="line">  handleBtnClick()&#123;</div><div class="line">    <span class="keyword">this</span>.setState=&#123;(</div><div class="line">      list:[...this.state.list,<span class="string">'hehehe'</span>]       </div><div class="line">    )&#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">render()&#123;</div><div class="line">  </div><div class="line">  <span class="keyword">return</span>(</div><div class="line"></div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;this.handleBtnClick.bind(this)&#125;</span>&gt;</span>add<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    &#123;</div><div class="line">          this.state.list.map((item,index) =&gt;&#123;</div><div class="line">            return <span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;index&#125;</span>&gt;</span>&#123;item&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">          &#125;)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  );</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> TodoList;</div></pre></td></tr></table></figure></p>
+<p>此时点击 add ，ul 列表里就会增加 hehehe,现在终于可以开始添加的是输入的内容了</p>
+<p>4、add 输入内容后清空 input</p>
+
       
 
       
@@ -239,7 +257,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2019/01/24/57Vue-初级造轮子/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:wangsiyuan233.github.io/2019/03/08/57Vue-初级造轮子/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -253,9 +271,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/03/10/56组件化与-React/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          组件化与 React
+        
+      </div>
+    </a>
   
-    <a href="/2019/01/16/56组件化与-React/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">组件化与 React</div>
+  
+    <a href="/2019/01/11/55Virtual-Dom/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Virtual Dom</div>
       <i class="icon-circle-right"></i>
     </a>
   
