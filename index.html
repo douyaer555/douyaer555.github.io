@@ -206,19 +206,19 @@
 
 
   
-    <article id="post-57Vue-初级造轮子" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-57React-todolist" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/08/57Vue-初级造轮子/">React todolist</a>
+      <a class="article-title" href="/2019/03/08/57React-todolist/">React todolist</a>
     </h1>
   
 
         
-        <a href="/2019/03/08/57Vue-初级造轮子/" class="archive-article-date">
+        <a href="/2019/03/08/57React-todolist/" class="archive-article-date">
   	<time datetime="2019-03-07T19:12:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-08</time>
 </a>
         
@@ -226,12 +226,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
+        <p>前期搭建环境：</p>
+<p>1、安装node:下载软件安装<br>2、快速开始一个带有脚手架工具的 react app<br> <code>npx create-react-app my-app</code><br> <code>cd my-app</code><br> <code>npm start</code></p>
+<blockquote>
 <p>一、 在 todolist.js 里实现 添加和删除 功能</p>
 </blockquote>
-<p>1、建立一个基本的骨架，有一个 input，有一个 add 按钮，注意的是 render 里面只有一个 div<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line"></div><div class="line">render()&#123;</div><div class="line">  </div><div class="line">  <span class="keyword">return</span>(</div><div class="line"></div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">button</span>&gt;</span>add<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span> hello xiaowei<span class="tag">&lt;/<span class="name">li</span>&gt;</span>  </div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span> hello xiayuan<span class="tag">&lt;/<span class="name">li</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line">  );</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> TodoList;</div></pre></td></tr></table></figure></p>
+<p>1、建立一个基本的骨架，有一个 <code>input</code>，有一个 <code>add</code> 按钮，注意的是 <code>render</code> 里面只能有一个 <code>div</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line"></div><div class="line">render()&#123;</div><div class="line">  </div><div class="line">  <span class="keyword">return</span>(</div><div class="line"></div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">button</span>&gt;</span>add<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span> hello xiaowei<span class="tag">&lt;/<span class="name">li</span>&gt;</span>  </div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span> hello xiayuan<span class="tag">&lt;/<span class="name">li</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line">  );</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> TodoList;</div></pre></td></tr></table></figure></p>
         
-          <a class="article-more-a" href="/2019/03/08/57Vue-初级造轮子/#more">more >></a>
+          <a class="article-more-a" href="/2019/03/08/57React-todolist/#more">more >></a>
         
       
 
