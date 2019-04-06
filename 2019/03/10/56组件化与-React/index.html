@@ -21,7 +21,7 @@
 1、组件的封装
 视图 + 数据 + 变化逻辑（数据驱动视图变化）12345678910111213141516171819202122232425class Todo extends Component&amp;#123;  constructor(props)&amp;#123;    super(props)    // 下面是数据    this.state = &amp;#123;list">
 <meta property="og:image" content="https://i.imgur.com/tttfemc.png">
-<meta property="og:updated_time" content="2019-03-10T08:12:36.137Z">
+<meta property="og:updated_time" content="2019-04-06T02:31:55.877Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="组件化与 React">
 <meta name="twitter:description" content="一、对组件化的理解
@@ -226,6 +226,29 @@
 <p><code>React</code> 本身就是组件化，没有组件化就不是 <code>React</code><br><code>Vue</code> 也支持组件化，不过是在 <code>MVVM</code> 上的扩展</p>
 <p><em>4、两者的共同点</em></p>
 <p>都支持组件化</p>
+<blockquote>
+<p>六、Redux</p>
+</blockquote>
+<p>解答这个问题并不困难：唯一的要求是你熟悉 <code>React</code> 。</p>
+<p>从需求出发，看看使用 <code>React</code> 需要什么：</p>
+<ol>
+<li><code>React</code> 有 <code>props</code> 和 <code>state</code> : <code>props</code> 意味着父级分发下来的属性，<code>state</code> 意味着组件内部可以自行管理的状态，并且整个 <code>React</code> 没有数据向上回溯的能力，也就是说数据只能单向向下分发，或者自行内部消化。理解这个是理解 <code>React</code> 和 <code>Redux</code> 的前提。</li>
+<li>一般构建的 <code>React</code> 组件内部可能是一个完整的应用，它自己工作良好，你可以通过属性作为 <code>API</code> 控制它。但是更多的时候发现 <code>React</code> 根本无法让两个组件互相交流，使用对方的数据。然后这时候不通过 <code>DOM</code> 沟通（也就是 <code>React</code> 体制内）解决的唯一办法就是提升 <code>state</code> ，将 state 放到共有的父组件中来管理，再作为 <code>props</code> 分发回子组件。``</li>
+<li>子组件改变父组件 <code>state</code> 的办法只能是通过 <code>onClick</code> 触发父组件声明好的回调，也就是父组件提前声明好函数或方法作为契约描述自己的 <code>state</code> 将如何变化，再将它同样作为属性交给子组件使用。这样就出现了一个模式：数据总是单向从顶层向下分发的，但是只有子组件回调在概念上可以回到 <code>state</code> 顶层影响数据。这样 <code>state</code> 一定程度上是响应式的。</li>
+<li>为了面临所有可能的扩展问题，最容易想到的办法就是把所有 <code>state</code> 集中放到所有组件顶层，然后分发给所有组件。</li>
+<li>为了有更好的 <code>state</code> 管理，就需要一个库来作为更专业的顶层 <code>state</code> 分发给所有 <code>React</code> 应用.</li>
+</ol>
+<p>这就是 <code>Redux</code>。</p>
+<p>让我们回来看看重现上面结构的需求：<br>a. 需要回调通知 <code>state</code>  (等同于回调参数) -&gt; <code>action</code><br>b. 需要根据回调处理 (等同于父级方法) -&gt; <code>reducer</code><br>c. 需要 <code>state</code> (等同于总状态) -&gt; <code>store</code></p>
+<p>对 <code>Redux</code> 来说只有这三个要素：</p>
+<p>a. <code>action</code> 是纯声明式的数据结构，只提供事件的所有要素，不提供逻辑。</p>
+<p>b. <code>reducer</code> 是一个匹配函数，<code>action</code> 的发送是全局的：所有的 <code>reducer</code> 都可以捕捉到并匹配与自己相关与否，相关就拿走 <code>action</code> 中的要素进行逻辑处理，修改 <code>store</code> 中的状态，不相关就不对 <code>state</code> 做处理原样返回。</p>
+<p>c. <code>store</code> 负责存储状态并可以被 <code>react api</code> 回调，发布 <code>action</code>.当然一般不会直接把两个库拿来用，还有一个 <code>binding</code> 叫 <code>react-redux</code>, 提供一个 <code>Provider</code> 和 <code>connect</code> 。</p>
+<p>很多人其实看懂了 <code>redux</code> 卡在这里。</p>
+<p>a. <code>Provider</code> 是一个普通组件，可以作为顶层 <code>app</code> 的分发点，它只需要 <code>store</code> 属性就可以了。它会将 <code>state</code> 分发给所有被 <code>connect</code> 的组件，不管它在哪里，被嵌套多少层。<br>b. <code>connect</code> 是真正的重点，它是一个科里化函数，意思是先接受两个参数（数据绑定 <code>mapStateToProps</code> 和事件绑定 <code>mapDispatchToProps</code> ），再接受一个参数（将要绑定的组件本身）</p>
+<p><code>mapStateToProps</code>：构建好 <code>Redux</code> 系统的时候，它会被自动初始化，但是你的 <code>React</code> 组件并不知道它的存在，因此你需要分拣出你需要的 <code>Redux</code> 状态，所以你需要绑定一个函数，它的参数是 <code>state</code> ，简单返回你关心的几个值。</p>
+<p><code>mapDispatchToProps</code>：声明好的 <code>action</code> 作为回调，也可以被注入到组件里，就是通过这个函数，它的参数是 <code>dispatch</code> ，通过 <code>redux</code> 的辅助方法 <code>bindActionCreator</code> 绑定所有 <code>action</code> 以及参数的 dispatch，就可以作为属性在组件里面作为函数简单使用了，不需要手动 <code>dispatch</code>。这个 <code>mapDispatchToProps</code> 是可选的，如果不传这个参数 <code>redux</code> 会简单把 <code>dispatch</code> 作为属性注入给组件，可以手动当做 <code>store.dispatch</code> 使用。这也是为什么要科里化的原因。</p>
+<p>做好以上流程 <code>Redux</code> 和 <code>React</code> 就可以工作了。简单地说就是：<br>1.顶层分发状态，让 <code>React</code> 组件被动地渲染。<br>2.监听事件，事件有权利回到所有状态顶层影响状态。</p>
 
       
 
@@ -431,15 +454,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
