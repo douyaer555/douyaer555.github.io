@@ -399,7 +399,11 @@
 <p>3、区别</p>
 <p>GET请求：  参数是URL、有长度限制、只接受ASCII、不安全；<br>POST请求： 参数是requestbody、没有长度限制、没有语言限制、较安全。</p>
 <blockquote>
-<p>三、状态码</p>
+<p>三、HTTP请求报文</p>
+</blockquote>
+<p>HTTP请求报文由3部分组成（请求行+请求头+请求体）：<br><img src="https://i.imgur.com/VNd0XMx.png" alt=""><br><img src="https://i.imgur.com/yRYe3gs.png" alt=""></p>
+<blockquote>
+<p>四、状态码</p>
 </blockquote>
 <p><img src="https://i.imgur.com/HFcsVlO.png" alt=""></p>
 <blockquote>
@@ -407,6 +411,7 @@
 <p>301 moved permanently 永久性重定向 请求的资源被分配了新的URI，以后也要用这个新的URI<br>302 Found 临时性重定向 请求的资源被分配了新的URI，现在就要用这个新的URI （已移动的资源可能会变回了，这次先用着吧）<br>303 see other 和302不同之处在于 要求GET方法定向获取资源<br>【当301/302/303返回时，几乎所有的浏览器都会删除请求主体+把POST改成GET，之后请求会再次自动发送】<br>304 Not Modified (虽然是3系，但是和重定向没有关系) 客户端发送了附带条件的请求，服务端虽然找到了资源，但是不符合[附带的条件]<br>307 Temporary Redirect 临时重定向 和302很像 也是禁止POST变成GET</p>
 <p>400 Bad Request 请求中有语法错误<br>401 Unauthorized 表示请求中需要HTTP认证哦！浏览器第1次就收401里面会带一个认证对话窗口，第2次再接到401代表用户认证失败<br>403 Forbidden 服务器拒绝了这次请求的资源<br>404 Not Found 服务器上无法找到请求的资源</p>
 <p>5系代表服务器本身的错误<br>500 Internal Server Error 服务器在执行请求时发生了错误<br>503 Service Unavailable 服务器暂时处于超负荷运转或者停机维护阶段</p>
+<p>五</p>
 </blockquote>
 <p><strong>1、TCP/IP通信传输流</strong><br><img src="https://i.imgur.com/wj6Zhcp.png" alt=""><br>
         
@@ -615,15 +620,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">

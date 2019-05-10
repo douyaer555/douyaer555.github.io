@@ -36,9 +36,11 @@
 二、报文的组成部分
 
 1、GET请求12345678910111213//GET 请求 GET /?w=1 HTTP/1.1Host: ba">
+<meta property="og:image" content="https://i.imgur.com/VNd0XMx.png">
+<meta property="og:image" content="https://i.imgur.com/yRYe3gs.png">
 <meta property="og:image" content="https://i.imgur.com/HFcsVlO.png">
 <meta property="og:image" content="https://i.imgur.com/wj6Zhcp.png">
-<meta property="og:updated_time" content="2019-03-22T12:18:44.061Z">
+<meta property="og:updated_time" content="2019-05-10T12:24:01.109Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="聊聊系列(3)-- HTTP">
 <meta name="twitter:description" content="本文是《图解HTTP》的“摘要”版本，笔者更多关注得是和自身知识所融洽的部分，如果对更详细的内容感兴趣，可以移步实体书。
@@ -53,7 +55,7 @@
 二、报文的组成部分
 
 1、GET请求12345678910111213//GET 请求 GET /?w=1 HTTP/1.1Host: ba">
-<meta name="twitter:image" content="https://i.imgur.com/HFcsVlO.png">
+<meta name="twitter:image" content="https://i.imgur.com/VNd0XMx.png">
   
     <link rel="alternative" href="/atom.xml" title="wangsiyuan" type="application/atom+xml">
   
@@ -215,7 +217,11 @@
 <p>3、区别</p>
 <p>GET请求：  参数是URL、有长度限制、只接受ASCII、不安全；<br>POST请求： 参数是requestbody、没有长度限制、没有语言限制、较安全。</p>
 <blockquote>
-<p>三、状态码</p>
+<p>三、HTTP请求报文</p>
+</blockquote>
+<p>HTTP请求报文由3部分组成（请求行+请求头+请求体）：<br><img src="https://i.imgur.com/VNd0XMx.png" alt=""><br><img src="https://i.imgur.com/yRYe3gs.png" alt=""></p>
+<blockquote>
+<p>四、状态码</p>
 </blockquote>
 <p><img src="https://i.imgur.com/HFcsVlO.png" alt=""></p>
 <blockquote>
@@ -223,6 +229,7 @@
 <p>301 moved permanently 永久性重定向 请求的资源被分配了新的URI，以后也要用这个新的URI<br>302 Found 临时性重定向 请求的资源被分配了新的URI，现在就要用这个新的URI （已移动的资源可能会变回了，这次先用着吧）<br>303 see other 和302不同之处在于 要求GET方法定向获取资源<br>【当301/302/303返回时，几乎所有的浏览器都会删除请求主体+把POST改成GET，之后请求会再次自动发送】<br>304 Not Modified (虽然是3系，但是和重定向没有关系) 客户端发送了附带条件的请求，服务端虽然找到了资源，但是不符合[附带的条件]<br>307 Temporary Redirect 临时重定向 和302很像 也是禁止POST变成GET</p>
 <p>400 Bad Request 请求中有语法错误<br>401 Unauthorized 表示请求中需要HTTP认证哦！浏览器第1次就收401里面会带一个认证对话窗口，第2次再接到401代表用户认证失败<br>403 Forbidden 服务器拒绝了这次请求的资源<br>404 Not Found 服务器上无法找到请求的资源</p>
 <p>5系代表服务器本身的错误<br>500 Internal Server Error 服务器在执行请求时发生了错误<br>503 Service Unavailable 服务器暂时处于超负荷运转或者停机维护阶段</p>
+<p>五</p>
 </blockquote>
 <p><strong>1、TCP/IP通信传输流</strong><br><img src="https://i.imgur.com/wj6Zhcp.png" alt=""><br><a id="more"></a><br><strong>2、TCP协议三次握手策略</strong><br>第一次：客户端 ——&gt;&gt;&gt; 服务端 SYN数据打包给你啦！<br>第二次：服务端 ——&gt;&gt;&gt; 客户端 我收到啦！（SYN/ACK）<br>第三次：客户端 ——&gt;&gt;&gt; 服务端 我知道你知道啦！<br><strong>3、概念的厘清</strong><br>3.1、DNS协议提供域名查找IP，或知道IP反查域名；<br>3.2、IP是一组纯地址，而我们访问的<code>baidu.com</code>是域名或主机名<br>3.3、URL是需要输入的资源地址（网址）；URI是用字符串标识的某一互联网资源；<br>   URL是URI的子集；<br>3.4、POST的目的是传输（发信息）<br>   GET的目的是请求资源；<br>3.5、cookie通过在请求和响应报文中写入cookie信息，来控制客户端的状态<br>   翻译成人话就是：刷新以后我在这个网站还是登陆的状态。<br><strong>4、Web安全</strong><br>HTTP的不足之处：<br>4.1、通信使用明文，内容可能被窃听<br>4.2、通信放的什么可能被伪装<br>4.3、报文的完整性被篡改<br>—-&gt;&gt;&gt;&gt; 改进<br><strong>HTTP + 加密 + 认证 + 完整性保护 = HTTPS</strong><br>（HTTPS的不足：证书贵+速度很慢）</p>
 <p>怎样给数据加密呢？<br>目前有以下几种加密方式：<br>1、对称加密 ： 加密和解密数据使用同一个密钥。这种加密方式的优点是速度很快，常见对称加密的算法有 AES；<br>2、非对称加密： 加密和解密使用不同的密钥，叫公钥和私钥。数据用公钥加密后必须用私钥解密，数据用私钥加密后必须用公钥解密。一般来说私钥自己保留好，把公钥公开给别人，让别人拿自己的公钥加密数据后发给自己，这样只有自己才能解密。 这种加密方式的特点是速度慢，CPU 开销大，常见非对称加密算法有 RSA；<br>3、Hash： hash 是把任意长度数据经过处理变成一个长度固定唯一的字符串，但任何人拿到这个字符串无法反向解密成原始数据（解开你就是密码学专家了），Hash 常用来验证数据的完整性。常见 Hash 算法有 MD5（已经不安全了）、SHA1、SHA256<br>这些加密其实都是各式各样的<strong>算法</strong>。</p>
@@ -461,15 +468,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Basic</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
